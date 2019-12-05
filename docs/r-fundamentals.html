@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen" />
 
 
-<meta name="date" content="2019-12-05" />
+<meta name="date" content="2019-12-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -162,6 +162,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.8" data-path="r-fundamentals.html"><a href="r-fundamentals.html#library"><i class="fa fa-check"></i><b>2.8</b> Library</a></li>
 <li class="chapter" data-level="2.9" data-path="r-fundamentals.html"><a href="r-fundamentals.html#setting"><i class="fa fa-check"></i><b>2.9</b> Setting</a></li>
 <li class="chapter" data-level="2.10" data-path="r-fundamentals.html"><a href="r-fundamentals.html#seeking-help"><i class="fa fa-check"></i><b>2.10</b> Seeking Help</a></li>
+<li class="chapter" data-level="2.11" data-path="r-fundamentals.html"><a href="r-fundamentals.html#language-learning-aint-easy"><i class="fa fa-check"></i><b>2.11</b> Language Learning Ain’t Easy!</a></li>
+<li class="chapter" data-level="2.12" data-path="r-fundamentals.html"><a href="r-fundamentals.html#keyboard-shortcuts"><i class="fa fa-check"></i><b>2.12</b> Keyboard Shortcuts</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="subsetting.html"><a href="subsetting.html"><i class="fa fa-check"></i><b>3</b> Subsetting</a><ul>
 <li class="chapter" data-level="3.1" data-path="subsetting.html"><a href="subsetting.html#vecotr"><i class="fa fa-check"></i><b>3.1</b> Vecotr</a></li>
@@ -447,6 +449,54 @@ Figure 2.2: Help 2
 <li>stackoverflow: <a href="https://stackoverflow.com/questions/tagged/r" class="uri">https://stackoverflow.com/questions/tagged/r</a></li>
 <li>rstudio: <a href="https://community.rstudio.com/" class="uri">https://community.rstudio.com/</a></li>
 </ul></li>
+</ul>
+</div>
+<div id="language-learning-aint-easy" class="section level2">
+<h2><span class="header-section-number">2.11</span> Language Learning Ain’t Easy!</h2>
+<p>Learning R is like learning another foreign language. It should be a long journey. You can’t expect yourself to learn all the vocabuary of the new language in one day. Also, you will forget things you learn all the time. Everyone’s been there. When your script does not work as expected, don’t be frustrated. Take a break and resume later. What I can say is that: it is always <strong>NORMAL</strong> to debug a script for hours or even days via endless searches on Google.</p>
+<p>That being said, here I would like to share with you some of the most common problems R may usually run int:</p>
+<ul>
+<li>You created an R script file (<code>*.r</code>) and opened it in the Rstudio, but the script didn’t work simply because you didn’t execute the script in R console (i.e., you didn’t send the script to R console.)</li>
+<li>If you get an error message, saying <code>&quot;object not found&quot;</code>, check the object name again and see if you have mistyped the name of the object. If not, check your current environment and see if you have fotgot to execute some assignment commands in the previous parts of the script (i.e., the object has NOT even been created yet).</li>
+<li>If you get an error message, saying <code>&quot;function not found&quot;</code>, check the function and see if you have the correct name. Or more ofte, check if you have **loaded&quot; the necessary libraries where the function is defined.</li>
+<li><p>To understand the meaning of the error messages is crucial to your development of R proficiency. To achieve this, you have to know very well every object name you have created in your script (as well as your environment). For example:</p>
+<ul>
+<li>What type of object is it? (i.e., the <code>class</code> of the object, e.g., <code>vector</code>, <code>list</code>, <code>data.frame</code>?)</li>
+<li>For primitive vectors, what type of vector is it? (e.g., <code>numeric</code>, <code>character</code>, <code>boolean</code>,<code>factor</code>?)</li>
+<li>What is the dimensionality of the object? (<code>nrows</code>, <code>ncols</code>?)</li>
+</ul></li>
+<li><p>Sometimes the script fails due to the syntactic errors. Pay attention to all the <strong>punctuations</strong> in every R command. They are far more important (or <em>lethal</em>) than you think. They include:</p>
+<ul>
+<li><code>,</code>: commas between arguments inside a function</li>
+<li><code>&quot;</code>: quotes for strings/characters</li>
+<li><code>()</code>: parentheses for functions</li>
+<li><code>{}</code>: curly brackets for control structures</li>
+</ul></li>
+<li>From my experiences, about 80 percent of the errors may in the end boil down to a simple <em>typo</em>. No kidding. Copy-and-paste helps.</li>
+<li><em>DO NOT</em> assume that your R script always works as intended! Always keep two questions in mind:
+<ul>
+<li>Did R produce the intended result?</li>
+<li>What is included in the R object?</li>
+</ul></li>
+</ul>
+</div>
+<div id="keyboard-shortcuts" class="section level2">
+<h2><span class="header-section-number">2.12</span> Keyboard Shortcuts</h2>
+<p>The best way to talk to a computer is via the keyboard. Scripting requires a lot of typing. Keyboard shortcuts may save you a lot of time. Here are some of the handy shortcuts:</p>
+<ul>
+<li><code>Crtl/Command + Enter</code>: run the current line (send from the script to the console)</li>
+<li><code>Crtl/Command + A</code>: select all</li>
+<li><code>Crtl/Command + C</code>: copy</li>
+<li><code>Ctrl/Command + X</code>: cut</li>
+<li><code>Ctrl/Command + V</code>: paste</li>
+<li><code>Ctrl/Command + Z</code>: undo</li>
+<li><code>(Mac) Alt/Option + Left/Right</code>: move cursor by a word</li>
+<li><code>(Windows) Ctrl + Left/Right</code>: move cursor by a word</li>
+<li><code>(Mac) Command + Left/Right</code>: move cursor to the beginning/end of line</li>
+<li><code>(Windows) Home/End</code>: move cursor to the beginning/end of line</li>
+<li><code>(Mac) Command + Tab</code>: switch in-between different working windows/apps</li>
+<li><code>Ctrl/Command + S</code>: save file</li>
+<li><code>Command + Shift + C</code>: comment/uncomment selected lines</li>
 </ul>
 
 </div>
