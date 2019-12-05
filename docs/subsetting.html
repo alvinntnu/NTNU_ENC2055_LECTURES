@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Subsetting | ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
+  <meta name="description" content="ENC2055 Course material first edition" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Subsetting | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="ENC2055 Course material first edition" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Subsetting | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
+  
+  <meta name="twitter:description" content="ENC2055 Course material first edition" />
+  
+
+<meta name="author" content="Alvin Chen" />
+
+
+<meta name="date" content="2019-12-05" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="r-fundamentals.html"/>
+<link rel="next" href="data-visualization.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
+<script src="libs/str_view-binding-1.4.0/str_view.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="http://web.ntnu.edu.tw/~alvinchen/courses/ENC2055/"> <img src="images/alerts/home.svg" height="20" width ="20" style="display:inline"> Course Website </a></lo>
+<li><a href="./index.html"> <img src="images/alerts/book-solid.svg" height="20" width ="20" style="display:inline"> ENC 2055 Introduction to Programming Languages For Linguistic Analysis</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-objective"><i class="fa fa-check"></i>Course Objective</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#textbook"><i class="fa fa-check"></i>Textbook</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-website"><i class="fa fa-check"></i>Course Website</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-demo-data"><i class="fa fa-check"></i>Course Demo Data</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro-ds.html"><a href="intro-ds.html"><i class="fa fa-check"></i><b>1</b> Data Science and R</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro-ds.html"><a href="intro-ds.html#what-is-data-science"><i class="fa fa-check"></i><b>1.1</b> What is Data Science?</a></li>
+<li class="chapter" data-level="1.2" data-path="intro-ds.html"><a href="intro-ds.html#working-pipeline-for-data-science"><i class="fa fa-check"></i><b>1.2</b> Working Pipeline for Data Science</a></li>
+<li class="chapter" data-level="1.3" data-path="intro-ds.html"><a href="intro-ds.html#why-r"><i class="fa fa-check"></i><b>1.3</b> Why R?</a></li>
+<li class="chapter" data-level="1.4" data-path="intro-ds.html"><a href="intro-ds.html#tidyverse"><i class="fa fa-check"></i><b>1.4</b> <code>tidyverse</code></a></li>
+<li class="chapter" data-level="1.5" data-path="intro-ds.html"><a href="intro-ds.html#more-skills"><i class="fa fa-check"></i><b>1.5</b> More Skills</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="r-fundamentals.html"><a href="r-fundamentals.html"><i class="fa fa-check"></i><b>2</b> R Fundamentals</a><ul>
+<li class="chapter" data-level="2.1" data-path="r-fundamentals.html"><a href="r-fundamentals.html#installing-r"><i class="fa fa-check"></i><b>2.1</b> Installing R</a></li>
+<li class="chapter" data-level="2.2" data-path="r-fundamentals.html"><a href="r-fundamentals.html#installing-rstudio"><i class="fa fa-check"></i><b>2.2</b> Installing RStudio</a></li>
+<li class="chapter" data-level="2.3" data-path="r-fundamentals.html"><a href="r-fundamentals.html#the-interface-of-rstudio"><i class="fa fa-check"></i><b>2.3</b> The Interface of Rstudio</a></li>
+<li class="chapter" data-level="2.4" data-path="r-fundamentals.html"><a href="r-fundamentals.html#assignment"><i class="fa fa-check"></i><b>2.4</b> Assignment</a></li>
+<li class="chapter" data-level="2.5" data-path="r-fundamentals.html"><a href="r-fundamentals.html#data-structure"><i class="fa fa-check"></i><b>2.5</b> Data Structure</a></li>
+<li class="chapter" data-level="2.6" data-path="r-fundamentals.html"><a href="r-fundamentals.html#function"><i class="fa fa-check"></i><b>2.6</b> Function</a></li>
+<li class="chapter" data-level="2.7" data-path="r-fundamentals.html"><a href="r-fundamentals.html#script"><i class="fa fa-check"></i><b>2.7</b> Script</a></li>
+<li class="chapter" data-level="2.8" data-path="r-fundamentals.html"><a href="r-fundamentals.html#library"><i class="fa fa-check"></i><b>2.8</b> Library</a></li>
+<li class="chapter" data-level="2.9" data-path="r-fundamentals.html"><a href="r-fundamentals.html#setting"><i class="fa fa-check"></i><b>2.9</b> Setting</a></li>
+<li class="chapter" data-level="2.10" data-path="r-fundamentals.html"><a href="r-fundamentals.html#seeking-help"><i class="fa fa-check"></i><b>2.10</b> Seeking Help</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="subsetting.html"><a href="subsetting.html"><i class="fa fa-check"></i><b>3</b> Subsetting</a><ul>
+<li class="chapter" data-level="3.1" data-path="subsetting.html"><a href="subsetting.html#vecotr"><i class="fa fa-check"></i><b>3.1</b> Vecotr</a></li>
+<li class="chapter" data-level="3.2" data-path="subsetting.html"><a href="subsetting.html#list"><i class="fa fa-check"></i><b>3.2</b> List</a></li>
+<li class="chapter" data-level="3.3" data-path="subsetting.html"><a href="subsetting.html#data-frame"><i class="fa fa-check"></i><b>3.3</b> Data Frame</a></li>
+<li class="chapter" data-level="3.4" data-path="subsetting.html"><a href="subsetting.html#tibble"><i class="fa fa-check"></i><b>3.4</b> Tibble</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>4</b> Data Visualization</a><ul>
+<li class="chapter" data-level="4.1" data-path="data-visualization.html"><a href="data-visualization.html#why-visualization"><i class="fa fa-check"></i><b>4.1</b> Why Visualization?</a></li>
+<li class="chapter" data-level="4.2" data-path="data-visualization.html"><a href="data-visualization.html#ggplot2"><i class="fa fa-check"></i><b>4.2</b> <code>ggplot2</code></a></li>
+<li class="chapter" data-level="4.3" data-path="data-visualization.html"><a href="data-visualization.html#one-variable-graph"><i class="fa fa-check"></i><b>4.3</b> One-variable Graph</a></li>
+<li class="chapter" data-level="4.4" data-path="data-visualization.html"><a href="data-visualization.html#two-variable-graph"><i class="fa fa-check"></i><b>4.4</b> Two-variable Graph</a></li>
+<li class="chapter" data-level="4.5" data-path="data-visualization.html"><a href="data-visualization.html#adding-other-aesthetic-features"><i class="fa fa-check"></i><b>4.5</b> Adding Other Aesthetic Features</a></li>
+<li class="chapter" data-level="4.6" data-path="data-visualization.html"><a href="data-visualization.html#saving-plots"><i class="fa fa-check"></i><b>4.6</b> Saving Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="data-manipulation.html"><a href="data-manipulation.html"><i class="fa fa-check"></i><b>5</b> Data Manipulation</a><ul>
+<li class="chapter" data-level="5.1" data-path="data-manipulation.html"><a href="data-manipulation.html#dataset"><i class="fa fa-check"></i><b>5.1</b> Dataset</a></li>
+<li class="chapter" data-level="5.2" data-path="data-manipulation.html"><a href="data-manipulation.html#rename"><i class="fa fa-check"></i><b>5.2</b> <code>rename()</code></a></li>
+<li class="chapter" data-level="5.3" data-path="data-manipulation.html"><a href="data-manipulation.html#pipe"><i class="fa fa-check"></i><b>5.3</b> Pipe <code>%&gt;%</code></a></li>
+<li class="chapter" data-level="5.4" data-path="data-manipulation.html"><a href="data-manipulation.html#mutate"><i class="fa fa-check"></i><b>5.4</b> <code>mutate()</code></a></li>
+<li class="chapter" data-level="5.5" data-path="data-manipulation.html"><a href="data-manipulation.html#select"><i class="fa fa-check"></i><b>5.5</b> <code>select()</code></a></li>
+<li class="chapter" data-level="5.6" data-path="data-manipulation.html"><a href="data-manipulation.html#filter"><i class="fa fa-check"></i><b>5.6</b> <code>filter()</code></a></li>
+<li class="chapter" data-level="5.7" data-path="data-manipulation.html"><a href="data-manipulation.html#arrange"><i class="fa fa-check"></i><b>5.7</b> <code>arrange()</code></a></li>
+<li class="chapter" data-level="5.8" data-path="data-manipulation.html"><a href="data-manipulation.html#group_by-and-summarize"><i class="fa fa-check"></i><b>5.8</b> <code>group_by()</code> and <code>summarize()</code></a></li>
+<li class="chapter" data-level="5.9" data-path="data-manipulation.html"><a href="data-manipulation.html#left_join"><i class="fa fa-check"></i><b>5.9</b> <code>left_join()</code></a></li>
+<li class="chapter" data-level="5.10" data-path="data-manipulation.html"><a href="data-manipulation.html#exerceises"><i class="fa fa-check"></i><b>5.10</b> Exerceises</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="data-import.html"><a href="data-import.html"><i class="fa fa-check"></i><b>6</b> Data Import</a><ul>
+<li class="chapter" data-level="6.1" data-path="data-import.html"><a href="data-import.html#readlines"><i class="fa fa-check"></i><b>6.1</b> <code>readLines()</code></a></li>
+<li class="chapter" data-level="6.2" data-path="data-import.html"><a href="data-import.html#read_csv"><i class="fa fa-check"></i><b>6.2</b> <code>read_csv()</code></a></li>
+<li class="chapter" data-level="6.3" data-path="data-import.html"><a href="data-import.html#structured-data-xml"><i class="fa fa-check"></i><b>6.3</b> Structured Data: XML</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="string-manipulation.html"><a href="string-manipulation.html"><i class="fa fa-check"></i><b>7</b> String Manipulation</a><ul>
+<li class="chapter" data-level="7.1" data-path="string-manipulation.html"><a href="string-manipulation.html#what-is-regular-expression"><i class="fa fa-check"></i><b>7.1</b> What is Regular Expression?</a></li>
+<li class="chapter" data-level="7.2" data-path="string-manipulation.html"><a href="string-manipulation.html#string-basics"><i class="fa fa-check"></i><b>7.2</b> String Basics</a></li>
+<li class="chapter" data-level="7.3" data-path="string-manipulation.html"><a href="string-manipulation.html#regular-expression-grammar"><i class="fa fa-check"></i><b>7.3</b> Regular Expression Grammar</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="string-manipulation.html"><a href="string-manipulation.html#metacharacters"><i class="fa fa-check"></i><b>7.3.1</b> Metacharacters</a></li>
+<li class="chapter" data-level="7.3.2" data-path="string-manipulation.html"><a href="string-manipulation.html#anchors"><i class="fa fa-check"></i><b>7.3.2</b> Anchors</a></li>
+<li class="chapter" data-level="7.3.3" data-path="string-manipulation.html"><a href="string-manipulation.html#character-set"><i class="fa fa-check"></i><b>7.3.3</b> Character Set</a></li>
+<li class="chapter" data-level="7.3.4" data-path="string-manipulation.html"><a href="string-manipulation.html#alternatives"><i class="fa fa-check"></i><b>7.3.4</b> Alternatives</a></li>
+<li class="chapter" data-level="7.3.5" data-path="string-manipulation.html"><a href="string-manipulation.html#quantifiers"><i class="fa fa-check"></i><b>7.3.5</b> Quantifiers</a></li>
+<li class="chapter" data-level="7.3.6" data-path="string-manipulation.html"><a href="string-manipulation.html#greedy-vs.non-greedy-match"><i class="fa fa-check"></i><b>7.3.6</b> Greedy vs. Non-greedy match</a></li>
+<li class="chapter" data-level="7.3.7" data-path="string-manipulation.html"><a href="string-manipulation.html#group-and-back-reference"><i class="fa fa-check"></i><b>7.3.7</b> Group and Back-reference</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="string-manipulation.html"><a href="string-manipulation.html#pattern-matching"><i class="fa fa-check"></i><b>7.4</b> Pattern Matching</a></li>
+<li class="chapter" data-level="7.5" data-path="string-manipulation.html"><a href="string-manipulation.html#advanced-pattern-matching-look-ahead-and-behind"><i class="fa fa-check"></i><b>7.5</b> Advanced Pattern Matching: Look Ahead and Behind</a></li>
+<li class="chapter" data-level="7.6" data-path="string-manipulation.html"><a href="string-manipulation.html#practical-cases"><i class="fa fa-check"></i><b>7.6</b> Practical Cases</a><ul>
+<li class="chapter" data-level="7.6.1" data-path="string-manipulation.html"><a href="string-manipulation.html#case-1"><i class="fa fa-check"></i><b>7.6.1</b> Case 1</a></li>
+<li class="chapter" data-level="7.6.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-2"><i class="fa fa-check"></i><b>7.6.2</b> Case 2</a></li>
+<li class="chapter" data-level="7.6.3" data-path="string-manipulation.html"><a href="string-manipulation.html#case-3"><i class="fa fa-check"></i><b>7.6.3</b> Case 3</a></li>
+<li class="chapter" data-level="7.6.4" data-path="string-manipulation.html"><a href="string-manipulation.html#case-4"><i class="fa fa-check"></i><b>7.6.4</b> Case 4</a></li>
+<li class="chapter" data-level="7.6.5" data-path="string-manipulation.html"><a href="string-manipulation.html#case-5"><i class="fa fa-check"></i><b>7.6.5</b> Case 5</a></li>
+<li class="chapter" data-level="7.6.6" data-path="string-manipulation.html"><a href="string-manipulation.html#case6"><i class="fa fa-check"></i><b>7.6.6</b> Case 6</a></li>
+<li class="chapter" data-level="7.6.7" data-path="string-manipulation.html"><a href="string-manipulation.html#case-7"><i class="fa fa-check"></i><b>7.6.7</b> Case 7</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="iteration.html"><a href="iteration.html"><i class="fa fa-check"></i><b>8</b> Iteration</a><ul>
+<li class="chapter" data-level="8.1" data-path="iteration.html"><a href="iteration.html#code-duplication"><i class="fa fa-check"></i><b>8.1</b> Code Duplication</a></li>
+<li class="chapter" data-level="8.2" data-path="iteration.html"><a href="iteration.html#vector-vs.-list-in-r"><i class="fa fa-check"></i><b>8.2</b> <code>vector</code> vs. <code>list</code> in <code>R</code></a></li>
+<li class="chapter" data-level="8.3" data-path="iteration.html"><a href="iteration.html#iteration-1"><i class="fa fa-check"></i><b>8.3</b> Iteration</a></li>
+<li class="chapter" data-level="8.4" data-path="iteration.html"><a href="iteration.html#purr"><i class="fa fa-check"></i><b>8.4</b> <code>purr</code></a></li>
+<li class="chapter" data-level="8.5" data-path="iteration.html"><a href="iteration.html#writing-own-functions"><i class="fa fa-check"></i><b>8.5</b> Writing Own Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html"><i class="fa fa-check"></i><b>9</b> Data Scientest First Step</a><ul>
+<li class="chapter" data-level="9.1" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#nobel-laureates-dataset"><i class="fa fa-check"></i><b>9.1</b> Nobel Laureates Dataset</a></li>
+<li class="chapter" data-level="9.2" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#before-we-start"><i class="fa fa-check"></i><b>9.2</b> Before we start</a></li>
+<li class="chapter" data-level="9.3" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#data-completeness-na"><i class="fa fa-check"></i><b>9.3</b> Data Completeness <code>NA</code></a></li>
+<li class="chapter" data-level="9.4" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#hypotheses"><i class="fa fa-check"></i><b>9.4</b> Hypotheses</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#how-many-laureates-were-there-in-different-discplines"><i class="fa fa-check"></i><b>9.4.1</b> How many laureates were there in different discplines?</a></li>
+<li class="chapter" data-level="9.4.2" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#chinese-laureates"><i class="fa fa-check"></i><b>9.4.2</b> Chinese Laureates</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#at-what-age-did-these-people-receive-the-prizes"><i class="fa fa-check"></i><b>9.5</b> At what age did these people receive the prizes?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://web.ntnu.edu.tw/~alvinchen" target ="blank">Alvin Chen </a></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">ENC2055: Introduction to Programming Languages for Linguistic Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="subsetting" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Subsetting</h1>
+<p>Subsetting is very important. To subset is to select a particular subset of elements from a data structure (e.g., <code>vecotr</code>, <code>matrix</code>, <code>data.frame</code>, <code>list</code>).</p>
+<div id="vecotr" class="section level2">
+<h2><span class="header-section-number">3.1</span> Vecotr</h2>
+<p>As we have shown in Chapter <a href="r-fundamentals.html#r-fundamentals">2</a> <a href="r-fundamentals">R Fundamentals</a>, there are three types of primitive vectors in R:</p>
+<ul>
+<li>character vectors</li>
+<li>numeric vectors</li>
+<li>boolean vectors</li>
+</ul>
+<p>You can assess a particular subset of a vector by using<code>[ ]</code> right after the object name. Within the <code>[]</code>, you can make use of at least three types of indexes:</p>
+<ul>
+<li>numeric vector</li>
+</ul>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1">char.vec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;one&quot;</span>, <span class="st">&quot;two&quot;</span>, <span class="st">&quot;three&quot;</span>,<span class="st">&quot;four&quot;</span>, <span class="st">&quot;five&quot;</span>)</a>
+<a class="sourceLine" id="cb28-2" data-line-number="2">char.vec[<span class="dv">1</span>]</a></code></pre></div>
+<pre><code>## [1] &quot;one&quot;</code></pre>
+<p>You can also assess several elements of a vector by putting in several indices, <code>c()</code>, in the <code>[]</code>:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1">char.vec[<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>)]</a></code></pre></div>
+<pre><code>## [1] &quot;one&quot;  &quot;four&quot;</code></pre>
+<ul>
+<li>boolean vector</li>
+</ul>
+<p>You can also use a boolean vector as the index:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1">whether.to.extract &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb32-2" data-line-number="2">char.vec[whether.to.extract]</a></code></pre></div>
+<pre><code>## [1] &quot;one&quot;   &quot;three&quot;</code></pre>
+<ul>
+<li>negative numeric vector</li>
+</ul>
+<p>If you use negative numbers in the index <code>[]</code>, you will get a new vector printed on the console, with those indexed elements removed:</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1">char.vec[<span class="op">-</span><span class="dv">2</span>]</a></code></pre></div>
+<pre><code>## [1] &quot;one&quot;   &quot;three&quot; &quot;four&quot;  &quot;five&quot;</code></pre>
+<p>However, please note that the original vector is still the same in length:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1">char.vec</a></code></pre></div>
+<pre><code>## [1] &quot;one&quot;   &quot;two&quot;   &quot;three&quot; &quot;four&quot;  &quot;five&quot;</code></pre>
+<p>If you want to save the shortened vector, you can either (a) assign the shortened vector to a new object name or (b) assign the shortened vector to the same object name:</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1">char.vec.short &lt;-<span class="st"> </span>char.vec[<span class="op">-</span><span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb38-2" data-line-number="2">char.vec.short</a></code></pre></div>
+<pre><code>## [1] &quot;one&quot;   &quot;three&quot; &quot;four&quot;  &quot;five&quot;</code></pre>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1">char.vec</a></code></pre></div>
+<pre><code>## [1] &quot;one&quot;   &quot;two&quot;   &quot;three&quot; &quot;four&quot;  &quot;five&quot;</code></pre>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1">char.vec &lt;-<span class="st"> </span>char.vec[<span class="op">-</span><span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb42-2" data-line-number="2">char.vec</a></code></pre></div>
+<pre><code>## [1] &quot;one&quot;   &quot;three&quot; &quot;four&quot;  &quot;five&quot;</code></pre>
+<div class="info">
+<p>
+For the two alternatives, which one would be better? Why?
+</p>
+</div>
+</div>
+<div id="list" class="section level2">
+<h2><span class="header-section-number">3.2</span> List</h2>
+<p>A <code>List</code> is like a vector, which is a one-dimensional data structure. However, the main difference is that a <code>List</code> cna include a series of objects of <strong>different classess</strong>:</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="co"># A list consists of (i) numeric vector, (ii) character vector, (iii) boolean vector</span></a>
+<a class="sourceLine" id="cb44-2" data-line-number="2">list.example &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">&quot;one&quot;</span> =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>),</a>
+<a class="sourceLine" id="cb44-3" data-line-number="3">                     <span class="st">&quot;two&quot;</span> =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Joe&quot;</span>, <span class="st">&quot;Mary&quot;</span>, <span class="st">&quot;John&quot;</span>,<span class="st">&quot;Angela&quot;</span>),</a>
+<a class="sourceLine" id="cb44-4" data-line-number="4">                     <span class="st">&quot;three&quot;</span> =<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>))</a>
+<a class="sourceLine" id="cb44-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb44-6" data-line-number="6">list.example</a></code></pre></div>
+<pre><code>## $one
+## [1] 1 2 3
+## 
+## $two
+## [1] &quot;Joe&quot;    &quot;Mary&quot;   &quot;John&quot;   &quot;Angela&quot;
+## 
+## $three
+## [1] TRUE TRUE</code></pre>
+<p>Please note that not only the class of each object in the <code>List</code> does not have to be the same; the length of each object may also vary.</p>
+<p>You can subset a <code>List</code> in two ways:</p>
+<ul>
+<li><code>[</code>: This always returns a <code>List</code> back</li>
+<li><code>[[</code>: This returns the object of the <code>List</code> element, which is <strong>NOT NECESSARILY</strong> a <code>List</code></li>
+</ul>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" data-line-number="1">list.example[<span class="dv">1</span>]</a></code></pre></div>
+<pre><code>## $one
+## [1] 1 2 3</code></pre>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" data-line-number="1">list.example[[<span class="dv">1</span>]]</a></code></pre></div>
+<pre><code>## [1] 1 2 3</code></pre>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" data-line-number="1">list.example[[<span class="st">&quot;one&quot;</span>]]</a></code></pre></div>
+<pre><code>## [1] 1 2 3</code></pre>
+<div class="info">
+<p>
+Please try the following codes but before you try them on the R console, could you first predict the outputs?
+</p>
+</div>
+<pre><code>  ind &lt;- c(&quot;one&quot;, &quot;three&quot;)
+  list.example[ind]
+  list.example[[ind]]
+</code></pre>
+</div>
+<div id="data-frame" class="section level2">
+<h2><span class="header-section-number">3.3</span> Data Frame</h2>
+<p><code>data.frame</code> is the most frequently used object that you will work with in data analysis. This is a typical two-dimensional spreadsheet-like table. Normally, the rows are the subjects or tokens you are analyzing; the columns are the variables or factors you are interested in.</p>
+<p>You can also use <code>[,]</code> to subset a data frame. The indexes in <code>[,]</code> are Row-by-Column.</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" data-line-number="1">ex_df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</a>
+<a class="sourceLine" id="cb53-2" data-line-number="2">  <span class="dt">WORD =</span> <span class="kw">c</span>(<span class="st">&quot;the&quot;</span>, <span class="st">&quot;boy&quot;</span>, <span class="st">&quot;you&quot;</span>,<span class="st">&quot;him&quot;</span>),</a>
+<a class="sourceLine" id="cb53-3" data-line-number="3">  <span class="dt">POS =</span> <span class="kw">c</span>(<span class="st">&quot;ART&quot;</span>,<span class="st">&quot;N&quot;</span>,<span class="st">&quot;PRO&quot;</span>,<span class="st">&quot;PRO&quot;</span>),</a>
+<a class="sourceLine" id="cb53-4" data-line-number="4">  <span class="dt">FREQ =</span> <span class="kw">c</span>(<span class="dv">1104</span>,<span class="dv">35</span>, <span class="dv">104</span>, <span class="dv">34</span>)</a>
+<a class="sourceLine" id="cb53-5" data-line-number="5">)</a>
+<a class="sourceLine" id="cb53-6" data-line-number="6">ex_df</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["WORD"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["POS"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["FREQ"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"the","2":"ART","3":"1104"},{"1":"boy","2":"N","3":"35"},{"1":"you","2":"PRO","3":"104"},{"1":"him","2":"PRO","3":"34"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+WORD
+</th>
+<th style="text-align:left;">
+POS
+</th>
+<th style="text-align:right;">
+FREQ
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+the
+</td>
+<td style="text-align:left;">
+ART
+</td>
+<td style="text-align:right;">
+1104
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+boy
+</td>
+<td style="text-align:left;">
+N
+</td>
+<td style="text-align:right;">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+you
+</td>
+<td style="text-align:left;">
+PRO
+</td>
+<td style="text-align:right;">
+104
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+him
+</td>
+<td style="text-align:left;">
+PRO
+</td>
+<td style="text-align:right;">
+34
+</td>
+</tr>
+</tbody>
+</table>
+<p>You can subset a particular row of the data frame:</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" data-line-number="1">ex_df[<span class="dv">1</span>,]</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["WORD"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["POS"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["FREQ"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"the","2":"ART","3":"1104","_rn_":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" data-line-number="1">ex_df[<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>),]</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["WORD"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["POS"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["FREQ"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"the","2":"ART","3":"1104","_rn_":"1"},{"1":"you","2":"PRO","3":"104","_rn_":"3"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>You can subset a particular column of the data frame:</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" data-line-number="1">ex_df[,<span class="dv">1</span>]</a></code></pre></div>
+<pre><code>## [1] the boy you him
+## Levels: boy him the you</code></pre>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" data-line-number="1">ex_df[,<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)]</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["WORD"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["FREQ"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"the","2":"1104"},{"1":"boy","2":"35"},{"1":"you","2":"104"},{"1":"him","2":"34"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" data-line-number="1">ex_df[,<span class="kw">c</span>(<span class="st">&quot;WORD&quot;</span>,<span class="st">&quot;FREQ&quot;</span>)]</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["WORD"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["FREQ"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"the","2":"1104"},{"1":"boy","2":"35"},{"1":"you","2":"104"},{"1":"him","2":"34"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<div class="info">
+<p>
+Please compare the following two ways of accessing a column from the data frame. Can you tell the differences in the returned results?
+</p>
+</div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" data-line-number="1">ex_df[, <span class="kw">c</span>(<span class="st">&quot;FREQ&quot;</span>)]</a>
+<a class="sourceLine" id="cb60-2" data-line-number="2">ex_df[, <span class="kw">c</span>(<span class="st">&quot;FREQ&quot;</span>), drop =<span class="st"> </span><span class="ot">FALSE</span>]</a></code></pre></div>
+</div>
+<div id="tibble" class="section level2">
+<h2><span class="header-section-number">3.4</span> Tibble</h2>
+<p><code>tibble</code> is a new data structure with lots of <a href="https://tibble.tidyverse.org/">advantages</a>. For the moment, we treat <code>tibble</code> and <code>data.frame</code> as the same, with the former being an augmented version of the latter. All functions that work of a <code>data.frame</code> should be compatible with a <code>tibble</code>. Now the <code>tibble</code> is the major structure that R users work with all the time. If you are new to tibbles, the best place to start is the tibbles chapter in <a href="https://r4ds.had.co.nz/tibbles.html">R for data science</a>.</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" data-line-number="1"><span class="kw">require</span>(tibble)</a></code></pre></div>
+<pre><code>## Loading required package: tibble</code></pre>
+<pre><code>## Warning: package &#39;tibble&#39; was built under R version 3.5.2</code></pre>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" data-line-number="1">ex_tb &lt;-<span class="st"> </span>tibble<span class="op">::</span><span class="kw">tibble</span>(</a>
+<a class="sourceLine" id="cb64-2" data-line-number="2">  <span class="dt">WORD =</span> <span class="kw">c</span>(<span class="st">&quot;the&quot;</span>, <span class="st">&quot;boy&quot;</span>, <span class="st">&quot;you&quot;</span>,<span class="st">&quot;him&quot;</span>),</a>
+<a class="sourceLine" id="cb64-3" data-line-number="3">  <span class="dt">POS =</span> <span class="kw">c</span>(<span class="st">&quot;ART&quot;</span>,<span class="st">&quot;N&quot;</span>,<span class="st">&quot;PRO&quot;</span>,<span class="st">&quot;PRO&quot;</span>),</a>
+<a class="sourceLine" id="cb64-4" data-line-number="4">  <span class="dt">FREQ =</span> <span class="kw">c</span>(<span class="dv">1104</span>,<span class="dv">35</span>, <span class="dv">104</span>, <span class="dv">34</span>))</a>
+<a class="sourceLine" id="cb64-5" data-line-number="5">ex_tb</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["WORD"],"name":[1],"type":["chr"],"align":["left"]},{"label":["POS"],"name":[2],"type":["chr"],"align":["left"]},{"label":["FREQ"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"the","2":"ART","3":"1104"},{"1":"boy","2":"N","3":"35"},{"1":"you","2":"PRO","3":"104"},{"1":"him","2":"PRO","3":"34"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>You can subset a <code>tibble</code> in exactly the same ways as you work with a <code>data.frame</code>:</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" data-line-number="1">ex_tb[<span class="dv">1</span>,]</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["WORD"],"name":[1],"type":["chr"],"align":["left"]},{"label":["POS"],"name":[2],"type":["chr"],"align":["left"]},{"label":["FREQ"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"the","2":"ART","3":"1104"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" data-line-number="1">ex_tb[,<span class="dv">1</span>]</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["WORD"],"name":[1],"type":["chr"],"align":["left"]}],"data":[{"1":"the"},{"1":"boy"},{"1":"you"},{"1":"him"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" data-line-number="1">ex_tb[,<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>)]</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["WORD"],"name":[1],"type":["chr"],"align":["left"]},{"label":["POS"],"name":[2],"type":["chr"],"align":["left"]},{"label":["FREQ"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"the","2":"ART","3":"1104"},{"1":"boy","2":"N","3":"35"},{"1":"you","2":"PRO","3":"104"},{"1":"him","2":"PRO","3":"34"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<div class="info">
+<p>
+Please compare again the following codes and see if you can tell the major differences between tibble and data.frame?
+</p>
+</div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb68-1" data-line-number="1">ex_tb[,<span class="kw">c</span>(<span class="st">&quot;FREQ&quot;</span>)]</a>
+<a class="sourceLine" id="cb68-2" data-line-number="2">ex_df[,<span class="kw">c</span>(<span class="st">&quot;FREQ&quot;</span>)]</a></code></pre></div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="r-fundamentals.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-visualization.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 String Manipulation | ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
+  <meta name="description" content="ENC2055 Course material first edition" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 String Manipulation | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="ENC2055 Course material first edition" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 String Manipulation | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
+  
+  <meta name="twitter:description" content="ENC2055 Course material first edition" />
+  
+
+<meta name="author" content="Alvin Chen" />
+
+
+<meta name="date" content="2019-12-05" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="data-import.html"/>
+<link rel="next" href="iteration.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
+<script src="libs/str_view-binding-1.4.0/str_view.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="http://web.ntnu.edu.tw/~alvinchen/courses/ENC2055/"> <img src="images/alerts/home.svg" height="20" width ="20" style="display:inline"> Course Website </a></lo>
+<li><a href="./index.html"> <img src="images/alerts/book-solid.svg" height="20" width ="20" style="display:inline"> ENC 2055 Introduction to Programming Languages For Linguistic Analysis</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-objective"><i class="fa fa-check"></i>Course Objective</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#textbook"><i class="fa fa-check"></i>Textbook</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-website"><i class="fa fa-check"></i>Course Website</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-demo-data"><i class="fa fa-check"></i>Course Demo Data</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro-ds.html"><a href="intro-ds.html"><i class="fa fa-check"></i><b>1</b> Data Science and R</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro-ds.html"><a href="intro-ds.html#what-is-data-science"><i class="fa fa-check"></i><b>1.1</b> What is Data Science?</a></li>
+<li class="chapter" data-level="1.2" data-path="intro-ds.html"><a href="intro-ds.html#working-pipeline-for-data-science"><i class="fa fa-check"></i><b>1.2</b> Working Pipeline for Data Science</a></li>
+<li class="chapter" data-level="1.3" data-path="intro-ds.html"><a href="intro-ds.html#why-r"><i class="fa fa-check"></i><b>1.3</b> Why R?</a></li>
+<li class="chapter" data-level="1.4" data-path="intro-ds.html"><a href="intro-ds.html#tidyverse"><i class="fa fa-check"></i><b>1.4</b> <code>tidyverse</code></a></li>
+<li class="chapter" data-level="1.5" data-path="intro-ds.html"><a href="intro-ds.html#more-skills"><i class="fa fa-check"></i><b>1.5</b> More Skills</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="r-fundamentals.html"><a href="r-fundamentals.html"><i class="fa fa-check"></i><b>2</b> R Fundamentals</a><ul>
+<li class="chapter" data-level="2.1" data-path="r-fundamentals.html"><a href="r-fundamentals.html#installing-r"><i class="fa fa-check"></i><b>2.1</b> Installing R</a></li>
+<li class="chapter" data-level="2.2" data-path="r-fundamentals.html"><a href="r-fundamentals.html#installing-rstudio"><i class="fa fa-check"></i><b>2.2</b> Installing RStudio</a></li>
+<li class="chapter" data-level="2.3" data-path="r-fundamentals.html"><a href="r-fundamentals.html#the-interface-of-rstudio"><i class="fa fa-check"></i><b>2.3</b> The Interface of Rstudio</a></li>
+<li class="chapter" data-level="2.4" data-path="r-fundamentals.html"><a href="r-fundamentals.html#assignment"><i class="fa fa-check"></i><b>2.4</b> Assignment</a></li>
+<li class="chapter" data-level="2.5" data-path="r-fundamentals.html"><a href="r-fundamentals.html#data-structure"><i class="fa fa-check"></i><b>2.5</b> Data Structure</a></li>
+<li class="chapter" data-level="2.6" data-path="r-fundamentals.html"><a href="r-fundamentals.html#function"><i class="fa fa-check"></i><b>2.6</b> Function</a></li>
+<li class="chapter" data-level="2.7" data-path="r-fundamentals.html"><a href="r-fundamentals.html#script"><i class="fa fa-check"></i><b>2.7</b> Script</a></li>
+<li class="chapter" data-level="2.8" data-path="r-fundamentals.html"><a href="r-fundamentals.html#library"><i class="fa fa-check"></i><b>2.8</b> Library</a></li>
+<li class="chapter" data-level="2.9" data-path="r-fundamentals.html"><a href="r-fundamentals.html#setting"><i class="fa fa-check"></i><b>2.9</b> Setting</a></li>
+<li class="chapter" data-level="2.10" data-path="r-fundamentals.html"><a href="r-fundamentals.html#seeking-help"><i class="fa fa-check"></i><b>2.10</b> Seeking Help</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="subsetting.html"><a href="subsetting.html"><i class="fa fa-check"></i><b>3</b> Subsetting</a><ul>
+<li class="chapter" data-level="3.1" data-path="subsetting.html"><a href="subsetting.html#vecotr"><i class="fa fa-check"></i><b>3.1</b> Vecotr</a></li>
+<li class="chapter" data-level="3.2" data-path="subsetting.html"><a href="subsetting.html#list"><i class="fa fa-check"></i><b>3.2</b> List</a></li>
+<li class="chapter" data-level="3.3" data-path="subsetting.html"><a href="subsetting.html#data-frame"><i class="fa fa-check"></i><b>3.3</b> Data Frame</a></li>
+<li class="chapter" data-level="3.4" data-path="subsetting.html"><a href="subsetting.html#tibble"><i class="fa fa-check"></i><b>3.4</b> Tibble</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>4</b> Data Visualization</a><ul>
+<li class="chapter" data-level="4.1" data-path="data-visualization.html"><a href="data-visualization.html#why-visualization"><i class="fa fa-check"></i><b>4.1</b> Why Visualization?</a></li>
+<li class="chapter" data-level="4.2" data-path="data-visualization.html"><a href="data-visualization.html#ggplot2"><i class="fa fa-check"></i><b>4.2</b> <code>ggplot2</code></a></li>
+<li class="chapter" data-level="4.3" data-path="data-visualization.html"><a href="data-visualization.html#one-variable-graph"><i class="fa fa-check"></i><b>4.3</b> One-variable Graph</a></li>
+<li class="chapter" data-level="4.4" data-path="data-visualization.html"><a href="data-visualization.html#two-variable-graph"><i class="fa fa-check"></i><b>4.4</b> Two-variable Graph</a></li>
+<li class="chapter" data-level="4.5" data-path="data-visualization.html"><a href="data-visualization.html#adding-other-aesthetic-features"><i class="fa fa-check"></i><b>4.5</b> Adding Other Aesthetic Features</a></li>
+<li class="chapter" data-level="4.6" data-path="data-visualization.html"><a href="data-visualization.html#saving-plots"><i class="fa fa-check"></i><b>4.6</b> Saving Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="data-manipulation.html"><a href="data-manipulation.html"><i class="fa fa-check"></i><b>5</b> Data Manipulation</a><ul>
+<li class="chapter" data-level="5.1" data-path="data-manipulation.html"><a href="data-manipulation.html#dataset"><i class="fa fa-check"></i><b>5.1</b> Dataset</a></li>
+<li class="chapter" data-level="5.2" data-path="data-manipulation.html"><a href="data-manipulation.html#rename"><i class="fa fa-check"></i><b>5.2</b> <code>rename()</code></a></li>
+<li class="chapter" data-level="5.3" data-path="data-manipulation.html"><a href="data-manipulation.html#pipe"><i class="fa fa-check"></i><b>5.3</b> Pipe <code>%&gt;%</code></a></li>
+<li class="chapter" data-level="5.4" data-path="data-manipulation.html"><a href="data-manipulation.html#mutate"><i class="fa fa-check"></i><b>5.4</b> <code>mutate()</code></a></li>
+<li class="chapter" data-level="5.5" data-path="data-manipulation.html"><a href="data-manipulation.html#select"><i class="fa fa-check"></i><b>5.5</b> <code>select()</code></a></li>
+<li class="chapter" data-level="5.6" data-path="data-manipulation.html"><a href="data-manipulation.html#filter"><i class="fa fa-check"></i><b>5.6</b> <code>filter()</code></a></li>
+<li class="chapter" data-level="5.7" data-path="data-manipulation.html"><a href="data-manipulation.html#arrange"><i class="fa fa-check"></i><b>5.7</b> <code>arrange()</code></a></li>
+<li class="chapter" data-level="5.8" data-path="data-manipulation.html"><a href="data-manipulation.html#group_by-and-summarize"><i class="fa fa-check"></i><b>5.8</b> <code>group_by()</code> and <code>summarize()</code></a></li>
+<li class="chapter" data-level="5.9" data-path="data-manipulation.html"><a href="data-manipulation.html#left_join"><i class="fa fa-check"></i><b>5.9</b> <code>left_join()</code></a></li>
+<li class="chapter" data-level="5.10" data-path="data-manipulation.html"><a href="data-manipulation.html#exerceises"><i class="fa fa-check"></i><b>5.10</b> Exerceises</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="data-import.html"><a href="data-import.html"><i class="fa fa-check"></i><b>6</b> Data Import</a><ul>
+<li class="chapter" data-level="6.1" data-path="data-import.html"><a href="data-import.html#readlines"><i class="fa fa-check"></i><b>6.1</b> <code>readLines()</code></a></li>
+<li class="chapter" data-level="6.2" data-path="data-import.html"><a href="data-import.html#read_csv"><i class="fa fa-check"></i><b>6.2</b> <code>read_csv()</code></a></li>
+<li class="chapter" data-level="6.3" data-path="data-import.html"><a href="data-import.html#structured-data-xml"><i class="fa fa-check"></i><b>6.3</b> Structured Data: XML</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="string-manipulation.html"><a href="string-manipulation.html"><i class="fa fa-check"></i><b>7</b> String Manipulation</a><ul>
+<li class="chapter" data-level="7.1" data-path="string-manipulation.html"><a href="string-manipulation.html#what-is-regular-expression"><i class="fa fa-check"></i><b>7.1</b> What is Regular Expression?</a></li>
+<li class="chapter" data-level="7.2" data-path="string-manipulation.html"><a href="string-manipulation.html#string-basics"><i class="fa fa-check"></i><b>7.2</b> String Basics</a></li>
+<li class="chapter" data-level="7.3" data-path="string-manipulation.html"><a href="string-manipulation.html#regular-expression-grammar"><i class="fa fa-check"></i><b>7.3</b> Regular Expression Grammar</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="string-manipulation.html"><a href="string-manipulation.html#metacharacters"><i class="fa fa-check"></i><b>7.3.1</b> Metacharacters</a></li>
+<li class="chapter" data-level="7.3.2" data-path="string-manipulation.html"><a href="string-manipulation.html#anchors"><i class="fa fa-check"></i><b>7.3.2</b> Anchors</a></li>
+<li class="chapter" data-level="7.3.3" data-path="string-manipulation.html"><a href="string-manipulation.html#character-set"><i class="fa fa-check"></i><b>7.3.3</b> Character Set</a></li>
+<li class="chapter" data-level="7.3.4" data-path="string-manipulation.html"><a href="string-manipulation.html#alternatives"><i class="fa fa-check"></i><b>7.3.4</b> Alternatives</a></li>
+<li class="chapter" data-level="7.3.5" data-path="string-manipulation.html"><a href="string-manipulation.html#quantifiers"><i class="fa fa-check"></i><b>7.3.5</b> Quantifiers</a></li>
+<li class="chapter" data-level="7.3.6" data-path="string-manipulation.html"><a href="string-manipulation.html#greedy-vs.non-greedy-match"><i class="fa fa-check"></i><b>7.3.6</b> Greedy vs. Non-greedy match</a></li>
+<li class="chapter" data-level="7.3.7" data-path="string-manipulation.html"><a href="string-manipulation.html#group-and-back-reference"><i class="fa fa-check"></i><b>7.3.7</b> Group and Back-reference</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="string-manipulation.html"><a href="string-manipulation.html#pattern-matching"><i class="fa fa-check"></i><b>7.4</b> Pattern Matching</a></li>
+<li class="chapter" data-level="7.5" data-path="string-manipulation.html"><a href="string-manipulation.html#advanced-pattern-matching-look-ahead-and-behind"><i class="fa fa-check"></i><b>7.5</b> Advanced Pattern Matching: Look Ahead and Behind</a></li>
+<li class="chapter" data-level="7.6" data-path="string-manipulation.html"><a href="string-manipulation.html#practical-cases"><i class="fa fa-check"></i><b>7.6</b> Practical Cases</a><ul>
+<li class="chapter" data-level="7.6.1" data-path="string-manipulation.html"><a href="string-manipulation.html#case-1"><i class="fa fa-check"></i><b>7.6.1</b> Case 1</a></li>
+<li class="chapter" data-level="7.6.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-2"><i class="fa fa-check"></i><b>7.6.2</b> Case 2</a></li>
+<li class="chapter" data-level="7.6.3" data-path="string-manipulation.html"><a href="string-manipulation.html#case-3"><i class="fa fa-check"></i><b>7.6.3</b> Case 3</a></li>
+<li class="chapter" data-level="7.6.4" data-path="string-manipulation.html"><a href="string-manipulation.html#case-4"><i class="fa fa-check"></i><b>7.6.4</b> Case 4</a></li>
+<li class="chapter" data-level="7.6.5" data-path="string-manipulation.html"><a href="string-manipulation.html#case-5"><i class="fa fa-check"></i><b>7.6.5</b> Case 5</a></li>
+<li class="chapter" data-level="7.6.6" data-path="string-manipulation.html"><a href="string-manipulation.html#case6"><i class="fa fa-check"></i><b>7.6.6</b> Case 6</a></li>
+<li class="chapter" data-level="7.6.7" data-path="string-manipulation.html"><a href="string-manipulation.html#case-7"><i class="fa fa-check"></i><b>7.6.7</b> Case 7</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="iteration.html"><a href="iteration.html"><i class="fa fa-check"></i><b>8</b> Iteration</a><ul>
+<li class="chapter" data-level="8.1" data-path="iteration.html"><a href="iteration.html#code-duplication"><i class="fa fa-check"></i><b>8.1</b> Code Duplication</a></li>
+<li class="chapter" data-level="8.2" data-path="iteration.html"><a href="iteration.html#vector-vs.-list-in-r"><i class="fa fa-check"></i><b>8.2</b> <code>vector</code> vs. <code>list</code> in <code>R</code></a></li>
+<li class="chapter" data-level="8.3" data-path="iteration.html"><a href="iteration.html#iteration-1"><i class="fa fa-check"></i><b>8.3</b> Iteration</a></li>
+<li class="chapter" data-level="8.4" data-path="iteration.html"><a href="iteration.html#purr"><i class="fa fa-check"></i><b>8.4</b> <code>purr</code></a></li>
+<li class="chapter" data-level="8.5" data-path="iteration.html"><a href="iteration.html#writing-own-functions"><i class="fa fa-check"></i><b>8.5</b> Writing Own Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html"><i class="fa fa-check"></i><b>9</b> Data Scientest First Step</a><ul>
+<li class="chapter" data-level="9.1" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#nobel-laureates-dataset"><i class="fa fa-check"></i><b>9.1</b> Nobel Laureates Dataset</a></li>
+<li class="chapter" data-level="9.2" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#before-we-start"><i class="fa fa-check"></i><b>9.2</b> Before we start</a></li>
+<li class="chapter" data-level="9.3" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#data-completeness-na"><i class="fa fa-check"></i><b>9.3</b> Data Completeness <code>NA</code></a></li>
+<li class="chapter" data-level="9.4" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#hypotheses"><i class="fa fa-check"></i><b>9.4</b> Hypotheses</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#how-many-laureates-were-there-in-different-discplines"><i class="fa fa-check"></i><b>9.4.1</b> How many laureates were there in different discplines?</a></li>
+<li class="chapter" data-level="9.4.2" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#chinese-laureates"><i class="fa fa-check"></i><b>9.4.2</b> Chinese Laureates</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#at-what-age-did-these-people-receive-the-prizes"><i class="fa fa-check"></i><b>9.5</b> At what age did these people receive the prizes?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://web.ntnu.edu.tw/~alvinchen" target ="blank">Alvin Chen </a></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">ENC2055: Introduction to Programming Languages for Linguistic Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="string-manipulation" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> String Manipulation</h1>
+<p><img src="images/hex-stringr.png" width="30%" /></p>
+<p>In this chapter, we will introduce some techniques relating to string manipulation.</p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb113-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a>
+<a class="sourceLine" id="cb113-2" data-line-number="2"><span class="kw">library</span>(stringr)</a></code></pre></div>
+<div id="what-is-regular-expression" class="section level2">
+<h2><span class="header-section-number">7.1</span> What is Regular Expression?</h2>
+<p><img src="images/regex.png" width="80%" /></p>
+<p>In text processing, we often do “find” and “replace” in our documents. I am sure that you do this very often in MS-Word or MS-Excel. Regular expression is a language, which allows us to create a textual pattern and use this pattern to match other strings with the same pattern for later processing. This idea of one-pattern-for-multiple-matches is the beauty of regular expression. Several advantages of regular expressions are self-evident:</p>
+<ul>
+<li>Complicated pattern matching
+<ul>
+<li>e-mail format checking, phone number checking</li>
+<li>reduplicated strings</li>
+<li>date format control</li>
+</ul></li>
+<li>Information extraction and text mining
+<ul>
+<li>extract texts according to a particular format</li>
+<li>Proper names, e-mails, phone numbers, etc.</li>
+</ul></li>
+</ul>
+</div>
+<div id="string-basics" class="section level2">
+<h2><span class="header-section-number">7.2</span> String Basics</h2>
+<p>There are three basic functions:</p>
+<ul>
+<li><code>str_length()</code>: get the length of the string (i.e., number of characters)</li>
+</ul>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb114-1" data-line-number="1">word_string &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;the&quot;</span>, <span class="st">&quot;word&quot;</span>, <span class="st">&quot;string&quot;</span>)</a>
+<a class="sourceLine" id="cb114-2" data-line-number="2">word_string <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb114-3" data-line-number="3"><span class="st">  </span>str_length</a></code></pre></div>
+<pre><code>## [1] 3 4 6</code></pre>
+<ul>
+<li><code>str_c()</code>: combine strings into a longer one</li>
+</ul>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb116-1" data-line-number="1"><span class="kw">str_c</span>(<span class="st">&quot;the&quot;</span>,<span class="st">&quot;word&quot;</span>,<span class="st">&quot;string&quot;</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;thewordstring&quot;</code></pre>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb118-1" data-line-number="1"><span class="kw">str_c</span>(<span class="st">&quot;the&quot;</span>,<span class="st">&quot;word&quot;</span>,<span class="st">&quot;string&quot;</span>,<span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;the_word_string&quot;</code></pre>
+<hr />
+<div class="danger">
+<p>
+Please note that the following code will generate a different result from the above. Can you tell the differences?
+</p>
+<p>
+How can you generate exactly the same results by using <code>str_c(word_string,…)</code>? Please check <code>?str_c</code>.
+</p>
+</div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb120-1" data-line-number="1"><span class="kw">str_c</span>(word_string, <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;the&quot;    &quot;word&quot;   &quot;string&quot;</code></pre>
+<hr />
+<ul>
+<li><code>str_sub()</code>: substract part of the string</li>
+</ul>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb122-1" data-line-number="1"><span class="kw">str_sub</span>(<span class="dt">string =</span> <span class="st">&quot;international&quot;</span>, <span class="dt">start =</span> <span class="dv">1</span>, <span class="dt">end =</span> <span class="dv">5</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;inter&quot;</code></pre>
+</div>
+<div id="regular-expression-grammar" class="section level2">
+<h2><span class="header-section-number">7.3</span> Regular Expression Grammar</h2>
+<p>Now let’s look at the grammar of regular expressions in more detail. In <code>stringr</code>, there is a very useful function, <code>str_view(STRING, PATTERN)</code>, which can show us the match of the pattern in the string in a visually intuitive way:</p>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb124-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>)</a>
+<a class="sourceLine" id="cb124-2" data-line-number="2"><span class="kw">str_view</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;an&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-2187b52f0f4928cd6951" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2187b52f0f4928cd6951">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>b<span class='match'>an<\/span>ana<\/li>\n  <li>pear<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="metacharacters" class="section level3">
+<h3><span class="header-section-number">7.3.1</span> Metacharacters</h3>
+<p><img src="images/regex-special-char.png" width="263" /><img src="images/regex-char.png" width="262" /></p>
+<p>In REGEX, <code>.</code> is a special character, referring to any character:</p>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb125-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>)</a>
+<a class="sourceLine" id="cb125-2" data-line-number="2"><span class="kw">str_view</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;.a.&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-c889a4b29b4c73d12457" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c889a4b29b4c73d12457">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li><span class='match'>ban<\/span>ana<\/li>\n  <li>p<span class='match'>ear<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>But what if you really want to match a period <code>.</code> sign in your string?</p>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb126-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>,<span class="st">&quot;pear&quot;</span>, <span class="st">&quot;orange. And&quot;</span>)</a>
+<a class="sourceLine" id="cb126-2" data-line-number="2"><span class="kw">str_view</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;.&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-7ab07fe5e42bd488c38d" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7ab07fe5e42bd488c38d">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span>pple<\/li>\n  <li><span class='match'>b<\/span>anana<\/li>\n  <li><span class='match'>p<\/span>ear<\/li>\n  <li><span class='match'>o<\/span>range. And<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb127-1" data-line-number="1"><span class="kw">str_view</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-cde8c23110f6c103267b" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-cde8c23110f6c103267b">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>banana<\/li>\n  <li>pear<\/li>\n  <li>orange<span class='match'>.<\/span> And<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>This leads us to the notion of escaping character <code>\</code>. In R, <code>\</code> is used if you want to tell R that the character after <code>\</code> should be treated literally, not metaphorically as a meta character. But why two slashes <code>\\</code>? It’s simple: because <code>\</code> itself is a meta character in R as well. We use it to escape quotes like <code>&quot;</code> and <code>'</code>.</p>
+<p>Therefore, the first backslash is needed to tell R that the second backslash is matched literally (because we need it to serve as an escape character in the regular expression).</p>
+</div>
+<div id="anchors" class="section level3">
+<h3><span class="header-section-number">7.3.2</span> Anchors</h3>
+<p><img src="images/regex-anchor.png" width="50%" /></p>
+<p>We can find a match anchored in a particular position.</p>
+<ul>
+<li><code>^</code>: The start of the string</li>
+</ul>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb128-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>)</a>
+<a class="sourceLine" id="cb128-2" data-line-number="2"><span class="kw">str_view</span>(x, <span class="st">&quot;^a&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-1088153dc933871fb4d7" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1088153dc933871fb4d7">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span>pple<\/li>\n  <li>banana<\/li>\n  <li>pear<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<ul>
+<li><code>$</code>: The end of the string</li>
+</ul>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb129-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>)</a>
+<a class="sourceLine" id="cb129-2" data-line-number="2"><span class="kw">str_view</span>(x, <span class="st">&quot;a$&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-311d9aa4a857f6f5d644" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-311d9aa4a857f6f5d644">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>banan<span class='match'>a<\/span><\/li>\n  <li>pear<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb130-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple pie&quot;</span>, <span class="st">&quot;apple&quot;</span>, <span class="st">&quot;apple cake&quot;</span>)</a>
+<a class="sourceLine" id="cb130-2" data-line-number="2"><span class="kw">str_view</span>(x, <span class="st">&quot;^apple$&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-a06a3b1f78c46f15fe5e" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a06a3b1f78c46f15fe5e">{"x":{"html":"<ul>\n  <li>apple pie<\/li>\n  <li><span class='match'>apple<\/span><\/li>\n  <li>apple cake<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="character-set" class="section level3">
+<h3><span class="header-section-number">7.3.3</span> Character Set</h3>
+<p><code>\\d</code>: matches any digit.
+<code>\\s</code>: matches any whitespace (e.g. space, tab, newline).
+<code>\\w</code>: matches any alphanumeric characters</p>
+<p><img src="images/regex-char-class.png" width="50%" /><img src="images/regex-char.png" width="50%" /></p>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb131-1" data-line-number="1">x&lt;-<span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>,<span class="st">&quot;apple123&quot;</span>,<span class="st">&quot;banana1&quot;</span>)</a>
+<a class="sourceLine" id="cb131-2" data-line-number="2"><span class="kw">str_view</span>(<span class="dt">string =</span> x , <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">d&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-152573428485d8b6efdf" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-152573428485d8b6efdf">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apple<span class='match'>1<\/span>23<\/li>\n  <li>banana<span class='match'>1<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb132-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;aeiouAEIOU1234_ .</span><span class="ch">\\</span><span class="st">$%-*()&quot;</span>)</a>
+<a class="sourceLine" id="cb132-2" data-line-number="2"><span class="kw">str_view_all</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">w&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-a7350949354d4e43ca38" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a7350949354d4e43ca38">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span><span class='match'>e<\/span><span class='match'>i<\/span><span class='match'>o<\/span><span class='match'>u<\/span><span class='match'>A<\/span><span class='match'>E<\/span><span class='match'>I<\/span><span class='match'>O<\/span><span class='match'>U<\/span><span class='match'>1<\/span><span class='match'>2<\/span><span class='match'>3<\/span><span class='match'>4<\/span><span class='match'>_<\/span> .\\$%-*()<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb133-1" data-line-number="1"><span class="co">#compare</span></a>
+<a class="sourceLine" id="cb133-2" data-line-number="2"><span class="kw">str_view_all</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;.&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-cb9dfc4c675964a1bc99" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-cb9dfc4c675964a1bc99">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span><span class='match'>e<\/span><span class='match'>i<\/span><span class='match'>o<\/span><span class='match'>u<\/span><span class='match'>A<\/span><span class='match'>E<\/span><span class='match'>I<\/span><span class='match'>O<\/span><span class='match'>U<\/span><span class='match'>1<\/span><span class='match'>2<\/span><span class='match'>3<\/span><span class='match'>4<\/span><span class='match'>_<\/span><span class='match'> <\/span><span class='match'>.<\/span><span class='match'>\\<\/span><span class='match'>$<\/span><span class='match'>%<\/span><span class='match'>-<\/span><span class='match'>*<\/span><span class='match'>(<\/span><span class='match'>)<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="alternatives" class="section level3">
+<h3><span class="header-section-number">7.3.4</span> Alternatives</h3>
+<ul>
+<li><code>[abc]</code>: matches a, b, or c.</li>
+<li><code>[^abc]</code>: matches anything except a, b, or c.</li>
+</ul>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb134-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;grey&quot;</span>, <span class="st">&quot;gray&quot;</span>)</a>
+<a class="sourceLine" id="cb134-2" data-line-number="2"><span class="kw">str_view</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;gr[ea]y&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-e626adb4f094d8d60523" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e626adb4f094d8d60523">{"x":{"html":"<ul>\n  <li><span class='match'>grey<\/span><\/li>\n  <li><span class='match'>gray<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="quantifiers" class="section level3">
+<h3><span class="header-section-number">7.3.5</span> Quantifiers</h3>
+<p>We can use quantifiers to quantifier the degrees of repetition of the quantified character (i.e., the char preceding the quantifier):</p>
+<ul>
+<li><code>?</code>: 0 or 1</li>
+<li><code>+</code>: 1 or more</li>
+<li><code>*</code>: 0 or more</li>
+</ul>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb135-1" data-line-number="1">x &lt;-<span class="st"> &quot;Roman numerals: MDCCCLXXXVIII&quot;</span></a>
+<a class="sourceLine" id="cb135-2" data-line-number="2"><span class="kw">str_view</span>(x, <span class="st">&quot;CC?&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-da46394aebf4bad2f15c" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-da46394aebf4bad2f15c">{"x":{"html":"<ul>\n  <li>Roman numerals: MD<span class='match'>CC<\/span>CLXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb136-1" data-line-number="1"><span class="kw">str_view</span>(x, <span class="st">&quot;X+&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-56d2d0a403fad3e037e1" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-56d2d0a403fad3e037e1">{"x":{"html":"<ul>\n  <li>Roman numerals: MDCCCL<span class='match'>XXX<\/span>VIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>Specify exactly the number of repetition:</p>
+<ul>
+<li><code>{n}</code>: exactly n</li>
+<li><code>{n,}</code>: n or more</li>
+<li><code>{,m}</code>: at most m</li>
+<li><code>{n,m}</code>: between n and m</li>
+</ul>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb137-1" data-line-number="1">x &lt;-<span class="st"> &quot;Roman numerals: MDCCCLXXXVIII&quot;</span></a>
+<a class="sourceLine" id="cb137-2" data-line-number="2"><span class="kw">str_view</span>(x, <span class="st">&quot;C{2}&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-1eb732246966ad3465f5" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1eb732246966ad3465f5">{"x":{"html":"<ul>\n  <li>Roman numerals: MD<span class='match'>CC<\/span>CLXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb138-1" data-line-number="1"><span class="kw">str_view</span>(x, <span class="st">&quot;C{2,}&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-1d9f77f4bcafcdc49fb1" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1d9f77f4bcafcdc49fb1">{"x":{"html":"<ul>\n  <li>Roman numerals: MD<span class='match'>CCC<\/span>LXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb139-1" data-line-number="1"><span class="kw">str_view</span>(x, <span class="st">&quot;C{2,3}&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-35d64e2df3aec6bed6d5" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-35d64e2df3aec6bed6d5">{"x":{"html":"<ul>\n  <li>Roman numerals: MD<span class='match'>CCC<\/span>LXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="greedy-vs.non-greedy-match" class="section level3">
+<h3><span class="header-section-number">7.3.6</span> Greedy vs. Non-greedy match</h3>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb140-1" data-line-number="1">x &lt;-<span class="st"> &quot;Roman numerals: MDCCCLXXXVIII&quot;</span></a>
+<a class="sourceLine" id="cb140-2" data-line-number="2"><span class="kw">str_view</span>(x, <span class="st">&quot;CLX+&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-347fce11881aeee7c256" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-347fce11881aeee7c256">{"x":{"html":"<ul>\n  <li>Roman numerals: MDCC<span class='match'>CLXXX<\/span>VIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb141-1" data-line-number="1"><span class="kw">str_view</span>(x, <span class="st">&quot;CLX+?&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-26a6c023822fc8d3a01a" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-26a6c023822fc8d3a01a">{"x":{"html":"<ul>\n  <li>Roman numerals: MDCC<span class='match'>CLX<\/span>XXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="group-and-back-reference" class="section level3">
+<h3><span class="header-section-number">7.3.7</span> Group and Back-reference</h3>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb142-1" data-line-number="1">x &lt;-<span class="st"> </span>fruit <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">head</span>(<span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb142-2" data-line-number="2">x</a></code></pre></div>
+<pre><code>##  [1] &quot;apple&quot;        &quot;apricot&quot;      &quot;avocado&quot;      &quot;banana&quot;       &quot;bell pepper&quot; 
+##  [6] &quot;bilberry&quot;     &quot;blackberry&quot;   &quot;blackcurrant&quot; &quot;blood orange&quot; &quot;blueberry&quot;</code></pre>
+<p>Now if you want to extract English fruit words which has two same letter repeating twice in a row (e.g, <em>apple</em>, <em>bell pepper</em>). How would you create your regular expression pattern?</p>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb144-1" data-line-number="1"><span class="kw">str_view</span>(x, <span class="st">&quot;.{2}&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-addbd86fbbaffda4350f" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-addbd86fbbaffda4350f">{"x":{"html":"<ul>\n  <li><span class='match'>ap<\/span>ple<\/li>\n  <li><span class='match'>ap<\/span>ricot<\/li>\n  <li><span class='match'>av<\/span>ocado<\/li>\n  <li><span class='match'>ba<\/span>nana<\/li>\n  <li><span class='match'>be<\/span>ll pepper<\/li>\n  <li><span class='match'>bi<\/span>lberry<\/li>\n  <li><span class='match'>bl<\/span>ackberry<\/li>\n  <li><span class='match'>bl<\/span>ackcurrant<\/li>\n  <li><span class='match'>bl<\/span>ood orange<\/li>\n  <li><span class='match'>bl<\/span>ueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>The results are not what you have expected. The trick is that when you use <code>.</code> to match any character, the quantifier does not help much as any character that repeats would fit the pattern. We need a new strategy to ask the regex engine to <strong>remember</strong> the matched character and quantify the number of occurrences of the <strong>remembered character</strong>:</p>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb145-1" data-line-number="1"><span class="kw">str_view</span>(x, <span class="st">&quot;(.)</span><span class="ch">\\</span><span class="st">1&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-575a197fc1921f1de60d" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-575a197fc1921f1de60d">{"x":{"html":"<ul>\n  <li>a<span class='match'>pp<\/span>le<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>banana<\/li>\n  <li>be<span class='match'>ll<\/span> pepper<\/li>\n  <li>bilbe<span class='match'>rr<\/span>y<\/li>\n  <li>blackbe<span class='match'>rr<\/span>y<\/li>\n  <li>blackcu<span class='match'>rr<\/span>ant<\/li>\n  <li>bl<span class='match'>oo<\/span>d orange<\/li>\n  <li>bluebe<span class='match'>rr<\/span>y<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<ul>
+<li><code>.</code>: matches any character</li>
+<li><code>(.)</code>: the parenthesis would label the matched as a group. Internally, the regex engine numbers all groups serially from left to right</li>
+<li><code>\\1</code>: back-reference the first group. The same logic applies to the second group of the regular expression (i.e., <code>\\2</code>)</li>
+</ul>
+<p>So <code>(.)\\1</code> means that when the engine matches a character (which can be any character), there has to be another same character following the former.</p>
+<hr />
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-125" class="exercise"><strong>Exercise 7.1  </strong></span>How do you match <code>abab</code> pattern, such as “banana”?
+</div>
+
+<div id="htmlwidget-bc57dfed80a526679491" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bc57dfed80a526679491">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>b<span class='match'>anan<\/span>a<\/li>\n  <li>bell pepper<\/li>\n  <li>bilberry<\/li>\n  <li>blackberry<\/li>\n  <li>blackcurrant<\/li>\n  <li>blood orange<\/li>\n  <li>blueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-127" class="exercise"><strong>Exercise 7.2  </strong></span>How do you match <code>abba</code> pattern, such as “pepper”?
+</div>
+
+<div id="htmlwidget-d0f444f4bcb26f915a45" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d0f444f4bcb26f915a45">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>banana<\/li>\n  <li>bell p<span class='match'>eppe<\/span>r<\/li>\n  <li>bilberry<\/li>\n  <li>blackberry<\/li>\n  <li>blackcurrant<\/li>\n  <li>blood orange<\/li>\n  <li>blueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<hr />
+</div>
+</div>
+<div id="pattern-matching" class="section level2">
+<h2><span class="header-section-number">7.4</span> Pattern Matching</h2>
+<p><img src="images/regex-illustration.png" width="100%" /></p>
+<p>This section will show you examples of how we can make use of regular expresions to process strings. In <code>stringr</code>, there are a list of verbs that we use with regular expressions:</p>
+<p><img src="images/stringr-verb.png" width="90%" /></p>
+<ul>
+<li><code>str_detect(STRING, PATTERN)</code>: Determine which strings in <code>STRING</code> has a match of the <code>PATTERN</code> (binary)</li>
+</ul>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb146-1" data-line-number="1">x &lt;-<span class="st"> </span>fruit <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">head</span>(<span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb146-2" data-line-number="2"><span class="kw">str_detect</span>(x, <span class="st">&quot;e$&quot;</span>)</a></code></pre></div>
+<pre><code>##  [1]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE</code></pre>
+<ul>
+<li><code>str_subset(STRING, PATTERN)</code>: Subset the full strings in <code>STRING</code> that have either a full or partial match of the <code>PATTERN</code> (character)</li>
+</ul>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb148-1" data-line-number="1"><span class="kw">str_subset</span>(x, <span class="st">&quot;e$&quot;</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;apple&quot;        &quot;blood orange&quot;</code></pre>
+<!-- - `str_match(STRING, PATTERN)`: Extract the content of the matches of the strings in `STRING` and each capture groups (character) -->
+<ul>
+<li><code>str_extract(STRING, PATTERN)</code>: Extract the content of the matches of the strings in <code>STRING</code> (character)</li>
+</ul>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb150-1" data-line-number="1"><span class="kw">str_extract</span>(x, <span class="st">&quot;e$&quot;</span>)</a></code></pre></div>
+<pre><code>##  [1] &quot;e&quot; NA  NA  NA  NA  NA  NA  NA  &quot;e&quot; NA</code></pre>
+<ul>
+<li><code>str_replace(STRING, PATTERN, REPLACEMENT)</code>: Replace matches of the <code>PATTERN</code> with <code>REPLACEMENT</code> in <code>STRING</code> (character): str_replace()</li>
+</ul>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb152-1" data-line-number="1"><span class="kw">str_replace</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;[aeiou]&quot;</span>, <span class="dt">replacement =</span> <span class="st">&quot;V&quot;</span>)</a></code></pre></div>
+<pre><code>##  [1] &quot;Vpple&quot;        &quot;Vpricot&quot;      &quot;Vvocado&quot;      &quot;bVnana&quot;       &quot;bVll pepper&quot; 
+##  [6] &quot;bVlberry&quot;     &quot;blVckberry&quot;   &quot;blVckcurrant&quot; &quot;blVod orange&quot; &quot;blVeberry&quot;</code></pre>
+<p>It should be noted that <code>str_replace()</code> only replaces the first match of each string.</p>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb154-1" data-line-number="1"><span class="kw">str_replace_all</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;[aeiou]&quot;</span>, <span class="dt">replacement =</span> <span class="st">&quot;V&quot;</span>)</a></code></pre></div>
+<pre><code>##  [1] &quot;VpplV&quot;        &quot;VprVcVt&quot;      &quot;VvVcVdV&quot;      &quot;bVnVnV&quot;       &quot;bVll pVppVr&quot; 
+##  [6] &quot;bVlbVrry&quot;     &quot;blVckbVrry&quot;   &quot;blVckcVrrVnt&quot; &quot;blVVd VrVngV&quot; &quot;blVVbVrry&quot;</code></pre>
+<ul>
+<li><code>str_split(STRING, PATTERN)</code>: Split a string in <code>STRING</code> based on a <code>PATTERN</code> (character)</li>
+</ul>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb156-1" data-line-number="1">x &lt;-<span class="st"> </span>sentences <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">head</span>(<span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb156-2" data-line-number="2">x</a></code></pre></div>
+<pre><code>## [1] &quot;The birch canoe slid on the smooth planks.&quot; 
+## [2] &quot;Glue the sheet to the dark blue background.&quot;
+## [3] &quot;It&#39;s easy to tell the depth of a well.&quot;     
+## [4] &quot;These days a chicken leg is a rare dish.&quot;   
+## [5] &quot;Rice is often served in round bowls.&quot;</code></pre>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb158-1" data-line-number="1"><span class="kw">str_split</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">s&quot;</span>)</a></code></pre></div>
+<pre><code>## [[1]]
+## [1] &quot;The&quot;     &quot;birch&quot;   &quot;canoe&quot;   &quot;slid&quot;    &quot;on&quot;      &quot;the&quot;     &quot;smooth&quot; 
+## [8] &quot;planks.&quot;
+## 
+## [[2]]
+## [1] &quot;Glue&quot;        &quot;the&quot;         &quot;sheet&quot;       &quot;to&quot;          &quot;the&quot;        
+## [6] &quot;dark&quot;        &quot;blue&quot;        &quot;background.&quot;
+## 
+## [[3]]
+## [1] &quot;It&#39;s&quot;  &quot;easy&quot;  &quot;to&quot;    &quot;tell&quot;  &quot;the&quot;   &quot;depth&quot; &quot;of&quot;    &quot;a&quot;     &quot;well.&quot;
+## 
+## [[4]]
+## [1] &quot;These&quot;   &quot;days&quot;    &quot;a&quot;       &quot;chicken&quot; &quot;leg&quot;     &quot;is&quot;      &quot;a&quot;      
+## [8] &quot;rare&quot;    &quot;dish.&quot;  
+## 
+## [[5]]
+## [1] &quot;Rice&quot;   &quot;is&quot;     &quot;often&quot;  &quot;served&quot; &quot;in&quot;     &quot;round&quot;  &quot;bowls.&quot;</code></pre>
+<p>Please note that the return of <code>str_split()</code> is a <code>list</code>.</p>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb160-1" data-line-number="1">fields &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Name: Hadley&quot;</span>, <span class="st">&quot;Country: NZ&quot;</span>, <span class="st">&quot;Age: 35&quot;</span>)</a>
+<a class="sourceLine" id="cb160-2" data-line-number="2">fields <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">str_split</span>(<span class="st">&quot;: &quot;</span>)</a></code></pre></div>
+<pre><code>## [[1]]
+## [1] &quot;Name&quot;   &quot;Hadley&quot;
+## 
+## [[2]]
+## [1] &quot;Country&quot; &quot;NZ&quot;     
+## 
+## [[3]]
+## [1] &quot;Age&quot; &quot;35&quot;</code></pre>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb162-1" data-line-number="1">fields <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">str_split</span>(<span class="st">&quot;: &quot;</span>, <span class="dt">simplify =</span> T)</a></code></pre></div>
+<pre><code>##      [,1]      [,2]    
+## [1,] &quot;Name&quot;    &quot;Hadley&quot;
+## [2,] &quot;Country&quot; &quot;NZ&quot;    
+## [3,] &quot;Age&quot;     &quot;35&quot;</code></pre>
+<hr />
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-138" class="exercise"><strong>Exercise 7.3  </strong></span>Convert American dates to British dates.
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-139" class="exercise"><strong>Exercise 7.4  </strong></span>Split filenames of ICNALE
+</div>
+
+<hr />
+</div>
+<div id="advanced-pattern-matching-look-ahead-and-behind" class="section level2">
+<h2><span class="header-section-number">7.5</span> Advanced Pattern Matching: Look Ahead and Behind</h2>
+<p>If you want to find <code>Windows</code>, but only when it is followed by <code>&quot;95, 98, NT, 2000&quot;</code>:</p>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb164-1" data-line-number="1">win &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Windows2000&quot;</span>, <span class="st">&quot;Windows&quot;</span>, <span class="st">&quot;Windows3.1&quot;</span>)</a>
+<a class="sourceLine" id="cb164-2" data-line-number="2"><span class="kw">str_view</span>(win, <span class="st">&quot;Windows(?=95|98|NT|2000)&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-79e9a28327ae0d158236" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-79e9a28327ae0d158236">{"x":{"html":"<ul>\n  <li><span class='match'>Windows<\/span>2000<\/li>\n  <li>Windows<\/li>\n  <li>Windows3.1<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>Or the other way around:</p>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb165-1" data-line-number="1">win &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Windows2000&quot;</span>, <span class="st">&quot;Windows&quot;</span>, <span class="st">&quot;Windows3.1&quot;</span>)</a>
+<a class="sourceLine" id="cb165-2" data-line-number="2"><span class="kw">str_view</span>(win, <span class="st">&quot;Windows(?!95|98|NT|2000)&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-796cbdd4cd68d05ddf57" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-796cbdd4cd68d05ddf57">{"x":{"html":"<ul>\n  <li>Windows2000<\/li>\n  <li><span class='match'>Windows<\/span><\/li>\n  <li><span class='match'>Windows<\/span>3.1<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>In the regular expression, the <code>()</code> after <code>Windows</code> is a condition for matching. There are four alternatives to specify your conditions:</p>
+<ul>
+<li>Look-ahead conditions:
+<ul>
+<li><code>(?=pattern)</code>: The target match has to be followed by the pattern in the condition</li>
+<li><code>(?!pattern)</code>: The target match cannot be followed by the pattern in the condition</li>
+</ul></li>
+<li>Look-behind conditions:
+<ul>
+<li><code>(?&lt;=pattern)</code>: The target match has to be preceded by the pattern in the condition</li>
+<li><code>(?&lt;!pattern)</code>: The target match cannot be preceded by the pattern in the condition</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb166-1" data-line-number="1">win &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;2000Windows&quot;</span>, <span class="st">&quot;Windows&quot;</span>, <span class="st">&quot;3.1Windows&quot;</span>)</a>
+<a class="sourceLine" id="cb166-2" data-line-number="2"><span class="kw">str_view</span>(win, <span class="st">&quot;(?&lt;=95|98|NT|2000)Windows&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-3f622945bb876feac3a9" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3f622945bb876feac3a9">{"x":{"html":"<ul>\n  <li>2000<span class='match'>Windows<\/span><\/li>\n  <li>Windows<\/li>\n  <li>3.1Windows<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb167-1" data-line-number="1">win &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;2000Windows&quot;</span>, <span class="st">&quot;Windows&quot;</span>, <span class="st">&quot;3.1Windows&quot;</span>)</a>
+<a class="sourceLine" id="cb167-2" data-line-number="2"><span class="kw">str_view</span>(win, <span class="st">&quot;(?&lt;!95|98|NT|2000)Windows&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-595aca44ab192edcdb5e" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-595aca44ab192edcdb5e">{"x":{"html":"<ul>\n  <li>2000Windows<\/li>\n  <li><span class='match'>Windows<\/span><\/li>\n  <li>3.1<span class='match'>Windows<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<hr />
+
+<div class="exercise">
+<span id="exr:exa" class="exercise"><strong>Exercise 7.5  </strong></span>Please use the first ten words in the <code>fruit</code> vector for this exercise. Based on the fruit vocabulary, can you give us all the <code>a's</code> that are followed by <code>STOP_SOUNDS</code>? <code>STOP_SOUNDS</code> refer to <code>p, t, k, b, d, g</code>.
+</div>
+
+<div id="htmlwidget-8954f2d82ba499918681" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8954f2d82ba499918681">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span>pple<\/li>\n  <li><span class='match'>a<\/span>pricot<\/li>\n  <li>avoc<span class='match'>a<\/span>do<\/li>\n  <li>banana<\/li>\n  <li>bell pepper<\/li>\n  <li>bilberry<\/li>\n  <li>blackberry<\/li>\n  <li>blackcurrant<\/li>\n  <li>blood orange<\/li>\n  <li>blueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<hr />
+
+<div class="exercise">
+<p><span id="exr:exall" class="exercise"><strong>Exercise 7.6  </strong></span>Similar to the previous example, Exercise <a href="string-manipulation.html#exr:exa">7.5</a>, also based on the first ten words in <code>fruit</code>, please identify all the vowels that are both followed and preceded by <code>STOP_SOUNDS</code>.</p>
+</div>
+
+<div id="htmlwidget-5f7b0c606fb1ef7264b5" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5f7b0c606fb1ef7264b5">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>banana<\/li>\n  <li>bell p<span class='match'>e<\/span>pper<\/li>\n  <li>bilberry<\/li>\n  <li>blackberry<\/li>\n  <li>blackcurrant<\/li>\n  <li>blood orange<\/li>\n  <li>blueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<hr />
+</div>
+<div id="practical-cases" class="section level2">
+<h2><span class="header-section-number">7.6</span> Practical Cases</h2>
+<div id="case-1" class="section level3">
+<h3><span class="header-section-number">7.6.1</span> Case 1</h3>
+<p>How to extract only the <code>number</code> of the week from the <code>y</code> column, and add this information to a new column, <code>z</code>?</p>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb168-1" data-line-number="1">dt &lt;-<span class="st"> </span><span class="kw">tibble</span>(</a>
+<a class="sourceLine" id="cb168-2" data-line-number="2">  <span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>,</a>
+<a class="sourceLine" id="cb168-3" data-line-number="3">  <span class="dt">y =</span> <span class="kw">c</span>(<span class="st">&quot;wk 3&quot;</span>, <span class="st">&quot;week-1&quot;</span>, <span class="st">&quot;7&quot;</span>, <span class="st">&quot;w#9&quot;</span>)</a>
+<a class="sourceLine" id="cb168-4" data-line-number="4">)</a>
+<a class="sourceLine" id="cb168-5" data-line-number="5">dt</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["x"],"name":[1],"type":["int"],"align":["right"]},{"label":["y"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"1","2":"wk 3"},{"1":"2","2":"week-1"},{"1":"3","2":"7"},{"1":"4","2":"w#9"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["x"],"name":[1],"type":["int"],"align":["right"]},{"label":["y"],"name":[2],"type":["chr"],"align":["left"]},{"label":["z"],"name":[3],"type":["chr"],"align":["left"]}],"data":[{"1":"1","2":"wk 3","3":"3"},{"1":"2","2":"week-1","3":"1"},{"1":"3","2":"7","3":"7"},{"1":"4","2":"w#9","3":"9"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div id="case-2" class="section level3">
+<h3><span class="header-section-number">7.6.2</span> Case 2</h3>
+<p>How to extract all the vowels from the first ten words in <code>fruit</code>?</p>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb169-1" data-line-number="1">dt &lt;-<span class="st"> </span><span class="kw">tibble</span>(</a>
+<a class="sourceLine" id="cb169-2" data-line-number="2">  <span class="dt">WORD =</span> fruit[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>]</a>
+<a class="sourceLine" id="cb169-3" data-line-number="3">)</a>
+<a class="sourceLine" id="cb169-4" data-line-number="4">dt</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["WORD"],"name":[1],"type":["chr"],"align":["left"]}],"data":[{"1":"apple"},{"1":"apricot"},{"1":"avocado"},{"1":"banana"},{"1":"bell pepper"},{"1":"bilberry"},{"1":"blackberry"},{"1":"blackcurrant"},{"1":"blood orange"},{"1":"blueberry"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["WORD"],"name":[1],"type":["chr"],"align":["left"]},{"label":["VOWEL"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"apple","2":"a"},{"1":"apple","2":"e"},{"1":"apricot","2":"a"},{"1":"apricot","2":"i"},{"1":"apricot","2":"o"},{"1":"avocado","2":"a"},{"1":"avocado","2":"o"},{"1":"avocado","2":"a"},{"1":"avocado","2":"o"},{"1":"banana","2":"a"},{"1":"banana","2":"a"},{"1":"banana","2":"a"},{"1":"bell pepper","2":"e"},{"1":"bell pepper","2":"e"},{"1":"bell pepper","2":"e"},{"1":"bilberry","2":"i"},{"1":"bilberry","2":"e"},{"1":"blackberry","2":"a"},{"1":"blackberry","2":"e"},{"1":"blackcurrant","2":"a"},{"1":"blackcurrant","2":"u"},{"1":"blackcurrant","2":"a"},{"1":"blood orange","2":"o"},{"1":"blood orange","2":"o"},{"1":"blood orange","2":"o"},{"1":"blood orange","2":"a"},{"1":"blood orange","2":"e"},{"1":"blueberry","2":"u"},{"1":"blueberry","2":"e"},{"1":"blueberry","2":"e"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div id="case-3" class="section level3">
+<h3><span class="header-section-number">7.6.3</span> Case 3</h3>
+<p>How to separate the English and Chinese and create two new columns, <code>EN</code>, <code>CH</code>?</p>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb170-1" data-line-number="1">tb &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="st">&quot;I我&quot;</span>, <span class="st">&quot;love愛&quot;</span>, <span class="st">&quot;you你&quot;))</span></a>
+<a class="sourceLine" id="cb170-2" data-line-number="2"><span class="st">tb</span></a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["x"],"name":[1],"type":["chr"],"align":["left"]}],"data":[{"1":"I我"},{"1":"love愛"},{"1":"you你"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["EN"],"name":[1],"type":["chr"],"align":["left"]},{"label":["CH"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"I","2":"我"},{"1":"love","2":"愛"},{"1":"you","2":"你"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div id="case-4" class="section level3">
+<h3><span class="header-section-number">7.6.4</span> Case 4</h3>
+<p>How to extract the numbers and split the numbers into <code>START</code> and <code>END</code>?</p>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb171-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="st">&quot;1-12周&quot;</span>, <span class="st">&quot;1-10周&quot;</span>, <span class="st">&quot;5-12周&quot;</span>))</a>
+<a class="sourceLine" id="cb171-2" data-line-number="2">df</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["x"],"name":[1],"type":["chr"],"align":["left"]}],"data":[{"1":"1-12周"},{"1":"1-10周"},{"1":"5-12周"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["START"],"name":[1],"type":["chr"],"align":["left"]},{"label":["END"],"name":[2],"type":["chr"],"align":["left"]},{"label":["WEEK"],"name":[3],"type":["chr"],"align":["left"]}],"data":[{"1":"1","2":"12","3":"周"},{"1":"1","2":"10","3":"周"},{"1":"5","2":"12","3":"周"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div id="case-5" class="section level3">
+<h3><span class="header-section-number">7.6.5</span> Case 5</h3>
+<p>How to extract numbers of each token and compute the sum of the number and save the results in a new column <code>SUM</code>?</p>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb172-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">tibble</span>(</a>
+<a class="sourceLine" id="cb172-2" data-line-number="2">  <span class="dt">x =</span> <span class="kw">c</span>(<span class="st">&quot;1234&quot;</span>, <span class="st">&quot;B246&quot;</span>, <span class="st">&quot;217C&quot;</span>, <span class="st">&quot;2357f&quot;</span>, <span class="st">&quot;21WD4&quot;</span>)</a>
+<a class="sourceLine" id="cb172-3" data-line-number="3">)</a>
+<a class="sourceLine" id="cb172-4" data-line-number="4">df</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["x"],"name":[1],"type":["chr"],"align":["left"]}],"data":[{"1":"1234"},{"1":"B246"},{"1":"217C"},{"1":"2357f"},{"1":"21WD4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["x"],"name":[1],"type":["chr"],"align":["left"]},{"label":["SUM"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"1234","2":"10"},{"1":"217C","2":"10"},{"1":"21WD4","2":"7"},{"1":"2357f","2":"17"},{"1":"B246","2":"12"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div id="case6" class="section level3">
+<h3><span class="header-section-number">7.6.6</span> Case 6</h3>
+<p>How to extract all the numbers that follow a upper-casing letter? For example, <code>34</code> after <code>W</code>; <code>217</code> after <code>B</code>?</p>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb173-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">tibble</span>(</a>
+<a class="sourceLine" id="cb173-2" data-line-number="2">  <span class="dt">x =</span> <span class="kw">c</span>(<span class="st">&quot;12W34&quot;</span>, <span class="st">&quot;AB2C46&quot;</span>, <span class="st">&quot;B217C&quot;</span>, <span class="st">&quot;akTs6df&quot;</span>, <span class="st">&quot;21WD4&quot;</span>)</a>
+<a class="sourceLine" id="cb173-3" data-line-number="3">)</a>
+<a class="sourceLine" id="cb173-4" data-line-number="4">df</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["x"],"name":[1],"type":["chr"],"align":["left"]}],"data":[{"1":"12W34"},{"1":"AB2C46"},{"1":"B217C"},{"1":"akTs6df"},{"1":"21WD4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["x"],"name":[1],"type":["chr"],"align":["left"]},{"label":["NUM"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"12W34","2":"34"},{"1":"AB2C46","2":"2"},{"1":"AB2C46","2":"46"},{"1":"B217C","2":"217"},{"1":"21WD4","2":"4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div id="case-7" class="section level3">
+<h3><span class="header-section-number">7.6.7</span> Case 7</h3>
+<p>Relating to Section <a href="string-manipulation.html#case6">7.6.6</a>, can you add another column to the resulting data frame, which records the upper-casing letter that the numbers follow for each token?</p>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["x"],"name":[1],"type":["chr"],"align":["left"]},{"label":["CHAR"],"name":[2],"type":["chr"],"align":["left"]},{"label":["NUM"],"name":[3],"type":["chr"],"align":["left"]}],"data":[{"1":"12W34","2":"W","3":"34"},{"1":"AB2C46","2":"B","3":"2"},{"1":"AB2C46","2":"C","3":"46"},{"1":"B217C","2":"B","3":"217"},{"1":"21WD4","2":"D","3":"4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data-import.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="iteration.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 8 Iteration | ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
+  <meta name="description" content="ENC2055 Course material first edition" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 8 Iteration | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="ENC2055 Course material first edition" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 8 Iteration | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
+  
+  <meta name="twitter:description" content="ENC2055 Course material first edition" />
+  
+
+<meta name="author" content="Alvin Chen" />
+
+
+<meta name="date" content="2019-12-05" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="string-manipulation.html"/>
+<link rel="next" href="data-scientist-first-step.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
+<script src="libs/str_view-binding-1.4.0/str_view.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="http://web.ntnu.edu.tw/~alvinchen/courses/ENC2055/"> <img src="images/alerts/home.svg" height="20" width ="20" style="display:inline"> Course Website </a></lo>
+<li><a href="./index.html"> <img src="images/alerts/book-solid.svg" height="20" width ="20" style="display:inline"> ENC 2055 Introduction to Programming Languages For Linguistic Analysis</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-objective"><i class="fa fa-check"></i>Course Objective</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#textbook"><i class="fa fa-check"></i>Textbook</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-website"><i class="fa fa-check"></i>Course Website</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-demo-data"><i class="fa fa-check"></i>Course Demo Data</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro-ds.html"><a href="intro-ds.html"><i class="fa fa-check"></i><b>1</b> Data Science and R</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro-ds.html"><a href="intro-ds.html#what-is-data-science"><i class="fa fa-check"></i><b>1.1</b> What is Data Science?</a></li>
+<li class="chapter" data-level="1.2" data-path="intro-ds.html"><a href="intro-ds.html#working-pipeline-for-data-science"><i class="fa fa-check"></i><b>1.2</b> Working Pipeline for Data Science</a></li>
+<li class="chapter" data-level="1.3" data-path="intro-ds.html"><a href="intro-ds.html#why-r"><i class="fa fa-check"></i><b>1.3</b> Why R?</a></li>
+<li class="chapter" data-level="1.4" data-path="intro-ds.html"><a href="intro-ds.html#tidyverse"><i class="fa fa-check"></i><b>1.4</b> <code>tidyverse</code></a></li>
+<li class="chapter" data-level="1.5" data-path="intro-ds.html"><a href="intro-ds.html#more-skills"><i class="fa fa-check"></i><b>1.5</b> More Skills</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="r-fundamentals.html"><a href="r-fundamentals.html"><i class="fa fa-check"></i><b>2</b> R Fundamentals</a><ul>
+<li class="chapter" data-level="2.1" data-path="r-fundamentals.html"><a href="r-fundamentals.html#installing-r"><i class="fa fa-check"></i><b>2.1</b> Installing R</a></li>
+<li class="chapter" data-level="2.2" data-path="r-fundamentals.html"><a href="r-fundamentals.html#installing-rstudio"><i class="fa fa-check"></i><b>2.2</b> Installing RStudio</a></li>
+<li class="chapter" data-level="2.3" data-path="r-fundamentals.html"><a href="r-fundamentals.html#the-interface-of-rstudio"><i class="fa fa-check"></i><b>2.3</b> The Interface of Rstudio</a></li>
+<li class="chapter" data-level="2.4" data-path="r-fundamentals.html"><a href="r-fundamentals.html#assignment"><i class="fa fa-check"></i><b>2.4</b> Assignment</a></li>
+<li class="chapter" data-level="2.5" data-path="r-fundamentals.html"><a href="r-fundamentals.html#data-structure"><i class="fa fa-check"></i><b>2.5</b> Data Structure</a></li>
+<li class="chapter" data-level="2.6" data-path="r-fundamentals.html"><a href="r-fundamentals.html#function"><i class="fa fa-check"></i><b>2.6</b> Function</a></li>
+<li class="chapter" data-level="2.7" data-path="r-fundamentals.html"><a href="r-fundamentals.html#script"><i class="fa fa-check"></i><b>2.7</b> Script</a></li>
+<li class="chapter" data-level="2.8" data-path="r-fundamentals.html"><a href="r-fundamentals.html#library"><i class="fa fa-check"></i><b>2.8</b> Library</a></li>
+<li class="chapter" data-level="2.9" data-path="r-fundamentals.html"><a href="r-fundamentals.html#setting"><i class="fa fa-check"></i><b>2.9</b> Setting</a></li>
+<li class="chapter" data-level="2.10" data-path="r-fundamentals.html"><a href="r-fundamentals.html#seeking-help"><i class="fa fa-check"></i><b>2.10</b> Seeking Help</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="subsetting.html"><a href="subsetting.html"><i class="fa fa-check"></i><b>3</b> Subsetting</a><ul>
+<li class="chapter" data-level="3.1" data-path="subsetting.html"><a href="subsetting.html#vecotr"><i class="fa fa-check"></i><b>3.1</b> Vecotr</a></li>
+<li class="chapter" data-level="3.2" data-path="subsetting.html"><a href="subsetting.html#list"><i class="fa fa-check"></i><b>3.2</b> List</a></li>
+<li class="chapter" data-level="3.3" data-path="subsetting.html"><a href="subsetting.html#data-frame"><i class="fa fa-check"></i><b>3.3</b> Data Frame</a></li>
+<li class="chapter" data-level="3.4" data-path="subsetting.html"><a href="subsetting.html#tibble"><i class="fa fa-check"></i><b>3.4</b> Tibble</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>4</b> Data Visualization</a><ul>
+<li class="chapter" data-level="4.1" data-path="data-visualization.html"><a href="data-visualization.html#why-visualization"><i class="fa fa-check"></i><b>4.1</b> Why Visualization?</a></li>
+<li class="chapter" data-level="4.2" data-path="data-visualization.html"><a href="data-visualization.html#ggplot2"><i class="fa fa-check"></i><b>4.2</b> <code>ggplot2</code></a></li>
+<li class="chapter" data-level="4.3" data-path="data-visualization.html"><a href="data-visualization.html#one-variable-graph"><i class="fa fa-check"></i><b>4.3</b> One-variable Graph</a></li>
+<li class="chapter" data-level="4.4" data-path="data-visualization.html"><a href="data-visualization.html#two-variable-graph"><i class="fa fa-check"></i><b>4.4</b> Two-variable Graph</a></li>
+<li class="chapter" data-level="4.5" data-path="data-visualization.html"><a href="data-visualization.html#adding-other-aesthetic-features"><i class="fa fa-check"></i><b>4.5</b> Adding Other Aesthetic Features</a></li>
+<li class="chapter" data-level="4.6" data-path="data-visualization.html"><a href="data-visualization.html#saving-plots"><i class="fa fa-check"></i><b>4.6</b> Saving Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="data-manipulation.html"><a href="data-manipulation.html"><i class="fa fa-check"></i><b>5</b> Data Manipulation</a><ul>
+<li class="chapter" data-level="5.1" data-path="data-manipulation.html"><a href="data-manipulation.html#dataset"><i class="fa fa-check"></i><b>5.1</b> Dataset</a></li>
+<li class="chapter" data-level="5.2" data-path="data-manipulation.html"><a href="data-manipulation.html#rename"><i class="fa fa-check"></i><b>5.2</b> <code>rename()</code></a></li>
+<li class="chapter" data-level="5.3" data-path="data-manipulation.html"><a href="data-manipulation.html#pipe"><i class="fa fa-check"></i><b>5.3</b> Pipe <code>%&gt;%</code></a></li>
+<li class="chapter" data-level="5.4" data-path="data-manipulation.html"><a href="data-manipulation.html#mutate"><i class="fa fa-check"></i><b>5.4</b> <code>mutate()</code></a></li>
+<li class="chapter" data-level="5.5" data-path="data-manipulation.html"><a href="data-manipulation.html#select"><i class="fa fa-check"></i><b>5.5</b> <code>select()</code></a></li>
+<li class="chapter" data-level="5.6" data-path="data-manipulation.html"><a href="data-manipulation.html#filter"><i class="fa fa-check"></i><b>5.6</b> <code>filter()</code></a></li>
+<li class="chapter" data-level="5.7" data-path="data-manipulation.html"><a href="data-manipulation.html#arrange"><i class="fa fa-check"></i><b>5.7</b> <code>arrange()</code></a></li>
+<li class="chapter" data-level="5.8" data-path="data-manipulation.html"><a href="data-manipulation.html#group_by-and-summarize"><i class="fa fa-check"></i><b>5.8</b> <code>group_by()</code> and <code>summarize()</code></a></li>
+<li class="chapter" data-level="5.9" data-path="data-manipulation.html"><a href="data-manipulation.html#left_join"><i class="fa fa-check"></i><b>5.9</b> <code>left_join()</code></a></li>
+<li class="chapter" data-level="5.10" data-path="data-manipulation.html"><a href="data-manipulation.html#exerceises"><i class="fa fa-check"></i><b>5.10</b> Exerceises</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="data-import.html"><a href="data-import.html"><i class="fa fa-check"></i><b>6</b> Data Import</a><ul>
+<li class="chapter" data-level="6.1" data-path="data-import.html"><a href="data-import.html#readlines"><i class="fa fa-check"></i><b>6.1</b> <code>readLines()</code></a></li>
+<li class="chapter" data-level="6.2" data-path="data-import.html"><a href="data-import.html#read_csv"><i class="fa fa-check"></i><b>6.2</b> <code>read_csv()</code></a></li>
+<li class="chapter" data-level="6.3" data-path="data-import.html"><a href="data-import.html#structured-data-xml"><i class="fa fa-check"></i><b>6.3</b> Structured Data: XML</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="string-manipulation.html"><a href="string-manipulation.html"><i class="fa fa-check"></i><b>7</b> String Manipulation</a><ul>
+<li class="chapter" data-level="7.1" data-path="string-manipulation.html"><a href="string-manipulation.html#what-is-regular-expression"><i class="fa fa-check"></i><b>7.1</b> What is Regular Expression?</a></li>
+<li class="chapter" data-level="7.2" data-path="string-manipulation.html"><a href="string-manipulation.html#string-basics"><i class="fa fa-check"></i><b>7.2</b> String Basics</a></li>
+<li class="chapter" data-level="7.3" data-path="string-manipulation.html"><a href="string-manipulation.html#regular-expression-grammar"><i class="fa fa-check"></i><b>7.3</b> Regular Expression Grammar</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="string-manipulation.html"><a href="string-manipulation.html#metacharacters"><i class="fa fa-check"></i><b>7.3.1</b> Metacharacters</a></li>
+<li class="chapter" data-level="7.3.2" data-path="string-manipulation.html"><a href="string-manipulation.html#anchors"><i class="fa fa-check"></i><b>7.3.2</b> Anchors</a></li>
+<li class="chapter" data-level="7.3.3" data-path="string-manipulation.html"><a href="string-manipulation.html#character-set"><i class="fa fa-check"></i><b>7.3.3</b> Character Set</a></li>
+<li class="chapter" data-level="7.3.4" data-path="string-manipulation.html"><a href="string-manipulation.html#alternatives"><i class="fa fa-check"></i><b>7.3.4</b> Alternatives</a></li>
+<li class="chapter" data-level="7.3.5" data-path="string-manipulation.html"><a href="string-manipulation.html#quantifiers"><i class="fa fa-check"></i><b>7.3.5</b> Quantifiers</a></li>
+<li class="chapter" data-level="7.3.6" data-path="string-manipulation.html"><a href="string-manipulation.html#greedy-vs.non-greedy-match"><i class="fa fa-check"></i><b>7.3.6</b> Greedy vs. Non-greedy match</a></li>
+<li class="chapter" data-level="7.3.7" data-path="string-manipulation.html"><a href="string-manipulation.html#group-and-back-reference"><i class="fa fa-check"></i><b>7.3.7</b> Group and Back-reference</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="string-manipulation.html"><a href="string-manipulation.html#pattern-matching"><i class="fa fa-check"></i><b>7.4</b> Pattern Matching</a></li>
+<li class="chapter" data-level="7.5" data-path="string-manipulation.html"><a href="string-manipulation.html#advanced-pattern-matching-look-ahead-and-behind"><i class="fa fa-check"></i><b>7.5</b> Advanced Pattern Matching: Look Ahead and Behind</a></li>
+<li class="chapter" data-level="7.6" data-path="string-manipulation.html"><a href="string-manipulation.html#practical-cases"><i class="fa fa-check"></i><b>7.6</b> Practical Cases</a><ul>
+<li class="chapter" data-level="7.6.1" data-path="string-manipulation.html"><a href="string-manipulation.html#case-1"><i class="fa fa-check"></i><b>7.6.1</b> Case 1</a></li>
+<li class="chapter" data-level="7.6.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-2"><i class="fa fa-check"></i><b>7.6.2</b> Case 2</a></li>
+<li class="chapter" data-level="7.6.3" data-path="string-manipulation.html"><a href="string-manipulation.html#case-3"><i class="fa fa-check"></i><b>7.6.3</b> Case 3</a></li>
+<li class="chapter" data-level="7.6.4" data-path="string-manipulation.html"><a href="string-manipulation.html#case-4"><i class="fa fa-check"></i><b>7.6.4</b> Case 4</a></li>
+<li class="chapter" data-level="7.6.5" data-path="string-manipulation.html"><a href="string-manipulation.html#case-5"><i class="fa fa-check"></i><b>7.6.5</b> Case 5</a></li>
+<li class="chapter" data-level="7.6.6" data-path="string-manipulation.html"><a href="string-manipulation.html#case6"><i class="fa fa-check"></i><b>7.6.6</b> Case 6</a></li>
+<li class="chapter" data-level="7.6.7" data-path="string-manipulation.html"><a href="string-manipulation.html#case-7"><i class="fa fa-check"></i><b>7.6.7</b> Case 7</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="iteration.html"><a href="iteration.html"><i class="fa fa-check"></i><b>8</b> Iteration</a><ul>
+<li class="chapter" data-level="8.1" data-path="iteration.html"><a href="iteration.html#code-duplication"><i class="fa fa-check"></i><b>8.1</b> Code Duplication</a></li>
+<li class="chapter" data-level="8.2" data-path="iteration.html"><a href="iteration.html#vector-vs.-list-in-r"><i class="fa fa-check"></i><b>8.2</b> <code>vector</code> vs. <code>list</code> in <code>R</code></a></li>
+<li class="chapter" data-level="8.3" data-path="iteration.html"><a href="iteration.html#iteration-1"><i class="fa fa-check"></i><b>8.3</b> Iteration</a></li>
+<li class="chapter" data-level="8.4" data-path="iteration.html"><a href="iteration.html#purr"><i class="fa fa-check"></i><b>8.4</b> <code>purr</code></a></li>
+<li class="chapter" data-level="8.5" data-path="iteration.html"><a href="iteration.html#writing-own-functions"><i class="fa fa-check"></i><b>8.5</b> Writing Own Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html"><i class="fa fa-check"></i><b>9</b> Data Scientest First Step</a><ul>
+<li class="chapter" data-level="9.1" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#nobel-laureates-dataset"><i class="fa fa-check"></i><b>9.1</b> Nobel Laureates Dataset</a></li>
+<li class="chapter" data-level="9.2" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#before-we-start"><i class="fa fa-check"></i><b>9.2</b> Before we start</a></li>
+<li class="chapter" data-level="9.3" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#data-completeness-na"><i class="fa fa-check"></i><b>9.3</b> Data Completeness <code>NA</code></a></li>
+<li class="chapter" data-level="9.4" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#hypotheses"><i class="fa fa-check"></i><b>9.4</b> Hypotheses</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#how-many-laureates-were-there-in-different-discplines"><i class="fa fa-check"></i><b>9.4.1</b> How many laureates were there in different discplines?</a></li>
+<li class="chapter" data-level="9.4.2" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#chinese-laureates"><i class="fa fa-check"></i><b>9.4.2</b> Chinese Laureates</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#at-what-age-did-these-people-receive-the-prizes"><i class="fa fa-check"></i><b>9.5</b> At what age did these people receive the prizes?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://web.ntnu.edu.tw/~alvinchen" target ="blank">Alvin Chen </a></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">ENC2055: Introduction to Programming Languages for Linguistic Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="iteration" class="section level1">
+<h1><span class="header-section-number">Chapter 8</span> Iteration</h1>
+<p><img src="images/hex-purrr.png" width="30%" /></p>
+<div id="code-duplication" class="section level2">
+<h2><span class="header-section-number">8.1</span> Code Duplication</h2>
+<p>Code duplication is tedious and hard to maintain and debug. Plus, there are obvious advantages for reducing code duplications. According to <span class="citation">Wickham and Grolemund (<a href="#ref-hadley2017">2017</a>)</span> <a href="https://r4ds.had.co.nz/iteration.html#introduction-14">Chapter 21 Iteration</a>, there are three main advantages of doing so:</p>
+<ol style="list-style-type: decimal">
+<li>It’s easier to see the intent of your code, because your eyes are drawn to what’s different, not what stays the same.</li>
+<li>It’s easier to respond to changes in requirements. As your needs change, you only need to make changes in one place, rather than remembering to change every place that you copied-and-pasted the code.</li>
+<li>You’re likely to have fewer bugs because each line of code is used in more places.</li>
+</ol>
+<p>There are in general two major ways to reduce duplication in coding:</p>
+<ul>
+<li>wrap the duplicate procedures into a function</li>
+<li>use iteration</li>
+</ul>
+<p>This chapter would focus on the second strategy.In this chapter, we talk about code efficiency. In particular we will work on the library <code>purr</code>.</p>
+</div>
+<div id="vector-vs.-list-in-r" class="section level2">
+<h2><span class="header-section-number">8.2</span> <code>vector</code> vs. <code>list</code> in <code>R</code></h2>
+<p>Most of the R-internal functions are vectorized. By default, if we apply a function to a multi-element vector, R will automatically apply the same procedure to each element of the vector, and return the results of the same length.</p>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb174-1" data-line-number="1">a.vec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb174-2" data-line-number="2"><span class="kw">sqrt</span>(a.vec)</a></code></pre></div>
+<pre><code>##  [1] 1.000000 1.414214 1.732051 2.000000 2.236068 2.449490 2.645751 2.828427
+##  [9] 3.000000 3.162278</code></pre>
+<p>But this is NOT something we can do with a <code>list</code>:</p>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb176-1" data-line-number="1">a.list &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb176-2" data-line-number="2"><span class="kw">sqrt</span>(a.list)</a></code></pre></div>
+<pre><code>## Error in sqrt(a.list): non-numeric argument to mathematical function</code></pre>
+</div>
+<div id="iteration-1" class="section level2">
+<h2><span class="header-section-number">8.3</span> Iteration</h2>
+<p>As we work with <code>list</code> and <code>data.frame</code> very often, it would great if we can have a easy way to apply the same procedure to:
+- each element in the <code>list</code>
+- each row in the <code>data.frame</code>
+- each column in the <code>data.frame</code></p>
+<p>Let’s start with a scenario. We first create a pseudo data set, with students’ grades from five different classes.</p>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb178-1" data-line-number="1">exams.list &lt;-<span class="st"> </span><span class="kw">list</span>(</a>
+<a class="sourceLine" id="cb178-2" data-line-number="2">  <span class="dt">class1 =</span> <span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">100</span>)), <span class="co"># 30 tokens of random numbers in the range &lt;0, 100&gt;</span></a>
+<a class="sourceLine" id="cb178-3" data-line-number="3">  <span class="dt">class2 =</span> <span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">100</span>)),</a>
+<a class="sourceLine" id="cb178-4" data-line-number="4">  <span class="dt">class3 =</span> <span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">100</span>)),</a>
+<a class="sourceLine" id="cb178-5" data-line-number="5">  <span class="dt">class4 =</span> <span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">100</span>)),</a>
+<a class="sourceLine" id="cb178-6" data-line-number="6">  <span class="dt">class5 =</span> <span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">100</span>))</a>
+<a class="sourceLine" id="cb178-7" data-line-number="7">)</a>
+<a class="sourceLine" id="cb178-8" data-line-number="8">exams.list</a></code></pre></div>
+<pre><code>## $class1
+##  [1] 13 53 71 19  6 29 16 80 41 32 78 54 64 70 61 30 45 82 14 34 48 69 50 90 89
+## [26] 17 83 53 76 55
+## 
+## $class2
+##  [1] 80 91 76 19  7 96 75  1 15 48  7 53  9 24 79 20 53 12 71 84 19 12 60 64 66
+## [26] 34 96 96 84 27
+## 
+## $class3
+##  [1] 63 42 23 12 47 77 43  8 99 37  8 15 45 26 52 52 85 71 93 87 65 21  4 29 21
+## [26] 30 31 26 79 22
+## 
+## $class4
+##  [1] 79 62 98 30 41 35 39 63 74 60 90 15 68 71 94 58 85 84  2 14 85 27 23 29 92
+## [26] 95 73 82 94 36
+## 
+## $class5
+##  [1] 34 82 81 64  1 98 83 88 22 88 12 72 20 14 41 40 68 20 40 96 12 62 47 96 73
+## [26] 69 80 77 62 69</code></pre>
+<p>If we like to compute the mean scores of each cluster, you probably want to use <code>mean()</code>:</p>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb180-1" data-line-number="1"><span class="kw">mean</span>(exams.list)</a></code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<p>It should be clear now that <code>mean()</code> expects a numeric vector, on which the mean score is computed.</p>
+<p>So you may think that why don’t we use the dumb way:</p>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb182-1" data-line-number="1"><span class="kw">set.seed</span>(<span class="dv">123</span>) <span class="co"># Make sure we get the same results</span></a>
+<a class="sourceLine" id="cb182-2" data-line-number="2">exams.list.means &lt;-<span class="st"> </span><span class="kw">list</span>(</a>
+<a class="sourceLine" id="cb182-3" data-line-number="3">  <span class="dt">class1mean =</span> <span class="kw">mean</span>(exams.list<span class="op">$</span>class1),</a>
+<a class="sourceLine" id="cb182-4" data-line-number="4">  <span class="dt">class2mean =</span> <span class="kw">mean</span>(exams.list<span class="op">$</span>class2),</a>
+<a class="sourceLine" id="cb182-5" data-line-number="5">  <span class="dt">class3mean =</span> <span class="kw">mean</span>(exams.list<span class="op">$</span>class3),</a>
+<a class="sourceLine" id="cb182-6" data-line-number="6">  <span class="dt">class4mean =</span> <span class="kw">mean</span>(exams.list<span class="op">$</span>class4),</a>
+<a class="sourceLine" id="cb182-7" data-line-number="7">  <span class="dt">class5mean =</span> <span class="kw">mean</span>(exams.list<span class="op">$</span>class5)</a>
+<a class="sourceLine" id="cb182-8" data-line-number="8">)</a>
+<a class="sourceLine" id="cb182-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb182-10" data-line-number="10">exams.list.means</a></code></pre></div>
+<pre><code>## $class1mean
+## [1] 50.73333
+## 
+## $class2mean
+## [1] 49.26667
+## 
+## $class3mean
+## [1] 43.76667
+## 
+## $class4mean
+## [1] 59.93333
+## 
+## $class5mean
+## [1] 57.03333</code></pre>
+<p>The advantage is obvious: (a) what if you have 10 classes? 100 classes? (b) what if now you decide to compute standard deviation?</p>
+</div>
+<div id="purr" class="section level2">
+<h2><span class="header-section-number">8.4</span> <code>purr</code></h2>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb184-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb185-1" data-line-number="1">exams.list <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">map</span>(mean)</a></code></pre></div>
+<pre><code>## $class1
+## [1] 50.73333
+## 
+## $class2
+## [1] 49.26667
+## 
+## $class3
+## [1] 43.76667
+## 
+## $class4
+## [1] 59.93333
+## 
+## $class5
+## [1] 57.03333</code></pre>
+<p>With only one-line code, you have achieved your goal.</p>
+<p><code>map()</code> is a very powerful function to do iteration. Its usage is as follows:</p>
+<p><img src="images/map.png" width="80%" /></p>
+<p>To conceptualize this code <code>map(exams.list, mean)</code>:</p>
+<ul>
+<li>For each element in the <code>exams.list</code>, apply the function <code>mean</code>
+<ul>
+<li>Do the first element, and save the result in the first elemenet of the new <code>list</code></li>
+<li>Do the second element, and save the result in the second elemvent of the new <code>list</code></li>
+<li>…</li>
+<li>After finishing all elements in the <code>exams.list</code>, return the new <code>list</code> result</li>
+</ul></li>
+</ul>
+<p>In <code>purrr</code>, by default <code>map()</code> returns results in a <code>list</code> format. You can specify a particular data structure you like by using other variants of the mapping function:</p>
+<p><img src="images/map2.png" width="80%" /></p>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb187-1" data-line-number="1">exams.list <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">map_df</span>(mean)</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["class1"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["class2"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["class3"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["class4"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["class5"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"50.73333","2":"49.26667","3":"43.76667","4":"59.93333","5":"57.03333"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb188-1" data-line-number="1">exams.list <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">map_dbl</span>(mean)</a></code></pre></div>
+<pre><code>##   class1   class2   class3   class4   class5 
+## 50.73333 49.26667 43.76667 59.93333 57.03333</code></pre>
+<hr />
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-171" class="exercise"><strong>Exercise 8.1  </strong></span>Use the same dataset, <code>exam.list</code>, and compute the <code>median</code> and <code>standard deviation</code> for each class.
+</div>
+
+<ul>
+<li>Median</li>
+</ul>
+<pre><code>## class1 class2 class3 class4 class5 
+##   53.0   53.0   39.5   65.5   66.0</code></pre>
+<ul>
+<li>Standard Deviation</li>
+</ul>
+<pre><code>##   class1   class2   class3   class4   class5 
+## 25.25311 32.46105 27.71117 28.74973 29.30280</code></pre>
+<hr />
+</div>
+<div id="writing-own-functions" class="section level2">
+<h2><span class="header-section-number">8.5</span> Writing Own Functions</h2>
+<p>With the power and flexibility of <code>purrr::map()</code>, we can basically do everything iteratively. More attractively, we can apply a self-defined function as well!</p>
+<p>First we create own self-defined function <code>my_center</code>:
+- This function takes a vector object <code>x</code>
+- Substract each element of <code>x</code> by the mean score of <code>x</code>
+- return the resulting vector as the output of the function</p>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb192-1" data-line-number="1">my_center &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</a>
+<a class="sourceLine" id="cb192-2" data-line-number="2">  x <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(x)</a>
+<a class="sourceLine" id="cb192-3" data-line-number="3">}</a></code></pre></div>
+<p>Now we can apply our <code>my_center</code> function to each class in <code>exams.list</code>:</p>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb193-1" data-line-number="1">exams.list <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">map_df</span>(my_center)</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["class1"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["class2"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["class3"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["class4"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["class5"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"-37.7333333","2":"30.733333","3":"19.2333333","4":"19.06666667","5":"-23.033333"},{"1":"2.2666667","2":"41.733333","3":"-1.7666667","4":"2.06666667","5":"24.966667"},{"1":"20.2666667","2":"26.733333","3":"-20.7666667","4":"38.06666667","5":"23.966667"},{"1":"-31.7333333","2":"-30.266667","3":"-31.7666667","4":"-29.93333333","5":"6.966667"},{"1":"-44.7333333","2":"-42.266667","3":"3.2333333","4":"-18.93333333","5":"-56.033333"},{"1":"-21.7333333","2":"46.733333","3":"33.2333333","4":"-24.93333333","5":"40.966667"},{"1":"-34.7333333","2":"25.733333","3":"-0.7666667","4":"-20.93333333","5":"25.966667"},{"1":"29.2666667","2":"-48.266667","3":"-35.7666667","4":"3.06666667","5":"30.966667"},{"1":"-9.7333333","2":"-34.266667","3":"55.2333333","4":"14.06666667","5":"-35.033333"},{"1":"-18.7333333","2":"-1.266667","3":"-6.7666667","4":"0.06666667","5":"30.966667"},{"1":"27.2666667","2":"-42.266667","3":"-35.7666667","4":"30.06666667","5":"-45.033333"},{"1":"3.2666667","2":"3.733333","3":"-28.7666667","4":"-44.93333333","5":"14.966667"},{"1":"13.2666667","2":"-40.266667","3":"1.2333333","4":"8.06666667","5":"-37.033333"},{"1":"19.2666667","2":"-25.266667","3":"-17.7666667","4":"11.06666667","5":"-43.033333"},{"1":"10.2666667","2":"29.733333","3":"8.2333333","4":"34.06666667","5":"-16.033333"},{"1":"-20.7333333","2":"-29.266667","3":"8.2333333","4":"-1.93333333","5":"-17.033333"},{"1":"-5.7333333","2":"3.733333","3":"41.2333333","4":"25.06666667","5":"10.966667"},{"1":"31.2666667","2":"-37.266667","3":"27.2333333","4":"24.06666667","5":"-37.033333"},{"1":"-36.7333333","2":"21.733333","3":"49.2333333","4":"-57.93333333","5":"-17.033333"},{"1":"-16.7333333","2":"34.733333","3":"43.2333333","4":"-45.93333333","5":"38.966667"},{"1":"-2.7333333","2":"-30.266667","3":"21.2333333","4":"25.06666667","5":"-45.033333"},{"1":"18.2666667","2":"-37.266667","3":"-22.7666667","4":"-32.93333333","5":"4.966667"},{"1":"-0.7333333","2":"10.733333","3":"-39.7666667","4":"-36.93333333","5":"-10.033333"},{"1":"39.2666667","2":"14.733333","3":"-14.7666667","4":"-30.93333333","5":"38.966667"},{"1":"38.2666667","2":"16.733333","3":"-22.7666667","4":"32.06666667","5":"15.966667"},{"1":"-33.7333333","2":"-15.266667","3":"-13.7666667","4":"35.06666667","5":"11.966667"},{"1":"32.2666667","2":"46.733333","3":"-12.7666667","4":"13.06666667","5":"22.966667"},{"1":"2.2666667","2":"46.733333","3":"-17.7666667","4":"22.06666667","5":"19.966667"},{"1":"25.2666667","2":"34.733333","3":"35.2333333","4":"34.06666667","5":"4.966667"},{"1":"4.2666667","2":"-22.266667","3":"-21.7666667","4":"-23.93333333","5":"11.966667"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<hr />
+
+<div class="exercise">
+<span id="exr:exmtcars" class="exercise"><strong>Exercise 8.2  </strong></span>Use the built-in the <code>mtcars</code> dataset (<code>?mtcars</code> for more detail). How to get the class type of each column in the <code>mtcars</code>?
+</div>
+
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["mpg"],"name":[1],"type":["chr"],"align":["left"]},{"label":["cyl"],"name":[2],"type":["chr"],"align":["left"]},{"label":["disp"],"name":[3],"type":["chr"],"align":["left"]},{"label":["hp"],"name":[4],"type":["chr"],"align":["left"]},{"label":["drat"],"name":[5],"type":["chr"],"align":["left"]},{"label":["wt"],"name":[6],"type":["chr"],"align":["left"]},{"label":["qsec"],"name":[7],"type":["chr"],"align":["left"]},{"label":["vs"],"name":[8],"type":["chr"],"align":["left"]},{"label":["am"],"name":[9],"type":["chr"],"align":["left"]},{"label":["gear"],"name":[10],"type":["chr"],"align":["left"]},{"label":["carb"],"name":[11],"type":["chr"],"align":["left"]}],"data":[{"1":"numeric","2":"numeric","3":"numeric","4":"numeric","5":"numeric","6":"numeric","7":"numeric","8":"numeric","9":"numeric","10":"numeric","11":"numeric"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["mpg"],"name":[1],"type":["chr"],"align":["left"]},{"label":["cyl"],"name":[2],"type":["chr"],"align":["left"]},{"label":["disp"],"name":[3],"type":["chr"],"align":["left"]},{"label":["hp"],"name":[4],"type":["chr"],"align":["left"]},{"label":["drat"],"name":[5],"type":["chr"],"align":["left"]},{"label":["wt"],"name":[6],"type":["chr"],"align":["left"]},{"label":["qsec"],"name":[7],"type":["chr"],"align":["left"]},{"label":["vs"],"name":[8],"type":["chr"],"align":["left"]},{"label":["am"],"name":[9],"type":["chr"],"align":["left"]},{"label":["gear"],"name":[10],"type":["chr"],"align":["left"]},{"label":["carb"],"name":[11],"type":["chr"],"align":["left"]}],"data":[{"1":"double","2":"double","3":"double","4":"double","5":"double","6":"double","7":"double","8":"double","9":"double","10":"double","11":"double"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-177" class="exercise"><strong>Exercise 8.3  </strong></span>Create a self-defined function to convert each number of a numeric vector to a “z” score.
+</div>
+
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb194-1" data-line-number="1">y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">10</span>, <span class="dv">20</span>)</a>
+<a class="sourceLine" id="cb194-2" data-line-number="2"><span class="kw">my_z</span>(y)</a></code></pre></div>
+<pre><code>## [1] -7.2000000 -2.1000000 -0.8981462  0.5692100  2.6385602</code></pre>
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-180" class="exercise"><strong>Exercise 8.4  </strong></span>Use the dataset <code>exams.list</code> in this chapter. For each class, please convert the student’s score to a z-score.
+</div>
+
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb196-1" data-line-number="1">exams.list <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">map_df</span>(my_z)</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["class1"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["class2"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["class3"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["class4"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["class5"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"-10.4653437","2":"3.4360911","3":"2.4231722","4":"2.14516760","5":"-3.9501841"},{"1":"0.3113506","2":"4.3748421","3":"-0.2726026","4":"0.26246693","5":"2.7571071"},{"1":"2.4052108","2":"3.0665236","3":"-4.3301493","4":"3.84531402","5":"2.6629630"},{"1":"-7.2801260","2":"-6.9436495","3":"-9.1702468","4":"-5.46505396","5":"0.8708333"},{"1":"-18.2623069","2":"-15.9752984","3":"0.4716301","4":"-2.95688989","5":"-56.0333333"},{"1":"-4.0357787","2":"4.7697009","3":"3.7872898","4":"-4.21450255","5":"4.1382583"},{"1":"-8.6833333","2":"2.9714294","3":"-0.1169156","4":"-3.35201602","5":"2.8502120"},{"1":"3.2721128","2":"-48.2666667","3":"-12.6454263","4":"0.38636368","5":"3.3010578"},{"1":"-1.5200913","2":"-8.8476153","3":"5.5511589","4":"1.63521678","5":"-7.4691318"},{"1":"-3.3116168","2":"-0.1828276","3":"-1.1124331","4":"0.00860663","5":"3.3010578"},{"1":"3.0873420","2":"-15.9752984","3":"-12.6454263","4":"3.16930494","5":"-13.0000036"},{"1":"0.4445370","2":"0.5128128","3":"-7.4275214","4":"-11.60173678","5":"1.7638386"},{"1":"1.6583333","2":"-13.4222222","3":"0.1838545","4":"0.97822702","5":"-8.2809051"},{"1":"2.3028071","2":"-5.1575367","3":"-3.4843300","4":"1.31337170","5":"-11.5011421"},{"1":"1.3145120","2":"3.3452614","3":"1.1417579","4":"3.51370838","5":"-2.5039860"},{"1":"-3.7853715","2":"-6.5442256","3":"1.1417579","4":"-0.25385910","5":"-2.6932065"},{"1":"-0.8546749","2":"0.5128128","3":"4.4723829","4":"2.71886174","5":"1.3299037"},{"1":"3.4528257","2":"-10.7579600","3":"3.2320020","4":"2.62588861","5":"-8.2809051"},{"1":"-9.8173963","2":"2.5792721","3":"5.1052588","4":"-40.96505286","5":"-2.6932065"},{"1":"-2.8697430","2":"3.7897174","3":"4.6350999","4":"-12.27619971","5":"3.9770188"},{"1":"-0.3945227","2":"-6.9436495","3":"2.6336709","4":"2.71886174","5":"-13.0000036"},{"1":"2.1990482","2":"-10.7579600","3":"-4.9680940","4":"-6.33802296","5":"0.6307673"},{"1":"-0.1037090","2":"1.3856674","3":"-19.8833333","4":"-7.70113236","5":"-1.4635121"},{"1":"4.1390701","2":"1.8416667","3":"-2.7421012","4":"-5.74417579","5":"3.9770188"},{"1":"4.0562586","2":"2.0597309","3":"-4.9680940","4":"3.34318111","5":"1.8687570"},{"1":"-8.1815351","2":"-2.6182117","3":"-2.5134380","4":"3.59776409","5":"1.4406174"},{"1":"3.5417268","2":"4.7697009","3":"-2.2929610","4":"1.52933766","5":"2.5677514"},{"1":"0.3113506","2":"4.7697009","3":"-3.4843300","4":"2.43685568","5":"2.2754128"},{"1":"2.8982854","2":"3.7897174","3":"3.9640597","4":"3.51370838","5":"0.6307673"},{"1":"0.5753172","2":"-4.2852220","3":"-4.6406689","4":"-3.98888889","5":"1.4406174"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-hadley2017">
+<p>Wickham, Hadley, and Garrett Grolemund. 2017. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. 1st ed. O’Reilly Media, Inc.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="string-manipulation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-scientist-first-step.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
