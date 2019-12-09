@@ -212,7 +212,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="string-manipulation.html"><a href="string-manipulation.html#pattern-matching"><i class="fa fa-check"></i><b>7.4</b> Pattern Matching</a></li>
 <li class="chapter" data-level="7.5" data-path="string-manipulation.html"><a href="string-manipulation.html#advanced-pattern-matching-look-ahead-and-behind"><i class="fa fa-check"></i><b>7.5</b> Advanced Pattern Matching: Look Ahead and Behind</a></li>
-<li class="chapter" data-level="7.6" data-path="string-manipulation.html"><a href="string-manipulation.html#practical-cases"><i class="fa fa-check"></i><b>7.6</b> Practical Cases</a><ul>
+<li class="chapter" data-level="7.6" data-path="string-manipulation.html"><a href="string-manipulation.html#more-practices"><i class="fa fa-check"></i><b>7.6</b> More Practices</a><ul>
 <li class="chapter" data-level="7.6.1" data-path="string-manipulation.html"><a href="string-manipulation.html#case-1"><i class="fa fa-check"></i><b>7.6.1</b> Case 1</a></li>
 <li class="chapter" data-level="7.6.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-2"><i class="fa fa-check"></i><b>7.6.2</b> Case 2</a></li>
 <li class="chapter" data-level="7.6.3" data-path="string-manipulation.html"><a href="string-manipulation.html#case-3"><i class="fa fa-check"></i><b>7.6.3</b> Case 3</a></li>
@@ -326,7 +326,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb235-5" data-line-number="5"><span class="st">  </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label =</span> n), <span class="dt">vjust =</span> <span class="fl">-0.25</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb235-6" data-line-number="6"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;No. of Laureates in Different Disciplines&quot;</span>, <span class="dt">x =</span> <span class="st">&quot;Category&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;N&quot;</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb235-7" data-line-number="7"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>)</a></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-200-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-201-1.png" width="672" /></p>
 <div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb236-1" data-line-number="1">df <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb236-2" data-line-number="2"><span class="st">  </span><span class="kw">count</span>(Category) <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb236-3" data-line-number="3"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">fct_reorder</span>(Category, n), <span class="dt">y =</span> n, <span class="dt">fill =</span> Category)) <span class="op">+</span></a>
@@ -334,7 +334,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb236-5" data-line-number="5"><span class="st">  </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label =</span> n), <span class="dt">vjust =</span> <span class="fl">-0.25</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb236-6" data-line-number="6"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;No. of Laureates in Different Disciplines&quot;</span>, <span class="dt">x =</span> <span class="st">&quot;Category&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;N&quot;</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb236-7" data-line-number="7"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>)</a></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-201-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-202-1.png" width="672" /></p>
 <p>An even more dynamic graph:</p>
 <div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb237-1" data-line-number="1"><span class="kw">library</span>(gganimate) <span class="co">#install.packages(&quot;gganimate&quot;, dependencies = T)</span></a>
 <a class="sourceLine" id="cb237-2" data-line-number="2"></a>
@@ -348,7 +348,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb237-10" data-line-number="10"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb237-11" data-line-number="11"><span class="st">  </span><span class="kw">transition_states</span>(Category)  <span class="op">+</span></a>
 <a class="sourceLine" id="cb237-12" data-line-number="12"><span class="st">  </span><span class="kw">shadow_mark</span>(<span class="dt">past =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-202-1.gif" /><!-- --></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-203-1.gif" /><!-- --></p>
 </div>
 <div id="chinese-laureates" class="section level3">
 <h3><span class="header-section-number">9.4.2</span> Chinese Laureates</h3>
@@ -394,18 +394,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb242-1" data-line-number="1">nobel_winners <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb242-2" data-line-number="2"><span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Prize_Age)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb242-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">color=</span><span class="st">&quot;white&quot;</span>)</a></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-208-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-209-1.png" width="672" /></p>
 <div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb243-1" data-line-number="1">nobel_winners <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb243-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">is.na</span>(Prize_Age)) <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb243-3" data-line-number="3"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Prize_Age, <span class="dt">fill =</span> Category, <span class="dt">color =</span> Category))  <span class="op">+</span></a>
 <a class="sourceLine" id="cb243-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_density</span>() <span class="op">+</span></a>
 <a class="sourceLine" id="cb243-5" data-line-number="5"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>Category) <span class="op">+</span></a>
 <a class="sourceLine" id="cb243-6" data-line-number="6"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>)</a></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-209-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-210-1.png" width="672" /></p>
 <hr />
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-210" class="exercise"><strong>Exercise 9.1  </strong></span>Please create data frame that shows us the average agae of the winners in different categories, as shown below.
+<span id="exr:unnamed-chunk-211" class="exercise"><strong>Exercise 9.1  </strong></span>Please create data frame that shows us the average agae of the winners in different categories, as shown below.
 </div>
 
 <div data-pagedtable="false">
@@ -416,7 +416,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <hr />
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-212" class="exercise"><strong>Exercise 9.2  </strong></span>Please create data frame that shows us the distributions of male and female winners in different categories. Please show the number of males and females as well as the proportions. (i.e., frequencies and normalizaed frequencies)
+<span id="exr:unnamed-chunk-213" class="exercise"><strong>Exercise 9.2  </strong></span>Please create data frame that shows us the distributions of male and female winners in different categories. Please show the number of males and females as well as the proportions. (i.e., frequencies and normalizaed frequencies)
 </div>
 
 <div data-pagedtable="false">
@@ -436,7 +436,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-215" class="exercise"><strong>Exercise 9.4  </strong></span>Following Exercise <a href="data-scientist-first-step.html#exr:exbirthstate">9.3</a>, can you include the full names of states in the above table by adding another column?</p>
+<p><span id="exr:unnamed-chunk-216" class="exercise"><strong>Exercise 9.4  </strong></span>Following Exercise <a href="data-scientist-first-step.html#exr:exbirthstate">9.3</a>, can you include the full names of states in the above table by adding another column?</p>
 <p>In the <code>demo-data</code> directory, you can find a csv with the mapping between states abbreviations and their full names.</p>
 </div>
 

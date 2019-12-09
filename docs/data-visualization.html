@@ -212,7 +212,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="string-manipulation.html"><a href="string-manipulation.html#pattern-matching"><i class="fa fa-check"></i><b>7.4</b> Pattern Matching</a></li>
 <li class="chapter" data-level="7.5" data-path="string-manipulation.html"><a href="string-manipulation.html#advanced-pattern-matching-look-ahead-and-behind"><i class="fa fa-check"></i><b>7.5</b> Advanced Pattern Matching: Look Ahead and Behind</a></li>
-<li class="chapter" data-level="7.6" data-path="string-manipulation.html"><a href="string-manipulation.html#practical-cases"><i class="fa fa-check"></i><b>7.6</b> Practical Cases</a><ul>
+<li class="chapter" data-level="7.6" data-path="string-manipulation.html"><a href="string-manipulation.html#more-practices"><i class="fa fa-check"></i><b>7.6</b> More Practices</a><ul>
 <li class="chapter" data-level="7.6.1" data-path="string-manipulation.html"><a href="string-manipulation.html#case-1"><i class="fa fa-check"></i><b>7.6.1</b> Case 1</a></li>
 <li class="chapter" data-level="7.6.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-2"><i class="fa fa-check"></i><b>7.6.2</b> Case 2</a></li>
 <li class="chapter" data-level="7.6.3" data-path="string-manipulation.html"><a href="string-manipulation.html#case-3"><i class="fa fa-check"></i><b>7.6.3</b> Case 3</a></li>
@@ -826,12 +826,12 @@ x_shape
 </table>
 </div>
 <p>So you may conclude that all groups show similar behaviors in <code>x</code> and <code>y</code> measures. But what if we plot all subjects by groups?</p>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
 <p>See? What you see is sometimes NOT what you believe.</p>
 <p>Another example is Simpson’s Paradox, which occurs when trends that appear when a dataset is separated into groups reverse when the data are aggregated.</p>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
-<p>Based on the above graph, you would probably conclude that when <code>x</code> increases, <code>y</code> decreases. However, if you plot the scatter plots by groups, you may get the opposite conclusions. All correlations between <code>x</code> and <code>y</code> in all groups are now positive.</p>
 <p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
+<p>Based on the above graph, you would probably conclude that when <code>x</code> increases, <code>y</code> decreases. However, if you plot the scatter plots by groups, you may get the opposite conclusions. All correlations between <code>x</code> and <code>y</code> in all groups are now positive.</p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-59-1.png" width="672" /></p>
 </div>
 <div id="ggplot2" class="section level2">
 <h2><span class="header-section-number">4.2</span> <code>ggplot2</code></h2>
@@ -862,7 +862,7 @@ x_shape
 <p>We can look at the relation between <code>displ</code> and <code>hwy</code>:</p>
 <div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb102-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb102-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>()</a></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-63-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-64-1.png" width="672" /></p>
 <p><img src="images/ggplo2-elements.png" width="80%" /></p>
 <ul>
 <li><code>ggplot()</code> initializes the basic frame of the graph, with <code>data = mpg</code> specifying the data frame on which the plot is built</li>
@@ -878,16 +878,16 @@ x_shape
 </ul>
 <div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb103-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="kw">aes</span>(hwy)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb103-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">kernel=</span><span class="st">&quot;gaussian&quot;</span>)</a></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-65-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-66-1.png" width="672" /></p>
 <div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb104-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="kw">aes</span>(hwy)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb104-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_histogram</span>()</a></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-65-2.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-66-2.png" width="672" /></p>
 <ul>
 <li>Categorical variable</li>
 </ul>
 <div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb105-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="kw">aes</span>(<span class="dt">x =</span> class)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb105-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_bar</span>()</a></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-66-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-67-1.png" width="672" /></p>
 </div>
 <div id="two-variable-graph" class="section level2">
 <h2><span class="header-section-number">4.4</span> Two-variable Graph</h2>
@@ -896,20 +896,20 @@ x_shape
 </ul>
 <div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb106-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb106-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>()</a></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-67-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
 <ul>
 <li>Discrete X, Continuous Y</li>
 </ul>
 <div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb107-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="kw">aes</span>(<span class="dt">x =</span> class, <span class="dt">y =</span> hwy)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb107-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_boxplot</span>()</a></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-69-1.png" width="672" /></p>
 <ul>
 <li>Discrete X, Discrete Y</li>
 </ul>
 <div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb108-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="kw">aes</span>(<span class="dt">x =</span> manufacturer, <span class="dt">y =</span> class)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb108-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_count</span>() <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb108-3" data-line-number="3"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle=</span><span class="op">-</span><span class="dv">90</span>))</a></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-69-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-70-1.png" width="672" /></p>
 </div>
 <div id="adding-other-aesthetic-features" class="section level2">
 <h2><span class="header-section-number">4.5</span> Adding Other Aesthetic Features</h2>
@@ -920,14 +920,14 @@ x_shape
 <p>We can introduce a third variable into the plot by modifying the color of the points based on the value of that third variable. Color is an aesthetic and the color of each point can be mapped to a variable. Note that the x-coordinates and y-coordinates are aesthetics too, and they got mapped to the displ and hwy variables, respectively. In this case we will map the color to the drv variable which indicates whether a car is front wheel drive, rear wheel drive, or 4-wheel drive.</p>
 <div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb109-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy, <span class="dt">color =</span> drv)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb109-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>()</a></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-70-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-71-1.png" width="672" /></p>
 <ul>
 <li>We can also add another geom object, such as a smooth line:</li>
 </ul>
 <div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb110-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb110-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb110-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_smooth</span>()</a></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-71-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-72-1.png" width="672" /></p>
 <div class="info">
 <p>
 Could you predict what kind of graph you would get with the following code?
@@ -943,7 +943,7 @@ Could you predict what kind of graph you would get with the following code?
 <a class="sourceLine" id="cb112-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb112-3" data-line-number="3"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Engine Displacement (litres)&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Highway Miles per Gallon&quot;</span>,</a>
 <a class="sourceLine" id="cb112-4" data-line-number="4">       <span class="dt">title =</span> <span class="st">&quot;Scatter Plot -- DISPL by HWY&quot;</span>)</a></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-74-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-75-1.png" width="672" /></p>
 </div>
 <div id="saving-plots" class="section level2">
 <h2><span class="header-section-number">4.6</span> Saving Plots</h2>
@@ -955,7 +955,7 @@ Could you predict what kind of graph you would get with the following code?
 <a class="sourceLine" id="cb113-5" data-line-number="5"><span class="kw">class</span>(my_first_graph) <span class="co"># check the class</span></a></code></pre></div>
 <pre><code>## [1] &quot;gg&quot;     &quot;ggplot&quot;</code></pre>
 <div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb115-1" data-line-number="1">my_first_graph <span class="co"># auto-print the ggplot</span></a></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-75-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-76-1.png" width="672" /></p>
 <div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb116-1" data-line-number="1"><span class="kw">ggsave</span>(<span class="dt">filename =</span> <span class="st">&quot;my_first_plot.png&quot;</span>,<span class="dt">plot =</span> my_first_graph, <span class="dt">width =</span> <span class="dv">6</span>, <span class="dt">height =</span> <span class="dv">6</span>)</a></code></pre></div>
 
 </div>
