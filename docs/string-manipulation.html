@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen" />
 
 
-<meta name="date" content="2019-12-06" />
+<meta name="date" content="2019-12-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -167,9 +167,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3" data-path="subsetting.html"><a href="subsetting.html"><i class="fa fa-check"></i><b>3</b> Subsetting</a><ul>
 <li class="chapter" data-level="3.1" data-path="subsetting.html"><a href="subsetting.html#vecotr"><i class="fa fa-check"></i><b>3.1</b> Vecotr</a></li>
-<li class="chapter" data-level="3.2" data-path="subsetting.html"><a href="subsetting.html#list"><i class="fa fa-check"></i><b>3.2</b> List</a></li>
-<li class="chapter" data-level="3.3" data-path="subsetting.html"><a href="subsetting.html#data-frame"><i class="fa fa-check"></i><b>3.3</b> Data Frame</a></li>
-<li class="chapter" data-level="3.4" data-path="subsetting.html"><a href="subsetting.html#tibble"><i class="fa fa-check"></i><b>3.4</b> Tibble</a></li>
+<li class="chapter" data-level="3.2" data-path="subsetting.html"><a href="subsetting.html#factor"><i class="fa fa-check"></i><b>3.2</b> Factor</a></li>
+<li class="chapter" data-level="3.3" data-path="subsetting.html"><a href="subsetting.html#list"><i class="fa fa-check"></i><b>3.3</b> List</a></li>
+<li class="chapter" data-level="3.4" data-path="subsetting.html"><a href="subsetting.html#data-frame"><i class="fa fa-check"></i><b>3.4</b> Data Frame</a></li>
+<li class="chapter" data-level="3.5" data-path="subsetting.html"><a href="subsetting.html#tibble"><i class="fa fa-check"></i><b>3.5</b> Tibble</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>4</b> Data Visualization</a><ul>
 <li class="chapter" data-level="4.1" data-path="data-visualization.html"><a href="data-visualization.html#why-visualization"><i class="fa fa-check"></i><b>4.1</b> Why Visualization?</a></li>
@@ -188,8 +189,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.6" data-path="data-manipulation.html"><a href="data-manipulation.html#filter"><i class="fa fa-check"></i><b>5.6</b> <code>filter()</code></a></li>
 <li class="chapter" data-level="5.7" data-path="data-manipulation.html"><a href="data-manipulation.html#arrange"><i class="fa fa-check"></i><b>5.7</b> <code>arrange()</code></a></li>
 <li class="chapter" data-level="5.8" data-path="data-manipulation.html"><a href="data-manipulation.html#group_by-and-summarize"><i class="fa fa-check"></i><b>5.8</b> <code>group_by()</code> and <code>summarize()</code></a></li>
-<li class="chapter" data-level="5.9" data-path="data-manipulation.html"><a href="data-manipulation.html#left_join"><i class="fa fa-check"></i><b>5.9</b> <code>left_join()</code></a></li>
-<li class="chapter" data-level="5.10" data-path="data-manipulation.html"><a href="data-manipulation.html#exerceises"><i class="fa fa-check"></i><b>5.10</b> Exerceises</a></li>
+<li class="chapter" data-level="5.9" data-path="data-manipulation.html"><a href="data-manipulation.html#count"><i class="fa fa-check"></i><b>5.9</b> <code>count()</code></a></li>
+<li class="chapter" data-level="5.10" data-path="data-manipulation.html"><a href="data-manipulation.html#left_join"><i class="fa fa-check"></i><b>5.10</b> <code>left_join()</code></a></li>
+<li class="chapter" data-level="5.11" data-path="data-manipulation.html"><a href="data-manipulation.html#exerceises"><i class="fa fa-check"></i><b>5.11</b> Exerceises</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="data-import.html"><a href="data-import.html"><i class="fa fa-check"></i><b>6</b> Data Import</a><ul>
 <li class="chapter" data-level="6.1" data-path="data-import.html"><a href="data-import.html#readlines"><i class="fa fa-check"></i><b>6.1</b> <code>readLines()</code></a></li>
@@ -263,8 +265,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 7</span> String Manipulation</h1>
 <p><img src="images/hex-stringr.png" width="30%" /></p>
 <p>In this chapter, we will introduce some techniques relating to string manipulation.</p>
-<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb113-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a>
-<a class="sourceLine" id="cb113-2" data-line-number="2"><span class="kw">library</span>(stringr)</a></code></pre></div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb145-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a>
+<a class="sourceLine" id="cb145-2" data-line-number="2"><span class="kw">library</span>(stringr)</a></code></pre></div>
 <div id="what-is-regular-expression" class="section level2">
 <h2><span class="header-section-number">7.1</span> What is Regular Expression?</h2>
 <p><img src="images/regex.png" width="80%" /></p>
@@ -289,16 +291,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><code>str_length()</code>: get the length of the string (i.e., number of characters)</li>
 </ul>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb114-1" data-line-number="1">word_string &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;the&quot;</span>, <span class="st">&quot;word&quot;</span>, <span class="st">&quot;string&quot;</span>)</a>
-<a class="sourceLine" id="cb114-2" data-line-number="2">word_string <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb114-3" data-line-number="3"><span class="st">  </span>str_length</a></code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb146-1" data-line-number="1">word_string &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;the&quot;</span>, <span class="st">&quot;word&quot;</span>, <span class="st">&quot;string&quot;</span>)</a>
+<a class="sourceLine" id="cb146-2" data-line-number="2">word_string <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb146-3" data-line-number="3"><span class="st">  </span>str_length</a></code></pre></div>
 <pre><code>## [1] 3 4 6</code></pre>
 <ul>
 <li><code>str_c()</code>: combine strings into a longer one</li>
 </ul>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb116-1" data-line-number="1"><span class="kw">str_c</span>(<span class="st">&quot;the&quot;</span>,<span class="st">&quot;word&quot;</span>,<span class="st">&quot;string&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb148-1" data-line-number="1"><span class="kw">str_c</span>(<span class="st">&quot;the&quot;</span>,<span class="st">&quot;word&quot;</span>,<span class="st">&quot;string&quot;</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;thewordstring&quot;</code></pre>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb118-1" data-line-number="1"><span class="kw">str_c</span>(<span class="st">&quot;the&quot;</span>,<span class="st">&quot;word&quot;</span>,<span class="st">&quot;string&quot;</span>,<span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb150-1" data-line-number="1"><span class="kw">str_c</span>(<span class="st">&quot;the&quot;</span>,<span class="st">&quot;word&quot;</span>,<span class="st">&quot;string&quot;</span>,<span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;the_word_string&quot;</code></pre>
 <hr />
 <div class="danger">
@@ -309,38 +311,38 @@ Please note that the following code will generate a different result from the ab
 How can you generate exactly the same results by using <code>str_c(word_string,‚Ä¶)</code>? Please check <code>?str_c</code>.
 </p>
 </div>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb120-1" data-line-number="1"><span class="kw">str_c</span>(word_string, <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb152-1" data-line-number="1"><span class="kw">str_c</span>(word_string, <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;the&quot;    &quot;word&quot;   &quot;string&quot;</code></pre>
 <hr />
 <ul>
 <li><code>str_sub()</code>: substract part of the string</li>
 </ul>
-<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb122-1" data-line-number="1"><span class="kw">str_sub</span>(<span class="dt">string =</span> <span class="st">&quot;international&quot;</span>, <span class="dt">start =</span> <span class="dv">1</span>, <span class="dt">end =</span> <span class="dv">5</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb154-1" data-line-number="1"><span class="kw">str_sub</span>(<span class="dt">string =</span> <span class="st">&quot;international&quot;</span>, <span class="dt">start =</span> <span class="dv">1</span>, <span class="dt">end =</span> <span class="dv">5</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;inter&quot;</code></pre>
 </div>
 <div id="regular-expression-grammar" class="section level2">
 <h2><span class="header-section-number">7.3</span> Regular Expression Grammar</h2>
 <p>Now let‚Äôs look at the grammar of regular expressions in more detail. In <code>stringr</code>, there is a very useful function, <code>str_view(STRING, PATTERN)</code>, which can show us the match of the pattern in the string in a visually intuitive way:</p>
-<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb124-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>)</a>
-<a class="sourceLine" id="cb124-2" data-line-number="2"><span class="kw">str_view</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;an&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-2187b52f0f4928cd6951" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2187b52f0f4928cd6951">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>b<span class='match'>an<\/span>ana<\/li>\n  <li>pear<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb156-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>)</a>
+<a class="sourceLine" id="cb156-2" data-line-number="2"><span class="kw">str_view</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;an&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-15a72b71464f8785fa17" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-15a72b71464f8785fa17">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>b<span class='match'>an<\/span>ana<\/li>\n  <li>pear<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <div id="metacharacters" class="section level3">
 <h3><span class="header-section-number">7.3.1</span> Metacharacters</h3>
 <p><img src="images/regex-special-char.png" width="263" /><img src="images/regex-char.png" width="262" /></p>
 <p>In REGEX, <code>.</code> is a special character, referring to any character:</p>
-<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb125-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>)</a>
-<a class="sourceLine" id="cb125-2" data-line-number="2"><span class="kw">str_view</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;.a.&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-c889a4b29b4c73d12457" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c889a4b29b4c73d12457">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li><span class='match'>ban<\/span>ana<\/li>\n  <li>p<span class='match'>ear<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb157-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>)</a>
+<a class="sourceLine" id="cb157-2" data-line-number="2"><span class="kw">str_view</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;.a.&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-e3370aef9a5299cf02f6" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e3370aef9a5299cf02f6">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li><span class='match'>ban<\/span>ana<\/li>\n  <li>p<span class='match'>ear<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>But what if you really want to match a period <code>.</code> sign in your string?</p>
-<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb126-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>,<span class="st">&quot;pear&quot;</span>, <span class="st">&quot;orange. And&quot;</span>)</a>
-<a class="sourceLine" id="cb126-2" data-line-number="2"><span class="kw">str_view</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;.&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-7ab07fe5e42bd488c38d" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-7ab07fe5e42bd488c38d">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span>pple<\/li>\n  <li><span class='match'>b<\/span>anana<\/li>\n  <li><span class='match'>p<\/span>ear<\/li>\n  <li><span class='match'>o<\/span>range. And<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb127-1" data-line-number="1"><span class="kw">str_view</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-cde8c23110f6c103267b" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-cde8c23110f6c103267b">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>banana<\/li>\n  <li>pear<\/li>\n  <li>orange<span class='match'>.<\/span> And<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb158-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>,<span class="st">&quot;pear&quot;</span>, <span class="st">&quot;orange. And&quot;</span>)</a>
+<a class="sourceLine" id="cb158-2" data-line-number="2"><span class="kw">str_view</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;.&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-b493dd9e741e3a66e622" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b493dd9e741e3a66e622">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span>pple<\/li>\n  <li><span class='match'>b<\/span>anana<\/li>\n  <li><span class='match'>p<\/span>ear<\/li>\n  <li><span class='match'>o<\/span>range. And<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb159-1" data-line-number="1"><span class="kw">str_view</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-4a209eb6fc3bf32c0a66" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4a209eb6fc3bf32c0a66">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>banana<\/li>\n  <li>pear<\/li>\n  <li>orange<span class='match'>.<\/span> And<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>This leads us to the notion of escaping character <code>\</code>. In R, <code>\</code> is used if you want to tell R that the character after <code>\</code> should be treated literally, not metaphorically as a meta character. But why two slashes <code>\\</code>? It‚Äôs simple: because <code>\</code> itself is a meta character in R as well. We use it to escape quotes like <code>&quot;</code> and <code>'</code>.</p>
 <p>Therefore, the first backslash is needed to tell R that the second backslash is matched literally (because we need it to serve as an escape character in the regular expression).</p>
 </div>
@@ -351,21 +353,21 @@ How can you generate exactly the same results by using <code>str_c(word_string,‚
 <ul>
 <li><code>^</code>: The start of the string</li>
 </ul>
-<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb128-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>)</a>
-<a class="sourceLine" id="cb128-2" data-line-number="2"><span class="kw">str_view</span>(x, <span class="st">&quot;^a&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-1088153dc933871fb4d7" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1088153dc933871fb4d7">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span>pple<\/li>\n  <li>banana<\/li>\n  <li>pear<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb160-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>)</a>
+<a class="sourceLine" id="cb160-2" data-line-number="2"><span class="kw">str_view</span>(x, <span class="st">&quot;^a&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-0da4357281414aabda67" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0da4357281414aabda67">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span>pple<\/li>\n  <li>banana<\/li>\n  <li>pear<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><code>$</code>: The end of the string</li>
 </ul>
-<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb129-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>)</a>
-<a class="sourceLine" id="cb129-2" data-line-number="2"><span class="kw">str_view</span>(x, <span class="st">&quot;a$&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-311d9aa4a857f6f5d644" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-311d9aa4a857f6f5d644">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>banan<span class='match'>a<\/span><\/li>\n  <li>pear<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb130-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple pie&quot;</span>, <span class="st">&quot;apple&quot;</span>, <span class="st">&quot;apple cake&quot;</span>)</a>
-<a class="sourceLine" id="cb130-2" data-line-number="2"><span class="kw">str_view</span>(x, <span class="st">&quot;^apple$&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-a06a3b1f78c46f15fe5e" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a06a3b1f78c46f15fe5e">{"x":{"html":"<ul>\n  <li>apple pie<\/li>\n  <li><span class='match'>apple<\/span><\/li>\n  <li>apple cake<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb161-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>)</a>
+<a class="sourceLine" id="cb161-2" data-line-number="2"><span class="kw">str_view</span>(x, <span class="st">&quot;a$&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-6b0eea7ed73d98811132" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6b0eea7ed73d98811132">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>banan<span class='match'>a<\/span><\/li>\n  <li>pear<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb162-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple pie&quot;</span>, <span class="st">&quot;apple&quot;</span>, <span class="st">&quot;apple cake&quot;</span>)</a>
+<a class="sourceLine" id="cb162-2" data-line-number="2"><span class="kw">str_view</span>(x, <span class="st">&quot;^apple$&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-ba4a6ddd770cbb0b4ad3" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ba4a6ddd770cbb0b4ad3">{"x":{"html":"<ul>\n  <li>apple pie<\/li>\n  <li><span class='match'>apple<\/span><\/li>\n  <li>apple cake<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="character-set" class="section level3">
 <h3><span class="header-section-number">7.3.3</span> Character Set</h3>
@@ -373,18 +375,18 @@ How can you generate exactly the same results by using <code>str_c(word_string,‚
 <code>\\s</code>: matches any whitespace (e.g.¬†space, tab, newline).
 <code>\\w</code>: matches any alphanumeric characters</p>
 <p><img src="images/regex-char-class.png" width="50%" /><img src="images/regex-char.png" width="50%" /></p>
-<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb131-1" data-line-number="1">x&lt;-<span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>,<span class="st">&quot;apple123&quot;</span>,<span class="st">&quot;banana1&quot;</span>)</a>
-<a class="sourceLine" id="cb131-2" data-line-number="2"><span class="kw">str_view</span>(<span class="dt">string =</span> x , <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">d&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-152573428485d8b6efdf" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-152573428485d8b6efdf">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apple<span class='match'>1<\/span>23<\/li>\n  <li>banana<span class='match'>1<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb132-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;aeiouAEIOU1234_ .</span><span class="ch">\\</span><span class="st">$%-*()&quot;</span>)</a>
-<a class="sourceLine" id="cb132-2" data-line-number="2"><span class="kw">str_view_all</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">w&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-a7350949354d4e43ca38" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a7350949354d4e43ca38">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span><span class='match'>e<\/span><span class='match'>i<\/span><span class='match'>o<\/span><span class='match'>u<\/span><span class='match'>A<\/span><span class='match'>E<\/span><span class='match'>I<\/span><span class='match'>O<\/span><span class='match'>U<\/span><span class='match'>1<\/span><span class='match'>2<\/span><span class='match'>3<\/span><span class='match'>4<\/span><span class='match'>_<\/span> .\\$%-*()<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb133-1" data-line-number="1"><span class="co">#compare</span></a>
-<a class="sourceLine" id="cb133-2" data-line-number="2"><span class="kw">str_view_all</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;.&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-cb9dfc4c675964a1bc99" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-cb9dfc4c675964a1bc99">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span><span class='match'>e<\/span><span class='match'>i<\/span><span class='match'>o<\/span><span class='match'>u<\/span><span class='match'>A<\/span><span class='match'>E<\/span><span class='match'>I<\/span><span class='match'>O<\/span><span class='match'>U<\/span><span class='match'>1<\/span><span class='match'>2<\/span><span class='match'>3<\/span><span class='match'>4<\/span><span class='match'>_<\/span><span class='match'> <\/span><span class='match'>.<\/span><span class='match'>\\<\/span><span class='match'>$<\/span><span class='match'>%<\/span><span class='match'>-<\/span><span class='match'>*<\/span><span class='match'>(<\/span><span class='match'>)<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb163-1" data-line-number="1">x&lt;-<span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>,<span class="st">&quot;apple123&quot;</span>,<span class="st">&quot;banana1&quot;</span>)</a>
+<a class="sourceLine" id="cb163-2" data-line-number="2"><span class="kw">str_view</span>(<span class="dt">string =</span> x , <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">d&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-498200c574049d368265" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-498200c574049d368265">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apple<span class='match'>1<\/span>23<\/li>\n  <li>banana<span class='match'>1<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb164-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;aeiouAEIOU1234_ .</span><span class="ch">\\</span><span class="st">$%-*()&quot;</span>)</a>
+<a class="sourceLine" id="cb164-2" data-line-number="2"><span class="kw">str_view_all</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">w&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-7c6d9940e07d98014bd1" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7c6d9940e07d98014bd1">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span><span class='match'>e<\/span><span class='match'>i<\/span><span class='match'>o<\/span><span class='match'>u<\/span><span class='match'>A<\/span><span class='match'>E<\/span><span class='match'>I<\/span><span class='match'>O<\/span><span class='match'>U<\/span><span class='match'>1<\/span><span class='match'>2<\/span><span class='match'>3<\/span><span class='match'>4<\/span><span class='match'>_<\/span> .\\$%-*()<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb165-1" data-line-number="1"><span class="co">#compare</span></a>
+<a class="sourceLine" id="cb165-2" data-line-number="2"><span class="kw">str_view_all</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;.&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-53c7d4eae70c6fedb334" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-53c7d4eae70c6fedb334">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span><span class='match'>e<\/span><span class='match'>i<\/span><span class='match'>o<\/span><span class='match'>u<\/span><span class='match'>A<\/span><span class='match'>E<\/span><span class='match'>I<\/span><span class='match'>O<\/span><span class='match'>U<\/span><span class='match'>1<\/span><span class='match'>2<\/span><span class='match'>3<\/span><span class='match'>4<\/span><span class='match'>_<\/span><span class='match'> <\/span><span class='match'>.<\/span><span class='match'>\\<\/span><span class='match'>$<\/span><span class='match'>%<\/span><span class='match'>-<\/span><span class='match'>*<\/span><span class='match'>(<\/span><span class='match'>)<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="alternatives" class="section level3">
 <h3><span class="header-section-number">7.3.4</span> Alternatives</h3>
@@ -392,10 +394,10 @@ How can you generate exactly the same results by using <code>str_c(word_string,‚
 <li><code>[abc]</code>: matches a, b, or c.</li>
 <li><code>[^abc]</code>: matches anything except a, b, or c.</li>
 </ul>
-<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb134-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;grey&quot;</span>, <span class="st">&quot;gray&quot;</span>)</a>
-<a class="sourceLine" id="cb134-2" data-line-number="2"><span class="kw">str_view</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;gr[ea]y&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-e626adb4f094d8d60523" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e626adb4f094d8d60523">{"x":{"html":"<ul>\n  <li><span class='match'>grey<\/span><\/li>\n  <li><span class='match'>gray<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb166-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;grey&quot;</span>, <span class="st">&quot;gray&quot;</span>)</a>
+<a class="sourceLine" id="cb166-2" data-line-number="2"><span class="kw">str_view</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;gr[ea]y&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-8fe89678426f111fb662" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8fe89678426f111fb662">{"x":{"html":"<ul>\n  <li><span class='match'>grey<\/span><\/li>\n  <li><span class='match'>gray<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="quantifiers" class="section level3">
 <h3><span class="header-section-number">7.3.5</span> Quantifiers</h3>
@@ -405,13 +407,13 @@ How can you generate exactly the same results by using <code>str_c(word_string,‚
 <li><code>+</code>: 1 or more</li>
 <li><code>*</code>: 0 or more</li>
 </ul>
-<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb135-1" data-line-number="1">x &lt;-<span class="st"> &quot;Roman numerals: MDCCCLXXXVIII&quot;</span></a>
-<a class="sourceLine" id="cb135-2" data-line-number="2"><span class="kw">str_view</span>(x, <span class="st">&quot;CC?&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-da46394aebf4bad2f15c" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-da46394aebf4bad2f15c">{"x":{"html":"<ul>\n  <li>Roman numerals: MD<span class='match'>CC<\/span>CLXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb136-1" data-line-number="1"><span class="kw">str_view</span>(x, <span class="st">&quot;X+&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-56d2d0a403fad3e037e1" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-56d2d0a403fad3e037e1">{"x":{"html":"<ul>\n  <li>Roman numerals: MDCCCL<span class='match'>XXX<\/span>VIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb167-1" data-line-number="1">x &lt;-<span class="st"> &quot;Roman numerals: MDCCCLXXXVIII&quot;</span></a>
+<a class="sourceLine" id="cb167-2" data-line-number="2"><span class="kw">str_view</span>(x, <span class="st">&quot;CC?&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-0497e69eb173c2d487e3" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0497e69eb173c2d487e3">{"x":{"html":"<ul>\n  <li>Roman numerals: MD<span class='match'>CC<\/span>CLXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb168-1" data-line-number="1"><span class="kw">str_view</span>(x, <span class="st">&quot;X+&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-c28da37d32b72ec72cb7" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c28da37d32b72ec72cb7">{"x":{"html":"<ul>\n  <li>Roman numerals: MDCCCL<span class='match'>XXX<\/span>VIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>Specify exactly the number of repetition:</p>
 <ul>
 <li><code>{n}</code>: exactly n</li>
@@ -419,41 +421,41 @@ How can you generate exactly the same results by using <code>str_c(word_string,‚
 <li><code>{,m}</code>: at most m</li>
 <li><code>{n,m}</code>: between n and m</li>
 </ul>
-<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb137-1" data-line-number="1">x &lt;-<span class="st"> &quot;Roman numerals: MDCCCLXXXVIII&quot;</span></a>
-<a class="sourceLine" id="cb137-2" data-line-number="2"><span class="kw">str_view</span>(x, <span class="st">&quot;C{2}&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-1eb732246966ad3465f5" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1eb732246966ad3465f5">{"x":{"html":"<ul>\n  <li>Roman numerals: MD<span class='match'>CC<\/span>CLXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb138-1" data-line-number="1"><span class="kw">str_view</span>(x, <span class="st">&quot;C{2,}&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-1d9f77f4bcafcdc49fb1" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1d9f77f4bcafcdc49fb1">{"x":{"html":"<ul>\n  <li>Roman numerals: MD<span class='match'>CCC<\/span>LXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb139-1" data-line-number="1"><span class="kw">str_view</span>(x, <span class="st">&quot;C{2,3}&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-35d64e2df3aec6bed6d5" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-35d64e2df3aec6bed6d5">{"x":{"html":"<ul>\n  <li>Roman numerals: MD<span class='match'>CCC<\/span>LXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb169-1" data-line-number="1">x &lt;-<span class="st"> &quot;Roman numerals: MDCCCLXXXVIII&quot;</span></a>
+<a class="sourceLine" id="cb169-2" data-line-number="2"><span class="kw">str_view</span>(x, <span class="st">&quot;C{2}&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-fa637608048bafa03203" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fa637608048bafa03203">{"x":{"html":"<ul>\n  <li>Roman numerals: MD<span class='match'>CC<\/span>CLXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb170-1" data-line-number="1"><span class="kw">str_view</span>(x, <span class="st">&quot;C{2,}&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-792f76f1855e5fb0d02e" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-792f76f1855e5fb0d02e">{"x":{"html":"<ul>\n  <li>Roman numerals: MD<span class='match'>CCC<\/span>LXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb171-1" data-line-number="1"><span class="kw">str_view</span>(x, <span class="st">&quot;C{2,3}&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-fd5aa3f4694aedf75470" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fd5aa3f4694aedf75470">{"x":{"html":"<ul>\n  <li>Roman numerals: MD<span class='match'>CCC<\/span>LXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="greedy-vs.non-greedy-match" class="section level3">
 <h3><span class="header-section-number">7.3.6</span> Greedy vs.¬†Non-greedy match</h3>
-<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb140-1" data-line-number="1">x &lt;-<span class="st"> &quot;Roman numerals: MDCCCLXXXVIII&quot;</span></a>
-<a class="sourceLine" id="cb140-2" data-line-number="2"><span class="kw">str_view</span>(x, <span class="st">&quot;CLX+&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-347fce11881aeee7c256" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-347fce11881aeee7c256">{"x":{"html":"<ul>\n  <li>Roman numerals: MDCC<span class='match'>CLXXX<\/span>VIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb141-1" data-line-number="1"><span class="kw">str_view</span>(x, <span class="st">&quot;CLX+?&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-26a6c023822fc8d3a01a" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-26a6c023822fc8d3a01a">{"x":{"html":"<ul>\n  <li>Roman numerals: MDCC<span class='match'>CLX<\/span>XXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb172-1" data-line-number="1">x &lt;-<span class="st"> &quot;Roman numerals: MDCCCLXXXVIII&quot;</span></a>
+<a class="sourceLine" id="cb172-2" data-line-number="2"><span class="kw">str_view</span>(x, <span class="st">&quot;CLX+&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-65a32ba56cca5223eb00" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-65a32ba56cca5223eb00">{"x":{"html":"<ul>\n  <li>Roman numerals: MDCC<span class='match'>CLXXX<\/span>VIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb173-1" data-line-number="1"><span class="kw">str_view</span>(x, <span class="st">&quot;CLX+?&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-045c50109a1e23c065bc" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-045c50109a1e23c065bc">{"x":{"html":"<ul>\n  <li>Roman numerals: MDCC<span class='match'>CLX<\/span>XXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="group-and-back-reference" class="section level3">
 <h3><span class="header-section-number">7.3.7</span> Group and Back-reference</h3>
-<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb142-1" data-line-number="1">x &lt;-<span class="st"> </span>fruit <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">head</span>(<span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb142-2" data-line-number="2">x</a></code></pre></div>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb174-1" data-line-number="1">x &lt;-<span class="st"> </span>fruit <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">head</span>(<span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb174-2" data-line-number="2">x</a></code></pre></div>
 <pre><code>##  [1] &quot;apple&quot;        &quot;apricot&quot;      &quot;avocado&quot;      &quot;banana&quot;       &quot;bell pepper&quot; 
 ##  [6] &quot;bilberry&quot;     &quot;blackberry&quot;   &quot;blackcurrant&quot; &quot;blood orange&quot; &quot;blueberry&quot;</code></pre>
 <p>Now if you want to extract English fruit words which has two same letter repeating twice in a row (e.g, <em>apple</em>, <em>bell pepper</em>). How would you create your regular expression pattern?</p>
-<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb144-1" data-line-number="1"><span class="kw">str_view</span>(x, <span class="st">&quot;.{2}&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-addbd86fbbaffda4350f" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-addbd86fbbaffda4350f">{"x":{"html":"<ul>\n  <li><span class='match'>ap<\/span>ple<\/li>\n  <li><span class='match'>ap<\/span>ricot<\/li>\n  <li><span class='match'>av<\/span>ocado<\/li>\n  <li><span class='match'>ba<\/span>nana<\/li>\n  <li><span class='match'>be<\/span>ll pepper<\/li>\n  <li><span class='match'>bi<\/span>lberry<\/li>\n  <li><span class='match'>bl<\/span>ackberry<\/li>\n  <li><span class='match'>bl<\/span>ackcurrant<\/li>\n  <li><span class='match'>bl<\/span>ood orange<\/li>\n  <li><span class='match'>bl<\/span>ueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb176-1" data-line-number="1"><span class="kw">str_view</span>(x, <span class="st">&quot;.{2}&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-f6e2b5ec0a6d727350e8" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f6e2b5ec0a6d727350e8">{"x":{"html":"<ul>\n  <li><span class='match'>ap<\/span>ple<\/li>\n  <li><span class='match'>ap<\/span>ricot<\/li>\n  <li><span class='match'>av<\/span>ocado<\/li>\n  <li><span class='match'>ba<\/span>nana<\/li>\n  <li><span class='match'>be<\/span>ll pepper<\/li>\n  <li><span class='match'>bi<\/span>lberry<\/li>\n  <li><span class='match'>bl<\/span>ackberry<\/li>\n  <li><span class='match'>bl<\/span>ackcurrant<\/li>\n  <li><span class='match'>bl<\/span>ood orange<\/li>\n  <li><span class='match'>bl<\/span>ueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>The results are not what you have expected. The trick is that when you use <code>.</code> to match any character, the quantifier does not help much as any character that repeats would fit the pattern. We need a new strategy to ask the regex engine to <strong>remember</strong> the matched character and quantify the number of occurrences of the <strong>remembered character</strong>:</p>
-<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb145-1" data-line-number="1"><span class="kw">str_view</span>(x, <span class="st">&quot;(.)</span><span class="ch">\\</span><span class="st">1&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-575a197fc1921f1de60d" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-575a197fc1921f1de60d">{"x":{"html":"<ul>\n  <li>a<span class='match'>pp<\/span>le<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>banana<\/li>\n  <li>be<span class='match'>ll<\/span> pepper<\/li>\n  <li>bilbe<span class='match'>rr<\/span>y<\/li>\n  <li>blackbe<span class='match'>rr<\/span>y<\/li>\n  <li>blackcu<span class='match'>rr<\/span>ant<\/li>\n  <li>bl<span class='match'>oo<\/span>d orange<\/li>\n  <li>bluebe<span class='match'>rr<\/span>y<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb177-1" data-line-number="1"><span class="kw">str_view</span>(x, <span class="st">&quot;(.)</span><span class="ch">\\</span><span class="st">1&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-b5b5f84fd2de4a4264a6" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b5b5f84fd2de4a4264a6">{"x":{"html":"<ul>\n  <li>a<span class='match'>pp<\/span>le<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>banana<\/li>\n  <li>be<span class='match'>ll<\/span> pepper<\/li>\n  <li>bilbe<span class='match'>rr<\/span>y<\/li>\n  <li>blackbe<span class='match'>rr<\/span>y<\/li>\n  <li>blackcu<span class='match'>rr<\/span>ant<\/li>\n  <li>bl<span class='match'>oo<\/span>d orange<\/li>\n  <li>bluebe<span class='match'>rr<\/span>y<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><code>.</code>: matches any character</li>
 <li><code>(.)</code>: the parenthesis would label the matched as a group. Internally, the regex engine numbers all groups serially from left to right</li>
@@ -463,18 +465,18 @@ How can you generate exactly the same results by using <code>str_c(word_string,‚
 <hr />
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-125" class="exercise"><strong>Exercise 7.1  </strong></span>How do you match <code>abab</code> pattern, such as ‚Äúbanana‚Äù?
+<span id="exr:unnamed-chunk-136" class="exercise"><strong>Exercise 7.1  </strong></span>How do you match <code>abab</code> pattern, such as ‚Äúbanana‚Äù?
 </div>
 
-<div id="htmlwidget-bc57dfed80a526679491" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-bc57dfed80a526679491">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>b<span class='match'>anan<\/span>a<\/li>\n  <li>bell pepper<\/li>\n  <li>bilberry<\/li>\n  <li>blackberry<\/li>\n  <li>blackcurrant<\/li>\n  <li>blood orange<\/li>\n  <li>blueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-1b6fd6b87bd1cec84bb5" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1b6fd6b87bd1cec84bb5">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>b<span class='match'>anan<\/span>a<\/li>\n  <li>bell pepper<\/li>\n  <li>bilberry<\/li>\n  <li>blackberry<\/li>\n  <li>blackcurrant<\/li>\n  <li>blood orange<\/li>\n  <li>blueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-127" class="exercise"><strong>Exercise 7.2  </strong></span>How do you match <code>abba</code> pattern, such as ‚Äúpepper‚Äù?
+<span id="exr:unnamed-chunk-138" class="exercise"><strong>Exercise 7.2  </strong></span>How do you match <code>abba</code> pattern, such as ‚Äúpepper‚Äù?
 </div>
 
-<div id="htmlwidget-d0f444f4bcb26f915a45" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d0f444f4bcb26f915a45">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>banana<\/li>\n  <li>bell p<span class='match'>eppe<\/span>r<\/li>\n  <li>bilberry<\/li>\n  <li>blackberry<\/li>\n  <li>blackcurrant<\/li>\n  <li>blood orange<\/li>\n  <li>blueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-449003ff4ba575cade05" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-449003ff4ba575cade05">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>banana<\/li>\n  <li>bell p<span class='match'>eppe<\/span>r<\/li>\n  <li>bilberry<\/li>\n  <li>blackberry<\/li>\n  <li>blackcurrant<\/li>\n  <li>blood orange<\/li>\n  <li>blueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <hr />
 </div>
 </div>
@@ -486,41 +488,41 @@ How can you generate exactly the same results by using <code>str_c(word_string,‚
 <ul>
 <li><code>str_detect(STRING, PATTERN)</code>: Determine which strings in <code>STRING</code> has a match of the <code>PATTERN</code> (binary)</li>
 </ul>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb146-1" data-line-number="1">x &lt;-<span class="st"> </span>fruit <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">head</span>(<span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb146-2" data-line-number="2"><span class="kw">str_detect</span>(x, <span class="st">&quot;e$&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb178-1" data-line-number="1">x &lt;-<span class="st"> </span>fruit <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">head</span>(<span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb178-2" data-line-number="2"><span class="kw">str_detect</span>(x, <span class="st">&quot;e$&quot;</span>)</a></code></pre></div>
 <pre><code>##  [1]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE</code></pre>
 <ul>
 <li><code>str_subset(STRING, PATTERN)</code>: Subset the full strings in <code>STRING</code> that have either a full or partial match of the <code>PATTERN</code> (character)</li>
 </ul>
-<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb148-1" data-line-number="1"><span class="kw">str_subset</span>(x, <span class="st">&quot;e$&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb180-1" data-line-number="1"><span class="kw">str_subset</span>(x, <span class="st">&quot;e$&quot;</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;apple&quot;        &quot;blood orange&quot;</code></pre>
 <!-- - `str_match(STRING, PATTERN)`: Extract the content of the matches of the strings in `STRING` and each capture groups (character) -->
 <ul>
 <li><code>str_extract(STRING, PATTERN)</code>: Extract the content of the matches of the strings in <code>STRING</code> (character)</li>
 </ul>
-<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb150-1" data-line-number="1"><span class="kw">str_extract</span>(x, <span class="st">&quot;e$&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb182-1" data-line-number="1"><span class="kw">str_extract</span>(x, <span class="st">&quot;e$&quot;</span>)</a></code></pre></div>
 <pre><code>##  [1] &quot;e&quot; NA  NA  NA  NA  NA  NA  NA  &quot;e&quot; NA</code></pre>
 <ul>
 <li><code>str_replace(STRING, PATTERN, REPLACEMENT)</code>: Replace matches of the <code>PATTERN</code> with <code>REPLACEMENT</code> in <code>STRING</code> (character): str_replace()</li>
 </ul>
-<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb152-1" data-line-number="1"><span class="kw">str_replace</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;[aeiou]&quot;</span>, <span class="dt">replacement =</span> <span class="st">&quot;V&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb184-1" data-line-number="1"><span class="kw">str_replace</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;[aeiou]&quot;</span>, <span class="dt">replacement =</span> <span class="st">&quot;V&quot;</span>)</a></code></pre></div>
 <pre><code>##  [1] &quot;Vpple&quot;        &quot;Vpricot&quot;      &quot;Vvocado&quot;      &quot;bVnana&quot;       &quot;bVll pepper&quot; 
 ##  [6] &quot;bVlberry&quot;     &quot;blVckberry&quot;   &quot;blVckcurrant&quot; &quot;blVod orange&quot; &quot;blVeberry&quot;</code></pre>
 <p>It should be noted that <code>str_replace()</code> only replaces the first match of each string.</p>
-<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb154-1" data-line-number="1"><span class="kw">str_replace_all</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;[aeiou]&quot;</span>, <span class="dt">replacement =</span> <span class="st">&quot;V&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb186-1" data-line-number="1"><span class="kw">str_replace_all</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;[aeiou]&quot;</span>, <span class="dt">replacement =</span> <span class="st">&quot;V&quot;</span>)</a></code></pre></div>
 <pre><code>##  [1] &quot;VpplV&quot;        &quot;VprVcVt&quot;      &quot;VvVcVdV&quot;      &quot;bVnVnV&quot;       &quot;bVll pVppVr&quot; 
 ##  [6] &quot;bVlbVrry&quot;     &quot;blVckbVrry&quot;   &quot;blVckcVrrVnt&quot; &quot;blVVd VrVngV&quot; &quot;blVVbVrry&quot;</code></pre>
 <ul>
 <li><code>str_split(STRING, PATTERN)</code>: Split a string in <code>STRING</code> based on a <code>PATTERN</code> (character)</li>
 </ul>
-<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb156-1" data-line-number="1">x &lt;-<span class="st"> </span>sentences <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">head</span>(<span class="dv">5</span>)</a>
-<a class="sourceLine" id="cb156-2" data-line-number="2">x</a></code></pre></div>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb188-1" data-line-number="1">x &lt;-<span class="st"> </span>sentences <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">head</span>(<span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb188-2" data-line-number="2">x</a></code></pre></div>
 <pre><code>## [1] &quot;The birch canoe slid on the smooth planks.&quot; 
 ## [2] &quot;Glue the sheet to the dark blue background.&quot;
 ## [3] &quot;It&#39;s easy to tell the depth of a well.&quot;     
 ## [4] &quot;These days a chicken leg is a rare dish.&quot;   
 ## [5] &quot;Rice is often served in round bowls.&quot;</code></pre>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb158-1" data-line-number="1"><span class="kw">str_split</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">s&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb190-1" data-line-number="1"><span class="kw">str_split</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">s&quot;</span>)</a></code></pre></div>
 <pre><code>## [[1]]
 ## [1] &quot;The&quot;     &quot;birch&quot;   &quot;canoe&quot;   &quot;slid&quot;    &quot;on&quot;      &quot;the&quot;     &quot;smooth&quot; 
 ## [8] &quot;planks.&quot;
@@ -539,8 +541,8 @@ How can you generate exactly the same results by using <code>str_c(word_string,‚
 ## [[5]]
 ## [1] &quot;Rice&quot;   &quot;is&quot;     &quot;often&quot;  &quot;served&quot; &quot;in&quot;     &quot;round&quot;  &quot;bowls.&quot;</code></pre>
 <p>Please note that the return of <code>str_split()</code> is a <code>list</code>.</p>
-<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb160-1" data-line-number="1">fields &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Name: Hadley&quot;</span>, <span class="st">&quot;Country: NZ&quot;</span>, <span class="st">&quot;Age: 35&quot;</span>)</a>
-<a class="sourceLine" id="cb160-2" data-line-number="2">fields <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">str_split</span>(<span class="st">&quot;: &quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb192-1" data-line-number="1">fields &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Name: Hadley&quot;</span>, <span class="st">&quot;Country: NZ&quot;</span>, <span class="st">&quot;Age: 35&quot;</span>)</a>
+<a class="sourceLine" id="cb192-2" data-line-number="2">fields <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">str_split</span>(<span class="st">&quot;: &quot;</span>)</a></code></pre></div>
 <pre><code>## [[1]]
 ## [1] &quot;Name&quot;   &quot;Hadley&quot;
 ## 
@@ -549,7 +551,7 @@ How can you generate exactly the same results by using <code>str_c(word_string,‚
 ## 
 ## [[3]]
 ## [1] &quot;Age&quot; &quot;35&quot;</code></pre>
-<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb162-1" data-line-number="1">fields <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">str_split</span>(<span class="st">&quot;: &quot;</span>, <span class="dt">simplify =</span> T)</a></code></pre></div>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb194-1" data-line-number="1">fields <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">str_split</span>(<span class="st">&quot;: &quot;</span>, <span class="dt">simplify =</span> T)</a></code></pre></div>
 <pre><code>##      [,1]      [,2]    
 ## [1,] &quot;Name&quot;    &quot;Hadley&quot;
 ## [2,] &quot;Country&quot; &quot;NZ&quot;    
@@ -557,12 +559,12 @@ How can you generate exactly the same results by using <code>str_c(word_string,‚
 <hr />
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-138" class="exercise"><strong>Exercise 7.3  </strong></span>Convert American dates to British dates.
+<span id="exr:unnamed-chunk-149" class="exercise"><strong>Exercise 7.3  </strong></span>Convert American dates to British dates.
 </div>
 
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-139" class="exercise"><strong>Exercise 7.4  </strong></span>Split filenames of ICNALE
+<span id="exr:unnamed-chunk-150" class="exercise"><strong>Exercise 7.4  </strong></span>Split filenames of ICNALE
 </div>
 
 <hr />
@@ -570,15 +572,15 @@ How can you generate exactly the same results by using <code>str_c(word_string,‚
 <div id="advanced-pattern-matching-look-ahead-and-behind" class="section level2">
 <h2><span class="header-section-number">7.5</span> Advanced Pattern Matching: Look Ahead and Behind</h2>
 <p>If you want to find <code>Windows</code>, but only when it is followed by <code>&quot;95, 98, NT, 2000&quot;</code>:</p>
-<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb164-1" data-line-number="1">win &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Windows2000&quot;</span>, <span class="st">&quot;Windows&quot;</span>, <span class="st">&quot;Windows3.1&quot;</span>)</a>
-<a class="sourceLine" id="cb164-2" data-line-number="2"><span class="kw">str_view</span>(win, <span class="st">&quot;Windows(?=95|98|NT|2000)&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-79e9a28327ae0d158236" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-79e9a28327ae0d158236">{"x":{"html":"<ul>\n  <li><span class='match'>Windows<\/span>2000<\/li>\n  <li>Windows<\/li>\n  <li>Windows3.1<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb196-1" data-line-number="1">win &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Windows2000&quot;</span>, <span class="st">&quot;Windows&quot;</span>, <span class="st">&quot;Windows3.1&quot;</span>)</a>
+<a class="sourceLine" id="cb196-2" data-line-number="2"><span class="kw">str_view</span>(win, <span class="st">&quot;Windows(?=95|98|NT|2000)&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-7b4c44f85ee319ca4146" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7b4c44f85ee319ca4146">{"x":{"html":"<ul>\n  <li><span class='match'>Windows<\/span>2000<\/li>\n  <li>Windows<\/li>\n  <li>Windows3.1<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>Or the other way around:</p>
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb165-1" data-line-number="1">win &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Windows2000&quot;</span>, <span class="st">&quot;Windows&quot;</span>, <span class="st">&quot;Windows3.1&quot;</span>)</a>
-<a class="sourceLine" id="cb165-2" data-line-number="2"><span class="kw">str_view</span>(win, <span class="st">&quot;Windows(?!95|98|NT|2000)&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-796cbdd4cd68d05ddf57" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-796cbdd4cd68d05ddf57">{"x":{"html":"<ul>\n  <li>Windows2000<\/li>\n  <li><span class='match'>Windows<\/span><\/li>\n  <li><span class='match'>Windows<\/span>3.1<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb197-1" data-line-number="1">win &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Windows2000&quot;</span>, <span class="st">&quot;Windows&quot;</span>, <span class="st">&quot;Windows3.1&quot;</span>)</a>
+<a class="sourceLine" id="cb197-2" data-line-number="2"><span class="kw">str_view</span>(win, <span class="st">&quot;Windows(?!95|98|NT|2000)&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-abddf17a38a930113a1b" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-abddf17a38a930113a1b">{"x":{"html":"<ul>\n  <li>Windows2000<\/li>\n  <li><span class='match'>Windows<\/span><\/li>\n  <li><span class='match'>Windows<\/span>3.1<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>In the regular expression, the <code>()</code> after <code>Windows</code> is a condition for matching. There are four alternatives to specify your conditions:</p>
 <ul>
 <li>Look-ahead conditions:
@@ -592,30 +594,30 @@ How can you generate exactly the same results by using <code>str_c(word_string,‚
 <li><code>(?&lt;!pattern)</code>: The target match cannot be preceded by the pattern in the condition</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb166-1" data-line-number="1">win &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;2000Windows&quot;</span>, <span class="st">&quot;Windows&quot;</span>, <span class="st">&quot;3.1Windows&quot;</span>)</a>
-<a class="sourceLine" id="cb166-2" data-line-number="2"><span class="kw">str_view</span>(win, <span class="st">&quot;(?&lt;=95|98|NT|2000)Windows&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-3f622945bb876feac3a9" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3f622945bb876feac3a9">{"x":{"html":"<ul>\n  <li>2000<span class='match'>Windows<\/span><\/li>\n  <li>Windows<\/li>\n  <li>3.1Windows<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb167-1" data-line-number="1">win &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;2000Windows&quot;</span>, <span class="st">&quot;Windows&quot;</span>, <span class="st">&quot;3.1Windows&quot;</span>)</a>
-<a class="sourceLine" id="cb167-2" data-line-number="2"><span class="kw">str_view</span>(win, <span class="st">&quot;(?&lt;!95|98|NT|2000)Windows&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-595aca44ab192edcdb5e" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-595aca44ab192edcdb5e">{"x":{"html":"<ul>\n  <li>2000Windows<\/li>\n  <li><span class='match'>Windows<\/span><\/li>\n  <li>3.1<span class='match'>Windows<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb198-1" data-line-number="1">win &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;2000Windows&quot;</span>, <span class="st">&quot;Windows&quot;</span>, <span class="st">&quot;3.1Windows&quot;</span>)</a>
+<a class="sourceLine" id="cb198-2" data-line-number="2"><span class="kw">str_view</span>(win, <span class="st">&quot;(?&lt;=95|98|NT|2000)Windows&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-a32c95fdc579041af690" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a32c95fdc579041af690">{"x":{"html":"<ul>\n  <li>2000<span class='match'>Windows<\/span><\/li>\n  <li>Windows<\/li>\n  <li>3.1Windows<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb199-1" data-line-number="1">win &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;2000Windows&quot;</span>, <span class="st">&quot;Windows&quot;</span>, <span class="st">&quot;3.1Windows&quot;</span>)</a>
+<a class="sourceLine" id="cb199-2" data-line-number="2"><span class="kw">str_view</span>(win, <span class="st">&quot;(?&lt;!95|98|NT|2000)Windows&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-32ef845eadec7e3699a5" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-32ef845eadec7e3699a5">{"x":{"html":"<ul>\n  <li>2000Windows<\/li>\n  <li><span class='match'>Windows<\/span><\/li>\n  <li>3.1<span class='match'>Windows<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <hr />
 
 <div class="exercise">
 <span id="exr:exa" class="exercise"><strong>Exercise 7.5  </strong></span>Please use the first ten words in the <code>fruit</code> vector for this exercise. Based on the fruit vocabulary, can you give us all the <code>a's</code> that are followed by <code>STOP_SOUNDS</code>? <code>STOP_SOUNDS</code> refer to <code>p, t, k, b, d, g</code>.
 </div>
 
-<div id="htmlwidget-8954f2d82ba499918681" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8954f2d82ba499918681">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span>pple<\/li>\n  <li><span class='match'>a<\/span>pricot<\/li>\n  <li>avoc<span class='match'>a<\/span>do<\/li>\n  <li>banana<\/li>\n  <li>bell pepper<\/li>\n  <li>bilberry<\/li>\n  <li>blackberry<\/li>\n  <li>blackcurrant<\/li>\n  <li>blood orange<\/li>\n  <li>blueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-7b9c3db40e67a835c94b" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7b9c3db40e67a835c94b">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span>pple<\/li>\n  <li><span class='match'>a<\/span>pricot<\/li>\n  <li>avoc<span class='match'>a<\/span>do<\/li>\n  <li>banana<\/li>\n  <li>bell pepper<\/li>\n  <li>bilberry<\/li>\n  <li>blackberry<\/li>\n  <li>blackcurrant<\/li>\n  <li>blood orange<\/li>\n  <li>blueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <hr />
 
 <div class="exercise">
 <p><span id="exr:exall" class="exercise"><strong>Exercise 7.6  </strong></span>Similar to the previous example, Exercise <a href="string-manipulation.html#exr:exa">7.5</a>, also based on the first ten words in <code>fruit</code>, please identify all the vowels that are both followed and preceded by <code>STOP_SOUNDS</code>.</p>
 </div>
 
-<div id="htmlwidget-5f7b0c606fb1ef7264b5" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-5f7b0c606fb1ef7264b5">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>banana<\/li>\n  <li>bell p<span class='match'>e<\/span>pper<\/li>\n  <li>bilberry<\/li>\n  <li>blackberry<\/li>\n  <li>blackcurrant<\/li>\n  <li>blood orange<\/li>\n  <li>blueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-cbeecc844f255c2ff535" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-cbeecc844f255c2ff535">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>banana<\/li>\n  <li>bell p<span class='match'>e<\/span>pper<\/li>\n  <li>bilberry<\/li>\n  <li>blackberry<\/li>\n  <li>blackcurrant<\/li>\n  <li>blood orange<\/li>\n  <li>blueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <hr />
 </div>
 <div id="practical-cases" class="section level2">
@@ -623,11 +625,11 @@ How can you generate exactly the same results by using <code>str_c(word_string,‚
 <div id="case-1" class="section level3">
 <h3><span class="header-section-number">7.6.1</span> Case 1</h3>
 <p>How to extract only the <code>number</code> of the week from the <code>y</code> column, and add this information to a new column, <code>z</code>?</p>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb168-1" data-line-number="1">dt &lt;-<span class="st"> </span><span class="kw">tibble</span>(</a>
-<a class="sourceLine" id="cb168-2" data-line-number="2">  <span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>,</a>
-<a class="sourceLine" id="cb168-3" data-line-number="3">  <span class="dt">y =</span> <span class="kw">c</span>(<span class="st">&quot;wk 3&quot;</span>, <span class="st">&quot;week-1&quot;</span>, <span class="st">&quot;7&quot;</span>, <span class="st">&quot;w#9&quot;</span>)</a>
-<a class="sourceLine" id="cb168-4" data-line-number="4">)</a>
-<a class="sourceLine" id="cb168-5" data-line-number="5">dt</a></code></pre></div>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb200-1" data-line-number="1">dt &lt;-<span class="st"> </span><span class="kw">tibble</span>(</a>
+<a class="sourceLine" id="cb200-2" data-line-number="2">  <span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>,</a>
+<a class="sourceLine" id="cb200-3" data-line-number="3">  <span class="dt">y =</span> <span class="kw">c</span>(<span class="st">&quot;wk 3&quot;</span>, <span class="st">&quot;week-1&quot;</span>, <span class="st">&quot;7&quot;</span>, <span class="st">&quot;w#9&quot;</span>)</a>
+<a class="sourceLine" id="cb200-4" data-line-number="4">)</a>
+<a class="sourceLine" id="cb200-5" data-line-number="5">dt</a></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["x"],"name":[1],"type":["int"],"align":["right"]},{"label":["y"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"1","2":"wk 3"},{"1":"2","2":"week-1"},{"1":"3","2":"7"},{"1":"4","2":"w#9"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -642,10 +644,10 @@ How can you generate exactly the same results by using <code>str_c(word_string,‚
 <div id="case-2" class="section level3">
 <h3><span class="header-section-number">7.6.2</span> Case 2</h3>
 <p>How to extract all the vowels from the first ten words in <code>fruit</code>?</p>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb169-1" data-line-number="1">dt &lt;-<span class="st"> </span><span class="kw">tibble</span>(</a>
-<a class="sourceLine" id="cb169-2" data-line-number="2">  <span class="dt">WORD =</span> fruit[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>]</a>
-<a class="sourceLine" id="cb169-3" data-line-number="3">)</a>
-<a class="sourceLine" id="cb169-4" data-line-number="4">dt</a></code></pre></div>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb201-1" data-line-number="1">dt &lt;-<span class="st"> </span><span class="kw">tibble</span>(</a>
+<a class="sourceLine" id="cb201-2" data-line-number="2">  <span class="dt">WORD =</span> fruit[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>]</a>
+<a class="sourceLine" id="cb201-3" data-line-number="3">)</a>
+<a class="sourceLine" id="cb201-4" data-line-number="4">dt</a></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["WORD"],"name":[1],"type":["chr"],"align":["left"]}],"data":[{"1":"apple"},{"1":"apricot"},{"1":"avocado"},{"1":"banana"},{"1":"bell pepper"},{"1":"bilberry"},{"1":"blackberry"},{"1":"blackcurrant"},{"1":"blood orange"},{"1":"blueberry"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -660,8 +662,8 @@ How can you generate exactly the same results by using <code>str_c(word_string,‚
 <div id="case-3" class="section level3">
 <h3><span class="header-section-number">7.6.3</span> Case 3</h3>
 <p>How to separate the English and Chinese and create two new columns, <code>EN</code>, <code>CH</code>?</p>
-<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb170-1" data-line-number="1">tb &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="st">&quot;IÊàë&quot;</span>, <span class="st">&quot;loveÊÑõ&quot;</span>, <span class="st">&quot;you‰Ω†&quot;))</span></a>
-<a class="sourceLine" id="cb170-2" data-line-number="2"><span class="st">tb</span></a></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb202-1" data-line-number="1">tb &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="st">&quot;IÊàë&quot;</span>, <span class="st">&quot;loveÊÑõ&quot;</span>, <span class="st">&quot;you‰Ω†&quot;))</span></a>
+<a class="sourceLine" id="cb202-2" data-line-number="2"><span class="st">tb</span></a></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["x"],"name":[1],"type":["chr"],"align":["left"]}],"data":[{"1":"IÊàë"},{"1":"loveÊÑõ"},{"1":"you‰Ω†"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -676,8 +678,8 @@ How can you generate exactly the same results by using <code>str_c(word_string,‚
 <div id="case-4" class="section level3">
 <h3><span class="header-section-number">7.6.4</span> Case 4</h3>
 <p>How to extract the numbers and split the numbers into <code>START</code> and <code>END</code>?</p>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb171-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="st">&quot;1-12Âë®&quot;</span>, <span class="st">&quot;1-10Âë®&quot;</span>, <span class="st">&quot;5-12Âë®&quot;</span>))</a>
-<a class="sourceLine" id="cb171-2" data-line-number="2">df</a></code></pre></div>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb203-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="st">&quot;1-12Âë®&quot;</span>, <span class="st">&quot;1-10Âë®&quot;</span>, <span class="st">&quot;5-12Âë®&quot;</span>))</a>
+<a class="sourceLine" id="cb203-2" data-line-number="2">df</a></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["x"],"name":[1],"type":["chr"],"align":["left"]}],"data":[{"1":"1-12Âë®"},{"1":"1-10Âë®"},{"1":"5-12Âë®"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -692,10 +694,10 @@ How can you generate exactly the same results by using <code>str_c(word_string,‚
 <div id="case-5" class="section level3">
 <h3><span class="header-section-number">7.6.5</span> Case 5</h3>
 <p>How to extract numbers of each token and compute the sum of the number and save the results in a new column <code>SUM</code>?</p>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb172-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">tibble</span>(</a>
-<a class="sourceLine" id="cb172-2" data-line-number="2">  <span class="dt">x =</span> <span class="kw">c</span>(<span class="st">&quot;1234&quot;</span>, <span class="st">&quot;B246&quot;</span>, <span class="st">&quot;217C&quot;</span>, <span class="st">&quot;2357f&quot;</span>, <span class="st">&quot;21WD4&quot;</span>)</a>
-<a class="sourceLine" id="cb172-3" data-line-number="3">)</a>
-<a class="sourceLine" id="cb172-4" data-line-number="4">df</a></code></pre></div>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb204-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">tibble</span>(</a>
+<a class="sourceLine" id="cb204-2" data-line-number="2">  <span class="dt">x =</span> <span class="kw">c</span>(<span class="st">&quot;1234&quot;</span>, <span class="st">&quot;B246&quot;</span>, <span class="st">&quot;217C&quot;</span>, <span class="st">&quot;2357f&quot;</span>, <span class="st">&quot;21WD4&quot;</span>)</a>
+<a class="sourceLine" id="cb204-3" data-line-number="3">)</a>
+<a class="sourceLine" id="cb204-4" data-line-number="4">df</a></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["x"],"name":[1],"type":["chr"],"align":["left"]}],"data":[{"1":"1234"},{"1":"B246"},{"1":"217C"},{"1":"2357f"},{"1":"21WD4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -710,10 +712,10 @@ How can you generate exactly the same results by using <code>str_c(word_string,‚
 <div id="case6" class="section level3">
 <h3><span class="header-section-number">7.6.6</span> Case 6</h3>
 <p>How to extract all the numbers that follow a upper-casing letter? For example, <code>34</code> after <code>W</code>; <code>217</code> after <code>B</code>?</p>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb173-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">tibble</span>(</a>
-<a class="sourceLine" id="cb173-2" data-line-number="2">  <span class="dt">x =</span> <span class="kw">c</span>(<span class="st">&quot;12W34&quot;</span>, <span class="st">&quot;AB2C46&quot;</span>, <span class="st">&quot;B217C&quot;</span>, <span class="st">&quot;akTs6df&quot;</span>, <span class="st">&quot;21WD4&quot;</span>)</a>
-<a class="sourceLine" id="cb173-3" data-line-number="3">)</a>
-<a class="sourceLine" id="cb173-4" data-line-number="4">df</a></code></pre></div>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb205-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">tibble</span>(</a>
+<a class="sourceLine" id="cb205-2" data-line-number="2">  <span class="dt">x =</span> <span class="kw">c</span>(<span class="st">&quot;12W34&quot;</span>, <span class="st">&quot;AB2C46&quot;</span>, <span class="st">&quot;B217C&quot;</span>, <span class="st">&quot;akTs6df&quot;</span>, <span class="st">&quot;21WD4&quot;</span>)</a>
+<a class="sourceLine" id="cb205-3" data-line-number="3">)</a>
+<a class="sourceLine" id="cb205-4" data-line-number="4">df</a></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["x"],"name":[1],"type":["chr"],"align":["left"]}],"data":[{"1":"12W34"},{"1":"AB2C46"},{"1":"B217C"},{"1":"akTs6df"},{"1":"21WD4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
