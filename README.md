@@ -5,3 +5,4 @@
 This repository hosts the course materials for the course ENC2055.
 
 p.s. testing updates from google cloud
+p.s. testomg updates from local machine
