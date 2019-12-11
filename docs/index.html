@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen" />
 
 
-<meta name="date" content="2019-12-11" />
+<meta name="date" content="2019-12-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,10 +52,6 @@
 
 <link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
-<script src="libs/str_view-binding-1.4.0/str_view.js"></script>
 
 
 <style type="text/css">
@@ -143,6 +139,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#textbook"><i class="fa fa-check"></i>Textbook</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-website"><i class="fa fa-check"></i>Course Website</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-demo-data"><i class="fa fa-check"></i>Course Demo Data</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#questions"><i class="fa fa-check"></i>Questions?</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="intro-ds.html"><a href="intro-ds.html"><i class="fa fa-check"></i><b>1</b> Data Science and R</a><ul>
 <li class="chapter" data-level="1.1" data-path="intro-ds.html"><a href="intro-ds.html#what-is-data-science"><i class="fa fa-check"></i><b>1.1</b> What is Data Science?</a></li>
@@ -265,8 +262,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="A.2" data-path="the-shell.html"><a href="the-shell.html#shebang-line"><i class="fa fa-check"></i><b>A.2</b> Shebang Line</a></li>
 <li class="chapter" data-level="A.3" data-path="the-shell.html"><a href="the-shell.html#basic-shell-commands"><i class="fa fa-check"></i><b>A.3</b> Basic Shell Commands</a></li>
 <li class="chapter" data-level="A.4" data-path="the-shell.html"><a href="the-shell.html#text-analytic-related-commands"><i class="fa fa-check"></i><b>A.4</b> Text-Analytic Related Commands</a></li>
+<li class="chapter" data-level="A.5" data-path="the-shell.html"><a href="the-shell.html#references"><i class="fa fa-check"></i><b>A.5</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="references-1.html"><a href="references-1.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://web.ntnu.edu.tw/~alvinchen" target ="blank">Alvin Chen </a></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -291,14 +289,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">ENC2055: Introduction to Programming Languages for Linguistic Analysis</h1>
 <p class="author"><em>Alvin Chen</em></p>
-<p class="date"><em>2019-12-11</em></p>
+<p class="date"><em>2019-12-12</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
-<p>Welcome to ENC2055. This is a grad-level course tailored to those who are interested in computational text analytics and data science in general. Have you decided to embark upon a digital journey to your future career, there are a series of courses provided in the <a href="http://www.eng.ntnu.edu.tw/en/">Department of English, NTNU, Taiwan</a>, offerring necessary skills and knowledge in important disciplines. This introductory course in basic computational coding would be a prerequisite course for many other advance-level courses. Also, our <a href="https://sites.google.com/ntnueng.tw/linguistics-ntnu-eng">Linguistics group</a> is dedicated to linguistics in particular.</p>
+<p>Welcome to ENC2055 Introduction to Programming Languages for Linguistic Analysis. This is a graduate-level course tailored to those who are interested in computational text analytics and data science in general. Have you decided to embark upon a digital journey to your future career, there are a series of courses provided in the <a href="http://www.eng.ntnu.edu.tw/en/">Department of English, NTNU, Taiwan</a>, offerring necessary skills and knowledge in important disciplines. This introductory course in basic computational coding would be a prerequisite course for many other advance-level courses. Also, our <a href="https://sites.google.com/ntnueng.tw/linguistics-ntnu-eng">Linguistics group</a> is dedicated to linguistics in particular.</p>
 <div id="course-objective" class="section level2 unnumbered">
 <h2>Course Objective</h2>
-<p>The objective of this course is to provide a comprehensive introduction to programming languages with a special focus on its application in linguistic analyses. This course is especially tailored to those who do not have any background or experiences in coding. We will start from the very basic concepts, such as data types, variable assignments, control structures, to more complex procedures such as routines, functions, and project-based tasks. The course will consist of a series of theme-based hands-on tutorials, which demonstrate how the flexibility of the programming language can help you become a more efficient and productive data scientist. Specifically, this course will use the language R as our featuring programming language and introduce you to R, Rstudio, and a collection of R packages designed to work together to make linguistic analyses fast, fluent, and fun.By the end of the course, students should have a working knowledge of coding and an ability to read another programmer’s code.</p>
+<p>The objective of this course is to provide a comprehensive introduction to programming languages with a special focus on its application in linguistic analyses. This course is especially tailored to those who do not have any background or experiences in coding. We will start from the very basic concepts, such as data types, variable assignments, control structures, to more complex procedures such as routines, functions, and other exploratory project-based tasks. The course consists of a series of theme-based hands-on tutorials, which demonstrate how the flexibility of the programming language can help you become a more efficient and productive data scientist. Specifically, this course will use the language R as our featuring programming language and introduce you to R, Rstudio, and a collection of R packages designed to work together to make linguistic analyses fast, fluent, and fun. By the end of the course, students should have a working knowledge of coding and an initial ability to advance a project independently as a data scientist.</p>
 <p>In this course, we will not be dealing with complex maths like:</p>
 <p><span class="math display">\[
 f(x)=\frac{1}{\sqrt{2 \pi}} e^{-\frac{1}{2} x^{2}}
@@ -306,7 +304,7 @@ f(x)=\frac{1}{\sqrt{2 \pi}} e^{-\frac{1}{2} x^{2}}
 <p><span class="math display">\[
  P(A) = \sum P(\{ (e_1,\dotsc,e_N) \})  =  \binom{N}{k} \cdot p^kq^{N-k}
 \]</span></p>
-<p>Intead, we will have more experiences with coding:</p>
+<p>We will not be dealing with lingusitic theories as well. No <em>transformations</em>. No <em>movements</em>. No <em>bindings</em>. This course is all about computational coding.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2">summary_monthly_temp &lt;-<span class="st"> </span>weather <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb1-3" data-line-number="3"><span class="st">  </span><span class="kw">group_by</span>(month) <span class="op">%&gt;%</span><span class="st"> </span></a>
@@ -315,7 +313,7 @@ f(x)=\frac{1}{\sqrt{2 \pi}} e^{-\frac{1}{2} x^{2}}
 </div>
 <div id="textbook" class="section level2 unnumbered">
 <h2>Textbook</h2>
-<p>We will not use a particular textbook for the course. However, I do like to recommend <span class="citation">Wickham and Grolemund (<a href="#ref-hadley2017">2017</a>)</span> for its simplicity.</p>
+<p>Throughout the semester, we will follow the materials provided on our course website (see below). We will not use a particular textbook for the course. However, I do like to recommend <span class="citation">Wickham and Grolemund (<a href="#ref-hadley2017">2017</a>)</span> for its simplicity.</p>
 <p><img src="images/r4dbook.png" width="35%" /></p>
 <p>Also, another great book for R lovers, by <span class="citation">Davies (<a href="#ref-davies2016">2016</a>)</span>:</p>
 <p><img src="images/book-R-cover.png" width="35%" /></p>
@@ -327,6 +325,10 @@ f(x)=\frac{1}{\sqrt{2 \pi}} e^{-\frac{1}{2} x^{2}}
 <div id="course-demo-data" class="section level2 unnumbered">
 <h2>Course Demo Data</h2>
 <p><a href="https://www.dropbox.com/sh/vj0301k616mv3l0/AABlwukvM_R7-YV-_shZ4FK6a?dl=0">Dropbox Demo Data Directory</a></p>
+</div>
+<div id="questions" class="section level2 unnumbered">
+<h2>Questions?</h2>
+<p>For more information related to this course, please see the <a href="https://alvinntnu.github.io/NTNU_ENC2055/FAQ.html">FAQ</a> on our course website or write me at any time at: <a href="mailto:alvinchen@ntnu.edu.tw">alvinchen@ntnu.edu.tw</a></p>
 
 </div>
 </div>
