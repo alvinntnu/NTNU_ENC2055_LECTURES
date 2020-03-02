@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen" />
 
 
-<meta name="date" content="2019-12-14" />
+<meta name="date" content="2020-03-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -308,20 +308,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 }</code></pre>
 <p>The <em>condition</em> is palced in parentheses after <code>if</code>. The <em>condition</em> must be an expression that returns only a single logical value (TRUE or FALSE). If it is TRUE, the code chunk 1 in the braces will be executed; if the condition is not satisfied, the code chunk 2 in the braces after <code>else</code> will be executed.</p>
 <p>Let’s create a simple password checker. Imagine that your system password is stored on the server. You can only get into the system if you enter the correct password. For every password you enter, the system gatekeeper will check if your input password matches the one stored on the server. If they match, you will be allowed to get through.</p>
-<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb234-1" data-line-number="1">input &lt;-<span class="st"> </span><span class="dv">113</span></a>
-<a class="sourceLine" id="cb234-2" data-line-number="2"><span class="cf">if</span>(input <span class="op">==</span><span class="st"> </span><span class="dv">987</span>){</a>
-<a class="sourceLine" id="cb234-3" data-line-number="3">  <span class="kw">writeLines</span>(<span class="st">&quot;Congratulations! Now you may get in!&quot;</span>)</a>
-<a class="sourceLine" id="cb234-4" data-line-number="4">} <span class="cf">else</span>{</a>
-<a class="sourceLine" id="cb234-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="st">&quot;Sorry! Wrong password.&quot;</span>)</a>
-<a class="sourceLine" id="cb234-6" data-line-number="6">}</a></code></pre></div>
+<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb245-1" data-line-number="1">input &lt;-<span class="st"> </span><span class="dv">113</span></a>
+<a class="sourceLine" id="cb245-2" data-line-number="2"><span class="cf">if</span>(input <span class="op">==</span><span class="st"> </span><span class="dv">987</span>){</a>
+<a class="sourceLine" id="cb245-3" data-line-number="3">  <span class="kw">writeLines</span>(<span class="st">&quot;Congratulations! Now you may get in!&quot;</span>)</a>
+<a class="sourceLine" id="cb245-4" data-line-number="4">} <span class="cf">else</span>{</a>
+<a class="sourceLine" id="cb245-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="st">&quot;Sorry! Wrong password.&quot;</span>)</a>
+<a class="sourceLine" id="cb245-6" data-line-number="6">}</a></code></pre></div>
 <pre><code>## Sorry! Wrong password.</code></pre>
 <p>Now we can read the input directly from the user’s input in the R console:</p>
-<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb236-1" data-line-number="1">input &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt=</span><span class="st">&quot;Please enter your password:&quot;</span>)</a>
-<a class="sourceLine" id="cb236-2" data-line-number="2"><span class="cf">if</span>(input <span class="op">==</span><span class="st"> </span><span class="dv">987</span>){</a>
-<a class="sourceLine" id="cb236-3" data-line-number="3">  <span class="kw">writeLines</span>(<span class="st">&quot;Congratulations! Now you may get in!&quot;</span>)</a>
-<a class="sourceLine" id="cb236-4" data-line-number="4">} <span class="cf">else</span>{</a>
-<a class="sourceLine" id="cb236-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="st">&quot;Sorry! Wrong password.&quot;</span>)</a>
-<a class="sourceLine" id="cb236-6" data-line-number="6">}</a></code></pre></div>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb247-1" data-line-number="1">input &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt=</span><span class="st">&quot;Please enter your password:&quot;</span>)</a>
+<a class="sourceLine" id="cb247-2" data-line-number="2"><span class="cf">if</span>(input <span class="op">==</span><span class="st"> </span><span class="dv">987</span>){</a>
+<a class="sourceLine" id="cb247-3" data-line-number="3">  <span class="kw">writeLines</span>(<span class="st">&quot;Congratulations! Now you may get in!&quot;</span>)</a>
+<a class="sourceLine" id="cb247-4" data-line-number="4">} <span class="cf">else</span>{</a>
+<a class="sourceLine" id="cb247-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="st">&quot;Sorry! Wrong password.&quot;</span>)</a>
+<a class="sourceLine" id="cb247-6" data-line-number="6">}</a></code></pre></div>
 </div>
 <div id="for" class="section level2">
 <h2><span class="header-section-number">9.2</span> <code>for</code></h2>
@@ -331,21 +331,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 }</code></pre>
 <p>The <em>LOOP_INDEX</em> is a placeholder that represents an element in the <em>LOOP_VECTOR</em>. When the loop begins, the <em>LOOP_INDEX</em> starts off as the first element in the vector. When the loop reaches the end of the brace, the <em>LOOP_INDEX</em> is incremented, taking on the next element in the vector. This process continues until the loop reaches the final element of the <em>LOOP_VECTOR</em>. At this point, the code chunk is executed for the last time, and the loop exits.</p>
 <p>For example, if we have a character vector with a few words in it. We can use a <code>for</code> loop to get the number of characters for each element in the vector.</p>
-<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb238-1" data-line-number="1">word_vec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>,<span class="st">&quot;banana&quot;</span>,<span class="st">&quot;watermelon&quot;</span>,<span class="st">&quot;papaya&quot;</span>)</a>
-<a class="sourceLine" id="cb238-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb238-3" data-line-number="3"><span class="cf">for</span>(w <span class="cf">in</span> word_vec){</a>
-<a class="sourceLine" id="cb238-4" data-line-number="4">  word_nchar &lt;-<span class="st"> </span><span class="kw">nchar</span>(w)</a>
-<a class="sourceLine" id="cb238-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="kw">as.character</span>(word_nchar))</a>
-<a class="sourceLine" id="cb238-6" data-line-number="6">}</a></code></pre></div>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb249-1" data-line-number="1">word_vec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>,<span class="st">&quot;banana&quot;</span>,<span class="st">&quot;watermelon&quot;</span>,<span class="st">&quot;papaya&quot;</span>)</a>
+<a class="sourceLine" id="cb249-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb249-3" data-line-number="3"><span class="cf">for</span>(w <span class="cf">in</span> word_vec){</a>
+<a class="sourceLine" id="cb249-4" data-line-number="4">  word_nchar &lt;-<span class="st"> </span><span class="kw">nchar</span>(w)</a>
+<a class="sourceLine" id="cb249-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="kw">as.character</span>(word_nchar))</a>
+<a class="sourceLine" id="cb249-6" data-line-number="6">}</a></code></pre></div>
 <pre><code>## 5
 ## 6
 ## 10
 ## 6</code></pre>
 <p>For the above example, there is another way to write the <code>for</code> loop:</p>
-<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb240-1" data-line-number="1"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(word_vec)){</a>
-<a class="sourceLine" id="cb240-2" data-line-number="2">  word_nchar &lt;-<span class="st"> </span><span class="kw">nchar</span>(word_vec[i])</a>
-<a class="sourceLine" id="cb240-3" data-line-number="3">  <span class="kw">writeLines</span>(<span class="kw">as.character</span>(word_nchar))</a>
-<a class="sourceLine" id="cb240-4" data-line-number="4">}</a></code></pre></div>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb251-1" data-line-number="1"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(word_vec)){</a>
+<a class="sourceLine" id="cb251-2" data-line-number="2">  word_nchar &lt;-<span class="st"> </span><span class="kw">nchar</span>(word_vec[i])</a>
+<a class="sourceLine" id="cb251-3" data-line-number="3">  <span class="kw">writeLines</span>(<span class="kw">as.character</span>(word_nchar))</a>
+<a class="sourceLine" id="cb251-4" data-line-number="4">}</a></code></pre></div>
 <pre><code>## 5
 ## 6
 ## 10
@@ -361,14 +361,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Upon the start of a <code>while</code> loop, the <em>LOOP_CONDITION</em> is evaluated. If the condition is TRUE, the braced code chunk is executed line by line till the end of the chunk. At this point, the <em>LOOP_CONDITION</em> will be checked again. The loop terminates immediately when the condition is evaluated to be FALSE.</p>
 <p>Based on the template above, you should infer that the code chunk executed must somehow cause the loop to exit, and very often will change the value of certain objects, which would eventaully lead to the change of the <em>LOOP_CONDITION</em>. If nothing ever changes the <em>LOOP_CONDITION</em>, R will crash due to the infinite loops.</p>
 <p>Let’s come back to our password checker. This time let’s create a dumb checker. When you give a wrong password which is smaller than your true answer, it will automatically approach the right asnwer for you (and of course no real-world application would do that!)</p>
-<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb243-1" data-line-number="1">ans &lt;-<span class="st"> </span><span class="dv">87</span></a>
-<a class="sourceLine" id="cb243-2" data-line-number="2">guess &lt;-<span class="st"> </span><span class="dv">83</span></a>
-<a class="sourceLine" id="cb243-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb243-4" data-line-number="4"><span class="cf">while</span>(guess <span class="op">!=</span><span class="st"> </span>ans){</a>
-<a class="sourceLine" id="cb243-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="st">&quot;Your `guess` is too small! The system will take care for you!&quot;</span>)</a>
-<a class="sourceLine" id="cb243-6" data-line-number="6">  guess &lt;-<span class="st"> </span>guess <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb243-7" data-line-number="7">  <span class="kw">cat</span>(<span class="st">&quot;Now the system is adjusting your `guess` to &quot;</span>, guess, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</a>
-<a class="sourceLine" id="cb243-8" data-line-number="8">}</a></code></pre></div>
+<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb254-1" data-line-number="1">ans &lt;-<span class="st"> </span><span class="dv">87</span></a>
+<a class="sourceLine" id="cb254-2" data-line-number="2">guess &lt;-<span class="st"> </span><span class="dv">83</span></a>
+<a class="sourceLine" id="cb254-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb254-4" data-line-number="4"><span class="cf">while</span>(guess <span class="op">!=</span><span class="st"> </span>ans){</a>
+<a class="sourceLine" id="cb254-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="st">&quot;Your `guess` is too small! The system will take care for you!&quot;</span>)</a>
+<a class="sourceLine" id="cb254-6" data-line-number="6">  guess &lt;-<span class="st"> </span>guess <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb254-7" data-line-number="7">  <span class="kw">cat</span>(<span class="st">&quot;Now the system is adjusting your `guess` to &quot;</span>, guess, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</a>
+<a class="sourceLine" id="cb254-8" data-line-number="8">}</a></code></pre></div>
 <pre><code>## Your `guess` is too small! The system will take care for you!
 ## Now the system is adjusting your `guess` to  84 
 ## Your `guess` is too small! The system will take care for you!
@@ -382,18 +382,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">9.4</span> Toy Example</h2>
 <p>Now we are playing the Guess Game. The game is as follows:</p>
 <p>I pick a number from 1 to 100. You have to guess which number I picked. Every time you guess wrong, I’ll tell you whether the number is higher or lower.</p>
-<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb245-1" data-line-number="1">ans &lt;-<span class="st"> </span><span class="dv">18</span></a>
-<a class="sourceLine" id="cb245-2" data-line-number="2">guess &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt =</span> <span class="st">&quot;Please guess my number(0~100):&quot;</span>)</a>
-<a class="sourceLine" id="cb245-3" data-line-number="3"><span class="cf">while</span>(guess <span class="op">!=</span><span class="st"> </span>ans){</a>
-<a class="sourceLine" id="cb245-4" data-line-number="4">  <span class="cf">if</span>(guess <span class="op">&lt;</span><span class="st"> </span>ans){</a>
-<a class="sourceLine" id="cb245-5" data-line-number="5">    <span class="kw">writeLines</span>(<span class="st">&quot;The asnwer is higher.&quot;</span>)</a>
-<a class="sourceLine" id="cb245-6" data-line-number="6">    guess &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt =</span> <span class="st">&quot;Please guess my number(0~100):&quot;</span>)    </a>
-<a class="sourceLine" id="cb245-7" data-line-number="7">  }<span class="cf">else</span>{</a>
-<a class="sourceLine" id="cb245-8" data-line-number="8">    <span class="kw">writeLines</span>(<span class="st">&quot;The asnwer is lower&quot;</span>)</a>
-<a class="sourceLine" id="cb245-9" data-line-number="9">    guess &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt =</span> <span class="st">&quot;Please guess my number(0~100):&quot;</span>)</a>
-<a class="sourceLine" id="cb245-10" data-line-number="10">  }</a>
-<a class="sourceLine" id="cb245-11" data-line-number="11">}</a>
-<a class="sourceLine" id="cb245-12" data-line-number="12"><span class="kw">writeLines</span>(<span class="st">&quot;Correct!&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb256-1" data-line-number="1">ans &lt;-<span class="st"> </span><span class="dv">18</span></a>
+<a class="sourceLine" id="cb256-2" data-line-number="2">guess &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt =</span> <span class="st">&quot;Please guess my number(0~100):&quot;</span>)</a>
+<a class="sourceLine" id="cb256-3" data-line-number="3"><span class="cf">while</span>(guess <span class="op">!=</span><span class="st"> </span>ans){</a>
+<a class="sourceLine" id="cb256-4" data-line-number="4">  <span class="cf">if</span>(guess <span class="op">&lt;</span><span class="st"> </span>ans){</a>
+<a class="sourceLine" id="cb256-5" data-line-number="5">    <span class="kw">writeLines</span>(<span class="st">&quot;The asnwer is higher.&quot;</span>)</a>
+<a class="sourceLine" id="cb256-6" data-line-number="6">    guess &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt =</span> <span class="st">&quot;Please guess my number(0~100):&quot;</span>)    </a>
+<a class="sourceLine" id="cb256-7" data-line-number="7">  }<span class="cf">else</span>{</a>
+<a class="sourceLine" id="cb256-8" data-line-number="8">    <span class="kw">writeLines</span>(<span class="st">&quot;The asnwer is lower&quot;</span>)</a>
+<a class="sourceLine" id="cb256-9" data-line-number="9">    guess &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt =</span> <span class="st">&quot;Please guess my number(0~100):&quot;</span>)</a>
+<a class="sourceLine" id="cb256-10" data-line-number="10">  }</a>
+<a class="sourceLine" id="cb256-11" data-line-number="11">}</a>
+<a class="sourceLine" id="cb256-12" data-line-number="12"><span class="kw">writeLines</span>(<span class="st">&quot;Correct!&quot;</span>)</a></code></pre></div>
 
 </div>
 </div>
@@ -448,7 +448,7 @@ gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": null,
 "fontsettings": {
-"theme": "white",
+"theme": "sepia",
 "family": "sans",
 "size": 2
 },
