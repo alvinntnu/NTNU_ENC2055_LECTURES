@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen" />
 
 
-<meta name="date" content="2020-03-02" />
+<meta name="date" content="2020-03-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,10 +52,6 @@
 
 <link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
-<script src="libs/str_view-binding-1.4.0/str_view.js"></script>
 
 
 <style type="text/css">
@@ -292,30 +288,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="code-format-convetion" class="section level1">
 <h1><span class="header-section-number">Chapter 3</span> Code Format Convention</h1>
-<p>Like your first time of learning English writing, you need to know the conventional writing styles and formats in coding as well. This is very important because scripts of good formats would increase their readability. This would save you a lot of time in case of future debugging and maintenace.</p>
+<p>Like the first time we learn English writing, we need to know the conventional writing styles and formats in coding as well. This is very important because scripts of good formats would increase their readability. This would save us a lot of time in case of future debugging and maintenace.</p>
 <p>This chapter will discuss common practices among most R users.</p>
 <div id="assignment--" class="section level2">
 <h2><span class="header-section-number">3.1</span> Assignment <code>&lt;-</code></h2>
-<p>In R, people normally use <code>&lt;-</code> to assign values to object names. In other languages such as Python, people often use <code>=</code>. While R usually would still understand the value-assignment when you use <code>=</code>, I would still suggest to use <code>&lt;-</code> just to avoid the chance of confusing your R.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1">x1 &lt;-<span class="st"> &quot;This is a sentence.&quot;</span></a>
-<a class="sourceLine" id="cb39-2" data-line-number="2">x2 =<span class="st"> &quot;This is a sentence.&quot;</span></a>
-<a class="sourceLine" id="cb39-3" data-line-number="3">x1</a></code></pre></div>
+<p>In R, people normally use <code>&lt;-</code> to assign values to object names. In other languages such as Python, people often use <code>=</code>. Although R still understands the value-assignment when you use <code>=</code>, I would still suggest to use <code>&lt;-</code> just to avoid the chance of confusing your R.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">x1 &lt;-<span class="st"> &quot;This is a sentence.&quot;</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">x2 =<span class="st"> &quot;This is a sentence.&quot;</span></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">x1</a></code></pre></div>
 <pre><code>## [1] &quot;This is a sentence.&quot;</code></pre>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1">x2</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">x2</a></code></pre></div>
 <pre><code>## [1] &quot;This is a sentence.&quot;</code></pre>
 </div>
 <div id="comment" class="section level2">
 <h2><span class="header-section-number">3.2</span> Comment <code>#</code></h2>
 <p>When you write codes, you would need to commit your code extensively. This is very important because we often forget why and how we write it this way. In your R script, any strings after the <code>#</code> will be treated as comments, which will NOT be processed by R. We can often add additional <code>-</code> and <code>=</code> after the <code>#</code> to separate different code chunks.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="co"># ====================</span></a>
-<a class="sourceLine" id="cb43-2" data-line-number="2"><span class="co"># Variable Assignment</span></a>
-<a class="sourceLine" id="cb43-3" data-line-number="3"><span class="co"># ====================</span></a>
-<a class="sourceLine" id="cb43-4" data-line-number="4">x &lt;-<span class="st"> &quot;This is a sentence&quot;</span></a>
-<a class="sourceLine" id="cb43-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb43-6" data-line-number="6"><span class="co"># ====================</span></a>
-<a class="sourceLine" id="cb43-7" data-line-number="7"><span class="co"># Variable Printing</span></a>
-<a class="sourceLine" id="cb43-8" data-line-number="8"><span class="co"># ====================</span></a>
-<a class="sourceLine" id="cb43-9" data-line-number="9">x</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="co"># ====================</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="co"># Variable Assignment</span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co"># ====================</span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4">x &lt;-<span class="st"> &quot;This is a sentence&quot;</span></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co"># ====================</span></a>
+<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co"># Variable Printing</span></a>
+<a class="sourceLine" id="cb5-8" data-line-number="8"><span class="co"># ====================</span></a>
+<a class="sourceLine" id="cb5-9" data-line-number="9">x</a></code></pre></div>
 <pre><code>## [1] &quot;This is a sentence&quot;</code></pre>
 </div>
 <div id="script-naming" class="section level2">
@@ -334,40 +330,48 @@ my first script.R
 <p>In your script, you will create lots of objects. Spend some time thinking about how to name all these objects. Choose names that are intuitive and meaningful. It is often the case that you want to keep the names simple (as typing is really annoying) but easy to understand as well.</p>
 <p>There are some principles:</p>
 <ul>
-<li>Use nouns for the <code>object</code> names</li>
+<li>Use nouns for the <code>object</code> names (e.g., <code>PTT_corpus</code>)</li>
 <li>Use verbs for the <code>function</code> names (e.g., <code>generate_ngrams()</code>)</li>
-<li>Connect multiword names with <code>_</code> (e.g., <code>NTNU_corpus</code>)</li>
-<li>Avoid using characters/strings that have been used by R (e.g., <code>c</code>, <code>mean</code>, <code>sum</code>, <code>T</code> etc.)</li>
+<li>Connect multiword names with <code>_</code> (e.g., <code>PTT_corpus_segmented</code>)</li>
+<li>Avoid using characters/strings that have been used by R (e.g., <code>vector</code>, <code>c</code>, <code>mean</code>, <code>sum</code>, <code>T</code> etc.)</li>
 </ul>
 </div>
 <div id="whitespace" class="section level2">
 <h2><span class="header-section-number">3.5</span> Whitespace</h2>
 <p>For operators (i.e., <code>=</code>, <code>+</code>, <code>-</code>, <code>&lt;-</code>), they are usually embraced by whitespaces, which would make your script easier to read:</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" data-line-number="1"><span class="co"># Recommended</span></a>
-<a class="sourceLine" id="cb46-2" data-line-number="2">grade_average &lt;-<span class="st"> </span><span class="kw">mean</span>(midterm <span class="op">*</span><span class="st"> </span><span class="fl">0.5</span> <span class="op">+</span><span class="st"> </span>final <span class="op">*</span><span class="st"> </span><span class="fl">0.5</span>)</a>
-<a class="sourceLine" id="cb46-3" data-line-number="3"><span class="co"># NOT Recommended</span></a>
-<a class="sourceLine" id="cb46-4" data-line-number="4">grade_average&lt;-<span class="kw">mean</span>(midterm<span class="op">*</span><span class="fl">0.5</span><span class="op">+</span>final<span class="op">*</span><span class="fl">0.5</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="co"># Recommended</span></a>
+<a class="sourceLine" id="cb8-2" data-line-number="2">grade_average &lt;-<span class="st"> </span><span class="kw">mean</span>(midterm <span class="op">*</span><span class="st"> </span><span class="fl">0.5</span> <span class="op">+</span><span class="st"> </span>final <span class="op">*</span><span class="st"> </span><span class="fl">0.5</span>)</a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="co"># NOT Recommended</span></a>
+<a class="sourceLine" id="cb8-4" data-line-number="4">grade_average&lt;-<span class="kw">mean</span>(midterm<span class="op">*</span><span class="fl">0.5</span><span class="op">+</span>final<span class="op">*</span><span class="fl">0.5</span>)</a></code></pre></div>
 <p>For <code>:</code> and <code>::</code>, usually we do not put whitespaces around them:</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" data-line-number="1"><span class="co"># Recommended</span></a>
-<a class="sourceLine" id="cb47-2" data-line-number="2">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb47-3" data-line-number="3">tidyr<span class="op">::</span><span class="kw">separate</span>()</a>
-<a class="sourceLine" id="cb47-4" data-line-number="4"><span class="co"># NOT Recommended</span></a>
-<a class="sourceLine" id="cb47-5" data-line-number="5">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span> <span class="op">:</span><span class="st"> </span><span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb47-6" data-line-number="6">tidyr <span class="op">::</span><span class="st"> </span><span class="kw">separate</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="co"># Recommended</span></a>
+<a class="sourceLine" id="cb9-2" data-line-number="2">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb9-3" data-line-number="3">tidyr<span class="op">::</span><span class="kw">separate</span>()</a>
+<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="co"># NOT Recommended</span></a>
+<a class="sourceLine" id="cb9-5" data-line-number="5">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span> <span class="op">:</span><span class="st"> </span><span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb9-6" data-line-number="6">tidyr <span class="op">::</span><span class="st"> </span><span class="kw">separate</span>()</a></code></pre></div>
+<div class="info">
+<p>
+<code>:</code> is an expression in R to create a sequence of numbers. For example, <code>c(1:10)</code> is the same as <code>c(1,2,3,4,5,6,7,8,9,10)</code>.
+</p>
+<p>
+<code>::</code> is an expression to access a particular object/function from a library without having the entire library loaded in your current R environment. For example, <code>tidyr::separate()</code> calls the function <code>separate()</code> from the library <code>tidyr</code> but the other objects in <code>tidyr</code> are still NOT included. You cannot use the other objects defined in <code>tidyr</code>.
+</p>
+</div>
 <p>For parentheses <code>(</code>, if it is in the control structure, we usually put a whitespace before the initial <code>(</code>:</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" data-line-number="1"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb48-2" data-line-number="2"><span class="cf">if</span> ( x <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)</a></code></pre></div>
-<p>But if the parenthesis is in the function call, we don’t put a whitespace before the initial <code>(</code>:</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" data-line-number="1"><span class="kw">mean</span>(x)</a>
-<a class="sourceLine" id="cb49-2" data-line-number="2"><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> money, <span class="dt">y =</span> achievement))</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="cf">if</span> ( x <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)</a></code></pre></div>
+<p>But if the parenthesis is in the function call (i.e., where we specify the arguments of the parameters), we don’t put a whitespace before the initial <code>(</code>:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw">mean</span>(x)</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> money, <span class="dt">y =</span> achievement))</a></code></pre></div>
 <p>For curely brackets, we usually put a linebreak after the initial <code>{</code> and the ending <code>}</code> should be one single line. Also, as sometimes you would embed many different control structures at the same time, leading to many ending <code>}</code> lines, it is always good to commit properly which ending <code>}</code> goes with which control structure.</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" data-line-number="1"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>) {</a>
-<a class="sourceLine" id="cb50-2" data-line-number="2">  <span class="cf">if</span> (i <span class="op">&lt;</span><span class="st"> </span><span class="dv">5</span>){</a>
-<a class="sourceLine" id="cb50-3" data-line-number="3">    <span class="kw">print</span>(i)    </a>
-<a class="sourceLine" id="cb50-4" data-line-number="4">  } <span class="cf">else</span> {</a>
-<a class="sourceLine" id="cb50-5" data-line-number="5">    <span class="kw">print</span>(i<span class="op">+</span><span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb50-6" data-line-number="6">  } <span class="co">#endif</span></a>
-<a class="sourceLine" id="cb50-7" data-line-number="7">} <span class="co">#endfor</span></a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>) {</a>
+<a class="sourceLine" id="cb12-2" data-line-number="2">  <span class="cf">if</span> (i <span class="op">&lt;</span><span class="st"> </span><span class="dv">5</span>){</a>
+<a class="sourceLine" id="cb12-3" data-line-number="3">    <span class="kw">print</span>(i)    </a>
+<a class="sourceLine" id="cb12-4" data-line-number="4">  } <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb12-5" data-line-number="5">    <span class="kw">print</span>(i<span class="op">+</span><span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb12-6" data-line-number="6">  } <span class="co">#endif</span></a>
+<a class="sourceLine" id="cb12-7" data-line-number="7">} <span class="co">#endfor</span></a></code></pre></div>
 <pre><code>## [1] 1
 ## [1] 2
 ## [1] 3
@@ -381,12 +385,12 @@ my first script.R
 </div>
 <div id="indention-and-linebreaks" class="section level2">
 <h2><span class="header-section-number">3.6</span> Indention and Linebreaks</h2>
-<p>R does not care about line breaks, whitespaces, or tabs in your R script. But these formating characters are important because you need all these characters to help you quickly keep track of your script. Make good use of the indention to increase the readability of your script.</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" data-line-number="1">long_function_name &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">a =</span> <span class="st">&quot;a long argument&quot;</span>, </a>
-<a class="sourceLine" id="cb52-2" data-line-number="2">                               <span class="dt">b =</span> <span class="st">&quot;another argument&quot;</span>,</a>
-<a class="sourceLine" id="cb52-3" data-line-number="3">                               <span class="dt">c =</span> <span class="st">&quot;another long argument&quot;</span>) {</a>
-<a class="sourceLine" id="cb52-4" data-line-number="4">  <span class="co"># As usual code is indented by two spaces.</span></a>
-<a class="sourceLine" id="cb52-5" data-line-number="5">}</a></code></pre></div>
+<p>R does not care about line breaks, whitespaces, or tabs in your R script. But these formating characters are important because you need all these characters to help you quickly keep track of the script’s structure. Make good use of the indention to increase the readability of your script.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">long_function_name &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">a =</span> <span class="st">&quot;a long argument&quot;</span>, </a>
+<a class="sourceLine" id="cb14-2" data-line-number="2">                               <span class="dt">b =</span> <span class="st">&quot;another argument&quot;</span>,</a>
+<a class="sourceLine" id="cb14-3" data-line-number="3">                               <span class="dt">c =</span> <span class="st">&quot;another long argument&quot;</span>) {</a>
+<a class="sourceLine" id="cb14-4" data-line-number="4">  <span class="co"># As usual code is indented by two spaces.</span></a>
+<a class="sourceLine" id="cb14-5" data-line-number="5">}</a></code></pre></div>
 </div>
 <div id="more-references" class="section level2">
 <h2><span class="header-section-number">3.7</span> More References</h2>
@@ -470,20 +474,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

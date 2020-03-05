@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen" />
 
 
-<meta name="date" content="2020-03-02" />
+<meta name="date" content="2020-03-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,10 +52,6 @@
 
 <link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
-<script src="libs/str_view-binding-1.4.0/str_view.js"></script>
 
 
 <style type="text/css">
@@ -351,20 +347,38 @@ Figure 2.1: Rstudio Interface
 <ul>
 <li>Rstudio Interface:
 <ul>
-<li>Editor: You creat and edit our R-related files here (e.g., <code>*.r</code>, <code>*.Rmd</code> etc.)</li>
-<li>Console: This is the R engine, which runs the codes we send out either from the file or directly from the console input</li>
+<li>Editor: You creat and edit R-related files here (e.g., <code>*.r</code>, <code>*.Rmd</code> etc.)</li>
+<li>Console: This is the R engine, which runs the codes we send out either from the R-script file or directly from the console input</li>
 <li>Output: You can view graphic outputs here</li>
 </ul>
 <hr /></li>
 </ul>
 <p>The R console is like a calculator. You can type any R code in the console after the prompt <code>&gt;</code> and run the code line by line by pressing <code>enter</code>.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a></code></pre></div>
 <pre><code>## [1] 2</code></pre>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">log</span>(<span class="dv">10</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">log</span>(<span class="dv">10</span>)</a></code></pre></div>
 <pre><code>## [1] 2.302585</code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="dv">1</span><span class="op">:</span><span class="dv">5</span></a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="dv">1</span><span class="op">:</span><span class="dv">5</span></a></code></pre></div>
 <pre><code>## [1] 1 2 3 4 5</code></pre>
-<p>In the above example (Figure <a href="r-fundamentals.html#fig:rstudiointerface">2.1</a>), I wrote a few lines of codes in the <code>Editor</code> and asked R to run these lines of codes in the R <code>Console</code> and print the results directly in the <code>Output</code>.</p>
+<hr />
+<p>Or alternatively, we can create an R script in Rstudio and write down lines of R codes to be passed to the R console. This way, we can run the whole script all at once. This is the idea of writing a program.</p>
+<p>In the above example (Figure <a href="r-fundamentals.html#fig:rstudiointerface">2.1</a>), I wrote a few lines of codes in a R script file (cf. the <code>Editor</code> frame) and asked R to run these lines of codes in the R <code>Console</code>. And the graphic output of the R script was printed in the <code>Output</code> frame.</p>
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-6" class="exercise"><strong>Exercise 2.1  </strong></span>Please create a new R script in Rstudio. You may name the script as “ch2.R”. Please write the following codes in the script and pass the whole script to the R Console.
+</div>
+
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">scores &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">1000</span>, <span class="dt">mean =</span> <span class="dv">75</span>, <span class="dt">sd =</span> <span class="fl">5.8</span>)</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw">plot</span>(<span class="kw">density</span>(scores))</a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="kw">hist</span>(scores)</a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="kw">boxplot</span>(scores)</a></code></pre></div>
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-8" class="exercise"><strong>Exercise 2.2  </strong></span>Find the answer to the following mathematical calculation in R.
+</div>
+
+<p><span class="math inline">\(2^{2+1}-4+64^{-2^{2.25-\frac{1}{4}}}\)</span></p>
+<p>= 16777220</p>
 </div>
 <div id="assignment" class="section level2">
 <h2><span class="header-section-number">2.4</span> Assignment</h2>
@@ -434,19 +448,32 @@ Figure 2.1: Rstudio Interface
 <pre><code>## [1] &quot;function&quot;</code></pre>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="kw">class</span>(print)</a></code></pre></div>
 <pre><code>## [1] &quot;function&quot;</code></pre>
+<p>To instruct R to do things more precisely, a function call usually has many <code>parameters</code> to specify. Take the earlier function <code>matrix()</code> for example. It is a pre-defined function in the R base library.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1">ex_array &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">8</span>,<span class="dv">19</span>),<span class="dt">byrow =</span> T, <span class="dt">nrow =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb32-2" data-line-number="2">ex_array</a></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    5    6
+## [2,]    3    8   19</code></pre>
+<p>When creating a matrix, we specify the values for the <strong>parameters</strong>, <code>byrow =</code> and <code>nrow =</code>. These specifications tell R to create a matrix with <em>N</em> rows and arrange the numbers <em>by rows</em>. The actual values of the parameters that we use, i.e., <code>T</code> and <code>2</code>, are referred to as <strong>arguments</strong>.</p>
+<div class="info">
+<p>
+<strong>Parameter</strong> is a variable in the declaration of function. <strong>Argument</strong> is the actual value of this variable that gets passed to function.
+</p>
+</div>
+<hr />
 <p>Most importantly, we can define our own function, which is tailored to perform specific tasks. All self-created functions need to be defined first in the R environment before you can call them.</p>
 <ul>
 <li>Define own functions:</li>
 </ul>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1">print_out_user_name &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">name =</span> <span class="st">&quot;&quot;</span>){</a>
-<a class="sourceLine" id="cb32-2" data-line-number="2">  <span class="kw">cat</span>(<span class="st">&quot;The current username is: &quot;</span>, name, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</a>
-<a class="sourceLine" id="cb32-3" data-line-number="3">}</a></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1">print_out_user_name &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">name =</span> <span class="st">&quot;&quot;</span>){</a>
+<a class="sourceLine" id="cb34-2" data-line-number="2">  <span class="kw">cat</span>(<span class="st">&quot;The current username is: &quot;</span>, name, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</a>
+<a class="sourceLine" id="cb34-3" data-line-number="3">}</a></code></pre></div>
 <ul>
 <li>Call own functions:</li>
 </ul>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="kw">print_out_user_name</span>(<span class="dt">name =</span> <span class="st">&quot;Alvin Cheng-Hsien Chen&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="kw">print_out_user_name</span>(<span class="dt">name =</span> <span class="st">&quot;Alvin Cheng-Hsien Chen&quot;</span>)</a></code></pre></div>
 <pre><code>## The current username is:  Alvin Cheng-Hsien Chen</code></pre>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="kw">print_out_user_name</span>(<span class="dt">name =</span> <span class="st">&quot;Ada Lovelace&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="kw">print_out_user_name</span>(<span class="dt">name =</span> <span class="st">&quot;Ada Lovelace&quot;</span>)</a></code></pre></div>
 <pre><code>## The current username is:  Ada Lovelace</code></pre>
 </div>
 <div id="script" class="section level2">
@@ -459,8 +486,8 @@ Figure 2.1: Rstudio Interface
 <h2><span class="header-section-number">2.8</span> Library</h2>
 <p>R, like other programming languages, comes with a huge database of packages and extensions, allowing us to do many different tasks without worrying about writing the codes all from the scratch. In <a href="https://cran.r-project.org/web/views/">CRAN Task Views</a>, you can find specific packages that you need for particular topics/tasks.</p>
 <p>To install a package (i.e., library):</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</a>
-<a class="sourceLine" id="cb37-2" data-line-number="2"><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;ggplot2&quot;</span>, <span class="st">&quot;devtools&quot;</span>, <span class="st">&quot;dplyr&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</a>
+<a class="sourceLine" id="cb39-2" data-line-number="2"><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;ggplot2&quot;</span>, <span class="st">&quot;devtools&quot;</span>, <span class="st">&quot;dplyr&quot;</span>))</a></code></pre></div>
 </div>
 <div id="setting" class="section level2">
 <h2><span class="header-section-number">2.9</span> Setting</h2>
@@ -471,8 +498,8 @@ Figure 2.1: Rstudio Interface
 <h2><span class="header-section-number">2.10</span> Seeking Help</h2>
 <p>In the process of (learning) programming, one thing you will never be able to dodge is a strong desire for help. Here are the sources from which you may get additional assistance.</p>
 <p>Within Rstudio, in the R console, you can always use <code>?</code> to check the documentation of a particular function (cf. Figure <a href="r-fundamentals.html#fig:help1">2.2</a>). When you run the command, you will see the documentation popping up in the output frame of the Rstudio.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1">?log</a>
-<a class="sourceLine" id="cb38-2" data-line-number="2">?read.table</a></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1">?log</a>
+<a class="sourceLine" id="cb40-2" data-line-number="2">?read.table</a></code></pre></div>
 <div class="figure"><span id="fig:help1"></span>
 <img src="images/Rstudio_help.png" alt="Help 1" width="80%" />
 <p class="caption">
@@ -559,6 +586,41 @@ Figure 2.3: Help 2
 <li><code>Ctrl/Command + S</code>: save file</li>
 <li><code>Command + Shift + C</code>: comment/uncomment selected lines</li>
 </ul>
+<hr />
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-26" class="exercise"><strong>Exercise 2.3  </strong></span>Make yourself familiar with the <code>iris</code> data set, which is included in R.</p>
+</div>
+
+<p><img src="images/iris-sepal-petal.jpg" width="70%" /></p>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-28" class="exercise"><strong>Exercise 2.4  </strong></span>Use <code>?</code> to make youself familiar with the following commands: <code>str</code>,<code>summary</code>, <code>dim</code>, <code>colnames</code>, <code>names</code>, <code>nrow</code>, <code>ncol</code>, <code>head</code>, and <code>tail</code>.</p>
+What information can you get with all these commands?
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-29" class="exercise"><strong>Exercise 2.5  </strong></span>Write a function to compute the factorial of a non-negative integer, <em>x</em>, expressed as <em>x!</em>. The factorial of <em>x</em> refers to <em>x</em> multiplied by the product of all integers less than <em>x</em>, down to 1.</p>
+<p>For example, <em>3!</em> = 3 x 2 x 1 = 6.</p>
+<p>The special case, <em>zero factorial</em> is always defined as 1.</p>
+Confirm that your function produce the same results as below: (i) 5! = 120; (ii) 120! = 479,001,600; (iii) 0! = 1.
+</div>
+
+<pre><code># A Sample Format for your Function
+
+myfac &lt;- function(x){
+
+}</code></pre>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="co">##(i)</span></a>
+<a class="sourceLine" id="cb42-2" data-line-number="2"><span class="kw">myfac</span>(<span class="dv">5</span>)</a></code></pre></div>
+<pre><code>## [1] 120</code></pre>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="co">##(ii)</span></a>
+<a class="sourceLine" id="cb44-2" data-line-number="2"><span class="kw">myfac</span>(<span class="dv">12</span>)</a></code></pre></div>
+<pre><code>## [1] 479001600</code></pre>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" data-line-number="1"><span class="co">##(iii)</span></a>
+<a class="sourceLine" id="cb46-2" data-line-number="2"><span class="kw">myfac</span>(<span class="dv">0</span>)</a></code></pre></div>
+<pre><code>## [1] 1</code></pre>
 
 </div>
 </div>
