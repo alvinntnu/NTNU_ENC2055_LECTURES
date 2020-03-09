@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen" />
 
 
-<meta name="date" content="2020-03-02" />
+<meta name="date" content="2020-03-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,10 +52,6 @@
 
 <link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
-<script src="libs/str_view-binding-1.4.0/str_view.js"></script>
 
 
 <style type="text/css">
@@ -174,6 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.5" data-path="code-format-convetion.html"><a href="code-format-convetion.html#whitespace"><i class="fa fa-check"></i><b>3.5</b> Whitespace</a></li>
 <li class="chapter" data-level="3.6" data-path="code-format-convetion.html"><a href="code-format-convetion.html#indention-and-linebreaks"><i class="fa fa-check"></i><b>3.6</b> Indention and Linebreaks</a></li>
 <li class="chapter" data-level="3.7" data-path="code-format-convetion.html"><a href="code-format-convetion.html#more-references"><i class="fa fa-check"></i><b>3.7</b> More References</a></li>
+<li class="chapter" data-level="3.8" data-path="code-format-convetion.html"><a href="code-format-convetion.html#template-for-script-assignments"><i class="fa fa-check"></i><b>3.8</b> Template for Script Assignments</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="subsetting.html"><a href="subsetting.html"><i class="fa fa-check"></i><b>4</b> Subsetting</a><ul>
 <li class="chapter" data-level="4.1" data-path="subsetting.html"><a href="subsetting.html#vector"><i class="fa fa-check"></i><b>4.1</b> Vector</a></li>
@@ -200,13 +197,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.7" data-path="data-manipulation.html"><a href="data-manipulation.html#arrange"><i class="fa fa-check"></i><b>6.7</b> <code>arrange()</code></a></li>
 <li class="chapter" data-level="6.8" data-path="data-manipulation.html"><a href="data-manipulation.html#group_by-and-summarize"><i class="fa fa-check"></i><b>6.8</b> <code>group_by()</code> and <code>summarize()</code></a></li>
 <li class="chapter" data-level="6.9" data-path="data-manipulation.html"><a href="data-manipulation.html#count"><i class="fa fa-check"></i><b>6.9</b> <code>count()</code></a></li>
-<li class="chapter" data-level="6.10" data-path="data-manipulation.html"><a href="data-manipulation.html#left_join"><i class="fa fa-check"></i><b>6.10</b> <code>left_join()</code></a></li>
-<li class="chapter" data-level="6.11" data-path="data-manipulation.html"><a href="data-manipulation.html#exerceises"><i class="fa fa-check"></i><b>6.11</b> Exerceises</a></li>
+<li class="chapter" data-level="6.10" data-path="data-manipulation.html"><a href="data-manipulation.html#exerceises"><i class="fa fa-check"></i><b>6.10</b> Exerceises</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="data-import.html"><a href="data-import.html"><i class="fa fa-check"></i><b>7</b> Data Import</a><ul>
 <li class="chapter" data-level="7.1" data-path="data-import.html"><a href="data-import.html#readlines"><i class="fa fa-check"></i><b>7.1</b> <code>readLines()</code></a></li>
-<li class="chapter" data-level="7.2" data-path="data-import.html"><a href="data-import.html#read_csv"><i class="fa fa-check"></i><b>7.2</b> <code>read_csv()</code></a></li>
-<li class="chapter" data-level="7.3" data-path="data-import.html"><a href="data-import.html#structured-data-xml"><i class="fa fa-check"></i><b>7.3</b> Structured Data: XML</a></li>
+<li class="chapter" data-level="7.2" data-path="data-import.html"><a href="data-import.html#writelines"><i class="fa fa-check"></i><b>7.2</b> <code>writeLines()</code></a></li>
+<li class="chapter" data-level="7.3" data-path="data-import.html"><a href="data-import.html#read_csv"><i class="fa fa-check"></i><b>7.3</b> <code>read_csv()</code></a></li>
+<li class="chapter" data-level="7.4" data-path="data-import.html"><a href="data-import.html#write_csv"><i class="fa fa-check"></i><b>7.4</b> <code>write_csv()</code></a></li>
+<li class="chapter" data-level="7.5" data-path="data-import.html"><a href="data-import.html#directory-operations"><i class="fa fa-check"></i><b>7.5</b> Directory Operations</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="string-manipulation.html"><a href="string-manipulation.html"><i class="fa fa-check"></i><b>8</b> String Manipulation</a><ul>
 <li class="chapter" data-level="8.1" data-path="string-manipulation.html"><a href="string-manipulation.html#what-is-regular-expression"><i class="fa fa-check"></i><b>8.1</b> What is Regular Expression?</a></li>
@@ -293,7 +291,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">ENC2055: Introduction to Programming Languages for Linguistic Analysis</h1>
 <p class="author"><em>Alvin Chen</em></p>
-<p class="date"><em>2020-03-02</em></p>
+<p class="date"><em>2020-03-09</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
