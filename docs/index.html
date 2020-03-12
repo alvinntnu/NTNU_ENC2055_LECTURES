@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen" />
 
 
-<meta name="date" content="2020-03-09" />
+<meta name="date" content="2020-03-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,6 +52,10 @@
 
 <link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
+<script src="libs/str_view-binding-1.4.0/str_view.js"></script>
 
 
 <style type="text/css">
@@ -155,12 +159,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4" data-path="r-fundamentals.html"><a href="r-fundamentals.html#assignment"><i class="fa fa-check"></i><b>2.4</b> Assignment</a></li>
 <li class="chapter" data-level="2.5" data-path="r-fundamentals.html"><a href="r-fundamentals.html#data-structure"><i class="fa fa-check"></i><b>2.5</b> Data Structure</a></li>
 <li class="chapter" data-level="2.6" data-path="r-fundamentals.html"><a href="r-fundamentals.html#function"><i class="fa fa-check"></i><b>2.6</b> Function</a></li>
-<li class="chapter" data-level="2.7" data-path="r-fundamentals.html"><a href="r-fundamentals.html#script"><i class="fa fa-check"></i><b>2.7</b> Script</a></li>
-<li class="chapter" data-level="2.8" data-path="r-fundamentals.html"><a href="r-fundamentals.html#library"><i class="fa fa-check"></i><b>2.8</b> Library</a></li>
-<li class="chapter" data-level="2.9" data-path="r-fundamentals.html"><a href="r-fundamentals.html#setting"><i class="fa fa-check"></i><b>2.9</b> Setting</a></li>
-<li class="chapter" data-level="2.10" data-path="r-fundamentals.html"><a href="r-fundamentals.html#seeking-help"><i class="fa fa-check"></i><b>2.10</b> Seeking Help</a></li>
-<li class="chapter" data-level="2.11" data-path="r-fundamentals.html"><a href="r-fundamentals.html#language-learning-aint-easy"><i class="fa fa-check"></i><b>2.11</b> Language Learning Ain’t Easy!</a></li>
-<li class="chapter" data-level="2.12" data-path="r-fundamentals.html"><a href="r-fundamentals.html#keyboard-shortcuts"><i class="fa fa-check"></i><b>2.12</b> Keyboard Shortcuts</a></li>
+<li class="chapter" data-level="2.7" data-path="r-fundamentals.html"><a href="r-fundamentals.html#vectorization"><i class="fa fa-check"></i><b>2.7</b> Vectorization</a></li>
+<li class="chapter" data-level="2.8" data-path="r-fundamentals.html"><a href="r-fundamentals.html#script"><i class="fa fa-check"></i><b>2.8</b> Script</a></li>
+<li class="chapter" data-level="2.9" data-path="r-fundamentals.html"><a href="r-fundamentals.html#library"><i class="fa fa-check"></i><b>2.9</b> Library</a></li>
+<li class="chapter" data-level="2.10" data-path="r-fundamentals.html"><a href="r-fundamentals.html#setting"><i class="fa fa-check"></i><b>2.10</b> Setting</a></li>
+<li class="chapter" data-level="2.11" data-path="r-fundamentals.html"><a href="r-fundamentals.html#seeking-help"><i class="fa fa-check"></i><b>2.11</b> Seeking Help</a></li>
+<li class="chapter" data-level="2.12" data-path="r-fundamentals.html"><a href="r-fundamentals.html#language-learning-aint-easy"><i class="fa fa-check"></i><b>2.12</b> Language Learning Ain’t Easy!</a></li>
+<li class="chapter" data-level="2.13" data-path="r-fundamentals.html"><a href="r-fundamentals.html#keyboard-shortcuts"><i class="fa fa-check"></i><b>2.13</b> Keyboard Shortcuts</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="code-format-convetion.html"><a href="code-format-convetion.html"><i class="fa fa-check"></i><b>3</b> Code Format Convention</a><ul>
 <li class="chapter" data-level="3.1" data-path="code-format-convetion.html"><a href="code-format-convetion.html#assignment--"><i class="fa fa-check"></i><b>3.1</b> Assignment <code>&lt;-</code></a></li>
@@ -186,6 +191,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.4" data-path="data-visualization.html"><a href="data-visualization.html#two-variable-graph"><i class="fa fa-check"></i><b>5.4</b> Two-variable Graph</a></li>
 <li class="chapter" data-level="5.5" data-path="data-visualization.html"><a href="data-visualization.html#adding-other-aesthetic-features"><i class="fa fa-check"></i><b>5.5</b> Adding Other Aesthetic Features</a></li>
 <li class="chapter" data-level="5.6" data-path="data-visualization.html"><a href="data-visualization.html#saving-plots"><i class="fa fa-check"></i><b>5.6</b> Saving Plots</a></li>
+<li class="chapter" data-level="5.7" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-covid-19"><i class="fa fa-check"></i><b>5.7</b> Exercises on COVID-19</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="data-manipulation.html"><a href="data-manipulation.html"><i class="fa fa-check"></i><b>6</b> Data Manipulation</a><ul>
 <li class="chapter" data-level="6.1" data-path="data-manipulation.html"><a href="data-manipulation.html#dataset"><i class="fa fa-check"></i><b>6.1</b> Dataset</a></li>
@@ -291,7 +297,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">ENC2055: Introduction to Programming Languages for Linguistic Analysis</h1>
 <p class="author"><em>Alvin Chen</em></p>
-<p class="date"><em>2020-03-09</em></p>
+<p class="date"><em>2020-03-13</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
