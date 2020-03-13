@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 4 Subsetting | ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
   <meta name="description" content="ENC2055 Course material first edition" />
-  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 Subsetting | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
   <meta property="og:type" content="book" />
@@ -406,7 +406,7 @@ For the two alternatives, which one would be better? Why?
 </div></li>
 </ul>
 <div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" data-line-number="1">n</a></code></pre></div>
-<pre><code>##  [1] &quot;g&quot; &quot;i&quot; &quot;c&quot; &quot;h&quot; &quot;e&quot; &quot;f&quot; &quot;d&quot; &quot;j&quot; &quot;b&quot; &quot;a&quot;</code></pre>
+<pre><code>##  [1] &quot;e&quot; &quot;h&quot; &quot;d&quot; &quot;i&quot; &quot;c&quot; &quot;a&quot; &quot;b&quot; &quot;g&quot; &quot;f&quot; &quot;j&quot;</code></pre>
 
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-77" class="exercise"><strong>Exercise 4.3  </strong></span>Determine whether letters in <code>n</code> are at the same positions as in <code>m</code>. How many such cases do you find? Which letters are these?</p>
@@ -416,8 +416,8 @@ For the two alternatives, which one would be better? Why?
 </ul>
 <pre><code>## 
 ## FALSE  TRUE 
-##     7     3</code></pre>
-<pre><code>## [1] &quot;c&quot; &quot;e&quot; &quot;f&quot;</code></pre>
+##     9     1</code></pre>
+<pre><code>## [1] &quot;j&quot;</code></pre>
 </div>
 <div id="factor" class="section level2">
 <h2><span class="header-section-number">4.2</span> Factor</h2>
@@ -681,31 +681,30 @@ Please compare the following two ways of accessing a column from the data frame.
 <p><code>tibble</code> is a new data structure with lots of <a href="https://tibble.tidyverse.org/">advantages</a>. For the moment, we treat <code>tibble</code> and <code>data.frame</code> as the same, with the former being an augmented version of the latter. All functions that work of a <code>data.frame</code> should be compatible with a <code>tibble</code>. Now the <code>tibble</code> is the major structure that R users work with under the <code>tidy</code> framework. If you are new to tibbles, the best place to start is the tibbles chapter in <a href="https://r4ds.had.co.nz/tibbles.html">R for data science</a>.</p>
 <div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb157-1" data-line-number="1"><span class="kw">require</span>(tibble)</a></code></pre></div>
 <pre><code>## Loading required package: tibble</code></pre>
-<pre><code>## Warning: package &#39;tibble&#39; was built under R version 3.5.2</code></pre>
-<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb160-1" data-line-number="1">ex_tb &lt;-<span class="st"> </span><span class="kw">tibble</span>(</a>
-<a class="sourceLine" id="cb160-2" data-line-number="2">  <span class="dt">WORD =</span> <span class="kw">c</span>(<span class="st">&quot;the&quot;</span>, <span class="st">&quot;boy&quot;</span>, <span class="st">&quot;you&quot;</span>,<span class="st">&quot;him&quot;</span>),</a>
-<a class="sourceLine" id="cb160-3" data-line-number="3">  <span class="dt">POS =</span> <span class="kw">c</span>(<span class="st">&quot;ART&quot;</span>,<span class="st">&quot;N&quot;</span>,<span class="st">&quot;PRO&quot;</span>,<span class="st">&quot;PRO&quot;</span>),</a>
-<a class="sourceLine" id="cb160-4" data-line-number="4">  <span class="dt">FREQ =</span> <span class="kw">c</span>(<span class="dv">1104</span>,<span class="dv">35</span>, <span class="dv">104</span>, <span class="dv">34</span>))</a>
-<a class="sourceLine" id="cb160-5" data-line-number="5">ex_tb</a></code></pre></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb159-1" data-line-number="1">ex_tb &lt;-<span class="st"> </span><span class="kw">tibble</span>(</a>
+<a class="sourceLine" id="cb159-2" data-line-number="2">  <span class="dt">WORD =</span> <span class="kw">c</span>(<span class="st">&quot;the&quot;</span>, <span class="st">&quot;boy&quot;</span>, <span class="st">&quot;you&quot;</span>,<span class="st">&quot;him&quot;</span>),</a>
+<a class="sourceLine" id="cb159-3" data-line-number="3">  <span class="dt">POS =</span> <span class="kw">c</span>(<span class="st">&quot;ART&quot;</span>,<span class="st">&quot;N&quot;</span>,<span class="st">&quot;PRO&quot;</span>,<span class="st">&quot;PRO&quot;</span>),</a>
+<a class="sourceLine" id="cb159-4" data-line-number="4">  <span class="dt">FREQ =</span> <span class="kw">c</span>(<span class="dv">1104</span>,<span class="dv">35</span>, <span class="dv">104</span>, <span class="dv">34</span>))</a>
+<a class="sourceLine" id="cb159-5" data-line-number="5">ex_tb</a></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["WORD"],"name":[1],"type":["chr"],"align":["left"]},{"label":["POS"],"name":[2],"type":["chr"],"align":["left"]},{"label":["FREQ"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"the","2":"ART","3":"1104"},{"1":"boy","2":"N","3":"35"},{"1":"you","2":"PRO","3":"104"},{"1":"him","2":"PRO","3":"34"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <p>You can subset a <code>tibble</code> in exactly the same ways as you work with a <code>data.frame</code>:</p>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb161-1" data-line-number="1">ex_tb[<span class="dv">1</span>,]</a></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb160-1" data-line-number="1">ex_tb[<span class="dv">1</span>,]</a></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["WORD"],"name":[1],"type":["chr"],"align":["left"]},{"label":["POS"],"name":[2],"type":["chr"],"align":["left"]},{"label":["FREQ"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"the","2":"ART","3":"1104"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb162-1" data-line-number="1">ex_tb[,<span class="dv">1</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb161-1" data-line-number="1">ex_tb[,<span class="dv">1</span>]</a></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["WORD"],"name":[1],"type":["chr"],"align":["left"]}],"data":[{"1":"the"},{"1":"boy"},{"1":"you"},{"1":"him"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb163-1" data-line-number="1">ex_tb[,<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>)]</a></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb162-1" data-line-number="1">ex_tb[,<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>)]</a></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["WORD"],"name":[1],"type":["chr"],"align":["left"]},{"label":["POS"],"name":[2],"type":["chr"],"align":["left"]},{"label":["FREQ"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"the","2":"ART","3":"1104"},{"1":"boy","2":"N","3":"35"},{"1":"you","2":"PRO","3":"104"},{"1":"him","2":"PRO","3":"34"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -716,13 +715,13 @@ Please compare the following two ways of accessing a column from the data frame.
 <span id="exr:unnamed-chunk-104" class="exercise"><strong>Exercise 4.11  </strong></span>Please compare again the following codes and see if you can tell the major differences between tibble and data.frame?
 </div>
 
-<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb164-1" data-line-number="1">ex_tb[,<span class="kw">c</span>(<span class="st">&quot;FREQ&quot;</span>)] <span class="co"># indexing tibble</span></a></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb163-1" data-line-number="1">ex_tb[,<span class="kw">c</span>(<span class="st">&quot;FREQ&quot;</span>)] <span class="co"># indexing tibble</span></a></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["FREQ"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"1104"},{"1":"35"},{"1":"104"},{"1":"34"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb165-1" data-line-number="1">ex_df[,<span class="kw">c</span>(<span class="st">&quot;FREQ&quot;</span>)] <span class="co"># indexing data.frame</span></a></code></pre></div>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb164-1" data-line-number="1">ex_df[,<span class="kw">c</span>(<span class="st">&quot;FREQ&quot;</span>)] <span class="co"># indexing data.frame</span></a></code></pre></div>
 <pre><code>## [1] 1104   35  104   34</code></pre>
 <div class="info">
 <p>
