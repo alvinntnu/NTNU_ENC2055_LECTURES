@@ -21,10 +21,10 @@
   <meta name="twitter:description" content="ENC2055 Course material first edition" />
   
 
-<meta name="author" content="Alvin Chen" />
+<meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2020-03-14" />
+<meta name="date" content="2020-03-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -144,6 +144,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-website"><i class="fa fa-check"></i>Course Website</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-demo-data"><i class="fa fa-check"></i>Course Demo Data</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#questions"><i class="fa fa-check"></i>Questions?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#necessary-packages"><i class="fa fa-check"></i>Necessary Packages</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="intro-ds.html"><a href="intro-ds.html"><i class="fa fa-check"></i><b>1</b> Data Science and R</a><ul>
 <li class="chapter" data-level="1.1" data-path="intro-ds.html"><a href="intro-ds.html#what-is-data-science"><i class="fa fa-check"></i><b>1.1</b> What is Data Science?</a></li>
@@ -315,13 +316,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="vector-vs.-list-in-r" class="section level2">
 <h2><span class="header-section-number">10.2</span> <code>vector</code> vs. <code>list</code> in <code>R</code></h2>
 <p>Most of the R-internal functions are vectorized. By default, if we apply a function to a multi-element vector, R will automatically apply the same procedure to each element of the vector, and return the results of the same length.</p>
-<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb317-1" data-line-number="1">a.vec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb317-2" data-line-number="2"><span class="kw">sqrt</span>(a.vec)</a></code></pre></div>
+<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb321-1" data-line-number="1">a.vec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb321-2" data-line-number="2"><span class="kw">sqrt</span>(a.vec)</a></code></pre></div>
 <pre><code>##  [1] 1.000000 1.414214 1.732051 2.000000 2.236068 2.449490 2.645751 2.828427
 ##  [9] 3.000000 3.162278</code></pre>
 <p>But this is NOT something we can do with a <code>list</code>:</p>
-<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb319-1" data-line-number="1">a.list &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb319-2" data-line-number="2"><span class="kw">sqrt</span>(a.list)</a></code></pre></div>
+<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb323-1" data-line-number="1">a.list &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb323-2" data-line-number="2"><span class="kw">sqrt</span>(a.list)</a></code></pre></div>
 <pre><code>## Error in sqrt(a.list): non-numeric argument to mathematical function</code></pre>
 </div>
 <div id="iteration-1" class="section level2">
@@ -331,82 +332,82 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 - each row in the <code>data.frame</code>
 - each column in the <code>data.frame</code></p>
 <p>Let’s start with a scenario. We first create a pseudo data set, with students’ grades from five different classes.</p>
-<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb321-1" data-line-number="1">exams.list &lt;-<span class="st"> </span><span class="kw">list</span>(</a>
-<a class="sourceLine" id="cb321-2" data-line-number="2">  <span class="dt">class1 =</span> <span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">100</span>)), <span class="co"># 30 tokens of random numbers in the range &lt;0, 100&gt;</span></a>
-<a class="sourceLine" id="cb321-3" data-line-number="3">  <span class="dt">class2 =</span> <span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">100</span>)),</a>
-<a class="sourceLine" id="cb321-4" data-line-number="4">  <span class="dt">class3 =</span> <span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">100</span>)),</a>
-<a class="sourceLine" id="cb321-5" data-line-number="5">  <span class="dt">class4 =</span> <span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">100</span>)),</a>
-<a class="sourceLine" id="cb321-6" data-line-number="6">  <span class="dt">class5 =</span> <span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">100</span>))</a>
-<a class="sourceLine" id="cb321-7" data-line-number="7">)</a>
-<a class="sourceLine" id="cb321-8" data-line-number="8">exams.list</a></code></pre></div>
+<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb325-1" data-line-number="1">exams.list &lt;-<span class="st"> </span><span class="kw">list</span>(</a>
+<a class="sourceLine" id="cb325-2" data-line-number="2">  <span class="dt">class1 =</span> <span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">100</span>)), <span class="co"># 30 tokens of random numbers in the range &lt;0, 100&gt;</span></a>
+<a class="sourceLine" id="cb325-3" data-line-number="3">  <span class="dt">class2 =</span> <span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">100</span>)),</a>
+<a class="sourceLine" id="cb325-4" data-line-number="4">  <span class="dt">class3 =</span> <span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">100</span>)),</a>
+<a class="sourceLine" id="cb325-5" data-line-number="5">  <span class="dt">class4 =</span> <span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">100</span>)),</a>
+<a class="sourceLine" id="cb325-6" data-line-number="6">  <span class="dt">class5 =</span> <span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">100</span>))</a>
+<a class="sourceLine" id="cb325-7" data-line-number="7">)</a>
+<a class="sourceLine" id="cb325-8" data-line-number="8">exams.list</a></code></pre></div>
 <pre><code>## $class1
-##  [1] 55 45 31 43 24 43 72 73 61 33 62 65 82 60 84  1 68 35  2 82  7 37 60 32 22
-## [26] 53 61 74 67 84
+##  [1] 98 32 84 91 47 49 38 71 69 92  7 79  1  9 27 46 85 99 94 31 15 56 17 60 47
+## [26] 48 10  4 21 68
 ## 
 ## $class2
-##  [1] 94 22 59 93  5 73 18 43 92 88 58 60 55 75 37 93 64 30 81 30 65 85 33 33 76
-## [26] 60 73 43 22 47
+##  [1] 10 94 92 97  0 83 17 51  8 71 88 28 40 22  6 35  2 59 10  6 66 41 61 76 52
+## [26] 50 92 38 70 59
 ## 
 ## $class3
-##  [1] 87 25  3 22 16 59 85 96 62 23 70 81 54 81 42 31 44 77 74 80 43 49 50 41 17
-## [26] 19 43 10 13 53
+##  [1] 45 43 52 66  5 12 81 72 21 80 54 38 49 76 50 53 25 35 83 38 49  7 52 95 24
+## [26] 84 37 63 37 82
 ## 
 ## $class4
-##  [1]  68 100  74  81  30  10  11  41  45  44  59  25  60  77  31  84  63  45  75
-## [20]  60  20  14  72  47  13  78  24  77  96  77
+##  [1]  78  95  91  53  86   3  32  22  95  25  72  21  30  43  81  94 100  19  67
+## [20]  21  27  86   4  71  14  46  83  81  62   8
 ## 
 ## $class5
-##  [1]  98  68  76  30  57  40  38  68  87  43  66  35   2  40  18  92  67  70 100
-## [20]  39  95  45  91  94  44  98  34  68   6   9</code></pre>
+##  [1] 38 24 84 53 14 38 31 35 70 45 17 31 26 53 50 65 38 23 39 50 96 96 96 28 46
+## [26] 39 71  3 80 82</code></pre>
 <p>If we like to compute the mean scores of each cluster, you probably want to use <code>mean()</code>:</p>
-<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb323-1" data-line-number="1"><span class="kw">mean</span>(exams.list)</a></code></pre></div>
+<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb327-1" data-line-number="1"><span class="kw">mean</span>(exams.list)</a></code></pre></div>
 <pre><code>## [1] NA</code></pre>
 <p>It should be clear now that <code>mean()</code> expects a numeric vector, on which the mean score is computed.</p>
 <p>So you may think that why don’t we use the dumb way:</p>
-<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb325-1" data-line-number="1"><span class="kw">set.seed</span>(<span class="dv">123</span>) <span class="co"># Make sure we get the same results</span></a>
-<a class="sourceLine" id="cb325-2" data-line-number="2">exams.list.means &lt;-<span class="st"> </span><span class="kw">list</span>(</a>
-<a class="sourceLine" id="cb325-3" data-line-number="3">  <span class="dt">class1mean =</span> <span class="kw">mean</span>(exams.list<span class="op">$</span>class1),</a>
-<a class="sourceLine" id="cb325-4" data-line-number="4">  <span class="dt">class2mean =</span> <span class="kw">mean</span>(exams.list<span class="op">$</span>class2),</a>
-<a class="sourceLine" id="cb325-5" data-line-number="5">  <span class="dt">class3mean =</span> <span class="kw">mean</span>(exams.list<span class="op">$</span>class3),</a>
-<a class="sourceLine" id="cb325-6" data-line-number="6">  <span class="dt">class4mean =</span> <span class="kw">mean</span>(exams.list<span class="op">$</span>class4),</a>
-<a class="sourceLine" id="cb325-7" data-line-number="7">  <span class="dt">class5mean =</span> <span class="kw">mean</span>(exams.list<span class="op">$</span>class5)</a>
-<a class="sourceLine" id="cb325-8" data-line-number="8">)</a>
-<a class="sourceLine" id="cb325-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb325-10" data-line-number="10">exams.list.means</a></code></pre></div>
+<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb329-1" data-line-number="1"><span class="kw">set.seed</span>(<span class="dv">123</span>) <span class="co"># Make sure we get the same results</span></a>
+<a class="sourceLine" id="cb329-2" data-line-number="2">exams.list.means &lt;-<span class="st"> </span><span class="kw">list</span>(</a>
+<a class="sourceLine" id="cb329-3" data-line-number="3">  <span class="dt">class1mean =</span> <span class="kw">mean</span>(exams.list<span class="op">$</span>class1),</a>
+<a class="sourceLine" id="cb329-4" data-line-number="4">  <span class="dt">class2mean =</span> <span class="kw">mean</span>(exams.list<span class="op">$</span>class2),</a>
+<a class="sourceLine" id="cb329-5" data-line-number="5">  <span class="dt">class3mean =</span> <span class="kw">mean</span>(exams.list<span class="op">$</span>class3),</a>
+<a class="sourceLine" id="cb329-6" data-line-number="6">  <span class="dt">class4mean =</span> <span class="kw">mean</span>(exams.list<span class="op">$</span>class4),</a>
+<a class="sourceLine" id="cb329-7" data-line-number="7">  <span class="dt">class5mean =</span> <span class="kw">mean</span>(exams.list<span class="op">$</span>class5)</a>
+<a class="sourceLine" id="cb329-8" data-line-number="8">)</a>
+<a class="sourceLine" id="cb329-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb329-10" data-line-number="10">exams.list.means</a></code></pre></div>
 <pre><code>## $class1mean
-## [1] 50.6
+## [1] 49.83333
 ## 
 ## $class2mean
-## [1] 56.9
+## [1] 47.46667
 ## 
 ## $class3mean
-## [1] 48.33333
+## [1] 50.26667
 ## 
 ## $class4mean
-## [1] 53.36667
+## [1] 53.66667
 ## 
 ## $class5mean
-## [1] 57.26667</code></pre>
+## [1] 48.7</code></pre>
 <p>The advantage is obvious: (a) what if you have 10 classes? 100 classes? (b) what if now you decide to compute standard deviation?</p>
 </div>
 <div id="purr" class="section level2">
 <h2><span class="header-section-number">10.4</span> <code>purr</code></h2>
-<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb327-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
-<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb328-1" data-line-number="1">exams.list <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">map</span>(mean)</a></code></pre></div>
+<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb331-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
+<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb332-1" data-line-number="1">exams.list <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">map</span>(mean)</a></code></pre></div>
 <pre><code>## $class1
-## [1] 50.6
+## [1] 49.83333
 ## 
 ## $class2
-## [1] 56.9
+## [1] 47.46667
 ## 
 ## $class3
-## [1] 48.33333
+## [1] 50.26667
 ## 
 ## $class4
-## [1] 53.36667
+## [1] 53.66667
 ## 
 ## $class5
-## [1] 57.26667</code></pre>
+## [1] 48.7</code></pre>
 <p>With only one-line code, you have achieved your goal.</p>
 <p><code>map()</code> is a very powerful function to do iteration. Its usage is as follows:</p>
 <p><img src="images/map.png" width="80%" /></p>
@@ -422,31 +423,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>In <code>purrr</code>, by default <code>map()</code> returns results in a <code>list</code> format. You can specify a particular data structure you like by using other variants of the mapping function:</p>
 <p><img src="images/map2.png" width="80%" /></p>
-<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb330-1" data-line-number="1">exams.list <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">map_df</span>(mean)</a></code></pre></div>
+<div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb334-1" data-line-number="1">exams.list <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">map_df</span>(mean)</a></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["class1"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["class2"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["class3"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["class4"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["class5"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"50.6","2":"56.9","3":"48.33333","4":"53.36667","5":"57.26667"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["class1"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["class2"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["class3"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["class4"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["class5"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"49.83333","2":"47.46667","3":"50.26667","4":"53.66667","5":"48.7"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb331-1" data-line-number="1">exams.list <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">map_dbl</span>(mean)</a></code></pre></div>
+<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb335-1" data-line-number="1">exams.list <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">map_dbl</span>(mean)</a></code></pre></div>
 <pre><code>##   class1   class2   class3   class4   class5 
-## 50.60000 56.90000 48.33333 53.36667 57.26667</code></pre>
+## 49.83333 47.46667 50.26667 53.66667 48.70000</code></pre>
 <hr />
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-285" class="exercise"><strong>Exercise 10.1  </strong></span>Use the same dataset, <code>exam.list</code>, and compute the <code>median</code> and <code>standard deviation</code> for each class.
+<span id="exr:unnamed-chunk-286" class="exercise"><strong>Exercise 10.1  </strong></span>Use the same dataset, <code>exam.list</code>, and compute the <code>median</code> and <code>standard deviation</code> for each class.
 </div>
 
 <ul>
 <li>Median</li>
 </ul>
 <pre><code>## class1 class2 class3 class4 class5 
-##   57.5   59.5   46.5   59.5   61.5</code></pre>
+##   47.5   50.5   49.5   57.5   42.0</code></pre>
 <ul>
 <li>Standard Deviation</li>
 </ul>
 <pre><code>##   class1   class2   class3   class4   class5 
-## 24.14125 25.61028 26.63072 26.74720 29.56108</code></pre>
+## 31.49612 31.41571 24.32387 32.30921 25.71884</code></pre>
 <hr />
 </div>
 <div id="writing-own-functions" class="section level2">
@@ -456,14 +457,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 - This function takes a vector object <code>x</code>
 - Substract each element of <code>x</code> by the mean score of <code>x</code>
 - return the resulting vector as the output of the function</p>
-<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb335-1" data-line-number="1">my_center &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</a>
-<a class="sourceLine" id="cb335-2" data-line-number="2">  x <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(x)</a>
-<a class="sourceLine" id="cb335-3" data-line-number="3">}</a></code></pre></div>
+<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb339-1" data-line-number="1">my_center &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</a>
+<a class="sourceLine" id="cb339-2" data-line-number="2">  x <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(x)</a>
+<a class="sourceLine" id="cb339-3" data-line-number="3">}</a></code></pre></div>
 <p>Now we can apply our <code>my_center</code> function to each class in <code>exams.list</code>:</p>
-<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb336-1" data-line-number="1">exams.list <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">map_df</span>(my_center)</a></code></pre></div>
+<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb340-1" data-line-number="1">exams.list <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">map_df</span>(my_center)</a></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["class1"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["class2"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["class3"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["class4"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["class5"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"4.4","2":"37.1","3":"38.6666667","4":"14.633333","5":"40.7333333"},{"1":"-5.6","2":"-34.9","3":"-23.3333333","4":"46.633333","5":"10.7333333"},{"1":"-19.6","2":"2.1","3":"-45.3333333","4":"20.633333","5":"18.7333333"},{"1":"-7.6","2":"36.1","3":"-26.3333333","4":"27.633333","5":"-27.2666667"},{"1":"-26.6","2":"-51.9","3":"-32.3333333","4":"-23.366667","5":"-0.2666667"},{"1":"-7.6","2":"16.1","3":"10.6666667","4":"-43.366667","5":"-17.2666667"},{"1":"21.4","2":"-38.9","3":"36.6666667","4":"-42.366667","5":"-19.2666667"},{"1":"22.4","2":"-13.9","3":"47.6666667","4":"-12.366667","5":"10.7333333"},{"1":"10.4","2":"35.1","3":"13.6666667","4":"-8.366667","5":"29.7333333"},{"1":"-17.6","2":"31.1","3":"-25.3333333","4":"-9.366667","5":"-14.2666667"},{"1":"11.4","2":"1.1","3":"21.6666667","4":"5.633333","5":"8.7333333"},{"1":"14.4","2":"3.1","3":"32.6666667","4":"-28.366667","5":"-22.2666667"},{"1":"31.4","2":"-1.9","3":"5.6666667","4":"6.633333","5":"-55.2666667"},{"1":"9.4","2":"18.1","3":"32.6666667","4":"23.633333","5":"-17.2666667"},{"1":"33.4","2":"-19.9","3":"-6.3333333","4":"-22.366667","5":"-39.2666667"},{"1":"-49.6","2":"36.1","3":"-17.3333333","4":"30.633333","5":"34.7333333"},{"1":"17.4","2":"7.1","3":"-4.3333333","4":"9.633333","5":"9.7333333"},{"1":"-15.6","2":"-26.9","3":"28.6666667","4":"-8.366667","5":"12.7333333"},{"1":"-48.6","2":"24.1","3":"25.6666667","4":"21.633333","5":"42.7333333"},{"1":"31.4","2":"-26.9","3":"31.6666667","4":"6.633333","5":"-18.2666667"},{"1":"-43.6","2":"8.1","3":"-5.3333333","4":"-33.366667","5":"37.7333333"},{"1":"-13.6","2":"28.1","3":"0.6666667","4":"-39.366667","5":"-12.2666667"},{"1":"9.4","2":"-23.9","3":"1.6666667","4":"18.633333","5":"33.7333333"},{"1":"-18.6","2":"-23.9","3":"-7.3333333","4":"-6.366667","5":"36.7333333"},{"1":"-28.6","2":"19.1","3":"-31.3333333","4":"-40.366667","5":"-13.2666667"},{"1":"2.4","2":"3.1","3":"-29.3333333","4":"24.633333","5":"40.7333333"},{"1":"10.4","2":"16.1","3":"-5.3333333","4":"-29.366667","5":"-23.2666667"},{"1":"23.4","2":"-13.9","3":"-38.3333333","4":"23.633333","5":"10.7333333"},{"1":"16.4","2":"-34.9","3":"-35.3333333","4":"42.633333","5":"-51.2666667"},{"1":"33.4","2":"-9.9","3":"4.6666667","4":"23.633333","5":"-48.2666667"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["class1"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["class2"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["class3"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["class4"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["class5"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"48.1666667","2":"-37.466667","3":"-5.2666667","4":"24.3333333","5":"-10.7"},{"1":"-17.8333333","2":"46.533333","3":"-7.2666667","4":"41.3333333","5":"-24.7"},{"1":"34.1666667","2":"44.533333","3":"1.7333333","4":"37.3333333","5":"35.3"},{"1":"41.1666667","2":"49.533333","3":"15.7333333","4":"-0.6666667","5":"4.3"},{"1":"-2.8333333","2":"-47.466667","3":"-45.2666667","4":"32.3333333","5":"-34.7"},{"1":"-0.8333333","2":"35.533333","3":"-38.2666667","4":"-50.6666667","5":"-10.7"},{"1":"-11.8333333","2":"-30.466667","3":"30.7333333","4":"-21.6666667","5":"-17.7"},{"1":"21.1666667","2":"3.533333","3":"21.7333333","4":"-31.6666667","5":"-13.7"},{"1":"19.1666667","2":"-39.466667","3":"-29.2666667","4":"41.3333333","5":"21.3"},{"1":"42.1666667","2":"23.533333","3":"29.7333333","4":"-28.6666667","5":"-3.7"},{"1":"-42.8333333","2":"40.533333","3":"3.7333333","4":"18.3333333","5":"-31.7"},{"1":"29.1666667","2":"-19.466667","3":"-12.2666667","4":"-32.6666667","5":"-17.7"},{"1":"-48.8333333","2":"-7.466667","3":"-1.2666667","4":"-23.6666667","5":"-22.7"},{"1":"-40.8333333","2":"-25.466667","3":"25.7333333","4":"-10.6666667","5":"4.3"},{"1":"-22.8333333","2":"-41.466667","3":"-0.2666667","4":"27.3333333","5":"1.3"},{"1":"-3.8333333","2":"-12.466667","3":"2.7333333","4":"40.3333333","5":"16.3"},{"1":"35.1666667","2":"-45.466667","3":"-25.2666667","4":"46.3333333","5":"-10.7"},{"1":"49.1666667","2":"11.533333","3":"-15.2666667","4":"-34.6666667","5":"-25.7"},{"1":"44.1666667","2":"-37.466667","3":"32.7333333","4":"13.3333333","5":"-9.7"},{"1":"-18.8333333","2":"-41.466667","3":"-12.2666667","4":"-32.6666667","5":"1.3"},{"1":"-34.8333333","2":"18.533333","3":"-1.2666667","4":"-26.6666667","5":"47.3"},{"1":"6.1666667","2":"-6.466667","3":"-43.2666667","4":"32.3333333","5":"47.3"},{"1":"-32.8333333","2":"13.533333","3":"1.7333333","4":"-49.6666667","5":"47.3"},{"1":"10.1666667","2":"28.533333","3":"44.7333333","4":"17.3333333","5":"-20.7"},{"1":"-2.8333333","2":"4.533333","3":"-26.2666667","4":"-39.6666667","5":"-2.7"},{"1":"-1.8333333","2":"2.533333","3":"33.7333333","4":"-7.6666667","5":"-9.7"},{"1":"-39.8333333","2":"44.533333","3":"-13.2666667","4":"29.3333333","5":"22.3"},{"1":"-45.8333333","2":"-9.466667","3":"12.7333333","4":"27.3333333","5":"-45.7"},{"1":"-28.8333333","2":"22.533333","3":"-13.2666667","4":"8.3333333","5":"31.3"},{"1":"18.1666667","2":"11.533333","3":"31.7333333","4":"-45.6666667","5":"33.3"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <hr />
@@ -484,21 +485,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-291" class="exercise"><strong>Exercise 10.3  </strong></span>Create a self-defined function to convert each number of a numeric vector to a “z” score.
+<span id="exr:unnamed-chunk-292" class="exercise"><strong>Exercise 10.3  </strong></span>Create a self-defined function to convert each number of a numeric vector to a “z” score.
 </div>
 
-<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb337-1" data-line-number="1">y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">10</span>, <span class="dv">20</span>)</a>
-<a class="sourceLine" id="cb337-2" data-line-number="2"><span class="kw">my_z</span>(y)</a></code></pre></div>
+<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb341-1" data-line-number="1">y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">10</span>, <span class="dv">20</span>)</a>
+<a class="sourceLine" id="cb341-2" data-line-number="2"><span class="kw">my_z</span>(y)</a></code></pre></div>
 <pre><code>## [1] -7.2000000 -2.1000000 -0.8981462  0.5692100  2.6385602</code></pre>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-294" class="exercise"><strong>Exercise 10.4  </strong></span>Use the dataset <code>exams.list</code> in this chapter. For each class, please convert the student’s score to a z-score.
+<span id="exr:unnamed-chunk-295" class="exercise"><strong>Exercise 10.4  </strong></span>Use the dataset <code>exams.list</code> in this chapter. For each class, please convert the student’s score to a z-score.
 </div>
 
-<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb339-1" data-line-number="1">exams.list <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">map_df</span>(my_z)</a></code></pre></div>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb343-1" data-line-number="1">exams.list <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">map_df</span>(my_z)</a></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["class1"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["class2"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["class3"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["class4"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["class5"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"0.5932959","2":"3.8265728","3":"4.1455018","4":"1.7745523","5":"4.11468803"},{"1":"-0.8347987","2":"-7.4407050","3":"-4.6666667","4":"4.6633333","5":"1.30160785"},{"1":"-3.5202639","2":"0.2733967","3":"-26.1732122","4":"2.3985763","5":"2.14886071"},{"1":"-1.1589891","2":"3.7433956","3":"-5.6142855","4":"3.0703704","5":"-4.97818947"},{"1":"-5.4297023","2":"-23.2103856","3":"-8.0833333","4":"-4.2661501","5":"-0.03532086"},{"1":"-1.1589891","2":"1.8843625","3":"1.3886817","4":"-13.7137441","5":"-2.73009971"},{"1":"2.5220142","2":"-9.1688179","3":"3.9770584","4":"-12.7740306","5":"-3.12546605"},{"1":"2.6217217","2":"-2.1197301","3":"4.8649588","4":"-1.9313489","5":"1.30160785"},{"1":"1.3315836","2":"3.6594280","3":"1.7356684","4":"-1.2472290","5":"3.18774794"},{"1":"-3.0637667","2":"3.3152711","3":"-5.2823652","4":"-1.4120781","5":"-2.17564627"},{"1":"1.4478014","2":"0.1444371","3":"2.5896620","4":"0.7333975","5":"1.07499902"},{"1":"1.7861002","2":"0.4002083","3":"3.6296296","4":"-5.6733333","5":"-3.76375361"},{"1":"3.4675499","2":"-0.2561959","3":"0.7711357","4":"0.8563597","5":"-39.07943477"},{"1":"1.2135348","2":"2.0900080","3":"3.6296296","4":"2.6932683","5":"-2.73009971"},{"1":"3.6442388","2":"-3.2715398","3":"-0.9772545","4":"-4.0171719","5":"-9.25524209"},{"1":"-49.6000000","2":"3.7433956","3":"-3.1131586","4":"3.3423707","5":"3.62120032"},{"1":"2.1100599","2":"0.8875000","3":"-0.6532746","4":"1.2136859","5":"1.18911593"},{"1":"-2.6368813","2":"-4.9112456","3":"3.2668699","4":"-1.2472290","5":"1.52192443"},{"1":"-34.3653896","2":"2.6777778","3":"2.9836894","4":"2.4980022","5":"4.27333333"},{"1":"3.4675499","2":"-4.9112456","3":"3.5404410","4":"0.8563597","5":"-2.92500761"},{"1":"-16.4792510","2":"1.0046814","3":"-0.8133257","4":"-7.4610135","5":"3.87135832"},{"1":"-2.2358262","2":"3.0478729","3":"0.0952381","4":"-10.5211842","5":"-1.82860670"},{"1":"1.2135348","2":"-4.1604560","3":"0.2357023","4":"2.1959594","5":"3.53621418"},{"1":"-3.2880465","2":"-4.1604560","3":"-1.1452743","4":"-0.9286738","5":"3.78875404"},{"1":"-6.0975405","2":"2.1909203","3":"-7.5994496","4":"-11.1956990","5":"-2.00002525"},{"1":"0.3296654","2":"0.4002083","3":"-6.7295282","4":"2.7891758","5":"4.11468803"},{"1":"1.3315836","2":"1.8843625","3":"-0.8133257","4":"-5.9944457","5":"-3.99020041"},{"1":"2.7201947","2":"-2.1197301","3":"-12.1220644","4":"2.6932683","5":"1.30160785"},{"1":"2.0035789","2":"-7.4407050","3":"-9.7997035","4":"4.3512464","5":"-20.92952902"},{"1":"3.6442388","2":"-1.4440634","3":"0.6410160","4":"2.6932683","5":"-16.08888889"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["class1"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["class2"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["class3"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["class4"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["class5"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"4.8655681","2":"-11.8480003","3":"-0.78510831","4":"2.75520745","5":"-1.7357692"},{"1":"-3.1525177","2":"4.7995469","3":"-1.10815628","4":"4.24071052","5":"-5.0418664"},{"1":"3.7278890","2":"4.6429210","3":"0.24037009","4":"3.91359672","5":"3.8515458"},{"1":"4.3154392","2":"5.0293480","3":"1.93663946","4":"-0.09157371","5":"0.5906504"},{"1":"-0.4132841","2":"-Inf","3":"-20.24386876","4":"3.48659300","5":"-9.2739651"},{"1":"-0.1190476","2":"3.9002900","3":"-11.04663515","4":"-29.25241364","5":"-1.7357692"},{"1":"-1.9196202","2":"-7.3892520","3":"3.41481481","4":"-3.83016173","5":"-3.1790138"},{"1":"2.5120212","2":"0.4947656","3":"2.56129790","4":"-6.75135602","5":"-2.3157227"},{"1":"2.3073955","2":"-13.9535738","3":"-6.38651025","4":"4.24071052","5":"2.5458369"},{"1":"4.3961789","2":"2.7928928","3":"3.32428773","4":"-5.73333333","5":"-0.5515634"},{"1":"-16.1894783","2":"4.3208679","3":"0.50804232","4":"2.16060405","5":"-7.6883793"},{"1":"3.2815064","2":"-3.6788542","3":"-1.98991610","4":"-7.12845108","5":"-3.1790138"},{"1":"-48.8333333","2":"-1.1805837","3":"-0.18095238","4":"-4.32092240","5":"-4.4518363"},{"1":"-13.6111111","2":"-5.4295116","3":"2.95181578","4":"-1.62665142","5":"0.5906504"},{"1":"-4.3942770","2":"-16.9286958","3":"-0.03771236","4":"3.03703704","5":"0.1838478"},{"1":"-0.5651942","2":"-2.1072513","3":"0.37545221","4":"4.16006569","5":"2.0217662"},{"1":"3.8143605","2":"-32.1497883","3":"-5.05333333","4":"4.63333333","5":"-1.7357692"},{"1":"4.9414359","2":"1.5015121","3":"-2.58053766","4":"-7.95307877","5":"-5.3588204"},{"1":"4.5554438","2":"-11.8480003","3":"3.59295011","4":"1.62892592","5":"-1.5532431"},{"1":"-3.3825665","2":"-16.9286958","3":"-1.98991610","4":"-7.12845108","5":"0.1838478"},{"1":"-8.9939280","2":"2.2812956","3":"-0.18095238","4":"-5.13200239","5":"4.8275360"},{"1":"0.8240555","2":"-1.0099237","3":"-16.35326287","4":"3.48659300","5":"4.8275360"},{"1":"-7.9632530","2":"1.7327658","3":"0.24037009","4":"-24.83333333","5":"4.8275360"},{"1":"1.3125110","2":"3.2729978","3":"4.58954316","4":"2.05708821","5":"-3.9119323"},{"1":"-0.4132841","2":"0.6286602","3":"-5.36166088","4":"-10.60136260","5":"-0.3980933"},{"1":"-0.2646189","2":"0.3582674","3":"3.68060842","4":"-1.13038833","5":"-1.5532431"},{"1":"-12.5964060","2":"4.6429210","3":"-2.18102656","4":"3.21975163","5":"2.6465231"},{"1":"-22.9166667","2":"-1.5356961","3":"1.60424921","4":"3.03703704","5":"-26.3849073"},{"1":"-6.2919492","2":"2.6932485","3":"-2.18102656","4":"1.05833439","5":"3.4994464"},{"1":"2.2030319","2":"1.5015121","3":"3.50436043","4":"-16.14560484","5":"3.6773698"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 
@@ -561,7 +562,7 @@ gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": null,
 "fontsettings": {
-"theme": "sepia",
+"theme": "white",
 "family": "sans",
 "size": 2
 },
