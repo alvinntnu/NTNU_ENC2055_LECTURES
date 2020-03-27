@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 R Fundamentals | ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
   <meta name="description" content="ENC2055 Course material first edition" />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 R Fundamentals | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2020-03-25" />
+<meta name="date" content="2020-03-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,10 +52,6 @@
 
 <link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
-<script src="libs/str_view-binding-1.4.0/str_view.js"></script>
 
 
 <style type="text/css">
@@ -186,13 +182,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.5" data-path="subsetting.html"><a href="subsetting.html#tibble"><i class="fa fa-check"></i><b>4.5</b> Tibble</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>5</b> Data Visualization</a><ul>
-<li class="chapter" data-level="5.1" data-path="data-visualization.html"><a href="data-visualization.html#why-visualization"><i class="fa fa-check"></i><b>5.1</b> Why Visualization?</a></li>
+<li class="chapter" data-level="5.1" data-path="data-visualization.html"><a href="data-visualization.html#why-visualization"><i class="fa fa-check"></i><b>5.1</b> Why Visualization?</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="data-visualization.html"><a href="data-visualization.html#datasaurus-dozen-dataset"><i class="fa fa-check"></i><b>5.1.1</b> Datasaurus Dozen Dataset</a></li>
+<li class="chapter" data-level="5.1.2" data-path="data-visualization.html"><a href="data-visualization.html#simpsons-paradox"><i class="fa fa-check"></i><b>5.1.2</b> Simpson’s Paradox</a></li>
+</ul></li>
 <li class="chapter" data-level="5.2" data-path="data-visualization.html"><a href="data-visualization.html#ggplot2"><i class="fa fa-check"></i><b>5.2</b> <code>ggplot2</code></a></li>
-<li class="chapter" data-level="5.3" data-path="data-visualization.html"><a href="data-visualization.html#one-variable-graph"><i class="fa fa-check"></i><b>5.3</b> One-variable Graph</a></li>
-<li class="chapter" data-level="5.4" data-path="data-visualization.html"><a href="data-visualization.html#two-variable-graph"><i class="fa fa-check"></i><b>5.4</b> Two-variable Graph</a></li>
-<li class="chapter" data-level="5.5" data-path="data-visualization.html"><a href="data-visualization.html#adding-other-aesthetic-features"><i class="fa fa-check"></i><b>5.5</b> Adding Other Aesthetic Features</a></li>
-<li class="chapter" data-level="5.6" data-path="data-visualization.html"><a href="data-visualization.html#saving-plots"><i class="fa fa-check"></i><b>5.6</b> Saving Plots</a></li>
-<li class="chapter" data-level="5.7" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-covid-19"><i class="fa fa-check"></i><b>5.7</b> Exercises on COVID-19</a></li>
+<li class="chapter" data-level="5.3" data-path="data-visualization.html"><a href="data-visualization.html#variables-and-data-type"><i class="fa fa-check"></i><b>5.3</b> Variables and Data Type</a></li>
+<li class="chapter" data-level="5.4" data-path="data-visualization.html"><a href="data-visualization.html#one-variable-graph"><i class="fa fa-check"></i><b>5.4</b> One-variable Graph</a></li>
+<li class="chapter" data-level="5.5" data-path="data-visualization.html"><a href="data-visualization.html#two-variable-graph"><i class="fa fa-check"></i><b>5.5</b> Two-variable Graph</a></li>
+<li class="chapter" data-level="5.6" data-path="data-visualization.html"><a href="data-visualization.html#adding-other-aesthetic-features"><i class="fa fa-check"></i><b>5.6</b> Adding Other Aesthetic Features</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="data-visualization.html"><a href="data-visualization.html#color"><i class="fa fa-check"></i><b>5.6.1</b> <code>color</code></a></li>
+<li class="chapter" data-level="5.6.2" data-path="data-visualization.html"><a href="data-visualization.html#shape"><i class="fa fa-check"></i><b>5.6.2</b> <code>shape</code></a></li>
+<li class="chapter" data-level="5.6.3" data-path="data-visualization.html"><a href="data-visualization.html#other-geom_...-layers"><i class="fa fa-check"></i><b>5.6.3</b> Other <code>geom_...</code> Layers</a></li>
+<li class="chapter" data-level="5.6.4" data-path="data-visualization.html"><a href="data-visualization.html#labels"><i class="fa fa-check"></i><b>5.6.4</b> Labels</a></li>
+<li class="chapter" data-level="5.6.5" data-path="data-visualization.html"><a href="data-visualization.html#fill"><i class="fa fa-check"></i><b>5.6.5</b> <code>fill</code></a></li>
+<li class="chapter" data-level="5.6.6" data-path="data-visualization.html"><a href="data-visualization.html#interim-summary"><i class="fa fa-check"></i><b>5.6.6</b> Interim Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="data-visualization.html"><a href="data-visualization.html#saving-plots"><i class="fa fa-check"></i><b>5.7</b> Saving Plots</a></li>
+<li class="chapter" data-level="5.8" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-iris"><i class="fa fa-check"></i><b>5.8</b> Exercises on <code>iris</code></a></li>
+<li class="chapter" data-level="5.9" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-covid-19"><i class="fa fa-check"></i><b>5.9</b> Exercises on COVID-19</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="data-manipulation.html"><a href="data-manipulation.html"><i class="fa fa-check"></i><b>6</b> Data Manipulation</a><ul>
 <li class="chapter" data-level="6.1" data-path="data-manipulation.html"><a href="data-manipulation.html#dataset"><i class="fa fa-check"></i><b>6.1</b> Dataset</a></li>
@@ -204,7 +212,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.7" data-path="data-manipulation.html"><a href="data-manipulation.html#arrange"><i class="fa fa-check"></i><b>6.7</b> <code>arrange()</code></a></li>
 <li class="chapter" data-level="6.8" data-path="data-manipulation.html"><a href="data-manipulation.html#group_by-and-summarize"><i class="fa fa-check"></i><b>6.8</b> <code>group_by()</code> and <code>summarize()</code></a></li>
 <li class="chapter" data-level="6.9" data-path="data-manipulation.html"><a href="data-manipulation.html#count"><i class="fa fa-check"></i><b>6.9</b> <code>count()</code></a></li>
-<li class="chapter" data-level="6.10" data-path="data-manipulation.html"><a href="data-manipulation.html#exerceises"><i class="fa fa-check"></i><b>6.10</b> Exerceises</a></li>
+<li class="chapter" data-level="6.10" data-path="data-manipulation.html"><a href="data-manipulation.html#tidy-data"><i class="fa fa-check"></i><b>6.10</b> Tidy Data</a><ul>
+<li class="chapter" data-level="6.10.1" data-path="data-manipulation.html"><a href="data-manipulation.html#an-long-to-wide-example"><i class="fa fa-check"></i><b>6.10.1</b> An Long-to-Wide Example</a></li>
+<li class="chapter" data-level="6.10.2" data-path="data-manipulation.html"><a href="data-manipulation.html#a-wide-to-long-example"><i class="fa fa-check"></i><b>6.10.2</b> A Wide-to-Long Example</a></li>
+</ul></li>
+<li class="chapter" data-level="6.11" data-path="data-manipulation.html"><a href="data-manipulation.html#exerceises"><i class="fa fa-check"></i><b>6.11</b> Exerceises</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="data-import.html"><a href="data-import.html"><i class="fa fa-check"></i><b>7</b> Data Import</a><ul>
 <li class="chapter" data-level="7.1" data-path="data-import.html"><a href="data-import.html#readlines"><i class="fa fa-check"></i><b>7.1</b> <code>readLines()</code></a></li>
@@ -362,27 +374,27 @@ Figure 2.1: Rstudio Interface
 <hr /></li>
 </ul>
 <p>The R console is like a calculator. You can type any R code in the console after the prompt <code>&gt;</code> and run the code line by line by pressing <code>enter</code>.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a></code></pre></div>
 <pre><code>## [1] 2</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">log</span>(<span class="dv">10</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">log</span>(<span class="dv">10</span>)</a></code></pre></div>
 <pre><code>## [1] 2.302585</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="dv">1</span><span class="op">:</span><span class="dv">5</span></a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="dv">1</span><span class="op">:</span><span class="dv">5</span></a></code></pre></div>
 <pre><code>## [1] 1 2 3 4 5</code></pre>
 <hr />
 <p>Or alternatively, we can create an R script in Rstudio and write down lines of R codes to be passed to the R console. This way, we can run the whole script all at once. This is the idea of writing a program.</p>
 <p>In the above example (Figure <a href="r-fundamentals.html#fig:rstudiointerface">2.1</a>), I wrote a few lines of codes in a R script file (cf. the <code>Editor</code> frame) and asked R to run these lines of codes in the R <code>Console</code>. And the graphic output of the R script was printed in the <code>Output</code> frame.</p>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-16" class="exercise"><strong>Exercise 2.1  </strong></span>Please create a new R script in Rstudio. You may name the script as “ch2.R”. Please write the following codes in the script and pass the whole script to the R Console.
+<span id="exr:unnamed-chunk-6" class="exercise"><strong>Exercise 2.1  </strong></span>Please create a new R script in Rstudio. You may name the script as “ch2.R”. Please write the following codes in the script and pass the whole script to the R Console.
 </div>
 
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">scores &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">1000</span>, <span class="dt">mean =</span> <span class="dv">75</span>, <span class="dt">sd =</span> <span class="fl">5.8</span>)</a>
-<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="kw">plot</span>(<span class="kw">density</span>(scores))</a>
-<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="kw">hist</span>(scores)</a>
-<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="kw">boxplot</span>(scores)</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">scores &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">1000</span>, <span class="dt">mean =</span> <span class="dv">75</span>, <span class="dt">sd =</span> <span class="fl">5.8</span>)</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw">plot</span>(<span class="kw">density</span>(scores))</a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="kw">hist</span>(scores)</a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="kw">boxplot</span>(scores)</a></code></pre></div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-18" class="exercise"><strong>Exercise 2.2  </strong></span>Find the answer to the following mathematical calculation in R.
+<span id="exr:unnamed-chunk-8" class="exercise"><strong>Exercise 2.2  </strong></span>Find the answer to the following mathematical calculation in R.
 </div>
 
 <p><span class="math inline">\(2^{2+1}-4+64^{(-2)^{2.25-\frac{1}{4}}}\)</span></p>
@@ -392,27 +404,27 @@ Figure 2.1: Rstudio Interface
 <h2><span class="header-section-number">2.4</span> Assignment</h2>
 <p>R works with <strong>objects</strong> of many different classes, some of which are defined in the base R while others are defined by specific libaries/environments/users.</p>
 <p>You can assign any object created in R to a <strong>variable name</strong> using <code>&lt;-</code>:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="dv">5</span></a>
-<a class="sourceLine" id="cb10-2" data-line-number="2">y &lt;-<span class="st"> &quot;wonderful&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="dv">5</span></a>
+<a class="sourceLine" id="cb8-2" data-line-number="2">y &lt;-<span class="st"> &quot;wonderful&quot;</span></a></code></pre></div>
 <p>Now the objects are stored in the variables. You can print out the variables by either making use of the auto-printing (i.e., the variable name itself auto-prints its content) or <code>print()</code>:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">x</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">x</a></code></pre></div>
 <pre><code>## [1] 5</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw">print</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw">print</span>(x)</a></code></pre></div>
 <pre><code>## [1] 5</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">y</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">y</a></code></pre></div>
 <pre><code>## [1] &quot;wonderful&quot;</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="kw">print</span>(y)</a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="kw">print</span>(y)</a></code></pre></div>
 <pre><code>## [1] &quot;wonderful&quot;</code></pre>
 </div>
 <div id="data-structure" class="section level2">
 <h2><span class="header-section-number">2.5</span> Data Structure</h2>
 <p>In R, the most primitive object is a vector. There are two types of primitive vectors: (a) numeric and (b) character vectors. In our previous examples, <code>x</code> is a numeric vector of one element; <code>y</code> is a character vector of one element. All elements in the vector have to be <strong>of the same data type</strong>.</p>
 <p>You use <code>c()</code> to create a vector of multiple elments. Within the parenthesis, you concatenate each element of the vector by <code>,</code>:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1">x2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</a>
-<a class="sourceLine" id="cb19-2" data-line-number="2">x2</a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">x2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</a>
+<a class="sourceLine" id="cb17-2" data-line-number="2">x2</a></code></pre></div>
 <pre><code>## [1] 1 2 3 4 5 6</code></pre>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1">y2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;wonderful&quot;</span>, <span class="st">&quot;excellent&quot;</span>, <span class="st">&quot;brilliant&quot;</span>)</a>
-<a class="sourceLine" id="cb21-2" data-line-number="2">y2</a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1">y2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;wonderful&quot;</span>, <span class="st">&quot;excellent&quot;</span>, <span class="st">&quot;brilliant&quot;</span>)</a>
+<a class="sourceLine" id="cb19-2" data-line-number="2">y2</a></code></pre></div>
 <pre><code>## [1] &quot;wonderful&quot; &quot;excellent&quot; &quot;brilliant&quot;</code></pre>
 <p>Other data structures that we often work with include:</p>
 <ul>
@@ -420,8 +432,8 @@ Figure 2.1: Rstudio Interface
 <li>Matrix: a two-dimensional vector, where all elements have to be of the same data type</li>
 <li>Data Frame: a spreadsheet-like table, where columns can be of different data types</li>
 </ul>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1">ex_list &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">&quot;First element&quot;</span>, <span class="dv">5</span><span class="op">:</span><span class="dv">10</span>, <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb23-2" data-line-number="2"><span class="kw">print</span>(ex_list)</a></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1">ex_list &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">&quot;First element&quot;</span>, <span class="dv">5</span><span class="op">:</span><span class="dv">10</span>, <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb21-2" data-line-number="2"><span class="kw">print</span>(ex_list)</a></code></pre></div>
 <pre><code>## [[1]]
 ## [1] &quot;First element&quot;
 ## 
@@ -430,17 +442,17 @@ Figure 2.1: Rstudio Interface
 ## 
 ## [[3]]
 ## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1">ex_array &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">8</span>,<span class="dv">19</span>),<span class="dt">byrow =</span> T, <span class="dt">nrow =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb25-2" data-line-number="2">ex_array</a></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1">ex_array &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">8</span>,<span class="dv">19</span>),<span class="dt">byrow =</span> T, <span class="dt">nrow =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb23-2" data-line-number="2">ex_array</a></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    5    6
 ## [2,]    3    8   19</code></pre>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1">ex_df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</a>
-<a class="sourceLine" id="cb27-2" data-line-number="2">  <span class="dt">WORD =</span> <span class="kw">c</span>(<span class="st">&quot;the&quot;</span>, <span class="st">&quot;boy&quot;</span>, <span class="st">&quot;you&quot;</span>,<span class="st">&quot;him&quot;</span>),</a>
-<a class="sourceLine" id="cb27-3" data-line-number="3">  <span class="dt">POS =</span> <span class="kw">c</span>(<span class="st">&quot;ART&quot;</span>,<span class="st">&quot;N&quot;</span>,<span class="st">&quot;PRO&quot;</span>,<span class="st">&quot;PRO&quot;</span>),</a>
-<a class="sourceLine" id="cb27-4" data-line-number="4">  <span class="dt">FREQ =</span> <span class="kw">c</span>(<span class="dv">1104</span>,<span class="dv">35</span>, <span class="dv">104</span>, <span class="dv">34</span>)</a>
-<a class="sourceLine" id="cb27-5" data-line-number="5">)</a>
-<a class="sourceLine" id="cb27-6" data-line-number="6">ex_df</a></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1">ex_df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</a>
+<a class="sourceLine" id="cb25-2" data-line-number="2">  <span class="dt">WORD =</span> <span class="kw">c</span>(<span class="st">&quot;the&quot;</span>, <span class="st">&quot;boy&quot;</span>, <span class="st">&quot;you&quot;</span>,<span class="st">&quot;him&quot;</span>),</a>
+<a class="sourceLine" id="cb25-3" data-line-number="3">  <span class="dt">POS =</span> <span class="kw">c</span>(<span class="st">&quot;ART&quot;</span>,<span class="st">&quot;N&quot;</span>,<span class="st">&quot;PRO&quot;</span>,<span class="st">&quot;PRO&quot;</span>),</a>
+<a class="sourceLine" id="cb25-4" data-line-number="4">  <span class="dt">FREQ =</span> <span class="kw">c</span>(<span class="dv">1104</span>,<span class="dv">35</span>, <span class="dv">104</span>, <span class="dv">34</span>)</a>
+<a class="sourceLine" id="cb25-5" data-line-number="5">)</a>
+<a class="sourceLine" id="cb25-6" data-line-number="6">ex_df</a></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["WORD"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["POS"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["FREQ"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"the","2":"ART","3":"1104"},{"1":"boy","2":"N","3":"35"},{"1":"you","2":"PRO","3":"104"},{"1":"him","2":"PRO","3":"34"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -452,15 +464,15 @@ Figure 2.1: Rstudio Interface
 <div id="function" class="section level2">
 <h2><span class="header-section-number">2.6</span> Function</h2>
 <p>Function is also an object class. There are many functions pre-defined in the R-base libraries.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">class</span>(c)</a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="kw">class</span>(c)</a></code></pre></div>
 <pre><code>## [1] &quot;function&quot;</code></pre>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="kw">class</span>(vector)</a></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">class</span>(vector)</a></code></pre></div>
 <pre><code>## [1] &quot;function&quot;</code></pre>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="kw">class</span>(print)</a></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="kw">class</span>(print)</a></code></pre></div>
 <pre><code>## [1] &quot;function&quot;</code></pre>
 <p>To instruct R to do things more precisely, a function call usually has many <code>parameters</code> to specify. Take the earlier function <code>matrix()</code> for example. It is a pre-defined function in the R base library.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1">ex_array &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">8</span>,<span class="dv">19</span>),<span class="dt">byrow =</span> T, <span class="dt">nrow =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb34-2" data-line-number="2">ex_array</a></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1">ex_array &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">8</span>,<span class="dv">19</span>),<span class="dt">byrow =</span> T, <span class="dt">nrow =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb32-2" data-line-number="2">ex_array</a></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    5    6
 ## [2,]    3    8   19</code></pre>
@@ -475,49 +487,49 @@ Figure 2.1: Rstudio Interface
 <ul>
 <li>Define own functions:</li>
 </ul>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1">print_out_user_name &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">name =</span> <span class="st">&quot;&quot;</span>){</a>
-<a class="sourceLine" id="cb36-2" data-line-number="2">  <span class="kw">cat</span>(<span class="st">&quot;The current username is: &quot;</span>, name, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</a>
-<a class="sourceLine" id="cb36-3" data-line-number="3">}</a></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1">print_out_user_name &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">name =</span> <span class="st">&quot;&quot;</span>){</a>
+<a class="sourceLine" id="cb34-2" data-line-number="2">  <span class="kw">cat</span>(<span class="st">&quot;The current username is: &quot;</span>, name, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</a>
+<a class="sourceLine" id="cb34-3" data-line-number="3">}</a></code></pre></div>
 <ul>
 <li>Call own functions:</li>
 </ul>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="kw">print_out_user_name</span>(<span class="dt">name =</span> <span class="st">&quot;Alvin Cheng-Hsien Chen&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="kw">print_out_user_name</span>(<span class="dt">name =</span> <span class="st">&quot;Alvin Cheng-Hsien Chen&quot;</span>)</a></code></pre></div>
 <pre><code>## The current username is:  Alvin Cheng-Hsien Chen</code></pre>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="kw">print_out_user_name</span>(<span class="dt">name =</span> <span class="st">&quot;Ada Lovelace&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="kw">print_out_user_name</span>(<span class="dt">name =</span> <span class="st">&quot;Ada Lovelace&quot;</span>)</a></code></pre></div>
 <pre><code>## The current username is:  Ada Lovelace</code></pre>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-32" class="exercise"><strong>Exercise 2.3  </strong></span>Please define a function called <code>make_students_happy()</code>, which takes a multi-element numeric vector, and returns also a numeric vector, with the value of each element to be the square root of the original value multiplied by 10.
+<span id="exr:unnamed-chunk-22" class="exercise"><strong>Exercise 2.3  </strong></span>Please define a function called <code>make_students_happy()</code>, which takes a multi-element numeric vector, and returns also a numeric vector, with the value of each element to be the square root of the original value multiplied by 10.
 </div>
 
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1">student_current_scores &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">20</span>, <span class="dv">34</span>, <span class="dv">60</span>, <span class="dv">87</span>, <span class="dv">100</span>)</a>
-<a class="sourceLine" id="cb41-2" data-line-number="2"><span class="kw">make_students_happy</span>(<span class="dt">old_scores =</span> student_current_scores)</a></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1">student_current_scores &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">20</span>, <span class="dv">34</span>, <span class="dv">60</span>, <span class="dv">87</span>, <span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb39-2" data-line-number="2"><span class="kw">make_students_happy</span>(<span class="dt">old_scores =</span> student_current_scores)</a></code></pre></div>
 <pre><code>## [1]  44.72136  58.30952  77.45967  93.27379 100.00000</code></pre>
 </div>
 <div id="vectorization" class="section level2">
 <h2><span class="header-section-number">2.7</span> Vectorization</h2>
 <p>Many operations in R are vectorized, meaning that operations occur in parallel in certain R objects. This allows you to write code that is efficient, concise, and easier to read than in non-vectorized languages.</p>
 <p>The simplest example of vectorized functions is when adding two vectors together.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">4</span></a>
-<a class="sourceLine" id="cb43-2" data-line-number="2">y &lt;-<span class="st"> </span><span class="dv">6</span><span class="op">:</span><span class="dv">9</span> </a>
-<a class="sourceLine" id="cb43-3" data-line-number="3">z &lt;-<span class="st"> </span>x <span class="op">+</span><span class="st"> </span>y</a>
-<a class="sourceLine" id="cb43-4" data-line-number="4">z</a></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">4</span></a>
+<a class="sourceLine" id="cb41-2" data-line-number="2">y &lt;-<span class="st"> </span><span class="dv">6</span><span class="op">:</span><span class="dv">9</span> </a>
+<a class="sourceLine" id="cb41-3" data-line-number="3">z &lt;-<span class="st"> </span>x <span class="op">+</span><span class="st"> </span>y</a>
+<a class="sourceLine" id="cb41-4" data-line-number="4">z</a></code></pre></div>
 <pre><code>## [1]  7  9 11 13</code></pre>
 <p>Without vectorization, you mean need to do the vector adding as follows:</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" data-line-number="1">z &lt;-<span class="st"> </span><span class="kw">numeric</span>(<span class="dt">length =</span> <span class="kw">length</span>(x))</a>
-<a class="sourceLine" id="cb45-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb45-3" data-line-number="3"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(x)){</a>
-<a class="sourceLine" id="cb45-4" data-line-number="4">  z[i] &lt;-<span class="st"> </span>x[i]<span class="op">+</span>y[i]</a>
-<a class="sourceLine" id="cb45-5" data-line-number="5">} <span class="co"># endfor</span></a>
-<a class="sourceLine" id="cb45-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb45-7" data-line-number="7">z</a></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1">z &lt;-<span class="st"> </span><span class="kw">numeric</span>(<span class="dt">length =</span> <span class="kw">length</span>(x))</a>
+<a class="sourceLine" id="cb43-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb43-3" data-line-number="3"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(x)){</a>
+<a class="sourceLine" id="cb43-4" data-line-number="4">  z[i] &lt;-<span class="st"> </span>x[i]<span class="op">+</span>y[i]</a>
+<a class="sourceLine" id="cb43-5" data-line-number="5">} <span class="co"># endfor</span></a>
+<a class="sourceLine" id="cb43-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb43-7" data-line-number="7">z</a></code></pre></div>
 <pre><code>## [1]  7  9 11 13</code></pre>
 <p>Other common vectorized functions include:</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" data-line-number="1">x <span class="op">&gt;=</span><span class="st"> </span><span class="dv">5</span></a></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" data-line-number="1">x <span class="op">&gt;=</span><span class="st"> </span><span class="dv">5</span></a></code></pre></div>
 <pre><code>## [1] FALSE FALSE FALSE FALSE</code></pre>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" data-line-number="1">x <span class="op">&lt;</span><span class="st"> </span><span class="dv">2</span></a></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" data-line-number="1">x <span class="op">&lt;</span><span class="st"> </span><span class="dv">2</span></a></code></pre></div>
 <pre><code>## [1]  TRUE FALSE FALSE FALSE</code></pre>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" data-line-number="1">y <span class="op">==</span><span class="st"> </span><span class="dv">8</span></a></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" data-line-number="1">y <span class="op">==</span><span class="st"> </span><span class="dv">8</span></a></code></pre></div>
 <pre><code>## [1] FALSE FALSE  TRUE FALSE</code></pre>
 <div class="info">
 <p>
@@ -537,8 +549,27 @@ For more information on vectorization, please watch the following youtube clip f
 <h2><span class="header-section-number">2.9</span> Library</h2>
 <p>R, like other programming languages, comes with a huge database of packages and extensions, allowing us to do many different tasks without worrying about writing the codes all from the scratch. In <a href="https://cran.r-project.org/web/views/">CRAN Task Views</a>, you can find specific packages that you need for particular topics/tasks.</p>
 <p>To install a package (i.e., library):</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</a>
-<a class="sourceLine" id="cb53-2" data-line-number="2"><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;ggplot2&quot;</span>, <span class="st">&quot;devtools&quot;</span>, <span class="st">&quot;dplyr&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</a>
+<a class="sourceLine" id="cb51-2" data-line-number="2"><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;ggplot2&quot;</span>, <span class="st">&quot;devtools&quot;</span>, <span class="st">&quot;dplyr&quot;</span>))</a></code></pre></div>
+<div class="info">
+<p>
+For MacOS Catalina users, please install the following applications on your own. They are necessary for building R packages from source.
+</p>
+<ul>
+<li>
+<a href="https://developer.apple.com/download/more/">Command Line Tools for Xcode 11.X</a>
+</li>
+<li>
+clang7 from <a href="https://cran.r-project.org/bin/macosx/tools/" class="uri">https://cran.r-project.org/bin/macosx/tools/</a>
+</li>
+<li>
+gfortran6.1 from <a href="https://cran.r-project.org/bin/macosx/tools/" class="uri">https://cran.r-project.org/bin/macosx/tools/</a>
+</li>
+</ul>
+<p>
+For Windows users, please install <a href="https://cran.r-project.org/bin/windows/Rtools/">Rtools from CRAN</a>.
+</p>
+</div>
 </div>
 <div id="setting" class="section level2">
 <h2><span class="header-section-number">2.10</span> Setting</h2>
@@ -549,8 +580,8 @@ For more information on vectorization, please watch the following youtube clip f
 <h2><span class="header-section-number">2.11</span> Seeking Help</h2>
 <p>In the process of (learning) programming, one thing you will never be able to dodge is a strong desire for help. Here are the sources from which you may get additional assistance.</p>
 <p>Within Rstudio, in the R console, you can always use <code>?</code> to check the documentation of a particular function (cf. Figure <a href="r-fundamentals.html#fig:help1">2.2</a>). When you run the command, you will see the documentation popping up in the output frame of the Rstudio.</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" data-line-number="1">?log</a>
-<a class="sourceLine" id="cb54-2" data-line-number="2">?read.table</a></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" data-line-number="1">?log</a>
+<a class="sourceLine" id="cb52-2" data-line-number="2">?read.table</a></code></pre></div>
 <div class="figure"><span id="fig:help1"></span>
 <img src="images/Rstudio_help.png" alt="Help 1" width="80%" />
 <p class="caption">
@@ -640,19 +671,19 @@ Figure 2.3: Help 2
 <hr />
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-44" class="exercise"><strong>Exercise 2.4  </strong></span>Make yourself familiar with the <code>iris</code> data set, which is included in R.</p>
+<p><span id="exr:unnamed-chunk-35" class="exercise"><strong>Exercise 2.4  </strong></span>Make yourself familiar with the <code>iris</code> data set, which is included in R.</p>
 </div>
 
 <p><img src="images/iris-sepal-petal.jpg" width="70%" /></p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-46" class="exercise"><strong>Exercise 2.5  </strong></span>Use <code>?</code> to make youself familiar with the following commands: <code>str</code>,<code>summary</code>, <code>dim</code>, <code>colnames</code>, <code>names</code>, <code>nrow</code>, <code>ncol</code>, <code>head</code>, and <code>tail</code>.</p>
+<p><span id="exr:unnamed-chunk-37" class="exercise"><strong>Exercise 2.5  </strong></span>Use <code>?</code> to make youself familiar with the following commands: <code>str</code>,<code>summary</code>, <code>dim</code>, <code>colnames</code>, <code>names</code>, <code>nrow</code>, <code>ncol</code>, <code>head</code>, and <code>tail</code>.</p>
 What information can you get with all these commands?
 </div>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-47" class="exercise"><strong>Exercise 2.6  </strong></span>Write a function to compute the factorial of a non-negative integer, <em>x</em>, expressed as <em>x!</em>. The factorial of <em>x</em> refers to <em>x</em> multiplied by the product of all integers less than <em>x</em>, down to 1.</p>
+<p><span id="exr:unnamed-chunk-38" class="exercise"><strong>Exercise 2.6  </strong></span>Write a function to compute the factorial of a non-negative integer, <em>x</em>, expressed as <em>x!</em>. The factorial of <em>x</em> refers to <em>x</em> multiplied by the product of all integers less than <em>x</em>, down to 1.</p>
 <p>For example, <em>3!</em> = 3 x 2 x 1 = 6.</p>
 <p>The special case, <em>zero factorial</em> is always defined as 1.</p>
 Confirm that your function produce the same results as below: (i) 5! = 120; (ii) 120! = 479,001,600; (iii) 0! = 1.
@@ -663,14 +694,14 @@ Confirm that your function produce the same results as below: (i) 5! = 120; (ii)
 myfac &lt;- function(x){
 
 }</code></pre>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" data-line-number="1"><span class="co">##(i)</span></a>
-<a class="sourceLine" id="cb56-2" data-line-number="2"><span class="kw">myfac</span>(<span class="dv">5</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" data-line-number="1"><span class="co">##(i)</span></a>
+<a class="sourceLine" id="cb54-2" data-line-number="2"><span class="kw">myfac</span>(<span class="dv">5</span>)</a></code></pre></div>
 <pre><code>## [1] 120</code></pre>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" data-line-number="1"><span class="co">##(ii)</span></a>
-<a class="sourceLine" id="cb58-2" data-line-number="2"><span class="kw">myfac</span>(<span class="dv">12</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" data-line-number="1"><span class="co">##(ii)</span></a>
+<a class="sourceLine" id="cb56-2" data-line-number="2"><span class="kw">myfac</span>(<span class="dv">12</span>)</a></code></pre></div>
 <pre><code>## [1] 479001600</code></pre>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" data-line-number="1"><span class="co">##(iii)</span></a>
-<a class="sourceLine" id="cb60-2" data-line-number="2"><span class="kw">myfac</span>(<span class="dv">0</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" data-line-number="1"><span class="co">##(iii)</span></a>
+<a class="sourceLine" id="cb58-2" data-line-number="2"><span class="kw">myfac</span>(<span class="dv">0</span>)</a></code></pre></div>
 <pre><code>## [1] 1</code></pre>
 
 </div>
