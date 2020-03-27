@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 R Fundamentals | ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
   <meta name="description" content="ENC2055 Course material first edition" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 R Fundamentals | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2020-03-27" />
+<meta name="date" content="2020-03-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -551,13 +551,27 @@ For more information on vectorization, please watch the following youtube clip f
 <p>To install a package (i.e., library):</p>
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</a>
 <a class="sourceLine" id="cb51-2" data-line-number="2"><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;ggplot2&quot;</span>, <span class="st">&quot;devtools&quot;</span>, <span class="st">&quot;dplyr&quot;</span>))</a></code></pre></div>
+<p>In this course, I would like to recommend all of you to install the package <code>tidyverse</code>, which is a bundle including several useful packages for data analysis. During the installation, if you are asked about whether to install the package from <strong>source</strong>, please enter <code>yes</code> (See below for more detail).</p>
+<div class="danger">
+<p>
+During the R package installation, if you see messages like <code>installation of package XXX had non-zero exit status</code>, this indicates that the package has <strong>NOT</strong> been properly installed in your R environment. That is, something is <strong>WRONG</strong> (See below as well).
+</p>
+</div>
 <div class="info">
+<p>
+Before you install R packages from source, you need to install a few R tools for your operating system. These tools are necessary for you to build the R packages from the source.
+</p>
 <p>
 For MacOS Catalina users, please install the following applications on your own. They are necessary for building R packages from source.
 </p>
 <ul>
 <li>
 <a href="https://developer.apple.com/download/more/">Command Line Tools for Xcode 11.X</a>
+<ul>
+<li>
+You may need to log in with your Apple ID and find the <em>download</em> page.
+</li>
+</ul>
 </li>
 <li>
 clang7 from <a href="https://cran.r-project.org/bin/macosx/tools/" class="uri">https://cran.r-project.org/bin/macosx/tools/</a>
@@ -567,7 +581,10 @@ gfortran6.1 from <a href="https://cran.r-project.org/bin/macosx/tools/" class="u
 </li>
 </ul>
 <p>
-For Windows users, please install <a href="https://cran.r-project.org/bin/windows/Rtools/">Rtools from CRAN</a>.
+For Windows users, please install <a href="https://cran.r-project.org/bin/windows/Rtools/">Rtools from CRAN</a> (Please install the version according to your R version).
+</p>
+<p>
+After you install all the above source-building tools, you can now install the package <code>tidyverse</code>. Please install the package from the <strong>source</strong>. This step is <strong>very important</strong> because some of the dependent packages require you to do so.
 </p>
 </div>
 </div>
@@ -671,19 +688,19 @@ Figure 2.3: Help 2
 <hr />
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-35" class="exercise"><strong>Exercise 2.4  </strong></span>Make yourself familiar with the <code>iris</code> data set, which is included in R.</p>
+<p><span id="exr:unnamed-chunk-36" class="exercise"><strong>Exercise 2.4  </strong></span>Make yourself familiar with the <code>iris</code> data set, which is included in R.</p>
 </div>
 
 <p><img src="images/iris-sepal-petal.jpg" width="70%" /></p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-37" class="exercise"><strong>Exercise 2.5  </strong></span>Use <code>?</code> to make youself familiar with the following commands: <code>str</code>,<code>summary</code>, <code>dim</code>, <code>colnames</code>, <code>names</code>, <code>nrow</code>, <code>ncol</code>, <code>head</code>, and <code>tail</code>.</p>
+<p><span id="exr:unnamed-chunk-38" class="exercise"><strong>Exercise 2.5  </strong></span>Use <code>?</code> to make youself familiar with the following commands: <code>str</code>,<code>summary</code>, <code>dim</code>, <code>colnames</code>, <code>names</code>, <code>nrow</code>, <code>ncol</code>, <code>head</code>, and <code>tail</code>.</p>
 What information can you get with all these commands?
 </div>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-38" class="exercise"><strong>Exercise 2.6  </strong></span>Write a function to compute the factorial of a non-negative integer, <em>x</em>, expressed as <em>x!</em>. The factorial of <em>x</em> refers to <em>x</em> multiplied by the product of all integers less than <em>x</em>, down to 1.</p>
+<p><span id="exr:unnamed-chunk-39" class="exercise"><strong>Exercise 2.6  </strong></span>Write a function to compute the factorial of a non-negative integer, <em>x</em>, expressed as <em>x!</em>. The factorial of <em>x</em> refers to <em>x</em> multiplied by the product of all integers less than <em>x</em>, down to 1.</p>
 <p>For example, <em>3!</em> = 3 x 2 x 1 = 6.</p>
 <p>The special case, <em>zero factorial</em> is always defined as 1.</p>
 Confirm that your function produce the same results as below: (i) 5! = 120; (ii) 120! = 479,001,600; (iii) 0! = 1.

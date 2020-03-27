@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2020-03-26" />
+<meta name="date" content="2020-03-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -1012,6 +1012,11 @@ Hint: check <code>reorder()</code>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="kw">aes</span>(<span class="dt">x =</span> class, <span class="dt">y =</span> hwy)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb10-2" data-line-number="2"><span class="st">  </span><span class="kw">stat_summary</span>(<span class="dt">fun.data =</span> mean_cl_boot, <span class="dt">geom =</span> <span class="st">&quot;pointrange&quot;</span>)</a></code></pre></div>
 <p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<div class="danger">
+<p>
+If you run into problems plotting the error plot using <code>stat_summary()</code>, probably you did not have the necessary packages installed in your current R environment. Please make sure that you install the package <code>tidyverse</code> or <code>ggplot2</code> properly without any error messages in the process of installation. Also, please note that you need to install these R packages from <strong>source</strong>. For more detail, please refer back to <a href="r-fundamentals.html#library">Chapter 2.9</a>.
+</p>
+</div>
 <ul>
 <li>Categorical X, Categorical Y
 <ul>
@@ -1021,7 +1026,7 @@ Hint: check <code>reorder()</code>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="kw">aes</span>(<span class="dt">x =</span> manufacturer, <span class="dt">y =</span> class)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb11-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_count</span>() <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb11-3" data-line-number="3"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle=</span><span class="op">-</span><span class="dv">90</span>))</a></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
 </div>
 <div id="adding-other-aesthetic-features" class="section level2">
 <h2><span class="header-section-number">5.6</span> Adding Other Aesthetic Features</h2>
@@ -1031,7 +1036,7 @@ Hint: check <code>reorder()</code>
 <p>Earlier we create a scatter plot using the following code:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb12-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>()</a></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
 <p>The above plot includes two variables into the graph, <code>x = displ</code> and <code>y = hwy</code>.</p>
 <p>The additional aesthetic features include things like colors, sizes, shapes, line-types, widths etc. The idea is that we can introduce a <strong>third variable</strong> into the plot by modifying the color of the points based on the value of that third variable.</p>
 <ul>
@@ -1039,7 +1044,7 @@ Hint: check <code>reorder()</code>
 </ul>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy, <span class="dt">color =</span> drv)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb13-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>()</a></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
 <p>In the above example, <code>color</code> is an aesthetic and the color of each point is now mapped to the variable <code>drv</code>. In this case, points belong to each group of <code>drv</code> would be of different colors–different drive train types have different colors in points.</p>
 <p>Note that the x-coordinates and y-coordinates are aesthetics too, and they got mapped to the <code>displ</code> and <code>hwy</code> variables, respectively. We further map the color to the third variable <code>drv</code>, which indicates whether a car is front wheel drive, rear wheel drive, or 4-wheel drive.</p>
 </div>
@@ -1048,11 +1053,11 @@ Hint: check <code>reorder()</code>
 <p>We can map a third variable to the graph using <code>shape</code> as well.</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy, <span class="dt">shape =</span> drv)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb14-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>()</a></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
 <p>And of course you can map both <code>shape</code> and <code>color</code> to the same third variable:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy, <span class="dt">color =</span> drv, <span class="dt">shape=</span>drv)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb15-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>()</a></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
 </div>
 <div id="other-geom_...-layers" class="section level3">
 <h3><span class="header-section-number">5.6.3</span> Other <code>geom_...</code> Layers</h3>
@@ -1060,7 +1065,7 @@ Hint: check <code>reorder()</code>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb16-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb16-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_smooth</span>()</a></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
 <div class="info">
 <p>
 Could you predict what kind of graph you would get with the following code?
@@ -1078,22 +1083,22 @@ Could you predict what kind of graph you would get with the following code?
 <a class="sourceLine" id="cb18-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">&#39;lm&#39;</span>, <span class="dt">formula=</span> y<span class="op">~</span>x) <span class="op">+</span></a>
 <a class="sourceLine" id="cb18-4" data-line-number="4"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Correlation between Displacement and Highway Miles per Gallon&quot;</span>,</a>
 <a class="sourceLine" id="cb18-5" data-line-number="5">       <span class="dt">x =</span> <span class="st">&quot;Displacement&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Miles/Per Gallon&quot;</span>)</a></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy, <span class="dt">color =</span> drv)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb19-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb19-3" data-line-number="3"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Engine Displacement (litres)&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Highway Miles per Gallon&quot;</span>,</a>
 <a class="sourceLine" id="cb19-4" data-line-number="4">       <span class="dt">title =</span> <span class="st">&quot;Scatter Plot -- DISPL by HWY&quot;</span>)</a></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
 </div>
 <div id="fill" class="section level3">
 <h3><span class="header-section-number">5.6.5</span> <code>fill</code></h3>
 <p>For bar plots or histograms, we can fill the bars with different colors by adding <code>fill = ...</code> in the <code>aes()</code>.</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="kw">aes</span>(<span class="dt">x =</span> class, <span class="dt">fill=</span> class)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb20-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_bar</span>()</a></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="kw">aes</span>(<span class="dt">x =</span> class, <span class="dt">y =</span> hwy, <span class="dt">fill =</span> class)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb21-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_boxplot</span>()</a></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-30-2.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-31-2.png" width="672" /></p>
 </div>
 <div id="interim-summary" class="section level3">
 <h3><span class="header-section-number">5.6.6</span> Interim Summary</h3>
@@ -1115,7 +1120,7 @@ Could you predict what kind of graph you would get with the following code?
 <a class="sourceLine" id="cb22-5" data-line-number="5"><span class="kw">class</span>(my_first_graph) <span class="co"># check the class</span></a></code></pre></div>
 <pre><code>## [1] &quot;gg&quot;     &quot;ggplot&quot;</code></pre>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">my_first_graph <span class="co"># auto-print the ggplot</span></a></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="kw">ggsave</span>(<span class="dt">filename =</span> <span class="st">&quot;my_first_plot.png&quot;</span>,<span class="dt">plot =</span> my_first_graph, <span class="dt">width =</span> <span class="dv">6</span>, <span class="dt">height =</span> <span class="dv">6</span>)</a></code></pre></div>
 </div>
 <div id="exercises-on-iris" class="section level2">
@@ -1130,19 +1135,19 @@ Could you predict what kind of graph you would get with the following code?
 </div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-34" class="exercise"><strong>Exercise 5.2  </strong></span>Please create a scatter plot showing the relationship between <code>Sepal.Length</code> and <code>Petal.Length</code> for different iris <code>Species</code>. Also, please add the regression lines for each species. Your graph should look as close to the sample as possible.
+<span id="exr:unnamed-chunk-35" class="exercise"><strong>Exercise 5.2  </strong></span>Please create a scatter plot showing the relationship between <code>Sepal.Length</code> and <code>Petal.Length</code> for different iris <code>Species</code>. Also, please add the regression lines for each species. Your graph should look as close to the sample as possible.
 </div>
 
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-36" class="exercise"><strong>Exercise 5.3  </strong></span>Please create a boxplot showing the <code>Petal.Width</code> distributions of each iris <code>Species</code>.
+<span id="exr:unnamed-chunk-37" class="exercise"><strong>Exercise 5.3  </strong></span>Please create a boxplot showing the <code>Petal.Width</code> distributions of each iris <code>Species</code>.
 </div>
 
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-38" class="exercise"><strong>Exercise 5.4  </strong></span>Please create boxplots showing the distributions of <code>Petal.Width</code> and <code>Sepal.Width</code> of different iris <code>Species</code> on the same graph.</p>
+<p><span id="exr:unnamed-chunk-39" class="exercise"><strong>Exercise 5.4  </strong></span>Please create boxplots showing the distributions of <code>Petal.Width</code> and <code>Sepal.Width</code> of different iris <code>Species</code> on the same graph.</p>
 Hint: You may need to transform your data into a longer format, as shown below, before you create the boxplot. See <code>tidyr::pivot_longer()</code>. Please work on this exercise when we finish Chapter <a href="data-manipulation.html#data-manipulation">6</a>.
 </div>
 
@@ -1151,7 +1156,7 @@ Hint: You may need to transform your data into a longer format, as shown below, 
 {"columns":[{"label":["Width.Types"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Values"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Species"],"name":[3],"type":["fctr"],"align":["left"]}],"data":[{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.5","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.0","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.2","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.1","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.6","3":"setosa"},{"1":"Petal.Width","2":"0.4","3":"setosa"},{"1":"Sepal.Width","2":"3.9","3":"setosa"},{"1":"Petal.Width","2":"0.3","3":"setosa"},{"1":"Sepal.Width","2":"3.4","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.4","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"2.9","3":"setosa"},{"1":"Petal.Width","2":"0.1","3":"setosa"},{"1":"Sepal.Width","2":"3.1","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.7","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.4","3":"setosa"},{"1":"Petal.Width","2":"0.1","3":"setosa"},{"1":"Sepal.Width","2":"3.0","3":"setosa"},{"1":"Petal.Width","2":"0.1","3":"setosa"},{"1":"Sepal.Width","2":"3.0","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"4.0","3":"setosa"},{"1":"Petal.Width","2":"0.4","3":"setosa"},{"1":"Sepal.Width","2":"4.4","3":"setosa"},{"1":"Petal.Width","2":"0.4","3":"setosa"},{"1":"Sepal.Width","2":"3.9","3":"setosa"},{"1":"Petal.Width","2":"0.3","3":"setosa"},{"1":"Sepal.Width","2":"3.5","3":"setosa"},{"1":"Petal.Width","2":"0.3","3":"setosa"},{"1":"Sepal.Width","2":"3.8","3":"setosa"},{"1":"Petal.Width","2":"0.3","3":"setosa"},{"1":"Sepal.Width","2":"3.8","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.4","3":"setosa"},{"1":"Petal.Width","2":"0.4","3":"setosa"},{"1":"Sepal.Width","2":"3.7","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.6","3":"setosa"},{"1":"Petal.Width","2":"0.5","3":"setosa"},{"1":"Sepal.Width","2":"3.3","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.4","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.0","3":"setosa"},{"1":"Petal.Width","2":"0.4","3":"setosa"},{"1":"Sepal.Width","2":"3.4","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.5","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.4","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.2","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.1","3":"setosa"},{"1":"Petal.Width","2":"0.4","3":"setosa"},{"1":"Sepal.Width","2":"3.4","3":"setosa"},{"1":"Petal.Width","2":"0.1","3":"setosa"},{"1":"Sepal.Width","2":"4.1","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"4.2","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.1","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.2","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.5","3":"setosa"},{"1":"Petal.Width","2":"0.1","3":"setosa"},{"1":"Sepal.Width","2":"3.6","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.0","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.4","3":"setosa"},{"1":"Petal.Width","2":"0.3","3":"setosa"},{"1":"Sepal.Width","2":"3.5","3":"setosa"},{"1":"Petal.Width","2":"0.3","3":"setosa"},{"1":"Sepal.Width","2":"2.3","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.2","3":"setosa"},{"1":"Petal.Width","2":"0.6","3":"setosa"},{"1":"Sepal.Width","2":"3.5","3":"setosa"},{"1":"Petal.Width","2":"0.4","3":"setosa"},{"1":"Sepal.Width","2":"3.8","3":"setosa"},{"1":"Petal.Width","2":"0.3","3":"setosa"},{"1":"Sepal.Width","2":"3.0","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.8","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.2","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.7","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.3","3":"setosa"},{"1":"Petal.Width","2":"1.4","3":"versicolor"},{"1":"Sepal.Width","2":"3.2","3":"versicolor"},{"1":"Petal.Width","2":"1.5","3":"versicolor"},{"1":"Sepal.Width","2":"3.2","3":"versicolor"},{"1":"Petal.Width","2":"1.5","3":"versicolor"},{"1":"Sepal.Width","2":"3.1","3":"versicolor"},{"1":"Petal.Width","2":"1.3","3":"versicolor"},{"1":"Sepal.Width","2":"2.3","3":"versicolor"},{"1":"Petal.Width","2":"1.5","3":"versicolor"},{"1":"Sepal.Width","2":"2.8","3":"versicolor"},{"1":"Petal.Width","2":"1.3","3":"versicolor"},{"1":"Sepal.Width","2":"2.8","3":"versicolor"},{"1":"Petal.Width","2":"1.6","3":"versicolor"},{"1":"Sepal.Width","2":"3.3","3":"versicolor"},{"1":"Petal.Width","2":"1.0","3":"versicolor"},{"1":"Sepal.Width","2":"2.4","3":"versicolor"},{"1":"Petal.Width","2":"1.3","3":"versicolor"},{"1":"Sepal.Width","2":"2.9","3":"versicolor"},{"1":"Petal.Width","2":"1.4","3":"versicolor"},{"1":"Sepal.Width","2":"2.7","3":"versicolor"},{"1":"Petal.Width","2":"1.0","3":"versicolor"},{"1":"Sepal.Width","2":"2.0","3":"versicolor"},{"1":"Petal.Width","2":"1.5","3":"versicolor"},{"1":"Sepal.Width","2":"3.0","3":"versicolor"},{"1":"Petal.Width","2":"1.0","3":"versicolor"},{"1":"Sepal.Width","2":"2.2","3":"versicolor"},{"1":"Petal.Width","2":"1.4","3":"versicolor"},{"1":"Sepal.Width","2":"2.9","3":"versicolor"},{"1":"Petal.Width","2":"1.3","3":"versicolor"},{"1":"Sepal.Width","2":"2.9","3":"versicolor"},{"1":"Petal.Width","2":"1.4","3":"versicolor"},{"1":"Sepal.Width","2":"3.1","3":"versicolor"},{"1":"Petal.Width","2":"1.5","3":"versicolor"},{"1":"Sepal.Width","2":"3.0","3":"versicolor"},{"1":"Petal.Width","2":"1.0","3":"versicolor"},{"1":"Sepal.Width","2":"2.7","3":"versicolor"},{"1":"Petal.Width","2":"1.5","3":"versicolor"},{"1":"Sepal.Width","2":"2.2","3":"versicolor"},{"1":"Petal.Width","2":"1.1","3":"versicolor"},{"1":"Sepal.Width","2":"2.5","3":"versicolor"},{"1":"Petal.Width","2":"1.8","3":"versicolor"},{"1":"Sepal.Width","2":"3.2","3":"versicolor"},{"1":"Petal.Width","2":"1.3","3":"versicolor"},{"1":"Sepal.Width","2":"2.8","3":"versicolor"},{"1":"Petal.Width","2":"1.5","3":"versicolor"},{"1":"Sepal.Width","2":"2.5","3":"versicolor"},{"1":"Petal.Width","2":"1.2","3":"versicolor"},{"1":"Sepal.Width","2":"2.8","3":"versicolor"},{"1":"Petal.Width","2":"1.3","3":"versicolor"},{"1":"Sepal.Width","2":"2.9","3":"versicolor"},{"1":"Petal.Width","2":"1.4","3":"versicolor"},{"1":"Sepal.Width","2":"3.0","3":"versicolor"},{"1":"Petal.Width","2":"1.4","3":"versicolor"},{"1":"Sepal.Width","2":"2.8","3":"versicolor"},{"1":"Petal.Width","2":"1.7","3":"versicolor"},{"1":"Sepal.Width","2":"3.0","3":"versicolor"},{"1":"Petal.Width","2":"1.5","3":"versicolor"},{"1":"Sepal.Width","2":"2.9","3":"versicolor"},{"1":"Petal.Width","2":"1.0","3":"versicolor"},{"1":"Sepal.Width","2":"2.6","3":"versicolor"},{"1":"Petal.Width","2":"1.1","3":"versicolor"},{"1":"Sepal.Width","2":"2.4","3":"versicolor"},{"1":"Petal.Width","2":"1.0","3":"versicolor"},{"1":"Sepal.Width","2":"2.4","3":"versicolor"},{"1":"Petal.Width","2":"1.2","3":"versicolor"},{"1":"Sepal.Width","2":"2.7","3":"versicolor"},{"1":"Petal.Width","2":"1.6","3":"versicolor"},{"1":"Sepal.Width","2":"2.7","3":"versicolor"},{"1":"Petal.Width","2":"1.5","3":"versicolor"},{"1":"Sepal.Width","2":"3.0","3":"versicolor"},{"1":"Petal.Width","2":"1.6","3":"versicolor"},{"1":"Sepal.Width","2":"3.4","3":"versicolor"},{"1":"Petal.Width","2":"1.5","3":"versicolor"},{"1":"Sepal.Width","2":"3.1","3":"versicolor"},{"1":"Petal.Width","2":"1.3","3":"versicolor"},{"1":"Sepal.Width","2":"2.3","3":"versicolor"},{"1":"Petal.Width","2":"1.3","3":"versicolor"},{"1":"Sepal.Width","2":"3.0","3":"versicolor"},{"1":"Petal.Width","2":"1.3","3":"versicolor"},{"1":"Sepal.Width","2":"2.5","3":"versicolor"},{"1":"Petal.Width","2":"1.2","3":"versicolor"},{"1":"Sepal.Width","2":"2.6","3":"versicolor"},{"1":"Petal.Width","2":"1.4","3":"versicolor"},{"1":"Sepal.Width","2":"3.0","3":"versicolor"},{"1":"Petal.Width","2":"1.2","3":"versicolor"},{"1":"Sepal.Width","2":"2.6","3":"versicolor"},{"1":"Petal.Width","2":"1.0","3":"versicolor"},{"1":"Sepal.Width","2":"2.3","3":"versicolor"},{"1":"Petal.Width","2":"1.3","3":"versicolor"},{"1":"Sepal.Width","2":"2.7","3":"versicolor"},{"1":"Petal.Width","2":"1.2","3":"versicolor"},{"1":"Sepal.Width","2":"3.0","3":"versicolor"},{"1":"Petal.Width","2":"1.3","3":"versicolor"},{"1":"Sepal.Width","2":"2.9","3":"versicolor"},{"1":"Petal.Width","2":"1.3","3":"versicolor"},{"1":"Sepal.Width","2":"2.9","3":"versicolor"},{"1":"Petal.Width","2":"1.1","3":"versicolor"},{"1":"Sepal.Width","2":"2.5","3":"versicolor"},{"1":"Petal.Width","2":"1.3","3":"versicolor"},{"1":"Sepal.Width","2":"2.8","3":"versicolor"},{"1":"Petal.Width","2":"2.5","3":"virginica"},{"1":"Sepal.Width","2":"3.3","3":"virginica"},{"1":"Petal.Width","2":"1.9","3":"virginica"},{"1":"Sepal.Width","2":"2.7","3":"virginica"},{"1":"Petal.Width","2":"2.1","3":"virginica"},{"1":"Sepal.Width","2":"3.0","3":"virginica"},{"1":"Petal.Width","2":"1.8","3":"virginica"},{"1":"Sepal.Width","2":"2.9","3":"virginica"},{"1":"Petal.Width","2":"2.2","3":"virginica"},{"1":"Sepal.Width","2":"3.0","3":"virginica"},{"1":"Petal.Width","2":"2.1","3":"virginica"},{"1":"Sepal.Width","2":"3.0","3":"virginica"},{"1":"Petal.Width","2":"1.7","3":"virginica"},{"1":"Sepal.Width","2":"2.5","3":"virginica"},{"1":"Petal.Width","2":"1.8","3":"virginica"},{"1":"Sepal.Width","2":"2.9","3":"virginica"},{"1":"Petal.Width","2":"1.8","3":"virginica"},{"1":"Sepal.Width","2":"2.5","3":"virginica"},{"1":"Petal.Width","2":"2.5","3":"virginica"},{"1":"Sepal.Width","2":"3.6","3":"virginica"},{"1":"Petal.Width","2":"2.0","3":"virginica"},{"1":"Sepal.Width","2":"3.2","3":"virginica"},{"1":"Petal.Width","2":"1.9","3":"virginica"},{"1":"Sepal.Width","2":"2.7","3":"virginica"},{"1":"Petal.Width","2":"2.1","3":"virginica"},{"1":"Sepal.Width","2":"3.0","3":"virginica"},{"1":"Petal.Width","2":"2.0","3":"virginica"},{"1":"Sepal.Width","2":"2.5","3":"virginica"},{"1":"Petal.Width","2":"2.4","3":"virginica"},{"1":"Sepal.Width","2":"2.8","3":"virginica"},{"1":"Petal.Width","2":"2.3","3":"virginica"},{"1":"Sepal.Width","2":"3.2","3":"virginica"},{"1":"Petal.Width","2":"1.8","3":"virginica"},{"1":"Sepal.Width","2":"3.0","3":"virginica"},{"1":"Petal.Width","2":"2.2","3":"virginica"},{"1":"Sepal.Width","2":"3.8","3":"virginica"},{"1":"Petal.Width","2":"2.3","3":"virginica"},{"1":"Sepal.Width","2":"2.6","3":"virginica"},{"1":"Petal.Width","2":"1.5","3":"virginica"},{"1":"Sepal.Width","2":"2.2","3":"virginica"},{"1":"Petal.Width","2":"2.3","3":"virginica"},{"1":"Sepal.Width","2":"3.2","3":"virginica"},{"1":"Petal.Width","2":"2.0","3":"virginica"},{"1":"Sepal.Width","2":"2.8","3":"virginica"},{"1":"Petal.Width","2":"2.0","3":"virginica"},{"1":"Sepal.Width","2":"2.8","3":"virginica"},{"1":"Petal.Width","2":"1.8","3":"virginica"},{"1":"Sepal.Width","2":"2.7","3":"virginica"},{"1":"Petal.Width","2":"2.1","3":"virginica"},{"1":"Sepal.Width","2":"3.3","3":"virginica"},{"1":"Petal.Width","2":"1.8","3":"virginica"},{"1":"Sepal.Width","2":"3.2","3":"virginica"},{"1":"Petal.Width","2":"1.8","3":"virginica"},{"1":"Sepal.Width","2":"2.8","3":"virginica"},{"1":"Petal.Width","2":"1.8","3":"virginica"},{"1":"Sepal.Width","2":"3.0","3":"virginica"},{"1":"Petal.Width","2":"2.1","3":"virginica"},{"1":"Sepal.Width","2":"2.8","3":"virginica"},{"1":"Petal.Width","2":"1.6","3":"virginica"},{"1":"Sepal.Width","2":"3.0","3":"virginica"},{"1":"Petal.Width","2":"1.9","3":"virginica"},{"1":"Sepal.Width","2":"2.8","3":"virginica"},{"1":"Petal.Width","2":"2.0","3":"virginica"},{"1":"Sepal.Width","2":"3.8","3":"virginica"},{"1":"Petal.Width","2":"2.2","3":"virginica"},{"1":"Sepal.Width","2":"2.8","3":"virginica"},{"1":"Petal.Width","2":"1.5","3":"virginica"},{"1":"Sepal.Width","2":"2.8","3":"virginica"},{"1":"Petal.Width","2":"1.4","3":"virginica"},{"1":"Sepal.Width","2":"2.6","3":"virginica"},{"1":"Petal.Width","2":"2.3","3":"virginica"},{"1":"Sepal.Width","2":"3.0","3":"virginica"},{"1":"Petal.Width","2":"2.4","3":"virginica"},{"1":"Sepal.Width","2":"3.4","3":"virginica"},{"1":"Petal.Width","2":"1.8","3":"virginica"},{"1":"Sepal.Width","2":"3.1","3":"virginica"},{"1":"Petal.Width","2":"1.8","3":"virginica"},{"1":"Sepal.Width","2":"3.0","3":"virginica"},{"1":"Petal.Width","2":"2.1","3":"virginica"},{"1":"Sepal.Width","2":"3.1","3":"virginica"},{"1":"Petal.Width","2":"2.4","3":"virginica"},{"1":"Sepal.Width","2":"3.1","3":"virginica"},{"1":"Petal.Width","2":"2.3","3":"virginica"},{"1":"Sepal.Width","2":"3.1","3":"virginica"},{"1":"Petal.Width","2":"1.9","3":"virginica"},{"1":"Sepal.Width","2":"2.7","3":"virginica"},{"1":"Petal.Width","2":"2.3","3":"virginica"},{"1":"Sepal.Width","2":"3.2","3":"virginica"},{"1":"Petal.Width","2":"2.5","3":"virginica"},{"1":"Sepal.Width","2":"3.3","3":"virginica"},{"1":"Petal.Width","2":"2.3","3":"virginica"},{"1":"Sepal.Width","2":"3.0","3":"virginica"},{"1":"Petal.Width","2":"1.9","3":"virginica"},{"1":"Sepal.Width","2":"2.5","3":"virginica"},{"1":"Petal.Width","2":"2.0","3":"virginica"},{"1":"Sepal.Width","2":"3.0","3":"virginica"},{"1":"Petal.Width","2":"2.3","3":"virginica"},{"1":"Sepal.Width","2":"3.4","3":"virginica"},{"1":"Petal.Width","2":"1.8","3":"virginica"},{"1":"Sepal.Width","2":"3.0","3":"virginica"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
 </div>
 <div id="exercises-on-covid-19" class="section level2">
 <h2><span class="header-section-number">5.9</span> Exercises on COVID-19</h2>
@@ -1159,7 +1164,7 @@ Hint: You may need to transform your data into a longer format, as shown below, 
 <p>The following exercises are based on a dataset downloaded from <a href="https://www.kaggle.com/sudalairajkumar/novel-corona-virus-2019-dataset">Kaggle</a>. The dataset is also available in <code>demo_data/data-covid19.csv</code>.</p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-40" class="exercise"><strong>Exercise 5.5  </strong></span>Load the dataset in <code>demo_data/data-covid19.csv</code> into R as a data frame named <code>covid19</code>.</p>
+<p><span id="exr:unnamed-chunk-41" class="exercise"><strong>Exercise 5.5  </strong></span>Load the dataset in <code>demo_data/data-covid19.csv</code> into R as a data frame named <code>covid19</code>.</p>
 Hint: Check <code>readr::read_csv()</code>
 </div>
 
@@ -1182,29 +1187,29 @@ Hint: Check <code>readr::read_csv()</code>
 </div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-44" class="exercise"><strong>Exercise 5.6  </strong></span>Use <code>ggplot2</code> to create a line plot showing the number of confirmed cases by days for the following countries: Taiwan, Japan, South Korea, Iran, Italy, Mainland China. A sample graph is shown below.
+<span id="exr:unnamed-chunk-45" class="exercise"><strong>Exercise 5.6  </strong></span>Use <code>ggplot2</code> to create a line plot showing the number of confirmed cases by days for the following countries: Taiwan, Japan, South Korea, Iran, Italy, Mainland China. A sample graph is shown below.
 </div>
 
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-45-1.png" width="90%" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-46-1.png" width="90%" /></p>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-46" class="exercise"><strong>Exercise 5.7  </strong></span>Create a bar plot showing the top 10 countries ranked according to their number of confirmed cases of the COVID19.
+<span id="exr:unnamed-chunk-47" class="exercise"><strong>Exercise 5.7  </strong></span>Create a bar plot showing the top 10 countries ranked according to their number of confirmed cases of the COVID19.
 </div>
 
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-47-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-48" class="exercise"><strong>Exercise 5.8  </strong></span>Create a bar plot showing the top 10 countries ranked according to their death rates of the COVID19. (Death rates are defined as the number of deaths divided by the number of confirmed cases.)
+<span id="exr:unnamed-chunk-49" class="exercise"><strong>Exercise 5.8  </strong></span>Create a bar plot showing the top 10 countries ranked according to their death rates of the COVID19. (Death rates are defined as the number of deaths divided by the number of confirmed cases.)
 </div>
 
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-50" class="exercise"><strong>Exercise 5.9  (optional)  </strong></span>Create a world map showing the current outbreak of covid19.</p>
+<p><span id="exr:unnamed-chunk-51" class="exercise"><strong>Exercise 5.9  (optional)  </strong></span>Create a world map showing the current outbreak of covid19.</p>
 Hint: Please check <code>ggplot2::geom_polygon()</code> and the package <code>library(maps)</code>. This exercise is made to see if you know how to find resources online for more complex tasks like this. Please note that the country names may not match.
 </div>
 
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-51-1.png" width="100%" height="100%" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-52-1.png" width="100%" height="100%" /></p>
 
 </div>
 </div>
