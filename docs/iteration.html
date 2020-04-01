@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2020-03-25" />
+<meta name="date" content="2020-04-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -54,6 +54,9 @@
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.5/grViz.js"></script>
 <link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
 <script src="libs/str_view-binding-1.4.0/str_view.js"></script>
 
@@ -186,13 +189,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.5" data-path="subsetting.html"><a href="subsetting.html#tibble"><i class="fa fa-check"></i><b>4.5</b> Tibble</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>5</b> Data Visualization</a><ul>
-<li class="chapter" data-level="5.1" data-path="data-visualization.html"><a href="data-visualization.html#why-visualization"><i class="fa fa-check"></i><b>5.1</b> Why Visualization?</a></li>
+<li class="chapter" data-level="5.1" data-path="data-visualization.html"><a href="data-visualization.html#why-visualization"><i class="fa fa-check"></i><b>5.1</b> Why Visualization?</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="data-visualization.html"><a href="data-visualization.html#datasaurus-dozen-dataset"><i class="fa fa-check"></i><b>5.1.1</b> Datasaurus Dozen Dataset</a></li>
+<li class="chapter" data-level="5.1.2" data-path="data-visualization.html"><a href="data-visualization.html#simpsons-paradox"><i class="fa fa-check"></i><b>5.1.2</b> Simpson’s Paradox</a></li>
+</ul></li>
 <li class="chapter" data-level="5.2" data-path="data-visualization.html"><a href="data-visualization.html#ggplot2"><i class="fa fa-check"></i><b>5.2</b> <code>ggplot2</code></a></li>
-<li class="chapter" data-level="5.3" data-path="data-visualization.html"><a href="data-visualization.html#one-variable-graph"><i class="fa fa-check"></i><b>5.3</b> One-variable Graph</a></li>
-<li class="chapter" data-level="5.4" data-path="data-visualization.html"><a href="data-visualization.html#two-variable-graph"><i class="fa fa-check"></i><b>5.4</b> Two-variable Graph</a></li>
-<li class="chapter" data-level="5.5" data-path="data-visualization.html"><a href="data-visualization.html#adding-other-aesthetic-features"><i class="fa fa-check"></i><b>5.5</b> Adding Other Aesthetic Features</a></li>
-<li class="chapter" data-level="5.6" data-path="data-visualization.html"><a href="data-visualization.html#saving-plots"><i class="fa fa-check"></i><b>5.6</b> Saving Plots</a></li>
-<li class="chapter" data-level="5.7" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-covid-19"><i class="fa fa-check"></i><b>5.7</b> Exercises on COVID-19</a></li>
+<li class="chapter" data-level="5.3" data-path="data-visualization.html"><a href="data-visualization.html#variables-and-data-type"><i class="fa fa-check"></i><b>5.3</b> Variables and Data Type</a></li>
+<li class="chapter" data-level="5.4" data-path="data-visualization.html"><a href="data-visualization.html#one-variable-graph"><i class="fa fa-check"></i><b>5.4</b> One-variable Graph</a></li>
+<li class="chapter" data-level="5.5" data-path="data-visualization.html"><a href="data-visualization.html#two-variable-graph"><i class="fa fa-check"></i><b>5.5</b> Two-variable Graph</a></li>
+<li class="chapter" data-level="5.6" data-path="data-visualization.html"><a href="data-visualization.html#adding-other-aesthetic-features"><i class="fa fa-check"></i><b>5.6</b> Adding Other Aesthetic Features</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="data-visualization.html"><a href="data-visualization.html#color"><i class="fa fa-check"></i><b>5.6.1</b> <code>color</code></a></li>
+<li class="chapter" data-level="5.6.2" data-path="data-visualization.html"><a href="data-visualization.html#shape"><i class="fa fa-check"></i><b>5.6.2</b> <code>shape</code></a></li>
+<li class="chapter" data-level="5.6.3" data-path="data-visualization.html"><a href="data-visualization.html#other-geom_...-layers"><i class="fa fa-check"></i><b>5.6.3</b> Other <code>geom_...</code> Layers</a></li>
+<li class="chapter" data-level="5.6.4" data-path="data-visualization.html"><a href="data-visualization.html#labels"><i class="fa fa-check"></i><b>5.6.4</b> Labels</a></li>
+<li class="chapter" data-level="5.6.5" data-path="data-visualization.html"><a href="data-visualization.html#fill"><i class="fa fa-check"></i><b>5.6.5</b> <code>fill</code></a></li>
+<li class="chapter" data-level="5.6.6" data-path="data-visualization.html"><a href="data-visualization.html#interim-summary"><i class="fa fa-check"></i><b>5.6.6</b> Interim Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="data-visualization.html"><a href="data-visualization.html#saving-plots"><i class="fa fa-check"></i><b>5.7</b> Saving Plots</a></li>
+<li class="chapter" data-level="5.8" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-iris"><i class="fa fa-check"></i><b>5.8</b> Exercises on <code>iris</code></a></li>
+<li class="chapter" data-level="5.9" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-covid-19"><i class="fa fa-check"></i><b>5.9</b> Exercises on COVID-19</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="data-manipulation.html"><a href="data-manipulation.html"><i class="fa fa-check"></i><b>6</b> Data Manipulation</a><ul>
 <li class="chapter" data-level="6.1" data-path="data-manipulation.html"><a href="data-manipulation.html#dataset"><i class="fa fa-check"></i><b>6.1</b> Dataset</a></li>
@@ -204,13 +219,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.7" data-path="data-manipulation.html"><a href="data-manipulation.html#arrange"><i class="fa fa-check"></i><b>6.7</b> <code>arrange()</code></a></li>
 <li class="chapter" data-level="6.8" data-path="data-manipulation.html"><a href="data-manipulation.html#group_by-and-summarize"><i class="fa fa-check"></i><b>6.8</b> <code>group_by()</code> and <code>summarize()</code></a></li>
 <li class="chapter" data-level="6.9" data-path="data-manipulation.html"><a href="data-manipulation.html#count"><i class="fa fa-check"></i><b>6.9</b> <code>count()</code></a></li>
-<li class="chapter" data-level="6.10" data-path="data-manipulation.html"><a href="data-manipulation.html#exerceises"><i class="fa fa-check"></i><b>6.10</b> Exerceises</a></li>
+<li class="chapter" data-level="6.10" data-path="data-manipulation.html"><a href="data-manipulation.html#tidy-data"><i class="fa fa-check"></i><b>6.10</b> Tidy Data</a><ul>
+<li class="chapter" data-level="6.10.1" data-path="data-manipulation.html"><a href="data-manipulation.html#an-long-to-wide-example"><i class="fa fa-check"></i><b>6.10.1</b> An Long-to-Wide Example</a></li>
+<li class="chapter" data-level="6.10.2" data-path="data-manipulation.html"><a href="data-manipulation.html#a-wide-to-long-example"><i class="fa fa-check"></i><b>6.10.2</b> A Wide-to-Long Example</a></li>
+</ul></li>
+<li class="chapter" data-level="6.11" data-path="data-manipulation.html"><a href="data-manipulation.html#exerceises"><i class="fa fa-check"></i><b>6.11</b> Exerceises</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="data-import.html"><a href="data-import.html"><i class="fa fa-check"></i><b>7</b> Data Import</a><ul>
-<li class="chapter" data-level="7.1" data-path="data-import.html"><a href="data-import.html#readlines"><i class="fa fa-check"></i><b>7.1</b> <code>readLines()</code></a></li>
-<li class="chapter" data-level="7.2" data-path="data-import.html"><a href="data-import.html#writelines"><i class="fa fa-check"></i><b>7.2</b> <code>writeLines()</code></a></li>
-<li class="chapter" data-level="7.3" data-path="data-import.html"><a href="data-import.html#read_csv"><i class="fa fa-check"></i><b>7.3</b> <code>read_csv()</code></a></li>
-<li class="chapter" data-level="7.4" data-path="data-import.html"><a href="data-import.html#write_csv"><i class="fa fa-check"></i><b>7.4</b> <code>write_csv()</code></a></li>
+<li class="chapter" data-level="7.1" data-path="data-import.html"><a href="data-import.html#overview"><i class="fa fa-check"></i><b>7.1</b> Overview</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="data-import.html"><a href="data-import.html#what-is-a-csv-file"><i class="fa fa-check"></i><b>7.1.1</b> What is a <code>CSV</code> file?</a></li>
+<li class="chapter" data-level="7.1.2" data-path="data-import.html"><a href="data-import.html#why-are-.csv-files-used"><i class="fa fa-check"></i><b>7.1.2</b> Why are <code>.CSV</code> files used?</a></li>
+<li class="chapter" data-level="7.1.3" data-path="data-import.html"><a href="data-import.html#how-do-i-save-csv-files"><i class="fa fa-check"></i><b>7.1.3</b> How do I save CSV files?</a></li>
+<li class="chapter" data-level="7.1.4" data-path="data-import.html"><a href="data-import.html#what-about-other-types-of-data"><i class="fa fa-check"></i><b>7.1.4</b> What about other types of data?</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="data-import.html"><a href="data-import.html#importing-data"><i class="fa fa-check"></i><b>7.2</b> Importing Data</a></li>
+<li class="chapter" data-level="7.3" data-path="data-import.html"><a href="data-import.html#r-base-functions"><i class="fa fa-check"></i><b>7.3</b> R Base Functions</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="data-import.html"><a href="data-import.html#readlines"><i class="fa fa-check"></i><b>7.3.1</b> <code>readLines()</code></a></li>
+<li class="chapter" data-level="7.3.2" data-path="data-import.html"><a href="data-import.html#writelines"><i class="fa fa-check"></i><b>7.3.2</b> <code>writeLines()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="data-import.html"><a href="data-import.html#readr-functions"><i class="fa fa-check"></i><b>7.4</b> <code>readr</code> Functions</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="data-import.html"><a href="data-import.html#readrread_csv"><i class="fa fa-check"></i><b>7.4.1</b> <code>readr::read_csv()</code></a></li>
+<li class="chapter" data-level="7.4.2" data-path="data-import.html"><a href="data-import.html#readrwrite_csv"><i class="fa fa-check"></i><b>7.4.2</b> <code>readr::write_csv()</code></a></li>
+</ul></li>
 <li class="chapter" data-level="7.5" data-path="data-import.html"><a href="data-import.html#directory-operations"><i class="fa fa-check"></i><b>7.5</b> Directory Operations</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="string-manipulation.html"><a href="string-manipulation.html"><i class="fa fa-check"></i><b>8</b> String Manipulation</a><ul>
@@ -231,15 +261,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.6.1" data-path="string-manipulation.html"><a href="string-manipulation.html#case-1"><i class="fa fa-check"></i><b>8.6.1</b> Case 1</a></li>
 <li class="chapter" data-level="8.6.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-2"><i class="fa fa-check"></i><b>8.6.2</b> Case 2</a></li>
 <li class="chapter" data-level="8.6.3" data-path="string-manipulation.html"><a href="string-manipulation.html#case-3"><i class="fa fa-check"></i><b>8.6.3</b> Case 3</a></li>
-<li class="chapter" data-level="8.6.4" data-path="string-manipulation.html"><a href="string-manipulation.html#case-4"><i class="fa fa-check"></i><b>8.6.4</b> Case 4</a></li>
-<li class="chapter" data-level="8.6.5" data-path="string-manipulation.html"><a href="string-manipulation.html#case-5"><i class="fa fa-check"></i><b>8.6.5</b> Case 5</a></li>
-<li class="chapter" data-level="8.6.6" data-path="string-manipulation.html"><a href="string-manipulation.html#case6"><i class="fa fa-check"></i><b>8.6.6</b> Case 6</a></li>
-<li class="chapter" data-level="8.6.7" data-path="string-manipulation.html"><a href="string-manipulation.html#case-7"><i class="fa fa-check"></i><b>8.6.7</b> Case 7</a></li>
 </ul></li>
 <li class="chapter" data-level="8.7" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-chinese-four-character-idioms"><i class="fa fa-check"></i><b>8.7</b> Case Study: Chinese Four-Character Idioms</a><ul>
 <li class="chapter" data-level="8.7.1" data-path="string-manipulation.html"><a href="string-manipulation.html#dictionary-entries"><i class="fa fa-check"></i><b>8.7.1</b> Dictionary Entries</a></li>
 <li class="chapter" data-level="8.7.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-x來y去"><i class="fa fa-check"></i><b>8.7.2</b> Case Study: <code>X來Y去</code></a></li>
-<li class="chapter" data-level="8.7.3" data-path="string-manipulation.html"><a href="string-manipulation.html#exercises"><i class="fa fa-check"></i><b>8.7.3</b> Exercises</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html"><i class="fa fa-check"></i><b>9</b> Conditions and Loops</a><ul>
@@ -264,6 +289,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.4.2" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#chinese-laureates"><i class="fa fa-check"></i><b>11.4.2</b> Chinese Laureates</a></li>
 </ul></li>
 <li class="chapter" data-level="11.5" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#at-what-age-did-these-people-receive-the-prizes"><i class="fa fa-check"></i><b>11.5</b> At what age did these people receive the prizes?</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html"><i class="fa fa-check"></i><b>12</b> Text Analytics: A Start</a><ul>
+<li class="chapter" data-level="12.1" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#installing-quanteda"><i class="fa fa-check"></i><b>12.1</b> Installing <code>quanteda</code></a></li>
+<li class="chapter" data-level="12.2" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#building-a-corpus-from-character-vector"><i class="fa fa-check"></i><b>12.2</b> Building a <code>corpus</code> from character vector</a></li>
+<li class="chapter" data-level="12.3" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyword-in-context-kwic"><i class="fa fa-check"></i><b>12.3</b> Keyword-in-Context (KWIC)</a></li>
+<li class="chapter" data-level="12.4" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#kwic-with-regular-expressions"><i class="fa fa-check"></i><b>12.4</b> KWIC with Regular Expressions</a></li>
+<li class="chapter" data-level="12.5" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#lexical-density-plot"><i class="fa fa-check"></i><b>12.5</b> Lexical Density Plot</a></li>
+<li class="chapter" data-level="12.6" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#document-feature-matrix"><i class="fa fa-check"></i><b>12.6</b> Document-Feature Matrix</a></li>
+<li class="chapter" data-level="12.7" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#feature-selection"><i class="fa fa-check"></i><b>12.7</b> Feature Selection</a></li>
+<li class="chapter" data-level="12.8" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#top-features"><i class="fa fa-check"></i><b>12.8</b> Top Features</a></li>
+<li class="chapter" data-level="12.9" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#wordclouds"><i class="fa fa-check"></i><b>12.9</b> Wordclouds</a></li>
+<li class="chapter" data-level="12.10" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyness-analysis"><i class="fa fa-check"></i><b>12.10</b> Keyness Analysis</a></li>
+<li class="chapter" data-level="12.11" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#flowchart"><i class="fa fa-check"></i><b>12.11</b> Flowchart</a></li>
+<li class="chapter" data-level="12.12" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#exercises"><i class="fa fa-check"></i><b>12.12</b> Exercises</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="the-shell.html"><a href="the-shell.html"><i class="fa fa-check"></i><b>A</b> The Shell</a><ul>
@@ -316,13 +355,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="vector-vs.-list-in-r" class="section level2">
 <h2><span class="header-section-number">10.2</span> <code>vector</code> vs. <code>list</code> in <code>R</code></h2>
 <p>Most of the R-internal functions are vectorized. By default, if we apply a function to a multi-element vector, R will automatically apply the same procedure to each element of the vector, and return the results of the same length.</p>
-<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb321-1" data-line-number="1">a.vec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb321-2" data-line-number="2"><span class="kw">sqrt</span>(a.vec)</a></code></pre></div>
+<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb355-1" data-line-number="1">a.vec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb355-2" data-line-number="2"><span class="kw">sqrt</span>(a.vec)</a></code></pre></div>
 <pre><code>##  [1] 1.000000 1.414214 1.732051 2.000000 2.236068 2.449490 2.645751 2.828427
 ##  [9] 3.000000 3.162278</code></pre>
 <p>But this is NOT something we can do with a <code>list</code>:</p>
-<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb323-1" data-line-number="1">a.list &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb323-2" data-line-number="2"><span class="kw">sqrt</span>(a.list)</a></code></pre></div>
+<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb357-1" data-line-number="1">a.list &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb357-2" data-line-number="2"><span class="kw">sqrt</span>(a.list)</a></code></pre></div>
 <pre><code>## Error in sqrt(a.list): non-numeric argument to mathematical function</code></pre>
 </div>
 <div id="iteration-1" class="section level2">
@@ -332,82 +371,82 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 - each row in the <code>data.frame</code>
 - each column in the <code>data.frame</code></p>
 <p>Let’s start with a scenario. We first create a pseudo data set, with students’ grades from five different classes.</p>
-<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb325-1" data-line-number="1">exams.list &lt;-<span class="st"> </span><span class="kw">list</span>(</a>
-<a class="sourceLine" id="cb325-2" data-line-number="2">  <span class="dt">class1 =</span> <span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">100</span>)), <span class="co"># 30 tokens of random numbers in the range &lt;0, 100&gt;</span></a>
-<a class="sourceLine" id="cb325-3" data-line-number="3">  <span class="dt">class2 =</span> <span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">100</span>)),</a>
-<a class="sourceLine" id="cb325-4" data-line-number="4">  <span class="dt">class3 =</span> <span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">100</span>)),</a>
-<a class="sourceLine" id="cb325-5" data-line-number="5">  <span class="dt">class4 =</span> <span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">100</span>)),</a>
-<a class="sourceLine" id="cb325-6" data-line-number="6">  <span class="dt">class5 =</span> <span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">100</span>))</a>
-<a class="sourceLine" id="cb325-7" data-line-number="7">)</a>
-<a class="sourceLine" id="cb325-8" data-line-number="8">exams.list</a></code></pre></div>
+<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb359-1" data-line-number="1">exams.list &lt;-<span class="st"> </span><span class="kw">list</span>(</a>
+<a class="sourceLine" id="cb359-2" data-line-number="2">  <span class="dt">class1 =</span> <span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">100</span>)), <span class="co"># 30 tokens of random numbers in the range &lt;0, 100&gt;</span></a>
+<a class="sourceLine" id="cb359-3" data-line-number="3">  <span class="dt">class2 =</span> <span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">100</span>)),</a>
+<a class="sourceLine" id="cb359-4" data-line-number="4">  <span class="dt">class3 =</span> <span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">100</span>)),</a>
+<a class="sourceLine" id="cb359-5" data-line-number="5">  <span class="dt">class4 =</span> <span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">100</span>)),</a>
+<a class="sourceLine" id="cb359-6" data-line-number="6">  <span class="dt">class5 =</span> <span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">100</span>))</a>
+<a class="sourceLine" id="cb359-7" data-line-number="7">)</a>
+<a class="sourceLine" id="cb359-8" data-line-number="8">exams.list</a></code></pre></div>
 <pre><code>## $class1
-##  [1] 98 32 84 91 47 49 38 71 69 92  7 79  1  9 27 46 85 99 94 31 15 56 17 60 47
-## [26] 48 10  4 21 68
+##  [1] 27 46 85 99 94 31 15 56 17 60 47 48 10  4 21 68 10 94 92 97  0 83 17 51  8
+## [26] 71 88 28 40 22
 ## 
 ## $class2
-##  [1] 10 94 92 97  0 83 17 51  8 71 88 28 40 22  6 35  2 59 10  6 66 41 61 76 52
-## [26] 50 92 38 70 59
+##  [1]  6 35  2 59 10  6 66 41 61 76 52 50 92 38 70 59 45 43 52 66  5 12 81 72 21
+## [26] 80 54 38 49 76
 ## 
 ## $class3
-##  [1] 45 43 52 66  5 12 81 72 21 80 54 38 49 76 50 53 25 35 83 38 49  7 52 95 24
-## [26] 84 37 63 37 82
+##  [1] 50 53 25 35 83 38 49  7 52 95 24 84 37 63 37 82 78 95 91 53 86  3 32 22 95
+## [26] 25 72 21 30 43
 ## 
 ## $class4
-##  [1]  78  95  91  53  86   3  32  22  95  25  72  21  30  43  81  94 100  19  67
-## [20]  21  27  86   4  71  14  46  83  81  62   8
+##  [1]  81  94 100  19  67  21  27  86   4  71  14  46  83  81  62   8  38  24  84
+## [20]  53  14  38  31  35  70  45  17  31  26  53
 ## 
 ## $class5
-##  [1] 38 24 84 53 14 38 31 35 70 45 17 31 26 53 50 65 38 23 39 50 96 96 96 28 46
-## [26] 39 71  3 80 82</code></pre>
+##  [1]  50  65  38  23  39  50  96  96  96  28  46  39  71   3  80  82  58   2   7
+## [20]  90  25  21  31   8  20  26  42  59  55 100</code></pre>
 <p>If we like to compute the mean scores of each cluster, you probably want to use <code>mean()</code>:</p>
-<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb327-1" data-line-number="1"><span class="kw">mean</span>(exams.list)</a></code></pre></div>
+<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb361-1" data-line-number="1"><span class="kw">mean</span>(exams.list)</a></code></pre></div>
 <pre><code>## [1] NA</code></pre>
 <p>It should be clear now that <code>mean()</code> expects a numeric vector, on which the mean score is computed.</p>
 <p>So you may think that why don’t we use the dumb way:</p>
-<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb329-1" data-line-number="1"><span class="kw">set.seed</span>(<span class="dv">123</span>) <span class="co"># Make sure we get the same results</span></a>
-<a class="sourceLine" id="cb329-2" data-line-number="2">exams.list.means &lt;-<span class="st"> </span><span class="kw">list</span>(</a>
-<a class="sourceLine" id="cb329-3" data-line-number="3">  <span class="dt">class1mean =</span> <span class="kw">mean</span>(exams.list<span class="op">$</span>class1),</a>
-<a class="sourceLine" id="cb329-4" data-line-number="4">  <span class="dt">class2mean =</span> <span class="kw">mean</span>(exams.list<span class="op">$</span>class2),</a>
-<a class="sourceLine" id="cb329-5" data-line-number="5">  <span class="dt">class3mean =</span> <span class="kw">mean</span>(exams.list<span class="op">$</span>class3),</a>
-<a class="sourceLine" id="cb329-6" data-line-number="6">  <span class="dt">class4mean =</span> <span class="kw">mean</span>(exams.list<span class="op">$</span>class4),</a>
-<a class="sourceLine" id="cb329-7" data-line-number="7">  <span class="dt">class5mean =</span> <span class="kw">mean</span>(exams.list<span class="op">$</span>class5)</a>
-<a class="sourceLine" id="cb329-8" data-line-number="8">)</a>
-<a class="sourceLine" id="cb329-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb329-10" data-line-number="10">exams.list.means</a></code></pre></div>
+<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb363-1" data-line-number="1"><span class="kw">set.seed</span>(<span class="dv">123</span>) <span class="co"># Make sure we get the same results</span></a>
+<a class="sourceLine" id="cb363-2" data-line-number="2">exams.list.means &lt;-<span class="st"> </span><span class="kw">list</span>(</a>
+<a class="sourceLine" id="cb363-3" data-line-number="3">  <span class="dt">class1mean =</span> <span class="kw">mean</span>(exams.list<span class="op">$</span>class1),</a>
+<a class="sourceLine" id="cb363-4" data-line-number="4">  <span class="dt">class2mean =</span> <span class="kw">mean</span>(exams.list<span class="op">$</span>class2),</a>
+<a class="sourceLine" id="cb363-5" data-line-number="5">  <span class="dt">class3mean =</span> <span class="kw">mean</span>(exams.list<span class="op">$</span>class3),</a>
+<a class="sourceLine" id="cb363-6" data-line-number="6">  <span class="dt">class4mean =</span> <span class="kw">mean</span>(exams.list<span class="op">$</span>class4),</a>
+<a class="sourceLine" id="cb363-7" data-line-number="7">  <span class="dt">class5mean =</span> <span class="kw">mean</span>(exams.list<span class="op">$</span>class5)</a>
+<a class="sourceLine" id="cb363-8" data-line-number="8">)</a>
+<a class="sourceLine" id="cb363-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb363-10" data-line-number="10">exams.list.means</a></code></pre></div>
 <pre><code>## $class1mean
-## [1] 49.83333
+## [1] 47.63333
 ## 
 ## $class2mean
-## [1] 47.46667
+## [1] 47.23333
 ## 
 ## $class3mean
-## [1] 50.26667
+## [1] 52
 ## 
 ## $class4mean
-## [1] 53.66667
+## [1] 47.43333
 ## 
 ## $class5mean
-## [1] 48.7</code></pre>
+## [1] 48.2</code></pre>
 <p>The advantage is obvious: (a) what if you have 10 classes? 100 classes? (b) what if now you decide to compute standard deviation?</p>
 </div>
 <div id="purr" class="section level2">
 <h2><span class="header-section-number">10.4</span> <code>purr</code></h2>
-<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb331-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
-<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb332-1" data-line-number="1">exams.list <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">map</span>(mean)</a></code></pre></div>
+<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb365-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
+<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb366-1" data-line-number="1">exams.list <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">map</span>(mean)</a></code></pre></div>
 <pre><code>## $class1
-## [1] 49.83333
+## [1] 47.63333
 ## 
 ## $class2
-## [1] 47.46667
+## [1] 47.23333
 ## 
 ## $class3
-## [1] 50.26667
+## [1] 52
 ## 
 ## $class4
-## [1] 53.66667
+## [1] 47.43333
 ## 
 ## $class5
-## [1] 48.7</code></pre>
+## [1] 48.2</code></pre>
 <p>With only one-line code, you have achieved your goal.</p>
 <p><code>map()</code> is a very powerful function to do iteration. Its usage is as follows:</p>
 <p><img src="images/map.png" width="80%" /></p>
@@ -423,31 +462,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>In <code>purrr</code>, by default <code>map()</code> returns results in a <code>list</code> format. You can specify a particular data structure you like by using other variants of the mapping function:</p>
 <p><img src="images/map2.png" width="80%" /></p>
-<div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb334-1" data-line-number="1">exams.list <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">map_df</span>(mean)</a></code></pre></div>
+<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb368-1" data-line-number="1">exams.list <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">map_df</span>(mean)</a></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["class1"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["class2"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["class3"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["class4"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["class5"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"49.83333","2":"47.46667","3":"50.26667","4":"53.66667","5":"48.7"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["class1"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["class2"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["class3"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["class4"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["class5"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"47.63333","2":"47.23333","3":"52","4":"47.43333","5":"48.2"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb335-1" data-line-number="1">exams.list <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">map_dbl</span>(mean)</a></code></pre></div>
+<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb369-1" data-line-number="1">exams.list <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">map_dbl</span>(mean)</a></code></pre></div>
 <pre><code>##   class1   class2   class3   class4   class5 
-## 49.83333 47.46667 50.26667 53.66667 48.70000</code></pre>
+## 47.63333 47.23333 52.00000 47.43333 48.20000</code></pre>
 <hr />
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-286" class="exercise"><strong>Exercise 10.1  </strong></span>Use the same dataset, <code>exam.list</code>, and compute the <code>median</code> and <code>standard deviation</code> for each class.
+<span id="exr:unnamed-chunk-338" class="exercise"><strong>Exercise 10.1  </strong></span>Use the same dataset, <code>exam.list</code>, and compute the <code>median</code> and <code>standard deviation</code> for each class.
 </div>
 
 <ul>
 <li>Median</li>
 </ul>
 <pre><code>## class1 class2 class3 class4 class5 
-##   47.5   50.5   49.5   57.5   42.0</code></pre>
+##   46.5   51.0   49.5   41.5   44.0</code></pre>
 <ul>
 <li>Standard Deviation</li>
 </ul>
 <pre><code>##   class1   class2   class3   class4   class5 
-## 31.49612 31.41571 24.32387 32.30921 25.71884</code></pre>
+## 32.61530 25.73430 28.00862 28.41404 30.06820</code></pre>
 <hr />
 </div>
 <div id="writing-own-functions" class="section level2">
@@ -457,14 +496,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 - This function takes a vector object <code>x</code>
 - Substract each element of <code>x</code> by the mean score of <code>x</code>
 - return the resulting vector as the output of the function</p>
-<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb339-1" data-line-number="1">my_center &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</a>
-<a class="sourceLine" id="cb339-2" data-line-number="2">  x <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(x)</a>
-<a class="sourceLine" id="cb339-3" data-line-number="3">}</a></code></pre></div>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb373-1" data-line-number="1">my_center &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</a>
+<a class="sourceLine" id="cb373-2" data-line-number="2">  x <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(x)</a>
+<a class="sourceLine" id="cb373-3" data-line-number="3">}</a></code></pre></div>
 <p>Now we can apply our <code>my_center</code> function to each class in <code>exams.list</code>:</p>
-<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb340-1" data-line-number="1">exams.list <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">map_df</span>(my_center)</a></code></pre></div>
+<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb374-1" data-line-number="1">exams.list <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">map_df</span>(my_center)</a></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["class1"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["class2"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["class3"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["class4"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["class5"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"48.1666667","2":"-37.466667","3":"-5.2666667","4":"24.3333333","5":"-10.7"},{"1":"-17.8333333","2":"46.533333","3":"-7.2666667","4":"41.3333333","5":"-24.7"},{"1":"34.1666667","2":"44.533333","3":"1.7333333","4":"37.3333333","5":"35.3"},{"1":"41.1666667","2":"49.533333","3":"15.7333333","4":"-0.6666667","5":"4.3"},{"1":"-2.8333333","2":"-47.466667","3":"-45.2666667","4":"32.3333333","5":"-34.7"},{"1":"-0.8333333","2":"35.533333","3":"-38.2666667","4":"-50.6666667","5":"-10.7"},{"1":"-11.8333333","2":"-30.466667","3":"30.7333333","4":"-21.6666667","5":"-17.7"},{"1":"21.1666667","2":"3.533333","3":"21.7333333","4":"-31.6666667","5":"-13.7"},{"1":"19.1666667","2":"-39.466667","3":"-29.2666667","4":"41.3333333","5":"21.3"},{"1":"42.1666667","2":"23.533333","3":"29.7333333","4":"-28.6666667","5":"-3.7"},{"1":"-42.8333333","2":"40.533333","3":"3.7333333","4":"18.3333333","5":"-31.7"},{"1":"29.1666667","2":"-19.466667","3":"-12.2666667","4":"-32.6666667","5":"-17.7"},{"1":"-48.8333333","2":"-7.466667","3":"-1.2666667","4":"-23.6666667","5":"-22.7"},{"1":"-40.8333333","2":"-25.466667","3":"25.7333333","4":"-10.6666667","5":"4.3"},{"1":"-22.8333333","2":"-41.466667","3":"-0.2666667","4":"27.3333333","5":"1.3"},{"1":"-3.8333333","2":"-12.466667","3":"2.7333333","4":"40.3333333","5":"16.3"},{"1":"35.1666667","2":"-45.466667","3":"-25.2666667","4":"46.3333333","5":"-10.7"},{"1":"49.1666667","2":"11.533333","3":"-15.2666667","4":"-34.6666667","5":"-25.7"},{"1":"44.1666667","2":"-37.466667","3":"32.7333333","4":"13.3333333","5":"-9.7"},{"1":"-18.8333333","2":"-41.466667","3":"-12.2666667","4":"-32.6666667","5":"1.3"},{"1":"-34.8333333","2":"18.533333","3":"-1.2666667","4":"-26.6666667","5":"47.3"},{"1":"6.1666667","2":"-6.466667","3":"-43.2666667","4":"32.3333333","5":"47.3"},{"1":"-32.8333333","2":"13.533333","3":"1.7333333","4":"-49.6666667","5":"47.3"},{"1":"10.1666667","2":"28.533333","3":"44.7333333","4":"17.3333333","5":"-20.7"},{"1":"-2.8333333","2":"4.533333","3":"-26.2666667","4":"-39.6666667","5":"-2.7"},{"1":"-1.8333333","2":"2.533333","3":"33.7333333","4":"-7.6666667","5":"-9.7"},{"1":"-39.8333333","2":"44.533333","3":"-13.2666667","4":"29.3333333","5":"22.3"},{"1":"-45.8333333","2":"-9.466667","3":"12.7333333","4":"27.3333333","5":"-45.7"},{"1":"-28.8333333","2":"22.533333","3":"-13.2666667","4":"8.3333333","5":"31.3"},{"1":"18.1666667","2":"11.533333","3":"31.7333333","4":"-45.6666667","5":"33.3"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["class1"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["class2"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["class3"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["class4"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["class5"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"-20.6333333","2":"-41.233333","3":"-2","4":"33.566667","5":"1.8"},{"1":"-1.6333333","2":"-12.233333","3":"1","4":"46.566667","5":"16.8"},{"1":"37.3666667","2":"-45.233333","3":"-27","4":"52.566667","5":"-10.2"},{"1":"51.3666667","2":"11.766667","3":"-17","4":"-28.433333","5":"-25.2"},{"1":"46.3666667","2":"-37.233333","3":"31","4":"19.566667","5":"-9.2"},{"1":"-16.6333333","2":"-41.233333","3":"-14","4":"-26.433333","5":"1.8"},{"1":"-32.6333333","2":"18.766667","3":"-3","4":"-20.433333","5":"47.8"},{"1":"8.3666667","2":"-6.233333","3":"-45","4":"38.566667","5":"47.8"},{"1":"-30.6333333","2":"13.766667","3":"0","4":"-43.433333","5":"47.8"},{"1":"12.3666667","2":"28.766667","3":"43","4":"23.566667","5":"-20.2"},{"1":"-0.6333333","2":"4.766667","3":"-28","4":"-33.433333","5":"-2.2"},{"1":"0.3666667","2":"2.766667","3":"32","4":"-1.433333","5":"-9.2"},{"1":"-37.6333333","2":"44.766667","3":"-15","4":"35.566667","5":"22.8"},{"1":"-43.6333333","2":"-9.233333","3":"11","4":"33.566667","5":"-45.2"},{"1":"-26.6333333","2":"22.766667","3":"-15","4":"14.566667","5":"31.8"},{"1":"20.3666667","2":"11.766667","3":"30","4":"-39.433333","5":"33.8"},{"1":"-37.6333333","2":"-2.233333","3":"26","4":"-9.433333","5":"9.8"},{"1":"46.3666667","2":"-4.233333","3":"43","4":"-23.433333","5":"-46.2"},{"1":"44.3666667","2":"4.766667","3":"39","4":"36.566667","5":"-41.2"},{"1":"49.3666667","2":"18.766667","3":"1","4":"5.566667","5":"41.8"},{"1":"-47.6333333","2":"-42.233333","3":"34","4":"-33.433333","5":"-23.2"},{"1":"35.3666667","2":"-35.233333","3":"-49","4":"-9.433333","5":"-27.2"},{"1":"-30.6333333","2":"33.766667","3":"-20","4":"-16.433333","5":"-17.2"},{"1":"3.3666667","2":"24.766667","3":"-30","4":"-12.433333","5":"-40.2"},{"1":"-39.6333333","2":"-26.233333","3":"43","4":"22.566667","5":"-28.2"},{"1":"23.3666667","2":"32.766667","3":"-27","4":"-2.433333","5":"-22.2"},{"1":"40.3666667","2":"6.766667","3":"20","4":"-30.433333","5":"-6.2"},{"1":"-19.6333333","2":"-9.233333","3":"-31","4":"-16.433333","5":"10.8"},{"1":"-7.6333333","2":"1.766667","3":"-22","4":"-21.433333","5":"6.8"},{"1":"-25.6333333","2":"28.766667","3":"-9","4":"5.566667","5":"51.8"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <hr />
@@ -485,21 +524,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-292" class="exercise"><strong>Exercise 10.3  </strong></span>Create a self-defined function to convert each number of a numeric vector to a “z” score.
+<span id="exr:unnamed-chunk-344" class="exercise"><strong>Exercise 10.3  </strong></span>Create a self-defined function to convert each number of a numeric vector to a “z” score.
 </div>
 
-<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb341-1" data-line-number="1">y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">10</span>, <span class="dv">20</span>)</a>
-<a class="sourceLine" id="cb341-2" data-line-number="2"><span class="kw">my_z</span>(y)</a></code></pre></div>
+<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb375-1" data-line-number="1">y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">10</span>, <span class="dv">20</span>)</a>
+<a class="sourceLine" id="cb375-2" data-line-number="2"><span class="kw">my_z</span>(y)</a></code></pre></div>
 <pre><code>## [1] -7.2000000 -2.1000000 -0.8981462  0.5692100  2.6385602</code></pre>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-295" class="exercise"><strong>Exercise 10.4  </strong></span>Use the dataset <code>exams.list</code> in this chapter. For each class, please convert the student’s score to a z-score.
+<span id="exr:unnamed-chunk-347" class="exercise"><strong>Exercise 10.4  </strong></span>Use the dataset <code>exams.list</code> in this chapter. For each class, please convert the student’s score to a z-score.
 </div>
 
-<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb343-1" data-line-number="1">exams.list <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">map_df</span>(my_z)</a></code></pre></div>
+<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb377-1" data-line-number="1">exams.list <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">map_df</span>(my_z)</a></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["class1"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["class2"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["class3"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["class4"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["class5"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"4.8655681","2":"-11.8480003","3":"-0.78510831","4":"2.75520745","5":"-1.7357692"},{"1":"-3.1525177","2":"4.7995469","3":"-1.10815628","4":"4.24071052","5":"-5.0418664"},{"1":"3.7278890","2":"4.6429210","3":"0.24037009","4":"3.91359672","5":"3.8515458"},{"1":"4.3154392","2":"5.0293480","3":"1.93663946","4":"-0.09157371","5":"0.5906504"},{"1":"-0.4132841","2":"-Inf","3":"-20.24386876","4":"3.48659300","5":"-9.2739651"},{"1":"-0.1190476","2":"3.9002900","3":"-11.04663515","4":"-29.25241364","5":"-1.7357692"},{"1":"-1.9196202","2":"-7.3892520","3":"3.41481481","4":"-3.83016173","5":"-3.1790138"},{"1":"2.5120212","2":"0.4947656","3":"2.56129790","4":"-6.75135602","5":"-2.3157227"},{"1":"2.3073955","2":"-13.9535738","3":"-6.38651025","4":"4.24071052","5":"2.5458369"},{"1":"4.3961789","2":"2.7928928","3":"3.32428773","4":"-5.73333333","5":"-0.5515634"},{"1":"-16.1894783","2":"4.3208679","3":"0.50804232","4":"2.16060405","5":"-7.6883793"},{"1":"3.2815064","2":"-3.6788542","3":"-1.98991610","4":"-7.12845108","5":"-3.1790138"},{"1":"-48.8333333","2":"-1.1805837","3":"-0.18095238","4":"-4.32092240","5":"-4.4518363"},{"1":"-13.6111111","2":"-5.4295116","3":"2.95181578","4":"-1.62665142","5":"0.5906504"},{"1":"-4.3942770","2":"-16.9286958","3":"-0.03771236","4":"3.03703704","5":"0.1838478"},{"1":"-0.5651942","2":"-2.1072513","3":"0.37545221","4":"4.16006569","5":"2.0217662"},{"1":"3.8143605","2":"-32.1497883","3":"-5.05333333","4":"4.63333333","5":"-1.7357692"},{"1":"4.9414359","2":"1.5015121","3":"-2.58053766","4":"-7.95307877","5":"-5.3588204"},{"1":"4.5554438","2":"-11.8480003","3":"3.59295011","4":"1.62892592","5":"-1.5532431"},{"1":"-3.3825665","2":"-16.9286958","3":"-1.98991610","4":"-7.12845108","5":"0.1838478"},{"1":"-8.9939280","2":"2.2812956","3":"-0.18095238","4":"-5.13200239","5":"4.8275360"},{"1":"0.8240555","2":"-1.0099237","3":"-16.35326287","4":"3.48659300","5":"4.8275360"},{"1":"-7.9632530","2":"1.7327658","3":"0.24037009","4":"-24.83333333","5":"4.8275360"},{"1":"1.3125110","2":"3.2729978","3":"4.58954316","4":"2.05708821","5":"-3.9119323"},{"1":"-0.4132841","2":"0.6286602","3":"-5.36166088","4":"-10.60136260","5":"-0.3980933"},{"1":"-0.2646189","2":"0.3582674","3":"3.68060842","4":"-1.13038833","5":"-1.5532431"},{"1":"-12.5964060","2":"4.6429210","3":"-2.18102656","4":"3.21975163","5":"2.6465231"},{"1":"-22.9166667","2":"-1.5356961","3":"1.60424921","4":"3.03703704","5":"-26.3849073"},{"1":"-6.2919492","2":"2.6932485","3":"-2.18102656","4":"1.05833439","5":"3.4994464"},{"1":"2.2030319","2":"1.5015121","3":"3.50436043","4":"-16.14560484","5":"3.6773698"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["class1"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["class2"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["class3"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["class4"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["class5"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"-3.97088685","2":"-16.8334378","3":"-0.2828427","4":"3.7296296","5":"0.2545584"},{"1":"-0.24082186","2":"-2.0678107","3":"0.1373606","4":"4.8029849","5":"2.0837835"},{"1":"4.05298405","2":"-31.9847967","3":"-5.4000000","4":"5.2566667","5":"-1.6546585"},{"1":"5.16254424","2":"1.5318895","3":"-2.8735245","4":"-6.5230540","5":"-5.2545632"},{"1":"4.78235651","2":"-11.7742138","3":"3.4026921","4":"2.3904488","5":"-1.4731790"},{"1":"-2.98743486","2":"-16.8334378","3":"-2.2710999","4":"-5.7682262","5":"0.2545584"},{"1":"-8.42589044","2":"2.3100170","3":"-0.4285714","4":"-3.9323968","5":"4.8785671"},{"1":"1.11804286","2":"-0.9734831","3":"-17.0084013","4":"4.1587506","5":"4.8785671"},{"1":"-7.42967465","2":"1.7626410","3":"0.0000000","4":"-21.7166667","5":"4.8785671"},{"1":"1.59652980","2":"3.2997630","3":"4.4117069","4":"2.7968488","5":"-3.8174412"},{"1":"-0.09238116","2":"0.6610177","3":"-5.7154761","4":"-8.9354342","5":"-0.3243723"},{"1":"0.05292377","2":"0.3912658","3":"3.4914862","4":"-0.2113335","5":"-1.4731790"},{"1":"-11.90070493","2":"4.6672476","3":"-2.4659848","4":"3.9039488","5":"2.7058622"},{"1":"-21.81666667","2":"-1.4978445","3":"1.3858697","4":"3.7296296","5":"-26.0962322"},{"1":"-5.81186981","2":"2.7211371","3":"-2.4659848","4":"1.8499685","5":"3.5553481"},{"1":"2.46982111","2":"1.5318895","3":"3.3129458","4":"-13.9417887","5":"3.7325856"},{"1":"-11.90070493","2":"-0.3329257","3":"2.9439203","4":"-1.5302887","5":"1.2868030"},{"1":"4.78235651","2":"-0.6455773","3":"4.4117069","4":"-4.7833091","5":"-32.6683333"},{"1":"4.62554475","2":"0.6610177","3":"4.0883109","4":"3.9897504","5":"-15.5721363"},{"1":"5.01242557","2":"2.3100170","3":"0.1373606","4":"0.7646405","5":"4.4061069"},{"1":"-Inf","2":"-18.8873208","3":"3.6663143","4":"-8.9354342","5":"-4.6400000"},{"1":"3.88199599","2":"-10.1709872","3":"-28.2901632","4":"-1.5302887","5":"-5.9355266"},{"1":"-7.42967465","2":"3.7518519","3":"-3.5355339","4":"-2.9515138","5":"-3.0892112"},{"1":"0.47142763","2":"2.9187797","3":"-6.3960215","4":"-2.1016169","5":"-14.2128463"},{"1":"-14.01249938","2":"-5.7245827","3":"4.4117069","4":"2.6972326","5":"-6.3057117"},{"1":"2.77311314","2":"3.6634247","3":"-5.4000000","4":"-0.3627399","5":"-4.3537782"},{"1":"4.30310113","2":"0.9208267","3":"2.3570226","4":"-7.3811675","5":"-0.9566808"},{"1":"-3.71035124","2":"-1.4978445","3":"-6.7647546","4":"-2.9515138","5":"1.4060402"},{"1":"-1.20693597","2":"0.2523810","3":"-4.0166321","4":"-4.2034225","5":"0.9169118"},{"1":"-5.46504503","2":"3.2997630","3":"-1.3724871","4":"0.7646405","5":"5.1800000"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 

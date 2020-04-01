@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2020-03-25" />
+<meta name="date" content="2020-04-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -54,6 +54,9 @@
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.5/grViz.js"></script>
 <link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
 <script src="libs/str_view-binding-1.4.0/str_view.js"></script>
 
@@ -186,13 +189,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.5" data-path="subsetting.html"><a href="subsetting.html#tibble"><i class="fa fa-check"></i><b>4.5</b> Tibble</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>5</b> Data Visualization</a><ul>
-<li class="chapter" data-level="5.1" data-path="data-visualization.html"><a href="data-visualization.html#why-visualization"><i class="fa fa-check"></i><b>5.1</b> Why Visualization?</a></li>
+<li class="chapter" data-level="5.1" data-path="data-visualization.html"><a href="data-visualization.html#why-visualization"><i class="fa fa-check"></i><b>5.1</b> Why Visualization?</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="data-visualization.html"><a href="data-visualization.html#datasaurus-dozen-dataset"><i class="fa fa-check"></i><b>5.1.1</b> Datasaurus Dozen Dataset</a></li>
+<li class="chapter" data-level="5.1.2" data-path="data-visualization.html"><a href="data-visualization.html#simpsons-paradox"><i class="fa fa-check"></i><b>5.1.2</b> Simpson’s Paradox</a></li>
+</ul></li>
 <li class="chapter" data-level="5.2" data-path="data-visualization.html"><a href="data-visualization.html#ggplot2"><i class="fa fa-check"></i><b>5.2</b> <code>ggplot2</code></a></li>
-<li class="chapter" data-level="5.3" data-path="data-visualization.html"><a href="data-visualization.html#one-variable-graph"><i class="fa fa-check"></i><b>5.3</b> One-variable Graph</a></li>
-<li class="chapter" data-level="5.4" data-path="data-visualization.html"><a href="data-visualization.html#two-variable-graph"><i class="fa fa-check"></i><b>5.4</b> Two-variable Graph</a></li>
-<li class="chapter" data-level="5.5" data-path="data-visualization.html"><a href="data-visualization.html#adding-other-aesthetic-features"><i class="fa fa-check"></i><b>5.5</b> Adding Other Aesthetic Features</a></li>
-<li class="chapter" data-level="5.6" data-path="data-visualization.html"><a href="data-visualization.html#saving-plots"><i class="fa fa-check"></i><b>5.6</b> Saving Plots</a></li>
-<li class="chapter" data-level="5.7" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-covid-19"><i class="fa fa-check"></i><b>5.7</b> Exercises on COVID-19</a></li>
+<li class="chapter" data-level="5.3" data-path="data-visualization.html"><a href="data-visualization.html#variables-and-data-type"><i class="fa fa-check"></i><b>5.3</b> Variables and Data Type</a></li>
+<li class="chapter" data-level="5.4" data-path="data-visualization.html"><a href="data-visualization.html#one-variable-graph"><i class="fa fa-check"></i><b>5.4</b> One-variable Graph</a></li>
+<li class="chapter" data-level="5.5" data-path="data-visualization.html"><a href="data-visualization.html#two-variable-graph"><i class="fa fa-check"></i><b>5.5</b> Two-variable Graph</a></li>
+<li class="chapter" data-level="5.6" data-path="data-visualization.html"><a href="data-visualization.html#adding-other-aesthetic-features"><i class="fa fa-check"></i><b>5.6</b> Adding Other Aesthetic Features</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="data-visualization.html"><a href="data-visualization.html#color"><i class="fa fa-check"></i><b>5.6.1</b> <code>color</code></a></li>
+<li class="chapter" data-level="5.6.2" data-path="data-visualization.html"><a href="data-visualization.html#shape"><i class="fa fa-check"></i><b>5.6.2</b> <code>shape</code></a></li>
+<li class="chapter" data-level="5.6.3" data-path="data-visualization.html"><a href="data-visualization.html#other-geom_...-layers"><i class="fa fa-check"></i><b>5.6.3</b> Other <code>geom_...</code> Layers</a></li>
+<li class="chapter" data-level="5.6.4" data-path="data-visualization.html"><a href="data-visualization.html#labels"><i class="fa fa-check"></i><b>5.6.4</b> Labels</a></li>
+<li class="chapter" data-level="5.6.5" data-path="data-visualization.html"><a href="data-visualization.html#fill"><i class="fa fa-check"></i><b>5.6.5</b> <code>fill</code></a></li>
+<li class="chapter" data-level="5.6.6" data-path="data-visualization.html"><a href="data-visualization.html#interim-summary"><i class="fa fa-check"></i><b>5.6.6</b> Interim Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="data-visualization.html"><a href="data-visualization.html#saving-plots"><i class="fa fa-check"></i><b>5.7</b> Saving Plots</a></li>
+<li class="chapter" data-level="5.8" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-iris"><i class="fa fa-check"></i><b>5.8</b> Exercises on <code>iris</code></a></li>
+<li class="chapter" data-level="5.9" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-covid-19"><i class="fa fa-check"></i><b>5.9</b> Exercises on COVID-19</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="data-manipulation.html"><a href="data-manipulation.html"><i class="fa fa-check"></i><b>6</b> Data Manipulation</a><ul>
 <li class="chapter" data-level="6.1" data-path="data-manipulation.html"><a href="data-manipulation.html#dataset"><i class="fa fa-check"></i><b>6.1</b> Dataset</a></li>
@@ -204,13 +219,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.7" data-path="data-manipulation.html"><a href="data-manipulation.html#arrange"><i class="fa fa-check"></i><b>6.7</b> <code>arrange()</code></a></li>
 <li class="chapter" data-level="6.8" data-path="data-manipulation.html"><a href="data-manipulation.html#group_by-and-summarize"><i class="fa fa-check"></i><b>6.8</b> <code>group_by()</code> and <code>summarize()</code></a></li>
 <li class="chapter" data-level="6.9" data-path="data-manipulation.html"><a href="data-manipulation.html#count"><i class="fa fa-check"></i><b>6.9</b> <code>count()</code></a></li>
-<li class="chapter" data-level="6.10" data-path="data-manipulation.html"><a href="data-manipulation.html#exerceises"><i class="fa fa-check"></i><b>6.10</b> Exerceises</a></li>
+<li class="chapter" data-level="6.10" data-path="data-manipulation.html"><a href="data-manipulation.html#tidy-data"><i class="fa fa-check"></i><b>6.10</b> Tidy Data</a><ul>
+<li class="chapter" data-level="6.10.1" data-path="data-manipulation.html"><a href="data-manipulation.html#an-long-to-wide-example"><i class="fa fa-check"></i><b>6.10.1</b> An Long-to-Wide Example</a></li>
+<li class="chapter" data-level="6.10.2" data-path="data-manipulation.html"><a href="data-manipulation.html#a-wide-to-long-example"><i class="fa fa-check"></i><b>6.10.2</b> A Wide-to-Long Example</a></li>
+</ul></li>
+<li class="chapter" data-level="6.11" data-path="data-manipulation.html"><a href="data-manipulation.html#exerceises"><i class="fa fa-check"></i><b>6.11</b> Exerceises</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="data-import.html"><a href="data-import.html"><i class="fa fa-check"></i><b>7</b> Data Import</a><ul>
-<li class="chapter" data-level="7.1" data-path="data-import.html"><a href="data-import.html#readlines"><i class="fa fa-check"></i><b>7.1</b> <code>readLines()</code></a></li>
-<li class="chapter" data-level="7.2" data-path="data-import.html"><a href="data-import.html#writelines"><i class="fa fa-check"></i><b>7.2</b> <code>writeLines()</code></a></li>
-<li class="chapter" data-level="7.3" data-path="data-import.html"><a href="data-import.html#read_csv"><i class="fa fa-check"></i><b>7.3</b> <code>read_csv()</code></a></li>
-<li class="chapter" data-level="7.4" data-path="data-import.html"><a href="data-import.html#write_csv"><i class="fa fa-check"></i><b>7.4</b> <code>write_csv()</code></a></li>
+<li class="chapter" data-level="7.1" data-path="data-import.html"><a href="data-import.html#overview"><i class="fa fa-check"></i><b>7.1</b> Overview</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="data-import.html"><a href="data-import.html#what-is-a-csv-file"><i class="fa fa-check"></i><b>7.1.1</b> What is a <code>CSV</code> file?</a></li>
+<li class="chapter" data-level="7.1.2" data-path="data-import.html"><a href="data-import.html#why-are-.csv-files-used"><i class="fa fa-check"></i><b>7.1.2</b> Why are <code>.CSV</code> files used?</a></li>
+<li class="chapter" data-level="7.1.3" data-path="data-import.html"><a href="data-import.html#how-do-i-save-csv-files"><i class="fa fa-check"></i><b>7.1.3</b> How do I save CSV files?</a></li>
+<li class="chapter" data-level="7.1.4" data-path="data-import.html"><a href="data-import.html#what-about-other-types-of-data"><i class="fa fa-check"></i><b>7.1.4</b> What about other types of data?</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="data-import.html"><a href="data-import.html#importing-data"><i class="fa fa-check"></i><b>7.2</b> Importing Data</a></li>
+<li class="chapter" data-level="7.3" data-path="data-import.html"><a href="data-import.html#r-base-functions"><i class="fa fa-check"></i><b>7.3</b> R Base Functions</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="data-import.html"><a href="data-import.html#readlines"><i class="fa fa-check"></i><b>7.3.1</b> <code>readLines()</code></a></li>
+<li class="chapter" data-level="7.3.2" data-path="data-import.html"><a href="data-import.html#writelines"><i class="fa fa-check"></i><b>7.3.2</b> <code>writeLines()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="data-import.html"><a href="data-import.html#readr-functions"><i class="fa fa-check"></i><b>7.4</b> <code>readr</code> Functions</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="data-import.html"><a href="data-import.html#readrread_csv"><i class="fa fa-check"></i><b>7.4.1</b> <code>readr::read_csv()</code></a></li>
+<li class="chapter" data-level="7.4.2" data-path="data-import.html"><a href="data-import.html#readrwrite_csv"><i class="fa fa-check"></i><b>7.4.2</b> <code>readr::write_csv()</code></a></li>
+</ul></li>
 <li class="chapter" data-level="7.5" data-path="data-import.html"><a href="data-import.html#directory-operations"><i class="fa fa-check"></i><b>7.5</b> Directory Operations</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="string-manipulation.html"><a href="string-manipulation.html"><i class="fa fa-check"></i><b>8</b> String Manipulation</a><ul>
@@ -231,15 +261,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.6.1" data-path="string-manipulation.html"><a href="string-manipulation.html#case-1"><i class="fa fa-check"></i><b>8.6.1</b> Case 1</a></li>
 <li class="chapter" data-level="8.6.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-2"><i class="fa fa-check"></i><b>8.6.2</b> Case 2</a></li>
 <li class="chapter" data-level="8.6.3" data-path="string-manipulation.html"><a href="string-manipulation.html#case-3"><i class="fa fa-check"></i><b>8.6.3</b> Case 3</a></li>
-<li class="chapter" data-level="8.6.4" data-path="string-manipulation.html"><a href="string-manipulation.html#case-4"><i class="fa fa-check"></i><b>8.6.4</b> Case 4</a></li>
-<li class="chapter" data-level="8.6.5" data-path="string-manipulation.html"><a href="string-manipulation.html#case-5"><i class="fa fa-check"></i><b>8.6.5</b> Case 5</a></li>
-<li class="chapter" data-level="8.6.6" data-path="string-manipulation.html"><a href="string-manipulation.html#case6"><i class="fa fa-check"></i><b>8.6.6</b> Case 6</a></li>
-<li class="chapter" data-level="8.6.7" data-path="string-manipulation.html"><a href="string-manipulation.html#case-7"><i class="fa fa-check"></i><b>8.6.7</b> Case 7</a></li>
 </ul></li>
 <li class="chapter" data-level="8.7" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-chinese-four-character-idioms"><i class="fa fa-check"></i><b>8.7</b> Case Study: Chinese Four-Character Idioms</a><ul>
 <li class="chapter" data-level="8.7.1" data-path="string-manipulation.html"><a href="string-manipulation.html#dictionary-entries"><i class="fa fa-check"></i><b>8.7.1</b> Dictionary Entries</a></li>
 <li class="chapter" data-level="8.7.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-x來y去"><i class="fa fa-check"></i><b>8.7.2</b> Case Study: <code>X來Y去</code></a></li>
-<li class="chapter" data-level="8.7.3" data-path="string-manipulation.html"><a href="string-manipulation.html#exercises"><i class="fa fa-check"></i><b>8.7.3</b> Exercises</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html"><i class="fa fa-check"></i><b>9</b> Conditions and Loops</a><ul>
@@ -264,6 +289,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.4.2" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#chinese-laureates"><i class="fa fa-check"></i><b>11.4.2</b> Chinese Laureates</a></li>
 </ul></li>
 <li class="chapter" data-level="11.5" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#at-what-age-did-these-people-receive-the-prizes"><i class="fa fa-check"></i><b>11.5</b> At what age did these people receive the prizes?</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html"><i class="fa fa-check"></i><b>12</b> Text Analytics: A Start</a><ul>
+<li class="chapter" data-level="12.1" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#installing-quanteda"><i class="fa fa-check"></i><b>12.1</b> Installing <code>quanteda</code></a></li>
+<li class="chapter" data-level="12.2" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#building-a-corpus-from-character-vector"><i class="fa fa-check"></i><b>12.2</b> Building a <code>corpus</code> from character vector</a></li>
+<li class="chapter" data-level="12.3" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyword-in-context-kwic"><i class="fa fa-check"></i><b>12.3</b> Keyword-in-Context (KWIC)</a></li>
+<li class="chapter" data-level="12.4" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#kwic-with-regular-expressions"><i class="fa fa-check"></i><b>12.4</b> KWIC with Regular Expressions</a></li>
+<li class="chapter" data-level="12.5" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#lexical-density-plot"><i class="fa fa-check"></i><b>12.5</b> Lexical Density Plot</a></li>
+<li class="chapter" data-level="12.6" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#document-feature-matrix"><i class="fa fa-check"></i><b>12.6</b> Document-Feature Matrix</a></li>
+<li class="chapter" data-level="12.7" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#feature-selection"><i class="fa fa-check"></i><b>12.7</b> Feature Selection</a></li>
+<li class="chapter" data-level="12.8" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#top-features"><i class="fa fa-check"></i><b>12.8</b> Top Features</a></li>
+<li class="chapter" data-level="12.9" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#wordclouds"><i class="fa fa-check"></i><b>12.9</b> Wordclouds</a></li>
+<li class="chapter" data-level="12.10" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyness-analysis"><i class="fa fa-check"></i><b>12.10</b> Keyness Analysis</a></li>
+<li class="chapter" data-level="12.11" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#flowchart"><i class="fa fa-check"></i><b>12.11</b> Flowchart</a></li>
+<li class="chapter" data-level="12.12" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#exercises"><i class="fa fa-check"></i><b>12.12</b> Exercises</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="the-shell.html"><a href="the-shell.html"><i class="fa fa-check"></i><b>A</b> The Shell</a><ul>
@@ -313,20 +352,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 }</code></pre>
 <p>The <em>condition</em> is palced in parentheses after <code>if</code>. The <em>condition</em> must be an expression that returns only a single logical value (TRUE or FALSE). If it is TRUE, the code chunk 1 in the braces will be executed; if the condition is not satisfied, the code chunk 2 in the braces after <code>else</code> will be executed.</p>
 <p>Let’s create a simple password checker. Imagine that your system password is stored on the server. You can only get into the system if you enter the correct password. For every password you enter, the system gatekeeper will check if your input password matches the one stored on the server. If they match, you will be allowed to get through.</p>
-<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb309-1" data-line-number="1">input &lt;-<span class="st"> </span><span class="dv">113</span></a>
-<a class="sourceLine" id="cb309-2" data-line-number="2"><span class="cf">if</span>(input <span class="op">==</span><span class="st"> </span><span class="dv">987</span>){</a>
-<a class="sourceLine" id="cb309-3" data-line-number="3">  <span class="kw">writeLines</span>(<span class="st">&quot;Congratulations! Now you may get in!&quot;</span>)</a>
-<a class="sourceLine" id="cb309-4" data-line-number="4">} <span class="cf">else</span>{</a>
-<a class="sourceLine" id="cb309-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="st">&quot;Sorry! Wrong password.&quot;</span>)</a>
-<a class="sourceLine" id="cb309-6" data-line-number="6">}</a></code></pre></div>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb343-1" data-line-number="1">input &lt;-<span class="st"> </span><span class="dv">113</span></a>
+<a class="sourceLine" id="cb343-2" data-line-number="2"><span class="cf">if</span>(input <span class="op">==</span><span class="st"> </span><span class="dv">987</span>){</a>
+<a class="sourceLine" id="cb343-3" data-line-number="3">  <span class="kw">writeLines</span>(<span class="st">&quot;Congratulations! Now you may get in!&quot;</span>)</a>
+<a class="sourceLine" id="cb343-4" data-line-number="4">} <span class="cf">else</span>{</a>
+<a class="sourceLine" id="cb343-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="st">&quot;Sorry! Wrong password.&quot;</span>)</a>
+<a class="sourceLine" id="cb343-6" data-line-number="6">}</a></code></pre></div>
 <pre><code>## Sorry! Wrong password.</code></pre>
 <p>Now we can read the input directly from the user’s input in the R console:</p>
-<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb311-1" data-line-number="1">input &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt=</span><span class="st">&quot;Please enter your password:&quot;</span>)</a>
-<a class="sourceLine" id="cb311-2" data-line-number="2"><span class="cf">if</span>(input <span class="op">==</span><span class="st"> </span><span class="dv">987</span>){</a>
-<a class="sourceLine" id="cb311-3" data-line-number="3">  <span class="kw">writeLines</span>(<span class="st">&quot;Congratulations! Now you may get in!&quot;</span>)</a>
-<a class="sourceLine" id="cb311-4" data-line-number="4">} <span class="cf">else</span>{</a>
-<a class="sourceLine" id="cb311-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="st">&quot;Sorry! Wrong password.&quot;</span>)</a>
-<a class="sourceLine" id="cb311-6" data-line-number="6">}</a></code></pre></div>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb345-1" data-line-number="1">input &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt=</span><span class="st">&quot;Please enter your password:&quot;</span>)</a>
+<a class="sourceLine" id="cb345-2" data-line-number="2"><span class="cf">if</span>(input <span class="op">==</span><span class="st"> </span><span class="dv">987</span>){</a>
+<a class="sourceLine" id="cb345-3" data-line-number="3">  <span class="kw">writeLines</span>(<span class="st">&quot;Congratulations! Now you may get in!&quot;</span>)</a>
+<a class="sourceLine" id="cb345-4" data-line-number="4">} <span class="cf">else</span>{</a>
+<a class="sourceLine" id="cb345-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="st">&quot;Sorry! Wrong password.&quot;</span>)</a>
+<a class="sourceLine" id="cb345-6" data-line-number="6">}</a></code></pre></div>
 </div>
 <div id="for" class="section level2">
 <h2><span class="header-section-number">9.2</span> <code>for</code></h2>
@@ -336,21 +375,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 }</code></pre>
 <p>The <em>LOOP_INDEX</em> is a placeholder that represents an element in the <em>LOOP_VECTOR</em>. When the loop begins, the <em>LOOP_INDEX</em> starts off as the first element in the vector. When the loop reaches the end of the brace, the <em>LOOP_INDEX</em> is incremented, taking on the next element in the vector. This process continues until the loop reaches the final element of the <em>LOOP_VECTOR</em>. At this point, the code chunk is executed for the last time, and the loop exits.</p>
 <p>For example, if we have a character vector with a few words in it. We can use a <code>for</code> loop to get the number of characters for each element in the vector.</p>
-<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb313-1" data-line-number="1">word_vec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>,<span class="st">&quot;banana&quot;</span>,<span class="st">&quot;watermelon&quot;</span>,<span class="st">&quot;papaya&quot;</span>)</a>
-<a class="sourceLine" id="cb313-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb313-3" data-line-number="3"><span class="cf">for</span>(w <span class="cf">in</span> word_vec){</a>
-<a class="sourceLine" id="cb313-4" data-line-number="4">  word_nchar &lt;-<span class="st"> </span><span class="kw">nchar</span>(w)</a>
-<a class="sourceLine" id="cb313-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="kw">as.character</span>(word_nchar))</a>
-<a class="sourceLine" id="cb313-6" data-line-number="6">}</a></code></pre></div>
+<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb347-1" data-line-number="1">word_vec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>,<span class="st">&quot;banana&quot;</span>,<span class="st">&quot;watermelon&quot;</span>,<span class="st">&quot;papaya&quot;</span>)</a>
+<a class="sourceLine" id="cb347-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb347-3" data-line-number="3"><span class="cf">for</span>(w <span class="cf">in</span> word_vec){</a>
+<a class="sourceLine" id="cb347-4" data-line-number="4">  word_nchar &lt;-<span class="st"> </span><span class="kw">nchar</span>(w)</a>
+<a class="sourceLine" id="cb347-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="kw">as.character</span>(word_nchar))</a>
+<a class="sourceLine" id="cb347-6" data-line-number="6">}</a></code></pre></div>
 <pre><code>## 5
 ## 6
 ## 10
 ## 6</code></pre>
 <p>For the above example, there is another way to write the <code>for</code> loop:</p>
-<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb315-1" data-line-number="1"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(word_vec)){</a>
-<a class="sourceLine" id="cb315-2" data-line-number="2">  word_nchar &lt;-<span class="st"> </span><span class="kw">nchar</span>(word_vec[i])</a>
-<a class="sourceLine" id="cb315-3" data-line-number="3">  <span class="kw">writeLines</span>(<span class="kw">as.character</span>(word_nchar))</a>
-<a class="sourceLine" id="cb315-4" data-line-number="4">}</a></code></pre></div>
+<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb349-1" data-line-number="1"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(word_vec)){</a>
+<a class="sourceLine" id="cb349-2" data-line-number="2">  word_nchar &lt;-<span class="st"> </span><span class="kw">nchar</span>(word_vec[i])</a>
+<a class="sourceLine" id="cb349-3" data-line-number="3">  <span class="kw">writeLines</span>(<span class="kw">as.character</span>(word_nchar))</a>
+<a class="sourceLine" id="cb349-4" data-line-number="4">}</a></code></pre></div>
 <pre><code>## 5
 ## 6
 ## 10
@@ -366,14 +405,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Upon the start of a <code>while</code> loop, the <em>LOOP_CONDITION</em> is evaluated. If the condition is TRUE, the braced code chunk is executed line by line till the end of the chunk. At this point, the <em>LOOP_CONDITION</em> will be checked again. The loop terminates immediately when the condition is evaluated to be FALSE.</p>
 <p>Based on the template above, you should infer that the code chunk executed must somehow cause the loop to exit, and very often will change the value of certain objects, which would eventaully lead to the change of the <em>LOOP_CONDITION</em>. If nothing ever changes the <em>LOOP_CONDITION</em>, R will crash due to the infinite loops.</p>
 <p>Let’s come back to our password checker. This time let’s create a dumb checker. When you give a wrong password which is smaller than your true answer, it will automatically approach the right asnwer for you (and of course no real-world application would do that!)</p>
-<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb318-1" data-line-number="1">ans &lt;-<span class="st"> </span><span class="dv">87</span></a>
-<a class="sourceLine" id="cb318-2" data-line-number="2">guess &lt;-<span class="st"> </span><span class="dv">83</span></a>
-<a class="sourceLine" id="cb318-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb318-4" data-line-number="4"><span class="cf">while</span>(guess <span class="op">!=</span><span class="st"> </span>ans){</a>
-<a class="sourceLine" id="cb318-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="st">&quot;Your `guess` is too small! The system will take care for you!&quot;</span>)</a>
-<a class="sourceLine" id="cb318-6" data-line-number="6">  guess &lt;-<span class="st"> </span>guess <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb318-7" data-line-number="7">  <span class="kw">cat</span>(<span class="st">&quot;Now the system is adjusting your `guess` to &quot;</span>, guess, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</a>
-<a class="sourceLine" id="cb318-8" data-line-number="8">}</a></code></pre></div>
+<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb352-1" data-line-number="1">ans &lt;-<span class="st"> </span><span class="dv">87</span></a>
+<a class="sourceLine" id="cb352-2" data-line-number="2">guess &lt;-<span class="st"> </span><span class="dv">83</span></a>
+<a class="sourceLine" id="cb352-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb352-4" data-line-number="4"><span class="cf">while</span>(guess <span class="op">!=</span><span class="st"> </span>ans){</a>
+<a class="sourceLine" id="cb352-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="st">&quot;Your `guess` is too small! The system will take care for you!&quot;</span>)</a>
+<a class="sourceLine" id="cb352-6" data-line-number="6">  guess &lt;-<span class="st"> </span>guess <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb352-7" data-line-number="7">  <span class="kw">cat</span>(<span class="st">&quot;Now the system is adjusting your `guess` to &quot;</span>, guess, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</a>
+<a class="sourceLine" id="cb352-8" data-line-number="8">}</a></code></pre></div>
 <pre><code>## Your `guess` is too small! The system will take care for you!
 ## Now the system is adjusting your `guess` to  84 
 ## Your `guess` is too small! The system will take care for you!
@@ -387,18 +426,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">9.4</span> Toy Example</h2>
 <p>Now we are playing the Guess Game. The game is as follows:</p>
 <p>I pick a number from 1 to 100. You have to guess which number I picked. Every time you guess wrong, I’ll tell you whether the number is higher or lower.</p>
-<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb320-1" data-line-number="1">ans &lt;-<span class="st"> </span><span class="dv">18</span></a>
-<a class="sourceLine" id="cb320-2" data-line-number="2">guess &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt =</span> <span class="st">&quot;Please guess my number(0~100):&quot;</span>)</a>
-<a class="sourceLine" id="cb320-3" data-line-number="3"><span class="cf">while</span>(guess <span class="op">!=</span><span class="st"> </span>ans){</a>
-<a class="sourceLine" id="cb320-4" data-line-number="4">  <span class="cf">if</span>(guess <span class="op">&lt;</span><span class="st"> </span>ans){</a>
-<a class="sourceLine" id="cb320-5" data-line-number="5">    <span class="kw">writeLines</span>(<span class="st">&quot;The asnwer is higher.&quot;</span>)</a>
-<a class="sourceLine" id="cb320-6" data-line-number="6">    guess &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt =</span> <span class="st">&quot;Please guess my number(0~100):&quot;</span>)    </a>
-<a class="sourceLine" id="cb320-7" data-line-number="7">  }<span class="cf">else</span>{</a>
-<a class="sourceLine" id="cb320-8" data-line-number="8">    <span class="kw">writeLines</span>(<span class="st">&quot;The asnwer is lower&quot;</span>)</a>
-<a class="sourceLine" id="cb320-9" data-line-number="9">    guess &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt =</span> <span class="st">&quot;Please guess my number(0~100):&quot;</span>)</a>
-<a class="sourceLine" id="cb320-10" data-line-number="10">  }</a>
-<a class="sourceLine" id="cb320-11" data-line-number="11">}</a>
-<a class="sourceLine" id="cb320-12" data-line-number="12"><span class="kw">writeLines</span>(<span class="st">&quot;Correct!&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb354-1" data-line-number="1">ans &lt;-<span class="st"> </span><span class="dv">18</span></a>
+<a class="sourceLine" id="cb354-2" data-line-number="2">guess &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt =</span> <span class="st">&quot;Please guess my number(0~100):&quot;</span>)</a>
+<a class="sourceLine" id="cb354-3" data-line-number="3"><span class="cf">while</span>(guess <span class="op">!=</span><span class="st"> </span>ans){</a>
+<a class="sourceLine" id="cb354-4" data-line-number="4">  <span class="cf">if</span>(guess <span class="op">&lt;</span><span class="st"> </span>ans){</a>
+<a class="sourceLine" id="cb354-5" data-line-number="5">    <span class="kw">writeLines</span>(<span class="st">&quot;The asnwer is higher.&quot;</span>)</a>
+<a class="sourceLine" id="cb354-6" data-line-number="6">    guess &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt =</span> <span class="st">&quot;Please guess my number(0~100):&quot;</span>)    </a>
+<a class="sourceLine" id="cb354-7" data-line-number="7">  }<span class="cf">else</span>{</a>
+<a class="sourceLine" id="cb354-8" data-line-number="8">    <span class="kw">writeLines</span>(<span class="st">&quot;The asnwer is lower&quot;</span>)</a>
+<a class="sourceLine" id="cb354-9" data-line-number="9">    guess &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt =</span> <span class="st">&quot;Please guess my number(0~100):&quot;</span>)</a>
+<a class="sourceLine" id="cb354-10" data-line-number="10">  }</a>
+<a class="sourceLine" id="cb354-11" data-line-number="11">}</a>
+<a class="sourceLine" id="cb354-12" data-line-number="12"><span class="kw">writeLines</span>(<span class="st">&quot;Correct!&quot;</span>)</a></code></pre></div>
 
 </div>
 </div>
