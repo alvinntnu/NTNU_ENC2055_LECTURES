@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 9 Conditions and Loops | ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
+  <title>Chapter 10 Conditions and Loops | ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
   <meta name="description" content="ENC2055 Course material first edition" />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 9 Conditions and Loops | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
+  <meta property="og:title" content="Chapter 10 Conditions and Loops | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 9 Conditions and Loops | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
+  <meta name="twitter:title" content="Chapter 10 Conditions and Loops | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
   
   <meta name="twitter:description" content="ENC2055 Course material first edition" />
   
@@ -24,14 +24,14 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2020-04-02" />
+<meta name="date" content="2020-04-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="string-manipulation.html"/>
+<link rel="prev" href="data-import.html"/>
 <link rel="next" href="iteration.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -54,11 +54,11 @@
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
+<script src="libs/str_view-binding-1.4.0/str_view.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.5/grViz.js"></script>
-<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
-<script src="libs/str_view-binding-1.4.0/str_view.js"></script>
 
 
 <style type="text/css">
@@ -225,84 +225,107 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6.11" data-path="data-manipulation.html"><a href="data-manipulation.html#exerceises"><i class="fa fa-check"></i><b>6.11</b> Exerceises</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="data-import.html"><a href="data-import.html"><i class="fa fa-check"></i><b>7</b> Data Import</a><ul>
-<li class="chapter" data-level="7.1" data-path="data-import.html"><a href="data-import.html#overview"><i class="fa fa-check"></i><b>7.1</b> Overview</a><ul>
-<li class="chapter" data-level="7.1.1" data-path="data-import.html"><a href="data-import.html#what-is-a-csv-file"><i class="fa fa-check"></i><b>7.1.1</b> What is a <code>CSV</code> file?</a></li>
-<li class="chapter" data-level="7.1.2" data-path="data-import.html"><a href="data-import.html#why-are-.csv-files-used"><i class="fa fa-check"></i><b>7.1.2</b> Why are <code>.CSV</code> files used?</a></li>
-<li class="chapter" data-level="7.1.3" data-path="data-import.html"><a href="data-import.html#how-do-i-save-csv-files"><i class="fa fa-check"></i><b>7.1.3</b> How do I save CSV files?</a></li>
-<li class="chapter" data-level="7.1.4" data-path="data-import.html"><a href="data-import.html#what-about-other-types-of-data"><i class="fa fa-check"></i><b>7.1.4</b> What about other types of data?</a></li>
-</ul></li>
-<li class="chapter" data-level="7.2" data-path="data-import.html"><a href="data-import.html#importing-data"><i class="fa fa-check"></i><b>7.2</b> Importing Data</a></li>
-<li class="chapter" data-level="7.3" data-path="data-import.html"><a href="data-import.html#r-base-functions"><i class="fa fa-check"></i><b>7.3</b> R Base Functions</a><ul>
-<li class="chapter" data-level="7.3.1" data-path="data-import.html"><a href="data-import.html#readlines"><i class="fa fa-check"></i><b>7.3.1</b> <code>readLines()</code></a></li>
-<li class="chapter" data-level="7.3.2" data-path="data-import.html"><a href="data-import.html#writelines"><i class="fa fa-check"></i><b>7.3.2</b> <code>writeLines()</code></a></li>
-</ul></li>
-<li class="chapter" data-level="7.4" data-path="data-import.html"><a href="data-import.html#readr-functions"><i class="fa fa-check"></i><b>7.4</b> <code>readr</code> Functions</a><ul>
-<li class="chapter" data-level="7.4.1" data-path="data-import.html"><a href="data-import.html#readrread_csv"><i class="fa fa-check"></i><b>7.4.1</b> <code>readr::read_csv()</code></a></li>
-<li class="chapter" data-level="7.4.2" data-path="data-import.html"><a href="data-import.html#readrwrite_csv"><i class="fa fa-check"></i><b>7.4.2</b> <code>readr::write_csv()</code></a></li>
-</ul></li>
-<li class="chapter" data-level="7.5" data-path="data-import.html"><a href="data-import.html#directory-operations"><i class="fa fa-check"></i><b>7.5</b> Directory Operations</a></li>
+<li class="chapter" data-level="7" data-path="midterm-exam.html"><a href="midterm-exam.html"><i class="fa fa-check"></i><b>7</b> Midterm Exam</a><ul>
+<li class="chapter" data-level="7.1" data-path="midterm-exam.html"><a href="midterm-exam.html#important-instructions"><i class="fa fa-check"></i><b>7.1</b> Important Instructions</a></li>
+<li class="chapter" data-level="7.2" data-path="midterm-exam.html"><a href="midterm-exam.html#part-i-r-basics"><i class="fa fa-check"></i><b>7.2</b> Part I: R Basics</a></li>
+<li class="chapter" data-level="7.3" data-path="midterm-exam.html"><a href="midterm-exam.html#part-ii-spotify-songs-dataset"><i class="fa fa-check"></i><b>7.3</b> Part II: Spotify Songs Dataset</a></li>
+<li class="chapter" data-level="7.4" data-path="midterm-exam.html"><a href="midterm-exam.html#part-iii-noise-dataset"><i class="fa fa-check"></i><b>7.4</b> Part III: Noise Dataset</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="string-manipulation.html"><a href="string-manipulation.html"><i class="fa fa-check"></i><b>8</b> String Manipulation</a><ul>
 <li class="chapter" data-level="8.1" data-path="string-manipulation.html"><a href="string-manipulation.html#what-is-regular-expression"><i class="fa fa-check"></i><b>8.1</b> What is Regular Expression?</a></li>
 <li class="chapter" data-level="8.2" data-path="string-manipulation.html"><a href="string-manipulation.html#string-basics"><i class="fa fa-check"></i><b>8.2</b> String Basics</a></li>
-<li class="chapter" data-level="8.3" data-path="string-manipulation.html"><a href="string-manipulation.html#regular-expression-grammar"><i class="fa fa-check"></i><b>8.3</b> Regular Expression Grammar</a><ul>
-<li class="chapter" data-level="8.3.1" data-path="string-manipulation.html"><a href="string-manipulation.html#metacharacters"><i class="fa fa-check"></i><b>8.3.1</b> Metacharacters</a></li>
-<li class="chapter" data-level="8.3.2" data-path="string-manipulation.html"><a href="string-manipulation.html#anchors"><i class="fa fa-check"></i><b>8.3.2</b> Anchors</a></li>
-<li class="chapter" data-level="8.3.3" data-path="string-manipulation.html"><a href="string-manipulation.html#character-set"><i class="fa fa-check"></i><b>8.3.3</b> Character Set</a></li>
-<li class="chapter" data-level="8.3.4" data-path="string-manipulation.html"><a href="string-manipulation.html#alternatives"><i class="fa fa-check"></i><b>8.3.4</b> Alternatives</a></li>
-<li class="chapter" data-level="8.3.5" data-path="string-manipulation.html"><a href="string-manipulation.html#quantifiers"><i class="fa fa-check"></i><b>8.3.5</b> Quantifiers</a></li>
-<li class="chapter" data-level="8.3.6" data-path="string-manipulation.html"><a href="string-manipulation.html#greedy-vs.non-greedy-match"><i class="fa fa-check"></i><b>8.3.6</b> Greedy vs. Non-greedy match</a></li>
-<li class="chapter" data-level="8.3.7" data-path="string-manipulation.html"><a href="string-manipulation.html#group-and-back-reference"><i class="fa fa-check"></i><b>8.3.7</b> Group and Back-reference</a></li>
+<li class="chapter" data-level="8.3" data-path="string-manipulation.html"><a href="string-manipulation.html#a-good-tool-regexplain"><i class="fa fa-check"></i><b>8.3</b> A Good Tool: <code>RegExplain</code></a></li>
+<li class="chapter" data-level="8.4" data-path="string-manipulation.html"><a href="string-manipulation.html#regular-expression-grammar"><i class="fa fa-check"></i><b>8.4</b> Regular Expression Grammar</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="string-manipulation.html"><a href="string-manipulation.html#metacharacters"><i class="fa fa-check"></i><b>8.4.1</b> Metacharacters</a></li>
+<li class="chapter" data-level="8.4.2" data-path="string-manipulation.html"><a href="string-manipulation.html#anchors"><i class="fa fa-check"></i><b>8.4.2</b> Anchors</a></li>
+<li class="chapter" data-level="8.4.3" data-path="string-manipulation.html"><a href="string-manipulation.html#character-set"><i class="fa fa-check"></i><b>8.4.3</b> Character Set</a></li>
+<li class="chapter" data-level="8.4.4" data-path="string-manipulation.html"><a href="string-manipulation.html#alternatives"><i class="fa fa-check"></i><b>8.4.4</b> Alternatives</a></li>
+<li class="chapter" data-level="8.4.5" data-path="string-manipulation.html"><a href="string-manipulation.html#quantifiers"><i class="fa fa-check"></i><b>8.4.5</b> Quantifiers</a></li>
+<li class="chapter" data-level="8.4.6" data-path="string-manipulation.html"><a href="string-manipulation.html#greedy-vs.non-greedy-match"><i class="fa fa-check"></i><b>8.4.6</b> Greedy vs. Non-greedy match</a></li>
+<li class="chapter" data-level="8.4.7" data-path="string-manipulation.html"><a href="string-manipulation.html#group-and-back-reference"><i class="fa fa-check"></i><b>8.4.7</b> Group and Back-reference</a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="string-manipulation.html"><a href="string-manipulation.html#pattern-matching"><i class="fa fa-check"></i><b>8.4</b> Pattern Matching</a></li>
-<li class="chapter" data-level="8.5" data-path="string-manipulation.html"><a href="string-manipulation.html#advanced-pattern-matching-look-ahead-and-behind"><i class="fa fa-check"></i><b>8.5</b> Advanced Pattern Matching: Look Ahead and Behind</a></li>
-<li class="chapter" data-level="8.6" data-path="string-manipulation.html"><a href="string-manipulation.html#more-practices"><i class="fa fa-check"></i><b>8.6</b> More Practices</a><ul>
-<li class="chapter" data-level="8.6.1" data-path="string-manipulation.html"><a href="string-manipulation.html#case-1"><i class="fa fa-check"></i><b>8.6.1</b> Case 1</a></li>
-<li class="chapter" data-level="8.6.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-2"><i class="fa fa-check"></i><b>8.6.2</b> Case 2</a></li>
-<li class="chapter" data-level="8.6.3" data-path="string-manipulation.html"><a href="string-manipulation.html#case-3"><i class="fa fa-check"></i><b>8.6.3</b> Case 3</a></li>
+<li class="chapter" data-level="8.5" data-path="string-manipulation.html"><a href="string-manipulation.html#pattern-matching"><i class="fa fa-check"></i><b>8.5</b> Pattern Matching</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="string-manipulation.html"><a href="string-manipulation.html#str_detect"><i class="fa fa-check"></i><b>8.5.1</b> <code>str_detect()</code></a></li>
+<li class="chapter" data-level="8.5.2" data-path="string-manipulation.html"><a href="string-manipulation.html#str_subset"><i class="fa fa-check"></i><b>8.5.2</b> <code>str_subset()</code></a></li>
+<li class="chapter" data-level="8.5.3" data-path="string-manipulation.html"><a href="string-manipulation.html#str_extract"><i class="fa fa-check"></i><b>8.5.3</b> <code>str_extract()</code></a></li>
+<li class="chapter" data-level="8.5.4" data-path="string-manipulation.html"><a href="string-manipulation.html#str_match"><i class="fa fa-check"></i><b>8.5.4</b> <code>str_match()</code></a></li>
+<li class="chapter" data-level="8.5.5" data-path="string-manipulation.html"><a href="string-manipulation.html#str_replace"><i class="fa fa-check"></i><b>8.5.5</b> <code>str_replace()</code></a></li>
+<li class="chapter" data-level="8.5.6" data-path="string-manipulation.html"><a href="string-manipulation.html#str_split"><i class="fa fa-check"></i><b>8.5.6</b> <code>str_split()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="8.7" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-chinese-four-character-idioms"><i class="fa fa-check"></i><b>8.7</b> Case Study: Chinese Four-Character Idioms</a><ul>
-<li class="chapter" data-level="8.7.1" data-path="string-manipulation.html"><a href="string-manipulation.html#dictionary-entries"><i class="fa fa-check"></i><b>8.7.1</b> Dictionary Entries</a></li>
-<li class="chapter" data-level="8.7.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-x來y去"><i class="fa fa-check"></i><b>8.7.2</b> Case Study: <code>X來Y去</code></a></li>
+<li class="chapter" data-level="8.6" data-path="string-manipulation.html"><a href="string-manipulation.html#advanced-pattern-matching-look-ahead-and-behind"><i class="fa fa-check"></i><b>8.6</b> Advanced Pattern Matching: Look Ahead and Behind</a></li>
+<li class="chapter" data-level="8.7" data-path="string-manipulation.html"><a href="string-manipulation.html#more-practices"><i class="fa fa-check"></i><b>8.7</b> More Practices</a><ul>
+<li class="chapter" data-level="8.7.1" data-path="string-manipulation.html"><a href="string-manipulation.html#case-1"><i class="fa fa-check"></i><b>8.7.1</b> Case 1</a></li>
+<li class="chapter" data-level="8.7.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-2"><i class="fa fa-check"></i><b>8.7.2</b> Case 2</a></li>
+<li class="chapter" data-level="8.7.3" data-path="string-manipulation.html"><a href="string-manipulation.html#case-3"><i class="fa fa-check"></i><b>8.7.3</b> Case 3</a></li>
+</ul></li>
+<li class="chapter" data-level="8.8" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-chinese-four-character-idioms"><i class="fa fa-check"></i><b>8.8</b> Case Study: Chinese Four-Character Idioms</a><ul>
+<li class="chapter" data-level="8.8.1" data-path="string-manipulation.html"><a href="string-manipulation.html#dictionary-entries"><i class="fa fa-check"></i><b>8.8.1</b> Dictionary Entries</a></li>
+<li class="chapter" data-level="8.8.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-x來y去"><i class="fa fa-check"></i><b>8.8.2</b> Case Study: <code>X來Y去</code></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html"><i class="fa fa-check"></i><b>9</b> Conditions and Loops</a><ul>
-<li class="chapter" data-level="9.1" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#if-statements"><i class="fa fa-check"></i><b>9.1</b> <code>if</code> Statements</a></li>
-<li class="chapter" data-level="9.2" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#for"><i class="fa fa-check"></i><b>9.2</b> <code>for</code></a></li>
-<li class="chapter" data-level="9.3" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#while-loop"><i class="fa fa-check"></i><b>9.3</b> <code>while</code> loop</a></li>
-<li class="chapter" data-level="9.4" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#toy-example"><i class="fa fa-check"></i><b>9.4</b> Toy Example</a></li>
+<li class="chapter" data-level="9" data-path="data-import.html"><a href="data-import.html"><i class="fa fa-check"></i><b>9</b> Data Import</a><ul>
+<li class="chapter" data-level="9.1" data-path="data-import.html"><a href="data-import.html#overview"><i class="fa fa-check"></i><b>9.1</b> Overview</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="data-import.html"><a href="data-import.html#what-is-a-csv-file"><i class="fa fa-check"></i><b>9.1.1</b> What is a <code>CSV</code> file?</a></li>
+<li class="chapter" data-level="9.1.2" data-path="data-import.html"><a href="data-import.html#why-are-.csv-files-used"><i class="fa fa-check"></i><b>9.1.2</b> Why are <code>.CSV</code> files used?</a></li>
+<li class="chapter" data-level="9.1.3" data-path="data-import.html"><a href="data-import.html#how-do-i-save-csv-files"><i class="fa fa-check"></i><b>9.1.3</b> How do I save CSV files?</a></li>
+<li class="chapter" data-level="9.1.4" data-path="data-import.html"><a href="data-import.html#what-about-other-types-of-data"><i class="fa fa-check"></i><b>9.1.4</b> What about other types of data?</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="iteration.html"><a href="iteration.html"><i class="fa fa-check"></i><b>10</b> Iteration</a><ul>
-<li class="chapter" data-level="10.1" data-path="iteration.html"><a href="iteration.html#code-duplication"><i class="fa fa-check"></i><b>10.1</b> Code Duplication</a></li>
-<li class="chapter" data-level="10.2" data-path="iteration.html"><a href="iteration.html#vector-vs.-list-in-r"><i class="fa fa-check"></i><b>10.2</b> <code>vector</code> vs. <code>list</code> in <code>R</code></a></li>
-<li class="chapter" data-level="10.3" data-path="iteration.html"><a href="iteration.html#iteration-1"><i class="fa fa-check"></i><b>10.3</b> Iteration</a></li>
-<li class="chapter" data-level="10.4" data-path="iteration.html"><a href="iteration.html#purr"><i class="fa fa-check"></i><b>10.4</b> <code>purr</code></a></li>
-<li class="chapter" data-level="10.5" data-path="iteration.html"><a href="iteration.html#writing-own-functions"><i class="fa fa-check"></i><b>10.5</b> Writing Own Functions</a></li>
+<li class="chapter" data-level="9.2" data-path="data-import.html"><a href="data-import.html#importing-data"><i class="fa fa-check"></i><b>9.2</b> Importing Data</a></li>
+<li class="chapter" data-level="9.3" data-path="data-import.html"><a href="data-import.html#character-encoding"><i class="fa fa-check"></i><b>9.3</b> Character Encoding</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="data-import.html"><a href="data-import.html#problems-with-ascii"><i class="fa fa-check"></i><b>9.3.1</b> Problems with ASCII</a></li>
+<li class="chapter" data-level="9.3.2" data-path="data-import.html"><a href="data-import.html#from-7-bit-to-one-byte-encoding"><i class="fa fa-check"></i><b>9.3.2</b> From 7-bit to One-Byte Encoding</a></li>
+<li class="chapter" data-level="9.3.3" data-path="data-import.html"><a href="data-import.html#problems-with-single-byte-encoding"><i class="fa fa-check"></i><b>9.3.3</b> Problems with Single-Byte Encoding</a></li>
+<li class="chapter" data-level="9.3.4" data-path="data-import.html"><a href="data-import.html#problems-with-multi-byte-encoding"><i class="fa fa-check"></i><b>9.3.4</b> Problems with Multi-byte Encoding</a></li>
+<li class="chapter" data-level="9.3.5" data-path="data-import.html"><a href="data-import.html#unicode-and-utf-8"><i class="fa fa-check"></i><b>9.3.5</b> Unicode and UTF-8</a></li>
+<li class="chapter" data-level="9.3.6" data-path="data-import.html"><a href="data-import.html#suggestions"><i class="fa fa-check"></i><b>9.3.6</b> Suggestions</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html"><i class="fa fa-check"></i><b>11</b> Data Scientist First Step</a><ul>
-<li class="chapter" data-level="11.1" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#nobel-laureates-dataset"><i class="fa fa-check"></i><b>11.1</b> Nobel Laureates Dataset</a></li>
-<li class="chapter" data-level="11.2" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#before-we-start"><i class="fa fa-check"></i><b>11.2</b> Before we start</a></li>
-<li class="chapter" data-level="11.3" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#data-completeness-na"><i class="fa fa-check"></i><b>11.3</b> Data Completeness <code>NA</code></a></li>
-<li class="chapter" data-level="11.4" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#hypotheses"><i class="fa fa-check"></i><b>11.4</b> Hypotheses</a><ul>
-<li class="chapter" data-level="11.4.1" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#how-many-laureates-were-there-in-different-discplines"><i class="fa fa-check"></i><b>11.4.1</b> How many laureates were there in different discplines?</a></li>
-<li class="chapter" data-level="11.4.2" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#chinese-laureates"><i class="fa fa-check"></i><b>11.4.2</b> Chinese Laureates</a></li>
+<li class="chapter" data-level="9.4" data-path="data-import.html"><a href="data-import.html#character-code-point-and-hexadecimal-mode"><i class="fa fa-check"></i><b>9.4</b> Character, Code Point, and Hexadecimal Mode</a></li>
+<li class="chapter" data-level="9.5" data-path="data-import.html"><a href="data-import.html#r-base-functions"><i class="fa fa-check"></i><b>9.5</b> R Base Functions</a><ul>
+<li class="chapter" data-level="9.5.1" data-path="data-import.html"><a href="data-import.html#readlines"><i class="fa fa-check"></i><b>9.5.1</b> <code>readLines()</code></a></li>
+<li class="chapter" data-level="9.5.2" data-path="data-import.html"><a href="data-import.html#writelines"><i class="fa fa-check"></i><b>9.5.2</b> <code>writeLines()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="11.5" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#at-what-age-did-these-people-receive-the-prizes"><i class="fa fa-check"></i><b>11.5</b> At what age did these people receive the prizes?</a></li>
+<li class="chapter" data-level="9.6" data-path="data-import.html"><a href="data-import.html#readr-functions"><i class="fa fa-check"></i><b>9.6</b> <code>readr</code> Functions</a><ul>
+<li class="chapter" data-level="9.6.1" data-path="data-import.html"><a href="data-import.html#readrread_csv"><i class="fa fa-check"></i><b>9.6.1</b> <code>readr::read_csv()</code></a></li>
+<li class="chapter" data-level="9.6.2" data-path="data-import.html"><a href="data-import.html#readrwrite_csv"><i class="fa fa-check"></i><b>9.6.2</b> <code>readr::write_csv()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html"><i class="fa fa-check"></i><b>12</b> Text Analytics: A Start</a><ul>
-<li class="chapter" data-level="12.1" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#installing-quanteda"><i class="fa fa-check"></i><b>12.1</b> Installing <code>quanteda</code></a></li>
-<li class="chapter" data-level="12.2" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#building-a-corpus-from-character-vector"><i class="fa fa-check"></i><b>12.2</b> Building a <code>corpus</code> from character vector</a></li>
-<li class="chapter" data-level="12.3" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyword-in-context-kwic"><i class="fa fa-check"></i><b>12.3</b> Keyword-in-Context (KWIC)</a></li>
-<li class="chapter" data-level="12.4" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#kwic-with-regular-expressions"><i class="fa fa-check"></i><b>12.4</b> KWIC with Regular Expressions</a></li>
-<li class="chapter" data-level="12.5" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#lexical-density-plot"><i class="fa fa-check"></i><b>12.5</b> Lexical Density Plot</a></li>
-<li class="chapter" data-level="12.6" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#document-feature-matrix"><i class="fa fa-check"></i><b>12.6</b> Document-Feature Matrix</a></li>
-<li class="chapter" data-level="12.7" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#feature-selection"><i class="fa fa-check"></i><b>12.7</b> Feature Selection</a></li>
-<li class="chapter" data-level="12.8" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#top-features"><i class="fa fa-check"></i><b>12.8</b> Top Features</a></li>
-<li class="chapter" data-level="12.9" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#wordclouds"><i class="fa fa-check"></i><b>12.9</b> Wordclouds</a></li>
-<li class="chapter" data-level="12.10" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyness-analysis"><i class="fa fa-check"></i><b>12.10</b> Keyness Analysis</a></li>
-<li class="chapter" data-level="12.11" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#flowchart"><i class="fa fa-check"></i><b>12.11</b> Flowchart</a></li>
-<li class="chapter" data-level="12.12" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#exercises"><i class="fa fa-check"></i><b>12.12</b> Exercises</a></li>
+<li class="chapter" data-level="9.7" data-path="data-import.html"><a href="data-import.html#directory-operations"><i class="fa fa-check"></i><b>9.7</b> Directory Operations</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html"><i class="fa fa-check"></i><b>10</b> Conditions and Loops</a><ul>
+<li class="chapter" data-level="10.1" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#if-statements"><i class="fa fa-check"></i><b>10.1</b> <code>if</code> Statements</a></li>
+<li class="chapter" data-level="10.2" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#for"><i class="fa fa-check"></i><b>10.2</b> <code>for</code></a></li>
+<li class="chapter" data-level="10.3" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#while-loop"><i class="fa fa-check"></i><b>10.3</b> <code>while</code> loop</a></li>
+<li class="chapter" data-level="10.4" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#toy-example"><i class="fa fa-check"></i><b>10.4</b> Toy Example</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="iteration.html"><a href="iteration.html"><i class="fa fa-check"></i><b>11</b> Iteration</a><ul>
+<li class="chapter" data-level="11.1" data-path="iteration.html"><a href="iteration.html#code-duplication"><i class="fa fa-check"></i><b>11.1</b> Code Duplication</a></li>
+<li class="chapter" data-level="11.2" data-path="iteration.html"><a href="iteration.html#vector-vs.-list-in-r"><i class="fa fa-check"></i><b>11.2</b> <code>vector</code> vs. <code>list</code> in <code>R</code></a></li>
+<li class="chapter" data-level="11.3" data-path="iteration.html"><a href="iteration.html#iteration-1"><i class="fa fa-check"></i><b>11.3</b> Iteration</a></li>
+<li class="chapter" data-level="11.4" data-path="iteration.html"><a href="iteration.html#purr"><i class="fa fa-check"></i><b>11.4</b> <code>purr</code></a></li>
+<li class="chapter" data-level="11.5" data-path="iteration.html"><a href="iteration.html#writing-own-functions"><i class="fa fa-check"></i><b>11.5</b> Writing Own Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html"><i class="fa fa-check"></i><b>12</b> Data Scientist First Step</a><ul>
+<li class="chapter" data-level="12.1" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#nobel-laureates-dataset"><i class="fa fa-check"></i><b>12.1</b> Nobel Laureates Dataset</a></li>
+<li class="chapter" data-level="12.2" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#before-we-start"><i class="fa fa-check"></i><b>12.2</b> Before we start</a></li>
+<li class="chapter" data-level="12.3" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#data-completeness-na"><i class="fa fa-check"></i><b>12.3</b> Data Completeness <code>NA</code></a></li>
+<li class="chapter" data-level="12.4" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#hypotheses"><i class="fa fa-check"></i><b>12.4</b> Hypotheses</a><ul>
+<li class="chapter" data-level="12.4.1" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#how-many-laureates-were-there-in-different-discplines"><i class="fa fa-check"></i><b>12.4.1</b> How many laureates were there in different discplines?</a></li>
+<li class="chapter" data-level="12.4.2" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#chinese-laureates"><i class="fa fa-check"></i><b>12.4.2</b> Chinese Laureates</a></li>
+</ul></li>
+<li class="chapter" data-level="12.5" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#at-what-age-did-these-people-receive-the-prizes"><i class="fa fa-check"></i><b>12.5</b> At what age did these people receive the prizes?</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html"><i class="fa fa-check"></i><b>13</b> Text Analytics: A Start</a><ul>
+<li class="chapter" data-level="13.1" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#installing-quanteda"><i class="fa fa-check"></i><b>13.1</b> Installing <code>quanteda</code></a></li>
+<li class="chapter" data-level="13.2" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#building-a-corpus-from-character-vector"><i class="fa fa-check"></i><b>13.2</b> Building a <code>corpus</code> from character vector</a></li>
+<li class="chapter" data-level="13.3" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyword-in-context-kwic"><i class="fa fa-check"></i><b>13.3</b> Keyword-in-Context (KWIC)</a></li>
+<li class="chapter" data-level="13.4" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#kwic-with-regular-expressions"><i class="fa fa-check"></i><b>13.4</b> KWIC with Regular Expressions</a></li>
+<li class="chapter" data-level="13.5" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#lexical-density-plot"><i class="fa fa-check"></i><b>13.5</b> Lexical Density Plot</a></li>
+<li class="chapter" data-level="13.6" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#document-feature-matrix"><i class="fa fa-check"></i><b>13.6</b> Document-Feature Matrix</a></li>
+<li class="chapter" data-level="13.7" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#feature-selection"><i class="fa fa-check"></i><b>13.7</b> Feature Selection</a></li>
+<li class="chapter" data-level="13.8" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#top-features"><i class="fa fa-check"></i><b>13.8</b> Top Features</a></li>
+<li class="chapter" data-level="13.9" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#wordclouds"><i class="fa fa-check"></i><b>13.9</b> Wordclouds</a></li>
+<li class="chapter" data-level="13.10" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyness-analysis"><i class="fa fa-check"></i><b>13.10</b> Keyness Analysis</a></li>
+<li class="chapter" data-level="13.11" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#flowchart"><i class="fa fa-check"></i><b>13.11</b> Flowchart</a></li>
+<li class="chapter" data-level="13.12" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#exercises"><i class="fa fa-check"></i><b>13.12</b> Exercises</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="the-shell.html"><a href="the-shell.html"><i class="fa fa-check"></i><b>A</b> The Shell</a><ul>
@@ -335,15 +358,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="conditions-and-loops" class="section level1">
-<h1><span class="header-section-number">Chapter 9</span> Conditions and Loops</h1>
+<h1><span class="header-section-number">Chapter 10</span> Conditions and Loops</h1>
 <p>When you start to write more sophisticated programs with R, you will very often need to control the flow and order the executation in your code. You will usually run into two types of scenarios:</p>
 <ol style="list-style-type: decimal">
 <li>Make the execution of a particular code chunk dependent on a <em>condition</em></li>
 <li>Repeat a particular code chunk a certain number of times, which is often referred to as <em>loops</em>.</li>
 </ol>
-<p>In this Chapter, we will explore these core programming techniques using <code>if-else</code> statements, <code>for</code> and <code>while</code> loops. However, in Chapter <a href="iteration.html#iteration">10</a>, we will talk about <em>loops</em> more and point you to the idiomatic ways of dealing with loops in R.</p>
+<p>In this Chapter, we will explore these core programming techniques using <code>if-else</code> statements, <code>for</code> and <code>while</code> loops. However, in Chapter <a href="iteration.html#iteration">11</a>, we will talk about <em>loops</em> more and point you to the idiomatic ways of dealing with loops in R.</p>
 <div id="if-statements" class="section level2">
-<h2><span class="header-section-number">9.1</span> <code>if</code> Statements</h2>
+<h2><span class="header-section-number">10.1</span> <code>if</code> Statements</h2>
 <p>The main purpose of <code>if</code> is to control precisely which operations are carried out in a given code chunk. A <code>if</code> statement runs a code chunk only if a certain condition is true. This conditional expression allows R to respond differently depending on whether the condition is TRUE or FALSE. The basic template of <code>if</code> is as follows:</p>
 <pre><code>if(CONDITION IS TRUE){
   DO THIS CODE CHUNK 1
@@ -352,44 +375,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 }</code></pre>
 <p>The <em>condition</em> is palced in parentheses after <code>if</code>. The <em>condition</em> must be an expression that returns only a single logical value (TRUE or FALSE). If it is TRUE, the code chunk 1 in the braces will be executed; if the condition is not satisfied, the code chunk 2 in the braces after <code>else</code> will be executed.</p>
 <p>Let’s create a simple password checker. Imagine that your system password is stored on the server. You can only get into the system if you enter the correct password. For every password you enter, the system gatekeeper will check if your input password matches the one stored on the server. If they match, you will be allowed to get through.</p>
-<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb343-1" data-line-number="1">input &lt;-<span class="st"> </span><span class="dv">113</span></a>
-<a class="sourceLine" id="cb343-2" data-line-number="2"><span class="cf">if</span>(input <span class="op">==</span><span class="st"> </span><span class="dv">987</span>){</a>
-<a class="sourceLine" id="cb343-3" data-line-number="3">  <span class="kw">writeLines</span>(<span class="st">&quot;Congratulations! Now you may get in!&quot;</span>)</a>
-<a class="sourceLine" id="cb343-4" data-line-number="4">} <span class="cf">else</span>{</a>
-<a class="sourceLine" id="cb343-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="st">&quot;Sorry! Wrong password.&quot;</span>)</a>
-<a class="sourceLine" id="cb343-6" data-line-number="6">}</a></code></pre></div>
+<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb383-1" data-line-number="1">input &lt;-<span class="st"> </span><span class="dv">113</span></a>
+<a class="sourceLine" id="cb383-2" data-line-number="2"><span class="cf">if</span>(input <span class="op">==</span><span class="st"> </span><span class="dv">987</span>){</a>
+<a class="sourceLine" id="cb383-3" data-line-number="3">  <span class="kw">writeLines</span>(<span class="st">&quot;Congratulations! Now you may get in!&quot;</span>)</a>
+<a class="sourceLine" id="cb383-4" data-line-number="4">} <span class="cf">else</span>{</a>
+<a class="sourceLine" id="cb383-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="st">&quot;Sorry! Wrong password.&quot;</span>)</a>
+<a class="sourceLine" id="cb383-6" data-line-number="6">}</a></code></pre></div>
 <pre><code>## Sorry! Wrong password.</code></pre>
 <p>Now we can read the input directly from the user’s input in the R console:</p>
-<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb345-1" data-line-number="1">input &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt=</span><span class="st">&quot;Please enter your password:&quot;</span>)</a>
-<a class="sourceLine" id="cb345-2" data-line-number="2"><span class="cf">if</span>(input <span class="op">==</span><span class="st"> </span><span class="dv">987</span>){</a>
-<a class="sourceLine" id="cb345-3" data-line-number="3">  <span class="kw">writeLines</span>(<span class="st">&quot;Congratulations! Now you may get in!&quot;</span>)</a>
-<a class="sourceLine" id="cb345-4" data-line-number="4">} <span class="cf">else</span>{</a>
-<a class="sourceLine" id="cb345-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="st">&quot;Sorry! Wrong password.&quot;</span>)</a>
-<a class="sourceLine" id="cb345-6" data-line-number="6">}</a></code></pre></div>
+<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb385-1" data-line-number="1">input &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt=</span><span class="st">&quot;Please enter your password:&quot;</span>)</a>
+<a class="sourceLine" id="cb385-2" data-line-number="2"><span class="cf">if</span>(input <span class="op">==</span><span class="st"> </span><span class="dv">987</span>){</a>
+<a class="sourceLine" id="cb385-3" data-line-number="3">  <span class="kw">writeLines</span>(<span class="st">&quot;Congratulations! Now you may get in!&quot;</span>)</a>
+<a class="sourceLine" id="cb385-4" data-line-number="4">} <span class="cf">else</span>{</a>
+<a class="sourceLine" id="cb385-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="st">&quot;Sorry! Wrong password.&quot;</span>)</a>
+<a class="sourceLine" id="cb385-6" data-line-number="6">}</a></code></pre></div>
 </div>
 <div id="for" class="section level2">
-<h2><span class="header-section-number">9.2</span> <code>for</code></h2>
+<h2><span class="header-section-number">10.2</span> <code>for</code></h2>
 <p>The <code>for</code> loop statment is to repeat a code chunk, often while incrementing an index or counter. The most frequent scenario is to repeat a code chunk through a vector/list, element by element, or through a data frame row by row (or column by column). The basic <code>for</code> loop template is as follows:</p>
 <pre><code>for(LOOP_INDEX in LOOP_VECTOR){
   DO THIS CODE CHUNK
 }</code></pre>
 <p>The <em>LOOP_INDEX</em> is a placeholder that represents an element in the <em>LOOP_VECTOR</em>. When the loop begins, the <em>LOOP_INDEX</em> starts off as the first element in the vector. When the loop reaches the end of the brace, the <em>LOOP_INDEX</em> is incremented, taking on the next element in the vector. This process continues until the loop reaches the final element of the <em>LOOP_VECTOR</em>. At this point, the code chunk is executed for the last time, and the loop exits.</p>
 <p>For example, if we have a character vector with a few words in it. We can use a <code>for</code> loop to get the number of characters for each element in the vector.</p>
-<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb347-1" data-line-number="1">word_vec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>,<span class="st">&quot;banana&quot;</span>,<span class="st">&quot;watermelon&quot;</span>,<span class="st">&quot;papaya&quot;</span>)</a>
-<a class="sourceLine" id="cb347-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb347-3" data-line-number="3"><span class="cf">for</span>(w <span class="cf">in</span> word_vec){</a>
-<a class="sourceLine" id="cb347-4" data-line-number="4">  word_nchar &lt;-<span class="st"> </span><span class="kw">nchar</span>(w)</a>
-<a class="sourceLine" id="cb347-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="kw">as.character</span>(word_nchar))</a>
-<a class="sourceLine" id="cb347-6" data-line-number="6">}</a></code></pre></div>
+<div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb387-1" data-line-number="1">word_vec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>,<span class="st">&quot;banana&quot;</span>,<span class="st">&quot;watermelon&quot;</span>,<span class="st">&quot;papaya&quot;</span>)</a>
+<a class="sourceLine" id="cb387-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb387-3" data-line-number="3"><span class="cf">for</span>(w <span class="cf">in</span> word_vec){</a>
+<a class="sourceLine" id="cb387-4" data-line-number="4">  word_nchar &lt;-<span class="st"> </span><span class="kw">nchar</span>(w)</a>
+<a class="sourceLine" id="cb387-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="kw">as.character</span>(word_nchar))</a>
+<a class="sourceLine" id="cb387-6" data-line-number="6">}</a></code></pre></div>
 <pre><code>## 5
 ## 6
 ## 10
 ## 6</code></pre>
 <p>For the above example, there is another way to write the <code>for</code> loop:</p>
-<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb349-1" data-line-number="1"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(word_vec)){</a>
-<a class="sourceLine" id="cb349-2" data-line-number="2">  word_nchar &lt;-<span class="st"> </span><span class="kw">nchar</span>(word_vec[i])</a>
-<a class="sourceLine" id="cb349-3" data-line-number="3">  <span class="kw">writeLines</span>(<span class="kw">as.character</span>(word_nchar))</a>
-<a class="sourceLine" id="cb349-4" data-line-number="4">}</a></code></pre></div>
+<div class="sourceCode" id="cb389"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb389-1" data-line-number="1"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(word_vec)){</a>
+<a class="sourceLine" id="cb389-2" data-line-number="2">  word_nchar &lt;-<span class="st"> </span><span class="kw">nchar</span>(word_vec[i])</a>
+<a class="sourceLine" id="cb389-3" data-line-number="3">  <span class="kw">writeLines</span>(<span class="kw">as.character</span>(word_nchar))</a>
+<a class="sourceLine" id="cb389-4" data-line-number="4">}</a></code></pre></div>
 <pre><code>## 5
 ## 6
 ## 10
@@ -397,7 +420,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>In our first example, the <em>LOOP_INDEX</em> directly represent elements in the <em>LOOP_VECTOR</em>. In our second example, the <em>LOOP_INDEX</em> represents indexs of the vector.</p>
 </div>
 <div id="while-loop" class="section level2">
-<h2><span class="header-section-number">9.3</span> <code>while</code> loop</h2>
+<h2><span class="header-section-number">10.3</span> <code>while</code> loop</h2>
 <p>There is another type of loop. Unlike the <code>for</code> loop, which repeats a code chunk by going through every element in a vector, the <code>while</code> loop repeats a code chunk UNTIL a specific condition evalutes to FALSE. The basic template is as follows:</p>
 <pre><code>while(LOOP_CONDITION){
   DO THIS CODE CHUNK (UNTIL THE LOOP_CONDITION BECOMES FALSE)
@@ -405,14 +428,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Upon the start of a <code>while</code> loop, the <em>LOOP_CONDITION</em> is evaluated. If the condition is TRUE, the braced code chunk is executed line by line till the end of the chunk. At this point, the <em>LOOP_CONDITION</em> will be checked again. The loop terminates immediately when the condition is evaluated to be FALSE.</p>
 <p>Based on the template above, you should infer that the code chunk executed must somehow cause the loop to exit, and very often will change the value of certain objects, which would eventaully lead to the change of the <em>LOOP_CONDITION</em>. If nothing ever changes the <em>LOOP_CONDITION</em>, R will crash due to the infinite loops.</p>
 <p>Let’s come back to our password checker. This time let’s create a dumb checker. When you give a wrong password which is smaller than your true answer, it will automatically approach the right asnwer for you (and of course no real-world application would do that!)</p>
-<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb352-1" data-line-number="1">ans &lt;-<span class="st"> </span><span class="dv">87</span></a>
-<a class="sourceLine" id="cb352-2" data-line-number="2">guess &lt;-<span class="st"> </span><span class="dv">83</span></a>
-<a class="sourceLine" id="cb352-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb352-4" data-line-number="4"><span class="cf">while</span>(guess <span class="op">!=</span><span class="st"> </span>ans){</a>
-<a class="sourceLine" id="cb352-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="st">&quot;Your `guess` is too small! The system will take care for you!&quot;</span>)</a>
-<a class="sourceLine" id="cb352-6" data-line-number="6">  guess &lt;-<span class="st"> </span>guess <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb352-7" data-line-number="7">  <span class="kw">cat</span>(<span class="st">&quot;Now the system is adjusting your `guess` to &quot;</span>, guess, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</a>
-<a class="sourceLine" id="cb352-8" data-line-number="8">}</a></code></pre></div>
+<div class="sourceCode" id="cb392"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb392-1" data-line-number="1">ans &lt;-<span class="st"> </span><span class="dv">87</span></a>
+<a class="sourceLine" id="cb392-2" data-line-number="2">guess &lt;-<span class="st"> </span><span class="dv">83</span></a>
+<a class="sourceLine" id="cb392-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb392-4" data-line-number="4"><span class="cf">while</span>(guess <span class="op">!=</span><span class="st"> </span>ans){</a>
+<a class="sourceLine" id="cb392-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="st">&quot;Your `guess` is too small! The system will take care for you!&quot;</span>)</a>
+<a class="sourceLine" id="cb392-6" data-line-number="6">  guess &lt;-<span class="st"> </span>guess <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb392-7" data-line-number="7">  <span class="kw">cat</span>(<span class="st">&quot;Now the system is adjusting your `guess` to &quot;</span>, guess, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</a>
+<a class="sourceLine" id="cb392-8" data-line-number="8">}</a></code></pre></div>
 <pre><code>## Your `guess` is too small! The system will take care for you!
 ## Now the system is adjusting your `guess` to  84 
 ## Your `guess` is too small! The system will take care for you!
@@ -423,21 +446,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Now the system is adjusting your `guess` to  87</code></pre>
 </div>
 <div id="toy-example" class="section level2">
-<h2><span class="header-section-number">9.4</span> Toy Example</h2>
+<h2><span class="header-section-number">10.4</span> Toy Example</h2>
 <p>Now we are playing the Guess Game. The game is as follows:</p>
 <p>I pick a number from 1 to 100. You have to guess which number I picked. Every time you guess wrong, I’ll tell you whether the number is higher or lower.</p>
-<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb354-1" data-line-number="1">ans &lt;-<span class="st"> </span><span class="dv">18</span></a>
-<a class="sourceLine" id="cb354-2" data-line-number="2">guess &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt =</span> <span class="st">&quot;Please guess my number(0~100):&quot;</span>)</a>
-<a class="sourceLine" id="cb354-3" data-line-number="3"><span class="cf">while</span>(guess <span class="op">!=</span><span class="st"> </span>ans){</a>
-<a class="sourceLine" id="cb354-4" data-line-number="4">  <span class="cf">if</span>(guess <span class="op">&lt;</span><span class="st"> </span>ans){</a>
-<a class="sourceLine" id="cb354-5" data-line-number="5">    <span class="kw">writeLines</span>(<span class="st">&quot;The asnwer is higher.&quot;</span>)</a>
-<a class="sourceLine" id="cb354-6" data-line-number="6">    guess &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt =</span> <span class="st">&quot;Please guess my number(0~100):&quot;</span>)    </a>
-<a class="sourceLine" id="cb354-7" data-line-number="7">  }<span class="cf">else</span>{</a>
-<a class="sourceLine" id="cb354-8" data-line-number="8">    <span class="kw">writeLines</span>(<span class="st">&quot;The asnwer is lower&quot;</span>)</a>
-<a class="sourceLine" id="cb354-9" data-line-number="9">    guess &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt =</span> <span class="st">&quot;Please guess my number(0~100):&quot;</span>)</a>
-<a class="sourceLine" id="cb354-10" data-line-number="10">  }</a>
-<a class="sourceLine" id="cb354-11" data-line-number="11">}</a>
-<a class="sourceLine" id="cb354-12" data-line-number="12"><span class="kw">writeLines</span>(<span class="st">&quot;Correct!&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb394-1" data-line-number="1">ans &lt;-<span class="st"> </span><span class="dv">18</span></a>
+<a class="sourceLine" id="cb394-2" data-line-number="2">guess &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt =</span> <span class="st">&quot;Please guess my number(0~100):&quot;</span>)</a>
+<a class="sourceLine" id="cb394-3" data-line-number="3"><span class="cf">while</span>(guess <span class="op">!=</span><span class="st"> </span>ans){</a>
+<a class="sourceLine" id="cb394-4" data-line-number="4">  <span class="cf">if</span>(guess <span class="op">&lt;</span><span class="st"> </span>ans){</a>
+<a class="sourceLine" id="cb394-5" data-line-number="5">    <span class="kw">writeLines</span>(<span class="st">&quot;The asnwer is higher.&quot;</span>)</a>
+<a class="sourceLine" id="cb394-6" data-line-number="6">    guess &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt =</span> <span class="st">&quot;Please guess my number(0~100):&quot;</span>)    </a>
+<a class="sourceLine" id="cb394-7" data-line-number="7">  }<span class="cf">else</span>{</a>
+<a class="sourceLine" id="cb394-8" data-line-number="8">    <span class="kw">writeLines</span>(<span class="st">&quot;The asnwer is lower&quot;</span>)</a>
+<a class="sourceLine" id="cb394-9" data-line-number="9">    guess &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt =</span> <span class="st">&quot;Please guess my number(0~100):&quot;</span>)</a>
+<a class="sourceLine" id="cb394-10" data-line-number="10">  }</a>
+<a class="sourceLine" id="cb394-11" data-line-number="11">}</a>
+<a class="sourceLine" id="cb394-12" data-line-number="12"><span class="kw">writeLines</span>(<span class="st">&quot;Correct!&quot;</span>)</a></code></pre></div>
 
 </div>
 </div>
@@ -474,7 +497,7 @@ s.setAttribute('data-timestamp', +new Date());
           </div>
         </div>
       </div>
-<a href="string-manipulation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-import.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="iteration.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
