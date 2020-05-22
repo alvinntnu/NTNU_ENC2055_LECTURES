@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2020-05-22" />
+<meta name="date" content="2020-05-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -467,8 +467,8 @@ Figure 8.3: Taken from RegExplain Github Page
 <p>To start with, in <code>stringr</code>, there is a very useful function, <code>str_view(STRING, PATTERN)</code>, which can show us the match of the pattern in the string in a visually intuitive way:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>)</a>
 <a class="sourceLine" id="cb13-2" data-line-number="2"><span class="kw">str_view</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;an&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-8ebdc74b7a2952439452" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8ebdc74b7a2952439452">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>b<span class='match'>an<\/span>ana<\/li>\n  <li>pear<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-c457c278e91f6a72148a" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c457c278e91f6a72148a">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>b<span class='match'>an<\/span>ana<\/li>\n  <li>pear<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>For basic syntax of regular expressions, I will use this <code>str_view()</code> to show you how the regular pattern works in string-matching.</p>
 <p>You can also use <code>RegExplain</code> addin to test your regular expressions.</p>
 <p><img src="images/regex-demo.gif" /><!-- --></p>
@@ -479,16 +479,16 @@ Figure 8.3: Taken from RegExplain Github Page
 <p>In RegEx, <code>.</code> is a special character, referring to any character:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>)</a>
 <a class="sourceLine" id="cb14-2" data-line-number="2"><span class="kw">str_view</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;.a.&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-7b30cfa4f9b809c3a6f2" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-7b30cfa4f9b809c3a6f2">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li><span class='match'>ban<\/span>ana<\/li>\n  <li>p<span class='match'>ear<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-22138c14ca653d2636ff" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-22138c14ca653d2636ff">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li><span class='match'>ban<\/span>ana<\/li>\n  <li>p<span class='match'>ear<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>But what if you really want to match a period <code>.</code> symbol literally in your string?</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>,<span class="st">&quot;pear&quot;</span>, <span class="st">&quot;orange. And&quot;</span>)</a>
 <a class="sourceLine" id="cb15-2" data-line-number="2"><span class="kw">str_view</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;.&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-e1e7d95c678a29901e37" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e1e7d95c678a29901e37">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span>pple<\/li>\n  <li><span class='match'>b<\/span>anana<\/li>\n  <li><span class='match'>p<\/span>ear<\/li>\n  <li><span class='match'>o<\/span>range. And<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-1bc2921d61883f523067" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1bc2921d61883f523067">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span>pple<\/li>\n  <li><span class='match'>b<\/span>anana<\/li>\n  <li><span class='match'>p<\/span>ear<\/li>\n  <li><span class='match'>o<\/span>range. And<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="kw">str_view</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-e1fca708bb69731e1a80" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e1fca708bb69731e1a80">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>banana<\/li>\n  <li>pear<\/li>\n  <li>orange<span class='match'>.<\/span> And<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-535434dd7af6bf01a2fa" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-535434dd7af6bf01a2fa">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>banana<\/li>\n  <li>pear<\/li>\n  <li>orange<span class='match'>.<\/span> And<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>This leads us to the notion of <strong>escaping</strong> character <code>\</code>. In R, <code>\</code> is used if you want to tell R that the metacharacter after <code>\</code> should be treated literally, not metaphorically as a metacharacter.</p>
 <p>But why two slashes <code>\\</code>? It’s simple: because <code>\</code> itself is a metacharacter in R as well. We use it to escape quotes like <code>&quot;</code> and <code>'</code>.</p>
 <p>Therefore, the first backslash is needed in order to tell <strong>R engine</strong> that the following character (i.e., the second slash) should be taken literally; the second backslash is needed in order to tell <strong>RegEx engine</strong> that the following character (i.e., <code>.</code>) should be taken literally.</p>
@@ -502,19 +502,19 @@ Figure 8.3: Taken from RegExplain Github Page
 </ul>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>)</a>
 <a class="sourceLine" id="cb17-2" data-line-number="2"><span class="kw">str_view</span>(x, <span class="st">&quot;^a&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-3c0269fb5acc3ecd05e4" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3c0269fb5acc3ecd05e4">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span>pple<\/li>\n  <li>banana<\/li>\n  <li>pear<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-787ad0df564b86aa560b" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-787ad0df564b86aa560b">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span>pple<\/li>\n  <li>banana<\/li>\n  <li>pear<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><code>$</code>: The end of the string</li>
 </ul>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>)</a>
 <a class="sourceLine" id="cb18-2" data-line-number="2"><span class="kw">str_view</span>(x, <span class="st">&quot;a$&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-85460e7f968d3c47fd01" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-85460e7f968d3c47fd01">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>banan<span class='match'>a<\/span><\/li>\n  <li>pear<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-ba0112d2eca18d861d48" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ba0112d2eca18d861d48">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>banan<span class='match'>a<\/span><\/li>\n  <li>pear<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple pie&quot;</span>, <span class="st">&quot;apple&quot;</span>, <span class="st">&quot;apple cake&quot;</span>)</a>
 <a class="sourceLine" id="cb19-2" data-line-number="2"><span class="kw">str_view</span>(x, <span class="st">&quot;^apple$&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-f1110e5d185dcc7bbe5c" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-f1110e5d185dcc7bbe5c">{"x":{"html":"<ul>\n  <li>apple pie<\/li>\n  <li><span class='match'>apple<\/span><\/li>\n  <li>apple cake<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-27b298b8c5c08a26c599" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-27b298b8c5c08a26c599">{"x":{"html":"<ul>\n  <li>apple pie<\/li>\n  <li><span class='match'>apple<\/span><\/li>\n  <li>apple cake<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <div class="info">
 <p>
 The anchors are evaluated according to the base unit you are matching. In our previous examples, the RegEx pattern is applied to find a match in each element of the vector. The vector includes words. Therefore, the <code>^</code> indicates a word-initial position; <code>$</code> indicates a word-final position.
@@ -527,11 +527,11 @@ If you have a vector of sentences, the <code>^</code> would indicate a sentence-
 <a class="sourceLine" id="cb20-2" data-line-number="2">       <span class="st">&quot;banana is better than apple&quot;</span>, </a>
 <a class="sourceLine" id="cb20-3" data-line-number="3">       <span class="st">&quot;an apple a day keeps the doctor away&quot;</span>)</a>
 <a class="sourceLine" id="cb20-4" data-line-number="4"><span class="kw">str_view</span>(x, <span class="st">&quot;^apple&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-cc6c9ead47cef0bcc209" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-cc6c9ead47cef0bcc209">{"x":{"html":"<ul>\n  <li><span class='match'>apple<\/span> is good<\/li>\n  <li>banana is better than apple<\/li>\n  <li>an apple a day keeps the doctor away<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-35d6fce4dfd501786de5" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-35d6fce4dfd501786de5">{"x":{"html":"<ul>\n  <li><span class='match'>apple<\/span> is good<\/li>\n  <li>banana is better than apple<\/li>\n  <li>an apple a day keeps the doctor away<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="kw">str_view</span>(x, <span class="st">&quot;apple$&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-ec6ac5a05fca97f0cb7a" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ec6ac5a05fca97f0cb7a">{"x":{"html":"<ul>\n  <li>apple is good<\/li>\n  <li>banana is better than <span class='match'>apple<\/span><\/li>\n  <li>an apple a day keeps the doctor away<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-e3fac790dcdafbab70cb" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e3fac790dcdafbab70cb">{"x":{"html":"<ul>\n  <li>apple is good<\/li>\n  <li>banana is better than <span class='match'>apple<\/span><\/li>\n  <li>an apple a day keeps the doctor away<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="character-set" class="section level3">
 <h3><span class="header-section-number">8.4.3</span> Character Set</h3>
@@ -544,18 +544,18 @@ If you have a vector of sentences, the <code>^</code> would indicate a sentence-
 <p><img src="images/regex-char-class.png" width="50%" /><img src="images/regex-char.png" width="50%" /></p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1">x&lt;-<span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>,<span class="st">&quot;apple123&quot;</span>,<span class="st">&quot;banana1&quot;</span>)</a>
 <a class="sourceLine" id="cb22-2" data-line-number="2"><span class="kw">str_view</span>(<span class="dt">string =</span> x , <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">d&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-ed092eacc68d11d75a1c" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ed092eacc68d11d75a1c">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apple<span class='match'>1<\/span>23<\/li>\n  <li>banana<span class='match'>1<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-4a4b464d6533c02191df" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4a4b464d6533c02191df">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apple<span class='match'>1<\/span>23<\/li>\n  <li>banana<span class='match'>1<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>In pattern-matching, very often you will have cases where one base unit may have <em>more than one</em> match. In the previous example, <code>str_view()</code> identifies only the <em>first</em> match of each base unit from <code>x</code>.</p>
 <p>If you need to identify all the matches from each base unit, you need to use <code>str_view_all()</code>.</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;aeiouAEIOU1234_ .</span><span class="ch">\\</span><span class="st">$%-*()&quot;</span>)</a>
 <a class="sourceLine" id="cb23-2" data-line-number="2"><span class="kw">str_view_all</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">w&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-ef390fb1d918bb2e852c" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ef390fb1d918bb2e852c">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span><span class='match'>e<\/span><span class='match'>i<\/span><span class='match'>o<\/span><span class='match'>u<\/span><span class='match'>A<\/span><span class='match'>E<\/span><span class='match'>I<\/span><span class='match'>O<\/span><span class='match'>U<\/span><span class='match'>1<\/span><span class='match'>2<\/span><span class='match'>3<\/span><span class='match'>4<\/span><span class='match'>_<\/span> .\\$%-*()<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-fa2cb79ddfa35f06141d" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fa2cb79ddfa35f06141d">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span><span class='match'>e<\/span><span class='match'>i<\/span><span class='match'>o<\/span><span class='match'>u<\/span><span class='match'>A<\/span><span class='match'>E<\/span><span class='match'>I<\/span><span class='match'>O<\/span><span class='match'>U<\/span><span class='match'>1<\/span><span class='match'>2<\/span><span class='match'>3<\/span><span class='match'>4<\/span><span class='match'>_<\/span> .\\$%-*()<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="co">#compare</span></a>
 <a class="sourceLine" id="cb24-2" data-line-number="2"><span class="kw">str_view_all</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;.&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-f6db62e3d9de3254c5ac" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-f6db62e3d9de3254c5ac">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span><span class='match'>e<\/span><span class='match'>i<\/span><span class='match'>o<\/span><span class='match'>u<\/span><span class='match'>A<\/span><span class='match'>E<\/span><span class='match'>I<\/span><span class='match'>O<\/span><span class='match'>U<\/span><span class='match'>1<\/span><span class='match'>2<\/span><span class='match'>3<\/span><span class='match'>4<\/span><span class='match'>_<\/span><span class='match'> <\/span><span class='match'>.<\/span><span class='match'>\\<\/span><span class='match'>$<\/span><span class='match'>%<\/span><span class='match'>-<\/span><span class='match'>*<\/span><span class='match'>(<\/span><span class='match'>)<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-c4e36afa5798f6edd2c2" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c4e36afa5798f6edd2c2">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span><span class='match'>e<\/span><span class='match'>i<\/span><span class='match'>o<\/span><span class='match'>u<\/span><span class='match'>A<\/span><span class='match'>E<\/span><span class='match'>I<\/span><span class='match'>O<\/span><span class='match'>U<\/span><span class='match'>1<\/span><span class='match'>2<\/span><span class='match'>3<\/span><span class='match'>4<\/span><span class='match'>_<\/span><span class='match'> <\/span><span class='match'>.<\/span><span class='match'>\\<\/span><span class='match'>$<\/span><span class='match'>%<\/span><span class='match'>-<\/span><span class='match'>*<\/span><span class='match'>(<\/span><span class='match'>)<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>The difference of finding-the-first-match (<code>str_view()</code>) vs. finding-all-the-matches (<code>str_view_all()</code>) will turn out to be very important in practical tasks. Please bear this in mind.</p>
 <div class="info">
 <p>
@@ -573,8 +573,8 @@ In the above comparison of the two meta-character sets, <code>.</code> and <code
 </ul>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;grey&quot;</span>, <span class="st">&quot;gray&quot;</span>)</a>
 <a class="sourceLine" id="cb25-2" data-line-number="2"><span class="kw">str_view</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;gr[ea]y&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-5d889357c5c4ff288b28" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-5d889357c5c4ff288b28">{"x":{"html":"<ul>\n  <li><span class='match'>grey<\/span><\/li>\n  <li><span class='match'>gray<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-a0dc2ef03b0b86c79f73" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a0dc2ef03b0b86c79f73">{"x":{"html":"<ul>\n  <li><span class='match'>grey<\/span><\/li>\n  <li><span class='match'>gray<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <div class="info">
 <p>
 If you know very well which characters you are to match/find, use <strong>inclusive</strong> character sets, i.e., <code>[…]</code>. If you know very well which characters you do NOT like to match/find, use <strong>exclusive</strong> character sets, i.e., <code>[^...]</code>.
@@ -583,8 +583,8 @@ If you know very well which characters you are to match/find, use <strong>inclus
 <p>For example, what if we would like to find all non-vowel letters in the words? Instead of coming up with an inclusive character set <code>[...]</code>, which include all possible consonant letters, it would be more efficient if you create an exclusive character set, <code>[^aeiou]</code>, which suggests that you need any characters that do not belong to vowels.</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;grey&quot;</span>, <span class="st">&quot;gray&quot;</span>)</a>
 <a class="sourceLine" id="cb26-2" data-line-number="2"><span class="kw">str_view_all</span>(<span class="dt">string =</span> x, <span class="dt">pattern =</span> <span class="st">&quot;[^aeiou]&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-738d352ecb5af378cab7" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-738d352ecb5af378cab7">{"x":{"html":"<ul>\n  <li><span class='match'>g<\/span><span class='match'>r<\/span>e<span class='match'>y<\/span><\/li>\n  <li><span class='match'>g<\/span><span class='match'>r<\/span>a<span class='match'>y<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-9fee36a0d50a2ebb4e65" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9fee36a0d50a2ebb4e65">{"x":{"html":"<ul>\n  <li><span class='match'>g<\/span><span class='match'>r<\/span>e<span class='match'>y<\/span><\/li>\n  <li><span class='match'>g<\/span><span class='match'>r<\/span>a<span class='match'>y<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="quantifiers" class="section level3">
 <h3><span class="header-section-number">8.4.5</span> Quantifiers</h3>
@@ -596,11 +596,11 @@ If you know very well which characters you are to match/find, use <strong>inclus
 </ul>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1">x &lt;-<span class="st"> &quot;Roman numerals: MDCCCLXXXVIII&quot;</span></a>
 <a class="sourceLine" id="cb27-2" data-line-number="2"><span class="kw">str_view</span>(x, <span class="st">&quot;CC?&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-690f2a3f77eb612fb0ae" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-690f2a3f77eb612fb0ae">{"x":{"html":"<ul>\n  <li>Roman numerals: MD<span class='match'>CC<\/span>CLXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-c1194c0bd7be7a766eb4" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c1194c0bd7be7a766eb4">{"x":{"html":"<ul>\n  <li>Roman numerals: MD<span class='match'>CC<\/span>CLXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">str_view</span>(x, <span class="st">&quot;X+&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-fe5c0d9ef6ef17e750ee" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-fe5c0d9ef6ef17e750ee">{"x":{"html":"<ul>\n  <li>Roman numerals: MDCCCL<span class='match'>XXX<\/span>VIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-0fc0df23e4303bb47134" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0fc0df23e4303bb47134">{"x":{"html":"<ul>\n  <li>Roman numerals: MDCCCL<span class='match'>XXX<\/span>VIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>We can specify an exact range of number of ocurrences using the curly brackets <code>{ , }</code>:</p>
 <ul>
 <li><code>{n}</code>: exactly <em>n</em> occurrences</li>
@@ -610,14 +610,14 @@ If you know very well which characters you are to match/find, use <strong>inclus
 </ul>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1">x &lt;-<span class="st"> &quot;Roman numerals: MDCCCLXXXVIII&quot;</span></a>
 <a class="sourceLine" id="cb29-2" data-line-number="2"><span class="kw">str_view</span>(x, <span class="st">&quot;C{2}&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-abb2d2e00f8946654521" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-abb2d2e00f8946654521">{"x":{"html":"<ul>\n  <li>Roman numerals: MD<span class='match'>CC<\/span>CLXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-c5a6a4f4f7d0e8ac322a" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c5a6a4f4f7d0e8ac322a">{"x":{"html":"<ul>\n  <li>Roman numerals: MD<span class='match'>CC<\/span>CLXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="kw">str_view</span>(x, <span class="st">&quot;C{2,}&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-ba3b97920a4dd3b25f71" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ba3b97920a4dd3b25f71">{"x":{"html":"<ul>\n  <li>Roman numerals: MD<span class='match'>CCC<\/span>LXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-ff5d16a793b391b62422" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ff5d16a793b391b62422">{"x":{"html":"<ul>\n  <li>Roman numerals: MD<span class='match'>CCC<\/span>LXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="kw">str_view</span>(x, <span class="st">&quot;C{2,3}&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-df52b836cd97400d1de9" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-df52b836cd97400d1de9">{"x":{"html":"<ul>\n  <li>Roman numerals: MD<span class='match'>CCC<\/span>LXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-914c12af7abc4dbe87d5" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-914c12af7abc4dbe87d5">{"x":{"html":"<ul>\n  <li>Roman numerals: MD<span class='match'>CCC<\/span>LXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <div class="info">
 <p>
 When we use the quantifiers, be very careful about the <strong>scope</strong> of the quantifier. By default, the quantifier takes only its preceding character as the scope. If you need to specify the number of occurrences for a group of characters or a specific pattern, you need to put the pattern in a group <code>(…)</code> and then put your quantifier right after the group.
@@ -626,11 +626,11 @@ When we use the quantifiers, be very careful about the <strong>scope</strong> of
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1">x &lt;-<span class="st"> &quot;aaabbbababcdf&quot;</span></a>
 <a class="sourceLine" id="cb32-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb32-3" data-line-number="3"><span class="kw">str_view</span>(x, <span class="st">&quot;ab{2}&quot;</span>) <span class="co"># the scope of the quantifier is `b`</span></a></code></pre></div>
-<div id="htmlwidget-4e021619576c357da117" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4e021619576c357da117">{"x":{"html":"<ul>\n  <li>aa<span class='match'>abb<\/span>bababcdf<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-0b1e48309c0493177653" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0b1e48309c0493177653">{"x":{"html":"<ul>\n  <li>aa<span class='match'>abb<\/span>bababcdf<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="kw">str_view</span>(x, <span class="st">&quot;(ab){2}&quot;</span>) <span class="co"># the scope of the quantifier is `ab`</span></a></code></pre></div>
-<div id="htmlwidget-0714de9da8513f9566c8" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-0714de9da8513f9566c8">{"x":{"html":"<ul>\n  <li>aaabbb<span class='match'>abab<\/span>cdf<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-452c65bdbcb9501bfb5a" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-452c65bdbcb9501bfb5a">{"x":{"html":"<ul>\n  <li>aaabbb<span class='match'>abab<\/span>cdf<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="greedy-vs.non-greedy-match" class="section level3">
 <h3><span class="header-section-number">8.4.6</span> Greedy vs. Non-greedy match</h3>
@@ -640,11 +640,11 @@ When we use the quantifiers, be very careful about the <strong>scope</strong> of
 <p>To cancel this default greedy match, we can add <code>?</code> after the quantifiers.</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1">x &lt;-<span class="st"> &quot;Roman numerals: MDCCCLXXXVIII&quot;</span></a>
 <a class="sourceLine" id="cb34-2" data-line-number="2"><span class="kw">str_view</span>(x, <span class="st">&quot;CLX+&quot;</span>) <span class="co"># find longest match</span></a></code></pre></div>
-<div id="htmlwidget-26d227fddb416b2af741" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-26d227fddb416b2af741">{"x":{"html":"<ul>\n  <li>Roman numerals: MDCC<span class='match'>CLXXX<\/span>VIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-32d67af50ad2c5e15cfc" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-32d67af50ad2c5e15cfc">{"x":{"html":"<ul>\n  <li>Roman numerals: MDCC<span class='match'>CLXXX<\/span>VIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="kw">str_view</span>(x, <span class="st">&quot;CLX+?&quot;</span>) <span class="co"># find minial match</span></a></code></pre></div>
-<div id="htmlwidget-de9c42365152f97545e5" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-de9c42365152f97545e5">{"x":{"html":"<ul>\n  <li>Roman numerals: MDCC<span class='match'>CLX<\/span>XXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-bb8e5b2cc8bf97997a26" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bb8e5b2cc8bf97997a26">{"x":{"html":"<ul>\n  <li>Roman numerals: MDCC<span class='match'>CLX<\/span>XXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="group-and-back-reference" class="section level3">
 <h3><span class="header-section-number">8.4.7</span> Group and Back-reference</h3>
@@ -656,13 +656,13 @@ When we use the quantifiers, be very careful about the <strong>scope</strong> of
 <p>Now if we want to extract English fruit words which has two same letter repeating twice in a row (e.g, <em>apple</em>, <em>bell pepper</em>).</p>
 <p>But the problem is: we don’t know which letters are going to be repeated in the words. How should we define our regular expressions?</p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1"><span class="kw">str_view</span>(x, <span class="st">&quot;.{2}&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-35ef3da6c2d4921a5c94" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-35ef3da6c2d4921a5c94">{"x":{"html":"<ul>\n  <li><span class='match'>ap<\/span>ple<\/li>\n  <li><span class='match'>ap<\/span>ricot<\/li>\n  <li><span class='match'>av<\/span>ocado<\/li>\n  <li><span class='match'>ba<\/span>nana<\/li>\n  <li><span class='match'>be<\/span>ll pepper<\/li>\n  <li><span class='match'>bi<\/span>lberry<\/li>\n  <li><span class='match'>bl<\/span>ackberry<\/li>\n  <li><span class='match'>bl<\/span>ackcurrant<\/li>\n  <li><span class='match'>bl<\/span>ood orange<\/li>\n  <li><span class='match'>bl<\/span>ueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-ea54d76b656bd8199de8" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ea54d76b656bd8199de8">{"x":{"html":"<ul>\n  <li><span class='match'>ap<\/span>ple<\/li>\n  <li><span class='match'>ap<\/span>ricot<\/li>\n  <li><span class='match'>av<\/span>ocado<\/li>\n  <li><span class='match'>ba<\/span>nana<\/li>\n  <li><span class='match'>be<\/span>ll pepper<\/li>\n  <li><span class='match'>bi<\/span>lberry<\/li>\n  <li><span class='match'>bl<\/span>ackberry<\/li>\n  <li><span class='match'>bl<\/span>ackcurrant<\/li>\n  <li><span class='match'>bl<\/span>ood orange<\/li>\n  <li><span class='match'>bl<\/span>ueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>The results are not what you have expected. The above pattern would only give you the first two characters of each word.</p>
 <p>The trick is that when you use <code>.</code> to match any character, the quantifier does not help much as any character that repeats would fit the pattern. We need a new strategy to ask the RegEx engine to <strong>remember</strong> the previously matched character and quantify the number of occurrences of the <strong>remembered character</strong>:</p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="kw">str_view</span>(x, <span class="st">&quot;(.)</span><span class="ch">\\</span><span class="st">1&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-21b467b402d6851ac97a" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-21b467b402d6851ac97a">{"x":{"html":"<ul>\n  <li>a<span class='match'>pp<\/span>le<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>banana<\/li>\n  <li>be<span class='match'>ll<\/span> pepper<\/li>\n  <li>bilbe<span class='match'>rr<\/span>y<\/li>\n  <li>blackbe<span class='match'>rr<\/span>y<\/li>\n  <li>blackcu<span class='match'>rr<\/span>ant<\/li>\n  <li>bl<span class='match'>oo<\/span>d orange<\/li>\n  <li>bluebe<span class='match'>rr<\/span>y<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-e2f28f4803b1276e122f" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e2f28f4803b1276e122f">{"x":{"html":"<ul>\n  <li>a<span class='match'>pp<\/span>le<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>banana<\/li>\n  <li>be<span class='match'>ll<\/span> pepper<\/li>\n  <li>bilbe<span class='match'>rr<\/span>y<\/li>\n  <li>blackbe<span class='match'>rr<\/span>y<\/li>\n  <li>blackcu<span class='match'>rr<\/span>ant<\/li>\n  <li>bl<span class='match'>oo<\/span>d orange<\/li>\n  <li>bluebe<span class='match'>rr<\/span>y<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>The regular expression can be conceptualized as follows:</p>
 <ul>
 <li><code>.</code>: matches any character</li>
@@ -676,22 +676,22 @@ When we use the quantifiers, be very careful about the <strong>scope</strong> of
 <span id="exr:unnamed-chunk-40" class="exercise"><strong>Exercise 8.1  </strong></span>With the same set of fruit names in <code>x</code>, how do we match fruits with a <code>abab</code> pattern, such as “banana”?
 </div>
 
-<div id="htmlwidget-0bd5355c9a0c7912f3d6" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-0bd5355c9a0c7912f3d6">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>b<span class='match'>anan<\/span>a<\/li>\n  <li>bell pepper<\/li>\n  <li>bilberry<\/li>\n  <li>blackberry<\/li>\n  <li>blackcurrant<\/li>\n  <li>blood orange<\/li>\n  <li>blueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-2c41d7230dbe611b43dc" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2c41d7230dbe611b43dc">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>b<span class='match'>anan<\/span>a<\/li>\n  <li>bell pepper<\/li>\n  <li>bilberry<\/li>\n  <li>blackberry<\/li>\n  <li>blackcurrant<\/li>\n  <li>blood orange<\/li>\n  <li>blueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 
 <div class="exercise">
 <span id="exr:unnamed-chunk-42" class="exercise"><strong>Exercise 8.2  </strong></span>With the same set of fruit names in <code>x</code>, how do we match fruits with a <code>abba</code> pattern, such as “pepper”?
 </div>
 
-<div id="htmlwidget-ef6504b1359ce0a7388a" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ef6504b1359ce0a7388a">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>banana<\/li>\n  <li>bell p<span class='match'>eppe<\/span>r<\/li>\n  <li>bilberry<\/li>\n  <li>blackberry<\/li>\n  <li>blackcurrant<\/li>\n  <li>blood orange<\/li>\n  <li>blueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-95e76287a1646703da73" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-95e76287a1646703da73">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>banana<\/li>\n  <li>bell p<span class='match'>eppe<\/span>r<\/li>\n  <li>bilberry<\/li>\n  <li>blackberry<\/li>\n  <li>blackcurrant<\/li>\n  <li>blood orange<\/li>\n  <li>blueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 
 <div class="exercise">
 <span id="exr:unnamed-chunk-44" class="exercise"><strong>Exercise 8.3  </strong></span>With the same set of fruit names in <code>x</code>, please find fruit names which has at least one letter that is the same as their initial letters
 </div>
 
-<div id="htmlwidget-aab76eab3b612025287d" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-aab76eab3b612025287d">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apricot<\/li>\n  <li><span class='match'>avoca<\/span>do<\/li>\n  <li>banana<\/li>\n  <li>bell pepper<\/li>\n  <li><span class='match'>bilb<\/span>erry<\/li>\n  <li><span class='match'>blackb<\/span>erry<\/li>\n  <li>blackcurrant<\/li>\n  <li>blood orange<\/li>\n  <li><span class='match'>blueb<\/span>erry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-3d910d485930b7203349" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3d910d485930b7203349">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apricot<\/li>\n  <li><span class='match'>avoca<\/span>do<\/li>\n  <li>banana<\/li>\n  <li>bell pepper<\/li>\n  <li><span class='match'>bilb<\/span>erry<\/li>\n  <li><span class='match'>blackb<\/span>erry<\/li>\n  <li>blackcurrant<\/li>\n  <li>blood orange<\/li>\n  <li><span class='match'>blueb<\/span>erry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <hr />
 </div>
 </div>
@@ -782,8 +782,8 @@ When we use the quantifiers, be very careful about the <strong>scope</strong> of
 <span id="exr:unnamed-chunk-53" class="exercise"><strong>Exercise 8.4  </strong></span>How do you use <code>str_match()</code> to find out all the <code>c+Vowel</code> structures, and at the same time identify which vowels follow the letter <code>c</code>?
 </div>
 
-<div id="htmlwidget-9cfb2d48ee300ead3ed1" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-9cfb2d48ee300ead3ed1">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apri<span class='match'>co<\/span>t<\/li>\n  <li>avo<span class='match'>ca<\/span>do<\/li>\n  <li>banana<\/li>\n  <li>bell pepper<\/li>\n  <li>bilberry<\/li>\n  <li>blackberry<\/li>\n  <li>black<span class='match'>cu<\/span>rrant<\/li>\n  <li>blood orange<\/li>\n  <li>blueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-c54377fe169a7cb435c6" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c54377fe169a7cb435c6">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apri<span class='match'>co<\/span>t<\/li>\n  <li>avo<span class='match'>ca<\/span>do<\/li>\n  <li>banana<\/li>\n  <li>bell pepper<\/li>\n  <li>bilberry<\/li>\n  <li>blackberry<\/li>\n  <li>black<span class='match'>cu<\/span>rrant<\/li>\n  <li>blood orange<\/li>\n  <li>blueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre><code>##       [,1] [,2]
 ##  [1,] NA   NA  
 ##  [2,] &quot;co&quot; &quot;o&quot; 
@@ -888,8 +888,8 @@ Hint: Check <code>unlist()</code> and <code>nzchar()</code>
 ## [29] &quot;was barred&quot;    &quot;was crowded&quot;   &quot;was carved&quot;    &quot;was drilled&quot;  
 ## [33] &quot;was hidden&quot;    &quot;was seen&quot;      &quot;were pierced&quot;  &quot;are jangled&quot;  
 ## [37] &quot;is tinged&quot;     &quot;were stamped&quot;  &quot;was jammed&quot;    &quot;was robbed&quot;</code></pre>
-<div id="htmlwidget-09a66e5ddb906a05e000" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-09a66e5ddb906a05e000">{"x":{"html":"<ul>\n  <li>Rice <span class='match'>is often<\/span> served in round bowls.<\/li>\n  <li>The hogs <span class='match'>were fed<\/span> chopped corn and garbage.<\/li>\n  <li>A rod <span class='match'>is used<\/span> to catch pink salmon.<\/li>\n  <li>The meal <span class='match'>was cooked<\/span> before the bell rang.<\/li>\n  <li>The walled town <span class='match'>was seized<\/span> without a fight.<\/li>\n  <li>A tusk <span class='match'>is used<\/span> to make costly gifts.<\/li>\n  <li>Mud <span class='match'>was spattered<\/span> on the front of his white shirt.<\/li>\n  <li>The sofa cushion <span class='match'>is red<\/span> and of light weight.<\/li>\n  <li>The new girl <span class='match'>was fired<\/span> today at noon.<\/li>\n  <li>There the flood mark <span class='match'>is ten<\/span> inches.<\/li>\n  <li>The lure <span class='match'>is used<\/span> to catch trout and flounder.<\/li>\n  <li>They <span class='match'>are pushed<\/span> back each time they attack.<\/li>\n  <li>They <span class='match'>are men<\/span> nho walk the middle of the road.<\/li>\n  <li>Fruit flavors <span class='match'>are used<\/span> in fizz drinks.<\/li>\n  <li>Nine men <span class='match'>were hired<\/span> to dig the ruins.<\/li>\n  <li>The old pan <span class='match'>was covered<\/span> with hard fudge.<\/li>\n  <li>The store walls <span class='match'>were lined<\/span> with colored frocks.<\/li>\n  <li>The purple tie <span class='match'>was ten<\/span> years old.<\/li>\n  <li>Code <span class='match'>is used<\/span> when secrets are sent.<\/li>\n  <li>Roads <span class='match'>are paved<\/span> with sticky tar.<\/li>\n  <li>The list of names <span class='match'>is carved<\/span> around the base.<\/li>\n  <li>The sheep <span class='match'>were led<\/span> home by a dog.<\/li>\n  <li>Seed <span class='match'>is needed<\/span> to plant the spring corn.<\/li>\n  <li>The desk and both chairs <span class='match'>were painted<\/span> tan.<\/li>\n  <li>The bills <span class='match'>were mailed<\/span> promptly on the tenth of the month.<\/li>\n  <li>The bunch of grapes <span class='match'>was pressed<\/span> into wine.<\/li>\n  <li>The work of the tailor <span class='match'>is seen<\/span> on each side.<\/li>\n  <li>The square wooden crate <span class='match'>was packed<\/span> to be shipped.<\/li>\n  <li>The door <span class='match'>was barred<\/span>, locked, and bolted as well.<\/li>\n  <li>The room <span class='match'>was crowded<\/span> with a wild mob.<\/li>\n  <li>The hilt. of the sword <span class='match'>was carved<\/span> with fine designs.<\/li>\n  <li>A round hole <span class='match'>was drilled<\/span> through the thin board.<\/li>\n  <li>It <span class='match'>was hidden<\/span> from sight by a mass of leaves and shrubs.<\/li>\n  <li>The weight. of the package <span class='match'>was seen<\/span> on the high scale.<\/li>\n  <li>The lobes of her ears <span class='match'>were pierced<\/span> to hold rings.<\/li>\n  <li>Bad nerves <span class='match'>are jangled<\/span> by a door slam.<\/li>\n  <li>The sky in the west <span class='match'>is tinged<\/span> with orange red.<\/li>\n  <li>Seven seals <span class='match'>were stamped<\/span> on great sheets.<\/li>\n  <li>The store <span class='match'>was jammed<\/span> before the sale could start.<\/li>\n  <li>The corner store <span class='match'>was robbed<\/span> last night.<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-057e7991d69d50f77286" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-057e7991d69d50f77286">{"x":{"html":"<ul>\n  <li>Rice <span class='match'>is often<\/span> served in round bowls.<\/li>\n  <li>The hogs <span class='match'>were fed<\/span> chopped corn and garbage.<\/li>\n  <li>A rod <span class='match'>is used<\/span> to catch pink salmon.<\/li>\n  <li>The meal <span class='match'>was cooked<\/span> before the bell rang.<\/li>\n  <li>The walled town <span class='match'>was seized<\/span> without a fight.<\/li>\n  <li>A tusk <span class='match'>is used<\/span> to make costly gifts.<\/li>\n  <li>Mud <span class='match'>was spattered<\/span> on the front of his white shirt.<\/li>\n  <li>The sofa cushion <span class='match'>is red<\/span> and of light weight.<\/li>\n  <li>The new girl <span class='match'>was fired<\/span> today at noon.<\/li>\n  <li>There the flood mark <span class='match'>is ten<\/span> inches.<\/li>\n  <li>The lure <span class='match'>is used<\/span> to catch trout and flounder.<\/li>\n  <li>They <span class='match'>are pushed<\/span> back each time they attack.<\/li>\n  <li>They <span class='match'>are men<\/span> nho walk the middle of the road.<\/li>\n  <li>Fruit flavors <span class='match'>are used<\/span> in fizz drinks.<\/li>\n  <li>Nine men <span class='match'>were hired<\/span> to dig the ruins.<\/li>\n  <li>The old pan <span class='match'>was covered<\/span> with hard fudge.<\/li>\n  <li>The store walls <span class='match'>were lined<\/span> with colored frocks.<\/li>\n  <li>The purple tie <span class='match'>was ten<\/span> years old.<\/li>\n  <li>Code <span class='match'>is used<\/span> when secrets are sent.<\/li>\n  <li>Roads <span class='match'>are paved<\/span> with sticky tar.<\/li>\n  <li>The list of names <span class='match'>is carved<\/span> around the base.<\/li>\n  <li>The sheep <span class='match'>were led<\/span> home by a dog.<\/li>\n  <li>Seed <span class='match'>is needed<\/span> to plant the spring corn.<\/li>\n  <li>The desk and both chairs <span class='match'>were painted<\/span> tan.<\/li>\n  <li>The bills <span class='match'>were mailed<\/span> promptly on the tenth of the month.<\/li>\n  <li>The bunch of grapes <span class='match'>was pressed<\/span> into wine.<\/li>\n  <li>The work of the tailor <span class='match'>is seen<\/span> on each side.<\/li>\n  <li>The square wooden crate <span class='match'>was packed<\/span> to be shipped.<\/li>\n  <li>The door <span class='match'>was barred<\/span>, locked, and bolted as well.<\/li>\n  <li>The room <span class='match'>was crowded<\/span> with a wild mob.<\/li>\n  <li>The hilt. of the sword <span class='match'>was carved<\/span> with fine designs.<\/li>\n  <li>A round hole <span class='match'>was drilled<\/span> through the thin board.<\/li>\n  <li>It <span class='match'>was hidden<\/span> from sight by a mass of leaves and shrubs.<\/li>\n  <li>The weight. of the package <span class='match'>was seen<\/span> on the high scale.<\/li>\n  <li>The lobes of her ears <span class='match'>were pierced<\/span> to hold rings.<\/li>\n  <li>Bad nerves <span class='match'>are jangled<\/span> by a door slam.<\/li>\n  <li>The sky in the west <span class='match'>is tinged<\/span> with orange red.<\/li>\n  <li>Seven seals <span class='match'>were stamped<\/span> on great sheets.<\/li>\n  <li>The store <span class='match'>was jammed<\/span> before the sale could start.<\/li>\n  <li>The corner store <span class='match'>was robbed<\/span> last night.<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <hr />
 </div>
 </div>
@@ -899,8 +899,8 @@ Hint: Check <code>unlist()</code> and <code>nzchar()</code>
 <p>If we want to find <code>Windows</code>, but only when it is followed by <code>&quot;95, 98, NT, 2000&quot;</code>, how should we write our RegEx pattern?</p>
 <div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb72-1" data-line-number="1">win &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Windows2000&quot;</span>, <span class="st">&quot;Windows&quot;</span>, <span class="st">&quot;WindowsNT&quot;</span>, <span class="st">&quot;Windows7&quot;</span>, <span class="st">&quot;Windows10&quot;</span>)</a>
 <a class="sourceLine" id="cb72-2" data-line-number="2"><span class="kw">str_view</span>(win, <span class="st">&quot;Windows((95)|(98)|(NT)|(2000))&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-f17080e5ca91a5347861" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-f17080e5ca91a5347861">{"x":{"html":"<ul>\n  <li><span class='match'>Windows2000<\/span><\/li>\n  <li>Windows<\/li>\n  <li><span class='match'>WindowsNT<\/span><\/li>\n  <li>Windows7<\/li>\n  <li>Windows10<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-fed9a7ce008bf6e22f54" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fed9a7ce008bf6e22f54">{"x":{"html":"<ul>\n  <li><span class='match'>Windows2000<\/span><\/li>\n  <li>Windows<\/li>\n  <li><span class='match'>WindowsNT<\/span><\/li>\n  <li>Windows7<\/li>\n  <li>Windows10<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>The pattern seems OK because we did find the <code>Windows2000</code> that satisfies our RegEx. But what if you would like to replace the word “Windows” with “OldSystem” but only when “Windows” is followed by <code>&quot;95, 98, NT, 2000&quot;</code>?</p>
 <div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb73-1" data-line-number="1"><span class="kw">str_replace</span>(win, </a>
 <a class="sourceLine" id="cb73-2" data-line-number="2">            <span class="dt">pattern =</span> <span class="st">&quot;Windows((95)|(98)|(NT)|(2000))&quot;</span>,</a>
@@ -915,8 +915,8 @@ Hint: Check <code>unlist()</code> and <code>nzchar()</code>
 <li><code>(?!...)</code>: negative lookahead—extract a match only when … is NOT on the right</li>
 </ul>
 <div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb76-1" data-line-number="1"><span class="kw">str_view</span>(win, <span class="st">&quot;Windows(?=95|98|NT|2000)&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-09438b71148c94779622" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-09438b71148c94779622">{"x":{"html":"<ul>\n  <li><span class='match'>Windows<\/span>2000<\/li>\n  <li>Windows<\/li>\n  <li><span class='match'>Windows<\/span>NT<\/li>\n  <li>Windows7<\/li>\n  <li>Windows10<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-1e8184033dfc5d1f0ba3" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1e8184033dfc5d1f0ba3">{"x":{"html":"<ul>\n  <li><span class='match'>Windows<\/span>2000<\/li>\n  <li>Windows<\/li>\n  <li><span class='match'>Windows<\/span>NT<\/li>\n  <li>Windows7<\/li>\n  <li>Windows10<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>In the above regular expression, the <code>()</code> after <code>Windows</code> is a lookahead condition for matching. The strings of “2000” and “NT” in the condition are NOT consumed. The RegEx engine looks ahead the following few characters first to check the patterns but after it finds a match, the lookahead characters will still be the input of the next pattern-matching.</p>
 <p>We can make use of this lookahead to do the string replacement:</p>
 <div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" data-line-number="1"><span class="kw">str_replace</span>(<span class="dt">string =</span> win, </a>
@@ -926,8 +926,8 @@ Hint: Check <code>unlist()</code> and <code>nzchar()</code>
 ## [5] &quot;Windows10&quot;</code></pre>
 <p>Moreover, we can create a negative lookahead as well:</p>
 <div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb79-1" data-line-number="1"><span class="kw">str_view</span>(win, <span class="st">&quot;Windows(?!7|10)&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-b462d469db192b464341" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b462d469db192b464341">{"x":{"html":"<ul>\n  <li><span class='match'>Windows<\/span>2000<\/li>\n  <li><span class='match'>Windows<\/span><\/li>\n  <li><span class='match'>Windows<\/span>NT<\/li>\n  <li>Windows7<\/li>\n  <li>Windows10<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-d88248d92aac690f358b" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d88248d92aac690f358b">{"x":{"html":"<ul>\n  <li><span class='match'>Windows<\/span>2000<\/li>\n  <li><span class='match'>Windows<\/span><\/li>\n  <li><span class='match'>Windows<\/span>NT<\/li>\n  <li>Windows7<\/li>\n  <li>Windows10<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb80-1" data-line-number="1"><span class="kw">str_replace</span>(<span class="dt">string =</span> win,</a>
 <a class="sourceLine" id="cb80-2" data-line-number="2">            <span class="dt">pattern =</span> <span class="st">&quot;Windows(?!7|10)&quot;</span>,</a>
 <a class="sourceLine" id="cb80-3" data-line-number="3">            <span class="dt">replacement =</span> <span class="st">&quot;NewSystem&quot;</span>)</a></code></pre></div>
@@ -943,12 +943,12 @@ Hint: Check <code>unlist()</code> and <code>nzchar()</code>
 </ul>
 <div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" data-line-number="1">win &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;2000Windows&quot;</span>, <span class="st">&quot;Windows&quot;</span>, <span class="st">&quot;NTWindowsNT&quot;</span>, <span class="st">&quot;7Windows&quot;</span>, <span class="st">&quot;10Windows&quot;</span>)</a>
 <a class="sourceLine" id="cb82-2" data-line-number="2"><span class="kw">str_view</span>(win, <span class="st">&quot;(?&lt;=95|98|NT|2000)Windows&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-e000be5a92b4affbaa90" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e000be5a92b4affbaa90">{"x":{"html":"<ul>\n  <li>2000<span class='match'>Windows<\/span><\/li>\n  <li>Windows<\/li>\n  <li>NT<span class='match'>Windows<\/span>NT<\/li>\n  <li>7Windows<\/li>\n  <li>10Windows<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-d5fd35c63c74e3ef2bff" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d5fd35c63c74e3ef2bff">{"x":{"html":"<ul>\n  <li>2000<span class='match'>Windows<\/span><\/li>\n  <li>Windows<\/li>\n  <li>NT<span class='match'>Windows<\/span>NT<\/li>\n  <li>7Windows<\/li>\n  <li>10Windows<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" data-line-number="1">win &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;2000Windows&quot;</span>, <span class="st">&quot;Windows&quot;</span>, <span class="st">&quot;NTWindowsNT&quot;</span>, <span class="st">&quot;7Windows&quot;</span>, <span class="st">&quot;10Windows&quot;</span>)</a>
 <a class="sourceLine" id="cb83-2" data-line-number="2"><span class="kw">str_view</span>(win, <span class="st">&quot;(?&lt;!95|98|NT|2000)Windows&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-901442e3b04d206611ff" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-901442e3b04d206611ff">{"x":{"html":"<ul>\n  <li>2000Windows<\/li>\n  <li><span class='match'>Windows<\/span><\/li>\n  <li>NTWindowsNT<\/li>\n  <li>7<span class='match'>Windows<\/span><\/li>\n  <li>10<span class='match'>Windows<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-94a19f6d5fa715fa9e1c" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-94a19f6d5fa715fa9e1c">{"x":{"html":"<ul>\n  <li>2000Windows<\/li>\n  <li><span class='match'>Windows<\/span><\/li>\n  <li>NTWindowsNT<\/li>\n  <li>7<span class='match'>Windows<\/span><\/li>\n  <li>10<span class='match'>Windows<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <hr />
 
 <div class="exercise">
@@ -966,8 +966,8 @@ Hint: <code>str_replace_all()</code>
 <ul>
 <li>target matches</li>
 </ul>
-<div id="htmlwidget-167e0392860e76e5a35e" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-167e0392860e76e5a35e">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span>pple<\/li>\n  <li><span class='match'>a<\/span>pricot<\/li>\n  <li>avoc<span class='match'>a<\/span>do<\/li>\n  <li>banana<\/li>\n  <li>bell pepper<\/li>\n  <li>bilberry<\/li>\n  <li>blackberry<\/li>\n  <li>blackcurrant<\/li>\n  <li>blood orange<\/li>\n  <li>blueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-65e167924e873c6849d2" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-65e167924e873c6849d2">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span>pple<\/li>\n  <li><span class='match'>a<\/span>pricot<\/li>\n  <li>avoc<span class='match'>a<\/span>do<\/li>\n  <li>banana<\/li>\n  <li>bell pepper<\/li>\n  <li>bilberry<\/li>\n  <li>blackberry<\/li>\n  <li>blackcurrant<\/li>\n  <li>blood orange<\/li>\n  <li>blueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li>your result</li>
 </ul>
@@ -989,8 +989,8 @@ Hint: <code>str_replace_all()</code>
 <ul>
 <li>target matches</li>
 </ul>
-<div id="htmlwidget-ec58b0b6a37af3efd619" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ec58b0b6a37af3efd619">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>banana<\/li>\n  <li>bell p<span class='match'>e<\/span>pper<\/li>\n  <li>bilberry<\/li>\n  <li>blackberry<\/li>\n  <li>blackcurrant<\/li>\n  <li>blood orange<\/li>\n  <li>blueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-eb90e56d979e0d038f71" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-eb90e56d979e0d038f71">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>banana<\/li>\n  <li>bell p<span class='match'>e<\/span>pper<\/li>\n  <li>bilberry<\/li>\n  <li>blackberry<\/li>\n  <li>blackcurrant<\/li>\n  <li>blood orange<\/li>\n  <li>blueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li>your result</li>
 </ul>
@@ -1060,6 +1060,16 @@ Vowels are defined as <code>[aeiou]</code>.
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["x"],"name":[1],"type":["chr"],"align":["left"]}],"data":[{"1":"I我"},{"1":"love愛"},{"1":"you你"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["EN"],"name":[1],"type":["chr"],"align":["left"]},{"label":["CH"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"I","2":"我"},{"1":"love","2":"愛"},{"1":"you","2":"你"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["EN"],"name":[1],"type":["chr"],"align":["left"]},{"label":["CH"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"I","2":"我"},{"1":"love","2":"愛"},{"1":"you","2":"你"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <div data-pagedtable="false">
