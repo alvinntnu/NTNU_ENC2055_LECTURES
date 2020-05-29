@@ -397,13 +397,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb2-6" data-line-number="6">}</a></code></pre></div>
 <pre><code>## Sorry! Wrong password.</code></pre>
 <p>If they match, you will be allowed to get through.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">input &lt;-<span class="st"> </span><span class="dv">113</span> <span class="co"># assuming that you have the input 113</span></a>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">input &lt;-<span class="st"> </span><span class="dv">987</span> <span class="co"># assuming that you have the input 113</span></a>
 <a class="sourceLine" id="cb4-2" data-line-number="2"><span class="cf">if</span>(input <span class="op">==</span><span class="st"> </span><span class="dv">987</span>){</a>
 <a class="sourceLine" id="cb4-3" data-line-number="3">  <span class="kw">writeLines</span>(<span class="st">&quot;Congratulations! Now you may get in!&quot;</span>)</a>
 <a class="sourceLine" id="cb4-4" data-line-number="4">} <span class="cf">else</span>{</a>
 <a class="sourceLine" id="cb4-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="st">&quot;Sorry! Wrong password.&quot;</span>)</a>
 <a class="sourceLine" id="cb4-6" data-line-number="6">}</a></code></pre></div>
-<pre><code>## Sorry! Wrong password.</code></pre>
+<pre><code>## Congratulations! Now you may get in!</code></pre>
 <hr />
 <p>Now we can ask R to read the input directly from the user’s input in the R console:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">input &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt=</span><span class="st">&quot;Please enter your password:&quot;</span>)</a>
@@ -454,7 +454,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 6</code></pre>
 <ul>
 <li>In our first example, the <em>LOOP_INDEX</em> directly represent elements in the <em>LOOP_VECTOR</em>.</li>
-<li>In our second example, the <em>LOOP_INDEX</em> represents indexs of the vector.</li>
+<li>In our second example, the <em>LOOP_INDEX</em> represents indexes of the vector.</li>
 </ul>
 </div>
 <div id="while-loop" class="section level2">
@@ -569,8 +569,8 @@ How to fix it?
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">guessMyNumber</span>()</a></code></pre></div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-17" class="exercise"><strong>Exercise 10.2  (optional)  </strong></span>The above <code>guessMyNumber()</code> can be improved. Sometimes naughty users would not input numbers as request. Instead, they may accidentally input characters that are NOT numbers in their guesses.</p>
-How can you adjust the <code>guessMyNumber()</code> so that when users input non-numeric characters, your function would send out a warning message?
+<p><span id="exr:unnamed-chunk-17" class="exercise"><strong>Exercise 10.2  (optional)  </strong></span>The above <code>guessMyNumber()</code> can be improved. Sometimes naughty users would not input numbers as requested. Instead, they may accidentally (or on purpose) input characters that are NOT numbers in their guesses.</p>
+How can you adjust the <code>guessMyNumber()</code> so that when users input non-numeric characters, your function would send out a warning message? (See below.)
 </div>
 
 <pre><code>&gt; guessMyNumber_v2()
