@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2020-06-05" />
+<meta name="date" content="2020-06-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,6 +52,13 @@
 
 <link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
+<script src="libs/str_view-binding-1.4.0/str_view.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.5/grViz.js"></script>
 
 
 <style type="text/css">
@@ -311,19 +318,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="12.6" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#exercises"><i class="fa fa-check"></i><b>12.6</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html"><i class="fa fa-check"></i><b>13</b> Text Analytics: A Start</a><ul>
-<li class="chapter" data-level="13.1" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#installing-quanteda"><i class="fa fa-check"></i><b>13.1</b> Installing <code>quanteda</code></a></li>
-<li class="chapter" data-level="13.2" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#building-a-corpus-from-character-vector"><i class="fa fa-check"></i><b>13.2</b> Building a <code>corpus</code> from character vector</a></li>
-<li class="chapter" data-level="13.3" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyword-in-context-kwic"><i class="fa fa-check"></i><b>13.3</b> Keyword-in-Context (KWIC)</a></li>
-<li class="chapter" data-level="13.4" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#kwic-with-regular-expressions"><i class="fa fa-check"></i><b>13.4</b> KWIC with Regular Expressions</a></li>
-<li class="chapter" data-level="13.5" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#lexical-density-plot"><i class="fa fa-check"></i><b>13.5</b> Lexical Density Plot</a></li>
-<li class="chapter" data-level="13.6" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#document-feature-matrix"><i class="fa fa-check"></i><b>13.6</b> Document-Feature Matrix</a></li>
-<li class="chapter" data-level="13.7" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#feature-selection"><i class="fa fa-check"></i><b>13.7</b> Feature Selection</a></li>
-<li class="chapter" data-level="13.8" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#top-features"><i class="fa fa-check"></i><b>13.8</b> Top Features</a></li>
-<li class="chapter" data-level="13.9" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#wordclouds"><i class="fa fa-check"></i><b>13.9</b> Wordclouds</a></li>
-<li class="chapter" data-level="13.10" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyness-analysis"><i class="fa fa-check"></i><b>13.10</b> Keyness Analysis</a></li>
-<li class="chapter" data-level="13.11" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#flowchart"><i class="fa fa-check"></i><b>13.11</b> Flowchart</a></li>
-<li class="chapter" data-level="13.12" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#exercises-1"><i class="fa fa-check"></i><b>13.12</b> Exercises</a></li>
+<li class="chapter" data-level="13" data-path="final-exam.html"><a href="final-exam.html"><i class="fa fa-check"></i><b>13</b> Final Exam</a><ul>
+<li class="chapter" data-level="13.1" data-path="final-exam.html"><a href="final-exam.html#important-instructions-1"><i class="fa fa-check"></i><b>13.1</b> Important Instructions</a></li>
+<li class="chapter" data-level="13.2" data-path="final-exam.html"><a href="final-exam.html#part-i"><i class="fa fa-check"></i><b>13.2</b> Part I</a></li>
+<li class="chapter" data-level="13.3" data-path="final-exam.html"><a href="final-exam.html#part-ii"><i class="fa fa-check"></i><b>13.3</b> Part II</a></li>
+<li class="chapter" data-level="13.4" data-path="final-exam.html"><a href="final-exam.html#part-iii"><i class="fa fa-check"></i><b>13.4</b> Part III</a></li>
+<li class="chapter" data-level="13.5" data-path="final-exam.html"><a href="final-exam.html#afterword"><i class="fa fa-check"></i><b>13.5</b> Afterword</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html"><i class="fa fa-check"></i><b>14</b> Text Analytics: A Start</a><ul>
+<li class="chapter" data-level="14.1" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#installing-quanteda"><i class="fa fa-check"></i><b>14.1</b> Installing <code>quanteda</code></a></li>
+<li class="chapter" data-level="14.2" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#building-a-corpus-from-character-vector"><i class="fa fa-check"></i><b>14.2</b> Building a <code>corpus</code> from character vector</a></li>
+<li class="chapter" data-level="14.3" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyword-in-context-kwic"><i class="fa fa-check"></i><b>14.3</b> Keyword-in-Context (KWIC)</a></li>
+<li class="chapter" data-level="14.4" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#kwic-with-regular-expressions"><i class="fa fa-check"></i><b>14.4</b> KWIC with Regular Expressions</a></li>
+<li class="chapter" data-level="14.5" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#lexical-density-plot"><i class="fa fa-check"></i><b>14.5</b> Lexical Density Plot</a></li>
+<li class="chapter" data-level="14.6" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#document-feature-matrix"><i class="fa fa-check"></i><b>14.6</b> Document-Feature Matrix</a></li>
+<li class="chapter" data-level="14.7" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#feature-selection"><i class="fa fa-check"></i><b>14.7</b> Feature Selection</a></li>
+<li class="chapter" data-level="14.8" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#top-features"><i class="fa fa-check"></i><b>14.8</b> Top Features</a></li>
+<li class="chapter" data-level="14.9" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#wordclouds"><i class="fa fa-check"></i><b>14.9</b> Wordclouds</a></li>
+<li class="chapter" data-level="14.10" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyness-analysis"><i class="fa fa-check"></i><b>14.10</b> Keyness Analysis</a></li>
+<li class="chapter" data-level="14.11" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#flowchart"><i class="fa fa-check"></i><b>14.11</b> Flowchart</a></li>
+<li class="chapter" data-level="14.12" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#exercises-1"><i class="fa fa-check"></i><b>14.12</b> Exercises</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="the-shell.html"><a href="the-shell.html"><i class="fa fa-check"></i><b>A</b> The Shell</a><ul>
@@ -374,15 +388,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>A <code>if</code> statement runs a code chunk only if a certain condition is true. This conditional expression allows R to respond differently depending on whether the condition is TRUE or FALSE.</p>
 <p>The basic template of <code>if</code> is as follows:</p>
 <hr />
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="cf">if</span>(CONDITION IS <span class="ot">TRUE</span>){</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">  DO THIS CODE CHUNK <span class="dv">1</span></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4">  </a>
-<a class="sourceLine" id="cb1-5" data-line-number="5">} <span class="cf">else</span> {</a>
-<a class="sourceLine" id="cb1-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb1-7" data-line-number="7">  DO THIS CODE CHUNK <span class="dv">2</span></a>
-<a class="sourceLine" id="cb1-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb1-9" data-line-number="9">}</a></code></pre></div>
+<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb382-1" data-line-number="1"><span class="cf">if</span>(CONDITION IS <span class="ot">TRUE</span>){</a>
+<a class="sourceLine" id="cb382-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb382-3" data-line-number="3">  DO THIS CODE CHUNK <span class="dv">1</span></a>
+<a class="sourceLine" id="cb382-4" data-line-number="4">  </a>
+<a class="sourceLine" id="cb382-5" data-line-number="5">} <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb382-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb382-7" data-line-number="7">  DO THIS CODE CHUNK <span class="dv">2</span></a>
+<a class="sourceLine" id="cb382-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb382-9" data-line-number="9">}</a></code></pre></div>
 <hr />
 <ul>
 <li><p>The <em>condition</em> is palced in the parenthesis after <code>if</code>.</p></li>
@@ -394,29 +408,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Imagine that your system password is stored on the server. You can only get into the system if you enter the correct password.</p>
 <p>For every password you enter, the system gatekeeper will check if your input password matches the one stored on the server.</p>
 <p>If they don’t match, you will be banned from entry.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">input &lt;-<span class="st"> </span><span class="dv">113</span> <span class="co"># assuming that you have the input 113</span></a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="cf">if</span>(input <span class="op">==</span><span class="st"> </span><span class="dv">987</span>){</a>
-<a class="sourceLine" id="cb2-3" data-line-number="3">  <span class="kw">writeLines</span>(<span class="st">&quot;Congratulations! Now you may get in!&quot;</span>)</a>
-<a class="sourceLine" id="cb2-4" data-line-number="4">} <span class="cf">else</span>{</a>
-<a class="sourceLine" id="cb2-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="st">&quot;Sorry! Wrong password.&quot;</span>)</a>
-<a class="sourceLine" id="cb2-6" data-line-number="6">}</a></code></pre></div>
+<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb383-1" data-line-number="1">input &lt;-<span class="st"> </span><span class="dv">113</span> <span class="co"># assuming that you have the input 113</span></a>
+<a class="sourceLine" id="cb383-2" data-line-number="2"><span class="cf">if</span>(input <span class="op">==</span><span class="st"> </span><span class="dv">987</span>){</a>
+<a class="sourceLine" id="cb383-3" data-line-number="3">  <span class="kw">writeLines</span>(<span class="st">&quot;Congratulations! Now you may get in!&quot;</span>)</a>
+<a class="sourceLine" id="cb383-4" data-line-number="4">} <span class="cf">else</span>{</a>
+<a class="sourceLine" id="cb383-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="st">&quot;Sorry! Wrong password.&quot;</span>)</a>
+<a class="sourceLine" id="cb383-6" data-line-number="6">}</a></code></pre></div>
 <pre><code>## Sorry! Wrong password.</code></pre>
 <p>If they match, you will be allowed to get through.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">input &lt;-<span class="st"> </span><span class="dv">987</span> <span class="co"># assuming that you have the input 113</span></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="cf">if</span>(input <span class="op">==</span><span class="st"> </span><span class="dv">987</span>){</a>
-<a class="sourceLine" id="cb4-3" data-line-number="3">  <span class="kw">writeLines</span>(<span class="st">&quot;Congratulations! Now you may get in!&quot;</span>)</a>
-<a class="sourceLine" id="cb4-4" data-line-number="4">} <span class="cf">else</span>{</a>
-<a class="sourceLine" id="cb4-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="st">&quot;Sorry! Wrong password.&quot;</span>)</a>
-<a class="sourceLine" id="cb4-6" data-line-number="6">}</a></code></pre></div>
+<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb385-1" data-line-number="1">input &lt;-<span class="st"> </span><span class="dv">987</span> <span class="co"># assuming that you have the input 113</span></a>
+<a class="sourceLine" id="cb385-2" data-line-number="2"><span class="cf">if</span>(input <span class="op">==</span><span class="st"> </span><span class="dv">987</span>){</a>
+<a class="sourceLine" id="cb385-3" data-line-number="3">  <span class="kw">writeLines</span>(<span class="st">&quot;Congratulations! Now you may get in!&quot;</span>)</a>
+<a class="sourceLine" id="cb385-4" data-line-number="4">} <span class="cf">else</span>{</a>
+<a class="sourceLine" id="cb385-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="st">&quot;Sorry! Wrong password.&quot;</span>)</a>
+<a class="sourceLine" id="cb385-6" data-line-number="6">}</a></code></pre></div>
 <pre><code>## Congratulations! Now you may get in!</code></pre>
 <hr />
 <p>Now we can ask R to read the input directly from the user’s input in the R console:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">input &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt=</span><span class="st">&quot;Please enter your password:&quot;</span>)</a>
-<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="cf">if</span>(input <span class="op">==</span><span class="st"> </span><span class="dv">987</span>){</a>
-<a class="sourceLine" id="cb6-3" data-line-number="3">  <span class="kw">writeLines</span>(<span class="st">&quot;Congratulations! Now you may get in!&quot;</span>)</a>
-<a class="sourceLine" id="cb6-4" data-line-number="4">} <span class="cf">else</span>{</a>
-<a class="sourceLine" id="cb6-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="st">&quot;Sorry! Wrong password.&quot;</span>)</a>
-<a class="sourceLine" id="cb6-6" data-line-number="6">}</a></code></pre></div>
+<div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb387-1" data-line-number="1">input &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt=</span><span class="st">&quot;Please enter your password:&quot;</span>)</a>
+<a class="sourceLine" id="cb387-2" data-line-number="2"><span class="cf">if</span>(input <span class="op">==</span><span class="st"> </span><span class="dv">987</span>){</a>
+<a class="sourceLine" id="cb387-3" data-line-number="3">  <span class="kw">writeLines</span>(<span class="st">&quot;Congratulations! Now you may get in!&quot;</span>)</a>
+<a class="sourceLine" id="cb387-4" data-line-number="4">} <span class="cf">else</span>{</a>
+<a class="sourceLine" id="cb387-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="st">&quot;Sorry! Wrong password.&quot;</span>)</a>
+<a class="sourceLine" id="cb387-6" data-line-number="6">}</a></code></pre></div>
 </div>
 <div id="for" class="section level2">
 <h2><span class="header-section-number">10.2</span> <code>for</code></h2>
@@ -424,11 +438,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The most frequent scenario is to repeat a code chunk through a vector/list, element by element, or through a data frame row by row (or column by column).</p>
 <p>The basic <code>for</code> loop template is as follows:</p>
 <hr />
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="cf">for</span>(LOOP_INDEX <span class="cf">in</span> LOOP_VECTOR){</a>
-<a class="sourceLine" id="cb7-2" data-line-number="2">  </a>
-<a class="sourceLine" id="cb7-3" data-line-number="3">  DO THIS CODE CHUNK</a>
-<a class="sourceLine" id="cb7-4" data-line-number="4">  </a>
-<a class="sourceLine" id="cb7-5" data-line-number="5">}</a></code></pre></div>
+<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb388-1" data-line-number="1"><span class="cf">for</span>(LOOP_INDEX <span class="cf">in</span> LOOP_VECTOR){</a>
+<a class="sourceLine" id="cb388-2" data-line-number="2">  </a>
+<a class="sourceLine" id="cb388-3" data-line-number="3">  DO THIS CODE CHUNK</a>
+<a class="sourceLine" id="cb388-4" data-line-number="4">  </a>
+<a class="sourceLine" id="cb388-5" data-line-number="5">}</a></code></pre></div>
 <hr />
 <ul>
 <li><p>The <em>LOOP_INDEX</em> is a placeholder that represents an element in the <em>LOOP_VECTOR</em>.</p></li>
@@ -438,21 +452,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <hr />
 <p>For example, if we have a character vector with a few words in it. We can use a <code>for</code> loop to get the number of characters for each element in the vector.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">word_vec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>,<span class="st">&quot;banana&quot;</span>,<span class="st">&quot;watermelon&quot;</span>,<span class="st">&quot;papaya&quot;</span>)</a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="cf">for</span>(w <span class="cf">in</span> word_vec){</a>
-<a class="sourceLine" id="cb8-4" data-line-number="4">  word_nchar &lt;-<span class="st"> </span><span class="kw">nchar</span>(w)</a>
-<a class="sourceLine" id="cb8-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="kw">as.character</span>(word_nchar))</a>
-<a class="sourceLine" id="cb8-6" data-line-number="6">}</a></code></pre></div>
+<div class="sourceCode" id="cb389"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb389-1" data-line-number="1">word_vec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>,<span class="st">&quot;banana&quot;</span>,<span class="st">&quot;watermelon&quot;</span>,<span class="st">&quot;papaya&quot;</span>)</a>
+<a class="sourceLine" id="cb389-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb389-3" data-line-number="3"><span class="cf">for</span>(w <span class="cf">in</span> word_vec){</a>
+<a class="sourceLine" id="cb389-4" data-line-number="4">  word_nchar &lt;-<span class="st"> </span><span class="kw">nchar</span>(w)</a>
+<a class="sourceLine" id="cb389-5" data-line-number="5">  <span class="kw">writeLines</span>(<span class="kw">as.character</span>(word_nchar))</a>
+<a class="sourceLine" id="cb389-6" data-line-number="6">}</a></code></pre></div>
 <pre><code>## 5
 ## 6
 ## 10
 ## 6</code></pre>
 <p>For the above example, there is another way to write the <code>for</code> loop:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(word_vec)){</a>
-<a class="sourceLine" id="cb10-2" data-line-number="2">  word_nchar &lt;-<span class="st"> </span><span class="kw">nchar</span>(word_vec[i])</a>
-<a class="sourceLine" id="cb10-3" data-line-number="3">  <span class="kw">writeLines</span>(<span class="kw">as.character</span>(word_nchar))</a>
-<a class="sourceLine" id="cb10-4" data-line-number="4">}</a></code></pre></div>
+<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb391-1" data-line-number="1"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(word_vec)){</a>
+<a class="sourceLine" id="cb391-2" data-line-number="2">  word_nchar &lt;-<span class="st"> </span><span class="kw">nchar</span>(word_vec[i])</a>
+<a class="sourceLine" id="cb391-3" data-line-number="3">  <span class="kw">writeLines</span>(<span class="kw">as.character</span>(word_nchar))</a>
+<a class="sourceLine" id="cb391-4" data-line-number="4">}</a></code></pre></div>
 <pre><code>## 5
 ## 6
 ## 10
@@ -467,11 +481,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>There is another type of loop. Unlike the <code>for</code> loop, which repeats a code chunk by going through every element in a vector/list/data frame, the <code>while</code> loop repeats a code chunk UNTIL a specific condition evalutes to FALSE.</p>
 <p>The basic template is as follows:</p>
 <hr />
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="cf">while</span>(LOOP_CONDITION){</a>
-<a class="sourceLine" id="cb12-2" data-line-number="2">  </a>
-<a class="sourceLine" id="cb12-3" data-line-number="3">  DO THIS CODE <span class="kw">CHUNK</span> (UNTIL THE LOOP_CONDITION BECOMES <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb12-4" data-line-number="4">  </a>
-<a class="sourceLine" id="cb12-5" data-line-number="5">}</a></code></pre></div>
+<div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb393-1" data-line-number="1"><span class="cf">while</span>(LOOP_CONDITION){</a>
+<a class="sourceLine" id="cb393-2" data-line-number="2">  </a>
+<a class="sourceLine" id="cb393-3" data-line-number="3">  DO THIS CODE <span class="kw">CHUNK</span> (UNTIL THE LOOP_CONDITION BECOMES <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb393-4" data-line-number="4">  </a>
+<a class="sourceLine" id="cb393-5" data-line-number="5">}</a></code></pre></div>
 <hr />
 <ul>
 <li>Upon the start of a <code>while</code> loop, the <em>LOOP_CONDITION</em> is evaluated.</li>
@@ -487,13 +501,13 @@ Based on the template above, you should infer that the code chunk executed must 
 <hr />
 <p>Let’s come back to our password checker. This time let’s create a dumb checker.</p>
 <p>When you give a wrong password which is smaller than your true answer, it will automatically approach the right asnwer for you (and of course no real-world application would do that!)</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">ans &lt;-<span class="st"> </span><span class="dv">90</span></a>
-<a class="sourceLine" id="cb13-2" data-line-number="2">guess &lt;-<span class="st"> </span><span class="dv">83</span></a>
-<a class="sourceLine" id="cb13-3" data-line-number="3"><span class="cf">while</span>(guess <span class="op">!=</span><span class="st"> </span>ans){</a>
-<a class="sourceLine" id="cb13-4" data-line-number="4">  <span class="kw">writeLines</span>(<span class="st">&quot;Your `guess` is too small! The system will take care for you!&quot;</span>)</a>
-<a class="sourceLine" id="cb13-5" data-line-number="5">  guess &lt;-<span class="st"> </span>guess <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb13-6" data-line-number="6">  <span class="kw">cat</span>(<span class="st">&quot;Now the system is adjusting your `guess` to &quot;</span>, guess, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</a>
-<a class="sourceLine" id="cb13-7" data-line-number="7">}</a></code></pre></div>
+<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb394-1" data-line-number="1">ans &lt;-<span class="st"> </span><span class="dv">90</span></a>
+<a class="sourceLine" id="cb394-2" data-line-number="2">guess &lt;-<span class="st"> </span><span class="dv">83</span></a>
+<a class="sourceLine" id="cb394-3" data-line-number="3"><span class="cf">while</span>(guess <span class="op">!=</span><span class="st"> </span>ans){</a>
+<a class="sourceLine" id="cb394-4" data-line-number="4">  <span class="kw">writeLines</span>(<span class="st">&quot;Your `guess` is too small! The system will take care for you!&quot;</span>)</a>
+<a class="sourceLine" id="cb394-5" data-line-number="5">  guess &lt;-<span class="st"> </span>guess <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb394-6" data-line-number="6">  <span class="kw">cat</span>(<span class="st">&quot;Now the system is adjusting your `guess` to &quot;</span>, guess, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</a>
+<a class="sourceLine" id="cb394-7" data-line-number="7">}</a></code></pre></div>
 <pre><code>## Your `guess` is too small! The system will take care for you!
 ## Now the system is adjusting your `guess` to  84 
 ## Your `guess` is too small! The system will take care for you!
@@ -510,7 +524,7 @@ Based on the template above, you should infer that the code chunk executed must 
 ## Now the system is adjusting your `guess` to  90</code></pre>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-11" class="exercise"><strong>Exercise 10.1  </strong></span>In the above example, if the <code>guess</code> is smaller than <code>ans</code>, our script works fine. However, if the <code>guess</code> is larger than <code>ans</code>, then our script will crash.</p>
+<p><span id="exr:unnamed-chunk-395" class="exercise"><strong>Exercise 10.1  </strong></span>In the above example, if the <code>guess</code> is smaller than <code>ans</code>, our script works fine. However, if the <code>guess</code> is larger than <code>ans</code>, then our script will crash.</p>
 How to fix it?
 </div>
 
@@ -556,28 +570,28 @@ How to fix it?
 <p>Now we are playing the Guess Game. The game is as follows:</p>
 <p>I pick a number from 1 to 100. You have to guess which number I picked. Every time you guess wrong, I’ll tell you whether the number is higher or lower.</p>
 <p>We first pack the game as an R <code>function</code> object:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">guessMyNumber &lt;-<span class="st"> </span><span class="cf">function</span>(){</a>
-<a class="sourceLine" id="cb17-2" data-line-number="2">  ans &lt;-<span class="st"> </span><span class="dv">18</span></a>
-<a class="sourceLine" id="cb17-3" data-line-number="3">  guess &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt =</span> <span class="st">&quot;Please guess my number(0~100):&quot;</span>)</a>
-<a class="sourceLine" id="cb17-4" data-line-number="4">  guess &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(guess)</a>
-<a class="sourceLine" id="cb17-5" data-line-number="5">  <span class="cf">while</span>(guess <span class="op">!=</span><span class="st"> </span>ans){</a>
-<a class="sourceLine" id="cb17-6" data-line-number="6">    <span class="cf">if</span>(guess <span class="op">&lt;</span><span class="st"> </span>ans){</a>
-<a class="sourceLine" id="cb17-7" data-line-number="7">      <span class="kw">writeLines</span>(<span class="st">&quot;The asnwer is HIGHER.&quot;</span>)</a>
-<a class="sourceLine" id="cb17-8" data-line-number="8">      guess &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt =</span> <span class="st">&quot;Please guess my number(0~100):&quot;</span>)</a>
-<a class="sourceLine" id="cb17-9" data-line-number="9">      guess &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(guess)</a>
-<a class="sourceLine" id="cb17-10" data-line-number="10">    }<span class="cf">else</span>{</a>
-<a class="sourceLine" id="cb17-11" data-line-number="11">      <span class="kw">writeLines</span>(<span class="st">&quot;The asnwer is LOWER&quot;</span>)</a>
-<a class="sourceLine" id="cb17-12" data-line-number="12">      guess &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt =</span> <span class="st">&quot;Please guess my number(0~100):&quot;</span>)</a>
-<a class="sourceLine" id="cb17-13" data-line-number="13">      guess &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(guess)</a>
-<a class="sourceLine" id="cb17-14" data-line-number="14">    }</a>
-<a class="sourceLine" id="cb17-15" data-line-number="15">  }</a>
-<a class="sourceLine" id="cb17-16" data-line-number="16">  <span class="kw">writeLines</span>(<span class="st">&quot;Correct!&quot;</span>)</a>
-<a class="sourceLine" id="cb17-17" data-line-number="17">} <span class="co"># endfunc</span></a></code></pre></div>
+<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb398-1" data-line-number="1">guessMyNumber &lt;-<span class="st"> </span><span class="cf">function</span>(){</a>
+<a class="sourceLine" id="cb398-2" data-line-number="2">  ans &lt;-<span class="st"> </span><span class="dv">18</span></a>
+<a class="sourceLine" id="cb398-3" data-line-number="3">  guess &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt =</span> <span class="st">&quot;Please guess my number(0~100):&quot;</span>)</a>
+<a class="sourceLine" id="cb398-4" data-line-number="4">  guess &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(guess)</a>
+<a class="sourceLine" id="cb398-5" data-line-number="5">  <span class="cf">while</span>(guess <span class="op">!=</span><span class="st"> </span>ans){</a>
+<a class="sourceLine" id="cb398-6" data-line-number="6">    <span class="cf">if</span>(guess <span class="op">&lt;</span><span class="st"> </span>ans){</a>
+<a class="sourceLine" id="cb398-7" data-line-number="7">      <span class="kw">writeLines</span>(<span class="st">&quot;The asnwer is HIGHER.&quot;</span>)</a>
+<a class="sourceLine" id="cb398-8" data-line-number="8">      guess &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt =</span> <span class="st">&quot;Please guess my number(0~100):&quot;</span>)</a>
+<a class="sourceLine" id="cb398-9" data-line-number="9">      guess &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(guess)</a>
+<a class="sourceLine" id="cb398-10" data-line-number="10">    }<span class="cf">else</span>{</a>
+<a class="sourceLine" id="cb398-11" data-line-number="11">      <span class="kw">writeLines</span>(<span class="st">&quot;The asnwer is LOWER&quot;</span>)</a>
+<a class="sourceLine" id="cb398-12" data-line-number="12">      guess &lt;-<span class="st"> </span><span class="kw">readline</span>(<span class="dt">prompt =</span> <span class="st">&quot;Please guess my number(0~100):&quot;</span>)</a>
+<a class="sourceLine" id="cb398-13" data-line-number="13">      guess &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(guess)</a>
+<a class="sourceLine" id="cb398-14" data-line-number="14">    }</a>
+<a class="sourceLine" id="cb398-15" data-line-number="15">  }</a>
+<a class="sourceLine" id="cb398-16" data-line-number="16">  <span class="kw">writeLines</span>(<span class="st">&quot;Correct!&quot;</span>)</a>
+<a class="sourceLine" id="cb398-17" data-line-number="17">} <span class="co"># endfunc</span></a></code></pre></div>
 <p>You can play the game by running the function <code>guessMyNumber()</code>:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">guessMyNumber</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb399"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb399-1" data-line-number="1"><span class="kw">guessMyNumber</span>()</a></code></pre></div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-17" class="exercise"><strong>Exercise 10.2  (optional)  </strong></span>The above <code>guessMyNumber()</code> can be improved. Sometimes naughty users would not input numbers as requested. Instead, they may accidentally (or on purpose) input characters that are NOT numbers in their guesses.</p>
+<p><span id="exr:unnamed-chunk-401" class="exercise"><strong>Exercise 10.2  (optional)  </strong></span>The above <code>guessMyNumber()</code> can be improved. Sometimes naughty users would not input numbers as requested. Instead, they may accidentally (or on purpose) input characters that are NOT numbers in their guesses.</p>
 How can you adjust the <code>guessMyNumber()</code> so that when users input non-numeric characters, your function would send out a warning message? (See below.)
 </div>
 
@@ -674,6 +688,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
