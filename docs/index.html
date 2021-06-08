@@ -5,26 +5,26 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
-  <meta name="description" content="ENC2055 Course material first edition" />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="description" content="ENC2055 Course material second edition" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="ENC2055 Course material first edition" />
+  <meta property="og:description" content="ENC2055 Course material second edition" />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
   
-  <meta name="twitter:description" content="ENC2055 Course material first edition" />
+  <meta name="twitter:description" content="ENC2055 Course material second edition" />
   
 
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2020-09-08" />
+<meta name="date" content="2021-06-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 
 <link rel="next" href="intro-ds.html"/>
-<script src="libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -53,19 +53,15 @@
 
 <link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
-<script src="libs/str_view-binding-1.4.0/str_view.js"></script>
-<script src="libs/viz-1.8.2/viz.js"></script>
-<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="libs/grViz-binding-1.0.5/grViz.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -124,6 +120,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -387,14 +406,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">ENC2055: Introduction to Programming Languages for Linguistic Analysis</h1>
 <p class="author"><em>Alvin Chen (陳正賢）</em></p>
-<p class="date"><em>2020-09-08</em></p>
+<p class="date" style="margin-top: 1.5em;"><em>2021-06-09</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
-<p>Welcome to ENC2055 Introduction to Programming Languages for Linguistic Analysis. This is a graduate-level course tailored to those who are interested in computational text analytics and data science in general. Have you decided to embark upon a digital journey to your future career, there are a series of courses provided in the <a href="http://www.eng.ntnu.edu.tw/en/">Department of English, NTNU, Taiwan</a>, offerring necessary skills and knowledge in important disciplines. This introductory course in basic computational coding would be a prerequisite course for many other advance-level courses. In particular, our faculty in the <a href="https://sites.google.com/ntnueng.tw/linguistics-ntnu-eng">Linguistics track</a> is dedicated to research on both theoretical and applied linguistics. Along with <a href="https://sites.google.com/ntnueng.tw/linguistics-ntnu-eng/research/computational-linguistics">courses offered by other faculty members</a>, this course provides a necessary foundation for the burgeoning discipline of computational linguistics.</p>
+<p>Welcome to ENC2055 Introduction to Programming Languages for Linguistic Analysis. This is a graduate-level course tailored to those who are interested in computational text analytics and data science in general. Have you decided to embark upon a digital journey to your future career, there are a series of courses provided in the <a href="http://www.eng.ntnu.edu.tw/en/">Department of English, NTNU, Taiwan</a>, offering necessary skills and knowledge in important disciplines. This introductory course in basic computational coding would be a prerequisite course for many other advance-level courses. In particular, our faculty in the <a href="https://sites.google.com/ntnueng.tw/linguistics-ntnu-eng">Linguistics track</a> is dedicated to research on both theoretical and applied linguistics. Along with <a href="https://sites.google.com/ntnueng.tw/linguistics-ntnu-eng/research/computational-linguistics">courses offered by other faculty members</a>, this course provides a necessary foundation for the burgeoning discipline of computational linguistics.</p>
+
+<div class="info">
+Please note that while this course has no prerequisite from the students, it will turn out to be a prerequisite for a lot of advanced courses, such as <em>Corpus Linguistics</em> and <em>Computational Linguistics</em>. If you plan to step into this computational way of language processing, you need to take this course (or at least you need to learn how to code.)
+</div>
 <div id="course-objective" class="section level2 unnumbered">
 <h2>Course Objective</h2>
-<p>The objective of this course is to provide a comprehensive introduction to programming languages with a special focus on its application in linguistic analyses. This course is especially tailored to those who do not have any background or experiences in coding. We will start from the very basic concepts, such as data types, variable assignments, control structures, to more complex procedures such as routines, functions, and other exploratory project-based tasks. The course consists of a series of theme-based hands-on tutorials, which demonstrate how the flexibility of the programming language can help you become a more efficient and productive data scientist. Specifically, this course will use the language R as our featuring programming language and introduce you to R, Rstudio, and a collection of R packages designed to work together to make linguistic analyses fast, fluent, and fun. By the end of the course, students should have a working knowledge of coding and an initial ability to advance a project independently as a data scientist.</p>
+<p>The objective of this course is to provide a comprehensive introduction to programming languages with a special focus on its application in linguistic analyses. This course is especially tailored to those who do not have any background or experiences in coding. We will start from the very basic concepts, such as data types, variable assignments, control structures, to more complex procedures such as routines, functions, and other exploratory project-based tasks.</p>
+<p>The course consists of a series of theme-based hands-on tutorials, which demonstrate how the flexibility of the programming language can help you become a more efficient and productive data scientist. Specifically, this course will use the language R as our featuring programming language and introduce you to R, Rstudio, and a collection of R packages designed to work together to make linguistic analyses fast, fluent, and fun. In addition, we will briefly touch upon a few important constructs with another popular language in data science, Python.</p>
+<p>By the end of the course, students should have a working knowledge of coding and an initial ability to advance a project independently as a data scientist.</p>
 <p>In this course, we will not be dealing with complex maths like:</p>
 <p><span class="math display">\[
 f(x)=\frac{1}{\sqrt{2 \pi}} e^{-\frac{1}{2} x^{2}}
@@ -403,18 +428,20 @@ f(x)=\frac{1}{\sqrt{2 \pi}} e^{-\frac{1}{2} x^{2}}
  P(A) = \sum P(\{ (e_1,\dotsc,e_N) \})  =  \binom{N}{k} \cdot p^kq^{N-k}
 \]</span></p>
 <p>We will not be dealing with lingusitic theories as well. No <em>transformations</em>. No <em>movements</em>. No <em>bindings</em>. This course is all about computational coding.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" aria-hidden="true"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="index.html#cb1-2" aria-hidden="true"></a>summary_monthly_temp &lt;-<span class="st"> </span>weather <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-3"><a href="index.html#cb1-3" aria-hidden="true"></a><span class="st">  </span><span class="kw">group_by</span>(month) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-4"><a href="index.html#cb1-4" aria-hidden="true"></a><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(temp), </span>
-<span id="cb1-5"><a href="index.html#cb1-5" aria-hidden="true"></a>            <span class="dt">std_dev =</span> <span class="kw">sd</span>(temp))</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="index.html#cb1-2" aria-hidden="true" tabindex="-1"></a>summary_monthly_temp <span class="ot">&lt;-</span> weather <span class="sc">%&gt;%</span> </span>
+<span id="cb1-3"><a href="index.html#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(month) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-4"><a href="index.html#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean =</span> <span class="fu">mean</span>(temp), </span>
+<span id="cb1-5"><a href="index.html#cb1-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">std_dev =</span> <span class="fu">sd</span>(temp))</span></code></pre></div>
 </div>
 <div id="textbook" class="section level2 unnumbered">
 <h2>Textbook</h2>
-<p>Throughout the semester, we will follow the materials provided on our course website (see below). We will not use a particular textbook for the course. However, I do like to recommend <span class="citation">Wickham and Grolemund (<a href="#ref-hadley2017" role="doc-biblioref">2017</a>)</span> for its simplicity.</p>
+<p>Throughout the semester, we will follow the materials provided on our course website (see below). We will not use a particular textbook for the course. However, I do like to recommend <span class="citation"><a href="#ref-hadley2017" role="doc-biblioref">Wickham and Grolemund</a> (<a href="#ref-hadley2017" role="doc-biblioref">2017</a>)</span> for its simplicity.</p>
 <p><img src="images/r4dbook.png" width="35%" /></p>
-<p>Also, another great book for R lovers, by <span class="citation">Davies (<a href="#ref-davies2016" role="doc-biblioref">2016</a>)</span>:</p>
+<p>Also, another great book for R lovers, by <span class="citation"><a href="#ref-davies2016" role="doc-biblioref">Davies</a> (<a href="#ref-davies2016" role="doc-biblioref">2016</a>)</span>:</p>
 <p><img src="images/book-R-cover.png" width="35%" /></p>
+<p>And two more comprehensive books for Python basics: <span class="citation"><a href="#ref-gerrard2016" role="doc-biblioref">Gerrard</a> (<a href="#ref-gerrard2016" role="doc-biblioref">2016</a>)</span> and <span class="citation"><a href="#ref-sweigart2020" role="doc-biblioref">Sweigart</a> (<a href="#ref-sweigart2020" role="doc-biblioref">2020</a>)</span>:</p>
+<p><img src="images/book-lean-python.jpeg" width="35%" /><img src="images/book-automate-boring-python.jpg" width="35%" /></p>
 </div>
 <div id="course-website" class="section level2 unnumbered">
 <h2>Course Website</h2>
@@ -455,12 +482,18 @@ library(tidyverse)</code></pre>
 </div>
 </div>
 <h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-davies2016">
-<p>Davies, Tilman M. 2016. <em>The Book of R: A First Course in Programming and Statistics</em>. 1st ed. San Franscisco, US: No Starch Press, Inc.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-davies2016" class="csl-entry">
+Davies, Tilman M. 2016. <em>The Book of r: A First Course in Programming and Statistics</em>. 1st ed. San Franscisco, US: No Starch Press, Inc.
 </div>
-<div id="ref-hadley2017">
-<p>Wickham, Hadley, and Garrett Grolemund. 2017. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. 1st ed. O’Reilly Media, Inc.</p>
+<div id="ref-gerrard2016" class="csl-entry">
+Gerrard, Paul. 2016. <em>Lean Python: Learn Just Enough Python to Build Useful Tools</em>. Apress.
+</div>
+<div id="ref-sweigart2020" class="csl-entry">
+Sweigart, Al. 2020. <em>Automate the Boring Stuff with Python: Practical Programming for Total Beginners. 2nd Edition.</em> No Starch Press.
+</div>
+<div id="ref-hadley2017" class="csl-entry">
+Wickham, Hadley, and Garrett Grolemund. 2017. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. 1st ed. O’Reilly Media, Inc.
 </div>
 </div>
 <div id="disqus_thread"></div>
