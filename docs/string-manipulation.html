@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-06-12" />
+<meta name="date" content="2021-06-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -153,7 +153,7 @@ div.csl-indent {
 }
 </style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="style-new.css" type="text/css" />
 </head>
 
 <body>
@@ -206,13 +206,15 @@ div.csl-indent {
 <li class="chapter" data-level="3" data-path="python-fundamentals.html"><a href="python-fundamentals.html"><i class="fa fa-check"></i><b>3</b> Python Fundamentals</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="python-fundamentals.html"><a href="python-fundamentals.html#set-up-environment"><i class="fa fa-check"></i><b>3.1</b> Set up Environment</a></li>
-<li class="chapter" data-level="3.2" data-path="python-fundamentals.html"><a href="python-fundamentals.html#data-type"><i class="fa fa-check"></i><b>3.2</b> Data Type</a></li>
-<li class="chapter" data-level="3.3" data-path="python-fundamentals.html"><a href="python-fundamentals.html#data-structure-1"><i class="fa fa-check"></i><b>3.3</b> Data Structure</a></li>
-<li class="chapter" data-level="3.4" data-path="python-fundamentals.html"><a href="python-fundamentals.html#control-structure"><i class="fa fa-check"></i><b>3.4</b> Control Structure</a></li>
-<li class="chapter" data-level="3.5" data-path="python-fundamentals.html"><a href="python-fundamentals.html#function-1"><i class="fa fa-check"></i><b>3.5</b> Function</a></li>
-<li class="chapter" data-level="3.6" data-path="python-fundamentals.html"><a href="python-fundamentals.html#list-comprehension"><i class="fa fa-check"></i><b>3.6</b> List Comprehension</a></li>
-<li class="chapter" data-level="3.7" data-path="python-fundamentals.html"><a href="python-fundamentals.html#python-scripts"><i class="fa fa-check"></i><b>3.7</b> Python Scripts</a></li>
-<li class="chapter" data-level="3.8" data-path="python-fundamentals.html"><a href="python-fundamentals.html#modules"><i class="fa fa-check"></i><b>3.8</b> Modules</a></li>
+<li class="chapter" data-level="3.2" data-path="python-fundamentals.html"><a href="python-fundamentals.html#conda-environment"><i class="fa fa-check"></i><b>3.2</b> Conda Environment</a></li>
+<li class="chapter" data-level="3.3" data-path="python-fundamentals.html"><a href="python-fundamentals.html#data-type"><i class="fa fa-check"></i><b>3.3</b> Data Type</a></li>
+<li class="chapter" data-level="3.4" data-path="python-fundamentals.html"><a href="python-fundamentals.html#data-structure-1"><i class="fa fa-check"></i><b>3.4</b> Data Structure</a></li>
+<li class="chapter" data-level="3.5" data-path="python-fundamentals.html"><a href="python-fundamentals.html#control-structure"><i class="fa fa-check"></i><b>3.5</b> Control Structure</a></li>
+<li class="chapter" data-level="3.6" data-path="python-fundamentals.html"><a href="python-fundamentals.html#function-1"><i class="fa fa-check"></i><b>3.6</b> Function</a></li>
+<li class="chapter" data-level="3.7" data-path="python-fundamentals.html"><a href="python-fundamentals.html#list-comprehension"><i class="fa fa-check"></i><b>3.7</b> List Comprehension</a></li>
+<li class="chapter" data-level="3.8" data-path="python-fundamentals.html"><a href="python-fundamentals.html#python-scripts"><i class="fa fa-check"></i><b>3.8</b> Python Scripts</a></li>
+<li class="chapter" data-level="3.9" data-path="python-fundamentals.html"><a href="python-fundamentals.html#modules"><i class="fa fa-check"></i><b>3.9</b> Modules</a></li>
+<li class="chapter" data-level="3.10" data-path="python-fundamentals.html"><a href="python-fundamentals.html#inputoutput"><i class="fa fa-check"></i><b>3.10</b> Input/Output</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="code-format-convetion.html"><a href="code-format-convetion.html"><i class="fa fa-check"></i><b>4</b> Code Format Convention</a>
 <ul>
@@ -428,8 +430,8 @@ div.csl-indent {
 <p>In data analysis, most of the time we are dealing with texts/strings. In other words, when wrangling with the data, we need all kinds of techniques in string manipulations, such as finding/replacing a particular string, removing unnecessary strings, combining shorter strings into a longer one, or splitting a long string into smaller tokens.</p>
 <p>My experience tells me that a competent data scientist often needs a certain level of skills on string processing. Most importantly, an effective use of regular expressions plays the most important role.</p>
 <p>In this chapter, I would like to introduce some frequently-used techniques relating to string manipulation, with a special focus on regular expression. Also, I will use the package <code>stringr</code>, which is part of the <code>tidyverse</code> framework as well.</p>
-<div class="sourceCode" id="cb254"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb254-1"><a href="string-manipulation.html#cb254-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb254-2"><a href="string-manipulation.html#cb254-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span></code></pre></div>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb268-1"><a href="string-manipulation.html#cb268-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb268-2"><a href="string-manipulation.html#cb268-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span></code></pre></div>
 <div id="what-is-regular-expression" class="section level2" number="8.1">
 <h2><span class="header-section-number">8.1</span> What is Regular Expression?</h2>
 <p><img src="images/regex.png" width="80%" /></p>
@@ -457,17 +459,17 @@ There are three basic functions:</p>
 <ul>
 <li><code>str_length()</code>: get the length of the string (i.e., number of characters)</li>
 </ul>
-<div class="sourceCode" id="cb255"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb255-1"><a href="string-manipulation.html#cb255-1" aria-hidden="true" tabindex="-1"></a>word_string <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;the&quot;</span>, <span class="st">&quot;word&quot;</span>, <span class="st">&quot;string&quot;</span>)</span>
-<span id="cb255-2"><a href="string-manipulation.html#cb255-2" aria-hidden="true" tabindex="-1"></a>word_string <span class="sc">%&gt;%</span></span>
-<span id="cb255-3"><a href="string-manipulation.html#cb255-3" aria-hidden="true" tabindex="-1"></a>  str_length</span></code></pre></div>
-<pre><code>[1] 3 4 6</code></pre>
+<div class="sourceCode" id="cb269"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb269-1"><a href="string-manipulation.html#cb269-1" aria-hidden="true" tabindex="-1"></a>word_string <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;the&quot;</span>, <span class="st">&quot;word&quot;</span>, <span class="st">&quot;string&quot;</span>)</span>
+<span id="cb269-2"><a href="string-manipulation.html#cb269-2" aria-hidden="true" tabindex="-1"></a>word_string <span class="sc">%&gt;%</span></span>
+<span id="cb269-3"><a href="string-manipulation.html#cb269-3" aria-hidden="true" tabindex="-1"></a>    str_length</span></code></pre></div>
+<pre class="Rout"><code>[1] 3 4 6</code></pre>
 <ul>
 <li><code>str_c()</code>: combine strings into a longer one</li>
 </ul>
-<div class="sourceCode" id="cb257"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb257-1"><a href="string-manipulation.html#cb257-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_c</span>(<span class="st">&quot;the&quot;</span>,<span class="st">&quot;word&quot;</span>,<span class="st">&quot;string&quot;</span>)</span></code></pre></div>
-<pre><code>[1] &quot;thewordstring&quot;</code></pre>
-<div class="sourceCode" id="cb259"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb259-1"><a href="string-manipulation.html#cb259-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_c</span>(<span class="st">&quot;the&quot;</span>,<span class="st">&quot;word&quot;</span>,<span class="st">&quot;string&quot;</span>,<span class="at">sep =</span> <span class="st">&quot;_&quot;</span>)</span></code></pre></div>
-<pre><code>[1] &quot;the_word_string&quot;</code></pre>
+<div class="sourceCode" id="cb271"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb271-1"><a href="string-manipulation.html#cb271-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_c</span>(<span class="st">&quot;the&quot;</span>, <span class="st">&quot;word&quot;</span>, <span class="st">&quot;string&quot;</span>)</span></code></pre></div>
+<pre class="Rout"><code>[1] &quot;thewordstring&quot;</code></pre>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb273-1"><a href="string-manipulation.html#cb273-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_c</span>(<span class="st">&quot;the&quot;</span>, <span class="st">&quot;word&quot;</span>, <span class="st">&quot;string&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;_&quot;</span>)</span></code></pre></div>
+<pre class="Rout"><code>[1] &quot;the_word_string&quot;</code></pre>
 <p>From the above output, can you tell what is the default value for the argument <code>str_c(..., sep = ...)</code>?</p>
 <hr />
 <div class="danger">
@@ -478,8 +480,8 @@ Please note that the following code generates a different result from the above.
 How can you create exactly the same results by using <code>str_c(word_string,…)</code>? Please check <code>?str_c</code>.
 </p>
 </div>
-<div class="sourceCode" id="cb261"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb261-1"><a href="string-manipulation.html#cb261-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_c</span>(word_string, <span class="at">sep =</span> <span class="st">&quot;_&quot;</span>)</span></code></pre></div>
-<pre><code>[1] &quot;the&quot;    &quot;word&quot;   &quot;string&quot;</code></pre>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb275-1"><a href="string-manipulation.html#cb275-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_c</span>(word_string, <span class="at">sep =</span> <span class="st">&quot;_&quot;</span>)</span></code></pre></div>
+<pre class="Rout"><code>[1] &quot;the&quot;    &quot;word&quot;   &quot;string&quot;</code></pre>
 <hr />
 <div class="info">
 <p>
@@ -490,8 +492,8 @@ When you have several objects in the <code>str_c()</code>, please use the argume
 <ul>
 <li><code>str_sub()</code>: substract part of the string by positions</li>
 </ul>
-<div class="sourceCode" id="cb263"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb263-1"><a href="string-manipulation.html#cb263-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_sub</span>(<span class="at">string =</span> <span class="st">&quot;international&quot;</span>, <span class="at">start =</span> <span class="dv">1</span>, <span class="at">end =</span> <span class="dv">5</span>)</span></code></pre></div>
-<pre><code>[1] &quot;inter&quot;</code></pre>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb277-1"><a href="string-manipulation.html#cb277-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_sub</span>(<span class="at">string =</span> <span class="st">&quot;international&quot;</span>, <span class="at">start =</span> <span class="dv">1</span>, <span class="at">end =</span> <span class="dv">5</span>)</span></code></pre></div>
+<pre class="Rout"><code>[1] &quot;inter&quot;</code></pre>
 </div>
 <div id="a-good-tool-regexplain" class="section level2" number="8.3">
 <h2><span class="header-section-number">8.3</span> A Good Tool: <code>RegExplain</code></h2>
@@ -499,7 +501,7 @@ When you have several objects in the <code>str_c()</code>, please use the argume
 <ul>
 <li>interactively build your regexp and check the output of common string matching functions</li>
 </ul>
-<div class="figure"><span id="fig:unnamed-chunk-231"></span>
+<div class="figure"><span id="fig:unnamed-chunk-239"></span>
 <img src="https://raw.githubusercontent.com/gadenbuie/regexplain/af4fe0988a10f34dc528b4d359b80bb06af7809a/docs/regexplain-selection.gif" alt="Taken from RegExplain Github Page"  />
 <p class="caption">
 Figure 8.1: Taken from RegExplain Github Page
@@ -508,7 +510,7 @@ Figure 8.1: Taken from RegExplain Github Page
 <ul>
 <li>use the included resources to learn regular expressions</li>
 </ul>
-<div class="figure"><span id="fig:unnamed-chunk-232"></span>
+<div class="figure"><span id="fig:unnamed-chunk-240"></span>
 <img src="https://raw.githubusercontent.com/gadenbuie/regexplain/af4fe0988a10f34dc528b4d359b80bb06af7809a/docs/regexplain-library.gif" alt="Taken from RegExplain Github Page"  />
 <p class="caption">
 Figure 8.2: Taken from RegExplain Github Page
@@ -517,7 +519,7 @@ Figure 8.2: Taken from RegExplain Github Page
 <ul>
 <li>consult the interactive help pages</li>
 </ul>
-<div class="figure"><span id="fig:unnamed-chunk-233"></span>
+<div class="figure"><span id="fig:unnamed-chunk-241"></span>
 <img src="https://raw.githubusercontent.com/gadenbuie/regexplain/af4fe0988a10f34dc528b4d359b80bb06af7809a/docs/regexplain-try-this.gif" alt="Taken from RegExplain Github Page"  />
 <p class="caption">
 Figure 8.3: Taken from RegExplain Github Page
@@ -525,17 +527,15 @@ Figure 8.3: Taken from RegExplain Github Page
 </div>
 <p>This is very useful because we can prepare our regular expressions and use them in the code chunk after we have made sure that they work properly in the <strong>RegExplain</strong>.</p>
 <p>You can install the addin using <code>devtools</code>:</p>
-<div class="sourceCode" id="cb265"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb265-1"><a href="string-manipulation.html#cb265-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Please install `devtools` if you haven&#39;t</span></span>
-<span id="cb265-2"><a href="string-manipulation.html#cb265-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&quot;devtools&quot;)</span></span>
-<span id="cb265-3"><a href="string-manipulation.html#cb265-3" aria-hidden="true" tabindex="-1"></a><span class="co"># library(devtools)</span></span>
-<span id="cb265-4"><a href="string-manipulation.html#cb265-4" aria-hidden="true" tabindex="-1"></a><span class="co"># install_github(&quot;gadenbuie/regexplain&quot;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb279-1"><a href="string-manipulation.html#cb279-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Please install `devtools` if you haven&#39;t install.packages(&#39;devtools&#39;)</span></span>
+<span id="cb279-2"><a href="string-manipulation.html#cb279-2" aria-hidden="true" tabindex="-1"></a><span class="do">## library(devtools) install_github(&#39;gadenbuie/regexplain&#39;)</span></span></code></pre></div>
 </div>
 <div id="regular-expression-grammar" class="section level2" number="8.4">
 <h2><span class="header-section-number">8.4</span> Regular Expression Grammar</h2>
 <p>Now let’s look at the grammar of regular expressions in more detail. In this section, we will discuss the standard Perl-compatible regular expression syntax. This is by now the most widely used version of regular expressions in most programming languages.</p>
 <p>To start with, in <code>stringr</code>, there is a very useful function, <code>str_view(STRING, PATTERN)</code>, which can show us the match of the pattern in the string in a visually intuitive way:</p>
-<div class="sourceCode" id="cb266"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb266-1"><a href="string-manipulation.html#cb266-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>)</span>
-<span id="cb266-2"><a href="string-manipulation.html#cb266-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;an&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb280"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb280-1"><a href="string-manipulation.html#cb280-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>)</span>
+<span id="cb280-2"><a href="string-manipulation.html#cb280-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;an&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-836df71618086ae9d57f" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-836df71618086ae9d57f">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>b<span class='match'>an<\/span>ana<\/li>\n  <li>pear<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>For basic syntax of regular expressions, I will use this <code>str_view()</code> to show you how the regular pattern works in string-matching.</p>
@@ -546,16 +546,16 @@ Figure 8.3: Taken from RegExplain Github Page
 <p>To implement the idea of one-to-many mapping, RegEx defines several <em>metacharacters</em>, which are of special use in regular expressions. Their meanings are NOT the same as their <em>literal</em> counterparts.</p>
 <p><img src="images/regex-special-char.png" width="263" /><img src="images/regex-char.png" width="262" /></p>
 <p>In RegEx, <code>.</code> is a special character, referring to any character:</p>
-<div class="sourceCode" id="cb267"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb267-1"><a href="string-manipulation.html#cb267-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>)</span>
-<span id="cb267-2"><a href="string-manipulation.html#cb267-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;.a.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb281-1"><a href="string-manipulation.html#cb281-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>)</span>
+<span id="cb281-2"><a href="string-manipulation.html#cb281-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;.a.&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-56efb0940ef69d61ae7b" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-56efb0940ef69d61ae7b">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li><span class='match'>ban<\/span>ana<\/li>\n  <li>p<span class='match'>ear<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>But what if you really want to match a period <code>.</code> symbol literally in your string?</p>
-<div class="sourceCode" id="cb268"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb268-1"><a href="string-manipulation.html#cb268-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>,<span class="st">&quot;pear&quot;</span>, <span class="st">&quot;orange. And&quot;</span>)</span>
-<span id="cb268-2"><a href="string-manipulation.html#cb268-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb282"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb282-1"><a href="string-manipulation.html#cb282-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>, <span class="st">&quot;orange. And&quot;</span>)</span>
+<span id="cb282-2"><a href="string-manipulation.html#cb282-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;.&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-e19fc53be467c945820a" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-e19fc53be467c945820a">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span>pple<\/li>\n  <li><span class='match'>b<\/span>anana<\/li>\n  <li><span class='match'>p<\/span>ear<\/li>\n  <li><span class='match'>o<\/span>range. And<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb269"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb269-1"><a href="string-manipulation.html#cb269-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb283-1"><a href="string-manipulation.html#cb283-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">.&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-88995ebcbafc7ca1ab94" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-88995ebcbafc7ca1ab94">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>banana<\/li>\n  <li>pear<\/li>\n  <li>orange<span class='match'>.<\/span> And<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>This leads us to the notion of <strong>escaping</strong> character <code>\</code>. In R, <code>\</code> is used if you want to tell R that the metacharacter after <code>\</code> should be treated literally, not metaphorically as a metacharacter.</p>
@@ -569,19 +569,19 @@ Figure 8.3: Taken from RegExplain Github Page
 <ul>
 <li><code>^</code>: The start of the string</li>
 </ul>
-<div class="sourceCode" id="cb270"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb270-1"><a href="string-manipulation.html#cb270-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>)</span>
-<span id="cb270-2"><a href="string-manipulation.html#cb270-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;^a&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb284"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb284-1"><a href="string-manipulation.html#cb284-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>)</span>
+<span id="cb284-2"><a href="string-manipulation.html#cb284-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;^a&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-42ddf6697b6f455aac47" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-42ddf6697b6f455aac47">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span>pple<\/li>\n  <li>banana<\/li>\n  <li>pear<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><code>$</code>: The end of the string</li>
 </ul>
-<div class="sourceCode" id="cb271"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb271-1"><a href="string-manipulation.html#cb271-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>)</span>
-<span id="cb271-2"><a href="string-manipulation.html#cb271-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;a$&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb285-1"><a href="string-manipulation.html#cb285-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>)</span>
+<span id="cb285-2"><a href="string-manipulation.html#cb285-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;a$&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-6a2a15121803e1cdb1f6" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-6a2a15121803e1cdb1f6">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>banan<span class='match'>a<\/span><\/li>\n  <li>pear<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb272"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb272-1"><a href="string-manipulation.html#cb272-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;apple pie&quot;</span>, <span class="st">&quot;apple&quot;</span>, <span class="st">&quot;apple cake&quot;</span>)</span>
-<span id="cb272-2"><a href="string-manipulation.html#cb272-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;^apple$&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb286"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb286-1"><a href="string-manipulation.html#cb286-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;apple pie&quot;</span>, <span class="st">&quot;apple&quot;</span>, <span class="st">&quot;apple cake&quot;</span>)</span>
+<span id="cb286-2"><a href="string-manipulation.html#cb286-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;^apple$&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-5fd45597543ef5172f93" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-5fd45597543ef5172f93">{"x":{"html":"<ul>\n  <li>apple pie<\/li>\n  <li><span class='match'>apple<\/span><\/li>\n  <li>apple cake<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <div class="info">
@@ -592,13 +592,11 @@ The anchors are evaluated according to the base unit you are matching. In our pr
 If you have a vector of sentences, the <code>^</code> would indicate a sentence-initial position; <code>$</code> would indicate a sentence-final position. (See below)
 </p>
 </div>
-<div class="sourceCode" id="cb273"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb273-1"><a href="string-manipulation.html#cb273-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;apple is good&quot;</span>, </span>
-<span id="cb273-2"><a href="string-manipulation.html#cb273-2" aria-hidden="true" tabindex="-1"></a>       <span class="st">&quot;banana is better than apple&quot;</span>, </span>
-<span id="cb273-3"><a href="string-manipulation.html#cb273-3" aria-hidden="true" tabindex="-1"></a>       <span class="st">&quot;an apple a day keeps the doctor away&quot;</span>)</span>
-<span id="cb273-4"><a href="string-manipulation.html#cb273-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;^apple&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb287"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb287-1"><a href="string-manipulation.html#cb287-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;apple is good&quot;</span>, <span class="st">&quot;banana is better than apple&quot;</span>, <span class="st">&quot;an apple a day keeps the doctor away&quot;</span>)</span>
+<span id="cb287-2"><a href="string-manipulation.html#cb287-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;^apple&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-1c33f5ddea469d09f199" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-1c33f5ddea469d09f199">{"x":{"html":"<ul>\n  <li><span class='match'>apple<\/span> is good<\/li>\n  <li>banana is better than apple<\/li>\n  <li>an apple a day keeps the doctor away<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb274"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb274-1"><a href="string-manipulation.html#cb274-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;apple$&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb288"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb288-1"><a href="string-manipulation.html#cb288-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;apple$&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-97c22514c4d0df0ed24f" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-97c22514c4d0df0ed24f">{"x":{"html":"<ul>\n  <li>apple is good<\/li>\n  <li>banana is better than <span class='match'>apple<\/span><\/li>\n  <li>an apple a day keeps the doctor away<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
@@ -611,18 +609,18 @@ If you have a vector of sentences, the <code>^</code> would indicate a sentence-
 <li><code>\\w</code>: matches any alphanumeric characters</li>
 </ul>
 <p><img src="images/regex-char-class.png" width="50%" /><img src="images/regex-char.png" width="50%" /></p>
-<div class="sourceCode" id="cb275"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb275-1"><a href="string-manipulation.html#cb275-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>,<span class="st">&quot;apple123&quot;</span>,<span class="st">&quot;banana1&quot;</span>)</span>
-<span id="cb275-2"><a href="string-manipulation.html#cb275-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(<span class="at">string =</span> x , <span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">d&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb289"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb289-1"><a href="string-manipulation.html#cb289-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;apple123&quot;</span>, <span class="st">&quot;banana1&quot;</span>)</span>
+<span id="cb289-2"><a href="string-manipulation.html#cb289-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">d&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-f511c5103fa686923669" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-f511c5103fa686923669">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apple<span class='match'>1<\/span>23<\/li>\n  <li>banana<span class='match'>1<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>In pattern-matching, very often you will have cases where one base unit may have <em>more than one</em> match. In the previous example, <code>str_view()</code> identifies only the <em>first</em> match of each base unit from <code>x</code>.</p>
 <p>If you need to identify all the matches from each base unit, you need to use <code>str_view_all()</code>.</p>
-<div class="sourceCode" id="cb276"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb276-1"><a href="string-manipulation.html#cb276-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;aeiouAEIOU1234_ .</span><span class="sc">\\</span><span class="st">$%-*()&quot;</span>)</span>
-<span id="cb276-2"><a href="string-manipulation.html#cb276-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view_all</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">w&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb290"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb290-1"><a href="string-manipulation.html#cb290-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;aeiouAEIOU1234_ .</span><span class="sc">\\</span><span class="st">$%-*()&quot;</span>)</span>
+<span id="cb290-2"><a href="string-manipulation.html#cb290-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view_all</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">w&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-a74bc18d46cf0e721488" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-a74bc18d46cf0e721488">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span><span class='match'>e<\/span><span class='match'>i<\/span><span class='match'>o<\/span><span class='match'>u<\/span><span class='match'>A<\/span><span class='match'>E<\/span><span class='match'>I<\/span><span class='match'>O<\/span><span class='match'>U<\/span><span class='match'>1<\/span><span class='match'>2<\/span><span class='match'>3<\/span><span class='match'>4<\/span><span class='match'>_<\/span> .\\$%-*()<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb277"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb277-1"><a href="string-manipulation.html#cb277-1" aria-hidden="true" tabindex="-1"></a><span class="co">#compare</span></span>
-<span id="cb277-2"><a href="string-manipulation.html#cb277-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view_all</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb291"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb291-1"><a href="string-manipulation.html#cb291-1" aria-hidden="true" tabindex="-1"></a><span class="co"># compare</span></span>
+<span id="cb291-2"><a href="string-manipulation.html#cb291-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view_all</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;.&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-bab8a474d994d81cb40c" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-bab8a474d994d81cb40c">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span><span class='match'>e<\/span><span class='match'>i<\/span><span class='match'>o<\/span><span class='match'>u<\/span><span class='match'>A<\/span><span class='match'>E<\/span><span class='match'>I<\/span><span class='match'>O<\/span><span class='match'>U<\/span><span class='match'>1<\/span><span class='match'>2<\/span><span class='match'>3<\/span><span class='match'>4<\/span><span class='match'>_<\/span><span class='match'> <\/span><span class='match'>.<\/span><span class='match'>\\<\/span><span class='match'>$<\/span><span class='match'>%<\/span><span class='match'>-<\/span><span class='match'>*<\/span><span class='match'>(<\/span><span class='match'>)<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>The difference of finding-the-first-match (<code>str_view()</code>) vs. finding-all-the-matches (<code>str_view_all()</code>) will turn out to be very important in practical tasks. Please bear this in mind.</p>
@@ -640,8 +638,8 @@ In the above comparison of the two meta-character sets, <code>.</code> and <code
 <li><code>[abc]</code>: matches a, b, or c.</li>
 <li><code>[^abc]</code>: matches anything except a, b, or c.</li>
 </ul>
-<div class="sourceCode" id="cb278"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb278-1"><a href="string-manipulation.html#cb278-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;grey&quot;</span>, <span class="st">&quot;gray&quot;</span>)</span>
-<span id="cb278-2"><a href="string-manipulation.html#cb278-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;gr[ea]y&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb292-1"><a href="string-manipulation.html#cb292-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;grey&quot;</span>, <span class="st">&quot;gray&quot;</span>)</span>
+<span id="cb292-2"><a href="string-manipulation.html#cb292-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;gr[ea]y&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-eb434923f13027ea278b" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-eb434923f13027ea278b">{"x":{"html":"<ul>\n  <li><span class='match'>grey<\/span><\/li>\n  <li><span class='match'>gray<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <div class="info">
@@ -650,8 +648,8 @@ If you know very well which characters you are to match/find, use <strong>inclus
 </p>
 </div>
 <p>For example, what if we would like to find all non-vowel letters in the words? Instead of coming up with an inclusive character set <code>[...]</code>, which include all possible consonant letters, it would be more efficient if you create an exclusive character set, <code>[^aeiou]</code>, which suggests that you need any characters that do not belong to vowels.</p>
-<div class="sourceCode" id="cb279"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb279-1"><a href="string-manipulation.html#cb279-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;grey&quot;</span>, <span class="st">&quot;gray&quot;</span>)</span>
-<span id="cb279-2"><a href="string-manipulation.html#cb279-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view_all</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;[^aeiou]&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb293"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb293-1"><a href="string-manipulation.html#cb293-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;grey&quot;</span>, <span class="st">&quot;gray&quot;</span>)</span>
+<span id="cb293-2"><a href="string-manipulation.html#cb293-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view_all</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;[^aeiou]&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-035822e38970a11bcfb2" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-035822e38970a11bcfb2">{"x":{"html":"<ul>\n  <li><span class='match'>g<\/span><span class='match'>r<\/span>e<span class='match'>y<\/span><\/li>\n  <li><span class='match'>g<\/span><span class='match'>r<\/span>a<span class='match'>y<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
@@ -663,11 +661,11 @@ If you know very well which characters you are to match/find, use <strong>inclus
 <li><code>+</code>: 1 or more</li>
 <li><code>*</code>: 0 or more</li>
 </ul>
-<div class="sourceCode" id="cb280"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb280-1"><a href="string-manipulation.html#cb280-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="st">&quot;Roman numerals: MDCCCLXXXVIII&quot;</span></span>
-<span id="cb280-2"><a href="string-manipulation.html#cb280-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;CC?&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb294"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb294-1"><a href="string-manipulation.html#cb294-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="st">&quot;Roman numerals: MDCCCLXXXVIII&quot;</span></span>
+<span id="cb294-2"><a href="string-manipulation.html#cb294-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;CC?&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-fb9d301f5fae98371cf1" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-fb9d301f5fae98371cf1">{"x":{"html":"<ul>\n  <li>Roman numerals: MD<span class='match'>CC<\/span>CLXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb281"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb281-1"><a href="string-manipulation.html#cb281-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;X+&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb295"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb295-1"><a href="string-manipulation.html#cb295-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;X+&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-3794c09a092e697ea15e" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-3794c09a092e697ea15e">{"x":{"html":"<ul>\n  <li>Roman numerals: MDCCCL<span class='match'>XXX<\/span>VIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>We can specify an exact range of number of ocurrences using the curly brackets <code>{ , }</code>:</p>
@@ -677,14 +675,14 @@ If you know very well which characters you are to match/find, use <strong>inclus
 <li><code>{,m}</code>: at most <em>m</em> occurrences</li>
 <li><code>{n,m}</code>: between <em>n</em> and <em>m</em> occurrences</li>
 </ul>
-<div class="sourceCode" id="cb282"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb282-1"><a href="string-manipulation.html#cb282-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="st">&quot;Roman numerals: MDCCCLXXXVIII&quot;</span></span>
-<span id="cb282-2"><a href="string-manipulation.html#cb282-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;C{2}&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb296"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb296-1"><a href="string-manipulation.html#cb296-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="st">&quot;Roman numerals: MDCCCLXXXVIII&quot;</span></span>
+<span id="cb296-2"><a href="string-manipulation.html#cb296-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;C{2}&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-6f6ef2fc31524c48fe53" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-6f6ef2fc31524c48fe53">{"x":{"html":"<ul>\n  <li>Roman numerals: MD<span class='match'>CC<\/span>CLXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb283"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb283-1"><a href="string-manipulation.html#cb283-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;C{2,}&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb297"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb297-1"><a href="string-manipulation.html#cb297-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;C{2,}&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-22ec3ffe2b49a12cc3d4" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-22ec3ffe2b49a12cc3d4">{"x":{"html":"<ul>\n  <li>Roman numerals: MD<span class='match'>CCC<\/span>LXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb284"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb284-1"><a href="string-manipulation.html#cb284-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;C{2,3}&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb298"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb298-1"><a href="string-manipulation.html#cb298-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;C{2,3}&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-1891d80ae531c175548a" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-1891d80ae531c175548a">{"x":{"html":"<ul>\n  <li>Roman numerals: MD<span class='match'>CCC<\/span>LXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <div class="info">
@@ -692,12 +690,12 @@ If you know very well which characters you are to match/find, use <strong>inclus
 When we use the quantifiers, be very careful about the <strong>scope</strong> of the quantifier. By default, the quantifier takes only its preceding character as the scope. If you need to specify the number of occurrences for a group of characters or a specific pattern, you need to put the pattern in a group <code>(…)</code> and then put your quantifier right after the group.
 </p>
 </div>
-<div class="sourceCode" id="cb285"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb285-1"><a href="string-manipulation.html#cb285-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="st">&quot;aaabbbababcdf&quot;</span></span>
-<span id="cb285-2"><a href="string-manipulation.html#cb285-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb285-3"><a href="string-manipulation.html#cb285-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;ab{2}&quot;</span>) <span class="co"># the scope of the quantifier is `b`</span></span></code></pre></div>
+<div class="sourceCode" id="cb299"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb299-1"><a href="string-manipulation.html#cb299-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="st">&quot;aaabbbababcdf&quot;</span></span>
+<span id="cb299-2"><a href="string-manipulation.html#cb299-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb299-3"><a href="string-manipulation.html#cb299-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;ab{2}&quot;</span>)  <span class="co"># the scope of the quantifier is `b`</span></span></code></pre></div>
 <div id="htmlwidget-54232bccaaf61d634dfc" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-54232bccaaf61d634dfc">{"x":{"html":"<ul>\n  <li>aa<span class='match'>abb<\/span>bababcdf<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb286"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb286-1"><a href="string-manipulation.html#cb286-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;(ab){2}&quot;</span>) <span class="co"># the scope of the quantifier is `ab`</span></span></code></pre></div>
+<div class="sourceCode" id="cb300"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb300-1"><a href="string-manipulation.html#cb300-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;(ab){2}&quot;</span>)  <span class="co"># the scope of the quantifier is `ab`</span></span></code></pre></div>
 <div id="htmlwidget-4f3e901409d76fbc2926" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-4f3e901409d76fbc2926">{"x":{"html":"<ul>\n  <li>aaabbb<span class='match'>abab<\/span>cdf<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
@@ -707,29 +705,30 @@ When we use the quantifiers, be very careful about the <strong>scope</strong> of
 <p>In the above examples, the substring <code>CC</code> should satisfy the RegEx <code>C{2,}</code> already but the RegEx returns <code>CCC</code> as the match.</p>
 <p>This is the idea of <strong>greedy</strong> match. In other words, by default, when we apply quantifiers in our regular expressions, the RegEx engine assumes a greedy match (i.e., to find a longest possible match).</p>
 <p>To cancel this default greedy match, we can add <code>?</code> after the quantifiers.</p>
-<div class="sourceCode" id="cb287"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb287-1"><a href="string-manipulation.html#cb287-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="st">&quot;Roman numerals: MDCCCLXXXVIII&quot;</span></span>
-<span id="cb287-2"><a href="string-manipulation.html#cb287-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;CLX+&quot;</span>) <span class="co"># find longest match</span></span></code></pre></div>
+<div class="sourceCode" id="cb301"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb301-1"><a href="string-manipulation.html#cb301-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="st">&quot;Roman numerals: MDCCCLXXXVIII&quot;</span></span>
+<span id="cb301-2"><a href="string-manipulation.html#cb301-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;CLX+&quot;</span>)  <span class="co"># find longest match</span></span></code></pre></div>
 <div id="htmlwidget-c2f5867e21489eedf435" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-c2f5867e21489eedf435">{"x":{"html":"<ul>\n  <li>Roman numerals: MDCC<span class='match'>CLXXX<\/span>VIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb288"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb288-1"><a href="string-manipulation.html#cb288-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;CLX+?&quot;</span>) <span class="co"># find minial match</span></span></code></pre></div>
+<div class="sourceCode" id="cb302"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb302-1"><a href="string-manipulation.html#cb302-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;CLX+?&quot;</span>)  <span class="co"># find minial match</span></span></code></pre></div>
 <div id="htmlwidget-ebcb3569a0dcc248ffde" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-ebcb3569a0dcc248ffde">{"x":{"html":"<ul>\n  <li>Roman numerals: MDCC<span class='match'>CLX<\/span>XXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="group-and-back-reference" class="section level3" number="8.4.7">
 <h3><span class="header-section-number">8.4.7</span> Group and Back-reference</h3>
-<div class="sourceCode" id="cb289"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb289-1"><a href="string-manipulation.html#cb289-1" aria-hidden="true" tabindex="-1"></a><span class="co"># `fruit` is a preloaded vector from `stringr`</span></span>
-<span id="cb289-2"><a href="string-manipulation.html#cb289-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> fruit <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">10</span>)</span>
-<span id="cb289-3"><a href="string-manipulation.html#cb289-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
-<pre><code> [1] &quot;apple&quot;        &quot;apricot&quot;      &quot;avocado&quot;      &quot;banana&quot;       &quot;bell pepper&quot; 
+<div class="sourceCode" id="cb303"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb303-1"><a href="string-manipulation.html#cb303-1" aria-hidden="true" tabindex="-1"></a><span class="co"># `fruit` is a preloaded vector from `stringr`</span></span>
+<span id="cb303-2"><a href="string-manipulation.html#cb303-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> fruit <span class="sc">%&gt;%</span></span>
+<span id="cb303-3"><a href="string-manipulation.html#cb303-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">10</span>)</span>
+<span id="cb303-4"><a href="string-manipulation.html#cb303-4" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<pre class="Rout"><code> [1] &quot;apple&quot;        &quot;apricot&quot;      &quot;avocado&quot;      &quot;banana&quot;       &quot;bell pepper&quot; 
  [6] &quot;bilberry&quot;     &quot;blackberry&quot;   &quot;blackcurrant&quot; &quot;blood orange&quot; &quot;blueberry&quot;   </code></pre>
 <p>Now if we want to extract English fruit words which has two same letter repeating twice in a row (e.g, <em>apple</em>, <em>bell pepper</em>).</p>
 <p>But the problem is: we don’t know which letters are going to be repeated in the words. How should we define our regular expressions?</p>
-<div class="sourceCode" id="cb291"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb291-1"><a href="string-manipulation.html#cb291-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;.{2}&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb305"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb305-1"><a href="string-manipulation.html#cb305-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;.{2}&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-b2a62920759b4a9248f9" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-b2a62920759b4a9248f9">{"x":{"html":"<ul>\n  <li><span class='match'>ap<\/span>ple<\/li>\n  <li><span class='match'>ap<\/span>ricot<\/li>\n  <li><span class='match'>av<\/span>ocado<\/li>\n  <li><span class='match'>ba<\/span>nana<\/li>\n  <li><span class='match'>be<\/span>ll pepper<\/li>\n  <li><span class='match'>bi<\/span>lberry<\/li>\n  <li><span class='match'>bl<\/span>ackberry<\/li>\n  <li><span class='match'>bl<\/span>ackcurrant<\/li>\n  <li><span class='match'>bl<\/span>ood orange<\/li>\n  <li><span class='match'>bl<\/span>ueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>The results are not what you have expected. The above pattern would only give you the first two characters of each word.</p>
 <p>The trick is that when you use <code>.</code> to match any character, the quantifier does not help much as any character that repeats would fit the pattern. We need a new strategy to ask the RegEx engine to <strong>remember</strong> the previously matched character and quantify the number of occurrences of the <strong>remembered character</strong>:</p>
-<div class="sourceCode" id="cb292"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb292-1"><a href="string-manipulation.html#cb292-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;(.)</span><span class="sc">\\</span><span class="st">1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb306"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb306-1"><a href="string-manipulation.html#cb306-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;(.)</span><span class="sc">\\</span><span class="st">1&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-d226b1361807e90e0472" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-d226b1361807e90e0472">{"x":{"html":"<ul>\n  <li>a<span class='match'>pp<\/span>le<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>banana<\/li>\n  <li>be<span class='match'>ll<\/span> pepper<\/li>\n  <li>bilbe<span class='match'>rr<\/span>y<\/li>\n  <li>blackbe<span class='match'>rr<\/span>y<\/li>\n  <li>blackcu<span class='match'>rr<\/span>ant<\/li>\n  <li>bl<span class='match'>oo<\/span>d orange<\/li>\n  <li>bluebe<span class='match'>rr<\/span>y<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>The regular expression can be conceptualized as follows:</p>
@@ -742,19 +741,19 @@ When we use the quantifiers, be very careful about the <strong>scope</strong> of
 <hr />
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-261" class="exercise"><strong>Exercise 8.1  </strong></span>With the same set of fruit names in <code>x</code>, how do we match fruits with a <code>abab</code> pattern, such as “banana?”
+<span id="exr:unnamed-chunk-269" class="exercise"><strong>Exercise 8.1  </strong></span>With the same set of fruit names in <code>x</code>, how do we match fruits with a <code>abab</code> pattern, such as “banana?”
 </div>
 <div id="htmlwidget-ba424f80257ec7c8fcf1" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-ba424f80257ec7c8fcf1">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>b<span class='match'>anan<\/span>a<\/li>\n  <li>bell pepper<\/li>\n  <li>bilberry<\/li>\n  <li>blackberry<\/li>\n  <li>blackcurrant<\/li>\n  <li>blood orange<\/li>\n  <li>blueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-263" class="exercise"><strong>Exercise 8.2  </strong></span>With the same set of fruit names in <code>x</code>, how do we match fruits with a <code>abba</code> pattern, such as “pepper?”
+<span id="exr:unnamed-chunk-271" class="exercise"><strong>Exercise 8.2  </strong></span>With the same set of fruit names in <code>x</code>, how do we match fruits with a <code>abba</code> pattern, such as “pepper?”
 </div>
 <div id="htmlwidget-3efac74ba0817eaf1c2f" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-3efac74ba0817eaf1c2f">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>banana<\/li>\n  <li>bell p<span class='match'>eppe<\/span>r<\/li>\n  <li>bilberry<\/li>\n  <li>blackberry<\/li>\n  <li>blackcurrant<\/li>\n  <li>blood orange<\/li>\n  <li>blueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-265" class="exercise"><strong>Exercise 8.3  </strong></span>With the same set of fruit names in <code>x</code>, please find fruit names which has at least one letter that is the same as their initial letters
+<span id="exr:unnamed-chunk-273" class="exercise"><strong>Exercise 8.3  </strong></span>With the same set of fruit names in <code>x</code>, please find fruit names which has at least one letter that is the same as their initial letters
 </div>
 <div id="htmlwidget-cb330e984a08a84be94c" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-cb330e984a08a84be94c">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apricot<\/li>\n  <li><span class='match'>avoca<\/span>do<\/li>\n  <li>banana<\/li>\n  <li>bell pepper<\/li>\n  <li><span class='match'>bilb<\/span>erry<\/li>\n  <li><span class='match'>blackb<\/span>erry<\/li>\n  <li>blackcurrant<\/li>\n  <li>blood orange<\/li>\n  <li><span class='match'>blueb<\/span>erry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
@@ -773,29 +772,29 @@ When we use the quantifiers, be very careful about the <strong>scope</strong> of
 <ul>
 <li><code>str_detect(STRING, PATTERN)</code>: Determine which strings in <code>STRING</code> has a match of the <code>PATTERN</code> (binary)</li>
 </ul>
-<div class="sourceCode" id="cb293"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb293-1"><a href="string-manipulation.html#cb293-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_detect</span>(x, <span class="st">&quot;e$&quot;</span>)</span></code></pre></div>
-<pre><code> [1]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE</code></pre>
+<div class="sourceCode" id="cb307"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb307-1"><a href="string-manipulation.html#cb307-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_detect</span>(x, <span class="st">&quot;e$&quot;</span>)</span></code></pre></div>
+<pre class="Rout"><code> [1]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE</code></pre>
 </div>
 <div id="str_subset" class="section level3" number="8.5.2">
 <h3><span class="header-section-number">8.5.2</span> <code>str_subset()</code></h3>
 <ul>
 <li><code>str_subset(STRING, PATTERN)</code>: Subset the full strings in <code>STRING</code> that have either a full or partial match of the <code>PATTERN</code> (character)</li>
 </ul>
-<div class="sourceCode" id="cb295"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb295-1"><a href="string-manipulation.html#cb295-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_subset</span>(x, <span class="st">&quot;e$&quot;</span>)</span></code></pre></div>
-<pre><code>[1] &quot;apple&quot;        &quot;blood orange&quot;</code></pre>
+<div class="sourceCode" id="cb309"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb309-1"><a href="string-manipulation.html#cb309-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_subset</span>(x, <span class="st">&quot;e$&quot;</span>)</span></code></pre></div>
+<pre class="Rout"><code>[1] &quot;apple&quot;        &quot;blood orange&quot;</code></pre>
 </div>
 <div id="str_extract" class="section level3" number="8.5.3">
 <h3><span class="header-section-number">8.5.3</span> <code>str_extract()</code></h3>
 <ul>
 <li><code>str_extract(STRING, PATTERN)</code>: Extract the content of the matches of the strings in <code>STRING</code> (character)</li>
 </ul>
-<div class="sourceCode" id="cb297"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb297-1"><a href="string-manipulation.html#cb297-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_extract</span>(x, <span class="st">&quot;e$&quot;</span>)</span></code></pre></div>
-<pre><code> [1] &quot;e&quot; NA  NA  NA  NA  NA  NA  NA  &quot;e&quot; NA </code></pre>
+<div class="sourceCode" id="cb311"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb311-1"><a href="string-manipulation.html#cb311-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_extract</span>(x, <span class="st">&quot;e$&quot;</span>)</span></code></pre></div>
+<pre class="Rout"><code> [1] &quot;e&quot; NA  NA  NA  NA  NA  NA  NA  &quot;e&quot; NA </code></pre>
 <p>Also, please note that <code>str_extract()</code> only extract the first match of the string. To extract all matches from the strings:</p>
-<div class="sourceCode" id="cb299"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb299-1"><a href="string-manipulation.html#cb299-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_extract</span>(x, <span class="st">&quot;[aeiou]&quot;</span>) <span class="co"># find only the first match</span></span></code></pre></div>
-<pre><code> [1] &quot;a&quot; &quot;a&quot; &quot;a&quot; &quot;a&quot; &quot;e&quot; &quot;i&quot; &quot;a&quot; &quot;a&quot; &quot;o&quot; &quot;u&quot;</code></pre>
-<div class="sourceCode" id="cb301"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb301-1"><a href="string-manipulation.html#cb301-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_extract_all</span>(x, <span class="st">&quot;[aeiou]&quot;</span>) <span class="co"># find all matches in each string</span></span></code></pre></div>
-<pre><code>[[1]]
+<div class="sourceCode" id="cb313"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb313-1"><a href="string-manipulation.html#cb313-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_extract</span>(x, <span class="st">&quot;[aeiou]&quot;</span>)  <span class="co"># find only the first match</span></span></code></pre></div>
+<pre class="Rout"><code> [1] &quot;a&quot; &quot;a&quot; &quot;a&quot; &quot;a&quot; &quot;e&quot; &quot;i&quot; &quot;a&quot; &quot;a&quot; &quot;o&quot; &quot;u&quot;</code></pre>
+<div class="sourceCode" id="cb315"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb315-1"><a href="string-manipulation.html#cb315-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_extract_all</span>(x, <span class="st">&quot;[aeiou]&quot;</span>)  <span class="co"># find all matches in each string</span></span></code></pre></div>
+<pre class="Rout"><code>[[1]]
 [1] &quot;a&quot; &quot;e&quot;
 
 [[2]]
@@ -830,8 +829,8 @@ When we use the quantifiers, be very careful about the <strong>scope</strong> of
 <ul>
 <li><code>str_match(STRING, PATTERN)</code>: Extract the content of the matches of the strings in <code>STRING</code> as well as each capture groups (character)</li>
 </ul>
-<div class="sourceCode" id="cb303"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb303-1"><a href="string-manipulation.html#cb303-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_match</span>(x, <span class="st">&quot;(bl)([aeiou]+)&quot;</span>)</span></code></pre></div>
-<pre><code>      [,1]   [,2] [,3]
+<div class="sourceCode" id="cb317"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb317-1"><a href="string-manipulation.html#cb317-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_match</span>(x, <span class="st">&quot;(bl)([aeiou]+)&quot;</span>)</span></code></pre></div>
+<pre class="Rout"><code>      [,1]   [,2] [,3]
  [1,] NA     NA   NA  
  [2,] NA     NA   NA  
  [3,] NA     NA   NA  
@@ -845,11 +844,11 @@ When we use the quantifiers, be very careful about the <strong>scope</strong> of
 <p>For each match, we will get not only the full match, but also the capture groups substrings specified in the regular expression. Each group (i.e., parenthesis) in your regular expression will have a partial match in the results.</p>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-274" class="exercise"><strong>Exercise 8.4  </strong></span>How do you use <code>str_match()</code> to find out all the <code>c+Vowel</code> structures, and at the same time identify which vowels follow the letter <code>c</code>?
+<span id="exr:unnamed-chunk-282" class="exercise"><strong>Exercise 8.4  </strong></span>How do you use <code>str_match()</code> to find out all the <code>c+Vowel</code> structures, and at the same time identify which vowels follow the letter <code>c</code>?
 </div>
 <div id="htmlwidget-cf35c9438594fd6fbb06" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-cf35c9438594fd6fbb06">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apri<span class='match'>co<\/span>t<\/li>\n  <li>avo<span class='match'>ca<\/span>do<\/li>\n  <li>banana<\/li>\n  <li>bell pepper<\/li>\n  <li>bilberry<\/li>\n  <li>blackberry<\/li>\n  <li>black<span class='match'>cu<\/span>rrant<\/li>\n  <li>blood orange<\/li>\n  <li>blueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<pre><code>      [,1] [,2]
+<pre class="Rout"><code>      [,1] [,2]
  [1,] NA   NA  
  [2,] &quot;co&quot; &quot;o&quot; 
  [3,] &quot;ca&quot; &quot;a&quot; 
@@ -866,12 +865,12 @@ When we use the quantifiers, be very careful about the <strong>scope</strong> of
 <ul>
 <li><code>str_replace(STRING, PATTERN, REPLACEMENT)</code>: Replace matches of the <code>PATTERN</code> with <code>REPLACEMENT</code> in <code>STRING</code> (character)</li>
 </ul>
-<div class="sourceCode" id="cb306"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb306-1"><a href="string-manipulation.html#cb306-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_replace</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;[aeiou]&quot;</span>, <span class="at">replacement =</span> <span class="st">&quot;V&quot;</span>)</span></code></pre></div>
-<pre><code> [1] &quot;Vpple&quot;        &quot;Vpricot&quot;      &quot;Vvocado&quot;      &quot;bVnana&quot;       &quot;bVll pepper&quot; 
+<div class="sourceCode" id="cb320"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb320-1"><a href="string-manipulation.html#cb320-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_replace</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;[aeiou]&quot;</span>, <span class="at">replacement =</span> <span class="st">&quot;V&quot;</span>)</span></code></pre></div>
+<pre class="Rout"><code> [1] &quot;Vpple&quot;        &quot;Vpricot&quot;      &quot;Vvocado&quot;      &quot;bVnana&quot;       &quot;bVll pepper&quot; 
  [6] &quot;bVlberry&quot;     &quot;blVckberry&quot;   &quot;blVckcurrant&quot; &quot;blVod orange&quot; &quot;blVeberry&quot;   </code></pre>
 <p>It should be noted that <code>str_replace()</code> only replaces the first match of each string.</p>
-<div class="sourceCode" id="cb308"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb308-1"><a href="string-manipulation.html#cb308-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_replace_all</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;[aeiou]&quot;</span>, <span class="at">replacement =</span> <span class="st">&quot;V&quot;</span>)</span></code></pre></div>
-<pre><code> [1] &quot;VpplV&quot;        &quot;VprVcVt&quot;      &quot;VvVcVdV&quot;      &quot;bVnVnV&quot;       &quot;bVll pVppVr&quot; 
+<div class="sourceCode" id="cb322"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb322-1"><a href="string-manipulation.html#cb322-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_replace_all</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;[aeiou]&quot;</span>, <span class="at">replacement =</span> <span class="st">&quot;V&quot;</span>)</span></code></pre></div>
+<pre class="Rout"><code> [1] &quot;VpplV&quot;        &quot;VprVcVt&quot;      &quot;VvVcVdV&quot;      &quot;bVnVnV&quot;       &quot;bVll pVppVr&quot; 
  [6] &quot;bVlbVrry&quot;     &quot;blVckbVrry&quot;   &quot;blVckcVrrVnt&quot; &quot;blVVd VrVngV&quot; &quot;blVVbVrry&quot;   </code></pre>
 </div>
 <div id="str_split" class="section level3" number="8.5.6">
@@ -879,15 +878,16 @@ When we use the quantifiers, be very careful about the <strong>scope</strong> of
 <ul>
 <li><code>str_split(STRING, PATTERN)</code>: Split a string in <code>STRING</code> based on a <code>PATTERN</code> (character)</li>
 </ul>
-<div class="sourceCode" id="cb310"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb310-1"><a href="string-manipulation.html#cb310-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> sentences <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">5</span>)</span>
-<span id="cb310-2"><a href="string-manipulation.html#cb310-2" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
-<pre><code>[1] &quot;The birch canoe slid on the smooth planks.&quot; 
+<div class="sourceCode" id="cb324"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb324-1"><a href="string-manipulation.html#cb324-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> sentences <span class="sc">%&gt;%</span></span>
+<span id="cb324-2"><a href="string-manipulation.html#cb324-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">5</span>)</span>
+<span id="cb324-3"><a href="string-manipulation.html#cb324-3" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<pre class="Rout"><code>[1] &quot;The birch canoe slid on the smooth planks.&quot; 
 [2] &quot;Glue the sheet to the dark blue background.&quot;
 [3] &quot;It&#39;s easy to tell the depth of a well.&quot;     
 [4] &quot;These days a chicken leg is a rare dish.&quot;   
 [5] &quot;Rice is often served in round bowls.&quot;       </code></pre>
-<div class="sourceCode" id="cb312"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb312-1"><a href="string-manipulation.html#cb312-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_split</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">s&quot;</span>)</span></code></pre></div>
-<pre><code>[[1]]
+<div class="sourceCode" id="cb326"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb326-1"><a href="string-manipulation.html#cb326-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_split</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">s&quot;</span>)</span></code></pre></div>
+<pre class="Rout"><code>[[1]]
 [1] &quot;The&quot;     &quot;birch&quot;   &quot;canoe&quot;   &quot;slid&quot;    &quot;on&quot;      &quot;the&quot;     &quot;smooth&quot; 
 [8] &quot;planks.&quot;
 
@@ -905,9 +905,10 @@ When we use the quantifiers, be very careful about the <strong>scope</strong> of
 [[5]]
 [1] &quot;Rice&quot;   &quot;is&quot;     &quot;often&quot;  &quot;served&quot; &quot;in&quot;     &quot;round&quot;  &quot;bowls.&quot;</code></pre>
 <p>Please note that the return of <code>str_split()</code> is a <code>list</code>.</p>
-<div class="sourceCode" id="cb314"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb314-1"><a href="string-manipulation.html#cb314-1" aria-hidden="true" tabindex="-1"></a>fields <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Name: Hadley&quot;</span>, <span class="st">&quot;Country: NZ&quot;</span>, <span class="st">&quot;Age: 35&quot;</span>)</span>
-<span id="cb314-2"><a href="string-manipulation.html#cb314-2" aria-hidden="true" tabindex="-1"></a>fields <span class="sc">%&gt;%</span> <span class="fu">str_split</span>(<span class="st">&quot;: &quot;</span>)</span></code></pre></div>
-<pre><code>[[1]]
+<div class="sourceCode" id="cb328"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb328-1"><a href="string-manipulation.html#cb328-1" aria-hidden="true" tabindex="-1"></a>fields <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Name: Hadley&quot;</span>, <span class="st">&quot;Country: NZ&quot;</span>, <span class="st">&quot;Age: 35&quot;</span>)</span>
+<span id="cb328-2"><a href="string-manipulation.html#cb328-2" aria-hidden="true" tabindex="-1"></a>fields <span class="sc">%&gt;%</span></span>
+<span id="cb328-3"><a href="string-manipulation.html#cb328-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_split</span>(<span class="st">&quot;: &quot;</span>)</span></code></pre></div>
+<pre class="Rout"><code>[[1]]
 [1] &quot;Name&quot;   &quot;Hadley&quot;
 
 [[2]]
@@ -915,33 +916,34 @@ When we use the quantifiers, be very careful about the <strong>scope</strong> of
 
 [[3]]
 [1] &quot;Age&quot; &quot;35&quot; </code></pre>
-<div class="sourceCode" id="cb316"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb316-1"><a href="string-manipulation.html#cb316-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To get a simpler structure in return:</span></span>
-<span id="cb316-2"><a href="string-manipulation.html#cb316-2" aria-hidden="true" tabindex="-1"></a>fields <span class="sc">%&gt;%</span> <span class="fu">str_split</span>(<span class="st">&quot;: &quot;</span>, <span class="at">simplify =</span> T)</span></code></pre></div>
-<pre><code>     [,1]      [,2]    
+<div class="sourceCode" id="cb330"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb330-1"><a href="string-manipulation.html#cb330-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To get a simpler structure in return:</span></span>
+<span id="cb330-2"><a href="string-manipulation.html#cb330-2" aria-hidden="true" tabindex="-1"></a>fields <span class="sc">%&gt;%</span></span>
+<span id="cb330-3"><a href="string-manipulation.html#cb330-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_split</span>(<span class="st">&quot;: &quot;</span>, <span class="at">simplify =</span> T)</span></code></pre></div>
+<pre class="Rout"><code>     [,1]      [,2]    
 [1,] &quot;Name&quot;    &quot;Hadley&quot;
 [2,] &quot;Country&quot; &quot;NZ&quot;    
 [3,] &quot;Age&quot;     &quot;35&quot;    </code></pre>
 <hr />
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-280" class="exercise"><strong>Exercise 8.5  </strong></span>Convert American dates <code>American.dates</code> to British dates using <code>str_replace_all()</code>. Please note that in your output, you need to preserve the original delimiters for each date.
+<span id="exr:unnamed-chunk-288" class="exercise"><strong>Exercise 8.5  </strong></span>Convert American dates <code>American.dates</code> to British dates using <code>str_replace_all()</code>. Please note that in your output, you need to preserve the original delimiters for each date.
 </div>
-<div class="sourceCode" id="cb318"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb318-1"><a href="string-manipulation.html#cb318-1" aria-hidden="true" tabindex="-1"></a>American.dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;7/31/1976&quot;</span>, <span class="st">&quot;02.15.1970&quot;</span>, <span class="st">&quot;11-31-1986&quot;</span>, <span class="st">&quot;04/01.2020&quot;</span>)</span></code></pre></div>
-<pre><code>[1] &quot;31/7/1976&quot;  &quot;15.02.1970&quot; &quot;31-11-1986&quot; &quot;01/04.2020&quot;</code></pre>
+<div class="sourceCode" id="cb332"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb332-1"><a href="string-manipulation.html#cb332-1" aria-hidden="true" tabindex="-1"></a>American.dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;7/31/1976&quot;</span>, <span class="st">&quot;02.15.1970&quot;</span>, <span class="st">&quot;11-31-1986&quot;</span>, <span class="st">&quot;04/01.2020&quot;</span>)</span></code></pre></div>
+<pre class="Rout"><code>[1] &quot;31/7/1976&quot;  &quot;15.02.1970&quot; &quot;31-11-1986&quot; &quot;01/04.2020&quot;</code></pre>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-283" class="exercise"><strong>Exercise 8.6  </strong></span>Please use the default <code>sentences</code> vector as your input and find all patterns of “any BE verbs + words ending with ‘en’ or ‘ed’.” Please extract these matches from the sentences and your result should be a vector of these matches, as shown below.</p>
+<p><span id="exr:unnamed-chunk-291" class="exercise"><strong>Exercise 8.6  </strong></span>Please use the default <code>sentences</code> vector as your input and find all patterns of “any BE verbs + words ending with ‘en’ or ‘ed’.” Please extract these matches from the sentences and your result should be a vector of these matches, as shown below.</p>
 Hint: Check <code>unlist()</code> and <code>nzchar()</code>
 </div>
-<div class="sourceCode" id="cb320"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb320-1"><a href="string-manipulation.html#cb320-1" aria-hidden="true" tabindex="-1"></a>sentences[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code></pre></div>
-<pre><code>[1] &quot;The birch canoe slid on the smooth planks.&quot; 
+<div class="sourceCode" id="cb334"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb334-1"><a href="string-manipulation.html#cb334-1" aria-hidden="true" tabindex="-1"></a>sentences[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code></pre></div>
+<pre class="Rout"><code>[1] &quot;The birch canoe slid on the smooth planks.&quot; 
 [2] &quot;Glue the sheet to the dark blue background.&quot;
 [3] &quot;It&#39;s easy to tell the depth of a well.&quot;     
 [4] &quot;These days a chicken leg is a rare dish.&quot;   
 [5] &quot;Rice is often served in round bowls.&quot;       </code></pre>
-<div class="sourceCode" id="cb322"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb322-1"><a href="string-manipulation.html#cb322-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(sentences)</span></code></pre></div>
-<pre><code>[1] 720</code></pre>
-<pre><code> [1] &quot;is often&quot;      &quot;were fed&quot;      &quot;is used&quot;       &quot;was cooked&quot;   
+<div class="sourceCode" id="cb336"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb336-1"><a href="string-manipulation.html#cb336-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(sentences)</span></code></pre></div>
+<pre class="Rout"><code>[1] 720</code></pre>
+<pre class="Rout"><code> [1] &quot;is often&quot;      &quot;were fed&quot;      &quot;is used&quot;       &quot;was cooked&quot;   
  [5] &quot;was seized&quot;    &quot;is used&quot;       &quot;was spattered&quot; &quot;is red&quot;       
  [9] &quot;was fired&quot;     &quot;is ten&quot;        &quot;is used&quot;       &quot;are pushed&quot;   
 [13] &quot;are men&quot;       &quot;are used&quot;      &quot;were hired&quot;    &quot;was covered&quot;  
@@ -960,41 +962,35 @@ Hint: Check <code>unlist()</code> and <code>nzchar()</code>
 <h2><span class="header-section-number">8.6</span> Advanced Pattern Matching: Look Ahead and Behind</h2>
 <p>The regular expressions we have introduced so far will consume the input strings when doing the pattern matching. I would like to illustrate this idea with the following simple example.</p>
 <p>If we want to find <code>Windows</code>, but only when it is followed by <code>"95, 98, NT, 2000"</code>, how should we write our RegEx pattern?</p>
-<div class="sourceCode" id="cb325"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb325-1"><a href="string-manipulation.html#cb325-1" aria-hidden="true" tabindex="-1"></a>win <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Windows2000&quot;</span>, <span class="st">&quot;Windows&quot;</span>, <span class="st">&quot;WindowsNT&quot;</span>, <span class="st">&quot;Windows7&quot;</span>, <span class="st">&quot;Windows10&quot;</span>)</span>
-<span id="cb325-2"><a href="string-manipulation.html#cb325-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(win, <span class="st">&quot;Windows((95)|(98)|(NT)|(2000))&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb339"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb339-1"><a href="string-manipulation.html#cb339-1" aria-hidden="true" tabindex="-1"></a>win <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Windows2000&quot;</span>, <span class="st">&quot;Windows&quot;</span>, <span class="st">&quot;WindowsNT&quot;</span>, <span class="st">&quot;Windows7&quot;</span>, <span class="st">&quot;Windows10&quot;</span>)</span>
+<span id="cb339-2"><a href="string-manipulation.html#cb339-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(win, <span class="st">&quot;Windows((95)|(98)|(NT)|(2000))&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-d62e1419dbec4f2b5c1b" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-d62e1419dbec4f2b5c1b">{"x":{"html":"<ul>\n  <li><span class='match'>Windows2000<\/span><\/li>\n  <li>Windows<\/li>\n  <li><span class='match'>WindowsNT<\/span><\/li>\n  <li>Windows7<\/li>\n  <li>Windows10<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>The pattern seems OK because we did find the <code>Windows2000</code> that satisfies our RegEx. But what if you would like to replace the word “Windows” with “OldSystem” but only when “Windows” is followed by <code>"95, 98, NT, 2000"</code>?</p>
-<div class="sourceCode" id="cb326"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb326-1"><a href="string-manipulation.html#cb326-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_replace</span>(win, </span>
-<span id="cb326-2"><a href="string-manipulation.html#cb326-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">pattern =</span> <span class="st">&quot;Windows((95)|(98)|(NT)|(2000))&quot;</span>,</span>
-<span id="cb326-3"><a href="string-manipulation.html#cb326-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">replacement =</span> <span class="st">&quot;OldSystem&quot;</span>)</span></code></pre></div>
-<pre><code>[1] &quot;OldSystem&quot; &quot;Windows&quot;   &quot;OldSystem&quot; &quot;Windows7&quot;  &quot;Windows10&quot;</code></pre>
+<div class="sourceCode" id="cb340"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb340-1"><a href="string-manipulation.html#cb340-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_replace</span>(win, <span class="at">pattern =</span> <span class="st">&quot;Windows((95)|(98)|(NT)|(2000))&quot;</span>, <span class="at">replacement =</span> <span class="st">&quot;OldSystem&quot;</span>)</span></code></pre></div>
+<pre class="Rout"><code>[1] &quot;OldSystem&quot; &quot;Windows&quot;   &quot;OldSystem&quot; &quot;Windows7&quot;  &quot;Windows10&quot;</code></pre>
 <p>Now you see the problem? Not only “Windows” was replaced, but also the entire string. This is not what we expect to get. Instead, we would expect something like:</p>
-<pre><code>[1] &quot;OldSystem2000&quot; &quot;Windows&quot;       &quot;OldSystemNT&quot;   &quot;Windows7&quot;     
+<pre class="Rout"><code>[1] &quot;OldSystem2000&quot; &quot;Windows&quot;       &quot;OldSystemNT&quot;   &quot;Windows7&quot;     
 [5] &quot;Windows10&quot;    </code></pre>
 <p>That is why we need <strong>lookahead</strong> function in RegEx.</p>
 <ul>
 <li><code>(?=...)</code>: positive lookahead—extract a match only when … is on the right</li>
 <li><code>(?!...)</code>: negative lookahead—extract a match only when … is NOT on the right</li>
 </ul>
-<div class="sourceCode" id="cb329"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb329-1"><a href="string-manipulation.html#cb329-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(win, <span class="st">&quot;Windows(?=95|98|NT|2000)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb343-1"><a href="string-manipulation.html#cb343-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(win, <span class="st">&quot;Windows(?=95|98|NT|2000)&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-d4cfcb40693d89d371db" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-d4cfcb40693d89d371db">{"x":{"html":"<ul>\n  <li><span class='match'>Windows<\/span>2000<\/li>\n  <li>Windows<\/li>\n  <li><span class='match'>Windows<\/span>NT<\/li>\n  <li>Windows7<\/li>\n  <li>Windows10<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>In the above regular expression, the <code>()</code> after <code>Windows</code> is a lookahead condition for matching. The strings of “2000” and “NT” in the condition are NOT consumed. The RegEx engine looks ahead the following few characters first to check the patterns but after it finds a match, the lookahead characters will still be the input of the next pattern-matching.</p>
 <p>We can make use of this lookahead to do the string replacement:</p>
-<div class="sourceCode" id="cb330"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb330-1"><a href="string-manipulation.html#cb330-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_replace</span>(<span class="at">string =</span> win, </span>
-<span id="cb330-2"><a href="string-manipulation.html#cb330-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">pattern =</span> <span class="st">&quot;Windows(?=95|98|NT|2000)&quot;</span>,</span>
-<span id="cb330-3"><a href="string-manipulation.html#cb330-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">replacement =</span> <span class="st">&quot;OldSystem&quot;</span>)</span></code></pre></div>
-<pre><code>[1] &quot;OldSystem2000&quot; &quot;Windows&quot;       &quot;OldSystemNT&quot;   &quot;Windows7&quot;     
+<div class="sourceCode" id="cb344"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb344-1"><a href="string-manipulation.html#cb344-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_replace</span>(<span class="at">string =</span> win, <span class="at">pattern =</span> <span class="st">&quot;Windows(?=95|98|NT|2000)&quot;</span>, <span class="at">replacement =</span> <span class="st">&quot;OldSystem&quot;</span>)</span></code></pre></div>
+<pre class="Rout"><code>[1] &quot;OldSystem2000&quot; &quot;Windows&quot;       &quot;OldSystemNT&quot;   &quot;Windows7&quot;     
 [5] &quot;Windows10&quot;    </code></pre>
 <p>Moreover, we can create a negative lookahead as well:</p>
-<div class="sourceCode" id="cb332"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb332-1"><a href="string-manipulation.html#cb332-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(win, <span class="st">&quot;Windows(?!7|10)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb346"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb346-1"><a href="string-manipulation.html#cb346-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(win, <span class="st">&quot;Windows(?!7|10)&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-c382d9c812675a67062f" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-c382d9c812675a67062f">{"x":{"html":"<ul>\n  <li><span class='match'>Windows<\/span>2000<\/li>\n  <li><span class='match'>Windows<\/span><\/li>\n  <li><span class='match'>Windows<\/span>NT<\/li>\n  <li>Windows7<\/li>\n  <li>Windows10<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb333"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb333-1"><a href="string-manipulation.html#cb333-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_replace</span>(<span class="at">string =</span> win,</span>
-<span id="cb333-2"><a href="string-manipulation.html#cb333-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">pattern =</span> <span class="st">&quot;Windows(?!7|10)&quot;</span>,</span>
-<span id="cb333-3"><a href="string-manipulation.html#cb333-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">replacement =</span> <span class="st">&quot;NewSystem&quot;</span>)</span></code></pre></div>
-<pre><code>[1] &quot;NewSystem2000&quot; &quot;NewSystem&quot;     &quot;NewSystemNT&quot;   &quot;Windows7&quot;     
+<div class="sourceCode" id="cb347"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb347-1"><a href="string-manipulation.html#cb347-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_replace</span>(<span class="at">string =</span> win, <span class="at">pattern =</span> <span class="st">&quot;Windows(?!7|10)&quot;</span>, <span class="at">replacement =</span> <span class="st">&quot;NewSystem&quot;</span>)</span></code></pre></div>
+<pre class="Rout"><code>[1] &quot;NewSystem2000&quot; &quot;NewSystem&quot;     &quot;NewSystemNT&quot;   &quot;Windows7&quot;     
 [5] &quot;Windows10&quot;    </code></pre>
 <p>In addition to lookahead, we can also specify look-behind conditions:</p>
 <ul>
@@ -1004,12 +1000,12 @@ Hint: Check <code>unlist()</code> and <code>nzchar()</code>
 <li><code>(?&lt;!pattern)</code>: The target match cannot be preceded by the pattern defined in the condition</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb335"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb335-1"><a href="string-manipulation.html#cb335-1" aria-hidden="true" tabindex="-1"></a>win <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;2000Windows&quot;</span>, <span class="st">&quot;Windows&quot;</span>, <span class="st">&quot;NTWindowsNT&quot;</span>, <span class="st">&quot;7Windows&quot;</span>, <span class="st">&quot;10Windows&quot;</span>)</span>
-<span id="cb335-2"><a href="string-manipulation.html#cb335-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(win, <span class="st">&quot;(?&lt;=95|98|NT|2000)Windows&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb349"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb349-1"><a href="string-manipulation.html#cb349-1" aria-hidden="true" tabindex="-1"></a>win <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;2000Windows&quot;</span>, <span class="st">&quot;Windows&quot;</span>, <span class="st">&quot;NTWindowsNT&quot;</span>, <span class="st">&quot;7Windows&quot;</span>, <span class="st">&quot;10Windows&quot;</span>)</span>
+<span id="cb349-2"><a href="string-manipulation.html#cb349-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(win, <span class="st">&quot;(?&lt;=95|98|NT|2000)Windows&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-9dc4bf0db722a06bcf08" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-9dc4bf0db722a06bcf08">{"x":{"html":"<ul>\n  <li>2000<span class='match'>Windows<\/span><\/li>\n  <li>Windows<\/li>\n  <li>NT<span class='match'>Windows<\/span>NT<\/li>\n  <li>7Windows<\/li>\n  <li>10Windows<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb336"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb336-1"><a href="string-manipulation.html#cb336-1" aria-hidden="true" tabindex="-1"></a>win <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;2000Windows&quot;</span>, <span class="st">&quot;Windows&quot;</span>, <span class="st">&quot;NTWindowsNT&quot;</span>, <span class="st">&quot;7Windows&quot;</span>, <span class="st">&quot;10Windows&quot;</span>)</span>
-<span id="cb336-2"><a href="string-manipulation.html#cb336-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(win, <span class="st">&quot;(?&lt;!95|98|NT|2000)Windows&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb350"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb350-1"><a href="string-manipulation.html#cb350-1" aria-hidden="true" tabindex="-1"></a>win <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;2000Windows&quot;</span>, <span class="st">&quot;Windows&quot;</span>, <span class="st">&quot;NTWindowsNT&quot;</span>, <span class="st">&quot;7Windows&quot;</span>, <span class="st">&quot;10Windows&quot;</span>)</span>
+<span id="cb350-2"><a href="string-manipulation.html#cb350-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(win, <span class="st">&quot;(?&lt;!95|98|NT|2000)Windows&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-ef1c437873e0c0c0b1d3" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-ef1c437873e0c0c0b1d3">{"x":{"html":"<ul>\n  <li>2000Windows<\/li>\n  <li><span class='match'>Windows<\/span><\/li>\n  <li>NTWindowsNT<\/li>\n  <li>7<span class='match'>Windows<\/span><\/li>\n  <li>10<span class='match'>Windows<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <hr />
@@ -1022,8 +1018,8 @@ Hint: <code>str_replace_all()</code>
 <ul>
 <li>dataset</li>
 </ul>
-<div class="sourceCode" id="cb337"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb337-1"><a href="string-manipulation.html#cb337-1" aria-hidden="true" tabindex="-1"></a>fruit[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code></pre></div>
-<pre><code> [1] &quot;apple&quot;        &quot;apricot&quot;      &quot;avocado&quot;      &quot;banana&quot;       &quot;bell pepper&quot; 
+<div class="sourceCode" id="cb351"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb351-1"><a href="string-manipulation.html#cb351-1" aria-hidden="true" tabindex="-1"></a>fruit[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code></pre></div>
+<pre class="Rout"><code> [1] &quot;apple&quot;        &quot;apricot&quot;      &quot;avocado&quot;      &quot;banana&quot;       &quot;bell pepper&quot; 
  [6] &quot;bilberry&quot;     &quot;blackberry&quot;   &quot;blackcurrant&quot; &quot;blood orange&quot; &quot;blueberry&quot;   </code></pre>
 <ul>
 <li>target matches</li>
@@ -1033,7 +1029,7 @@ Hint: <code>str_replace_all()</code>
 <ul>
 <li>your result</li>
 </ul>
-<pre><code> [1] &quot;Vpple&quot;        &quot;Vpricot&quot;      &quot;avocVdo&quot;      &quot;banana&quot;       &quot;bell pepper&quot; 
+<pre class="Rout"><code> [1] &quot;Vpple&quot;        &quot;Vpricot&quot;      &quot;avocVdo&quot;      &quot;banana&quot;       &quot;bell pepper&quot; 
  [6] &quot;bilberry&quot;     &quot;blackberry&quot;   &quot;blackcurrant&quot; &quot;blood orange&quot; &quot;blueberry&quot;   </code></pre>
 <hr />
 
@@ -1044,8 +1040,8 @@ Hint: <code>str_replace_all()</code>
 <ul>
 <li>dataset</li>
 </ul>
-<div class="sourceCode" id="cb340"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb340-1"><a href="string-manipulation.html#cb340-1" aria-hidden="true" tabindex="-1"></a>fruit[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code></pre></div>
-<pre><code> [1] &quot;apple&quot;        &quot;apricot&quot;      &quot;avocado&quot;      &quot;banana&quot;       &quot;bell pepper&quot; 
+<div class="sourceCode" id="cb354"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb354-1"><a href="string-manipulation.html#cb354-1" aria-hidden="true" tabindex="-1"></a>fruit[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code></pre></div>
+<pre class="Rout"><code> [1] &quot;apple&quot;        &quot;apricot&quot;      &quot;avocado&quot;      &quot;banana&quot;       &quot;bell pepper&quot; 
  [6] &quot;bilberry&quot;     &quot;blackberry&quot;   &quot;blackcurrant&quot; &quot;blood orange&quot; &quot;blueberry&quot;   </code></pre>
 <ul>
 <li>target matches</li>
@@ -1055,7 +1051,7 @@ Hint: <code>str_replace_all()</code>
 <ul>
 <li>your result</li>
 </ul>
-<pre><code> [1] &quot;apple&quot;        &quot;apricot&quot;      &quot;avocado&quot;      &quot;banana&quot;       &quot;bell pVpper&quot; 
+<pre class="Rout"><code> [1] &quot;apple&quot;        &quot;apricot&quot;      &quot;avocado&quot;      &quot;banana&quot;       &quot;bell pVpper&quot; 
  [6] &quot;bilberry&quot;     &quot;blackberry&quot;   &quot;blackcurrant&quot; &quot;blood orange&quot; &quot;blueberry&quot;   </code></pre>
 <hr />
 </div>
@@ -1065,16 +1061,13 @@ Hint: <code>str_replace_all()</code>
 <p>In Chapter <a href="data-manipulation.html#data-manipulation">7</a>, we have talked about important ways in which we can manipulate our data as a <code>data.frame/tibble</code>. Please refer to the Chapter <a href="data-manipulation.html#data-manipulation">7</a> for a review of the important <em>verbs</em> in <code>dplyr</code>.</p>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-300" class="exercise"><strong>Exercise 8.9  </strong></span>In the library <code>tidyr</code>, there are two very useful functions for data manipulation: <code>separate()</code>, <code>extract()</code> and <code>unnest()</code>. Please read the documentations of these two functions and run the examples provided in the documentation to make sure that you understand how they work.
+<span id="exr:unnamed-chunk-308" class="exercise"><strong>Exercise 8.9  </strong></span>In the library <code>tidyr</code>, there are two very useful functions for data manipulation: <code>separate()</code>, <code>extract()</code> and <code>unnest()</code>. Please read the documentations of these two functions and run the examples provided in the documentation to make sure that you understand how they work.
 </div>
 <div id="case-1" class="section level3" number="8.7.1">
 <h3><span class="header-section-number">8.7.1</span> Case 1</h3>
 <p>If we have a data frame like <code>dt</code> below, how do we extract only the numbers of the weeks from the <code>y</code> column, and add this information to a new column, <code>z</code>?</p>
-<div class="sourceCode" id="cb343"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb343-1"><a href="string-manipulation.html#cb343-1" aria-hidden="true" tabindex="-1"></a>dt <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb343-2"><a href="string-manipulation.html#cb343-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,</span>
-<span id="cb343-3"><a href="string-manipulation.html#cb343-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="st">&quot;wk 3&quot;</span>, <span class="st">&quot;week-1&quot;</span>, <span class="st">&quot;7&quot;</span>, <span class="st">&quot;w#9&quot;</span>)</span>
-<span id="cb343-4"><a href="string-manipulation.html#cb343-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb343-5"><a href="string-manipulation.html#cb343-5" aria-hidden="true" tabindex="-1"></a>dt</span></code></pre></div>
+<div class="sourceCode" id="cb357"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb357-1"><a href="string-manipulation.html#cb357-1" aria-hidden="true" tabindex="-1"></a>dt <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">y =</span> <span class="fu">c</span>(<span class="st">&quot;wk 3&quot;</span>, <span class="st">&quot;week-1&quot;</span>, <span class="st">&quot;7&quot;</span>, <span class="st">&quot;w#9&quot;</span>))</span>
+<span id="cb357-2"><a href="string-manipulation.html#cb357-2" aria-hidden="true" tabindex="-1"></a>dt</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["x"],"name":[1],"type":["int"],"align":["right"]},{"label":["y"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"1","2":"wk 3"},{"1":"2","2":"week-1"},{"1":"3","2":"7"},{"1":"4","2":"w#9"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -1088,17 +1081,15 @@ Hint: <code>str_replace_all()</code>
 <hr />
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-303" class="exercise"><strong>Exercise 8.10  </strong></span>If we have a data frame like <code>dt</code> below, how do we extract all the vowels of the words in the <code>WORD</code> column and create two additional columns:</p>
+<p><span id="exr:unnamed-chunk-311" class="exercise"><strong>Exercise 8.10  </strong></span>If we have a data frame like <code>dt</code> below, how do we extract all the vowels of the words in the <code>WORD</code> column and create two additional columns:</p>
 <ul>
 <li>Because a word may have several vowels, create a new column, which shows all the vowels in the word by combining them into a long string with the delimiter "_"</li>
 <li>Create another column for the number of vowels for each word</li>
 </ul>
 Vowels are defined as <code>[aeiou]</code>.
 </div>
-<div class="sourceCode" id="cb344"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb344-1"><a href="string-manipulation.html#cb344-1" aria-hidden="true" tabindex="-1"></a>dt <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb344-2"><a href="string-manipulation.html#cb344-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">WORD =</span> fruit[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span>
-<span id="cb344-3"><a href="string-manipulation.html#cb344-3" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb344-4"><a href="string-manipulation.html#cb344-4" aria-hidden="true" tabindex="-1"></a>dt</span></code></pre></div>
+<div class="sourceCode" id="cb358"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb358-1"><a href="string-manipulation.html#cb358-1" aria-hidden="true" tabindex="-1"></a>dt <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">WORD =</span> fruit[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>])</span>
+<span id="cb358-2"><a href="string-manipulation.html#cb358-2" aria-hidden="true" tabindex="-1"></a>dt</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["WORD"],"name":[1],"type":["chr"],"align":["left"]}],"data":[{"1":"apple"},{"1":"apricot"},{"1":"avocado"},{"1":"banana"},{"1":"bell pepper"},{"1":"bilberry"},{"1":"blackberry"},{"1":"blackcurrant"},{"1":"blood orange"},{"1":"blueberry"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -1114,8 +1105,8 @@ Vowels are defined as <code>[aeiou]</code>.
 <div id="case-2" class="section level3" number="8.7.2">
 <h3><span class="header-section-number">8.7.2</span> Case 2</h3>
 <p>How to separate the English and Chinese strings in <code>x</code> column and create two new columns, <code>EN</code>, <code>CH</code>?</p>
-<div class="sourceCode" id="cb345"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb345-1"><a href="string-manipulation.html#cb345-1" aria-hidden="true" tabindex="-1"></a>tb <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="st">&quot;I我&quot;</span>, <span class="st">&quot;love愛&quot;</span>, <span class="st">&quot;you你&quot;</span>))</span>
-<span id="cb345-2"><a href="string-manipulation.html#cb345-2" aria-hidden="true" tabindex="-1"></a>tb</span></code></pre></div>
+<div class="sourceCode" id="cb359"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb359-1"><a href="string-manipulation.html#cb359-1" aria-hidden="true" tabindex="-1"></a>tb <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="st">&quot;I我&quot;</span>, <span class="st">&quot;love愛&quot;</span>, <span class="st">&quot;you你&quot;</span>))</span>
+<span id="cb359-2"><a href="string-manipulation.html#cb359-2" aria-hidden="true" tabindex="-1"></a>tb</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["x"],"name":[1],"type":["chr"],"align":["left"]}],"data":[{"1":"I我"},{"1":"love愛"},{"1":"you你"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -1138,10 +1129,10 @@ Vowels are defined as <code>[aeiou]</code>.
 </div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-308" class="exercise"><strong>Exercise 8.11  </strong></span>How to extract the numbers and split the numbers into <code>START</code> and <code>END</code>?
+<span id="exr:unnamed-chunk-316" class="exercise"><strong>Exercise 8.11  </strong></span>How to extract the numbers and split the numbers into <code>START</code> and <code>END</code>?
 </div>
-<div class="sourceCode" id="cb346"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb346-1"><a href="string-manipulation.html#cb346-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="st">&quot;1-12周&quot;</span>, <span class="st">&quot;1-10周&quot;</span>, <span class="st">&quot;5-12周&quot;</span>))</span>
-<span id="cb346-2"><a href="string-manipulation.html#cb346-2" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
+<div class="sourceCode" id="cb360"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb360-1"><a href="string-manipulation.html#cb360-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="st">&quot;1-12周&quot;</span>, <span class="st">&quot;1-10周&quot;</span>, <span class="st">&quot;5-12周&quot;</span>))</span>
+<span id="cb360-2"><a href="string-manipulation.html#cb360-2" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["x"],"name":[1],"type":["chr"],"align":["left"]}],"data":[{"1":"1-12周"},{"1":"1-10周"},{"1":"5-12周"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -1156,10 +1147,8 @@ Vowels are defined as <code>[aeiou]</code>.
 <div id="case-3" class="section level3" number="8.7.3">
 <h3><span class="header-section-number">8.7.3</span> Case 3</h3>
 <p>How to extract numbers of each token and compute the sum of the number and save the results in a new column <code>SUM</code>?</p>
-<div class="sourceCode" id="cb347"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb347-1"><a href="string-manipulation.html#cb347-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb347-2"><a href="string-manipulation.html#cb347-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">c</span>(<span class="st">&quot;1234&quot;</span>, <span class="st">&quot;B246&quot;</span>, <span class="st">&quot;217C&quot;</span>, <span class="st">&quot;2357f&quot;</span>, <span class="st">&quot;21WD4&quot;</span>)</span>
-<span id="cb347-3"><a href="string-manipulation.html#cb347-3" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb347-4"><a href="string-manipulation.html#cb347-4" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
+<div class="sourceCode" id="cb361"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb361-1"><a href="string-manipulation.html#cb361-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="st">&quot;1234&quot;</span>, <span class="st">&quot;B246&quot;</span>, <span class="st">&quot;217C&quot;</span>, <span class="st">&quot;2357f&quot;</span>, <span class="st">&quot;21WD4&quot;</span>))</span>
+<span id="cb361-2"><a href="string-manipulation.html#cb361-2" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["x"],"name":[1],"type":["chr"],"align":["left"]}],"data":[{"1":"1234"},{"1":"B246"},{"1":"217C"},{"1":"2357f"},{"1":"21WD4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -1175,10 +1164,8 @@ Vowels are defined as <code>[aeiou]</code>.
 <div class="exercise">
 <span id="exr:lookaheadex" class="exercise"><strong>Exercise 8.12  </strong></span>How to extract all the numbers that follow a upper-casing letter? For example, <code>34</code> after <code>W</code>; <code>217</code> after <code>B</code>?
 </div>
-<div class="sourceCode" id="cb348"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb348-1"><a href="string-manipulation.html#cb348-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb348-2"><a href="string-manipulation.html#cb348-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">c</span>(<span class="st">&quot;12W34&quot;</span>, <span class="st">&quot;AB2C46&quot;</span>, <span class="st">&quot;B217C&quot;</span>, <span class="st">&quot;akTs6df&quot;</span>, <span class="st">&quot;21WD4&quot;</span>)</span>
-<span id="cb348-3"><a href="string-manipulation.html#cb348-3" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb348-4"><a href="string-manipulation.html#cb348-4" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
+<div class="sourceCode" id="cb362"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb362-1"><a href="string-manipulation.html#cb362-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="st">&quot;12W34&quot;</span>, <span class="st">&quot;AB2C46&quot;</span>, <span class="st">&quot;B217C&quot;</span>, <span class="st">&quot;akTs6df&quot;</span>, <span class="st">&quot;21WD4&quot;</span>))</span>
+<span id="cb362-2"><a href="string-manipulation.html#cb362-2" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["x"],"name":[1],"type":["chr"],"align":["left"]}],"data":[{"1":"12W34"},{"1":"AB2C46"},{"1":"B217C"},{"1":"akTs6df"},{"1":"21WD4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -1191,7 +1178,7 @@ Vowels are defined as <code>[aeiou]</code>.
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-315" class="exercise"><strong>Exercise 8.13  </strong></span>Based on Exercise <a href="string-manipulation.html#exr:lookaheadex">8.12</a>, can you add another column to the resulting data frame, which records the upper-casing letter that the numbers follow for each row?</p>
+<p><span id="exr:unnamed-chunk-323" class="exercise"><strong>Exercise 8.13  </strong></span>Based on Exercise <a href="string-manipulation.html#exr:lookaheadex">8.12</a>, can you add another column to the resulting data frame, which records the upper-casing letter that the numbers follow for each row?</p>
 Hint: Check <code>str_match_all()</code> and <code>tidyr::unnest()</code>
 </div>
 <div data-pagedtable="false">
@@ -1209,16 +1196,17 @@ Hint: Check <code>str_match_all()</code> and <code>tidyr::unnest()</code>
 <h3><span class="header-section-number">8.8.1</span> Dictionary Entries</h3>
 <p>In our <code>demo_data</code> directory, there is a file <code>demo_data/dict-ch-idiom.txt</code>, which includes a list of four-character idioms in Chinese. These idioms are collected from <a href="https://pinyin.sogou.com/dict/">搜狗輸入法詞庫</a> and the original file formats (<code>.scel</code>) have been combined, removed of duplicate cases, and converted to a more machine-readable format, i.e., <code>.txt</code>.</p>
 <p>Let’s first load the idioms dataset in R.</p>
-<div class="sourceCode" id="cb349"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb349-1"><a href="string-manipulation.html#cb349-1" aria-hidden="true" tabindex="-1"></a>all_idioms <span class="ot">&lt;-</span> <span class="fu">readLines</span>(<span class="at">con =</span> <span class="st">&quot;demo_data/dict-ch-idiom.txt&quot;</span>,<span class="at">encoding =</span> <span class="st">&quot;UTF-8&quot;</span>)</span>
-<span id="cb349-2"><a href="string-manipulation.html#cb349-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(all_idioms)</span></code></pre></div>
-<pre><code>[1] &quot;阿保之功&quot; &quot;阿保之勞&quot; &quot;阿鼻地獄&quot; &quot;阿鼻叫喚&quot; &quot;阿斗太子&quot; &quot;阿芙蓉膏&quot;</code></pre>
-<div class="sourceCode" id="cb351"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb351-1"><a href="string-manipulation.html#cb351-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(all_idioms)</span></code></pre></div>
-<pre><code>[1] &quot;罪無可逭&quot; &quot;罪人不帑&quot; &quot;作纛旗兒&quot; &quot;坐纛旂兒&quot; &quot;作姦犯科&quot; &quot;作育英才&quot;</code></pre>
-<div class="sourceCode" id="cb353"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb353-1"><a href="string-manipulation.html#cb353-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(all_idioms)</span></code></pre></div>
-<pre><code>[1] 56536</code></pre>
+<div class="sourceCode" id="cb363"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb363-1"><a href="string-manipulation.html#cb363-1" aria-hidden="true" tabindex="-1"></a>all_idioms <span class="ot">&lt;-</span> <span class="fu">readLines</span>(<span class="at">con =</span> <span class="st">&quot;demo_data/dict-ch-idiom.txt&quot;</span>, <span class="at">encoding =</span> <span class="st">&quot;UTF-8&quot;</span>)</span>
+<span id="cb363-2"><a href="string-manipulation.html#cb363-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(all_idioms)</span></code></pre></div>
+<pre class="Rout"><code>[1] &quot;阿保之功&quot; &quot;阿保之勞&quot; &quot;阿鼻地獄&quot; &quot;阿鼻叫喚&quot; &quot;阿斗太子&quot; &quot;阿芙蓉膏&quot;</code></pre>
+<div class="sourceCode" id="cb365"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb365-1"><a href="string-manipulation.html#cb365-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(all_idioms)</span></code></pre></div>
+<pre class="Rout"><code>[1] &quot;罪無可逭&quot; &quot;罪人不帑&quot; &quot;作纛旗兒&quot; &quot;坐纛旂兒&quot; &quot;作姦犯科&quot; &quot;作育英才&quot;</code></pre>
+<div class="sourceCode" id="cb367"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb367-1"><a href="string-manipulation.html#cb367-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(all_idioms)</span></code></pre></div>
+<pre class="Rout"><code>[1] 56536</code></pre>
 <p>In order to make use of the tidy structure in R, we convert the data into a <code>tibble</code>:</p>
-<div class="sourceCode" id="cb355"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb355-1"><a href="string-manipulation.html#cb355-1" aria-hidden="true" tabindex="-1"></a>idiom <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">string =</span> all_idioms)</span>
-<span id="cb355-2"><a href="string-manipulation.html#cb355-2" aria-hidden="true" tabindex="-1"></a>idiom <span class="sc">%&gt;%</span> head</span></code></pre></div>
+<div class="sourceCode" id="cb369"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb369-1"><a href="string-manipulation.html#cb369-1" aria-hidden="true" tabindex="-1"></a>idiom <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">string =</span> all_idioms)</span>
+<span id="cb369-2"><a href="string-manipulation.html#cb369-2" aria-hidden="true" tabindex="-1"></a>idiom <span class="sc">%&gt;%</span></span>
+<span id="cb369-3"><a href="string-manipulation.html#cb369-3" aria-hidden="true" tabindex="-1"></a>    head</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["string"],"name":[1],"type":["chr"],"align":["left"]}],"data":[{"1":"阿保之功"},{"1":"阿保之勞"},{"1":"阿鼻地獄"},{"1":"阿鼻叫喚"},{"1":"阿斗太子"},{"1":"阿芙蓉膏"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -1228,73 +1216,62 @@ Hint: Check <code>str_match_all()</code> and <code>tidyr::unnest()</code>
 <div id="case-study-x來y去" class="section level3" number="8.8.2">
 <h3><span class="header-section-number">8.8.2</span> Case Study: <code>X來Y去</code></h3>
 <p>We can create a regular expression pattern to extract all idioms with the format of <code>X來X去</code>:</p>
-<div class="sourceCode" id="cb356"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb356-1"><a href="string-manipulation.html#cb356-1" aria-hidden="true" tabindex="-1"></a>idiom <span class="sc">%&gt;%</span></span>
-<span id="cb356-2"><a href="string-manipulation.html#cb356-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(string, <span class="st">&quot;.來.去&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb370"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb370-1"><a href="string-manipulation.html#cb370-1" aria-hidden="true" tabindex="-1"></a>idiom <span class="sc">%&gt;%</span></span>
+<span id="cb370-2"><a href="string-manipulation.html#cb370-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="fu">str_detect</span>(string, <span class="st">&quot;.來.去&quot;</span>))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["string"],"name":[1],"type":["chr"],"align":["left"]}],"data":[{"1":"春來秋去"},{"1":"顛來播去"},{"1":"顛來簸去"},{"1":"顛來倒去"},{"1":"跌來碰去"},{"1":"東來西去"},{"1":"反來復去"},{"1":"番來復去"},{"1":"番來覆去"},{"1":"翻來復去"},{"1":"翻來覆去"},{"1":"返來復去"},{"1":"飛來飛去"},{"1":"浮來暫去"},{"1":"過來過去"},{"1":"好來好去"},{"1":"呼來喝去"},{"1":"來來去去"},{"1":"眉來眼去"},{"1":"眉來語去"},{"1":"明來暗去"},{"1":"明來明去"},{"1":"暮來朝去"},{"1":"南來北去"},{"1":"你來我去"},{"1":"年來歲去"},{"1":"人來客去"},{"1":"生來死去"},{"1":"說來道去"},{"1":"說來說去"},{"1":"絲來線去"},{"1":"想來想去"},{"1":"言來語去"},{"1":"一來二去"},{"1":"説來道去"},{"1":"説來説去"},{"1":"朝來暮去"},{"1":"直來直去"},{"1":"轉來轉去"},{"1":"左來右去"},{"1":"晃來晃去"},{"1":"有來有去"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <p>To analyze the meaning of this constructional schema, we may need to extract the <code>X</code> and <code>Y</code> in the schema:</p>
-<div class="sourceCode" id="cb357"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb357-1"><a href="string-manipulation.html#cb357-1" aria-hidden="true" tabindex="-1"></a>idiom_laiqu <span class="ot">&lt;-</span>idiom <span class="sc">%&gt;%</span></span>
-<span id="cb357-2"><a href="string-manipulation.html#cb357-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(string, <span class="st">&quot;.來.去&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb357-3"><a href="string-manipulation.html#cb357-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pattern =</span> <span class="fu">str_replace</span>(string, <span class="st">&quot;(.)來(.)去&quot;</span>, <span class="st">&quot;</span><span class="sc">\\</span><span class="st">1_</span><span class="sc">\\</span><span class="st">2&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb357-4"><a href="string-manipulation.html#cb357-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(pattern, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&quot;w1&quot;</span>, <span class="st">&quot;w2&quot;</span>), <span class="at">sep =</span> <span class="st">&quot;_&quot;</span>)</span>
-<span id="cb357-5"><a href="string-manipulation.html#cb357-5" aria-hidden="true" tabindex="-1"></a>idiom_laiqu</span></code></pre></div>
+<div class="sourceCode" id="cb371"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb371-1"><a href="string-manipulation.html#cb371-1" aria-hidden="true" tabindex="-1"></a>idiom_laiqu <span class="ot">&lt;-</span> idiom <span class="sc">%&gt;%</span></span>
+<span id="cb371-2"><a href="string-manipulation.html#cb371-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="fu">str_detect</span>(string, <span class="st">&quot;.來.去&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb371-3"><a href="string-manipulation.html#cb371-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">pattern =</span> <span class="fu">str_replace</span>(string, <span class="st">&quot;(.)來(.)去&quot;</span>, <span class="st">&quot;</span><span class="sc">\\</span><span class="st">1_</span><span class="sc">\\</span><span class="st">2&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb371-4"><a href="string-manipulation.html#cb371-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">separate</span>(pattern, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&quot;w1&quot;</span>, <span class="st">&quot;w2&quot;</span>), <span class="at">sep =</span> <span class="st">&quot;_&quot;</span>)</span>
+<span id="cb371-5"><a href="string-manipulation.html#cb371-5" aria-hidden="true" tabindex="-1"></a>idiom_laiqu</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["string"],"name":[1],"type":["chr"],"align":["left"]},{"label":["w1"],"name":[2],"type":["chr"],"align":["left"]},{"label":["w2"],"name":[3],"type":["chr"],"align":["left"]}],"data":[{"1":"春來秋去","2":"春","3":"秋"},{"1":"顛來播去","2":"顛","3":"播"},{"1":"顛來簸去","2":"顛","3":"簸"},{"1":"顛來倒去","2":"顛","3":"倒"},{"1":"跌來碰去","2":"跌","3":"碰"},{"1":"東來西去","2":"東","3":"西"},{"1":"反來復去","2":"反","3":"復"},{"1":"番來復去","2":"番","3":"復"},{"1":"番來覆去","2":"番","3":"覆"},{"1":"翻來復去","2":"翻","3":"復"},{"1":"翻來覆去","2":"翻","3":"覆"},{"1":"返來復去","2":"返","3":"復"},{"1":"飛來飛去","2":"飛","3":"飛"},{"1":"浮來暫去","2":"浮","3":"暫"},{"1":"過來過去","2":"過","3":"過"},{"1":"好來好去","2":"好","3":"好"},{"1":"呼來喝去","2":"呼","3":"喝"},{"1":"來來去去","2":"來","3":"去"},{"1":"眉來眼去","2":"眉","3":"眼"},{"1":"眉來語去","2":"眉","3":"語"},{"1":"明來暗去","2":"明","3":"暗"},{"1":"明來明去","2":"明","3":"明"},{"1":"暮來朝去","2":"暮","3":"朝"},{"1":"南來北去","2":"南","3":"北"},{"1":"你來我去","2":"你","3":"我"},{"1":"年來歲去","2":"年","3":"歲"},{"1":"人來客去","2":"人","3":"客"},{"1":"生來死去","2":"生","3":"死"},{"1":"說來道去","2":"說","3":"道"},{"1":"說來說去","2":"說","3":"說"},{"1":"絲來線去","2":"絲","3":"線"},{"1":"想來想去","2":"想","3":"想"},{"1":"言來語去","2":"言","3":"語"},{"1":"一來二去","2":"一","3":"二"},{"1":"説來道去","2":"説","3":"道"},{"1":"説來説去","2":"説","3":"説"},{"1":"朝來暮去","2":"朝","3":"暮"},{"1":"直來直去","2":"直","3":"直"},{"1":"轉來轉去","2":"轉","3":"轉"},{"1":"左來右去","2":"左","3":"右"},{"1":"晃來晃去","2":"晃","3":"晃"},{"1":"有來有去","2":"有","3":"有"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<div class="sourceCode" id="cb358"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb358-1"><a href="string-manipulation.html#cb358-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # version 2</span></span>
-<span id="cb358-2"><a href="string-manipulation.html#cb358-2" aria-hidden="true" tabindex="-1"></a><span class="co"># require(tidyr)</span></span>
-<span id="cb358-3"><a href="string-manipulation.html#cb358-3" aria-hidden="true" tabindex="-1"></a><span class="co"># idiom %&gt;%</span></span>
-<span id="cb358-4"><a href="string-manipulation.html#cb358-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   filter(str_detect(string, &quot;.來.去&quot;)) %&gt;%</span></span>
-<span id="cb358-5"><a href="string-manipulation.html#cb358-5" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(string2 = string) %&gt;%</span></span>
-<span id="cb358-6"><a href="string-manipulation.html#cb358-6" aria-hidden="true" tabindex="-1"></a><span class="co">#   extract(col=&quot;string2&quot;,</span></span>
-<span id="cb358-7"><a href="string-manipulation.html#cb358-7" aria-hidden="true" tabindex="-1"></a><span class="co">#           into=c(&quot;w1&quot;,&quot;w2&quot;),</span></span>
-<span id="cb358-8"><a href="string-manipulation.html#cb358-8" aria-hidden="true" tabindex="-1"></a><span class="co">#           regex = &quot;(.)來(.)去&quot;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb372"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb372-1"><a href="string-manipulation.html#cb372-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # version 2 require(tidyr) idiom %&gt;% filter(str_detect(string, &#39;.來.去&#39;)) %&gt;%</span></span>
+<span id="cb372-2"><a href="string-manipulation.html#cb372-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mutate(string2 = string) %&gt;% extract(col=&#39;string2&#39;, into=c(&#39;w1&#39;,&#39;w2&#39;), regex</span></span>
+<span id="cb372-3"><a href="string-manipulation.html#cb372-3" aria-hidden="true" tabindex="-1"></a><span class="co"># = &#39;(.)來(.)去&#39;)</span></span></code></pre></div>
 <p>One empirical question is how many of these idioms are of the pattern W<sub>1</sub> = W<sub>2</sub> (e.g., 想來想去, 直來直去) and how many are of the pattern W<sub>1</sub> != W<sub>2</sub> (e.g., 說來道去, 朝來暮去):</p>
-<div class="sourceCode" id="cb359"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb359-1"><a href="string-manipulation.html#cb359-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create `structure` column</span></span>
-<span id="cb359-2"><a href="string-manipulation.html#cb359-2" aria-hidden="true" tabindex="-1"></a>idiom_laiqu_2 <span class="ot">&lt;-</span> idiom_laiqu <span class="sc">%&gt;%</span></span>
-<span id="cb359-3"><a href="string-manipulation.html#cb359-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">structure =</span> <span class="fu">ifelse</span>(w1<span class="sc">==</span>w2, <span class="st">&quot;XX&quot;</span>,<span class="st">&quot;XY&quot;</span>)) </span>
-<span id="cb359-4"><a href="string-manipulation.html#cb359-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb359-5"><a href="string-manipulation.html#cb359-5" aria-hidden="true" tabindex="-1"></a>idiom_laiqu_2 </span></code></pre></div>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb373-1"><a href="string-manipulation.html#cb373-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create `structure` column</span></span>
+<span id="cb373-2"><a href="string-manipulation.html#cb373-2" aria-hidden="true" tabindex="-1"></a>idiom_laiqu_2 <span class="ot">&lt;-</span> idiom_laiqu <span class="sc">%&gt;%</span></span>
+<span id="cb373-3"><a href="string-manipulation.html#cb373-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">structure =</span> <span class="fu">ifelse</span>(w1 <span class="sc">==</span> w2, <span class="st">&quot;XX&quot;</span>, <span class="st">&quot;XY&quot;</span>))</span>
+<span id="cb373-4"><a href="string-manipulation.html#cb373-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb373-5"><a href="string-manipulation.html#cb373-5" aria-hidden="true" tabindex="-1"></a>idiom_laiqu_2</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["string"],"name":[1],"type":["chr"],"align":["left"]},{"label":["w1"],"name":[2],"type":["chr"],"align":["left"]},{"label":["w2"],"name":[3],"type":["chr"],"align":["left"]},{"label":["structure"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"春來秋去","2":"春","3":"秋","4":"XY"},{"1":"顛來播去","2":"顛","3":"播","4":"XY"},{"1":"顛來簸去","2":"顛","3":"簸","4":"XY"},{"1":"顛來倒去","2":"顛","3":"倒","4":"XY"},{"1":"跌來碰去","2":"跌","3":"碰","4":"XY"},{"1":"東來西去","2":"東","3":"西","4":"XY"},{"1":"反來復去","2":"反","3":"復","4":"XY"},{"1":"番來復去","2":"番","3":"復","4":"XY"},{"1":"番來覆去","2":"番","3":"覆","4":"XY"},{"1":"翻來復去","2":"翻","3":"復","4":"XY"},{"1":"翻來覆去","2":"翻","3":"覆","4":"XY"},{"1":"返來復去","2":"返","3":"復","4":"XY"},{"1":"飛來飛去","2":"飛","3":"飛","4":"XX"},{"1":"浮來暫去","2":"浮","3":"暫","4":"XY"},{"1":"過來過去","2":"過","3":"過","4":"XX"},{"1":"好來好去","2":"好","3":"好","4":"XX"},{"1":"呼來喝去","2":"呼","3":"喝","4":"XY"},{"1":"來來去去","2":"來","3":"去","4":"XY"},{"1":"眉來眼去","2":"眉","3":"眼","4":"XY"},{"1":"眉來語去","2":"眉","3":"語","4":"XY"},{"1":"明來暗去","2":"明","3":"暗","4":"XY"},{"1":"明來明去","2":"明","3":"明","4":"XX"},{"1":"暮來朝去","2":"暮","3":"朝","4":"XY"},{"1":"南來北去","2":"南","3":"北","4":"XY"},{"1":"你來我去","2":"你","3":"我","4":"XY"},{"1":"年來歲去","2":"年","3":"歲","4":"XY"},{"1":"人來客去","2":"人","3":"客","4":"XY"},{"1":"生來死去","2":"生","3":"死","4":"XY"},{"1":"說來道去","2":"說","3":"道","4":"XY"},{"1":"說來說去","2":"說","3":"說","4":"XX"},{"1":"絲來線去","2":"絲","3":"線","4":"XY"},{"1":"想來想去","2":"想","3":"想","4":"XX"},{"1":"言來語去","2":"言","3":"語","4":"XY"},{"1":"一來二去","2":"一","3":"二","4":"XY"},{"1":"説來道去","2":"説","3":"道","4":"XY"},{"1":"説來説去","2":"説","3":"説","4":"XX"},{"1":"朝來暮去","2":"朝","3":"暮","4":"XY"},{"1":"直來直去","2":"直","3":"直","4":"XX"},{"1":"轉來轉去","2":"轉","3":"轉","4":"XX"},{"1":"左來右去","2":"左","3":"右","4":"XY"},{"1":"晃來晃去","2":"晃","3":"晃","4":"XX"},{"1":"有來有去","2":"有","3":"有","4":"XX"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<div class="sourceCode" id="cb360"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb360-1"><a href="string-manipulation.html#cb360-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Count `structure` frequecnies</span></span>
-<span id="cb360-2"><a href="string-manipulation.html#cb360-2" aria-hidden="true" tabindex="-1"></a>idiom_laiqu_count <span class="ot">&lt;-</span> idiom_laiqu_2 <span class="sc">%&gt;%</span></span>
-<span id="cb360-3"><a href="string-manipulation.html#cb360-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(structure)</span>
-<span id="cb360-4"><a href="string-manipulation.html#cb360-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb360-5"><a href="string-manipulation.html#cb360-5" aria-hidden="true" tabindex="-1"></a>idiom_laiqu_count</span></code></pre></div>
+<div class="sourceCode" id="cb374"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb374-1"><a href="string-manipulation.html#cb374-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Count `structure` frequecnies</span></span>
+<span id="cb374-2"><a href="string-manipulation.html#cb374-2" aria-hidden="true" tabindex="-1"></a>idiom_laiqu_count <span class="ot">&lt;-</span> idiom_laiqu_2 <span class="sc">%&gt;%</span></span>
+<span id="cb374-3"><a href="string-manipulation.html#cb374-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">count</span>(structure)</span>
+<span id="cb374-4"><a href="string-manipulation.html#cb374-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb374-5"><a href="string-manipulation.html#cb374-5" aria-hidden="true" tabindex="-1"></a>idiom_laiqu_count</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["structure"],"name":[1],"type":["chr"],"align":["left"]},{"label":["n"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"XX","2":"11"},{"1":"XY","2":"31"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<div class="sourceCode" id="cb361"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb361-1"><a href="string-manipulation.html#cb361-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create barplots</span></span>
-<span id="cb361-2"><a href="string-manipulation.html#cb361-2" aria-hidden="true" tabindex="-1"></a>idiom_laiqu_count <span class="sc">%&gt;%</span></span>
-<span id="cb361-3"><a href="string-manipulation.html#cb361-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(structure, n, <span class="at">fill =</span> structure)) <span class="sc">+</span> </span>
-<span id="cb361-4"><a href="string-manipulation.html#cb361-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-321-1.png" width="672" /></p>
-<div class="sourceCode" id="cb362"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb362-1"><a href="string-manipulation.html#cb362-1" aria-hidden="true" tabindex="-1"></a><span class="do">##########################</span></span>
-<span id="cb362-2"><a href="string-manipulation.html#cb362-2" aria-hidden="true" tabindex="-1"></a><span class="do">### Another alterantive###</span></span>
-<span id="cb362-3"><a href="string-manipulation.html#cb362-3" aria-hidden="true" tabindex="-1"></a><span class="do">##########################</span></span>
-<span id="cb362-4"><a href="string-manipulation.html#cb362-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb362-5"><a href="string-manipulation.html#cb362-5" aria-hidden="true" tabindex="-1"></a><span class="co"># idiom_laiqu %&gt;%</span></span>
-<span id="cb362-6"><a href="string-manipulation.html#cb362-6" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(structure = ifelse(w1==w2, &quot;XX&quot;,&quot;XY&quot;)) %&gt;%</span></span>
-<span id="cb362-7"><a href="string-manipulation.html#cb362-7" aria-hidden="true" tabindex="-1"></a><span class="co">#   count(structure) %&gt;%</span></span>
-<span id="cb362-8"><a href="string-manipulation.html#cb362-8" aria-hidden="true" tabindex="-1"></a><span class="co">#   ggplot(aes(structure, n, fill = structure)) + </span></span>
-<span id="cb362-9"><a href="string-manipulation.html#cb362-9" aria-hidden="true" tabindex="-1"></a><span class="co">#   geom_col() </span></span></code></pre></div>
+<div class="sourceCode" id="cb375"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb375-1"><a href="string-manipulation.html#cb375-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create barplots</span></span>
+<span id="cb375-2"><a href="string-manipulation.html#cb375-2" aria-hidden="true" tabindex="-1"></a>idiom_laiqu_count <span class="sc">%&gt;%</span></span>
+<span id="cb375-3"><a href="string-manipulation.html#cb375-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(structure, n, <span class="at">fill =</span> structure)) <span class="sc">+</span> <span class="fu">geom_col</span>()</span></code></pre></div>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-329-1.png" width="672" /></p>
+<div class="sourceCode" id="cb376"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb376-1"><a href="string-manipulation.html#cb376-1" aria-hidden="true" tabindex="-1"></a><span class="do">########################## Another alterantive###</span></span>
+<span id="cb376-2"><a href="string-manipulation.html#cb376-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb376-3"><a href="string-manipulation.html#cb376-3" aria-hidden="true" tabindex="-1"></a><span class="co"># idiom_laiqu %&gt;% mutate(structure = ifelse(w1==w2, &#39;XX&#39;,&#39;XY&#39;)) %&gt;%</span></span>
+<span id="cb376-4"><a href="string-manipulation.html#cb376-4" aria-hidden="true" tabindex="-1"></a><span class="co"># count(structure) %&gt;% ggplot(aes(structure, n, fill = structure)) + geom_col()</span></span></code></pre></div>
 <hr />
 
 <div class="exercise">
 <span id="exr:exidiom1" class="exercise"><strong>Exercise 8.14  </strong></span>Please use same dataset <code>idiom</code> (loaded from <code>demo_data/dict-ch-idiom.txt</code>) and extract all the idioms that fall into the schema of <code>一X一Y</code>.
 </div>
-<div class="sourceCode" id="cb363"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb363-1"><a href="string-manipulation.html#cb363-1" aria-hidden="true" tabindex="-1"></a>idiom <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">string =</span> <span class="fu">readLines</span>(<span class="st">&quot;demo_data/dict-ch-idiom.txt&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb377"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb377-1"><a href="string-manipulation.html#cb377-1" aria-hidden="true" tabindex="-1"></a>idiom <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">string =</span> <span class="fu">readLines</span>(<span class="st">&quot;demo_data/dict-ch-idiom.txt&quot;</span>))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["string"],"name":[1],"type":["chr"],"align":["left"]},{"label":["w1"],"name":[2],"type":["chr"],"align":["left"]},{"label":["w2"],"name":[3],"type":["chr"],"align":["left"]}],"data":[{"1":"一鞍一馬","2":"鞍","3":"馬"},{"1":"一班一輩","2":"班","3":"輩"},{"1":"一班一級","2":"班","3":"級"},{"1":"一板一眼","2":"板","3":"眼"},{"1":"一悲一喜","2":"悲","3":"喜"},{"1":"一彼一此","2":"彼","3":"此"},{"1":"一缽一瓶","2":"缽","3":"瓶"},{"1":"一步一鬼","2":"步","3":"鬼"},{"1":"一步一計","2":"步","3":"計"},{"1":"一步一趨","2":"步","3":"趨"},{"1":"一草一木","2":"草","3":"木"},{"1":"一長一短","2":"長","3":"短"},{"1":"一倡一和","2":"倡","3":"和"},{"1":"一唱一和","2":"唱","3":"和"},{"1":"一成一旅","2":"成","3":"旅"},{"1":"一痴一醒","2":"痴","3":"醒"},{"1":"一弛一張","2":"弛","3":"張"},{"1":"一重一掩","2":"重","3":"掩"},{"1":"一酬一酢","2":"酬","3":"酢"},{"1":"一吹一唱","2":"吹","3":"唱"},{"1":"一搭一檔","2":"搭","3":"檔"},{"1":"一答一合","2":"答","3":"合"},{"1":"一簞一瓢","2":"簞","3":"瓢"},{"1":"一旦一夕","2":"旦","3":"夕"},{"1":"一刀一割","2":"刀","3":"割"},{"1":"一刀一槍","2":"刀","3":"槍"},{"1":"一德一心","2":"德","3":"心"},{"1":"一遞一答","2":"遞","3":"答"},{"1":"一遞一個","2":"遞","3":"個"},{"1":"一遞一句","2":"遞","3":"句"},{"1":"一遞一口","2":"遞","3":"口"},{"1":"一底一面","2":"底","3":"面"},{"1":"一遞一聲","2":"遞","3":"聲"},{"1":"一點一滴","2":"點","3":"滴"},{"1":"一東一西","2":"東","3":"西"},{"1":"一反一復","2":"反","3":"復"},{"1":"一房一臥","2":"房","3":"臥"},{"1":"一分一毫","2":"分","3":"毫"},{"1":"一分一厘","2":"分","3":"厘"},{"1":"一干一方","2":"干","3":"方"},{"1":"一根一板","2":"根","3":"板"},{"1":"一鼓一板","2":"鼓","3":"板"},{"1":"一官一集","2":"官","3":"集"},{"1":"一龜一鶴","2":"龜","3":"鶴"},{"1":"一壑一丘","2":"壑","3":"丘"},{"1":"一還一報","2":"還","3":"報"},{"1":"一晦一明","2":"晦","3":"明"},{"1":"一繼一及","2":"繼","3":"及"},{"1":"一家一火","2":"家","3":"火"},{"1":"一家一計","2":"家","3":"計"},{"1":"一甲一名","2":"甲","3":"名"},{"1":"一節一行","2":"節","3":"行"},{"1":"一莖一草","2":"莖","3":"草"},{"1":"一舉一動","2":"舉","3":"動"},{"1":"一口一聲","2":"口","3":"聲"},{"1":"一夔一契","2":"夔","3":"契"},{"1":"一拉一唱","2":"拉","3":"唱"},{"1":"一來一往","2":"來","3":"往"},{"1":"一老一實","2":"老","3":"實"},{"1":"一厘一毫","2":"厘","3":"毫"},{"1":"一鱗一爪","2":"鱗","3":"爪"},{"1":"一龍一蛇","2":"龍","3":"蛇"},{"1":"一龍一豬","2":"龍","3":"豬"},{"1":"一馬一鞍","2":"馬","3":"鞍"},{"1":"一模一樣","2":"模","3":"樣"},{"1":"一年一度","2":"年","3":"度"},{"1":"一年一回","2":"年","3":"回"},{"1":"一噴一醒","2":"噴","3":"醒"},{"1":"一嚬一笑","2":"嚬","3":"笑"},{"1":"一顰一笑","2":"顰","3":"笑"},{"1":"一瓶一缽","2":"瓶","3":"缽"},{"1":"一旗一槍","2":"旗","3":"槍"},{"1":"一槍一旗","2":"槍","3":"旗"},{"1":"一琴一鶴","2":"琴","3":"鶴"},{"1":"一丘一壑","2":"丘","3":"壑"},{"1":"一趨一步","2":"趨","3":"步"},{"1":"一诎一信","2":"诎","3":"信"},{"1":"一日一夕","2":"日","3":"夕"},{"1":"一日一夜","2":"日","3":"夜"},{"1":"一觴一詠","2":"觴","3":"詠"},{"1":"一生一代","2":"生","3":"代"},{"1":"一生一世","2":"生","3":"世"},{"1":"一時一刻","2":"時","3":"刻"},{"1":"一式一樣","2":"式","3":"樣"},{"1":"一手一腳","2":"手","3":"腳"},{"1":"一手一足","2":"手","3":"足"},{"1":"一絲一毫","2":"絲","3":"毫"},{"1":"一死一生","2":"死","3":"生"},{"1":"一替一句","2":"替","3":"句"},{"1":"一天一地","2":"天","3":"地"},{"1":"一問一臨","2":"問","3":"臨"},{"1":"一物一偏","2":"物","3":"偏"},{"1":"一五一十","2":"五","3":"十"},{"1":"一物一制","2":"物","3":"制"},{"1":"一物一主","2":"物","3":"主"},{"1":"一喜一悲","2":"喜","3":"悲"},{"1":"一夕一朝","2":"夕","3":"朝"},{"1":"一笑一顰","2":"笑","3":"顰"},{"1":"一心一德","2":"心","3":"德"},{"1":"一心一腹","2":"心","3":"腹"},{"1":"一心一計","2":"心","3":"計"},{"1":"一心一力","2":"心","3":"力"},{"1":"一心一路","2":"心","3":"路"},{"1":"一心一意","2":"心","3":"意"},{"1":"一熏一蕕","2":"熏","3":"蕕"},{"1":"一薰一蕕","2":"薰","3":"蕕"},{"1":"一言一動","2":"言","3":"動"},{"1":"一言一淚","2":"言","3":"淚"},{"1":"一言一行","2":"言","3":"行"},{"1":"一吟一詠","2":"吟","3":"詠"},{"1":"一飲一啄","2":"飲","3":"啄"},{"1":"一迎一合","2":"迎","3":"合"},{"1":"一迎一和","2":"迎","3":"和"},{"1":"一詠一觴","2":"詠","3":"觴"},{"1":"一游一豫","2":"游","3":"豫"},{"1":"一予一奪","2":"予","3":"奪"},{"1":"一豫一游","2":"豫","3":"游"},{"1":"一緣一會","2":"緣","3":"會"},{"1":"一臧一否","2":"臧","3":"否"},{"1":"一張一弛","2":"張","3":"弛"},{"1":"一朝一夕","2":"朝","3":"夕"},{"1":"一折一磨","2":"折","3":"磨"},{"1":"一針一線","2":"針","3":"線"},{"1":"一針一缐","2":"針","3":"缐"},{"1":"一枝一節","2":"枝","3":"節"},{"1":"一肢一節","2":"肢","3":"節"},{"1":"一治一亂","2":"治","3":"亂"},{"1":"一枝一棲","2":"枝","3":"棲"},{"1":"一字一板","2":"字","3":"板"},{"1":"一字一句","2":"字","3":"句"},{"1":"一字一淚","2":"字","3":"淚"},{"1":"一字一珠","2":"字","3":"珠"},{"1":"一坐一起","2":"坐","3":"起"},{"1":"一馳一張","2":"馳","3":"張"},{"1":"一搭一唱","2":"搭","3":"唱"},{"1":"一門一姓","2":"門","3":"姓"},{"1":"一粥一飯","2":"粥","3":"飯"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -1318,7 +1295,7 @@ Sample answers have been provided below.
 <ul>
 <li>Type Distribution</li>
 </ul>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-326-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-334-1.png" width="672" /></p>
 <hr />
 
 <div class="exercise">
