@@ -1,3 +1,20 @@
+/* Use the following .Rchunk and .Rout to modify the code chunks
+input and output styles */
+
+.Rchunk {
+  background-color: #e9f9ff !important;
+  /*font-weight: bolder;
+  color: red !important;*/
+}
+
+/*.Rout {
+  background-color: #d9edf7 !important;
+  font-weight: bolder;
+  color: blue !important;
+}*/
+
+
+
 p.caption {
   color: #777;
   margin-top: 10px;
@@ -32,7 +49,7 @@ pre code {
 
 
 pre {
-  border: 1px solid grey !important;
+  border: 0px solid lightgrey !important; /* Border of the code chunk*/
   border-radius: 5px;
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -43,6 +60,7 @@ pre {
   border: 1px solid hsla(0, 0%, 0%, .1);
   border-radius: 5px;
   padding: 1px;
+ /*background-color: coral; ## inline r codes `` */
 }
 
 .book.color-theme-2 .book-body .page-wrapper .page-inner section.normal code {
@@ -196,6 +214,7 @@ div.verbatim * {
 div.verbatim div.sourceCode { 
   margin: 0 !important;
   padding: 0 !important;
+
 }
 div.verbatim pre.sourceCode { 
   margin: 0 !important; 
