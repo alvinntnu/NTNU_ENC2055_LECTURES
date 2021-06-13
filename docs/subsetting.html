@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 Subsetting | ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
+  <title>Chapter 4 Subsetting | ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
   <meta name="description" content="ENC2055 Course material second edition" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 Subsetting | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
+  <meta property="og:title" content="Chapter 4 Subsetting | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 Subsetting | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
+  <meta name="twitter:title" content="Chapter 4 Subsetting | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
   
   <meta name="twitter:description" content="ENC2055 Course material second edition" />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-06-13" />
+<meta name="date" content="2021-06-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="code-format-convetion.html"/>
 <link rel="next" href="data-visualization.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/header-attrs-2.8.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -179,6 +179,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#questions"><i class="fa fa-check"></i>Questions?</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#necessary-packages"><i class="fa fa-check"></i>Necessary Packages</a></li>
 </ul></li>
+<li class="part"><span><b>PART 1: R Language</b></span></li>
 <li class="chapter" data-level="1" data-path="intro-ds.html"><a href="intro-ds.html"><i class="fa fa-check"></i><b>1</b> Data Science and R</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="intro-ds.html"><a href="intro-ds.html#what-is-data-science"><i class="fa fa-check"></i><b>1.1</b> What is Data Science?</a></li>
@@ -203,195 +204,239 @@ div.csl-indent {
 <li class="chapter" data-level="2.12" data-path="r-fundamentals.html"><a href="r-fundamentals.html#language-learning-aint-easy"><i class="fa fa-check"></i><b>2.12</b> Language Learning Ain’t Easy!</a></li>
 <li class="chapter" data-level="2.13" data-path="r-fundamentals.html"><a href="r-fundamentals.html#keyboard-shortcuts"><i class="fa fa-check"></i><b>2.13</b> Keyboard Shortcuts</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="python-fundamentals.html"><a href="python-fundamentals.html"><i class="fa fa-check"></i><b>3</b> Python Fundamentals</a>
+<li class="chapter" data-level="3" data-path="code-format-convetion.html"><a href="code-format-convetion.html"><i class="fa fa-check"></i><b>3</b> Code Format Convention</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="python-fundamentals.html"><a href="python-fundamentals.html#set-up-environment"><i class="fa fa-check"></i><b>3.1</b> Set up Environment</a></li>
-<li class="chapter" data-level="3.2" data-path="python-fundamentals.html"><a href="python-fundamentals.html#conda-environment"><i class="fa fa-check"></i><b>3.2</b> Conda Environment</a></li>
-<li class="chapter" data-level="3.3" data-path="python-fundamentals.html"><a href="python-fundamentals.html#data-type"><i class="fa fa-check"></i><b>3.3</b> Data Type</a></li>
-<li class="chapter" data-level="3.4" data-path="python-fundamentals.html"><a href="python-fundamentals.html#data-structure-1"><i class="fa fa-check"></i><b>3.4</b> Data Structure</a></li>
-<li class="chapter" data-level="3.5" data-path="python-fundamentals.html"><a href="python-fundamentals.html#control-structure"><i class="fa fa-check"></i><b>3.5</b> Control Structure</a></li>
-<li class="chapter" data-level="3.6" data-path="python-fundamentals.html"><a href="python-fundamentals.html#function-1"><i class="fa fa-check"></i><b>3.6</b> Function</a></li>
-<li class="chapter" data-level="3.7" data-path="python-fundamentals.html"><a href="python-fundamentals.html#list-comprehension"><i class="fa fa-check"></i><b>3.7</b> List Comprehension</a></li>
-<li class="chapter" data-level="3.8" data-path="python-fundamentals.html"><a href="python-fundamentals.html#python-scripts"><i class="fa fa-check"></i><b>3.8</b> Python Scripts</a></li>
-<li class="chapter" data-level="3.9" data-path="python-fundamentals.html"><a href="python-fundamentals.html#modules"><i class="fa fa-check"></i><b>3.9</b> Modules</a></li>
-<li class="chapter" data-level="3.10" data-path="python-fundamentals.html"><a href="python-fundamentals.html#inputoutput"><i class="fa fa-check"></i><b>3.10</b> Input/Output</a></li>
+<li class="chapter" data-level="3.1" data-path="code-format-convetion.html"><a href="code-format-convetion.html#assignment--"><i class="fa fa-check"></i><b>3.1</b> Assignment <code>&lt;-</code></a></li>
+<li class="chapter" data-level="3.2" data-path="code-format-convetion.html"><a href="code-format-convetion.html#comment"><i class="fa fa-check"></i><b>3.2</b> Comment <code>#</code></a></li>
+<li class="chapter" data-level="3.3" data-path="code-format-convetion.html"><a href="code-format-convetion.html#script-naming"><i class="fa fa-check"></i><b>3.3</b> Script Naming</a></li>
+<li class="chapter" data-level="3.4" data-path="code-format-convetion.html"><a href="code-format-convetion.html#object-naming"><i class="fa fa-check"></i><b>3.4</b> Object Naming</a></li>
+<li class="chapter" data-level="3.5" data-path="code-format-convetion.html"><a href="code-format-convetion.html#whitespace"><i class="fa fa-check"></i><b>3.5</b> Whitespace</a></li>
+<li class="chapter" data-level="3.6" data-path="code-format-convetion.html"><a href="code-format-convetion.html#indention-and-linebreaks"><i class="fa fa-check"></i><b>3.6</b> Indention and Linebreaks</a></li>
+<li class="chapter" data-level="3.7" data-path="code-format-convetion.html"><a href="code-format-convetion.html#more-references"><i class="fa fa-check"></i><b>3.7</b> More References</a></li>
+<li class="chapter" data-level="3.8" data-path="code-format-convetion.html"><a href="code-format-convetion.html#template-for-script-assignments"><i class="fa fa-check"></i><b>3.8</b> Template for Script Assignments</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="code-format-convetion.html"><a href="code-format-convetion.html"><i class="fa fa-check"></i><b>4</b> Code Format Convention</a>
+<li class="chapter" data-level="4" data-path="subsetting.html"><a href="subsetting.html"><i class="fa fa-check"></i><b>4</b> Subsetting</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="code-format-convetion.html"><a href="code-format-convetion.html#assignment--"><i class="fa fa-check"></i><b>4.1</b> Assignment <code>&lt;-</code></a></li>
-<li class="chapter" data-level="4.2" data-path="code-format-convetion.html"><a href="code-format-convetion.html#comment"><i class="fa fa-check"></i><b>4.2</b> Comment <code>#</code></a></li>
-<li class="chapter" data-level="4.3" data-path="code-format-convetion.html"><a href="code-format-convetion.html#script-naming"><i class="fa fa-check"></i><b>4.3</b> Script Naming</a></li>
-<li class="chapter" data-level="4.4" data-path="code-format-convetion.html"><a href="code-format-convetion.html#object-naming"><i class="fa fa-check"></i><b>4.4</b> Object Naming</a></li>
-<li class="chapter" data-level="4.5" data-path="code-format-convetion.html"><a href="code-format-convetion.html#whitespace"><i class="fa fa-check"></i><b>4.5</b> Whitespace</a></li>
-<li class="chapter" data-level="4.6" data-path="code-format-convetion.html"><a href="code-format-convetion.html#indention-and-linebreaks"><i class="fa fa-check"></i><b>4.6</b> Indention and Linebreaks</a></li>
-<li class="chapter" data-level="4.7" data-path="code-format-convetion.html"><a href="code-format-convetion.html#more-references"><i class="fa fa-check"></i><b>4.7</b> More References</a></li>
-<li class="chapter" data-level="4.8" data-path="code-format-convetion.html"><a href="code-format-convetion.html#template-for-script-assignments"><i class="fa fa-check"></i><b>4.8</b> Template for Script Assignments</a></li>
+<li class="chapter" data-level="4.1" data-path="subsetting.html"><a href="subsetting.html#vector"><i class="fa fa-check"></i><b>4.1</b> Vector</a></li>
+<li class="chapter" data-level="4.2" data-path="subsetting.html"><a href="subsetting.html#factor"><i class="fa fa-check"></i><b>4.2</b> Factor</a></li>
+<li class="chapter" data-level="4.3" data-path="subsetting.html"><a href="subsetting.html#list"><i class="fa fa-check"></i><b>4.3</b> List</a></li>
+<li class="chapter" data-level="4.4" data-path="subsetting.html"><a href="subsetting.html#data-frame"><i class="fa fa-check"></i><b>4.4</b> Data Frame</a></li>
+<li class="chapter" data-level="4.5" data-path="subsetting.html"><a href="subsetting.html#tibble"><i class="fa fa-check"></i><b>4.5</b> Tibble</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="subsetting.html"><a href="subsetting.html"><i class="fa fa-check"></i><b>5</b> Subsetting</a>
+<li class="chapter" data-level="5" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>5</b> Data Visualization</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="subsetting.html"><a href="subsetting.html#vector"><i class="fa fa-check"></i><b>5.1</b> Vector</a></li>
-<li class="chapter" data-level="5.2" data-path="subsetting.html"><a href="subsetting.html#factor"><i class="fa fa-check"></i><b>5.2</b> Factor</a></li>
-<li class="chapter" data-level="5.3" data-path="subsetting.html"><a href="subsetting.html#list"><i class="fa fa-check"></i><b>5.3</b> List</a></li>
-<li class="chapter" data-level="5.4" data-path="subsetting.html"><a href="subsetting.html#data-frame"><i class="fa fa-check"></i><b>5.4</b> Data Frame</a></li>
-<li class="chapter" data-level="5.5" data-path="subsetting.html"><a href="subsetting.html#tibble"><i class="fa fa-check"></i><b>5.5</b> Tibble</a></li>
+<li class="chapter" data-level="5.1" data-path="data-visualization.html"><a href="data-visualization.html#why-visualization"><i class="fa fa-check"></i><b>5.1</b> Why Visualization?</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="data-visualization.html"><a href="data-visualization.html#datasaurus-dozen-dataset"><i class="fa fa-check"></i><b>5.1.1</b> Datasaurus Dozen Dataset</a></li>
+<li class="chapter" data-level="5.1.2" data-path="data-visualization.html"><a href="data-visualization.html#simpsons-paradox"><i class="fa fa-check"></i><b>5.1.2</b> Simpson’s Paradox</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>6</b> Data Visualization</a>
+<li class="chapter" data-level="5.2" data-path="data-visualization.html"><a href="data-visualization.html#ggplot2"><i class="fa fa-check"></i><b>5.2</b> <code>ggplot2</code></a></li>
+<li class="chapter" data-level="5.3" data-path="data-visualization.html"><a href="data-visualization.html#variables-and-data-type"><i class="fa fa-check"></i><b>5.3</b> Variables and Data Type</a></li>
+<li class="chapter" data-level="5.4" data-path="data-visualization.html"><a href="data-visualization.html#one-variable-graph"><i class="fa fa-check"></i><b>5.4</b> One-variable Graph</a></li>
+<li class="chapter" data-level="5.5" data-path="data-visualization.html"><a href="data-visualization.html#two-variable-graph"><i class="fa fa-check"></i><b>5.5</b> Two-variable Graph</a></li>
+<li class="chapter" data-level="5.6" data-path="data-visualization.html"><a href="data-visualization.html#adding-other-aesthetic-features"><i class="fa fa-check"></i><b>5.6</b> Adding Other Aesthetic Features</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="data-visualization.html"><a href="data-visualization.html#why-visualization"><i class="fa fa-check"></i><b>6.1</b> Why Visualization?</a>
-<ul>
-<li class="chapter" data-level="6.1.1" data-path="data-visualization.html"><a href="data-visualization.html#datasaurus-dozen-dataset"><i class="fa fa-check"></i><b>6.1.1</b> Datasaurus Dozen Dataset</a></li>
-<li class="chapter" data-level="6.1.2" data-path="data-visualization.html"><a href="data-visualization.html#simpsons-paradox"><i class="fa fa-check"></i><b>6.1.2</b> Simpson’s Paradox</a></li>
+<li class="chapter" data-level="5.6.1" data-path="data-visualization.html"><a href="data-visualization.html#color"><i class="fa fa-check"></i><b>5.6.1</b> <code>color</code></a></li>
+<li class="chapter" data-level="5.6.2" data-path="data-visualization.html"><a href="data-visualization.html#shape"><i class="fa fa-check"></i><b>5.6.2</b> <code>shape</code></a></li>
+<li class="chapter" data-level="5.6.3" data-path="data-visualization.html"><a href="data-visualization.html#other-geom_...-layers"><i class="fa fa-check"></i><b>5.6.3</b> Other <code>geom_...</code> Layers</a></li>
+<li class="chapter" data-level="5.6.4" data-path="data-visualization.html"><a href="data-visualization.html#labels"><i class="fa fa-check"></i><b>5.6.4</b> Labels</a></li>
+<li class="chapter" data-level="5.6.5" data-path="data-visualization.html"><a href="data-visualization.html#fill"><i class="fa fa-check"></i><b>5.6.5</b> <code>fill</code></a></li>
+<li class="chapter" data-level="5.6.6" data-path="data-visualization.html"><a href="data-visualization.html#interim-summary"><i class="fa fa-check"></i><b>5.6.6</b> Interim Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="data-visualization.html"><a href="data-visualization.html#ggplot2"><i class="fa fa-check"></i><b>6.2</b> <code>ggplot2</code></a></li>
-<li class="chapter" data-level="6.3" data-path="data-visualization.html"><a href="data-visualization.html#variables-and-data-type"><i class="fa fa-check"></i><b>6.3</b> Variables and Data Type</a></li>
-<li class="chapter" data-level="6.4" data-path="data-visualization.html"><a href="data-visualization.html#one-variable-graph"><i class="fa fa-check"></i><b>6.4</b> One-variable Graph</a></li>
-<li class="chapter" data-level="6.5" data-path="data-visualization.html"><a href="data-visualization.html#two-variable-graph"><i class="fa fa-check"></i><b>6.5</b> Two-variable Graph</a></li>
-<li class="chapter" data-level="6.6" data-path="data-visualization.html"><a href="data-visualization.html#adding-other-aesthetic-features"><i class="fa fa-check"></i><b>6.6</b> Adding Other Aesthetic Features</a>
-<ul>
-<li class="chapter" data-level="6.6.1" data-path="data-visualization.html"><a href="data-visualization.html#color"><i class="fa fa-check"></i><b>6.6.1</b> <code>color</code></a></li>
-<li class="chapter" data-level="6.6.2" data-path="data-visualization.html"><a href="data-visualization.html#shape"><i class="fa fa-check"></i><b>6.6.2</b> <code>shape</code></a></li>
-<li class="chapter" data-level="6.6.3" data-path="data-visualization.html"><a href="data-visualization.html#other-geom_...-layers"><i class="fa fa-check"></i><b>6.6.3</b> Other <code>geom_...</code> Layers</a></li>
-<li class="chapter" data-level="6.6.4" data-path="data-visualization.html"><a href="data-visualization.html#labels"><i class="fa fa-check"></i><b>6.6.4</b> Labels</a></li>
-<li class="chapter" data-level="6.6.5" data-path="data-visualization.html"><a href="data-visualization.html#fill"><i class="fa fa-check"></i><b>6.6.5</b> <code>fill</code></a></li>
-<li class="chapter" data-level="6.6.6" data-path="data-visualization.html"><a href="data-visualization.html#interim-summary"><i class="fa fa-check"></i><b>6.6.6</b> Interim Summary</a></li>
+<li class="chapter" data-level="5.7" data-path="data-visualization.html"><a href="data-visualization.html#saving-plots"><i class="fa fa-check"></i><b>5.7</b> Saving Plots</a></li>
+<li class="chapter" data-level="5.8" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-iris"><i class="fa fa-check"></i><b>5.8</b> Exercises on <code>iris</code></a></li>
+<li class="chapter" data-level="5.9" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-covid-19"><i class="fa fa-check"></i><b>5.9</b> Exercises on COVID-19</a></li>
 </ul></li>
-<li class="chapter" data-level="6.7" data-path="data-visualization.html"><a href="data-visualization.html#saving-plots"><i class="fa fa-check"></i><b>6.7</b> Saving Plots</a></li>
-<li class="chapter" data-level="6.8" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-iris"><i class="fa fa-check"></i><b>6.8</b> Exercises on <code>iris</code></a></li>
-<li class="chapter" data-level="6.9" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-covid-19"><i class="fa fa-check"></i><b>6.9</b> Exercises on COVID-19</a></li>
+<li class="chapter" data-level="6" data-path="data-manipulation.html"><a href="data-manipulation.html"><i class="fa fa-check"></i><b>6</b> Data Manipulation</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="data-manipulation.html"><a href="data-manipulation.html#dataset"><i class="fa fa-check"></i><b>6.1</b> Dataset</a></li>
+<li class="chapter" data-level="6.2" data-path="data-manipulation.html"><a href="data-manipulation.html#rename"><i class="fa fa-check"></i><b>6.2</b> <code>rename()</code></a></li>
+<li class="chapter" data-level="6.3" data-path="data-manipulation.html"><a href="data-manipulation.html#pipe"><i class="fa fa-check"></i><b>6.3</b> Pipe <code>%&gt;%</code></a></li>
+<li class="chapter" data-level="6.4" data-path="data-manipulation.html"><a href="data-manipulation.html#mutate"><i class="fa fa-check"></i><b>6.4</b> <code>mutate()</code></a></li>
+<li class="chapter" data-level="6.5" data-path="data-manipulation.html"><a href="data-manipulation.html#select"><i class="fa fa-check"></i><b>6.5</b> <code>select()</code></a></li>
+<li class="chapter" data-level="6.6" data-path="data-manipulation.html"><a href="data-manipulation.html#filter"><i class="fa fa-check"></i><b>6.6</b> <code>filter()</code></a></li>
+<li class="chapter" data-level="6.7" data-path="data-manipulation.html"><a href="data-manipulation.html#arrange"><i class="fa fa-check"></i><b>6.7</b> <code>arrange()</code></a></li>
+<li class="chapter" data-level="6.8" data-path="data-manipulation.html"><a href="data-manipulation.html#group_by-and-summarize"><i class="fa fa-check"></i><b>6.8</b> <code>group_by()</code> and <code>summarize()</code></a></li>
+<li class="chapter" data-level="6.9" data-path="data-manipulation.html"><a href="data-manipulation.html#count"><i class="fa fa-check"></i><b>6.9</b> <code>count()</code></a></li>
+<li class="chapter" data-level="6.10" data-path="data-manipulation.html"><a href="data-manipulation.html#tidy-data"><i class="fa fa-check"></i><b>6.10</b> Tidy Data</a>
+<ul>
+<li class="chapter" data-level="6.10.1" data-path="data-manipulation.html"><a href="data-manipulation.html#an-long-to-wide-example"><i class="fa fa-check"></i><b>6.10.1</b> An Long-to-Wide Example</a></li>
+<li class="chapter" data-level="6.10.2" data-path="data-manipulation.html"><a href="data-manipulation.html#a-wide-to-long-example"><i class="fa fa-check"></i><b>6.10.2</b> A Wide-to-Long Example</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="data-manipulation.html"><a href="data-manipulation.html"><i class="fa fa-check"></i><b>7</b> Data Manipulation</a>
-<ul>
-<li class="chapter" data-level="7.1" data-path="data-manipulation.html"><a href="data-manipulation.html#dataset"><i class="fa fa-check"></i><b>7.1</b> Dataset</a></li>
-<li class="chapter" data-level="7.2" data-path="data-manipulation.html"><a href="data-manipulation.html#rename"><i class="fa fa-check"></i><b>7.2</b> <code>rename()</code></a></li>
-<li class="chapter" data-level="7.3" data-path="data-manipulation.html"><a href="data-manipulation.html#pipe"><i class="fa fa-check"></i><b>7.3</b> Pipe <code>%&gt;%</code></a></li>
-<li class="chapter" data-level="7.4" data-path="data-manipulation.html"><a href="data-manipulation.html#mutate"><i class="fa fa-check"></i><b>7.4</b> <code>mutate()</code></a></li>
-<li class="chapter" data-level="7.5" data-path="data-manipulation.html"><a href="data-manipulation.html#select"><i class="fa fa-check"></i><b>7.5</b> <code>select()</code></a></li>
-<li class="chapter" data-level="7.6" data-path="data-manipulation.html"><a href="data-manipulation.html#filter"><i class="fa fa-check"></i><b>7.6</b> <code>filter()</code></a></li>
-<li class="chapter" data-level="7.7" data-path="data-manipulation.html"><a href="data-manipulation.html#arrange"><i class="fa fa-check"></i><b>7.7</b> <code>arrange()</code></a></li>
-<li class="chapter" data-level="7.8" data-path="data-manipulation.html"><a href="data-manipulation.html#group_by-and-summarize"><i class="fa fa-check"></i><b>7.8</b> <code>group_by()</code> and <code>summarize()</code></a></li>
-<li class="chapter" data-level="7.9" data-path="data-manipulation.html"><a href="data-manipulation.html#count"><i class="fa fa-check"></i><b>7.9</b> <code>count()</code></a></li>
-<li class="chapter" data-level="7.10" data-path="data-manipulation.html"><a href="data-manipulation.html#tidy-data"><i class="fa fa-check"></i><b>7.10</b> Tidy Data</a>
-<ul>
-<li class="chapter" data-level="7.10.1" data-path="data-manipulation.html"><a href="data-manipulation.html#an-long-to-wide-example"><i class="fa fa-check"></i><b>7.10.1</b> An Long-to-Wide Example</a></li>
-<li class="chapter" data-level="7.10.2" data-path="data-manipulation.html"><a href="data-manipulation.html#a-wide-to-long-example"><i class="fa fa-check"></i><b>7.10.2</b> A Wide-to-Long Example</a></li>
+<li class="chapter" data-level="6.11" data-path="data-manipulation.html"><a href="data-manipulation.html#exerceises"><i class="fa fa-check"></i><b>6.11</b> Exerceises</a></li>
 </ul></li>
-<li class="chapter" data-level="7.11" data-path="data-manipulation.html"><a href="data-manipulation.html#exerceises"><i class="fa fa-check"></i><b>7.11</b> Exerceises</a></li>
+<li class="chapter" data-level="7" data-path="string-manipulation.html"><a href="string-manipulation.html"><i class="fa fa-check"></i><b>7</b> String Manipulation</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="string-manipulation.html"><a href="string-manipulation.html#what-is-regular-expression"><i class="fa fa-check"></i><b>7.1</b> What is Regular Expression?</a></li>
+<li class="chapter" data-level="7.2" data-path="string-manipulation.html"><a href="string-manipulation.html#string-basics"><i class="fa fa-check"></i><b>7.2</b> String Basics</a></li>
+<li class="chapter" data-level="7.3" data-path="string-manipulation.html"><a href="string-manipulation.html#a-good-tool-regexplain"><i class="fa fa-check"></i><b>7.3</b> A Good Tool: <code>RegExplain</code></a></li>
+<li class="chapter" data-level="7.4" data-path="string-manipulation.html"><a href="string-manipulation.html#regular-expression-grammar"><i class="fa fa-check"></i><b>7.4</b> Regular Expression Grammar</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="string-manipulation.html"><a href="string-manipulation.html#metacharacters"><i class="fa fa-check"></i><b>7.4.1</b> Metacharacters</a></li>
+<li class="chapter" data-level="7.4.2" data-path="string-manipulation.html"><a href="string-manipulation.html#anchors"><i class="fa fa-check"></i><b>7.4.2</b> Anchors</a></li>
+<li class="chapter" data-level="7.4.3" data-path="string-manipulation.html"><a href="string-manipulation.html#character-set"><i class="fa fa-check"></i><b>7.4.3</b> Character Set</a></li>
+<li class="chapter" data-level="7.4.4" data-path="string-manipulation.html"><a href="string-manipulation.html#alternatives"><i class="fa fa-check"></i><b>7.4.4</b> Alternatives</a></li>
+<li class="chapter" data-level="7.4.5" data-path="string-manipulation.html"><a href="string-manipulation.html#quantifiers"><i class="fa fa-check"></i><b>7.4.5</b> Quantifiers</a></li>
+<li class="chapter" data-level="7.4.6" data-path="string-manipulation.html"><a href="string-manipulation.html#greedy-vs.-non-greedy-match"><i class="fa fa-check"></i><b>7.4.6</b> Greedy vs. Non-greedy match</a></li>
+<li class="chapter" data-level="7.4.7" data-path="string-manipulation.html"><a href="string-manipulation.html#group-and-back-reference"><i class="fa fa-check"></i><b>7.4.7</b> Group and Back-reference</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="string-manipulation.html"><a href="string-manipulation.html"><i class="fa fa-check"></i><b>8</b> String Manipulation</a>
+<li class="chapter" data-level="7.5" data-path="string-manipulation.html"><a href="string-manipulation.html#pattern-matching"><i class="fa fa-check"></i><b>7.5</b> Pattern Matching</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="string-manipulation.html"><a href="string-manipulation.html#what-is-regular-expression"><i class="fa fa-check"></i><b>8.1</b> What is Regular Expression?</a></li>
-<li class="chapter" data-level="8.2" data-path="string-manipulation.html"><a href="string-manipulation.html#string-basics"><i class="fa fa-check"></i><b>8.2</b> String Basics</a></li>
-<li class="chapter" data-level="8.3" data-path="string-manipulation.html"><a href="string-manipulation.html#a-good-tool-regexplain"><i class="fa fa-check"></i><b>8.3</b> A Good Tool: <code>RegExplain</code></a></li>
-<li class="chapter" data-level="8.4" data-path="string-manipulation.html"><a href="string-manipulation.html#regular-expression-grammar"><i class="fa fa-check"></i><b>8.4</b> Regular Expression Grammar</a>
-<ul>
-<li class="chapter" data-level="8.4.1" data-path="string-manipulation.html"><a href="string-manipulation.html#metacharacters"><i class="fa fa-check"></i><b>8.4.1</b> Metacharacters</a></li>
-<li class="chapter" data-level="8.4.2" data-path="string-manipulation.html"><a href="string-manipulation.html#anchors"><i class="fa fa-check"></i><b>8.4.2</b> Anchors</a></li>
-<li class="chapter" data-level="8.4.3" data-path="string-manipulation.html"><a href="string-manipulation.html#character-set"><i class="fa fa-check"></i><b>8.4.3</b> Character Set</a></li>
-<li class="chapter" data-level="8.4.4" data-path="string-manipulation.html"><a href="string-manipulation.html#alternatives"><i class="fa fa-check"></i><b>8.4.4</b> Alternatives</a></li>
-<li class="chapter" data-level="8.4.5" data-path="string-manipulation.html"><a href="string-manipulation.html#quantifiers"><i class="fa fa-check"></i><b>8.4.5</b> Quantifiers</a></li>
-<li class="chapter" data-level="8.4.6" data-path="string-manipulation.html"><a href="string-manipulation.html#greedy-vs.-non-greedy-match"><i class="fa fa-check"></i><b>8.4.6</b> Greedy vs. Non-greedy match</a></li>
-<li class="chapter" data-level="8.4.7" data-path="string-manipulation.html"><a href="string-manipulation.html#group-and-back-reference"><i class="fa fa-check"></i><b>8.4.7</b> Group and Back-reference</a></li>
+<li class="chapter" data-level="7.5.1" data-path="string-manipulation.html"><a href="string-manipulation.html#str_detect"><i class="fa fa-check"></i><b>7.5.1</b> <code>str_detect()</code></a></li>
+<li class="chapter" data-level="7.5.2" data-path="string-manipulation.html"><a href="string-manipulation.html#str_subset"><i class="fa fa-check"></i><b>7.5.2</b> <code>str_subset()</code></a></li>
+<li class="chapter" data-level="7.5.3" data-path="string-manipulation.html"><a href="string-manipulation.html#str_extract"><i class="fa fa-check"></i><b>7.5.3</b> <code>str_extract()</code></a></li>
+<li class="chapter" data-level="7.5.4" data-path="string-manipulation.html"><a href="string-manipulation.html#str_match"><i class="fa fa-check"></i><b>7.5.4</b> <code>str_match()</code></a></li>
+<li class="chapter" data-level="7.5.5" data-path="string-manipulation.html"><a href="string-manipulation.html#str_replace"><i class="fa fa-check"></i><b>7.5.5</b> <code>str_replace()</code></a></li>
+<li class="chapter" data-level="7.5.6" data-path="string-manipulation.html"><a href="string-manipulation.html#str_split"><i class="fa fa-check"></i><b>7.5.6</b> <code>str_split()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="8.5" data-path="string-manipulation.html"><a href="string-manipulation.html#pattern-matching"><i class="fa fa-check"></i><b>8.5</b> Pattern Matching</a>
+<li class="chapter" data-level="7.6" data-path="string-manipulation.html"><a href="string-manipulation.html#advanced-pattern-matching-look-ahead-and-behind"><i class="fa fa-check"></i><b>7.6</b> Advanced Pattern Matching: Look Ahead and Behind</a></li>
+<li class="chapter" data-level="7.7" data-path="string-manipulation.html"><a href="string-manipulation.html#more-practices"><i class="fa fa-check"></i><b>7.7</b> More Practices</a>
 <ul>
-<li class="chapter" data-level="8.5.1" data-path="string-manipulation.html"><a href="string-manipulation.html#str_detect"><i class="fa fa-check"></i><b>8.5.1</b> <code>str_detect()</code></a></li>
-<li class="chapter" data-level="8.5.2" data-path="string-manipulation.html"><a href="string-manipulation.html#str_subset"><i class="fa fa-check"></i><b>8.5.2</b> <code>str_subset()</code></a></li>
-<li class="chapter" data-level="8.5.3" data-path="string-manipulation.html"><a href="string-manipulation.html#str_extract"><i class="fa fa-check"></i><b>8.5.3</b> <code>str_extract()</code></a></li>
-<li class="chapter" data-level="8.5.4" data-path="string-manipulation.html"><a href="string-manipulation.html#str_match"><i class="fa fa-check"></i><b>8.5.4</b> <code>str_match()</code></a></li>
-<li class="chapter" data-level="8.5.5" data-path="string-manipulation.html"><a href="string-manipulation.html#str_replace"><i class="fa fa-check"></i><b>8.5.5</b> <code>str_replace()</code></a></li>
-<li class="chapter" data-level="8.5.6" data-path="string-manipulation.html"><a href="string-manipulation.html#str_split"><i class="fa fa-check"></i><b>8.5.6</b> <code>str_split()</code></a></li>
+<li class="chapter" data-level="7.7.1" data-path="string-manipulation.html"><a href="string-manipulation.html#case-1"><i class="fa fa-check"></i><b>7.7.1</b> Case 1</a></li>
+<li class="chapter" data-level="7.7.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-2"><i class="fa fa-check"></i><b>7.7.2</b> Case 2</a></li>
+<li class="chapter" data-level="7.7.3" data-path="string-manipulation.html"><a href="string-manipulation.html#case-3"><i class="fa fa-check"></i><b>7.7.3</b> Case 3</a></li>
 </ul></li>
-<li class="chapter" data-level="8.6" data-path="string-manipulation.html"><a href="string-manipulation.html#advanced-pattern-matching-look-ahead-and-behind"><i class="fa fa-check"></i><b>8.6</b> Advanced Pattern Matching: Look Ahead and Behind</a></li>
-<li class="chapter" data-level="8.7" data-path="string-manipulation.html"><a href="string-manipulation.html#more-practices"><i class="fa fa-check"></i><b>8.7</b> More Practices</a>
+<li class="chapter" data-level="7.8" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-chinese-four-character-idioms"><i class="fa fa-check"></i><b>7.8</b> Case Study: Chinese Four-Character Idioms</a>
 <ul>
-<li class="chapter" data-level="8.7.1" data-path="string-manipulation.html"><a href="string-manipulation.html#case-1"><i class="fa fa-check"></i><b>8.7.1</b> Case 1</a></li>
-<li class="chapter" data-level="8.7.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-2"><i class="fa fa-check"></i><b>8.7.2</b> Case 2</a></li>
-<li class="chapter" data-level="8.7.3" data-path="string-manipulation.html"><a href="string-manipulation.html#case-3"><i class="fa fa-check"></i><b>8.7.3</b> Case 3</a></li>
-</ul></li>
-<li class="chapter" data-level="8.8" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-chinese-four-character-idioms"><i class="fa fa-check"></i><b>8.8</b> Case Study: Chinese Four-Character Idioms</a>
-<ul>
-<li class="chapter" data-level="8.8.1" data-path="string-manipulation.html"><a href="string-manipulation.html#dictionary-entries"><i class="fa fa-check"></i><b>8.8.1</b> Dictionary Entries</a></li>
-<li class="chapter" data-level="8.8.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-x來y去"><i class="fa fa-check"></i><b>8.8.2</b> Case Study: <code>X來Y去</code></a></li>
+<li class="chapter" data-level="7.8.1" data-path="string-manipulation.html"><a href="string-manipulation.html#dictionary-entries"><i class="fa fa-check"></i><b>7.8.1</b> Dictionary Entries</a></li>
+<li class="chapter" data-level="7.8.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-x來y去"><i class="fa fa-check"></i><b>7.8.2</b> Case Study: <code>X來Y去</code></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="data-import.html"><a href="data-import.html"><i class="fa fa-check"></i><b>9</b> Data Import</a>
+<li class="chapter" data-level="8" data-path="data-import.html"><a href="data-import.html"><i class="fa fa-check"></i><b>8</b> Data Import</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="data-import.html"><a href="data-import.html#overview"><i class="fa fa-check"></i><b>9.1</b> Overview</a>
+<li class="chapter" data-level="8.1" data-path="data-import.html"><a href="data-import.html#overview"><i class="fa fa-check"></i><b>8.1</b> Overview</a>
 <ul>
-<li class="chapter" data-level="9.1.1" data-path="data-import.html"><a href="data-import.html#what-is-a-csv-file"><i class="fa fa-check"></i><b>9.1.1</b> What is a <code>CSV</code> file?</a></li>
-<li class="chapter" data-level="9.1.2" data-path="data-import.html"><a href="data-import.html#why-are-.csv-files-used"><i class="fa fa-check"></i><b>9.1.2</b> Why are <code>.CSV</code> files used?</a></li>
-<li class="chapter" data-level="9.1.3" data-path="data-import.html"><a href="data-import.html#how-do-i-save-csv-files"><i class="fa fa-check"></i><b>9.1.3</b> How do I save CSV files?</a></li>
-<li class="chapter" data-level="9.1.4" data-path="data-import.html"><a href="data-import.html#what-about-other-types-of-data"><i class="fa fa-check"></i><b>9.1.4</b> What about other types of data?</a></li>
+<li class="chapter" data-level="8.1.1" data-path="data-import.html"><a href="data-import.html#what-is-a-csv-file"><i class="fa fa-check"></i><b>8.1.1</b> What is a <code>CSV</code> file?</a></li>
+<li class="chapter" data-level="8.1.2" data-path="data-import.html"><a href="data-import.html#why-are-.csv-files-used"><i class="fa fa-check"></i><b>8.1.2</b> Why are <code>.CSV</code> files used?</a></li>
+<li class="chapter" data-level="8.1.3" data-path="data-import.html"><a href="data-import.html#how-do-i-save-csv-files"><i class="fa fa-check"></i><b>8.1.3</b> How do I save CSV files?</a></li>
+<li class="chapter" data-level="8.1.4" data-path="data-import.html"><a href="data-import.html#what-about-other-types-of-data"><i class="fa fa-check"></i><b>8.1.4</b> What about other types of data?</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="data-import.html"><a href="data-import.html#importing-data"><i class="fa fa-check"></i><b>9.2</b> Importing Data</a></li>
-<li class="chapter" data-level="9.3" data-path="data-import.html"><a href="data-import.html#character-encoding"><i class="fa fa-check"></i><b>9.3</b> Character Encoding</a>
+<li class="chapter" data-level="8.2" data-path="data-import.html"><a href="data-import.html#importing-data"><i class="fa fa-check"></i><b>8.2</b> Importing Data</a></li>
+<li class="chapter" data-level="8.3" data-path="data-import.html"><a href="data-import.html#character-encoding"><i class="fa fa-check"></i><b>8.3</b> Character Encoding</a>
 <ul>
-<li class="chapter" data-level="9.3.1" data-path="data-import.html"><a href="data-import.html#problems-with-ascii"><i class="fa fa-check"></i><b>9.3.1</b> Problems with ASCII</a></li>
-<li class="chapter" data-level="9.3.2" data-path="data-import.html"><a href="data-import.html#from-7-bit-to-one-byte-encoding"><i class="fa fa-check"></i><b>9.3.2</b> From 7-bit to One-Byte Encoding</a></li>
-<li class="chapter" data-level="9.3.3" data-path="data-import.html"><a href="data-import.html#problems-with-single-byte-encoding"><i class="fa fa-check"></i><b>9.3.3</b> Problems with Single-Byte Encoding</a></li>
-<li class="chapter" data-level="9.3.4" data-path="data-import.html"><a href="data-import.html#problems-with-multi-byte-encoding"><i class="fa fa-check"></i><b>9.3.4</b> Problems with Multi-byte Encoding</a></li>
-<li class="chapter" data-level="9.3.5" data-path="data-import.html"><a href="data-import.html#unicode-and-utf-8"><i class="fa fa-check"></i><b>9.3.5</b> Unicode and UTF-8</a></li>
-<li class="chapter" data-level="9.3.6" data-path="data-import.html"><a href="data-import.html#suggestions"><i class="fa fa-check"></i><b>9.3.6</b> Suggestions</a></li>
+<li class="chapter" data-level="8.3.1" data-path="data-import.html"><a href="data-import.html#problems-with-ascii"><i class="fa fa-check"></i><b>8.3.1</b> Problems with ASCII</a></li>
+<li class="chapter" data-level="8.3.2" data-path="data-import.html"><a href="data-import.html#from-7-bit-to-one-byte-encoding"><i class="fa fa-check"></i><b>8.3.2</b> From 7-bit to One-Byte Encoding</a></li>
+<li class="chapter" data-level="8.3.3" data-path="data-import.html"><a href="data-import.html#problems-with-single-byte-encoding"><i class="fa fa-check"></i><b>8.3.3</b> Problems with Single-Byte Encoding</a></li>
+<li class="chapter" data-level="8.3.4" data-path="data-import.html"><a href="data-import.html#problems-with-multi-byte-encoding"><i class="fa fa-check"></i><b>8.3.4</b> Problems with Multi-byte Encoding</a></li>
+<li class="chapter" data-level="8.3.5" data-path="data-import.html"><a href="data-import.html#unicode-and-utf-8"><i class="fa fa-check"></i><b>8.3.5</b> Unicode and UTF-8</a></li>
+<li class="chapter" data-level="8.3.6" data-path="data-import.html"><a href="data-import.html#suggestions"><i class="fa fa-check"></i><b>8.3.6</b> Suggestions</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="data-import.html"><a href="data-import.html#character-code-point-and-hexadecimal-mode"><i class="fa fa-check"></i><b>9.4</b> Character, Code Point, and Hexadecimal Mode</a></li>
-<li class="chapter" data-level="9.5" data-path="data-import.html"><a href="data-import.html#r-base-functions"><i class="fa fa-check"></i><b>9.5</b> R Base Functions</a>
+<li class="chapter" data-level="8.4" data-path="data-import.html"><a href="data-import.html#character-code-point-and-hexadecimal-mode"><i class="fa fa-check"></i><b>8.4</b> Character, Code Point, and Hexadecimal Mode</a></li>
+<li class="chapter" data-level="8.5" data-path="data-import.html"><a href="data-import.html#r-base-functions"><i class="fa fa-check"></i><b>8.5</b> R Base Functions</a>
 <ul>
-<li class="chapter" data-level="9.5.1" data-path="data-import.html"><a href="data-import.html#readlines"><i class="fa fa-check"></i><b>9.5.1</b> <code>readLines()</code></a></li>
-<li class="chapter" data-level="9.5.2" data-path="data-import.html"><a href="data-import.html#writelines"><i class="fa fa-check"></i><b>9.5.2</b> <code>writeLines()</code></a></li>
+<li class="chapter" data-level="8.5.1" data-path="data-import.html"><a href="data-import.html#readlines"><i class="fa fa-check"></i><b>8.5.1</b> <code>readLines()</code></a></li>
+<li class="chapter" data-level="8.5.2" data-path="data-import.html"><a href="data-import.html#writelines"><i class="fa fa-check"></i><b>8.5.2</b> <code>writeLines()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="9.6" data-path="data-import.html"><a href="data-import.html#readr-functions"><i class="fa fa-check"></i><b>9.6</b> <code>readr</code> Functions</a>
+<li class="chapter" data-level="8.6" data-path="data-import.html"><a href="data-import.html#readr-functions"><i class="fa fa-check"></i><b>8.6</b> <code>readr</code> Functions</a>
 <ul>
-<li class="chapter" data-level="9.6.1" data-path="data-import.html"><a href="data-import.html#readrread_csv"><i class="fa fa-check"></i><b>9.6.1</b> <code>readr::read_csv()</code></a></li>
-<li class="chapter" data-level="9.6.2" data-path="data-import.html"><a href="data-import.html#readrwrite_csv"><i class="fa fa-check"></i><b>9.6.2</b> <code>readr::write_csv()</code></a></li>
+<li class="chapter" data-level="8.6.1" data-path="data-import.html"><a href="data-import.html#readrread_csv"><i class="fa fa-check"></i><b>8.6.1</b> <code>readr::read_csv()</code></a></li>
+<li class="chapter" data-level="8.6.2" data-path="data-import.html"><a href="data-import.html#readrwrite_csv"><i class="fa fa-check"></i><b>8.6.2</b> <code>readr::write_csv()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="9.7" data-path="data-import.html"><a href="data-import.html#directory-operations"><i class="fa fa-check"></i><b>9.7</b> Directory Operations</a></li>
+<li class="chapter" data-level="8.7" data-path="data-import.html"><a href="data-import.html#directory-operations"><i class="fa fa-check"></i><b>8.7</b> Directory Operations</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html"><i class="fa fa-check"></i><b>10</b> Conditions and Loops</a>
+<li class="chapter" data-level="9" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html"><i class="fa fa-check"></i><b>9</b> Conditions and Loops</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#if-statements"><i class="fa fa-check"></i><b>10.1</b> <code>if</code> Statements</a></li>
-<li class="chapter" data-level="10.2" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#for"><i class="fa fa-check"></i><b>10.2</b> <code>for</code></a></li>
-<li class="chapter" data-level="10.3" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#while-loop"><i class="fa fa-check"></i><b>10.3</b> <code>while</code> loop</a></li>
-<li class="chapter" data-level="10.4" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#toy-example"><i class="fa fa-check"></i><b>10.4</b> Toy Example</a></li>
+<li class="chapter" data-level="9.1" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#if-statements"><i class="fa fa-check"></i><b>9.1</b> <code>if</code> Statements</a></li>
+<li class="chapter" data-level="9.2" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#for"><i class="fa fa-check"></i><b>9.2</b> <code>for</code></a></li>
+<li class="chapter" data-level="9.3" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#while-loop"><i class="fa fa-check"></i><b>9.3</b> <code>while</code> loop</a></li>
+<li class="chapter" data-level="9.4" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#toy-example"><i class="fa fa-check"></i><b>9.4</b> Toy Example</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="iteration.html"><a href="iteration.html"><i class="fa fa-check"></i><b>11</b> Iteration</a>
+<li class="chapter" data-level="10" data-path="iteration.html"><a href="iteration.html"><i class="fa fa-check"></i><b>10</b> Iteration</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="iteration.html"><a href="iteration.html#code-duplication"><i class="fa fa-check"></i><b>11.1</b> Code Duplication</a></li>
-<li class="chapter" data-level="11.2" data-path="iteration.html"><a href="iteration.html#vector-vs.-list-in-r"><i class="fa fa-check"></i><b>11.2</b> <code>vector</code> vs. <code>list</code> in <code>R</code></a></li>
-<li class="chapter" data-level="11.3" data-path="iteration.html"><a href="iteration.html#iteration-1"><i class="fa fa-check"></i><b>11.3</b> Iteration</a></li>
-<li class="chapter" data-level="11.4" data-path="iteration.html"><a href="iteration.html#purr"><i class="fa fa-check"></i><b>11.4</b> <code>purr</code></a></li>
-<li class="chapter" data-level="11.5" data-path="iteration.html"><a href="iteration.html#purr-dplyr"><i class="fa fa-check"></i><b>11.5</b> <code>purr</code> + <code>dplyr</code></a></li>
-<li class="chapter" data-level="11.6" data-path="iteration.html"><a href="iteration.html#writing-own-functions"><i class="fa fa-check"></i><b>11.6</b> Writing Own Functions</a></li>
+<li class="chapter" data-level="10.1" data-path="iteration.html"><a href="iteration.html#code-duplication"><i class="fa fa-check"></i><b>10.1</b> Code Duplication</a></li>
+<li class="chapter" data-level="10.2" data-path="iteration.html"><a href="iteration.html#vector-vs.-list-in-r"><i class="fa fa-check"></i><b>10.2</b> <code>vector</code> vs. <code>list</code> in <code>R</code></a></li>
+<li class="chapter" data-level="10.3" data-path="iteration.html"><a href="iteration.html#iteration-1"><i class="fa fa-check"></i><b>10.3</b> Iteration</a></li>
+<li class="chapter" data-level="10.4" data-path="iteration.html"><a href="iteration.html#purr"><i class="fa fa-check"></i><b>10.4</b> <code>purr</code></a></li>
+<li class="chapter" data-level="10.5" data-path="iteration.html"><a href="iteration.html#purr-dplyr"><i class="fa fa-check"></i><b>10.5</b> <code>purr</code> + <code>dplyr</code></a></li>
+<li class="chapter" data-level="10.6" data-path="iteration.html"><a href="iteration.html#writing-own-functions"><i class="fa fa-check"></i><b>10.6</b> Writing Own Functions</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html"><i class="fa fa-check"></i><b>12</b> Data Scientist First Step</a>
+<li class="chapter" data-level="11" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html"><i class="fa fa-check"></i><b>11</b> Data Scientist First Step</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#loading-nobel-laureates-dataset"><i class="fa fa-check"></i><b>12.1</b> Loading Nobel Laureates Dataset</a></li>
-<li class="chapter" data-level="12.2" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#column-names"><i class="fa fa-check"></i><b>12.2</b> Column Names</a></li>
-<li class="chapter" data-level="12.3" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#data-completeness-na"><i class="fa fa-check"></i><b>12.3</b> Data Completeness <code>NA</code></a></li>
-<li class="chapter" data-level="12.4" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#data-preprocessing"><i class="fa fa-check"></i><b>12.4</b> Data Preprocessing</a></li>
-<li class="chapter" data-level="12.5" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#exploratory-analysis"><i class="fa fa-check"></i><b>12.5</b> Exploratory Analysis</a>
+<li class="chapter" data-level="11.1" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#loading-nobel-laureates-dataset"><i class="fa fa-check"></i><b>11.1</b> Loading Nobel Laureates Dataset</a></li>
+<li class="chapter" data-level="11.2" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#column-names"><i class="fa fa-check"></i><b>11.2</b> Column Names</a></li>
+<li class="chapter" data-level="11.3" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#data-completeness-na"><i class="fa fa-check"></i><b>11.3</b> Data Completeness <code>NA</code></a></li>
+<li class="chapter" data-level="11.4" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#data-preprocessing"><i class="fa fa-check"></i><b>11.4</b> Data Preprocessing</a></li>
+<li class="chapter" data-level="11.5" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#exploratory-analysis"><i class="fa fa-check"></i><b>11.5</b> Exploratory Analysis</a>
 <ul>
-<li class="chapter" data-level="12.5.1" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#discipline-distribution"><i class="fa fa-check"></i><b>12.5.1</b> Discipline Distribution</a></li>
-<li class="chapter" data-level="12.5.2" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#age-distribution"><i class="fa fa-check"></i><b>12.5.2</b> Age Distribution</a></li>
-<li class="chapter" data-level="12.5.3" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#category-x-age-interaction"><i class="fa fa-check"></i><b>12.5.3</b> Category x Age Interaction</a></li>
-<li class="chapter" data-level="12.5.4" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#gender-distribution"><i class="fa fa-check"></i><b>12.5.4</b> Gender Distribution</a></li>
-<li class="chapter" data-level="12.5.5" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#age-x-gender-interaction"><i class="fa fa-check"></i><b>12.5.5</b> Age x Gender Interaction</a></li>
+<li class="chapter" data-level="11.5.1" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#discipline-distribution"><i class="fa fa-check"></i><b>11.5.1</b> Discipline Distribution</a></li>
+<li class="chapter" data-level="11.5.2" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#age-distribution"><i class="fa fa-check"></i><b>11.5.2</b> Age Distribution</a></li>
+<li class="chapter" data-level="11.5.3" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#category-x-age-interaction"><i class="fa fa-check"></i><b>11.5.3</b> Category x Age Interaction</a></li>
+<li class="chapter" data-level="11.5.4" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#gender-distribution"><i class="fa fa-check"></i><b>11.5.4</b> Gender Distribution</a></li>
+<li class="chapter" data-level="11.5.5" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#age-x-gender-interaction"><i class="fa fa-check"></i><b>11.5.5</b> Age x Gender Interaction</a></li>
 </ul></li>
-<li class="chapter" data-level="12.6" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#exercises"><i class="fa fa-check"></i><b>12.6</b> Exercises</a></li>
+<li class="chapter" data-level="11.6" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#exercises"><i class="fa fa-check"></i><b>11.6</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html"><i class="fa fa-check"></i><b>13</b> Text Analytics: A Start</a>
+<li class="chapter" data-level="12" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html"><i class="fa fa-check"></i><b>12</b> Text Analytics: A Start</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#installing-quanteda"><i class="fa fa-check"></i><b>13.1</b> Installing <code>quanteda</code></a></li>
-<li class="chapter" data-level="13.2" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#building-a-corpus-from-character-vector"><i class="fa fa-check"></i><b>13.2</b> Building a <code>corpus</code> from character vector</a></li>
-<li class="chapter" data-level="13.3" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyword-in-context-kwic"><i class="fa fa-check"></i><b>13.3</b> Keyword-in-Context (KWIC)</a></li>
-<li class="chapter" data-level="13.4" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#kwic-with-regular-expressions"><i class="fa fa-check"></i><b>13.4</b> KWIC with Regular Expressions</a></li>
-<li class="chapter" data-level="13.5" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#lexical-density-plot"><i class="fa fa-check"></i><b>13.5</b> Lexical Density Plot</a></li>
-<li class="chapter" data-level="13.6" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#document-feature-matrix"><i class="fa fa-check"></i><b>13.6</b> Document-Feature Matrix</a></li>
-<li class="chapter" data-level="13.7" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#feature-selection"><i class="fa fa-check"></i><b>13.7</b> Feature Selection</a></li>
-<li class="chapter" data-level="13.8" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#top-features"><i class="fa fa-check"></i><b>13.8</b> Top Features</a></li>
-<li class="chapter" data-level="13.9" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#wordclouds"><i class="fa fa-check"></i><b>13.9</b> Wordclouds</a></li>
-<li class="chapter" data-level="13.10" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyness-analysis"><i class="fa fa-check"></i><b>13.10</b> Keyness Analysis</a></li>
-<li class="chapter" data-level="13.11" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#flowchart"><i class="fa fa-check"></i><b>13.11</b> Flowchart</a></li>
-<li class="chapter" data-level="13.12" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#exercises-1"><i class="fa fa-check"></i><b>13.12</b> Exercises</a></li>
+<li class="chapter" data-level="12.1" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#installing-quanteda"><i class="fa fa-check"></i><b>12.1</b> Installing <code>quanteda</code></a></li>
+<li class="chapter" data-level="12.2" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#building-a-corpus-from-character-vector"><i class="fa fa-check"></i><b>12.2</b> Building a <code>corpus</code> from character vector</a></li>
+<li class="chapter" data-level="12.3" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyword-in-context-kwic"><i class="fa fa-check"></i><b>12.3</b> Keyword-in-Context (KWIC)</a></li>
+<li class="chapter" data-level="12.4" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#kwic-with-regular-expressions"><i class="fa fa-check"></i><b>12.4</b> KWIC with Regular Expressions</a></li>
+<li class="chapter" data-level="12.5" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#lexical-density-plot"><i class="fa fa-check"></i><b>12.5</b> Lexical Density Plot</a></li>
+<li class="chapter" data-level="12.6" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#document-feature-matrix"><i class="fa fa-check"></i><b>12.6</b> Document-Feature Matrix</a></li>
+<li class="chapter" data-level="12.7" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#feature-selection"><i class="fa fa-check"></i><b>12.7</b> Feature Selection</a></li>
+<li class="chapter" data-level="12.8" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#top-features"><i class="fa fa-check"></i><b>12.8</b> Top Features</a></li>
+<li class="chapter" data-level="12.9" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#wordclouds"><i class="fa fa-check"></i><b>12.9</b> Wordclouds</a></li>
+<li class="chapter" data-level="12.10" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyness-analysis"><i class="fa fa-check"></i><b>12.10</b> Keyness Analysis</a></li>
+<li class="chapter" data-level="12.11" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#flowchart"><i class="fa fa-check"></i><b>12.11</b> Flowchart</a></li>
+<li class="chapter" data-level="12.12" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#exercises-1"><i class="fa fa-check"></i><b>12.12</b> Exercises</a></li>
+</ul></li>
+<li class="part"><span><b>PART 2: Python Language</b></span></li>
+<li class="chapter" data-level="13" data-path="python-fundamentals.html"><a href="python-fundamentals.html"><i class="fa fa-check"></i><b>13</b> Python Fundamentals</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="python-fundamentals.html"><a href="python-fundamentals.html#set-up-environment"><i class="fa fa-check"></i><b>13.1</b> Set up Environment</a></li>
+<li class="chapter" data-level="13.2" data-path="python-fundamentals.html"><a href="python-fundamentals.html#conda-environment"><i class="fa fa-check"></i><b>13.2</b> Conda Environment</a></li>
+<li class="chapter" data-level="13.3" data-path="python-fundamentals.html"><a href="python-fundamentals.html#data-type"><i class="fa fa-check"></i><b>13.3</b> Data Type</a></li>
+<li class="chapter" data-level="13.4" data-path="python-fundamentals.html"><a href="python-fundamentals.html#data-structure-1"><i class="fa fa-check"></i><b>13.4</b> Data Structure</a></li>
+<li class="chapter" data-level="13.5" data-path="python-fundamentals.html"><a href="python-fundamentals.html#string"><i class="fa fa-check"></i><b>13.5</b> String</a></li>
+<li class="chapter" data-level="13.6" data-path="python-fundamentals.html"><a href="python-fundamentals.html#control-structure"><i class="fa fa-check"></i><b>13.6</b> Control Structure</a></li>
+<li class="chapter" data-level="13.7" data-path="python-fundamentals.html"><a href="python-fundamentals.html#function-1"><i class="fa fa-check"></i><b>13.7</b> Function</a></li>
+<li class="chapter" data-level="13.8" data-path="python-fundamentals.html"><a href="python-fundamentals.html#list-comprehension"><i class="fa fa-check"></i><b>13.8</b> List Comprehension</a></li>
+<li class="chapter" data-level="13.9" data-path="python-fundamentals.html"><a href="python-fundamentals.html#python-scripts"><i class="fa fa-check"></i><b>13.9</b> Python Scripts</a></li>
+<li class="chapter" data-level="13.10" data-path="python-fundamentals.html"><a href="python-fundamentals.html#modules"><i class="fa fa-check"></i><b>13.10</b> Modules</a></li>
+<li class="chapter" data-level="13.11" data-path="python-fundamentals.html"><a href="python-fundamentals.html#inputoutput"><i class="fa fa-check"></i><b>13.11</b> Input/Output</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="regular-expression.html"><a href="regular-expression.html"><i class="fa fa-check"></i><b>14</b> Regular Expression</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="regular-expression.html"><a href="regular-expression.html#comparison-of-r-and-python"><i class="fa fa-check"></i><b>14.1</b> Comparison of R and Python</a></li>
+<li class="chapter" data-level="14.2" data-path="regular-expression.html"><a href="regular-expression.html#structure-of-regular-expression-usage"><i class="fa fa-check"></i><b>14.2</b> Structure of Regular Expression Usage</a></li>
+<li class="chapter" data-level="14.3" data-path="regular-expression.html"><a href="regular-expression.html#regular-expression-in-python"><i class="fa fa-check"></i><b>14.3</b> Regular Expression in Python</a>
+<ul>
+<li class="chapter" data-level="14.3.1" data-path="regular-expression.html"><a href="regular-expression.html#raw-string-notation"><i class="fa fa-check"></i><b>14.3.1</b> Raw String Notation</a></li>
+<li class="chapter" data-level="14.3.2" data-path="regular-expression.html"><a href="regular-expression.html#find-all-matches"><i class="fa fa-check"></i><b>14.3.2</b> Find all matches</a></li>
+<li class="chapter" data-level="14.3.3" data-path="regular-expression.html"><a href="regular-expression.html#group-vs.-groups"><i class="fa fa-check"></i><b>14.3.3</b> <code>group()</code> vs. <code>groups()</code></a></li>
+<li class="chapter" data-level="14.3.4" data-path="regular-expression.html"><a href="regular-expression.html#string-format-validation"><i class="fa fa-check"></i><b>14.3.4</b> string format validation</a></li>
+<li class="chapter" data-level="14.3.5" data-path="regular-expression.html"><a href="regular-expression.html#re.match-vs.-re.search"><i class="fa fa-check"></i><b>14.3.5</b> re.match() vs. re.search()</a></li>
+<li class="chapter" data-level="14.3.6" data-path="regular-expression.html"><a href="regular-expression.html#re.split"><i class="fa fa-check"></i><b>14.3.6</b> re.split()</a></li>
+<li class="chapter" data-level="14.3.7" data-path="regular-expression.html"><a href="regular-expression.html#text-munging"><i class="fa fa-check"></i><b>14.3.7</b> Text Munging</a></li>
+</ul></li>
+<li class="chapter" data-level="14.4" data-path="regular-expression.html"><a href="regular-expression.html#references"><i class="fa fa-check"></i><b>14.4</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>15</b> Pandas</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="pandas.html"><a href="pandas.html#libraries"><i class="fa fa-check"></i><b>15.1</b> Libraries</a></li>
+<li class="chapter" data-level="15.2" data-path="pandas.html"><a href="pandas.html#importingexporting-data"><i class="fa fa-check"></i><b>15.2</b> Importing/Exporting Data</a></li>
+<li class="chapter" data-level="15.3" data-path="pandas.html"><a href="pandas.html#inspecting-data-frame"><i class="fa fa-check"></i><b>15.3</b> Inspecting Data Frame</a></li>
+<li class="chapter" data-level="15.4" data-path="pandas.html"><a href="pandas.html#basic-functions"><i class="fa fa-check"></i><b>15.4</b> Basic Functions</a></li>
+<li class="chapter" data-level="15.5" data-path="pandas.html"><a href="pandas.html#subsetting-data-frame"><i class="fa fa-check"></i><b>15.5</b> Subsetting Data Frame</a></li>
+<li class="chapter" data-level="15.6" data-path="pandas.html"><a href="pandas.html#exploration"><i class="fa fa-check"></i><b>15.6</b> Exploration</a>
+<ul>
+<li class="chapter" data-level="15.6.1" data-path="pandas.html"><a href="pandas.html#na-values"><i class="fa fa-check"></i><b>15.6.1</b> NA Values</a></li>
+<li class="chapter" data-level="15.6.2" data-path="pandas.html"><a href="pandas.html#converting-data-types"><i class="fa fa-check"></i><b>15.6.2</b> Converting Data Types</a></li>
+<li class="chapter" data-level="15.6.3" data-path="pandas.html"><a href="pandas.html#pandas-supported-data-types"><i class="fa fa-check"></i><b>15.6.3</b> Pandas-supported Data Types</a></li>
+<li class="chapter" data-level="15.6.4" data-path="pandas.html"><a href="pandas.html#transformation"><i class="fa fa-check"></i><b>15.6.4</b> Transformation</a></li>
+<li class="chapter" data-level="15.6.5" data-path="pandas.html"><a href="pandas.html#filter-1"><i class="fa fa-check"></i><b>15.6.5</b> <code>filter()</code></a></li>
+<li class="chapter" data-level="15.6.6" data-path="pandas.html"><a href="pandas.html#arrange-1"><i class="fa fa-check"></i><b>15.6.6</b> <code>arrange()</code></a></li>
+<li class="chapter" data-level="15.6.7" data-path="pandas.html"><a href="pandas.html#select-1"><i class="fa fa-check"></i><b>15.6.7</b> <code>select()</code></a></li>
+<li class="chapter" data-level="15.6.8" data-path="pandas.html"><a href="pandas.html#mutate-1"><i class="fa fa-check"></i><b>15.6.8</b> <code>mutate()</code></a></li>
+<li class="chapter" data-level="15.6.9" data-path="pandas.html"><a href="pandas.html#apply-mutate_if"><i class="fa fa-check"></i><b>15.6.9</b> <code>apply()</code>, <code>mutate_if()</code></a></li>
+<li class="chapter" data-level="15.6.10" data-path="pandas.html"><a href="pandas.html#group_by-and-summarize-1"><i class="fa fa-check"></i><b>15.6.10</b> <code>group_by()</code> and <code>summarize()</code></a></li>
+<li class="chapter" data-level="15.6.11" data-path="pandas.html"><a href="pandas.html#rename-1"><i class="fa fa-check"></i><b>15.6.11</b> <code>rename()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="15.7" data-path="pandas.html"><a href="pandas.html#joincombine-data-frames"><i class="fa fa-check"></i><b>15.7</b> Join/Combine Data Frames</a></li>
+<li class="chapter" data-level="15.8" data-path="pandas.html"><a href="pandas.html#statistics"><i class="fa fa-check"></i><b>15.8</b> Statistics</a></li>
+<li class="chapter" data-level="15.9" data-path="pandas.html"><a href="pandas.html#generic-functions"><i class="fa fa-check"></i><b>15.9</b> Generic Functions</a></li>
+<li class="chapter" data-level="15.10" data-path="pandas.html"><a href="pandas.html#references-1"><i class="fa fa-check"></i><b>15.10</b> References</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="the-shell.html"><a href="the-shell.html"><i class="fa fa-check"></i><b>A</b> The Shell</a>
@@ -400,9 +445,9 @@ div.csl-indent {
 <li class="chapter" data-level="A.2" data-path="the-shell.html"><a href="the-shell.html#shebang-line"><i class="fa fa-check"></i><b>A.2</b> Shebang Line</a></li>
 <li class="chapter" data-level="A.3" data-path="the-shell.html"><a href="the-shell.html#basic-shell-commands"><i class="fa fa-check"></i><b>A.3</b> Basic Shell Commands</a></li>
 <li class="chapter" data-level="A.4" data-path="the-shell.html"><a href="the-shell.html#text-analytic-related-commands"><i class="fa fa-check"></i><b>A.4</b> Text-Analytic Related Commands</a></li>
-<li class="chapter" data-level="A.5" data-path="the-shell.html"><a href="the-shell.html#references"><i class="fa fa-check"></i><b>A.5</b> References</a></li>
+<li class="chapter" data-level="A.5" data-path="the-shell.html"><a href="the-shell.html#references-2"><i class="fa fa-check"></i><b>A.5</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="references-1.html"><a href="references-1.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="references-3.html"><a href="references-3.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://web.ntnu.edu.tw/~alvinchen" target ="blank">Alvin Chen </a></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -424,12 +469,12 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="subsetting" class="section level1" number="5">
-<h1><span class="header-section-number">Chapter 5</span> Subsetting</h1>
+<div id="subsetting" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Subsetting</h1>
 <p>Subsetting is very important. To subset is to select a particular subset of elements from a data structure (e.g., <code>vecotr</code>, <code>matrix</code>, <code>data.frame</code>, <code>list</code>). In Chapter <a href="r-fundamentals.html#r-fundamentals">2</a>, we discuss very briefly about data structures. Here we will look at each type of data structure in more detail and introduce ways of subsetting them.</p>
 <p><img src="images/r-data-structure.png" width="90%" /></p>
-<div id="vector" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Vector</h2>
+<div id="vector" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Vector</h2>
 <p>As we have shown in Chapter <a href="r-fundamentals.html#r-fundamentals">2</a> <a href="r-fundamentals">R Fundamentals</a>, there are three types of primitive vectors in R:</p>
 <ul>
 <li>character vectors</li>
@@ -440,18 +485,18 @@ div.csl-indent {
 <ul>
 <li>Subsetting with <em>numeric</em> index</li>
 </ul>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb116-1"><a href="subsetting.html#cb116-1" aria-hidden="true" tabindex="-1"></a>char.vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;one&quot;</span>, <span class="st">&quot;two&quot;</span>, <span class="st">&quot;three&quot;</span>, <span class="st">&quot;four&quot;</span>, <span class="st">&quot;five&quot;</span>)</span>
-<span id="cb116-2"><a href="subsetting.html#cb116-2" aria-hidden="true" tabindex="-1"></a>char.vec[<span class="dv">1</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb80-1"><a href="subsetting.html#cb80-1" aria-hidden="true" tabindex="-1"></a>char.vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;one&quot;</span>, <span class="st">&quot;two&quot;</span>, <span class="st">&quot;three&quot;</span>, <span class="st">&quot;four&quot;</span>, <span class="st">&quot;five&quot;</span>)</span>
+<span id="cb80-2"><a href="subsetting.html#cb80-2" aria-hidden="true" tabindex="-1"></a>char.vec[<span class="dv">1</span>]</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;one&quot;</code></pre>
 <p>You can also assess several elements of a vector by putting in several indices, <code>c()</code>, in the <code>[]</code>:</p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb118-1"><a href="subsetting.html#cb118-1" aria-hidden="true" tabindex="-1"></a>char.vec[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb82-1"><a href="subsetting.html#cb82-1" aria-hidden="true" tabindex="-1"></a>char.vec[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>)]</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;one&quot;  &quot;four&quot;</code></pre>
 <ul>
 <li>Subsetting with boolean index</li>
 </ul>
 <p>You can also use a boolean vector as the index:</p>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb120-1"><a href="subsetting.html#cb120-1" aria-hidden="true" tabindex="-1"></a>whether.to.extract <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>)</span>
-<span id="cb120-2"><a href="subsetting.html#cb120-2" aria-hidden="true" tabindex="-1"></a>char.vec[whether.to.extract]</span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb84-1"><a href="subsetting.html#cb84-1" aria-hidden="true" tabindex="-1"></a>whether.to.extract <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb84-2"><a href="subsetting.html#cb84-2" aria-hidden="true" tabindex="-1"></a>char.vec[whether.to.extract]</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;one&quot;   &quot;three&quot;</code></pre>
 <div class="info">
 <p>
@@ -485,33 +530,33 @@ You may use different logical operators to check each element of the vector acco
 </ul>
 </div>
 <p>This can be very useful for vector subsetting:</p>
-<div class="sourceCode" id="cb122"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb122-1"><a href="subsetting.html#cb122-1" aria-hidden="true" tabindex="-1"></a>num.vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>)</span>
-<span id="cb122-2"><a href="subsetting.html#cb122-2" aria-hidden="true" tabindex="-1"></a>num.vec <span class="sc">&gt;</span> <span class="dv">10</span></span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb86-1"><a href="subsetting.html#cb86-1" aria-hidden="true" tabindex="-1"></a>num.vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>)</span>
+<span id="cb86-2"><a href="subsetting.html#cb86-2" aria-hidden="true" tabindex="-1"></a>num.vec <span class="sc">&gt;</span> <span class="dv">10</span></span></code></pre></div>
 <pre class="Rout"><code> [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE
 [13]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</code></pre>
-<div class="sourceCode" id="cb124"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb124-1"><a href="subsetting.html#cb124-1" aria-hidden="true" tabindex="-1"></a>num.vec[num.vec <span class="sc">&gt;</span> <span class="dv">10</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb88-1"><a href="subsetting.html#cb88-1" aria-hidden="true" tabindex="-1"></a>num.vec[num.vec <span class="sc">&gt;</span> <span class="dv">10</span>]</span></code></pre></div>
 <pre class="Rout"><code> [1] 11 12 13 14 15 16 17 18 19 20</code></pre>
-<div class="sourceCode" id="cb126"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb126-1"><a href="subsetting.html#cb126-1" aria-hidden="true" tabindex="-1"></a>num.vec[num.vec <span class="sc">!=</span> <span class="dv">10</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb90-1"><a href="subsetting.html#cb90-1" aria-hidden="true" tabindex="-1"></a>num.vec[num.vec <span class="sc">!=</span> <span class="dv">10</span>]</span></code></pre></div>
 <pre class="Rout"><code> [1]  1  2  3  4  5  6  7  8  9 11 12 13 14 15 16 17 18 19 20</code></pre>
-<div class="sourceCode" id="cb128"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb128-1"><a href="subsetting.html#cb128-1" aria-hidden="true" tabindex="-1"></a>num.vec[num.vec <span class="sc">&gt;</span> <span class="dv">18</span> <span class="sc">|</span> num.vec <span class="sc">&lt;</span> <span class="dv">2</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb92-1"><a href="subsetting.html#cb92-1" aria-hidden="true" tabindex="-1"></a>num.vec[num.vec <span class="sc">&gt;</span> <span class="dv">18</span> <span class="sc">|</span> num.vec <span class="sc">&lt;</span> <span class="dv">2</span>]</span></code></pre></div>
 <pre class="Rout"><code>[1]  1 19 20</code></pre>
 <ul>
 <li>Subsetting with negative numeric index</li>
 </ul>
 <p>If you use negative numbers in the index <code>[]</code>, you will get a new vector printed on the console, with those indexed elements removed:</p>
-<div class="sourceCode" id="cb130"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb130-1"><a href="subsetting.html#cb130-1" aria-hidden="true" tabindex="-1"></a>char.vec[<span class="sc">-</span><span class="dv">2</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb94-1"><a href="subsetting.html#cb94-1" aria-hidden="true" tabindex="-1"></a>char.vec[<span class="sc">-</span><span class="dv">2</span>]</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;one&quot;   &quot;three&quot; &quot;four&quot;  &quot;five&quot; </code></pre>
 <p>However, please note that the original vector is still the same in length:</p>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb132-1"><a href="subsetting.html#cb132-1" aria-hidden="true" tabindex="-1"></a>char.vec</span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb96-1"><a href="subsetting.html#cb96-1" aria-hidden="true" tabindex="-1"></a>char.vec</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;one&quot;   &quot;two&quot;   &quot;three&quot; &quot;four&quot;  &quot;five&quot; </code></pre>
 <p>If you want to save the shortened vector, you can either (a) assign the shortened vector to a new object name or (b) assign the shortened vector to the same object name:</p>
-<div class="sourceCode" id="cb134"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb134-1"><a href="subsetting.html#cb134-1" aria-hidden="true" tabindex="-1"></a>char.vec.short <span class="ot">&lt;-</span> char.vec[<span class="sc">-</span><span class="dv">2</span>]</span>
-<span id="cb134-2"><a href="subsetting.html#cb134-2" aria-hidden="true" tabindex="-1"></a>char.vec.short</span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb98-1"><a href="subsetting.html#cb98-1" aria-hidden="true" tabindex="-1"></a>char.vec.short <span class="ot">&lt;-</span> char.vec[<span class="sc">-</span><span class="dv">2</span>]</span>
+<span id="cb98-2"><a href="subsetting.html#cb98-2" aria-hidden="true" tabindex="-1"></a>char.vec.short</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;one&quot;   &quot;three&quot; &quot;four&quot;  &quot;five&quot; </code></pre>
-<div class="sourceCode" id="cb136"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb136-1"><a href="subsetting.html#cb136-1" aria-hidden="true" tabindex="-1"></a>char.vec</span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb100-1"><a href="subsetting.html#cb100-1" aria-hidden="true" tabindex="-1"></a>char.vec</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;one&quot;   &quot;two&quot;   &quot;three&quot; &quot;four&quot;  &quot;five&quot; </code></pre>
-<div class="sourceCode" id="cb138"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb138-1"><a href="subsetting.html#cb138-1" aria-hidden="true" tabindex="-1"></a>char.vec <span class="ot">&lt;-</span> char.vec[<span class="sc">-</span><span class="dv">2</span>]</span>
-<span id="cb138-2"><a href="subsetting.html#cb138-2" aria-hidden="true" tabindex="-1"></a>char.vec</span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb102-1"><a href="subsetting.html#cb102-1" aria-hidden="true" tabindex="-1"></a>char.vec <span class="ot">&lt;-</span> char.vec[<span class="sc">-</span><span class="dv">2</span>]</span>
+<span id="cb102-2"><a href="subsetting.html#cb102-2" aria-hidden="true" tabindex="-1"></a>char.vec</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;one&quot;   &quot;three&quot; &quot;four&quot;  &quot;five&quot; </code></pre>
 <div class="info">
 <p>
@@ -521,25 +566,25 @@ For the two alternatives, which one would be better? Why?
 <hr />
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-93" class="exercise"><strong>Exercise 5.1  </strong></span>Create a vector <code>m</code> with the small letters from a to j (in alphabetical order).</p>
+<p><span id="exr:unnamed-chunk-76" class="exercise"><strong>Exercise 4.1  </strong></span>Create a vector <code>m</code> with the small letters from a to j (in alphabetical order).</p>
 <ul>
 <li>hint: check the object <code>letters</code> in R.
 </div></li>
 </ul>
-<div class="sourceCode" id="cb140"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb140-1"><a href="subsetting.html#cb140-1" aria-hidden="true" tabindex="-1"></a>m</span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb104-1"><a href="subsetting.html#cb104-1" aria-hidden="true" tabindex="-1"></a>m</span></code></pre></div>
 <pre class="Rout"><code> [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot;</code></pre>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-96" class="exercise"><strong>Exercise 5.2  </strong></span>Create a vector <code>n</code> with the samll letters from a to j (in random order).</p>
+<p><span id="exr:unnamed-chunk-79" class="exercise"><strong>Exercise 4.2  </strong></span>Create a vector <code>n</code> with the samll letters from a to j (in random order).</p>
 <ul>
 <li>hint: check <code>sample()</code>
 </div></li>
 </ul>
-<div class="sourceCode" id="cb142"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb142-1"><a href="subsetting.html#cb142-1" aria-hidden="true" tabindex="-1"></a>n</span></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb106-1"><a href="subsetting.html#cb106-1" aria-hidden="true" tabindex="-1"></a>n</span></code></pre></div>
 <pre class="Rout"><code> [1] &quot;e&quot; &quot;h&quot; &quot;d&quot; &quot;i&quot; &quot;c&quot; &quot;a&quot; &quot;b&quot; &quot;g&quot; &quot;f&quot; &quot;j&quot;</code></pre>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-99" class="exercise"><strong>Exercise 5.3  </strong></span>Determine whether letters in <code>n</code> are at the same positions as in <code>m</code>. How many such cases do you find? Which letters are these?</p>
+<p><span id="exr:unnamed-chunk-82" class="exercise"><strong>Exercise 4.3  </strong></span>Determine whether letters in <code>n</code> are at the same positions as in <code>m</code>. How many such cases do you find? Which letters are these?</p>
 <ul>
 <li>hint: check <code>table()</code>
 </div></li>
@@ -549,37 +594,37 @@ FALSE  TRUE
     9     1 </code></pre>
 <pre class="Rout"><code>[1] &quot;j&quot;</code></pre>
 </div>
-<div id="factor" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Factor</h2>
+<div id="factor" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Factor</h2>
 <p>In Chapter <a href="r-fundamentals.html#r-fundamentals">2</a>, we did not talk about this data structure–<code>factor</code>. There is an obvious reason for that. A factor works pretty much similarly to a vector in R. One of the key features for a factor is that its values are limited to a <em>finite</em> number of dinstinct categories (i.e., <strong>levels</strong>). In many statistical experimental designs, a factor is usually a grouping factor, i.e., a factor that groups the subjects into sub-groups.</p>
 <p>We usually create a factor from a numeric or character vector. To create a factor, use <code>factor()</code>:</p>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb146-1"><a href="subsetting.html#cb146-1" aria-hidden="true" tabindex="-1"></a>sbj_gender_num <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span>
-<span id="cb146-2"><a href="subsetting.html#cb146-2" aria-hidden="true" tabindex="-1"></a>sbj_gender_num</span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb110-1"><a href="subsetting.html#cb110-1" aria-hidden="true" tabindex="-1"></a>sbj_gender_num <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb110-2"><a href="subsetting.html#cb110-2" aria-hidden="true" tabindex="-1"></a>sbj_gender_num</span></code></pre></div>
 <pre class="Rout"><code>[1] 1 0 0 1 1 0 1</code></pre>
-<div class="sourceCode" id="cb148"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb148-1"><a href="subsetting.html#cb148-1" aria-hidden="true" tabindex="-1"></a>sbj_gender_char <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;female&quot;</span>, <span class="st">&quot;male&quot;</span>, <span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span>, <span class="st">&quot;female&quot;</span>, <span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span>)</span>
-<span id="cb148-2"><a href="subsetting.html#cb148-2" aria-hidden="true" tabindex="-1"></a>sbj_gender_char</span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb112-1"><a href="subsetting.html#cb112-1" aria-hidden="true" tabindex="-1"></a>sbj_gender_char <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;female&quot;</span>, <span class="st">&quot;male&quot;</span>, <span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span>, <span class="st">&quot;female&quot;</span>, <span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span>)</span>
+<span id="cb112-2"><a href="subsetting.html#cb112-2" aria-hidden="true" tabindex="-1"></a>sbj_gender_char</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;female&quot; &quot;male&quot;   &quot;male&quot;   &quot;female&quot; &quot;female&quot; &quot;male&quot;   &quot;female&quot;</code></pre>
-<div class="sourceCode" id="cb150"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb150-1"><a href="subsetting.html#cb150-1" aria-hidden="true" tabindex="-1"></a>sbj_gender_num_fac <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="at">x =</span> sbj_gender_num)</span>
-<span id="cb150-2"><a href="subsetting.html#cb150-2" aria-hidden="true" tabindex="-1"></a>sbj_gender_num_fac</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb114-1"><a href="subsetting.html#cb114-1" aria-hidden="true" tabindex="-1"></a>sbj_gender_num_fac <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="at">x =</span> sbj_gender_num)</span>
+<span id="cb114-2"><a href="subsetting.html#cb114-2" aria-hidden="true" tabindex="-1"></a>sbj_gender_num_fac</span></code></pre></div>
 <pre class="Rout"><code>[1] 1 0 0 1 1 0 1
 Levels: 0 1</code></pre>
-<div class="sourceCode" id="cb152"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb152-1"><a href="subsetting.html#cb152-1" aria-hidden="true" tabindex="-1"></a>sbj_gender_char_fac <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="at">x =</span> sbj_gender_char)</span>
-<span id="cb152-2"><a href="subsetting.html#cb152-2" aria-hidden="true" tabindex="-1"></a>sbj_gender_char_fac</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb116-1"><a href="subsetting.html#cb116-1" aria-hidden="true" tabindex="-1"></a>sbj_gender_char_fac <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="at">x =</span> sbj_gender_char)</span>
+<span id="cb116-2"><a href="subsetting.html#cb116-2" aria-hidden="true" tabindex="-1"></a>sbj_gender_char_fac</span></code></pre></div>
 <pre class="Rout"><code>[1] female male   male   female female male   female
 Levels: female male</code></pre>
 <p>For a <code>factor</code>, the most important information is its <strong>levels</strong>, i.e., the limit set of all possible values this factor can take. We can extract the levels as a vector of character strings using <code>levels()</code>:</p>
-<div class="sourceCode" id="cb154"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb154-1"><a href="subsetting.html#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(sbj_gender_num_fac)</span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb118-1"><a href="subsetting.html#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(sbj_gender_num_fac)</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;0&quot; &quot;1&quot;</code></pre>
-<div class="sourceCode" id="cb156"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb156-1"><a href="subsetting.html#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(sbj_gender_char_fac)</span></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb120-1"><a href="subsetting.html#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(sbj_gender_char_fac)</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;female&quot; &quot;male&quot;  </code></pre>
 <p>When do we need a factor? Sometimes when we do the annotation of the data, we use arbitrary numbers as labels for certain categorical variables. For example, we may use arbitrary numbers from 1 to 4 to label learners of varying proficiency levels: 1 = beginners, 2 = low-intermediate, 3 = upper-intermediate, 4 = advanced. When we load the data into R, R may first treat the data as a numeric vector:</p>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb158-1"><a href="subsetting.html#cb158-1" aria-hidden="true" tabindex="-1"></a>sbj_prof_num <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
-<span id="cb158-2"><a href="subsetting.html#cb158-2" aria-hidden="true" tabindex="-1"></a>sbj_prof_num</span></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb122-1"><a href="subsetting.html#cb122-1" aria-hidden="true" tabindex="-1"></a>sbj_prof_num <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb122-2"><a href="subsetting.html#cb122-2" aria-hidden="true" tabindex="-1"></a>sbj_prof_num</span></code></pre></div>
 <pre class="Rout"><code>[1] 1 2 4 4 2 3 3 1 1</code></pre>
 <p>However, these numbers may be confusing to the extent that (a) R may even consider them really to be numbers, or (b) they are not intuitive at all as numbers do not have meanings. In this case, we can create a factor from this numeric vector and re-label these numeric values into categorical labels that are more intuitive. We can do this by setting more argments in <code>factor()</code>, such as <code>levels=...</code>, <code>labels=...</code>.</p>
-<div class="sourceCode" id="cb160"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb160-1"><a href="subsetting.html#cb160-1" aria-hidden="true" tabindex="-1"></a>sbj_prof_fac <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="at">x =</span> sbj_prof_num, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;beginner&quot;</span>,</span>
-<span id="cb160-2"><a href="subsetting.html#cb160-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;low-inter&quot;</span>, <span class="st">&quot;upper-inter&quot;</span>, <span class="st">&quot;advanced&quot;</span>))</span>
-<span id="cb160-3"><a href="subsetting.html#cb160-3" aria-hidden="true" tabindex="-1"></a>sbj_prof_fac</span></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb124-1"><a href="subsetting.html#cb124-1" aria-hidden="true" tabindex="-1"></a>sbj_prof_fac <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="at">x =</span> sbj_prof_num, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;beginner&quot;</span>,</span>
+<span id="cb124-2"><a href="subsetting.html#cb124-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;low-inter&quot;</span>, <span class="st">&quot;upper-inter&quot;</span>, <span class="st">&quot;advanced&quot;</span>))</span>
+<span id="cb124-3"><a href="subsetting.html#cb124-3" aria-hidden="true" tabindex="-1"></a>sbj_prof_fac</span></code></pre></div>
 <pre class="Rout"><code>[1] beginner    low-inter   advanced    advanced    low-inter   upper-inter
 [7] upper-inter beginner    beginner   
 Levels: beginner low-inter upper-inter advanced</code></pre>
@@ -589,29 +634,29 @@ Levels: beginner low-inter upper-inter advanced</code></pre>
 </ul>
 <p>It should now therefore be clear that <code>labels = ...</code> is a good way for us to re-label any artitrary annotations into meaningful labels.</p>
 <p>What’s even more brilliant is that we can decide whether the ranking of the <code>levels</code> is meaningful. If the order of the levels of the factor is meaningful, we can set the argument <code>ordered = TRUE</code>:</p>
-<div class="sourceCode" id="cb162"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb162-1"><a href="subsetting.html#cb162-1" aria-hidden="true" tabindex="-1"></a>sbj_prof_fac_ordered <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="at">x =</span> sbj_prof_num, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;beginner&quot;</span>,</span>
-<span id="cb162-2"><a href="subsetting.html#cb162-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;low-inter&quot;</span>, <span class="st">&quot;upper-inter&quot;</span>, <span class="st">&quot;advanced&quot;</span>), <span class="at">ordered =</span> T)</span>
-<span id="cb162-3"><a href="subsetting.html#cb162-3" aria-hidden="true" tabindex="-1"></a>sbj_prof_fac_ordered</span></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb126-1"><a href="subsetting.html#cb126-1" aria-hidden="true" tabindex="-1"></a>sbj_prof_fac_ordered <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="at">x =</span> sbj_prof_num, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;beginner&quot;</span>,</span>
+<span id="cb126-2"><a href="subsetting.html#cb126-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;low-inter&quot;</span>, <span class="st">&quot;upper-inter&quot;</span>, <span class="st">&quot;advanced&quot;</span>), <span class="at">ordered =</span> T)</span>
+<span id="cb126-3"><a href="subsetting.html#cb126-3" aria-hidden="true" tabindex="-1"></a>sbj_prof_fac_ordered</span></code></pre></div>
 <pre class="Rout"><code>[1] beginner    low-inter   advanced    advanced    low-inter   upper-inter
 [7] upper-inter beginner    beginner   
 Levels: beginner &lt; low-inter &lt; upper-inter &lt; advanced</code></pre>
 <p>Now from the R console we can see not only the levels of the factor but also the signs <code>&lt;</code>, indicating their order. Using this ordered factor, we can perform relational comparison:</p>
-<div class="sourceCode" id="cb164"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb164-1"><a href="subsetting.html#cb164-1" aria-hidden="true" tabindex="-1"></a>sbj_prof_fac_ordered[<span class="dv">1</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb128-1"><a href="subsetting.html#cb128-1" aria-hidden="true" tabindex="-1"></a>sbj_prof_fac_ordered[<span class="dv">1</span>]</span></code></pre></div>
 <pre class="Rout"><code>[1] beginner
 Levels: beginner &lt; low-inter &lt; upper-inter &lt; advanced</code></pre>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb166-1"><a href="subsetting.html#cb166-1" aria-hidden="true" tabindex="-1"></a>sbj_prof_fac_ordered[<span class="dv">4</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb130-1"><a href="subsetting.html#cb130-1" aria-hidden="true" tabindex="-1"></a>sbj_prof_fac_ordered[<span class="dv">4</span>]</span></code></pre></div>
 <pre class="Rout"><code>[1] advanced
 Levels: beginner &lt; low-inter &lt; upper-inter &lt; advanced</code></pre>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb168-1"><a href="subsetting.html#cb168-1" aria-hidden="true" tabindex="-1"></a>sbj_prof_fac_ordered[<span class="dv">1</span>] <span class="sc">&lt;</span> sbj_prof_fac_ordered[<span class="dv">4</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb132-1"><a href="subsetting.html#cb132-1" aria-hidden="true" tabindex="-1"></a>sbj_prof_fac_ordered[<span class="dv">1</span>] <span class="sc">&lt;</span> sbj_prof_fac_ordered[<span class="dv">4</span>]</span></code></pre></div>
 <pre class="Rout"><code>[1] TRUE</code></pre>
 <p>But we cannot do the comparison for unordered factors (characters neither):</p>
-<div class="sourceCode" id="cb170"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb170-1"><a href="subsetting.html#cb170-1" aria-hidden="true" tabindex="-1"></a>sbj_prof_fac[<span class="dv">1</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb134-1"><a href="subsetting.html#cb134-1" aria-hidden="true" tabindex="-1"></a>sbj_prof_fac[<span class="dv">1</span>]</span></code></pre></div>
 <pre class="Rout"><code>[1] beginner
 Levels: beginner low-inter upper-inter advanced</code></pre>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb172-1"><a href="subsetting.html#cb172-1" aria-hidden="true" tabindex="-1"></a>sbj_prof_fac[<span class="dv">4</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb136-1"><a href="subsetting.html#cb136-1" aria-hidden="true" tabindex="-1"></a>sbj_prof_fac[<span class="dv">4</span>]</span></code></pre></div>
 <pre class="Rout"><code>[1] advanced
 Levels: beginner low-inter upper-inter advanced</code></pre>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb174-1"><a href="subsetting.html#cb174-1" aria-hidden="true" tabindex="-1"></a>sbj_prof_fac[<span class="dv">1</span>] <span class="sc">&lt;</span> sbj_prof_fac[<span class="dv">4</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb138-1"><a href="subsetting.html#cb138-1" aria-hidden="true" tabindex="-1"></a>sbj_prof_fac[<span class="dv">1</span>] <span class="sc">&lt;</span> sbj_prof_fac[<span class="dv">4</span>]</span></code></pre></div>
 <pre><code>Warning in Ops.factor(sbj_prof_fac[1], sbj_prof_fac[4]): &#39;&lt;&#39; not meaningful for
 factors</code></pre>
 <pre class="Rout"><code>[1] NA</code></pre>
@@ -624,15 +669,15 @@ The difference between <code>vector</code> and <code>factor</code> may look triv
 </p>
 </div>
 </div>
-<div id="list" class="section level2" number="5.3">
-<h2><span class="header-section-number">5.3</span> List</h2>
+<div id="list" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> List</h2>
 <p>A <code>List</code> is like a vector, which is a one-dimensional data structure. However, the main difference is that a <code>List</code> can include a series of objects of <strong>different classes</strong>:</p>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb177-1"><a href="subsetting.html#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A list consists of (i) numeric vector, (ii) character vector, (iii) boolean</span></span>
-<span id="cb177-2"><a href="subsetting.html#cb177-2" aria-hidden="true" tabindex="-1"></a><span class="co"># vector</span></span>
-<span id="cb177-3"><a href="subsetting.html#cb177-3" aria-hidden="true" tabindex="-1"></a>list.example <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">one =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="at">two =</span> <span class="fu">c</span>(<span class="st">&quot;Joe&quot;</span>, <span class="st">&quot;Mary&quot;</span>, <span class="st">&quot;John&quot;</span>, <span class="st">&quot;Angela&quot;</span>),</span>
-<span id="cb177-4"><a href="subsetting.html#cb177-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">three =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">TRUE</span>))</span>
-<span id="cb177-5"><a href="subsetting.html#cb177-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb177-6"><a href="subsetting.html#cb177-6" aria-hidden="true" tabindex="-1"></a>list.example</span></code></pre></div>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb141-1"><a href="subsetting.html#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A list consists of (i) numeric vector, (ii) character vector, (iii) boolean</span></span>
+<span id="cb141-2"><a href="subsetting.html#cb141-2" aria-hidden="true" tabindex="-1"></a><span class="co"># vector</span></span>
+<span id="cb141-3"><a href="subsetting.html#cb141-3" aria-hidden="true" tabindex="-1"></a>list.example <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">one =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="at">two =</span> <span class="fu">c</span>(<span class="st">&quot;Joe&quot;</span>, <span class="st">&quot;Mary&quot;</span>, <span class="st">&quot;John&quot;</span>, <span class="st">&quot;Angela&quot;</span>),</span>
+<span id="cb141-4"><a href="subsetting.html#cb141-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">three =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">TRUE</span>))</span>
+<span id="cb141-5"><a href="subsetting.html#cb141-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb141-6"><a href="subsetting.html#cb141-6" aria-hidden="true" tabindex="-1"></a>list.example</span></code></pre></div>
 <pre class="Rout"><code>$one
 [1] 1 2 3
 
@@ -647,12 +692,12 @@ $three
 <li><code>[</code>: This always returns a <code>List</code> back</li>
 <li><code>[[</code>: This returns the object of the <code>List</code> element, which is <strong>NOT NECESSARILY</strong> a <code>List</code></li>
 </ul>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb179-1"><a href="subsetting.html#cb179-1" aria-hidden="true" tabindex="-1"></a>list.example[<span class="dv">1</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb143-1"><a href="subsetting.html#cb143-1" aria-hidden="true" tabindex="-1"></a>list.example[<span class="dv">1</span>]</span></code></pre></div>
 <pre class="Rout"><code>$one
 [1] 1 2 3</code></pre>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb181-1"><a href="subsetting.html#cb181-1" aria-hidden="true" tabindex="-1"></a>list.example[[<span class="dv">1</span>]]</span></code></pre></div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb145-1"><a href="subsetting.html#cb145-1" aria-hidden="true" tabindex="-1"></a>list.example[[<span class="dv">1</span>]]</span></code></pre></div>
 <pre class="Rout"><code>[1] 1 2 3</code></pre>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb183-1"><a href="subsetting.html#cb183-1" aria-hidden="true" tabindex="-1"></a>list.example[[<span class="st">&quot;one&quot;</span>]]</span></code></pre></div>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb147-1"><a href="subsetting.html#cb147-1" aria-hidden="true" tabindex="-1"></a>list.example[[<span class="st">&quot;one&quot;</span>]]</span></code></pre></div>
 <pre class="Rout"><code>[1] 1 2 3</code></pre>
 <div class="info">
 <p>
@@ -666,7 +711,7 @@ Before you try the following codes on the R console, could you first predict the
 <hr />
 
 <div class="exercise">
-<p><span id="exr:exlist1" class="exercise"><strong>Exercise 5.4  </strong></span>
+<p><span id="exr:exlist1" class="exercise"><strong>Exercise 4.4  </strong></span>
 Create a list that contains, in this order:</p>
 <ul>
 <li>a sequence of 20 evenly spaced numbers between -4 and 4; (hint: check <code>seq()</code>)</li>
@@ -695,58 +740,58 @@ Create a list that contains, in this order:</p>
 Levels: HIGH LOW MID</code></pre>
 
 <div class="exercise">
-<span id="exr:exlist2" class="exercise"><strong>Exercise 5.5  </strong></span>Based on Exercise <a href="subsetting.html#exr:exlist1">5.4</a>, extract row elements 2 and 1 of columns 2 and 3, in that order, of the logical matrix.
+<span id="exr:exlist2" class="exercise"><strong>Exercise 4.5  </strong></span>Based on Exercise <a href="subsetting.html#exr:exlist1">4.4</a>, extract row elements 2 and 1 of columns 2 and 3, in that order, of the logical matrix.
 </div>
 <pre class="Rout"><code>      [,1]  [,2]
 [1,] FALSE FALSE
 [2,]  TRUE  TRUE</code></pre>
 
 <div class="exercise">
-<span id="exr:exlist3" class="exercise"><strong>Exercise 5.6  </strong></span>Based on Exercise <a href="subsetting.html#exr:exlist1">5.4</a>, obtain all values from the sequence between -4 and 4 that are greater than 1.
+<span id="exr:exlist3" class="exercise"><strong>Exercise 4.6  </strong></span>Based on Exercise <a href="subsetting.html#exr:exlist1">4.4</a>, obtain all values from the sequence between -4 and 4 that are greater than 1.
 </div>
 <pre class="Rout"><code>[1] 1.052632 1.473684 1.894737 2.315789 2.736842 3.157895 3.578947 4.000000</code></pre>
 
 <div class="exercise">
-<span id="exr:exlist4" class="exercise"><strong>Exercise 5.7  </strong></span>Make yourself familar with the function <code>which()</code>. Based on Exercise <a href="subsetting.html#exr:exlist1">5.4</a>, using <code>which()</code>, determine which indexes in the factor are assigned the “MID” level.
+<span id="exr:exlist4" class="exercise"><strong>Exercise 4.7  </strong></span>Make yourself familar with the function <code>which()</code>. Based on Exercise <a href="subsetting.html#exr:exlist1">4.4</a>, using <code>which()</code>, determine which indexes in the factor are assigned the “MID” level.
 </div>
 <pre class="Rout"><code>[1] 2 4 5</code></pre>
 <hr />
 </div>
-<div id="data-frame" class="section level2" number="5.4">
-<h2><span class="header-section-number">5.4</span> Data Frame</h2>
+<div id="data-frame" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> Data Frame</h2>
 <p><code>data.frame</code> is the most frequently used object that we will work with in data analysis. It is a typical two-dimensional spreadsheet-like table. Normally, the rows are the subjects or tokens we are analyzing; the columns are the variables or factors we are interested in.</p>
 <p>We can also use <code>[ , ]</code> to subset a data frame. The indexes in <code>[ , ]</code> are Row-by-Column.</p>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb190-1"><a href="subsetting.html#cb190-1" aria-hidden="true" tabindex="-1"></a>ex_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">WORD =</span> <span class="fu">c</span>(<span class="st">&quot;the&quot;</span>, <span class="st">&quot;boy&quot;</span>, <span class="st">&quot;you&quot;</span>, <span class="st">&quot;him&quot;</span>), <span class="at">POS =</span> <span class="fu">c</span>(<span class="st">&quot;ART&quot;</span>, <span class="st">&quot;N&quot;</span>, <span class="st">&quot;PRO&quot;</span>,</span>
-<span id="cb190-2"><a href="subsetting.html#cb190-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;PRO&quot;</span>), <span class="at">FREQ =</span> <span class="fu">c</span>(<span class="dv">1104</span>, <span class="dv">35</span>, <span class="dv">104</span>, <span class="dv">34</span>))</span>
-<span id="cb190-3"><a href="subsetting.html#cb190-3" aria-hidden="true" tabindex="-1"></a>ex_df</span></code></pre></div>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb154-1"><a href="subsetting.html#cb154-1" aria-hidden="true" tabindex="-1"></a>ex_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">WORD =</span> <span class="fu">c</span>(<span class="st">&quot;the&quot;</span>, <span class="st">&quot;boy&quot;</span>, <span class="st">&quot;you&quot;</span>, <span class="st">&quot;him&quot;</span>), <span class="at">POS =</span> <span class="fu">c</span>(<span class="st">&quot;ART&quot;</span>, <span class="st">&quot;N&quot;</span>, <span class="st">&quot;PRO&quot;</span>,</span>
+<span id="cb154-2"><a href="subsetting.html#cb154-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;PRO&quot;</span>), <span class="at">FREQ =</span> <span class="fu">c</span>(<span class="dv">1104</span>, <span class="dv">35</span>, <span class="dv">104</span>, <span class="dv">34</span>))</span>
+<span id="cb154-3"><a href="subsetting.html#cb154-3" aria-hidden="true" tabindex="-1"></a>ex_df</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["WORD"],"name":[1],"type":["chr"],"align":["left"]},{"label":["POS"],"name":[2],"type":["chr"],"align":["left"]},{"label":["FREQ"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"the","2":"ART","3":"1104"},{"1":"boy","2":"N","3":"35"},{"1":"you","2":"PRO","3":"104"},{"1":"him","2":"PRO","3":"34"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <p>You can subset a particular <em>row</em> of the data frame:</p>
-<div class="sourceCode" id="cb191"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb191-1"><a href="subsetting.html#cb191-1" aria-hidden="true" tabindex="-1"></a>ex_df[<span class="dv">1</span>, ]</span></code></pre></div>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb155-1"><a href="subsetting.html#cb155-1" aria-hidden="true" tabindex="-1"></a>ex_df[<span class="dv">1</span>, ]</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["WORD"],"name":[1],"type":["chr"],"align":["left"]},{"label":["POS"],"name":[2],"type":["chr"],"align":["left"]},{"label":["FREQ"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"the","2":"ART","3":"1104","_rn_":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb192-1"><a href="subsetting.html#cb192-1" aria-hidden="true" tabindex="-1"></a>ex_df[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), ]</span></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb156-1"><a href="subsetting.html#cb156-1" aria-hidden="true" tabindex="-1"></a>ex_df[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), ]</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["WORD"],"name":[1],"type":["chr"],"align":["left"]},{"label":["POS"],"name":[2],"type":["chr"],"align":["left"]},{"label":["FREQ"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"the","2":"ART","3":"1104","_rn_":"1"},{"1":"you","2":"PRO","3":"104","_rn_":"3"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <p>You can subset a particular <em>column</em> of the data frame:</p>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb193-1"><a href="subsetting.html#cb193-1" aria-hidden="true" tabindex="-1"></a>ex_df[, <span class="dv">1</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb157-1"><a href="subsetting.html#cb157-1" aria-hidden="true" tabindex="-1"></a>ex_df[, <span class="dv">1</span>]</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;the&quot; &quot;boy&quot; &quot;you&quot; &quot;him&quot;</code></pre>
-<div class="sourceCode" id="cb195"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb195-1"><a href="subsetting.html#cb195-1" aria-hidden="true" tabindex="-1"></a>ex_df[, <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb159-1"><a href="subsetting.html#cb159-1" aria-hidden="true" tabindex="-1"></a>ex_df[, <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)]</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["WORD"],"name":[1],"type":["chr"],"align":["left"]},{"label":["FREQ"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"the","2":"1104"},{"1":"boy","2":"35"},{"1":"you","2":"104"},{"1":"him","2":"34"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb196-1"><a href="subsetting.html#cb196-1" aria-hidden="true" tabindex="-1"></a>ex_df[, <span class="fu">c</span>(<span class="st">&quot;WORD&quot;</span>, <span class="st">&quot;FREQ&quot;</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb160-1"><a href="subsetting.html#cb160-1" aria-hidden="true" tabindex="-1"></a>ex_df[, <span class="fu">c</span>(<span class="st">&quot;WORD&quot;</span>, <span class="st">&quot;FREQ&quot;</span>)]</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["WORD"],"name":[1],"type":["chr"],"align":["left"]},{"label":["FREQ"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"the","2":"1104"},{"1":"boy","2":"35"},{"1":"you","2":"104"},{"1":"him","2":"34"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -757,12 +802,12 @@ Levels: HIGH LOW MID</code></pre>
 Please compare the following two ways of accessing a column from the data frame. Can you tell the differences in the returned results?
 </p>
 </div>
-<div class="sourceCode" id="cb197"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb197-1"><a href="subsetting.html#cb197-1" aria-hidden="true" tabindex="-1"></a>ex_df[, <span class="fu">c</span>(<span class="st">&quot;FREQ&quot;</span>)]</span>
-<span id="cb197-2"><a href="subsetting.html#cb197-2" aria-hidden="true" tabindex="-1"></a>ex_df[, <span class="fu">c</span>(<span class="st">&quot;FREQ&quot;</span>), drop <span class="ot">=</span> <span class="cn">FALSE</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb161-1"><a href="subsetting.html#cb161-1" aria-hidden="true" tabindex="-1"></a>ex_df[, <span class="fu">c</span>(<span class="st">&quot;FREQ&quot;</span>)]</span>
+<span id="cb161-2"><a href="subsetting.html#cb161-2" aria-hidden="true" tabindex="-1"></a>ex_df[, <span class="fu">c</span>(<span class="st">&quot;FREQ&quot;</span>), drop <span class="ot">=</span> <span class="cn">FALSE</span>]</span></code></pre></div>
 <hr />
 
 <div class="exercise">
-<p><span id="exr:df1" class="exercise"><strong>Exercise 5.8  </strong></span>Create and store the following data frame as <code>dframe</code> in your R workspace.</p>
+<p><span id="exr:df1" class="exercise"><strong>Exercise 4.8  </strong></span>Create and store the following data frame as <code>dframe</code> in your R workspace.</p>
 <ul>
 <li><code>person</code> should be a character vector</li>
 <li><code>sex</code> should be a factor with levels <code>F</code> and <code>M</code></li>
@@ -776,7 +821,7 @@ Please compare the following two ways of accessing a column from the data frame.
 </div>
 
 <div class="exercise">
-<span id="exr:df2" class="exercise"><strong>Exercise 5.9  </strong></span>Stan and Francine are 41 years old, Steve is 15, Hayley is 21, and Klaus is 60. Roger is extremely old–1,600 years. Following Exercise <a href="subsetting.html#exr:df1">5.8</a>, append these data as a new numeric column variable in <code>dframe</code> called <code>age</code>.
+<span id="exr:df2" class="exercise"><strong>Exercise 4.9  </strong></span>Stan and Francine are 41 years old, Steve is 15, Hayley is 21, and Klaus is 60. Roger is extremely old–1,600 years. Following Exercise <a href="subsetting.html#exr:df1">4.8</a>, append these data as a new numeric column variable in <code>dframe</code> called <code>age</code>.
 </div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
@@ -785,7 +830,7 @@ Please compare the following two ways of accessing a column from the data frame.
 </div>
 
 <div class="exercise">
-<span id="exr:df3" class="exercise"><strong>Exercise 5.10  </strong></span>Following Exercise <a href="subsetting.html#exr:df2">5.9</a>, write a single line of code that will extract frome <code>dframe</code> just the names and ages of any records where the individual is male and has a level of funniness equal to <code>Low</code> OR <code>Mid</code>.
+<span id="exr:df3" class="exercise"><strong>Exercise 4.10  </strong></span>Following Exercise <a href="subsetting.html#exr:df2">4.9</a>, write a single line of code that will extract frome <code>dframe</code> just the names and ages of any records where the individual is male and has a level of funniness equal to <code>Low</code> OR <code>Mid</code>.
 </div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
@@ -794,14 +839,14 @@ Please compare the following two ways of accessing a column from the data frame.
 </div>
 <hr />
 </div>
-<div id="tibble" class="section level2" number="5.5">
-<h2><span class="header-section-number">5.5</span> Tibble</h2>
+<div id="tibble" class="section level2" number="4.5">
+<h2><span class="header-section-number">4.5</span> Tibble</h2>
 <p><code>tibble</code> is a new data structure with lots of <a href="https://tibble.tidyverse.org/">advantages</a>. For the moment, we treat <code>tibble</code> and <code>data.frame</code> as the same, with the former being an augmented version of the latter. All functions that work of a <code>data.frame</code> should be compatible with a <code>tibble</code>. Now the <code>tibble</code> is the major structure that R users work with under the <code>tidy</code> framework. If you are new to tibbles, the best place to start is the tibbles chapter in <a href="https://r4ds.had.co.nz/tibbles.html">R for data science</a>.</p>
-<div class="sourceCode" id="cb198"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb198-1"><a href="subsetting.html#cb198-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(tibble)</span></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb162-1"><a href="subsetting.html#cb162-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(tibble)</span></code></pre></div>
 <pre><code>Loading required package: tibble</code></pre>
-<div class="sourceCode" id="cb200"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb200-1"><a href="subsetting.html#cb200-1" aria-hidden="true" tabindex="-1"></a>ex_tb <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">WORD =</span> <span class="fu">c</span>(<span class="st">&quot;the&quot;</span>, <span class="st">&quot;boy&quot;</span>, <span class="st">&quot;you&quot;</span>, <span class="st">&quot;him&quot;</span>), <span class="at">POS =</span> <span class="fu">c</span>(<span class="st">&quot;ART&quot;</span>, <span class="st">&quot;N&quot;</span>, <span class="st">&quot;PRO&quot;</span>,</span>
-<span id="cb200-2"><a href="subsetting.html#cb200-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;PRO&quot;</span>), <span class="at">FREQ =</span> <span class="fu">c</span>(<span class="dv">1104</span>, <span class="dv">35</span>, <span class="dv">104</span>, <span class="dv">34</span>))</span>
-<span id="cb200-3"><a href="subsetting.html#cb200-3" aria-hidden="true" tabindex="-1"></a>ex_tb</span></code></pre></div>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb164-1"><a href="subsetting.html#cb164-1" aria-hidden="true" tabindex="-1"></a>ex_tb <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">WORD =</span> <span class="fu">c</span>(<span class="st">&quot;the&quot;</span>, <span class="st">&quot;boy&quot;</span>, <span class="st">&quot;you&quot;</span>, <span class="st">&quot;him&quot;</span>), <span class="at">POS =</span> <span class="fu">c</span>(<span class="st">&quot;ART&quot;</span>, <span class="st">&quot;N&quot;</span>, <span class="st">&quot;PRO&quot;</span>,</span>
+<span id="cb164-2"><a href="subsetting.html#cb164-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;PRO&quot;</span>), <span class="at">FREQ =</span> <span class="fu">c</span>(<span class="dv">1104</span>, <span class="dv">35</span>, <span class="dv">104</span>, <span class="dv">34</span>))</span>
+<span id="cb164-3"><a href="subsetting.html#cb164-3" aria-hidden="true" tabindex="-1"></a>ex_tb</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["WORD"],"name":[1],"type":["chr"],"align":["left"]},{"label":["POS"],"name":[2],"type":["chr"],"align":["left"]},{"label":["FREQ"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"the","2":"ART","3":"1104"},{"1":"boy","2":"N","3":"35"},{"1":"you","2":"PRO","3":"104"},{"1":"him","2":"PRO","3":"34"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -813,15 +858,15 @@ Please compare the following two ways of accessing a column from the data frame.
 There is another way to create a <code>tibble</code>. You can use <code>tribble()</code>, short for transposed tibble. <code>tribble()</code> is customised for data entry in code: column headings are defined by formulas (i.e. they start with <code>~</code>), and entries are separated by <code>commas</code>. This makes it possible to lay out small amounts of data in easy to read form.
 </p>
 </div>
-<div class="sourceCode" id="cb201"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb201-1"><a href="subsetting.html#cb201-1" aria-hidden="true" tabindex="-1"></a>ex_tb_2 <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
-<span id="cb201-2"><a href="subsetting.html#cb201-2" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>WORD, <span class="sc">~</span>POS,  <span class="sc">~</span>FREQ,</span>
-<span id="cb201-3"><a href="subsetting.html#cb201-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">#----|--------|------</span></span>
-<span id="cb201-4"><a href="subsetting.html#cb201-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;the&quot;</span>, <span class="st">&quot;ART&quot;</span>, <span class="dv">1104</span>,</span>
-<span id="cb201-5"><a href="subsetting.html#cb201-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;boy&quot;</span>, <span class="st">&quot;N&quot;</span>,   <span class="dv">35</span>,</span>
-<span id="cb201-6"><a href="subsetting.html#cb201-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;you&quot;</span>, <span class="st">&quot;PRO&quot;</span>, <span class="dv">104</span>,</span>
-<span id="cb201-7"><a href="subsetting.html#cb201-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;him&quot;</span>, <span class="st">&quot;PRO&quot;</span>, <span class="dv">34</span></span>
-<span id="cb201-8"><a href="subsetting.html#cb201-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb201-9"><a href="subsetting.html#cb201-9" aria-hidden="true" tabindex="-1"></a>ex_tb_2</span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb165-1"><a href="subsetting.html#cb165-1" aria-hidden="true" tabindex="-1"></a>ex_tb_2 <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb165-2"><a href="subsetting.html#cb165-2" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>WORD, <span class="sc">~</span>POS,  <span class="sc">~</span>FREQ,</span>
+<span id="cb165-3"><a href="subsetting.html#cb165-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">#----|--------|------</span></span>
+<span id="cb165-4"><a href="subsetting.html#cb165-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;the&quot;</span>, <span class="st">&quot;ART&quot;</span>, <span class="dv">1104</span>,</span>
+<span id="cb165-5"><a href="subsetting.html#cb165-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;boy&quot;</span>, <span class="st">&quot;N&quot;</span>,   <span class="dv">35</span>,</span>
+<span id="cb165-6"><a href="subsetting.html#cb165-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;you&quot;</span>, <span class="st">&quot;PRO&quot;</span>, <span class="dv">104</span>,</span>
+<span id="cb165-7"><a href="subsetting.html#cb165-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;him&quot;</span>, <span class="st">&quot;PRO&quot;</span>, <span class="dv">34</span></span>
+<span id="cb165-8"><a href="subsetting.html#cb165-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb165-9"><a href="subsetting.html#cb165-9" aria-hidden="true" tabindex="-1"></a>ex_tb_2</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["WORD"],"name":[1],"type":["chr"],"align":["left"]},{"label":["POS"],"name":[2],"type":["chr"],"align":["left"]},{"label":["FREQ"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"the","2":"ART","3":"1104"},{"1":"boy","2":"N","3":"35"},{"1":"you","2":"PRO","3":"104"},{"1":"him","2":"PRO","3":"34"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -829,19 +874,19 @@ There is another way to create a <code>tibble</code>. You can use <code>tribble(
 </div>
 <hr />
 <p>You can subset a <code>tibble</code> in exactly the same ways as you work with a <code>data.frame</code>:</p>
-<div class="sourceCode" id="cb202"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb202-1"><a href="subsetting.html#cb202-1" aria-hidden="true" tabindex="-1"></a>ex_tb[<span class="dv">1</span>, ]</span></code></pre></div>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb166-1"><a href="subsetting.html#cb166-1" aria-hidden="true" tabindex="-1"></a>ex_tb[<span class="dv">1</span>, ]</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["WORD"],"name":[1],"type":["chr"],"align":["left"]},{"label":["POS"],"name":[2],"type":["chr"],"align":["left"]},{"label":["FREQ"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"the","2":"ART","3":"1104"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<div class="sourceCode" id="cb203"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb203-1"><a href="subsetting.html#cb203-1" aria-hidden="true" tabindex="-1"></a>ex_tb[, <span class="dv">1</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb167-1"><a href="subsetting.html#cb167-1" aria-hidden="true" tabindex="-1"></a>ex_tb[, <span class="dv">1</span>]</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["WORD"],"name":[1],"type":["chr"],"align":["left"]}],"data":[{"1":"the"},{"1":"boy"},{"1":"you"},{"1":"him"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<div class="sourceCode" id="cb204"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb204-1"><a href="subsetting.html#cb204-1" aria-hidden="true" tabindex="-1"></a>ex_tb[, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb168-1"><a href="subsetting.html#cb168-1" aria-hidden="true" tabindex="-1"></a>ex_tb[, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)]</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["WORD"],"name":[1],"type":["chr"],"align":["left"]},{"label":["POS"],"name":[2],"type":["chr"],"align":["left"]},{"label":["FREQ"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"the","2":"ART","3":"1104"},{"1":"boy","2":"N","3":"35"},{"1":"you","2":"PRO","3":"104"},{"1":"him","2":"PRO","3":"34"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -849,15 +894,15 @@ There is another way to create a <code>tibble</code>. You can use <code>tribble(
 </div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-128" class="exercise"><strong>Exercise 5.11  </strong></span>Please compare again the following codes and see if you can tell the major differences between tibble and data.frame?
+<span id="exr:unnamed-chunk-111" class="exercise"><strong>Exercise 4.11  </strong></span>Please compare again the following codes and see if you can tell the major differences between tibble and data.frame?
 </div>
-<div class="sourceCode" id="cb205"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb205-1"><a href="subsetting.html#cb205-1" aria-hidden="true" tabindex="-1"></a>ex_tb[, <span class="fu">c</span>(<span class="st">&quot;FREQ&quot;</span>)]  <span class="co"># indexing tibble</span></span></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb169-1"><a href="subsetting.html#cb169-1" aria-hidden="true" tabindex="-1"></a>ex_tb[, <span class="fu">c</span>(<span class="st">&quot;FREQ&quot;</span>)]  <span class="co"># indexing tibble</span></span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["FREQ"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"1104"},{"1":"35"},{"1":"104"},{"1":"34"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<div class="sourceCode" id="cb206"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb206-1"><a href="subsetting.html#cb206-1" aria-hidden="true" tabindex="-1"></a>ex_df[, <span class="fu">c</span>(<span class="st">&quot;FREQ&quot;</span>)]  <span class="co"># indexing data.frame</span></span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb170-1"><a href="subsetting.html#cb170-1" aria-hidden="true" tabindex="-1"></a>ex_df[, <span class="fu">c</span>(<span class="st">&quot;FREQ&quot;</span>)]  <span class="co"># indexing data.frame</span></span></code></pre></div>
 <pre class="Rout"><code>[1] 1104   35  104   34</code></pre>
 <div class="info">
 <p>
