@@ -438,6 +438,12 @@ div.csl-indent {
 <li class="chapter" data-level="15.9" data-path="pandas.html"><a href="pandas.html#generic-functions"><i class="fa fa-check"></i><b>15.9</b> Generic Functions</a></li>
 <li class="chapter" data-level="15.10" data-path="pandas.html"><a href="pandas.html#references-1"><i class="fa fa-check"></i><b>15.10</b> References</a></li>
 </ul></li>
+<li class="chapter" data-level="16" data-path="natural-language-tool-kits-nltk.html"><a href="natural-language-tool-kits-nltk.html"><i class="fa fa-check"></i><b>16</b> Natural Language Tool-Kits (NLTK)</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="natural-language-tool-kits-nltk.html"><a href="natural-language-tool-kits-nltk.html#installation"><i class="fa fa-check"></i><b>16.1</b> Installation</a></li>
+<li class="chapter" data-level="16.2" data-path="natural-language-tool-kits-nltk.html"><a href="natural-language-tool-kits-nltk.html#corpora-data"><i class="fa fa-check"></i><b>16.2</b> Corpora Data</a></li>
+<li class="chapter" data-level="16.3" data-path="natural-language-tool-kits-nltk.html"><a href="natural-language-tool-kits-nltk.html#wordnet"><i class="fa fa-check"></i><b>16.3</b> WordNet</a></li>
+</ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="the-shell.html"><a href="the-shell.html"><i class="fa fa-check"></i><b>A</b> The Shell</a>
 <ul>
@@ -541,26 +547,26 @@ Figure 2.1: Rstudio Interface
 <hr /></li>
 </ul>
 <p>The R console is like a calculator. You can type any R code in the console after the prompt <code>&gt;</code> and run the code line by line by pressing <code>enter</code>.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb3-1"><a href="r-fundamentals.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb5-1"><a href="r-fundamentals.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code></pre></div>
 <pre class="Rout"><code>[1] 2</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb5-1"><a href="r-fundamentals.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb7-1"><a href="r-fundamentals.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="dv">10</span>)</span></code></pre></div>
 <pre class="Rout"><code>[1] 2.302585</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb7-1"><a href="r-fundamentals.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb9-1"><a href="r-fundamentals.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span></code></pre></div>
 <pre class="Rout"><code>[1] 1 2 3 4 5</code></pre>
 <hr />
 <p>Or alternatively, we can create an R script in Rstudio and write down lines of R codes to be passed to the R console. This way, we can run the whole script all at once. This is the idea of writing a program.</p>
 <p>In the above example (Figure <a href="r-fundamentals.html#fig:rstudiointerface">2.1</a>), I wrote a few lines of codes in a R script file (cf. the <code>Editor</code> frame) and asked R to run these lines of codes in the R <code>Console</code>. And the graphic output of the R script was printed in the <code>Output</code> frame.</p>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-18" class="exercise"><strong>Exercise 2.1  </strong></span>Please create a new R script in Rstudio. You may name the script as “ch2.R.” Please write the following codes in the script and pass the whole script to the R Console.
+<span id="exr:unnamed-chunk-19" class="exercise"><strong>Exercise 2.1  </strong></span>Please create a new R script in Rstudio. You may name the script as “ch2.R.” Please write the following codes in the script and pass the whole script to the R Console.
 </div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb9-1"><a href="r-fundamentals.html#cb9-1" aria-hidden="true" tabindex="-1"></a>scores <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="at">mean =</span> <span class="dv">75</span>, <span class="at">sd =</span> <span class="fl">5.8</span>)</span>
-<span id="cb9-2"><a href="r-fundamentals.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(scores))</span>
-<span id="cb9-3"><a href="r-fundamentals.html#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(scores)</span>
-<span id="cb9-4"><a href="r-fundamentals.html#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(scores)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb11-1"><a href="r-fundamentals.html#cb11-1" aria-hidden="true" tabindex="-1"></a>scores <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="at">mean =</span> <span class="dv">75</span>, <span class="at">sd =</span> <span class="fl">5.8</span>)</span>
+<span id="cb11-2"><a href="r-fundamentals.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(scores))</span>
+<span id="cb11-3"><a href="r-fundamentals.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(scores)</span>
+<span id="cb11-4"><a href="r-fundamentals.html#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(scores)</span></code></pre></div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-20" class="exercise"><strong>Exercise 2.2  </strong></span>Find the answer to the following mathematical calculation in R.
+<span id="exr:unnamed-chunk-21" class="exercise"><strong>Exercise 2.2  </strong></span>Find the answer to the following mathematical calculation in R.
 </div>
 <p><span class="math inline">\(2^{2+1}-4+64^{(-2)^{2.25-\frac{1}{4}}}\)</span></p>
 <p>= 16777220</p>
@@ -569,27 +575,27 @@ Figure 2.1: Rstudio Interface
 <h2><span class="header-section-number">2.4</span> Assignment</h2>
 <p>R works with <strong>objects</strong> of many different classes, some of which are defined in the base R while others are defined by specific libaries/environments/users.</p>
 <p>You can assign any object created in R to a <strong>variable name</strong> using <code>&lt;-</code>:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb10-1"><a href="r-fundamentals.html#cb10-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb10-2"><a href="r-fundamentals.html#cb10-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="st">&quot;wonderful&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb12-1"><a href="r-fundamentals.html#cb12-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb12-2"><a href="r-fundamentals.html#cb12-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="st">&quot;wonderful&quot;</span></span></code></pre></div>
 <p>Now the objects are stored in the variables. You can print out the variables by either making use of the auto-printing (i.e., the variable name itself auto-prints its content) or <code>print()</code>:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb11-1"><a href="r-fundamentals.html#cb11-1" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb13-1"><a href="r-fundamentals.html#cb13-1" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
 <pre class="Rout"><code>[1] 5</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb13-1"><a href="r-fundamentals.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb15-1"><a href="r-fundamentals.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code></pre></div>
 <pre class="Rout"><code>[1] 5</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb15-1"><a href="r-fundamentals.html#cb15-1" aria-hidden="true" tabindex="-1"></a>y</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb17-1"><a href="r-fundamentals.html#cb17-1" aria-hidden="true" tabindex="-1"></a>y</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;wonderful&quot;</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb17-1"><a href="r-fundamentals.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(y)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb19-1"><a href="r-fundamentals.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(y)</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;wonderful&quot;</code></pre>
 </div>
 <div id="data-structure" class="section level2" number="2.5">
 <h2><span class="header-section-number">2.5</span> Data Structure</h2>
 <p>In R, the most primitive object is a vector. There are two types of primitive vectors: (a) numeric and (b) character vectors. In our previous examples, <code>x</code> is a numeric vector of one element; <code>y</code> is a character vector of one element. All elements in the vector have to be <strong>of the same data type</strong>.</p>
 <p>You use <code>c()</code> to create a vector of multiple elments. Within the parenthesis, you concatenate each element of the vector by <code>,</code>:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb19-1"><a href="r-fundamentals.html#cb19-1" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span>
-<span id="cb19-2"><a href="r-fundamentals.html#cb19-2" aria-hidden="true" tabindex="-1"></a>x2</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb21-1"><a href="r-fundamentals.html#cb21-1" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span>
+<span id="cb21-2"><a href="r-fundamentals.html#cb21-2" aria-hidden="true" tabindex="-1"></a>x2</span></code></pre></div>
 <pre class="Rout"><code>[1] 1 2 3 4 5 6</code></pre>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb21-1"><a href="r-fundamentals.html#cb21-1" aria-hidden="true" tabindex="-1"></a>y2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;wonderful&quot;</span>, <span class="st">&quot;excellent&quot;</span>, <span class="st">&quot;brilliant&quot;</span>)</span>
-<span id="cb21-2"><a href="r-fundamentals.html#cb21-2" aria-hidden="true" tabindex="-1"></a>y2</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb23-1"><a href="r-fundamentals.html#cb23-1" aria-hidden="true" tabindex="-1"></a>y2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;wonderful&quot;</span>, <span class="st">&quot;excellent&quot;</span>, <span class="st">&quot;brilliant&quot;</span>)</span>
+<span id="cb23-2"><a href="r-fundamentals.html#cb23-2" aria-hidden="true" tabindex="-1"></a>y2</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;wonderful&quot; &quot;excellent&quot; &quot;brilliant&quot;</code></pre>
 <p>Other data structures that we often work with include:</p>
 <ul>
@@ -597,8 +603,8 @@ Figure 2.1: Rstudio Interface
 <li>Matrix: a two-dimensional vector, where all elements have to be of the same data type</li>
 <li>Data Frame: a spreadsheet-like table, where columns can be of different data types</li>
 </ul>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb23-1"><a href="r-fundamentals.html#cb23-1" aria-hidden="true" tabindex="-1"></a>ex_list <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;First element&quot;</span>, <span class="dv">5</span><span class="sc">:</span><span class="dv">10</span>, <span class="cn">TRUE</span>)</span>
-<span id="cb23-2"><a href="r-fundamentals.html#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ex_list)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb25-1"><a href="r-fundamentals.html#cb25-1" aria-hidden="true" tabindex="-1"></a>ex_list <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;First element&quot;</span>, <span class="dv">5</span><span class="sc">:</span><span class="dv">10</span>, <span class="cn">TRUE</span>)</span>
+<span id="cb25-2"><a href="r-fundamentals.html#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ex_list)</span></code></pre></div>
 <pre class="Rout"><code>[[1]]
 [1] &quot;First element&quot;
 
@@ -607,14 +613,14 @@ Figure 2.1: Rstudio Interface
 
 [[3]]
 [1] TRUE</code></pre>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb25-1"><a href="r-fundamentals.html#cb25-1" aria-hidden="true" tabindex="-1"></a>ex_array <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">8</span>, <span class="dv">19</span>), <span class="at">byrow =</span> T, <span class="at">nrow =</span> <span class="dv">2</span>)</span>
-<span id="cb25-2"><a href="r-fundamentals.html#cb25-2" aria-hidden="true" tabindex="-1"></a>ex_array</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb27-1"><a href="r-fundamentals.html#cb27-1" aria-hidden="true" tabindex="-1"></a>ex_array <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">8</span>, <span class="dv">19</span>), <span class="at">byrow =</span> T, <span class="at">nrow =</span> <span class="dv">2</span>)</span>
+<span id="cb27-2"><a href="r-fundamentals.html#cb27-2" aria-hidden="true" tabindex="-1"></a>ex_array</span></code></pre></div>
 <pre class="Rout"><code>     [,1] [,2] [,3]
 [1,]    1    5    6
 [2,]    3    8   19</code></pre>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb27-1"><a href="r-fundamentals.html#cb27-1" aria-hidden="true" tabindex="-1"></a>ex_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">WORD =</span> <span class="fu">c</span>(<span class="st">&quot;the&quot;</span>, <span class="st">&quot;boy&quot;</span>, <span class="st">&quot;you&quot;</span>, <span class="st">&quot;him&quot;</span>), <span class="at">POS =</span> <span class="fu">c</span>(<span class="st">&quot;ART&quot;</span>, <span class="st">&quot;N&quot;</span>, <span class="st">&quot;PRO&quot;</span>,</span>
-<span id="cb27-2"><a href="r-fundamentals.html#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;PRO&quot;</span>), <span class="at">FREQ =</span> <span class="fu">c</span>(<span class="dv">1104</span>, <span class="dv">35</span>, <span class="dv">104</span>, <span class="dv">34</span>))</span>
-<span id="cb27-3"><a href="r-fundamentals.html#cb27-3" aria-hidden="true" tabindex="-1"></a>ex_df</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb29-1"><a href="r-fundamentals.html#cb29-1" aria-hidden="true" tabindex="-1"></a>ex_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">WORD =</span> <span class="fu">c</span>(<span class="st">&quot;the&quot;</span>, <span class="st">&quot;boy&quot;</span>, <span class="st">&quot;you&quot;</span>, <span class="st">&quot;him&quot;</span>), <span class="at">POS =</span> <span class="fu">c</span>(<span class="st">&quot;ART&quot;</span>, <span class="st">&quot;N&quot;</span>, <span class="st">&quot;PRO&quot;</span>,</span>
+<span id="cb29-2"><a href="r-fundamentals.html#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;PRO&quot;</span>), <span class="at">FREQ =</span> <span class="fu">c</span>(<span class="dv">1104</span>, <span class="dv">35</span>, <span class="dv">104</span>, <span class="dv">34</span>))</span>
+<span id="cb29-3"><a href="r-fundamentals.html#cb29-3" aria-hidden="true" tabindex="-1"></a>ex_df</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["WORD"],"name":[1],"type":["chr"],"align":["left"]},{"label":["POS"],"name":[2],"type":["chr"],"align":["left"]},{"label":["FREQ"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"the","2":"ART","3":"1104"},{"1":"boy","2":"N","3":"35"},{"1":"you","2":"PRO","3":"104"},{"1":"him","2":"PRO","3":"34"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -626,15 +632,15 @@ Figure 2.1: Rstudio Interface
 <div id="function" class="section level2" number="2.6">
 <h2><span class="header-section-number">2.6</span> Function</h2>
 <p>Function is also an object class. There are many functions pre-defined in the R-base libraries.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb28-1"><a href="r-fundamentals.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(c)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb30-1"><a href="r-fundamentals.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(c)</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;function&quot;</code></pre>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb30-1"><a href="r-fundamentals.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(vector)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb32-1"><a href="r-fundamentals.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(vector)</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;function&quot;</code></pre>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb32-1"><a href="r-fundamentals.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(print)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb34-1"><a href="r-fundamentals.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(print)</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;function&quot;</code></pre>
 <p>To instruct R to do things more precisely, a function call usually has many <code>parameters</code> to specify. Take the earlier function <code>matrix()</code> for example. It is a pre-defined function in the R base library.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb34-1"><a href="r-fundamentals.html#cb34-1" aria-hidden="true" tabindex="-1"></a>ex_array <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">8</span>, <span class="dv">19</span>), <span class="at">byrow =</span> T, <span class="at">nrow =</span> <span class="dv">2</span>)</span>
-<span id="cb34-2"><a href="r-fundamentals.html#cb34-2" aria-hidden="true" tabindex="-1"></a>ex_array</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb36-1"><a href="r-fundamentals.html#cb36-1" aria-hidden="true" tabindex="-1"></a>ex_array <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">8</span>, <span class="dv">19</span>), <span class="at">byrow =</span> T, <span class="at">nrow =</span> <span class="dv">2</span>)</span>
+<span id="cb36-2"><a href="r-fundamentals.html#cb36-2" aria-hidden="true" tabindex="-1"></a>ex_array</span></code></pre></div>
 <pre class="Rout"><code>     [,1] [,2] [,3]
 [1,]    1    5    6
 [2,]    3    8   19</code></pre>
@@ -649,48 +655,48 @@ Figure 2.1: Rstudio Interface
 <ul>
 <li>Define own functions:</li>
 </ul>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb36-1"><a href="r-fundamentals.html#cb36-1" aria-hidden="true" tabindex="-1"></a>print_out_user_name <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">name =</span> <span class="st">&quot;&quot;</span>) {</span>
-<span id="cb36-2"><a href="r-fundamentals.html#cb36-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&quot;The current username is: &quot;</span>, name, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb36-3"><a href="r-fundamentals.html#cb36-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb38-1"><a href="r-fundamentals.html#cb38-1" aria-hidden="true" tabindex="-1"></a>print_out_user_name <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">name =</span> <span class="st">&quot;&quot;</span>) {</span>
+<span id="cb38-2"><a href="r-fundamentals.html#cb38-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&quot;The current username is: &quot;</span>, name, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb38-3"><a href="r-fundamentals.html#cb38-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <ul>
 <li>Call own functions:</li>
 </ul>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb37-1"><a href="r-fundamentals.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print_out_user_name</span>(<span class="at">name =</span> <span class="st">&quot;Alvin Cheng-Hsien Chen&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb39-1"><a href="r-fundamentals.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print_out_user_name</span>(<span class="at">name =</span> <span class="st">&quot;Alvin Cheng-Hsien Chen&quot;</span>)</span></code></pre></div>
 <pre class="Rout"><code>The current username is:  Alvin Cheng-Hsien Chen </code></pre>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb39-1"><a href="r-fundamentals.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print_out_user_name</span>(<span class="at">name =</span> <span class="st">&quot;Ada Lovelace&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb41-1"><a href="r-fundamentals.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print_out_user_name</span>(<span class="at">name =</span> <span class="st">&quot;Ada Lovelace&quot;</span>)</span></code></pre></div>
 <pre class="Rout"><code>The current username is:  Ada Lovelace </code></pre>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-34" class="exercise"><strong>Exercise 2.3  </strong></span>Please define a function called <code>make_students_happy()</code>, which takes a multi-element numeric vector, and returns also a numeric vector, with the value of each element to be the square root of the original value multiplied by 10.
+<span id="exr:unnamed-chunk-35" class="exercise"><strong>Exercise 2.3  </strong></span>Please define a function called <code>make_students_happy()</code>, which takes a multi-element numeric vector, and returns also a numeric vector, with the value of each element to be the square root of the original value multiplied by 10.
 </div>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb41-1"><a href="r-fundamentals.html#cb41-1" aria-hidden="true" tabindex="-1"></a>student_current_scores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">34</span>, <span class="dv">60</span>, <span class="dv">87</span>, <span class="dv">100</span>)</span>
-<span id="cb41-2"><a href="r-fundamentals.html#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">make_students_happy</span>(<span class="at">old_scores =</span> student_current_scores)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb43-1"><a href="r-fundamentals.html#cb43-1" aria-hidden="true" tabindex="-1"></a>student_current_scores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">34</span>, <span class="dv">60</span>, <span class="dv">87</span>, <span class="dv">100</span>)</span>
+<span id="cb43-2"><a href="r-fundamentals.html#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">make_students_happy</span>(<span class="at">old_scores =</span> student_current_scores)</span></code></pre></div>
 <pre class="Rout"><code>[1]  44.72136  58.30952  77.45967  93.27379 100.00000</code></pre>
 </div>
 <div id="vectorization" class="section level2" number="2.7">
 <h2><span class="header-section-number">2.7</span> Vectorization</h2>
 <p>Many operations in R are vectorized, meaning that operations occur in parallel in certain R objects. This allows you to write code that is efficient, concise, and easier to read than in non-vectorized languages.</p>
 <p>The simplest example of vectorized functions is when adding two vectors together.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb43-1"><a href="r-fundamentals.html#cb43-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span></span>
-<span id="cb43-2"><a href="r-fundamentals.html#cb43-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">6</span><span class="sc">:</span><span class="dv">9</span></span>
-<span id="cb43-3"><a href="r-fundamentals.html#cb43-3" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> x <span class="sc">+</span> y</span>
-<span id="cb43-4"><a href="r-fundamentals.html#cb43-4" aria-hidden="true" tabindex="-1"></a>z</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb45-1"><a href="r-fundamentals.html#cb45-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span></span>
+<span id="cb45-2"><a href="r-fundamentals.html#cb45-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">6</span><span class="sc">:</span><span class="dv">9</span></span>
+<span id="cb45-3"><a href="r-fundamentals.html#cb45-3" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> x <span class="sc">+</span> y</span>
+<span id="cb45-4"><a href="r-fundamentals.html#cb45-4" aria-hidden="true" tabindex="-1"></a>z</span></code></pre></div>
 <pre class="Rout"><code>[1]  7  9 11 13</code></pre>
 <p>Without vectorization, you mean need to do the vector adding as follows:</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb45-1"><a href="r-fundamentals.html#cb45-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="at">length =</span> <span class="fu">length</span>(x))</span>
-<span id="cb45-2"><a href="r-fundamentals.html#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-3"><a href="r-fundamentals.html#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x)) {</span>
-<span id="cb45-4"><a href="r-fundamentals.html#cb45-4" aria-hidden="true" tabindex="-1"></a>    z[i] <span class="ot">&lt;-</span> x[i] <span class="sc">+</span> y[i]</span>
-<span id="cb45-5"><a href="r-fundamentals.html#cb45-5" aria-hidden="true" tabindex="-1"></a>}  <span class="co"># endfor</span></span>
-<span id="cb45-6"><a href="r-fundamentals.html#cb45-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-7"><a href="r-fundamentals.html#cb45-7" aria-hidden="true" tabindex="-1"></a>z</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb47-1"><a href="r-fundamentals.html#cb47-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="at">length =</span> <span class="fu">length</span>(x))</span>
+<span id="cb47-2"><a href="r-fundamentals.html#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-3"><a href="r-fundamentals.html#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x)) {</span>
+<span id="cb47-4"><a href="r-fundamentals.html#cb47-4" aria-hidden="true" tabindex="-1"></a>    z[i] <span class="ot">&lt;-</span> x[i] <span class="sc">+</span> y[i]</span>
+<span id="cb47-5"><a href="r-fundamentals.html#cb47-5" aria-hidden="true" tabindex="-1"></a>}  <span class="co"># endfor</span></span>
+<span id="cb47-6"><a href="r-fundamentals.html#cb47-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-7"><a href="r-fundamentals.html#cb47-7" aria-hidden="true" tabindex="-1"></a>z</span></code></pre></div>
 <pre class="Rout"><code>[1]  7  9 11 13</code></pre>
 <p>Other common vectorized functions include:</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb47-1"><a href="r-fundamentals.html#cb47-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">&gt;=</span> <span class="dv">5</span></span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb49-1"><a href="r-fundamentals.html#cb49-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">&gt;=</span> <span class="dv">5</span></span></code></pre></div>
 <pre class="Rout"><code>[1] FALSE FALSE FALSE FALSE</code></pre>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb49-1"><a href="r-fundamentals.html#cb49-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">&lt;</span> <span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb51-1"><a href="r-fundamentals.html#cb51-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">&lt;</span> <span class="dv">2</span></span></code></pre></div>
 <pre class="Rout"><code>[1]  TRUE FALSE FALSE FALSE</code></pre>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb51-1"><a href="r-fundamentals.html#cb51-1" aria-hidden="true" tabindex="-1"></a>y <span class="sc">==</span> <span class="dv">8</span></span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb53-1"><a href="r-fundamentals.html#cb53-1" aria-hidden="true" tabindex="-1"></a>y <span class="sc">==</span> <span class="dv">8</span></span></code></pre></div>
 <pre class="Rout"><code>[1] FALSE FALSE  TRUE FALSE</code></pre>
 <div class="info">
 <p>
@@ -710,8 +716,8 @@ For more information on vectorization, please watch the following youtube clip f
 <h2><span class="header-section-number">2.9</span> Library</h2>
 <p>R, like other programming languages, comes with a huge database of packages and extensions, allowing us to do many different tasks without worrying about writing the codes all from the scratch. In <a href="https://cran.r-project.org/web/views/">CRAN Task Views</a>, you can find specific packages that you need for particular topics/tasks.</p>
 <p>To install a package (i.e., library):</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb53-1"><a href="r-fundamentals.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span>
-<span id="cb53-2"><a href="r-fundamentals.html#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">&quot;ggplot2&quot;</span>, <span class="st">&quot;devtools&quot;</span>, <span class="st">&quot;dplyr&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb55-1"><a href="r-fundamentals.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span>
+<span id="cb55-2"><a href="r-fundamentals.html#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">&quot;ggplot2&quot;</span>, <span class="st">&quot;devtools&quot;</span>, <span class="st">&quot;dplyr&quot;</span>))</span></code></pre></div>
 <p>In this course, I would like to recommend all of you to install the package <code>tidyverse</code>, which is a bundle including several useful packages for data analysis. During the installation, if you are asked about whether to install the package from <strong>source</strong>, please enter <code>yes</code> (See below for more detail).</p>
 <div class="danger">
 <p>
@@ -761,8 +767,8 @@ However, for the other packages, I would still recommend you to install the pakc
 <h2><span class="header-section-number">2.11</span> Seeking Help</h2>
 <p>In the process of (learning) programming, one thing you will never be able to dodge is a strong desire for help. Here are the sources from which you may get additional assistance.</p>
 <p>Within Rstudio, in the R console, you can always use <code>?</code> to check the documentation of a particular function (cf. Figure <a href="r-fundamentals.html#fig:help1">2.2</a>). When you run the command, you will see the documentation popping up in the output frame of the Rstudio.</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb54-1"><a href="r-fundamentals.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">?</span><span class="st">`</span>(log)</span>
-<span id="cb54-2"><a href="r-fundamentals.html#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">?</span><span class="st">`</span>(read.table)</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb56-1"><a href="r-fundamentals.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">?</span><span class="st">`</span>(log)</span>
+<span id="cb56-2"><a href="r-fundamentals.html#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">?</span><span class="st">`</span>(read.table)</span></code></pre></div>
 <div class="figure"><span id="fig:help1"></span>
 <img src="images/Rstudio_help.png" alt="Help 1" width="80%" />
 <p class="caption">
@@ -852,17 +858,17 @@ Figure 2.3: Help 2
 <hr />
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-48" class="exercise"><strong>Exercise 2.4  </strong></span>Make yourself familiar with the <code>iris</code> data set, which is included in R.</p>
+<p><span id="exr:unnamed-chunk-49" class="exercise"><strong>Exercise 2.4  </strong></span>Make yourself familiar with the <code>iris</code> data set, which is included in R.</p>
 </div>
 <p><img src="images/iris-sepal-petal.jpg" width="70%" /></p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-50" class="exercise"><strong>Exercise 2.5  </strong></span>Use <code>?</code> to make youself familiar with the following commands: <code>str</code>,<code>summary</code>, <code>dim</code>, <code>colnames</code>, <code>names</code>, <code>nrow</code>, <code>ncol</code>, <code>head</code>, and <code>tail</code>.</p>
+<p><span id="exr:unnamed-chunk-51" class="exercise"><strong>Exercise 2.5  </strong></span>Use <code>?</code> to make youself familiar with the following commands: <code>str</code>,<code>summary</code>, <code>dim</code>, <code>colnames</code>, <code>names</code>, <code>nrow</code>, <code>ncol</code>, <code>head</code>, and <code>tail</code>.</p>
 What information can you get with all these commands?
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-51" class="exercise"><strong>Exercise 2.6  </strong></span>Write a function to compute the factorial of a non-negative integer, <em>x</em>, expressed as <em>x!</em>. The factorial of <em>x</em> refers to <em>x</em> multiplied by the product of all integers less than <em>x</em>, down to 1.</p>
+<p><span id="exr:unnamed-chunk-52" class="exercise"><strong>Exercise 2.6  </strong></span>Write a function to compute the factorial of a non-negative integer, <em>x</em>, expressed as <em>x!</em>. The factorial of <em>x</em> refers to <em>x</em> multiplied by the product of all integers less than <em>x</em>, down to 1.</p>
 <p>For example, <em>3!</em> = 3 x 2 x 1 = 6.</p>
 <p>The special case, <em>zero factorial</em> is always defined as 1.</p>
 Confirm that your function produce the same results as below: (i) 5! = 120; (ii) 120! = 479,001,600; (iii) 0! = 1.
@@ -872,14 +878,14 @@ Confirm that your function produce the same results as below: (i) 5! = 120; (ii)
 myfac &lt;- function(x){
 
 }</code></pre>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb56-1"><a href="r-fundamentals.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="do">## (i)</span></span>
-<span id="cb56-2"><a href="r-fundamentals.html#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">myfac</span>(<span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb58-1"><a href="r-fundamentals.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="do">## (i)</span></span>
+<span id="cb58-2"><a href="r-fundamentals.html#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">myfac</span>(<span class="dv">5</span>)</span></code></pre></div>
 <pre class="Rout"><code>[1] 120</code></pre>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb58-1"><a href="r-fundamentals.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="do">## (ii)</span></span>
-<span id="cb58-2"><a href="r-fundamentals.html#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">myfac</span>(<span class="dv">12</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb60-1"><a href="r-fundamentals.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="do">## (ii)</span></span>
+<span id="cb60-2"><a href="r-fundamentals.html#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">myfac</span>(<span class="dv">12</span>)</span></code></pre></div>
 <pre class="Rout"><code>[1] 479001600</code></pre>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb60-1"><a href="r-fundamentals.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="do">## (iii)</span></span>
-<span id="cb60-2"><a href="r-fundamentals.html#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">myfac</span>(<span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb62-1"><a href="r-fundamentals.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="do">## (iii)</span></span>
+<span id="cb62-2"><a href="r-fundamentals.html#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">myfac</span>(<span class="dv">0</span>)</span></code></pre></div>
 <pre class="Rout"><code>[1] 1</code></pre>
 
 </div>
