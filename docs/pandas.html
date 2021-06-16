@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-06-14" />
+<meta name="date" content="2021-06-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="regular-expression.html"/>
-<link rel="next" href="natural-language-tool-kits-nltk.html"/>
+<link rel="next" href="nltk.html"/>
 <script src="libs/header-attrs-2.8.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -438,11 +438,12 @@ div.csl-indent {
 <li class="chapter" data-level="15.9" data-path="pandas.html"><a href="pandas.html#generic-functions"><i class="fa fa-check"></i><b>15.9</b> Generic Functions</a></li>
 <li class="chapter" data-level="15.10" data-path="pandas.html"><a href="pandas.html#references-1"><i class="fa fa-check"></i><b>15.10</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="natural-language-tool-kits-nltk.html"><a href="natural-language-tool-kits-nltk.html"><i class="fa fa-check"></i><b>16</b> Natural Language Tool-Kits (NLTK)</a>
+<li class="chapter" data-level="16" data-path="nltk.html"><a href="nltk.html"><i class="fa fa-check"></i><b>16</b> NLTK</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="natural-language-tool-kits-nltk.html"><a href="natural-language-tool-kits-nltk.html#installation"><i class="fa fa-check"></i><b>16.1</b> Installation</a></li>
-<li class="chapter" data-level="16.2" data-path="natural-language-tool-kits-nltk.html"><a href="natural-language-tool-kits-nltk.html#corpora-data"><i class="fa fa-check"></i><b>16.2</b> Corpora Data</a></li>
-<li class="chapter" data-level="16.3" data-path="natural-language-tool-kits-nltk.html"><a href="natural-language-tool-kits-nltk.html#wordnet"><i class="fa fa-check"></i><b>16.3</b> WordNet</a></li>
+<li class="chapter" data-level="16.1" data-path="nltk.html"><a href="nltk.html#installation"><i class="fa fa-check"></i><b>16.1</b> Installation</a></li>
+<li class="chapter" data-level="16.2" data-path="nltk.html"><a href="nltk.html#corpora-data"><i class="fa fa-check"></i><b>16.2</b> Corpora Data</a></li>
+<li class="chapter" data-level="16.3" data-path="nltk.html"><a href="nltk.html#wordnet"><i class="fa fa-check"></i><b>16.3</b> WordNet</a></li>
+<li class="chapter" data-level="16.4" data-path="nltk.html"><a href="nltk.html#discovering-word-collocations"><i class="fa fa-check"></i><b>16.4</b> Discovering Word Collocations</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="the-shell.html"><a href="the-shell.html"><i class="fa fa-check"></i><b>A</b> The Shell</a>
@@ -602,9 +603,9 @@ max        7.900000     4.400000      6.900000     2.500000</code></pre>
 148           6.2          3.4           5.4          2.3  virginica
 149           5.9          3.0           5.1          1.8  virginica</code></pre>
 <div class="sourceCode" id="cb622"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb622-1"><a href="pandas.html#cb622-1" aria-hidden="true" tabindex="-1"></a>iris[<span class="st">&#39;Species&#39;</span>].value_counts()</span></code></pre></div>
-<pre class="Rout"><code>virginica     50
+<pre class="Rout"><code>setosa        50
+virginica     50
 versicolor    50
-setosa        50
 Name: Species, dtype: int64</code></pre>
 <div class="sourceCode" id="cb624"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb624-1"><a href="pandas.html#cb624-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(iris.columns)</span></code></pre></div>
 <pre class="Rout"><code>Index([&#39;Sepal.Length&#39;, &#39;Sepal.Width&#39;, &#39;Petal.Length&#39;, &#39;Petal.Width&#39;,
@@ -1222,42 +1223,13 @@ dtype: float64</code></pre>
 
 </div>
 </div>
-<div id="disqus_thread"></div>
-<script>
-
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-/*
-var disqus_config = function () {
-this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-
-var disqus_config = function () {
-this.page.url = "https:\/\/alvinntnu.github.io" + location.pathname;  // Replace PAGE_URL with your page's canonical URL variable
-/*this.page.identifier = location.pathname;*/
-this.page.title = document.title;
-};
-
-
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://enc2055.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                            
             </section>
 
           </div>
         </div>
       </div>
 <a href="regular-expression.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="natural-language-tool-kits-nltk.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="nltk.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
