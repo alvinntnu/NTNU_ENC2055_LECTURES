@@ -304,3 +304,8 @@ shebang-line
 basic-shell-commands
 text-analytic-related-commands
 references-2
+exr:unlabeled-div-1
+exr:unlabeled-div-2
+a-dictionary-resource
+lexical-relations
+semantic-similarity-computation
