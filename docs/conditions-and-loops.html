@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-06-19" />
+<meta name="date" content="2021-06-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -455,6 +455,15 @@ div.csl-indent {
 <li class="chapter" data-level="16.3.3" data-path="nltk.html"><a href="nltk.html#semantic-similarity-computation"><i class="fa fa-check"></i><b>16.3.3</b> Semantic Similarity Computation</a></li>
 </ul></li>
 <li class="chapter" data-level="16.4" data-path="nltk.html"><a href="nltk.html#discovering-word-collocations"><i class="fa fa-check"></i><b>16.4</b> Discovering Word Collocations</a></li>
+<li class="chapter" data-level="16.5" data-path="nltk.html"><a href="nltk.html#tokenization"><i class="fa fa-check"></i><b>16.5</b> Tokenization</a></li>
+<li class="chapter" data-level="16.6" data-path="nltk.html"><a href="nltk.html#chinese-word-segmentation"><i class="fa fa-check"></i><b>16.6</b> Chinese Word Segmentation</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="web-scraping.html"><a href="web-scraping.html"><i class="fa fa-check"></i><b>17</b> Web Scraping</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="web-scraping.html"><a href="web-scraping.html#webbrowswer-module"><i class="fa fa-check"></i><b>17.1</b> <code>webbrowswer</code> module</a></li>
+<li class="chapter" data-level="17.2" data-path="web-scraping.html"><a href="web-scraping.html#requests-module"><i class="fa fa-check"></i><b>17.2</b> <code>requests</code> Module</a></li>
+<li class="chapter" data-level="17.3" data-path="web-scraping.html"><a href="web-scraping.html#bs4-module-beautiful-soup"><i class="fa fa-check"></i><b>17.3</b> <code>bs4</code> Module (Beautiful Soup)</a></li>
+<li class="chapter" data-level="17.4" data-path="web-scraping.html"><a href="web-scraping.html#reference"><i class="fa fa-check"></i><b>17.4</b> Reference</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="the-shell.html"><a href="the-shell.html"><i class="fa fa-check"></i><b>A</b> The Shell</a>
@@ -642,7 +651,7 @@ Your `guess` is too small! The system will take care for you!
 Now the system is adjusting your `guess` to  90 </code></pre>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-403" class="exercise"><strong>Exercise 9.1  </strong></span>In the above example, if the <code>guess</code> is smaller than <code>ans</code>, our script works fine. However, if the <code>guess</code> is larger than <code>ans</code>, then our script will crash.</p>
+<p><span id="exr:unnamed-chunk-368" class="exercise"><strong>Exercise 9.1  </strong></span>In the above example, if the <code>guess</code> is smaller than <code>ans</code>, our script works fine. However, if the <code>guess</code> is larger than <code>ans</code>, then our script will crash.</p>
 How to fix it?
 </div>
 <p>In other words, you script should produce the following results when <code>guess (83)</code> &lt; <code>ans (90)</code>:</p>
@@ -708,7 +717,7 @@ Now the system is adjusting your `guess` to  90 </code></pre>
 <div class="sourceCode" id="cb395"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb395-1"><a href="conditions-and-loops.html#cb395-1" aria-hidden="true" tabindex="-1"></a><span class="fu">guessMyNumber</span>()</span></code></pre></div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-409" class="exercise"><strong>Exercise 9.2  (optional)  </strong></span>The above <code>guessMyNumber()</code> can be improved. Sometimes naughty users would not input numbers as requested. Instead, they may accidentally (or on purpose) input characters that are NOT numbers in their guesses.</p>
+<p><span id="exr:unnamed-chunk-374" class="exercise"><strong>Exercise 9.2  (optional)  </strong></span>The above <code>guessMyNumber()</code> can be improved. Sometimes naughty users would not input numbers as requested. Instead, they may accidentally (or on purpose) input characters that are NOT numbers in their guesses.</p>
 How can you adjust the <code>guessMyNumber()</code> so that when users input non-numeric characters, your function would send out a warning message? (See below.)
 </div>
 <pre><code>&gt; guessMyNumber_v2()

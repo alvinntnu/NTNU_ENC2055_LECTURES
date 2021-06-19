@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-06-19" />
+<meta name="date" content="2021-06-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -455,6 +455,15 @@ div.csl-indent {
 <li class="chapter" data-level="16.3.3" data-path="nltk.html"><a href="nltk.html#semantic-similarity-computation"><i class="fa fa-check"></i><b>16.3.3</b> Semantic Similarity Computation</a></li>
 </ul></li>
 <li class="chapter" data-level="16.4" data-path="nltk.html"><a href="nltk.html#discovering-word-collocations"><i class="fa fa-check"></i><b>16.4</b> Discovering Word Collocations</a></li>
+<li class="chapter" data-level="16.5" data-path="nltk.html"><a href="nltk.html#tokenization"><i class="fa fa-check"></i><b>16.5</b> Tokenization</a></li>
+<li class="chapter" data-level="16.6" data-path="nltk.html"><a href="nltk.html#chinese-word-segmentation"><i class="fa fa-check"></i><b>16.6</b> Chinese Word Segmentation</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="web-scraping.html"><a href="web-scraping.html"><i class="fa fa-check"></i><b>17</b> Web Scraping</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="web-scraping.html"><a href="web-scraping.html#webbrowswer-module"><i class="fa fa-check"></i><b>17.1</b> <code>webbrowswer</code> module</a></li>
+<li class="chapter" data-level="17.2" data-path="web-scraping.html"><a href="web-scraping.html#requests-module"><i class="fa fa-check"></i><b>17.2</b> <code>requests</code> Module</a></li>
+<li class="chapter" data-level="17.3" data-path="web-scraping.html"><a href="web-scraping.html#bs4-module-beautiful-soup"><i class="fa fa-check"></i><b>17.3</b> <code>bs4</code> Module (Beautiful Soup)</a></li>
+<li class="chapter" data-level="17.4" data-path="web-scraping.html"><a href="web-scraping.html#reference"><i class="fa fa-check"></i><b>17.4</b> Reference</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="the-shell.html"><a href="the-shell.html"><i class="fa fa-check"></i><b>A</b> The Shell</a>
@@ -720,11 +729,11 @@ Figure 8.1: Data I/O
 <pre class="Rout"><code>[1] &quot;臺&quot;</code></pre>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-366" class="exercise"><strong>Exercise 8.1  </strong></span>What is the character of the Unicode code point (hexadecimal) <code>U+20AC</code>? How do you find out the character in R?
+<span id="exr:unnamed-chunk-331" class="exercise"><strong>Exercise 8.1  </strong></span>What is the character of the Unicode code point (hexadecimal) <code>U+20AC</code>? How do you find out the character in R?
 </div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-368" class="exercise"><strong>Exercise 8.2  </strong></span>What is the Unicode code point (hexadecimal) for the character <code>我</code> and <code>你</code>?
+<span id="exr:unnamed-chunk-333" class="exercise"><strong>Exercise 8.2  </strong></span>What is the Unicode code point (hexadecimal) for the character <code>我</code> and <code>你</code>?
 Which character is larger in terms of the code points?
 </div>
 <div class="info">
@@ -734,7 +743,7 @@ Which character is larger in terms of the code points?
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-372" class="exercise"><strong>Exercise 8.3  </strong></span>In our <code>demo_data</code> directory, there are three text files in different encodings:</p>
+<p><span id="exr:unnamed-chunk-337" class="exercise"><strong>Exercise 8.3  </strong></span>In our <code>demo_data</code> directory, there are three text files in different encodings:</p>
 <ul>
 <li><code>demo_data/chinese_gb2312.txt</code></li>
 <li><code>demo_data/chinese_big5.txt</code></li>
@@ -791,7 +800,7 @@ If each paragraph in the text file is a <em>paragraph</em>, you get a <em>paragr
 <hr />
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-377" class="exercise"><strong>Exercise 8.4  </strong></span>Based on the inspection of the vector <code>alice</code> created above, what is the content of each line in the original txt file (<code>demo_data/corp-alice.txt</code>)?
+<span id="exr:unnamed-chunk-342" class="exercise"><strong>Exercise 8.4  </strong></span>Based on the inspection of the vector <code>alice</code> created above, what is the content of each line in the original txt file (<code>demo_data/corp-alice.txt</code>)?
 </div>
 <hr />
 </div>
@@ -803,11 +812,11 @@ If each paragraph in the text file is a <em>paragraph</em>, you get a <em>paragr
 <hr />
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-379" class="exercise"><strong>Exercise 8.5  </strong></span>Please describe the meaning of the data processing in the code chunk above: <code>sample(alice[nzchar(alice)],10)</code>. What did it do with the vector <code>alice</code>?
+<span id="exr:unnamed-chunk-344" class="exercise"><strong>Exercise 8.5  </strong></span>Please describe the meaning of the data processing in the code chunk above: <code>sample(alice[nzchar(alice)],10)</code>. What did it do with the vector <code>alice</code>?
 </div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-380" class="exercise"><strong>Exercise 8.6  </strong></span>The above code is repeated below. How do you re-write the code using the <code>%&gt;%</code> pipe-based syntax with a structure provided below? Your output should be exactly the same as the output produced by the original codes.
+<span id="exr:unnamed-chunk-345" class="exercise"><strong>Exercise 8.6  </strong></span>The above code is repeated below. How do you re-write the code using the <code>%&gt;%</code> pipe-based syntax with a structure provided below? Your output should be exactly the same as the output produced by the original codes.
 </div>
 <pre><code>library(tidyverse)
 alice %&gt;%
@@ -856,7 +865,7 @@ writeLiens(con=&quot;corp-alice-2.txt&quot;)</code></pre>
 </div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-386" class="exercise"><strong>Exercise 8.8  </strong></span>Following Exercise <a href="data-import.html#exr:bnc1">8.7</a>, please export the data frame of the top 20 bigrams to an external file, named <code>data-bnc-bigram-10.csv</code>, and save it under your current working directory.
+<span id="exr:unnamed-chunk-351" class="exercise"><strong>Exercise 8.8  </strong></span>Following Exercise <a href="data-import.html#exr:bnc1">8.7</a>, please export the data frame of the top 20 bigrams to an external file, named <code>data-bnc-bigram-10.csv</code>, and save it under your current working directory.
 </div>
 </div>
 </div>
@@ -876,11 +885,11 @@ writeLiens(con=&quot;corp-alice-2.txt&quot;)</code></pre>
 <span id="cb376-3"><a href="data-import.html#cb376-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dir</span>(<span class="at">path =</span> <span class="st">&quot;../../&quot;</span>)</span></code></pre></div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-389" class="exercise"><strong>Exercise 8.9  </strong></span>Please make yourself familar with the following commands: <code>file.create()</code>, <code>dir.create()</code>, <code>unlink()</code>, <code>basename()</code>,<code>file.info()</code>, <code>save()</code>, and <code>load()</code>.
+<span id="exr:unnamed-chunk-354" class="exercise"><strong>Exercise 8.9  </strong></span>Please make yourself familar with the following commands: <code>file.create()</code>, <code>dir.create()</code>, <code>unlink()</code>, <code>basename()</code>,<code>file.info()</code>, <code>save()</code>, and <code>load()</code>.
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-390" class="exercise"><strong>Exercise 8.10  </strong></span>Please create a sub-directory in your working directory, named <code>temp</code>.</p>
+<p><span id="exr:unnamed-chunk-355" class="exercise"><strong>Exercise 8.10  </strong></span>Please create a sub-directory in your working directory, named <code>temp</code>.</p>
 <p>Load the dataset <code>demo_data/data-bnc-bigram.csv</code> and subset bigrams whose bigram frequencies (<code>bi.freq</code> column) are larger than 200.</p>
 Order the sub data frame according to the bigram frequencies in a descending order and save the sub data frame into a csv file named <code>data-bnc-bigram-freq200.csv</code> in the <code>temp</code> directory.
 </div>

@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-06-19" />
+<meta name="date" content="2021-06-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -455,6 +455,15 @@ div.csl-indent {
 <li class="chapter" data-level="16.3.3" data-path="nltk.html"><a href="nltk.html#semantic-similarity-computation"><i class="fa fa-check"></i><b>16.3.3</b> Semantic Similarity Computation</a></li>
 </ul></li>
 <li class="chapter" data-level="16.4" data-path="nltk.html"><a href="nltk.html#discovering-word-collocations"><i class="fa fa-check"></i><b>16.4</b> Discovering Word Collocations</a></li>
+<li class="chapter" data-level="16.5" data-path="nltk.html"><a href="nltk.html#tokenization"><i class="fa fa-check"></i><b>16.5</b> Tokenization</a></li>
+<li class="chapter" data-level="16.6" data-path="nltk.html"><a href="nltk.html#chinese-word-segmentation"><i class="fa fa-check"></i><b>16.6</b> Chinese Word Segmentation</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="web-scraping.html"><a href="web-scraping.html"><i class="fa fa-check"></i><b>17</b> Web Scraping</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="web-scraping.html"><a href="web-scraping.html#webbrowswer-module"><i class="fa fa-check"></i><b>17.1</b> <code>webbrowswer</code> module</a></li>
+<li class="chapter" data-level="17.2" data-path="web-scraping.html"><a href="web-scraping.html#requests-module"><i class="fa fa-check"></i><b>17.2</b> <code>requests</code> Module</a></li>
+<li class="chapter" data-level="17.3" data-path="web-scraping.html"><a href="web-scraping.html#bs4-module-beautiful-soup"><i class="fa fa-check"></i><b>17.3</b> <code>bs4</code> Module (Beautiful Soup)</a></li>
+<li class="chapter" data-level="17.4" data-path="web-scraping.html"><a href="web-scraping.html#reference"><i class="fa fa-check"></i><b>17.4</b> Reference</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="the-shell.html"><a href="the-shell.html"><i class="fa fa-check"></i><b>A</b> The Shell</a>
@@ -570,7 +579,7 @@ Figure 2.1: Rstudio Interface
 <p>In the above example (Figure <a href="r-fundamentals.html#fig:rstudiointerface">2.1</a>), I wrote a few lines of codes in a R script file (cf. the <code>Editor</code> frame) and asked R to run these lines of codes in the R <code>Console</code>. And the graphic output of the R script was printed in the <code>Output</code> frame.</p>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-54" class="exercise"><strong>Exercise 2.1  </strong></span>Please create a new R script in Rstudio. You may name the script as “ch2.R.” Please write the following codes in the script and pass the whole script to the R Console.
+<span id="exr:unnamed-chunk-19" class="exercise"><strong>Exercise 2.1  </strong></span>Please create a new R script in Rstudio. You may name the script as “ch2.R.” Please write the following codes in the script and pass the whole script to the R Console.
 </div>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb11-1"><a href="r-fundamentals.html#cb11-1" aria-hidden="true" tabindex="-1"></a>scores <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="at">mean =</span> <span class="dv">75</span>, <span class="at">sd =</span> <span class="fl">5.8</span>)</span>
 <span id="cb11-2"><a href="r-fundamentals.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(scores))</span>
@@ -578,7 +587,7 @@ Figure 2.1: Rstudio Interface
 <span id="cb11-4"><a href="r-fundamentals.html#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(scores)</span></code></pre></div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-56" class="exercise"><strong>Exercise 2.2  </strong></span>Find the answer to the following mathematical calculation in R.
+<span id="exr:unnamed-chunk-21" class="exercise"><strong>Exercise 2.2  </strong></span>Find the answer to the following mathematical calculation in R.
 </div>
 <p><span class="math inline">\(2^{2+1}-4+64^{(-2)^{2.25-\frac{1}{4}}}\)</span></p>
 <p>= 16777220</p>
@@ -630,8 +639,8 @@ Figure 2.1: Rstudio Interface
 <pre class="Rout"><code>     [,1] [,2] [,3]
 [1,]    1    5    6
 [2,]    3    8   19</code></pre>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb29-1"><a href="r-fundamentals.html#cb29-1" aria-hidden="true" tabindex="-1"></a>ex_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">WORD =</span> <span class="fu">c</span>(<span class="st">&quot;the&quot;</span>, <span class="st">&quot;boy&quot;</span>, <span class="st">&quot;you&quot;</span>, <span class="st">&quot;him&quot;</span>), <span class="at">POS =</span> <span class="fu">c</span>(<span class="st">&quot;ART&quot;</span>, <span class="st">&quot;N&quot;</span>, <span class="st">&quot;PRO&quot;</span>, <span class="st">&quot;PRO&quot;</span>), <span class="at">FREQ =</span> <span class="fu">c</span>(<span class="dv">1104</span>,</span>
-<span id="cb29-2"><a href="r-fundamentals.html#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">35</span>, <span class="dv">104</span>, <span class="dv">34</span>))</span>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb29-1"><a href="r-fundamentals.html#cb29-1" aria-hidden="true" tabindex="-1"></a>ex_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">WORD =</span> <span class="fu">c</span>(<span class="st">&quot;the&quot;</span>, <span class="st">&quot;boy&quot;</span>, <span class="st">&quot;you&quot;</span>, <span class="st">&quot;him&quot;</span>), <span class="at">POS =</span> <span class="fu">c</span>(<span class="st">&quot;ART&quot;</span>, <span class="st">&quot;N&quot;</span>, <span class="st">&quot;PRO&quot;</span>,</span>
+<span id="cb29-2"><a href="r-fundamentals.html#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;PRO&quot;</span>), <span class="at">FREQ =</span> <span class="fu">c</span>(<span class="dv">1104</span>, <span class="dv">35</span>, <span class="dv">104</span>, <span class="dv">34</span>))</span>
 <span id="cb29-3"><a href="r-fundamentals.html#cb29-3" aria-hidden="true" tabindex="-1"></a>ex_df</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
@@ -679,7 +688,7 @@ Figure 2.1: Rstudio Interface
 <pre class="Rout"><code>The current username is:  Ada Lovelace </code></pre>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-70" class="exercise"><strong>Exercise 2.3  </strong></span>Please define a function called <code>make_students_happy()</code>, which takes a multi-element numeric vector, and returns also a numeric vector, with the value of each element to be the square root of the original value multiplied by 10.
+<span id="exr:unnamed-chunk-35" class="exercise"><strong>Exercise 2.3  </strong></span>Please define a function called <code>make_students_happy()</code>, which takes a multi-element numeric vector, and returns also a numeric vector, with the value of each element to be the square root of the original value multiplied by 10.
 </div>
 <div class="sourceCode" id="cb43"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb43-1"><a href="r-fundamentals.html#cb43-1" aria-hidden="true" tabindex="-1"></a>student_current_scores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">34</span>, <span class="dv">60</span>, <span class="dv">87</span>, <span class="dv">100</span>)</span>
 <span id="cb43-2"><a href="r-fundamentals.html#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">make_students_happy</span>(<span class="at">old_scores =</span> student_current_scores)</span></code></pre></div>
@@ -870,17 +879,17 @@ Figure 2.3: Help 2
 <hr />
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-84" class="exercise"><strong>Exercise 2.4  </strong></span>Make yourself familiar with the <code>iris</code> data set, which is included in R.</p>
+<p><span id="exr:unnamed-chunk-49" class="exercise"><strong>Exercise 2.4  </strong></span>Make yourself familiar with the <code>iris</code> data set, which is included in R.</p>
 </div>
 <p><img src="images/iris-sepal-petal.jpg" width="70%" /></p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-86" class="exercise"><strong>Exercise 2.5  </strong></span>Use <code>?</code> to make youself familiar with the following commands: <code>str</code>,<code>summary</code>, <code>dim</code>, <code>colnames</code>, <code>names</code>, <code>nrow</code>, <code>ncol</code>, <code>head</code>, and <code>tail</code>.</p>
+<p><span id="exr:unnamed-chunk-51" class="exercise"><strong>Exercise 2.5  </strong></span>Use <code>?</code> to make youself familiar with the following commands: <code>str</code>,<code>summary</code>, <code>dim</code>, <code>colnames</code>, <code>names</code>, <code>nrow</code>, <code>ncol</code>, <code>head</code>, and <code>tail</code>.</p>
 What information can you get with all these commands?
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-87" class="exercise"><strong>Exercise 2.6  </strong></span>Write a function to compute the factorial of a non-negative integer, <em>x</em>, expressed as <em>x!</em>. The factorial of <em>x</em> refers to <em>x</em> multiplied by the product of all integers less than <em>x</em>, down to 1.</p>
+<p><span id="exr:unnamed-chunk-52" class="exercise"><strong>Exercise 2.6  </strong></span>Write a function to compute the factorial of a non-negative integer, <em>x</em>, expressed as <em>x!</em>. The factorial of <em>x</em> refers to <em>x</em> multiplied by the product of all integers less than <em>x</em>, down to 1.</p>
 <p>For example, <em>3!</em> = 3 x 2 x 1 = 6.</p>
 <p>The special case, <em>zero factorial</em> is always defined as 1.</p>
 Confirm that your function produce the same results as below: (i) 5! = 120; (ii) 120! = 479,001,600; (iii) 0! = 1.

@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-06-19" />
+<meta name="date" content="2021-06-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -455,6 +455,15 @@ div.csl-indent {
 <li class="chapter" data-level="16.3.3" data-path="nltk.html"><a href="nltk.html#semantic-similarity-computation"><i class="fa fa-check"></i><b>16.3.3</b> Semantic Similarity Computation</a></li>
 </ul></li>
 <li class="chapter" data-level="16.4" data-path="nltk.html"><a href="nltk.html#discovering-word-collocations"><i class="fa fa-check"></i><b>16.4</b> Discovering Word Collocations</a></li>
+<li class="chapter" data-level="16.5" data-path="nltk.html"><a href="nltk.html#tokenization"><i class="fa fa-check"></i><b>16.5</b> Tokenization</a></li>
+<li class="chapter" data-level="16.6" data-path="nltk.html"><a href="nltk.html#chinese-word-segmentation"><i class="fa fa-check"></i><b>16.6</b> Chinese Word Segmentation</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="web-scraping.html"><a href="web-scraping.html"><i class="fa fa-check"></i><b>17</b> Web Scraping</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="web-scraping.html"><a href="web-scraping.html#webbrowswer-module"><i class="fa fa-check"></i><b>17.1</b> <code>webbrowswer</code> module</a></li>
+<li class="chapter" data-level="17.2" data-path="web-scraping.html"><a href="web-scraping.html#requests-module"><i class="fa fa-check"></i><b>17.2</b> <code>requests</code> Module</a></li>
+<li class="chapter" data-level="17.3" data-path="web-scraping.html"><a href="web-scraping.html#bs4-module-beautiful-soup"><i class="fa fa-check"></i><b>17.3</b> <code>bs4</code> Module (Beautiful Soup)</a></li>
+<li class="chapter" data-level="17.4" data-path="web-scraping.html"><a href="web-scraping.html#reference"><i class="fa fa-check"></i><b>17.4</b> Reference</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="the-shell.html"><a href="the-shell.html"><i class="fa fa-check"></i><b>A</b> The Shell</a>
@@ -552,14 +561,14 @@ div.csl-indent {
 <span id="cb469-3"><a href="text-analytics-a-start.html#cb469-3" aria-hidden="true" tabindex="-1"></a>corp_us <span class="sc">%&gt;%</span></span>
 <span id="cb469-4"><a href="text-analytics-a-start.html#cb469-4" aria-hidden="true" tabindex="-1"></a>    summary <span class="sc">%&gt;%</span></span>
 <span id="cb469-5"><a href="text-analytics-a-start.html#cb469-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> Tokens, <span class="at">group =</span> <span class="dv">1</span>)) <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>()</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-480-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-445-1.png" width="672" /></p>
 <hr />
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-481" class="exercise"><strong>Exercise 12.1  </strong></span>Could you reproduce the above line plot and add information of <code>President</code> to the plot as labels of the dots?</p>
+<p><span id="exr:unnamed-chunk-446" class="exercise"><strong>Exercise 12.1  </strong></span>Could you reproduce the above line plot and add information of <code>President</code> to the plot as labels of the dots?</p>
 Hints: Please check <code>ggplot2::geom_text()</code> or more advanced one, <code>ggrepel::geom_text_repel()</code>
 </div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-482-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-447-1.png" width="672" /></p>
 <hr />
 </div>
 <div id="keyword-in-context-kwic" class="section level2" number="12.3">
@@ -600,9 +609,9 @@ Please note that <code>kwic()</code>, when taking a <code>corpus</code> object a
 <hr />
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-487" class="exercise"><strong>Exercise 12.2  </strong></span>Please create a bar plot, showing the number of uses of the word <em>country</em> in each president’s address. Please include different variants of the word, e.g., <em>countries</em>, <em>Countries</em>, <em>Country</em>, in your <code>kwic()</code> search.
+<span id="exr:unnamed-chunk-452" class="exercise"><strong>Exercise 12.2  </strong></span>Please create a bar plot, showing the number of uses of the word <em>country</em> in each president’s address. Please include different variants of the word, e.g., <em>countries</em>, <em>Countries</em>, <em>Country</em>, in your <code>kwic()</code> search.
 </div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-488-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-453-1.png" width="672" /></p>
 </div>
 <div id="lexical-density-plot" class="section level2" number="12.5">
 <h2><span class="header-section-number">12.5</span> Lexical Density Plot</h2>
@@ -612,11 +621,11 @@ Please note that <code>kwic()</code>, when taking a <code>corpus</code> object a
 <span id="cb473-3"><a href="text-analytics-a-start.html#cb473-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tokens_subset</span>(Year <span class="sc">&gt;</span> <span class="dv">1949</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb473-4"><a href="text-analytics-a-start.html#cb473-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kwic</span>(<span class="at">pattern =</span> <span class="st">&quot;american&quot;</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb473-5"><a href="text-analytics-a-start.html#cb473-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">textplot_xray</span>()</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-489-1.png" width="100%" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-454-1.png" width="100%" /></p>
 <div class="sourceCode" id="cb474"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb474-1"><a href="text-analytics-a-start.html#cb474-1" aria-hidden="true" tabindex="-1"></a>corp_us_subset <span class="ot">&lt;-</span> corp_us_tokens <span class="sc">%&gt;%</span></span>
 <span id="cb474-2"><a href="text-analytics-a-start.html#cb474-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tokens_subset</span>(Year <span class="sc">&gt;</span> <span class="dv">1949</span>)</span>
 <span id="cb474-3"><a href="text-analytics-a-start.html#cb474-3" aria-hidden="true" tabindex="-1"></a><span class="fu">textplot_xray</span>(<span class="fu">kwic</span>(corp_us_subset, <span class="at">pattern =</span> <span class="st">&quot;american&quot;</span>), <span class="fu">kwic</span>(corp_us_subset, <span class="at">pattern =</span> <span class="st">&quot;people&quot;</span>))</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-490-1.png" width="100%" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-455-1.png" width="100%" /></p>
 </div>
 <div id="document-feature-matrix" class="section level2" number="12.6">
 <h2><span class="header-section-number">12.6</span> Document-Feature Matrix</h2>
@@ -627,13 +636,21 @@ Please note that <code>kwic()</code>, when taking a <code>corpus</code> object a
 <span id="cb475-4"><a href="text-analytics-a-start.html#cb475-4" aria-hidden="true" tabindex="-1"></a>corp_us_dfm[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code></pre></div>
 <pre class="Rout"><code>Document-feature matrix of: 10 documents, 10 features (43.00% sparse) and 4 docvars.
                  features
-docs              fellow-citizens  of the senate and house representatives : among vicissitudes
-  1789-Washington               1  71 116      1  48     2               2 1     1            1
-  1793-Washington               0  11  13      0   2     0               0 1     0            0
-  1797-Adams                    3 140 163      1 130     0               2 0     4            0
-  1801-Jefferson                2 104 130      0  81     0               0 1     1            0
-  1805-Jefferson                0 101 143      0  93     0               0 0     7            0
-  1809-Madison                  1  69 104      0  43     0               0 0     0            0
+docs              fellow-citizens  of the senate and house representatives :
+  1789-Washington               1  71 116      1  48     2               2 1
+  1793-Washington               0  11  13      0   2     0               0 1
+  1797-Adams                    3 140 163      1 130     0               2 0
+  1801-Jefferson                2 104 130      0  81     0               0 1
+  1805-Jefferson                0 101 143      0  93     0               0 0
+  1809-Madison                  1  69 104      0  43     0               0 0
+                 features
+docs              among vicissitudes
+  1789-Washington     1            1
+  1793-Washington     0            0
+  1797-Adams          4            0
+  1801-Jefferson      1            0
+  1805-Jefferson      7            0
+  1809-Madison        0            0
 [ reached max_ndoc ... 4 more documents ]</code></pre>
 <p>We can see that in the first document, i.e., <em>1789-Washington</em>, there are <em>2</em> occurrences of <em>representatives</em>, <em>48</em> occurrences of <em>and</em></p>
 </div>
@@ -650,17 +667,17 @@ docs              fellow-citizens  of the senate and house representatives : amo
 <span id="cb477-2"><a href="text-analytics-a-start.html#cb477-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tokens</span>(<span class="at">remove_punct =</span> T, <span class="at">remove_numbers =</span> T, <span class="at">remove_symbols =</span> T) <span class="sc">%&gt;%</span></span>
 <span id="cb477-3"><a href="text-analytics-a-start.html#cb477-3" aria-hidden="true" tabindex="-1"></a>    dfm <span class="sc">%&gt;%</span></span>
 <span id="cb477-4"><a href="text-analytics-a-start.html#cb477-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dfm_remove</span>(<span class="fu">stopwords</span>(<span class="st">&quot;en&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb477-5"><a href="text-analytics-a-start.html#cb477-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dfm_trim</span>(<span class="at">min_termfreq =</span> <span class="dv">10</span>, <span class="at">termfreq_type =</span> <span class="st">&quot;count&quot;</span>, <span class="at">min_docfreq =</span> <span class="dv">3</span>, <span class="at">max_docfreq =</span> <span class="fu">ndoc</span>(corp_us) <span class="sc">-</span> <span class="dv">1</span>,</span>
-<span id="cb477-6"><a href="text-analytics-a-start.html#cb477-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">docfreq_type =</span> <span class="st">&quot;count&quot;</span>)</span></code></pre></div>
+<span id="cb477-5"><a href="text-analytics-a-start.html#cb477-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dfm_trim</span>(<span class="at">min_termfreq =</span> <span class="dv">10</span>, <span class="at">termfreq_type =</span> <span class="st">&quot;count&quot;</span>, <span class="at">min_docfreq =</span> <span class="dv">3</span>, <span class="at">max_docfreq =</span> <span class="fu">ndoc</span>(corp_us) <span class="sc">-</span></span>
+<span id="cb477-6"><a href="text-analytics-a-start.html#cb477-6" aria-hidden="true" tabindex="-1"></a>        <span class="dv">1</span>, <span class="at">docfreq_type =</span> <span class="st">&quot;count&quot;</span>)</span></code></pre></div>
 </div>
 <div id="top-features" class="section level2" number="12.8">
 <h2><span class="header-section-number">12.8</span> Top Features</h2>
 <p>With a <code>dfm</code>, we can check important features from the corpus.</p>
 <div class="sourceCode" id="cb478"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb478-1"><a href="text-analytics-a-start.html#cb478-1" aria-hidden="true" tabindex="-1"></a><span class="fu">topfeatures</span>(corp_dfm_trimmed, <span class="dv">10</span>)</span></code></pre></div>
-<pre class="Rout"><code>    people government         us        can       must       upon      great        may     states 
-       584        564        505        487        376        371        344        343        334 
-     world 
-       319 </code></pre>
+<pre class="Rout"><code>    people government         us        can       must       upon      great 
+       584        564        505        487        376        371        344 
+       may     states      world 
+       343        334        319 </code></pre>
 </div>
 <div id="wordclouds" class="section level2" number="12.9">
 <h2><span class="header-section-number">12.9</span> Wordclouds</h2>
@@ -668,7 +685,7 @@ docs              fellow-citizens  of the senate and house representatives : amo
 <div class="sourceCode" id="cb480"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb480-1"><a href="text-analytics-a-start.html#cb480-1" aria-hidden="true" tabindex="-1"></a>corp_dfm_trimmed <span class="sc">%&gt;%</span></span>
 <span id="cb480-2"><a href="text-analytics-a-start.html#cb480-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">textplot_wordcloud</span>(<span class="at">min_count =</span> <span class="dv">50</span>, <span class="at">random_order =</span> <span class="cn">FALSE</span>, <span class="at">rotation =</span> <span class="fl">0.25</span>, <span class="at">color =</span> RColorBrewer<span class="sc">::</span><span class="fu">brewer.pal</span>(<span class="dv">8</span>,</span>
 <span id="cb480-3"><a href="text-analytics-a-start.html#cb480-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;Dark2&quot;</span>))</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-494-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-459-1.png" width="672" /></p>
 <p>We can also compare word clouds for different subsets of the corpus:</p>
 <div class="sourceCode" id="cb481"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb481-1"><a href="text-analytics-a-start.html#cb481-1" aria-hidden="true" tabindex="-1"></a><span class="fu">corpus_subset</span>(corp_us, President <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Obama&quot;</span>, <span class="st">&quot;Trump&quot;</span>, <span class="st">&quot;Clinton&quot;</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb481-2"><a href="text-analytics-a-start.html#cb481-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tokens</span>(<span class="at">remove_punct =</span> T, <span class="at">remove_numbers =</span> T, <span class="at">remove_symbols =</span> T) <span class="sc">%&gt;%</span></span>
@@ -677,11 +694,11 @@ docs              fellow-citizens  of the senate and house representatives : amo
 <span id="cb481-5"><a href="text-analytics-a-start.html#cb481-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dfm_remove</span>(<span class="fu">stopwords</span>(<span class="st">&quot;en&quot;</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb481-6"><a href="text-analytics-a-start.html#cb481-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dfm_trim</span>(<span class="at">min_termfreq =</span> <span class="dv">5</span>, <span class="at">termfreq_type =</span> <span class="st">&quot;count&quot;</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb481-7"><a href="text-analytics-a-start.html#cb481-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">textplot_wordcloud</span>(<span class="at">comparison =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-495-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-460-1.png" width="672" /></p>
 </div>
 <div id="keyness-analysis" class="section level2" number="12.10">
 <h2><span class="header-section-number">12.10</span> Keyness Analysis</h2>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-496-1.png" width="100%" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-461-1.png" width="100%" /></p>
 </div>
 <div id="flowchart" class="section level2" number="12.11">
 <h2><span class="header-section-number">12.11</span> Flowchart</h2>
@@ -704,7 +721,7 @@ Figure 12.1: Computational Text Processing Flowchart in R
 <span id="cb482-4"><a href="text-analytics-a-start.html#cb482-4" aria-hidden="true" tabindex="-1"></a>    corpus</span></code></pre></div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-498" class="exercise"><strong>Exercise 12.3  </strong></span>Please create a data frame, which includes the metadata information for each text. You may start with a data frame you get from <code>summary(corp_tw)</code> and then create two additional columns—<code>President</code> and <code>Year</code>, which can be extracted from the text filenames in the <code>Text</code> column.</p>
+<p><span id="exr:unnamed-chunk-463" class="exercise"><strong>Exercise 12.3  </strong></span>Please create a data frame, which includes the metadata information for each text. You may start with a data frame you get from <code>summary(corp_tw)</code> and then create two additional columns—<code>President</code> and <code>Year</code>, which can be extracted from the text filenames in the <code>Text</code> column.</p>
 Hint: <code>tidyr::extract()</code>
 </div>
 <div class="sourceCode" id="cb483"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb483-1"><a href="text-analytics-a-start.html#cb483-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(corp_tw) <span class="sc">%&gt;%</span></span>
@@ -722,24 +739,24 @@ Hint: <code>tidyr::extract()</code>
 </div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-501" class="exercise"><strong>Exercise 12.4  </strong></span>Please create a lexical density plot for the use of “台灣” in all presidents’ texts.
+<span id="exr:unnamed-chunk-466" class="exercise"><strong>Exercise 12.4  </strong></span>Please create a lexical density plot for the use of “台灣” in all presidents’ texts.
 </div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-502-1.png" width="100%" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-467-1.png" width="100%" /></p>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-503" class="exercise"><strong>Exercise 12.5  </strong></span>Please create a word cloud of the entire corpus <code>corp_tw</code>. In the word cloud, please remove punctuations, numbers, and symbols. The word cloud has to only include words whose frequency &gt;= 20.
+<span id="exr:unnamed-chunk-468" class="exercise"><strong>Exercise 12.5  </strong></span>Please create a word cloud of the entire corpus <code>corp_tw</code>. In the word cloud, please remove punctuations, numbers, and symbols. The word cloud has to only include words whose frequency &gt;= 20.
 </div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-504-1.png" width="100%" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-469-1.png" width="100%" /></p>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-505" class="exercise"><strong>Exercise 12.6  </strong></span>Create word clouds showing the comparison of President Tsai (<code>CAYANGWEN</code>), Ma (<code>MAYANGJIU</code>), and Shuibian Chen (<code>CHENSHUIBIAN</code>).
+<span id="exr:unnamed-chunk-470" class="exercise"><strong>Exercise 12.6  </strong></span>Create word clouds showing the comparison of President Tsai (<code>CAYANGWEN</code>), Ma (<code>MAYANGJIU</code>), and Shuibian Chen (<code>CHENSHUIBIAN</code>).
 </div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-506-1.png" width="100%" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-471-1.png" width="100%" /></p>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-507" class="exercise"><strong>Exercise 12.7  </strong></span>Please create a keyness plot, showing the preferred words used by President Tsai (<code>CAYANGWEN</code>) vs. President Ma (<code>MAYANGJIU</code>).
+<span id="exr:unnamed-chunk-472" class="exercise"><strong>Exercise 12.7  </strong></span>Please create a keyness plot, showing the preferred words used by President Tsai (<code>CAYANGWEN</code>) vs. President Ma (<code>MAYANGJIU</code>).
 </div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-508-1.png" width="100%" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-473-1.png" width="100%" /></p>
 
 </div>
 </div>
