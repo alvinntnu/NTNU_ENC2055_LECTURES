@@ -590,7 +590,7 @@ Detailed traceback:
 </ul></li>
 </ul>
 <div class="sourceCode" id="cb24"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb24-1"><a href="web-scraping.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests, bs4</span>
-<span id="cb24-2"><a href="web-scraping.html#cb24-2" aria-hidden="true" tabindex="-1"></a>target<span class="op">=</span><span class="st">&#39;produce&#39;</span></span>
+<span id="cb24-2"><a href="web-scraping.html#cb24-2" aria-hidden="true" tabindex="-1"></a>target<span class="op">=</span><span class="st">&#39;individual&#39;</span></span>
 <span id="cb24-3"><a href="web-scraping.html#cb24-3" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> requests.get(<span class="st">&#39;https://www.dictionary.com/browse/&#39;</span> <span class="op">+</span> target)</span>
 <span id="cb24-4"><a href="web-scraping.html#cb24-4" aria-hidden="true" tabindex="-1"></a>res.raise_for_status()</span>
 <span id="cb24-5"><a href="web-scraping.html#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
@@ -620,7 +620,7 @@ Detailed traceback:
 <span id="cb24-29"><a href="web-scraping.html#cb24-29" aria-hidden="true" tabindex="-1"></a>          cur_pos <span class="op">=</span> pos.select(<span class="st">&#39;.luna-pos&#39;</span>)[<span class="dv">0</span>].getText()</span>
 <span id="cb24-30"><a href="web-scraping.html#cb24-30" aria-hidden="true" tabindex="-1"></a>          <span class="co">#print(&#39;=&#39;*10)</span></span>
 <span id="cb24-31"><a href="web-scraping.html#cb24-31" aria-hidden="true" tabindex="-1"></a>          <span class="co">#print(&#39;POS: &#39;, cur_pos.upper())</span></span>
-<span id="cb24-32"><a href="web-scraping.html#cb24-32" aria-hidden="true" tabindex="-1"></a>          cur_definitions <span class="op">=</span> pos.select(<span class="st">&#39;div[value] &gt; span.one-click-content&#39;</span>)</span>
+<span id="cb24-32"><a href="web-scraping.html#cb24-32" aria-hidden="true" tabindex="-1"></a>          cur_definitions <span class="op">=</span> pos.select(<span class="st">&#39;div[value]&#39;</span>)</span>
 <span id="cb24-33"><a href="web-scraping.html#cb24-33" aria-hidden="true" tabindex="-1"></a>          cur_sense_list <span class="op">=</span>[]</span>
 <span id="cb24-34"><a href="web-scraping.html#cb24-34" aria-hidden="true" tabindex="-1"></a>          <span class="co"># for each definition in the current POS</span></span>
 <span id="cb24-35"><a href="web-scraping.html#cb24-35" aria-hidden="true" tabindex="-1"></a>          <span class="cf">for</span> sense <span class="kw">in</span> cur_definitions:</span>
@@ -643,7 +643,9 @@ Detailed traceback:
 <span id="cb24-52"><a href="web-scraping.html#cb24-52" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
 <span id="cb24-53"><a href="web-scraping.html#cb24-53" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-54"><a href="web-scraping.html#cb24-54" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(target<span class="op">+</span><span class="st">&#39;.json&#39;</span>, <span class="st">&#39;w&#39;</span>, encoding<span class="op">=</span><span class="st">&#39;utf-8&#39;</span>) <span class="im">as</span> f:</span>
-<span id="cb24-55"><a href="web-scraping.html#cb24-55" aria-hidden="true" tabindex="-1"></a>  json.dump(cur_word, f, ensure_ascii<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+<span id="cb24-55"><a href="web-scraping.html#cb24-55" aria-hidden="true" tabindex="-1"></a>  json.dump(cur_word, f, ensure_ascii<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb24-56"><a href="web-scraping.html#cb24-56" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb24-57"><a href="web-scraping.html#cb24-57" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(json.dumps(cur_word, sort_keys<span class="op">=</span><span class="va">False</span>, indent<span class="op">=</span><span class="dv">4</span>, ensure_ascii<span class="op">=</span><span class="va">False</span>))</span></code></pre></div>
 <div class="sourceCode" id="cb25"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb25-1"><a href="web-scraping.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
 <span id="cb25-2"><a href="web-scraping.html#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-3"><a href="web-scraping.html#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;produce.json&#39;</span>,<span class="st">&#39;r&#39;</span>, encoding<span class="op">=</span><span class="st">&#39;utf-8&#39;</span>) <span class="im">as</span> f:</span>
@@ -731,20 +733,62 @@ Detailed traceback:
 <div class="sourceCode" id="cb29"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb29-1"><a href="web-scraping.html#cb29-1" aria-hidden="true" tabindex="-1"></a>checkwords(targets<span class="op">=</span>[<span class="st">&quot;individual&quot;</span>, <span class="st">&quot;wonderful&quot;</span>], outdir <span class="op">=</span> <span class="st">&#39;dictionary_results/&#39;</span>)</span></code></pre></div>
 <div class="sourceCode" id="cb30"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb30-1"><a href="web-scraping.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
 <span id="cb30-2"><a href="web-scraping.html#cb30-2" aria-hidden="true" tabindex="-1"></a>outdir <span class="op">=</span> <span class="st">&#39;dictionary_results/&#39;</span></span>
-<span id="cb30-3"><a href="web-scraping.html#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(outdir<span class="op">+</span><span class="st">&#39;wonderful.json&#39;</span>,<span class="st">&#39;r&#39;</span>) <span class="im">as</span> f:</span>
+<span id="cb30-3"><a href="web-scraping.html#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(outdir<span class="op">+</span><span class="st">&#39;individual.json&#39;</span>,<span class="st">&#39;r&#39;</span>) <span class="im">as</span> f:</span>
 <span id="cb30-4"><a href="web-scraping.html#cb30-4" aria-hidden="true" tabindex="-1"></a>  cur_word <span class="op">=</span> json.load(f)</span>
 <span id="cb30-5"><a href="web-scraping.html#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(json.dumps(cur_word, sort_keys<span class="op">=</span><span class="va">False</span>, indent<span class="op">=</span><span class="dv">4</span>, ensure_ascii<span class="op">=</span><span class="va">False</span>))</span></code></pre></div>
 <pre class="Rout"><code>{
-    &quot;headword&quot;: &quot;wonderful&quot;,
-    &quot;pronunciation&quot;: &quot;/ ˈwʌn dər fəl  /&quot;,
-    &quot;adjective&quot;: [
+    &quot;headword&quot;: &quot;individual&quot;,
+    &quot;pronunciation&quot;: &quot;/ ˌɪn dəˈvɪdʒ u əl  /&quot;,
+    &quot;noun&quot;: [
         {
-            &quot;definition&quot;: &quot;excellent; great; marvelous: &quot;,
-            &quot;example&quot;: &quot;We all had a wonderful weekend.&quot;
+            &quot;definition&quot;: &quot;a single human being, as distinguished from a group.&quot;,
+            &quot;example&quot;: &quot;&quot;
         },
         {
-            &quot;definition&quot;: &quot;of a sort that causes or arouses wonder;  amazing; astonishing: &quot;,
-            &quot;example&quot;: &quot;The storm was wonderful to behold.&quot;
+            &quot;definition&quot;: &quot;a person: &quot;,
+            &quot;example&quot;: &quot;a strange individual.&quot;
+        },
+        {
+            &quot;definition&quot;: &quot;a distinct, indivisible entity; a single thing, being, instance, or item.&quot;,
+            &quot;example&quot;: &quot;&quot;
+        },
+        {
+            &quot;definition&quot;: &quot;a group considered as a unit.&quot;,
+            &quot;example&quot;: &quot;&quot;
+        },
+        {
+            &quot;definition&quot;: &quot;Biology.  a single organism capable of independent existence. a member of a compound organism or colony.&quot;,
+            &quot;example&quot;: &quot;&quot;
+        },
+        {
+            &quot;definition&quot;: &quot;Cards. a duplicate-bridge tournament in which each player plays the same number of hands in partnership with every other player, individual scores for each player being kept for each hand.&quot;,
+            &quot;example&quot;: &quot;&quot;
+        }
+    ],
+    &quot;adjective&quot;: [
+        {
+            &quot;definition&quot;: &quot;single; particular; separate: &quot;,
+            &quot;example&quot;: &quot;to number individual copies of a limited edition.&quot;
+        },
+        {
+            &quot;definition&quot;: &quot;intended for the use of one person only: &quot;,
+            &quot;example&quot;: &quot;to serve individual portions of a pizza.&quot;
+        },
+        {
+            &quot;definition&quot;: &quot;of, relating to, or characteristic of a particular person or thing: &quot;,
+            &quot;example&quot;: &quot;individual tastes.&quot;
+        },
+        {
+            &quot;definition&quot;: &quot;distinguished by special, singular, or markedly personal characteristics; exhibiting unique or unusual qualities: &quot;,
+            &quot;example&quot;: &quot;a highly individual style of painting.&quot;
+        },
+        {
+            &quot;definition&quot;: &quot;existing as a distinct, indivisible entity, or considered as such; discrete: &quot;,
+            &quot;example&quot;: &quot;individual parts of a tea set.&quot;
+        },
+        {
+            &quot;definition&quot;: &quot;of which each is different or of a different design from the others: &quot;,
+            &quot;example&quot;: &quot;a set of individual coffee cups.&quot;
         }
     ]
 }</code></pre>
