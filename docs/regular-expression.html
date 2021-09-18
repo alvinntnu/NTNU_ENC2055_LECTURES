@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 14 Regular Expression | ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
+  <title>Chapter 17 Regular Expression | ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
   <meta name="description" content="ENC2055 Course material second edition" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 14 Regular Expression | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
+  <meta property="og:title" content="Chapter 17 Regular Expression | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 14 Regular Expression | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
+  <meta name="twitter:title" content="Chapter 17 Regular Expression | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
   
   <meta name="twitter:description" content="ENC2055 Course material second edition" />
   
@@ -24,16 +24,16 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-06-20" />
+<meta name="date" content="2021-09-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="python-fundamentals.html"/>
+<link rel="prev" href="object-orientation.html"/>
 <link rel="next" href="pandas.html"/>
-<script src="libs/header-attrs-2.8.6/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -63,6 +63,9 @@
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
+<link href="libs/font-awesome-5.13.0/css/all.min.css" rel="stylesheet" />
+<link href="libs/font-awesome-5.13.0/css/v4-shims.min.css" rel="stylesheet" />
+<script src="https://hypothes.is/embed.js" async></script>
 
 
 <style type="text/css">
@@ -175,6 +178,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-objective"><i class="fa fa-check"></i>Course Objective</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#textbook"><i class="fa fa-check"></i>Textbook</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-website"><i class="fa fa-check"></i>Course Website</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributing-to-the-lecture-notes"><i class="fa fa-check"></i>Contributing to the Lecture Notes</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-demo-data"><i class="fa fa-check"></i>Course Demo Data</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#questions"><i class="fa fa-check"></i>Questions?</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#necessary-packages"><i class="fa fa-check"></i>Necessary Packages</a></li>
@@ -223,247 +227,296 @@ div.csl-indent {
 <li class="chapter" data-level="4.4" data-path="subsetting.html"><a href="subsetting.html#data-frame"><i class="fa fa-check"></i><b>4.4</b> Data Frame</a></li>
 <li class="chapter" data-level="4.5" data-path="subsetting.html"><a href="subsetting.html#tibble"><i class="fa fa-check"></i><b>4.5</b> Tibble</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>5</b> Data Visualization</a>
+<li class="chapter" data-level="5" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html"><i class="fa fa-check"></i><b>5</b> Conditions and Loops</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="data-visualization.html"><a href="data-visualization.html#why-visualization"><i class="fa fa-check"></i><b>5.1</b> Why Visualization?</a>
+<li class="chapter" data-level="5.1" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#conditions"><i class="fa fa-check"></i><b>5.1</b> Conditions</a>
 <ul>
-<li class="chapter" data-level="5.1.1" data-path="data-visualization.html"><a href="data-visualization.html#datasaurus-dozen-dataset"><i class="fa fa-check"></i><b>5.1.1</b> Datasaurus Dozen Dataset</a></li>
-<li class="chapter" data-level="5.1.2" data-path="data-visualization.html"><a href="data-visualization.html#simpsons-paradox"><i class="fa fa-check"></i><b>5.1.2</b> Simpson’s Paradox</a></li>
+<li class="chapter" data-level="5.1.1" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#boolean-values"><i class="fa fa-check"></i><b>5.1.1</b> Boolean Values</a></li>
+<li class="chapter" data-level="5.1.2" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#comparison-operators"><i class="fa fa-check"></i><b>5.1.2</b> Comparison Operators</a></li>
+<li class="chapter" data-level="5.1.3" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#boolean-operators"><i class="fa fa-check"></i><b>5.1.3</b> Boolean Operators</a></li>
+<li class="chapter" data-level="5.1.4" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#elements-of-flow-control"><i class="fa fa-check"></i><b>5.1.4</b> Elements of Flow Control</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="data-visualization.html"><a href="data-visualization.html#ggplot2"><i class="fa fa-check"></i><b>5.2</b> <code>ggplot2</code></a></li>
-<li class="chapter" data-level="5.3" data-path="data-visualization.html"><a href="data-visualization.html#variables-and-data-type"><i class="fa fa-check"></i><b>5.3</b> Variables and Data Type</a></li>
-<li class="chapter" data-level="5.4" data-path="data-visualization.html"><a href="data-visualization.html#one-variable-graph"><i class="fa fa-check"></i><b>5.4</b> One-variable Graph</a></li>
-<li class="chapter" data-level="5.5" data-path="data-visualization.html"><a href="data-visualization.html#two-variable-graph"><i class="fa fa-check"></i><b>5.5</b> Two-variable Graph</a></li>
-<li class="chapter" data-level="5.6" data-path="data-visualization.html"><a href="data-visualization.html#adding-other-aesthetic-features"><i class="fa fa-check"></i><b>5.6</b> Adding Other Aesthetic Features</a>
-<ul>
-<li class="chapter" data-level="5.6.1" data-path="data-visualization.html"><a href="data-visualization.html#color"><i class="fa fa-check"></i><b>5.6.1</b> <code>color</code></a></li>
-<li class="chapter" data-level="5.6.2" data-path="data-visualization.html"><a href="data-visualization.html#shape"><i class="fa fa-check"></i><b>5.6.2</b> <code>shape</code></a></li>
-<li class="chapter" data-level="5.6.3" data-path="data-visualization.html"><a href="data-visualization.html#other-geom_...-layers"><i class="fa fa-check"></i><b>5.6.3</b> Other <code>geom_...</code> Layers</a></li>
-<li class="chapter" data-level="5.6.4" data-path="data-visualization.html"><a href="data-visualization.html#labels"><i class="fa fa-check"></i><b>5.6.4</b> Labels</a></li>
-<li class="chapter" data-level="5.6.5" data-path="data-visualization.html"><a href="data-visualization.html#fill"><i class="fa fa-check"></i><b>5.6.5</b> <code>fill</code></a></li>
-<li class="chapter" data-level="5.6.6" data-path="data-visualization.html"><a href="data-visualization.html#interim-summary"><i class="fa fa-check"></i><b>5.6.6</b> Interim Summary</a></li>
+<li class="chapter" data-level="5.2" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#if-statements"><i class="fa fa-check"></i><b>5.2</b> <code>if</code> Statements</a></li>
+<li class="chapter" data-level="5.3" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#for"><i class="fa fa-check"></i><b>5.3</b> <code>for</code></a></li>
+<li class="chapter" data-level="5.4" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#while-loop"><i class="fa fa-check"></i><b>5.4</b> <code>while</code> loop</a></li>
+<li class="chapter" data-level="5.5" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#toy-example"><i class="fa fa-check"></i><b>5.5</b> Toy Example</a></li>
 </ul></li>
-<li class="chapter" data-level="5.7" data-path="data-visualization.html"><a href="data-visualization.html#saving-plots"><i class="fa fa-check"></i><b>5.7</b> Saving Plots</a></li>
-<li class="chapter" data-level="5.8" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-iris"><i class="fa fa-check"></i><b>5.8</b> Exercises on <code>iris</code></a></li>
-<li class="chapter" data-level="5.9" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-covid-19"><i class="fa fa-check"></i><b>5.9</b> Exercises on COVID-19</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="data-manipulation.html"><a href="data-manipulation.html"><i class="fa fa-check"></i><b>6</b> Data Manipulation</a>
+<li class="chapter" data-level="6" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>6</b> Functions</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="data-manipulation.html"><a href="data-manipulation.html#dataset"><i class="fa fa-check"></i><b>6.1</b> Dataset</a></li>
-<li class="chapter" data-level="6.2" data-path="data-manipulation.html"><a href="data-manipulation.html#rename"><i class="fa fa-check"></i><b>6.2</b> <code>rename()</code></a></li>
-<li class="chapter" data-level="6.3" data-path="data-manipulation.html"><a href="data-manipulation.html#pipe"><i class="fa fa-check"></i><b>6.3</b> Pipe <code>%&gt;%</code></a></li>
-<li class="chapter" data-level="6.4" data-path="data-manipulation.html"><a href="data-manipulation.html#mutate"><i class="fa fa-check"></i><b>6.4</b> <code>mutate()</code></a></li>
-<li class="chapter" data-level="6.5" data-path="data-manipulation.html"><a href="data-manipulation.html#select"><i class="fa fa-check"></i><b>6.5</b> <code>select()</code></a></li>
-<li class="chapter" data-level="6.6" data-path="data-manipulation.html"><a href="data-manipulation.html#filter"><i class="fa fa-check"></i><b>6.6</b> <code>filter()</code></a></li>
-<li class="chapter" data-level="6.7" data-path="data-manipulation.html"><a href="data-manipulation.html#arrange"><i class="fa fa-check"></i><b>6.7</b> <code>arrange()</code></a></li>
-<li class="chapter" data-level="6.8" data-path="data-manipulation.html"><a href="data-manipulation.html#group_by-and-summarize"><i class="fa fa-check"></i><b>6.8</b> <code>group_by()</code> and <code>summarize()</code></a></li>
-<li class="chapter" data-level="6.9" data-path="data-manipulation.html"><a href="data-manipulation.html#count"><i class="fa fa-check"></i><b>6.9</b> <code>count()</code></a></li>
-<li class="chapter" data-level="6.10" data-path="data-manipulation.html"><a href="data-manipulation.html#tidy-data"><i class="fa fa-check"></i><b>6.10</b> Tidy Data</a>
-<ul>
-<li class="chapter" data-level="6.10.1" data-path="data-manipulation.html"><a href="data-manipulation.html#an-long-to-wide-example"><i class="fa fa-check"></i><b>6.10.1</b> An Long-to-Wide Example</a></li>
-<li class="chapter" data-level="6.10.2" data-path="data-manipulation.html"><a href="data-manipulation.html#a-wide-to-long-example"><i class="fa fa-check"></i><b>6.10.2</b> A Wide-to-Long Example</a></li>
+<li class="chapter" data-level="6.1" data-path="functions.html"><a href="functions.html#a-quick-start"><i class="fa fa-check"></i><b>6.1</b> A Quick Start</a></li>
+<li class="chapter" data-level="6.2" data-path="functions.html"><a href="functions.html#why-do-we-need-functions"><i class="fa fa-check"></i><b>6.2</b> Why do we need functions?</a></li>
+<li class="chapter" data-level="6.3" data-path="functions.html"><a href="functions.html#functions-with-parameters"><i class="fa fa-check"></i><b>6.3</b> Functions with parameters</a></li>
+<li class="chapter" data-level="6.4" data-path="functions.html"><a href="functions.html#recap-of-important-concepts-so-far"><i class="fa fa-check"></i><b>6.4</b> Recap of Important Concepts So Far</a></li>
+<li class="chapter" data-level="6.5" data-path="functions.html"><a href="functions.html#return-statements"><i class="fa fa-check"></i><b>6.5</b> RETURN Statements</a></li>
+<li class="chapter" data-level="6.6" data-path="functions.html"><a href="functions.html#parameters-order"><i class="fa fa-check"></i><b>6.6</b> Parameters Order</a></li>
+<li class="chapter" data-level="6.7" data-path="functions.html"><a href="functions.html#stacking-functions"><i class="fa fa-check"></i><b>6.7</b> Stacking Functions</a></li>
+<li class="chapter" data-level="6.8" data-path="functions.html"><a href="functions.html#local-and-global-scope"><i class="fa fa-check"></i><b>6.8</b> Local and Global Scope</a></li>
+<li class="chapter" data-level="6.9" data-path="functions.html"><a href="functions.html#exception-handling"><i class="fa fa-check"></i><b>6.9</b> Exception Handling</a></li>
 </ul></li>
-<li class="chapter" data-level="6.11" data-path="data-manipulation.html"><a href="data-manipulation.html#exerceises"><i class="fa fa-check"></i><b>6.11</b> Exerceises</a></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="string-manipulation.html"><a href="string-manipulation.html"><i class="fa fa-check"></i><b>7</b> String Manipulation</a>
+<li class="chapter" data-level="7" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>7</b> Data Visualization</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="string-manipulation.html"><a href="string-manipulation.html#what-is-regular-expression"><i class="fa fa-check"></i><b>7.1</b> What is Regular Expression?</a></li>
-<li class="chapter" data-level="7.2" data-path="string-manipulation.html"><a href="string-manipulation.html#string-basics"><i class="fa fa-check"></i><b>7.2</b> String Basics</a></li>
-<li class="chapter" data-level="7.3" data-path="string-manipulation.html"><a href="string-manipulation.html#a-good-tool-regexplain"><i class="fa fa-check"></i><b>7.3</b> A Good Tool: <code>RegExplain</code></a></li>
-<li class="chapter" data-level="7.4" data-path="string-manipulation.html"><a href="string-manipulation.html#regular-expression-grammar"><i class="fa fa-check"></i><b>7.4</b> Regular Expression Grammar</a>
+<li class="chapter" data-level="7.1" data-path="data-visualization.html"><a href="data-visualization.html#why-visualization"><i class="fa fa-check"></i><b>7.1</b> Why Visualization?</a>
 <ul>
-<li class="chapter" data-level="7.4.1" data-path="string-manipulation.html"><a href="string-manipulation.html#metacharacters"><i class="fa fa-check"></i><b>7.4.1</b> Metacharacters</a></li>
-<li class="chapter" data-level="7.4.2" data-path="string-manipulation.html"><a href="string-manipulation.html#anchors"><i class="fa fa-check"></i><b>7.4.2</b> Anchors</a></li>
-<li class="chapter" data-level="7.4.3" data-path="string-manipulation.html"><a href="string-manipulation.html#character-set"><i class="fa fa-check"></i><b>7.4.3</b> Character Set</a></li>
-<li class="chapter" data-level="7.4.4" data-path="string-manipulation.html"><a href="string-manipulation.html#alternatives"><i class="fa fa-check"></i><b>7.4.4</b> Alternatives</a></li>
-<li class="chapter" data-level="7.4.5" data-path="string-manipulation.html"><a href="string-manipulation.html#quantifiers"><i class="fa fa-check"></i><b>7.4.5</b> Quantifiers</a></li>
-<li class="chapter" data-level="7.4.6" data-path="string-manipulation.html"><a href="string-manipulation.html#greedy-vs.-non-greedy-match"><i class="fa fa-check"></i><b>7.4.6</b> Greedy vs. Non-greedy match</a></li>
-<li class="chapter" data-level="7.4.7" data-path="string-manipulation.html"><a href="string-manipulation.html#group-and-back-reference"><i class="fa fa-check"></i><b>7.4.7</b> Group and Back-reference</a></li>
+<li class="chapter" data-level="7.1.1" data-path="data-visualization.html"><a href="data-visualization.html#datasaurus-dozen-dataset"><i class="fa fa-check"></i><b>7.1.1</b> Datasaurus Dozen Dataset</a></li>
+<li class="chapter" data-level="7.1.2" data-path="data-visualization.html"><a href="data-visualization.html#simpsons-paradox"><i class="fa fa-check"></i><b>7.1.2</b> Simpson’s Paradox</a></li>
 </ul></li>
-<li class="chapter" data-level="7.5" data-path="string-manipulation.html"><a href="string-manipulation.html#pattern-matching"><i class="fa fa-check"></i><b>7.5</b> Pattern Matching</a>
+<li class="chapter" data-level="7.2" data-path="data-visualization.html"><a href="data-visualization.html#ggplot2"><i class="fa fa-check"></i><b>7.2</b> <code>ggplot2</code></a></li>
+<li class="chapter" data-level="7.3" data-path="data-visualization.html"><a href="data-visualization.html#variables-and-data-type"><i class="fa fa-check"></i><b>7.3</b> Variables and Data Type</a></li>
+<li class="chapter" data-level="7.4" data-path="data-visualization.html"><a href="data-visualization.html#one-variable-graph"><i class="fa fa-check"></i><b>7.4</b> One-variable Graph</a></li>
+<li class="chapter" data-level="7.5" data-path="data-visualization.html"><a href="data-visualization.html#two-variable-graph"><i class="fa fa-check"></i><b>7.5</b> Two-variable Graph</a></li>
+<li class="chapter" data-level="7.6" data-path="data-visualization.html"><a href="data-visualization.html#adding-other-aesthetic-features"><i class="fa fa-check"></i><b>7.6</b> Adding Other Aesthetic Features</a>
 <ul>
-<li class="chapter" data-level="7.5.1" data-path="string-manipulation.html"><a href="string-manipulation.html#str_detect"><i class="fa fa-check"></i><b>7.5.1</b> <code>str_detect()</code></a></li>
-<li class="chapter" data-level="7.5.2" data-path="string-manipulation.html"><a href="string-manipulation.html#str_subset"><i class="fa fa-check"></i><b>7.5.2</b> <code>str_subset()</code></a></li>
-<li class="chapter" data-level="7.5.3" data-path="string-manipulation.html"><a href="string-manipulation.html#str_extract"><i class="fa fa-check"></i><b>7.5.3</b> <code>str_extract()</code></a></li>
-<li class="chapter" data-level="7.5.4" data-path="string-manipulation.html"><a href="string-manipulation.html#str_match"><i class="fa fa-check"></i><b>7.5.4</b> <code>str_match()</code></a></li>
-<li class="chapter" data-level="7.5.5" data-path="string-manipulation.html"><a href="string-manipulation.html#str_replace"><i class="fa fa-check"></i><b>7.5.5</b> <code>str_replace()</code></a></li>
-<li class="chapter" data-level="7.5.6" data-path="string-manipulation.html"><a href="string-manipulation.html#str_split"><i class="fa fa-check"></i><b>7.5.6</b> <code>str_split()</code></a></li>
+<li class="chapter" data-level="7.6.1" data-path="data-visualization.html"><a href="data-visualization.html#color"><i class="fa fa-check"></i><b>7.6.1</b> <code>color</code></a></li>
+<li class="chapter" data-level="7.6.2" data-path="data-visualization.html"><a href="data-visualization.html#shape"><i class="fa fa-check"></i><b>7.6.2</b> <code>shape</code></a></li>
+<li class="chapter" data-level="7.6.3" data-path="data-visualization.html"><a href="data-visualization.html#other-geom_...-layers"><i class="fa fa-check"></i><b>7.6.3</b> Other <code>geom_...</code> Layers</a></li>
+<li class="chapter" data-level="7.6.4" data-path="data-visualization.html"><a href="data-visualization.html#labels"><i class="fa fa-check"></i><b>7.6.4</b> Labels</a></li>
+<li class="chapter" data-level="7.6.5" data-path="data-visualization.html"><a href="data-visualization.html#fill"><i class="fa fa-check"></i><b>7.6.5</b> <code>fill</code></a></li>
+<li class="chapter" data-level="7.6.6" data-path="data-visualization.html"><a href="data-visualization.html#interim-summary"><i class="fa fa-check"></i><b>7.6.6</b> Interim Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="7.6" data-path="string-manipulation.html"><a href="string-manipulation.html#advanced-pattern-matching-look-ahead-and-behind"><i class="fa fa-check"></i><b>7.6</b> Advanced Pattern Matching: Look Ahead and Behind</a></li>
-<li class="chapter" data-level="7.7" data-path="string-manipulation.html"><a href="string-manipulation.html#more-practices"><i class="fa fa-check"></i><b>7.7</b> More Practices</a>
+<li class="chapter" data-level="7.7" data-path="data-visualization.html"><a href="data-visualization.html#saving-plots"><i class="fa fa-check"></i><b>7.7</b> Saving Plots</a></li>
+<li class="chapter" data-level="7.8" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-iris"><i class="fa fa-check"></i><b>7.8</b> Exercises on <code>iris</code></a></li>
+<li class="chapter" data-level="7.9" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-covid-19"><i class="fa fa-check"></i><b>7.9</b> Exercises on COVID-19</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="data-manipulation.html"><a href="data-manipulation.html"><i class="fa fa-check"></i><b>8</b> Data Manipulation</a>
 <ul>
-<li class="chapter" data-level="7.7.1" data-path="string-manipulation.html"><a href="string-manipulation.html#case-1"><i class="fa fa-check"></i><b>7.7.1</b> Case 1</a></li>
-<li class="chapter" data-level="7.7.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-2"><i class="fa fa-check"></i><b>7.7.2</b> Case 2</a></li>
-<li class="chapter" data-level="7.7.3" data-path="string-manipulation.html"><a href="string-manipulation.html#case-3"><i class="fa fa-check"></i><b>7.7.3</b> Case 3</a></li>
-</ul></li>
-<li class="chapter" data-level="7.8" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-chinese-four-character-idioms"><i class="fa fa-check"></i><b>7.8</b> Case Study: Chinese Four-Character Idioms</a>
+<li class="chapter" data-level="8.1" data-path="data-manipulation.html"><a href="data-manipulation.html#dataset"><i class="fa fa-check"></i><b>8.1</b> Dataset</a></li>
+<li class="chapter" data-level="8.2" data-path="data-manipulation.html"><a href="data-manipulation.html#rename"><i class="fa fa-check"></i><b>8.2</b> <code>rename()</code></a></li>
+<li class="chapter" data-level="8.3" data-path="data-manipulation.html"><a href="data-manipulation.html#pipe"><i class="fa fa-check"></i><b>8.3</b> Pipe <code>%&gt;%</code></a></li>
+<li class="chapter" data-level="8.4" data-path="data-manipulation.html"><a href="data-manipulation.html#mutate"><i class="fa fa-check"></i><b>8.4</b> <code>mutate()</code></a></li>
+<li class="chapter" data-level="8.5" data-path="data-manipulation.html"><a href="data-manipulation.html#select"><i class="fa fa-check"></i><b>8.5</b> <code>select()</code></a></li>
+<li class="chapter" data-level="8.6" data-path="data-manipulation.html"><a href="data-manipulation.html#filter"><i class="fa fa-check"></i><b>8.6</b> <code>filter()</code></a></li>
+<li class="chapter" data-level="8.7" data-path="data-manipulation.html"><a href="data-manipulation.html#arrange"><i class="fa fa-check"></i><b>8.7</b> <code>arrange()</code></a></li>
+<li class="chapter" data-level="8.8" data-path="data-manipulation.html"><a href="data-manipulation.html#group_by-and-summarize"><i class="fa fa-check"></i><b>8.8</b> <code>group_by()</code> and <code>summarize()</code></a></li>
+<li class="chapter" data-level="8.9" data-path="data-manipulation.html"><a href="data-manipulation.html#count"><i class="fa fa-check"></i><b>8.9</b> <code>count()</code></a></li>
+<li class="chapter" data-level="8.10" data-path="data-manipulation.html"><a href="data-manipulation.html#tidy-data"><i class="fa fa-check"></i><b>8.10</b> Tidy Data</a>
 <ul>
-<li class="chapter" data-level="7.8.1" data-path="string-manipulation.html"><a href="string-manipulation.html#dictionary-entries"><i class="fa fa-check"></i><b>7.8.1</b> Dictionary Entries</a></li>
-<li class="chapter" data-level="7.8.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-x來y去"><i class="fa fa-check"></i><b>7.8.2</b> Case Study: <code>X來Y去</code></a></li>
+<li class="chapter" data-level="8.10.1" data-path="data-manipulation.html"><a href="data-manipulation.html#an-long-to-wide-example"><i class="fa fa-check"></i><b>8.10.1</b> An Long-to-Wide Example</a></li>
+<li class="chapter" data-level="8.10.2" data-path="data-manipulation.html"><a href="data-manipulation.html#a-wide-to-long-example"><i class="fa fa-check"></i><b>8.10.2</b> A Wide-to-Long Example</a></li>
 </ul></li>
+<li class="chapter" data-level="8.11" data-path="data-manipulation.html"><a href="data-manipulation.html#exerceises"><i class="fa fa-check"></i><b>8.11</b> Exerceises</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="data-import.html"><a href="data-import.html"><i class="fa fa-check"></i><b>8</b> Data Import</a>
+<li class="chapter" data-level="9" data-path="string-manipulation.html"><a href="string-manipulation.html"><i class="fa fa-check"></i><b>9</b> String Manipulation</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="data-import.html"><a href="data-import.html#overview"><i class="fa fa-check"></i><b>8.1</b> Overview</a>
+<li class="chapter" data-level="9.1" data-path="string-manipulation.html"><a href="string-manipulation.html#what-is-regular-expression"><i class="fa fa-check"></i><b>9.1</b> What is Regular Expression?</a></li>
+<li class="chapter" data-level="9.2" data-path="string-manipulation.html"><a href="string-manipulation.html#string-basics"><i class="fa fa-check"></i><b>9.2</b> String Basics</a></li>
+<li class="chapter" data-level="9.3" data-path="string-manipulation.html"><a href="string-manipulation.html#a-good-tool-regexplain"><i class="fa fa-check"></i><b>9.3</b> A Good Tool: <code>RegExplain</code></a></li>
+<li class="chapter" data-level="9.4" data-path="string-manipulation.html"><a href="string-manipulation.html#regular-expression-grammar"><i class="fa fa-check"></i><b>9.4</b> Regular Expression Grammar</a>
 <ul>
-<li class="chapter" data-level="8.1.1" data-path="data-import.html"><a href="data-import.html#what-is-a-csv-file"><i class="fa fa-check"></i><b>8.1.1</b> What is a <code>CSV</code> file?</a></li>
-<li class="chapter" data-level="8.1.2" data-path="data-import.html"><a href="data-import.html#why-are-.csv-files-used"><i class="fa fa-check"></i><b>8.1.2</b> Why are <code>.CSV</code> files used?</a></li>
-<li class="chapter" data-level="8.1.3" data-path="data-import.html"><a href="data-import.html#how-do-i-save-csv-files"><i class="fa fa-check"></i><b>8.1.3</b> How do I save CSV files?</a></li>
-<li class="chapter" data-level="8.1.4" data-path="data-import.html"><a href="data-import.html#what-about-other-types-of-data"><i class="fa fa-check"></i><b>8.1.4</b> What about other types of data?</a></li>
+<li class="chapter" data-level="9.4.1" data-path="string-manipulation.html"><a href="string-manipulation.html#metacharacters"><i class="fa fa-check"></i><b>9.4.1</b> Metacharacters</a></li>
+<li class="chapter" data-level="9.4.2" data-path="string-manipulation.html"><a href="string-manipulation.html#anchors"><i class="fa fa-check"></i><b>9.4.2</b> Anchors</a></li>
+<li class="chapter" data-level="9.4.3" data-path="string-manipulation.html"><a href="string-manipulation.html#character-set"><i class="fa fa-check"></i><b>9.4.3</b> Character Set</a></li>
+<li class="chapter" data-level="9.4.4" data-path="string-manipulation.html"><a href="string-manipulation.html#alternatives"><i class="fa fa-check"></i><b>9.4.4</b> Alternatives</a></li>
+<li class="chapter" data-level="9.4.5" data-path="string-manipulation.html"><a href="string-manipulation.html#quantifiers"><i class="fa fa-check"></i><b>9.4.5</b> Quantifiers</a></li>
+<li class="chapter" data-level="9.4.6" data-path="string-manipulation.html"><a href="string-manipulation.html#greedy-vs.-non-greedy-match"><i class="fa fa-check"></i><b>9.4.6</b> Greedy vs. Non-greedy match</a></li>
+<li class="chapter" data-level="9.4.7" data-path="string-manipulation.html"><a href="string-manipulation.html#group-and-back-reference"><i class="fa fa-check"></i><b>9.4.7</b> Group and Back-reference</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="data-import.html"><a href="data-import.html#importing-data"><i class="fa fa-check"></i><b>8.2</b> Importing Data</a></li>
-<li class="chapter" data-level="8.3" data-path="data-import.html"><a href="data-import.html#character-encoding"><i class="fa fa-check"></i><b>8.3</b> Character Encoding</a>
+<li class="chapter" data-level="9.5" data-path="string-manipulation.html"><a href="string-manipulation.html#pattern-matching"><i class="fa fa-check"></i><b>9.5</b> Pattern Matching</a>
 <ul>
-<li class="chapter" data-level="8.3.1" data-path="data-import.html"><a href="data-import.html#problems-with-ascii"><i class="fa fa-check"></i><b>8.3.1</b> Problems with ASCII</a></li>
-<li class="chapter" data-level="8.3.2" data-path="data-import.html"><a href="data-import.html#from-7-bit-to-one-byte-encoding"><i class="fa fa-check"></i><b>8.3.2</b> From 7-bit to One-Byte Encoding</a></li>
-<li class="chapter" data-level="8.3.3" data-path="data-import.html"><a href="data-import.html#problems-with-single-byte-encoding"><i class="fa fa-check"></i><b>8.3.3</b> Problems with Single-Byte Encoding</a></li>
-<li class="chapter" data-level="8.3.4" data-path="data-import.html"><a href="data-import.html#problems-with-multi-byte-encoding"><i class="fa fa-check"></i><b>8.3.4</b> Problems with Multi-byte Encoding</a></li>
-<li class="chapter" data-level="8.3.5" data-path="data-import.html"><a href="data-import.html#unicode-and-utf-8"><i class="fa fa-check"></i><b>8.3.5</b> Unicode and UTF-8</a></li>
-<li class="chapter" data-level="8.3.6" data-path="data-import.html"><a href="data-import.html#suggestions"><i class="fa fa-check"></i><b>8.3.6</b> Suggestions</a></li>
+<li class="chapter" data-level="9.5.1" data-path="string-manipulation.html"><a href="string-manipulation.html#str_detect"><i class="fa fa-check"></i><b>9.5.1</b> <code>str_detect()</code></a></li>
+<li class="chapter" data-level="9.5.2" data-path="string-manipulation.html"><a href="string-manipulation.html#str_subset"><i class="fa fa-check"></i><b>9.5.2</b> <code>str_subset()</code></a></li>
+<li class="chapter" data-level="9.5.3" data-path="string-manipulation.html"><a href="string-manipulation.html#str_extract"><i class="fa fa-check"></i><b>9.5.3</b> <code>str_extract()</code></a></li>
+<li class="chapter" data-level="9.5.4" data-path="string-manipulation.html"><a href="string-manipulation.html#str_match"><i class="fa fa-check"></i><b>9.5.4</b> <code>str_match()</code></a></li>
+<li class="chapter" data-level="9.5.5" data-path="string-manipulation.html"><a href="string-manipulation.html#str_replace"><i class="fa fa-check"></i><b>9.5.5</b> <code>str_replace()</code></a></li>
+<li class="chapter" data-level="9.5.6" data-path="string-manipulation.html"><a href="string-manipulation.html#str_split"><i class="fa fa-check"></i><b>9.5.6</b> <code>str_split()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="data-import.html"><a href="data-import.html#character-code-point-and-hexadecimal-mode"><i class="fa fa-check"></i><b>8.4</b> Character, Code Point, and Hexadecimal Mode</a></li>
-<li class="chapter" data-level="8.5" data-path="data-import.html"><a href="data-import.html#r-base-functions"><i class="fa fa-check"></i><b>8.5</b> R Base Functions</a>
+<li class="chapter" data-level="9.6" data-path="string-manipulation.html"><a href="string-manipulation.html#advanced-pattern-matching-look-ahead-and-behind"><i class="fa fa-check"></i><b>9.6</b> Advanced Pattern Matching: Look Ahead and Behind</a></li>
+<li class="chapter" data-level="9.7" data-path="string-manipulation.html"><a href="string-manipulation.html#more-practices"><i class="fa fa-check"></i><b>9.7</b> More Practices</a>
 <ul>
-<li class="chapter" data-level="8.5.1" data-path="data-import.html"><a href="data-import.html#readlines"><i class="fa fa-check"></i><b>8.5.1</b> <code>readLines()</code></a></li>
-<li class="chapter" data-level="8.5.2" data-path="data-import.html"><a href="data-import.html#writelines"><i class="fa fa-check"></i><b>8.5.2</b> <code>writeLines()</code></a></li>
+<li class="chapter" data-level="9.7.1" data-path="string-manipulation.html"><a href="string-manipulation.html#case-1"><i class="fa fa-check"></i><b>9.7.1</b> Case 1</a></li>
+<li class="chapter" data-level="9.7.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-2"><i class="fa fa-check"></i><b>9.7.2</b> Case 2</a></li>
+<li class="chapter" data-level="9.7.3" data-path="string-manipulation.html"><a href="string-manipulation.html#case-3"><i class="fa fa-check"></i><b>9.7.3</b> Case 3</a></li>
 </ul></li>
-<li class="chapter" data-level="8.6" data-path="data-import.html"><a href="data-import.html#readr-functions"><i class="fa fa-check"></i><b>8.6</b> <code>readr</code> Functions</a>
+<li class="chapter" data-level="9.8" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-chinese-four-character-idioms"><i class="fa fa-check"></i><b>9.8</b> Case Study: Chinese Four-Character Idioms</a>
 <ul>
-<li class="chapter" data-level="8.6.1" data-path="data-import.html"><a href="data-import.html#readrread_csv"><i class="fa fa-check"></i><b>8.6.1</b> <code>readr::read_csv()</code></a></li>
-<li class="chapter" data-level="8.6.2" data-path="data-import.html"><a href="data-import.html#readrwrite_csv"><i class="fa fa-check"></i><b>8.6.2</b> <code>readr::write_csv()</code></a></li>
+<li class="chapter" data-level="9.8.1" data-path="string-manipulation.html"><a href="string-manipulation.html#dictionary-entries"><i class="fa fa-check"></i><b>9.8.1</b> Dictionary Entries</a></li>
+<li class="chapter" data-level="9.8.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-x來y去"><i class="fa fa-check"></i><b>9.8.2</b> Case Study: <code>X來Y去</code></a></li>
 </ul></li>
-<li class="chapter" data-level="8.7" data-path="data-import.html"><a href="data-import.html#directory-operations"><i class="fa fa-check"></i><b>8.7</b> Directory Operations</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html"><i class="fa fa-check"></i><b>9</b> Conditions and Loops</a>
+<li class="chapter" data-level="10" data-path="data-import.html"><a href="data-import.html"><i class="fa fa-check"></i><b>10</b> Data Import</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#if-statements"><i class="fa fa-check"></i><b>9.1</b> <code>if</code> Statements</a></li>
-<li class="chapter" data-level="9.2" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#for"><i class="fa fa-check"></i><b>9.2</b> <code>for</code></a></li>
-<li class="chapter" data-level="9.3" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#while-loop"><i class="fa fa-check"></i><b>9.3</b> <code>while</code> loop</a></li>
-<li class="chapter" data-level="9.4" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#toy-example"><i class="fa fa-check"></i><b>9.4</b> Toy Example</a></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="iteration.html"><a href="iteration.html"><i class="fa fa-check"></i><b>10</b> Iteration</a>
+<li class="chapter" data-level="10.1" data-path="data-import.html"><a href="data-import.html#overview"><i class="fa fa-check"></i><b>10.1</b> Overview</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="iteration.html"><a href="iteration.html#code-duplication"><i class="fa fa-check"></i><b>10.1</b> Code Duplication</a></li>
-<li class="chapter" data-level="10.2" data-path="iteration.html"><a href="iteration.html#vector-vs.-list-in-r"><i class="fa fa-check"></i><b>10.2</b> <code>vector</code> vs. <code>list</code> in <code>R</code></a></li>
-<li class="chapter" data-level="10.3" data-path="iteration.html"><a href="iteration.html#iteration-1"><i class="fa fa-check"></i><b>10.3</b> Iteration</a></li>
-<li class="chapter" data-level="10.4" data-path="iteration.html"><a href="iteration.html#purr"><i class="fa fa-check"></i><b>10.4</b> <code>purr</code></a></li>
-<li class="chapter" data-level="10.5" data-path="iteration.html"><a href="iteration.html#purr-dplyr"><i class="fa fa-check"></i><b>10.5</b> <code>purr</code> + <code>dplyr</code></a></li>
-<li class="chapter" data-level="10.6" data-path="iteration.html"><a href="iteration.html#writing-own-functions"><i class="fa fa-check"></i><b>10.6</b> Writing Own Functions</a></li>
+<li class="chapter" data-level="10.1.1" data-path="data-import.html"><a href="data-import.html#what-is-a-csv-file"><i class="fa fa-check"></i><b>10.1.1</b> What is a <code>CSV</code> file?</a></li>
+<li class="chapter" data-level="10.1.2" data-path="data-import.html"><a href="data-import.html#why-are-.csv-files-used"><i class="fa fa-check"></i><b>10.1.2</b> Why are <code>.CSV</code> files used?</a></li>
+<li class="chapter" data-level="10.1.3" data-path="data-import.html"><a href="data-import.html#how-do-i-save-csv-files"><i class="fa fa-check"></i><b>10.1.3</b> How do I save CSV files?</a></li>
+<li class="chapter" data-level="10.1.4" data-path="data-import.html"><a href="data-import.html#what-about-other-types-of-data"><i class="fa fa-check"></i><b>10.1.4</b> What about other types of data?</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html"><i class="fa fa-check"></i><b>11</b> Data Scientist First Step</a>
+<li class="chapter" data-level="10.2" data-path="data-import.html"><a href="data-import.html#importing-data"><i class="fa fa-check"></i><b>10.2</b> Importing Data</a></li>
+<li class="chapter" data-level="10.3" data-path="data-import.html"><a href="data-import.html#character-encoding"><i class="fa fa-check"></i><b>10.3</b> Character Encoding</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#loading-nobel-laureates-dataset"><i class="fa fa-check"></i><b>11.1</b> Loading Nobel Laureates Dataset</a></li>
-<li class="chapter" data-level="11.2" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#column-names"><i class="fa fa-check"></i><b>11.2</b> Column Names</a></li>
-<li class="chapter" data-level="11.3" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#data-completeness-na"><i class="fa fa-check"></i><b>11.3</b> Data Completeness <code>NA</code></a></li>
-<li class="chapter" data-level="11.4" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#data-preprocessing"><i class="fa fa-check"></i><b>11.4</b> Data Preprocessing</a></li>
-<li class="chapter" data-level="11.5" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#exploratory-analysis"><i class="fa fa-check"></i><b>11.5</b> Exploratory Analysis</a>
-<ul>
-<li class="chapter" data-level="11.5.1" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#discipline-distribution"><i class="fa fa-check"></i><b>11.5.1</b> Discipline Distribution</a></li>
-<li class="chapter" data-level="11.5.2" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#age-distribution"><i class="fa fa-check"></i><b>11.5.2</b> Age Distribution</a></li>
-<li class="chapter" data-level="11.5.3" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#category-x-age-interaction"><i class="fa fa-check"></i><b>11.5.3</b> Category x Age Interaction</a></li>
-<li class="chapter" data-level="11.5.4" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#gender-distribution"><i class="fa fa-check"></i><b>11.5.4</b> Gender Distribution</a></li>
-<li class="chapter" data-level="11.5.5" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#age-x-gender-interaction"><i class="fa fa-check"></i><b>11.5.5</b> Age x Gender Interaction</a></li>
+<li class="chapter" data-level="10.3.1" data-path="data-import.html"><a href="data-import.html#problems-with-ascii"><i class="fa fa-check"></i><b>10.3.1</b> Problems with ASCII</a></li>
+<li class="chapter" data-level="10.3.2" data-path="data-import.html"><a href="data-import.html#from-7-bit-to-one-byte-encoding"><i class="fa fa-check"></i><b>10.3.2</b> From 7-bit to One-Byte Encoding</a></li>
+<li class="chapter" data-level="10.3.3" data-path="data-import.html"><a href="data-import.html#problems-with-single-byte-encoding"><i class="fa fa-check"></i><b>10.3.3</b> Problems with Single-Byte Encoding</a></li>
+<li class="chapter" data-level="10.3.4" data-path="data-import.html"><a href="data-import.html#problems-with-multi-byte-encoding"><i class="fa fa-check"></i><b>10.3.4</b> Problems with Multi-byte Encoding</a></li>
+<li class="chapter" data-level="10.3.5" data-path="data-import.html"><a href="data-import.html#unicode-and-utf-8"><i class="fa fa-check"></i><b>10.3.5</b> Unicode and UTF-8</a></li>
+<li class="chapter" data-level="10.3.6" data-path="data-import.html"><a href="data-import.html#suggestions"><i class="fa fa-check"></i><b>10.3.6</b> Suggestions</a></li>
 </ul></li>
-<li class="chapter" data-level="11.6" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#exercises"><i class="fa fa-check"></i><b>11.6</b> Exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html"><i class="fa fa-check"></i><b>12</b> Text Analytics: A Start</a>
+<li class="chapter" data-level="10.4" data-path="data-import.html"><a href="data-import.html#character-code-point-and-hexadecimal-mode"><i class="fa fa-check"></i><b>10.4</b> Character, Code Point, and Hexadecimal Mode</a></li>
+<li class="chapter" data-level="10.5" data-path="data-import.html"><a href="data-import.html#r-base-functions"><i class="fa fa-check"></i><b>10.5</b> R Base Functions</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#installing-quanteda"><i class="fa fa-check"></i><b>12.1</b> Installing <code>quanteda</code></a></li>
-<li class="chapter" data-level="12.2" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#building-a-corpus-from-character-vector"><i class="fa fa-check"></i><b>12.2</b> Building a <code>corpus</code> from character vector</a></li>
-<li class="chapter" data-level="12.3" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyword-in-context-kwic"><i class="fa fa-check"></i><b>12.3</b> Keyword-in-Context (KWIC)</a></li>
-<li class="chapter" data-level="12.4" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#kwic-with-regular-expressions"><i class="fa fa-check"></i><b>12.4</b> KWIC with Regular Expressions</a></li>
-<li class="chapter" data-level="12.5" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#lexical-density-plot"><i class="fa fa-check"></i><b>12.5</b> Lexical Density Plot</a></li>
-<li class="chapter" data-level="12.6" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#document-feature-matrix"><i class="fa fa-check"></i><b>12.6</b> Document-Feature Matrix</a></li>
-<li class="chapter" data-level="12.7" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#feature-selection"><i class="fa fa-check"></i><b>12.7</b> Feature Selection</a></li>
-<li class="chapter" data-level="12.8" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#top-features"><i class="fa fa-check"></i><b>12.8</b> Top Features</a></li>
-<li class="chapter" data-level="12.9" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#wordclouds"><i class="fa fa-check"></i><b>12.9</b> Wordclouds</a></li>
-<li class="chapter" data-level="12.10" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyness-analysis"><i class="fa fa-check"></i><b>12.10</b> Keyness Analysis</a></li>
-<li class="chapter" data-level="12.11" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#flowchart"><i class="fa fa-check"></i><b>12.11</b> Flowchart</a></li>
-<li class="chapter" data-level="12.12" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#exercises-1"><i class="fa fa-check"></i><b>12.12</b> Exercises</a></li>
+<li class="chapter" data-level="10.5.1" data-path="data-import.html"><a href="data-import.html#readlines"><i class="fa fa-check"></i><b>10.5.1</b> <code>readLines()</code></a></li>
+<li class="chapter" data-level="10.5.2" data-path="data-import.html"><a href="data-import.html#writelines"><i class="fa fa-check"></i><b>10.5.2</b> <code>writeLines()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="data-import.html"><a href="data-import.html#readr-functions"><i class="fa fa-check"></i><b>10.6</b> <code>readr</code> Functions</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="data-import.html"><a href="data-import.html#readrread_csv"><i class="fa fa-check"></i><b>10.6.1</b> <code>readr::read_csv()</code></a></li>
+<li class="chapter" data-level="10.6.2" data-path="data-import.html"><a href="data-import.html#readrwrite_csv"><i class="fa fa-check"></i><b>10.6.2</b> <code>readr::write_csv()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="data-import.html"><a href="data-import.html#directory-operations"><i class="fa fa-check"></i><b>10.7</b> Directory Operations</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="iteration.html"><a href="iteration.html"><i class="fa fa-check"></i><b>11</b> Iteration</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="iteration.html"><a href="iteration.html#code-duplication"><i class="fa fa-check"></i><b>11.1</b> Code Duplication</a></li>
+<li class="chapter" data-level="11.2" data-path="iteration.html"><a href="iteration.html#vector-vs.-list-in-r"><i class="fa fa-check"></i><b>11.2</b> <code>vector</code> vs. <code>list</code> in <code>R</code></a></li>
+<li class="chapter" data-level="11.3" data-path="iteration.html"><a href="iteration.html#iteration-1"><i class="fa fa-check"></i><b>11.3</b> Iteration</a></li>
+<li class="chapter" data-level="11.4" data-path="iteration.html"><a href="iteration.html#purr"><i class="fa fa-check"></i><b>11.4</b> <code>purr</code></a></li>
+<li class="chapter" data-level="11.5" data-path="iteration.html"><a href="iteration.html#purr-dplyr"><i class="fa fa-check"></i><b>11.5</b> <code>purr</code> + <code>dplyr</code></a></li>
+<li class="chapter" data-level="11.6" data-path="iteration.html"><a href="iteration.html#writing-own-functions"><i class="fa fa-check"></i><b>11.6</b> Writing Own Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html"><i class="fa fa-check"></i><b>12</b> Data Scientist First Step</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#loading-nobel-laureates-dataset"><i class="fa fa-check"></i><b>12.1</b> Loading Nobel Laureates Dataset</a></li>
+<li class="chapter" data-level="12.2" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#column-names"><i class="fa fa-check"></i><b>12.2</b> Column Names</a></li>
+<li class="chapter" data-level="12.3" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#data-completeness-na"><i class="fa fa-check"></i><b>12.3</b> Data Completeness <code>NA</code></a></li>
+<li class="chapter" data-level="12.4" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#data-preprocessing"><i class="fa fa-check"></i><b>12.4</b> Data Preprocessing</a></li>
+<li class="chapter" data-level="12.5" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#exploratory-analysis"><i class="fa fa-check"></i><b>12.5</b> Exploratory Analysis</a>
+<ul>
+<li class="chapter" data-level="12.5.1" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#discipline-distribution"><i class="fa fa-check"></i><b>12.5.1</b> Discipline Distribution</a></li>
+<li class="chapter" data-level="12.5.2" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#age-distribution"><i class="fa fa-check"></i><b>12.5.2</b> Age Distribution</a></li>
+<li class="chapter" data-level="12.5.3" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#category-x-age-interaction"><i class="fa fa-check"></i><b>12.5.3</b> Category x Age Interaction</a></li>
+<li class="chapter" data-level="12.5.4" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#gender-distribution"><i class="fa fa-check"></i><b>12.5.4</b> Gender Distribution</a></li>
+<li class="chapter" data-level="12.5.5" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#age-x-gender-interaction"><i class="fa fa-check"></i><b>12.5.5</b> Age x Gender Interaction</a></li>
+</ul></li>
+<li class="chapter" data-level="12.6" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#exercises"><i class="fa fa-check"></i><b>12.6</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html"><i class="fa fa-check"></i><b>13</b> Text Analytics: A Start</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#installing-quanteda"><i class="fa fa-check"></i><b>13.1</b> Installing <code>quanteda</code></a></li>
+<li class="chapter" data-level="13.2" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#building-a-corpus-from-character-vector"><i class="fa fa-check"></i><b>13.2</b> Building a <code>corpus</code> from character vector</a></li>
+<li class="chapter" data-level="13.3" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyword-in-context-kwic"><i class="fa fa-check"></i><b>13.3</b> Keyword-in-Context (KWIC)</a></li>
+<li class="chapter" data-level="13.4" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#kwic-with-regular-expressions"><i class="fa fa-check"></i><b>13.4</b> KWIC with Regular Expressions</a></li>
+<li class="chapter" data-level="13.5" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#lexical-density-plot"><i class="fa fa-check"></i><b>13.5</b> Lexical Density Plot</a></li>
+<li class="chapter" data-level="13.6" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#document-feature-matrix"><i class="fa fa-check"></i><b>13.6</b> Document-Feature Matrix</a></li>
+<li class="chapter" data-level="13.7" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#feature-selection"><i class="fa fa-check"></i><b>13.7</b> Feature Selection</a></li>
+<li class="chapter" data-level="13.8" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#top-features"><i class="fa fa-check"></i><b>13.8</b> Top Features</a></li>
+<li class="chapter" data-level="13.9" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#wordclouds"><i class="fa fa-check"></i><b>13.9</b> Wordclouds</a></li>
+<li class="chapter" data-level="13.10" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyness-analysis"><i class="fa fa-check"></i><b>13.10</b> Keyness Analysis</a></li>
+<li class="chapter" data-level="13.11" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#flowchart"><i class="fa fa-check"></i><b>13.11</b> Flowchart</a></li>
+<li class="chapter" data-level="13.12" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#exercises-1"><i class="fa fa-check"></i><b>13.12</b> Exercises</a></li>
 </ul></li>
 <li class="part"><span><b>PART 2: Python Language</b></span></li>
-<li class="chapter" data-level="13" data-path="python-fundamentals.html"><a href="python-fundamentals.html"><i class="fa fa-check"></i><b>13</b> Python Fundamentals</a>
+<li class="chapter" data-level="14" data-path="python-fundamentals.html"><a href="python-fundamentals.html"><i class="fa fa-check"></i><b>14</b> Python Fundamentals</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="python-fundamentals.html"><a href="python-fundamentals.html#set-up-environment"><i class="fa fa-check"></i><b>13.1</b> Set up Environment</a></li>
-<li class="chapter" data-level="13.2" data-path="python-fundamentals.html"><a href="python-fundamentals.html#conda-environment"><i class="fa fa-check"></i><b>13.2</b> Conda Environment</a></li>
-<li class="chapter" data-level="13.3" data-path="python-fundamentals.html"><a href="python-fundamentals.html#data-type"><i class="fa fa-check"></i><b>13.3</b> Data Type</a></li>
-<li class="chapter" data-level="13.4" data-path="python-fundamentals.html"><a href="python-fundamentals.html#data-structure-1"><i class="fa fa-check"></i><b>13.4</b> Data Structure</a></li>
-<li class="chapter" data-level="13.5" data-path="python-fundamentals.html"><a href="python-fundamentals.html#string"><i class="fa fa-check"></i><b>13.5</b> String</a></li>
-<li class="chapter" data-level="13.6" data-path="python-fundamentals.html"><a href="python-fundamentals.html#control-structure"><i class="fa fa-check"></i><b>13.6</b> Control Structure</a></li>
-<li class="chapter" data-level="13.7" data-path="python-fundamentals.html"><a href="python-fundamentals.html#function-1"><i class="fa fa-check"></i><b>13.7</b> Function</a></li>
-<li class="chapter" data-level="13.8" data-path="python-fundamentals.html"><a href="python-fundamentals.html#list-comprehension"><i class="fa fa-check"></i><b>13.8</b> List Comprehension</a></li>
-<li class="chapter" data-level="13.9" data-path="python-fundamentals.html"><a href="python-fundamentals.html#python-scripts"><i class="fa fa-check"></i><b>13.9</b> Python Scripts</a></li>
-<li class="chapter" data-level="13.10" data-path="python-fundamentals.html"><a href="python-fundamentals.html#modules"><i class="fa fa-check"></i><b>13.10</b> Modules</a></li>
-<li class="chapter" data-level="13.11" data-path="python-fundamentals.html"><a href="python-fundamentals.html#inputoutput"><i class="fa fa-check"></i><b>13.11</b> Input/Output</a></li>
+<li class="chapter" data-level="14.1" data-path="python-fundamentals.html"><a href="python-fundamentals.html#set-up-environment"><i class="fa fa-check"></i><b>14.1</b> Set up Environment</a></li>
+<li class="chapter" data-level="14.2" data-path="python-fundamentals.html"><a href="python-fundamentals.html#conda-environment"><i class="fa fa-check"></i><b>14.2</b> Conda Environment</a></li>
+<li class="chapter" data-level="14.3" data-path="python-fundamentals.html"><a href="python-fundamentals.html#data-type"><i class="fa fa-check"></i><b>14.3</b> Data Type</a></li>
+<li class="chapter" data-level="14.4" data-path="python-fundamentals.html"><a href="python-fundamentals.html#data-structure-1"><i class="fa fa-check"></i><b>14.4</b> Data Structure</a></li>
+<li class="chapter" data-level="14.5" data-path="python-fundamentals.html"><a href="python-fundamentals.html#string"><i class="fa fa-check"></i><b>14.5</b> String</a></li>
+<li class="chapter" data-level="14.6" data-path="python-fundamentals.html"><a href="python-fundamentals.html#control-structure"><i class="fa fa-check"></i><b>14.6</b> Control Structure</a></li>
+<li class="chapter" data-level="14.7" data-path="python-fundamentals.html"><a href="python-fundamentals.html#function-1"><i class="fa fa-check"></i><b>14.7</b> Function</a></li>
+<li class="chapter" data-level="14.8" data-path="python-fundamentals.html"><a href="python-fundamentals.html#list-comprehension"><i class="fa fa-check"></i><b>14.8</b> List Comprehension</a></li>
+<li class="chapter" data-level="14.9" data-path="python-fundamentals.html"><a href="python-fundamentals.html#python-scripts"><i class="fa fa-check"></i><b>14.9</b> Python Scripts</a></li>
+<li class="chapter" data-level="14.10" data-path="python-fundamentals.html"><a href="python-fundamentals.html#modules"><i class="fa fa-check"></i><b>14.10</b> Modules</a></li>
+<li class="chapter" data-level="14.11" data-path="python-fundamentals.html"><a href="python-fundamentals.html#inputoutput"><i class="fa fa-check"></i><b>14.11</b> Input/Output</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="regular-expression.html"><a href="regular-expression.html"><i class="fa fa-check"></i><b>14</b> Regular Expression</a>
+<li class="chapter" data-level="15" data-path="organizing-files.html"><a href="organizing-files.html"><i class="fa fa-check"></i><b>15</b> Organizing Files</a>
 <ul>
-<li class="chapter" data-level="14.1" data-path="regular-expression.html"><a href="regular-expression.html#comparison-of-r-and-python"><i class="fa fa-check"></i><b>14.1</b> Comparison of R and Python</a></li>
-<li class="chapter" data-level="14.2" data-path="regular-expression.html"><a href="regular-expression.html#structure-of-regular-expression-usage"><i class="fa fa-check"></i><b>14.2</b> Structure of Regular Expression Usage</a>
-<ul>
-<li class="chapter" data-level="14.2.1" data-path="regular-expression.html"><a href="regular-expression.html#re.search"><i class="fa fa-check"></i><b>14.2.1</b> <code>re.search()</code></a></li>
-<li class="chapter" data-level="14.2.2" data-path="regular-expression.html"><a href="regular-expression.html#re.findall"><i class="fa fa-check"></i><b>14.2.2</b> <code>re.findall()</code></a></li>
-<li class="chapter" data-level="14.2.3" data-path="regular-expression.html"><a href="regular-expression.html#re.finditer"><i class="fa fa-check"></i><b>14.2.3</b> <code>re.finditer()</code></a></li>
+<li class="chapter" data-level="15.1" data-path="organizing-files.html"><a href="organizing-files.html#shutil"><i class="fa fa-check"></i><b>15.1</b> <code>shutil</code></a></li>
 </ul></li>
-<li class="chapter" data-level="14.3" data-path="regular-expression.html"><a href="regular-expression.html#special-falgssettings-for-regular-expressions"><i class="fa fa-check"></i><b>14.3</b> Special Falgs/Settings for Regular Expressions</a></li>
-<li class="chapter" data-level="14.4" data-path="regular-expression.html"><a href="regular-expression.html#regular-expression-in-python"><i class="fa fa-check"></i><b>14.4</b> Regular Expression in Python</a>
+<li class="chapter" data-level="16" data-path="object-orientation.html"><a href="object-orientation.html"><i class="fa fa-check"></i><b>16</b> Object Orientation</a>
 <ul>
-<li class="chapter" data-level="14.4.1" data-path="regular-expression.html"><a href="regular-expression.html#raw-string-notation"><i class="fa fa-check"></i><b>14.4.1</b> Raw String Notation</a></li>
-<li class="chapter" data-level="14.4.2" data-path="regular-expression.html"><a href="regular-expression.html#find-all-matches"><i class="fa fa-check"></i><b>14.4.2</b> Find all matches</a></li>
-<li class="chapter" data-level="14.4.3" data-path="regular-expression.html"><a href="regular-expression.html#group-vs.-groups"><i class="fa fa-check"></i><b>14.4.3</b> <code>group()</code> vs. <code>groups()</code></a></li>
-<li class="chapter" data-level="14.4.4" data-path="regular-expression.html"><a href="regular-expression.html#string-format-validation"><i class="fa fa-check"></i><b>14.4.4</b> string format validation</a></li>
-<li class="chapter" data-level="14.4.5" data-path="regular-expression.html"><a href="regular-expression.html#re.match-vs.-re.search"><i class="fa fa-check"></i><b>14.4.5</b> <code>re.match()</code> vs. <code>re.search()</code></a></li>
-<li class="chapter" data-level="14.4.6" data-path="regular-expression.html"><a href="regular-expression.html#re.split"><i class="fa fa-check"></i><b>14.4.6</b> <code>re.split()</code></a></li>
+<li class="chapter" data-level="16.1" data-path="object-orientation.html"><a href="object-orientation.html#what-is-object-orientation"><i class="fa fa-check"></i><b>16.1</b> What is Object Orientation?</a></li>
+<li class="chapter" data-level="16.2" data-path="object-orientation.html"><a href="object-orientation.html#class-defition"><i class="fa fa-check"></i><b>16.2</b> <strong>Class</strong> Defition</a></li>
+<li class="chapter" data-level="16.3" data-path="object-orientation.html"><a href="object-orientation.html#types-of-methods"><i class="fa fa-check"></i><b>16.3</b> Types of Methods</a></li>
+<li class="chapter" data-level="16.4" data-path="object-orientation.html"><a href="object-orientation.html#class-inheritance"><i class="fa fa-check"></i><b>16.4</b> Class Inheritance</a></li>
+<li class="chapter" data-level="16.5" data-path="object-orientation.html"><a href="object-orientation.html#special-methods"><i class="fa fa-check"></i><b>16.5</b> Special Methods</a></li>
+<li class="chapter" data-level="16.6" data-path="object-orientation.html"><a href="object-orientation.html#property-decorator"><i class="fa fa-check"></i><b>16.6</b> Property Decorator</a></li>
+<li class="chapter" data-level="16.7" data-path="object-orientation.html"><a href="object-orientation.html#checking-functions"><i class="fa fa-check"></i><b>16.7</b> Checking Functions</a></li>
+<li class="chapter" data-level="16.8" data-path="object-orientation.html"><a href="object-orientation.html#name-mangling"><i class="fa fa-check"></i><b>16.8</b> Name Mangling</a></li>
+<li class="chapter" data-level="16.9" data-path="object-orientation.html"><a href="object-orientation.html#reference"><i class="fa fa-check"></i><b>16.9</b> Reference</a></li>
 </ul></li>
-<li class="chapter" data-level="14.5" data-path="regular-expression.html"><a href="regular-expression.html#text-munging"><i class="fa fa-check"></i><b>14.5</b> Text Munging</a></li>
-<li class="chapter" data-level="14.6" data-path="regular-expression.html"><a href="regular-expression.html#references"><i class="fa fa-check"></i><b>14.6</b> References</a></li>
-</ul></li>
-<li class="chapter" data-level="15" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>15</b> Pandas</a>
+<li class="chapter" data-level="17" data-path="regular-expression.html"><a href="regular-expression.html"><i class="fa fa-check"></i><b>17</b> Regular Expression</a>
 <ul>
-<li class="chapter" data-level="15.1" data-path="pandas.html"><a href="pandas.html#libraries"><i class="fa fa-check"></i><b>15.1</b> Libraries</a></li>
-<li class="chapter" data-level="15.2" data-path="pandas.html"><a href="pandas.html#importingexporting-data"><i class="fa fa-check"></i><b>15.2</b> Importing/Exporting Data</a></li>
-<li class="chapter" data-level="15.3" data-path="pandas.html"><a href="pandas.html#inspecting-data-frame"><i class="fa fa-check"></i><b>15.3</b> Inspecting Data Frame</a></li>
-<li class="chapter" data-level="15.4" data-path="pandas.html"><a href="pandas.html#basic-functions"><i class="fa fa-check"></i><b>15.4</b> Basic Functions</a></li>
-<li class="chapter" data-level="15.5" data-path="pandas.html"><a href="pandas.html#subsetting-data-frame"><i class="fa fa-check"></i><b>15.5</b> Subsetting Data Frame</a></li>
-<li class="chapter" data-level="15.6" data-path="pandas.html"><a href="pandas.html#exploration"><i class="fa fa-check"></i><b>15.6</b> Exploration</a>
+<li class="chapter" data-level="17.1" data-path="regular-expression.html"><a href="regular-expression.html#comparison-of-r-and-python"><i class="fa fa-check"></i><b>17.1</b> Comparison of R and Python</a></li>
+<li class="chapter" data-level="17.2" data-path="regular-expression.html"><a href="regular-expression.html#structure-of-regular-expression-usage"><i class="fa fa-check"></i><b>17.2</b> Structure of Regular Expression Usage</a>
 <ul>
-<li class="chapter" data-level="15.6.1" data-path="pandas.html"><a href="pandas.html#na-values"><i class="fa fa-check"></i><b>15.6.1</b> NA Values</a></li>
-<li class="chapter" data-level="15.6.2" data-path="pandas.html"><a href="pandas.html#converting-data-types"><i class="fa fa-check"></i><b>15.6.2</b> Converting Data Types</a></li>
-<li class="chapter" data-level="15.6.3" data-path="pandas.html"><a href="pandas.html#pandas-supported-data-types"><i class="fa fa-check"></i><b>15.6.3</b> Pandas-supported Data Types</a></li>
-<li class="chapter" data-level="15.6.4" data-path="pandas.html"><a href="pandas.html#transformation"><i class="fa fa-check"></i><b>15.6.4</b> Transformation</a></li>
-<li class="chapter" data-level="15.6.5" data-path="pandas.html"><a href="pandas.html#filter-1"><i class="fa fa-check"></i><b>15.6.5</b> <code>filter()</code></a></li>
-<li class="chapter" data-level="15.6.6" data-path="pandas.html"><a href="pandas.html#arrange-1"><i class="fa fa-check"></i><b>15.6.6</b> <code>arrange()</code></a></li>
-<li class="chapter" data-level="15.6.7" data-path="pandas.html"><a href="pandas.html#select-1"><i class="fa fa-check"></i><b>15.6.7</b> <code>select()</code></a></li>
-<li class="chapter" data-level="15.6.8" data-path="pandas.html"><a href="pandas.html#mutate-1"><i class="fa fa-check"></i><b>15.6.8</b> <code>mutate()</code></a></li>
-<li class="chapter" data-level="15.6.9" data-path="pandas.html"><a href="pandas.html#apply-mutate_if"><i class="fa fa-check"></i><b>15.6.9</b> <code>apply()</code>, <code>mutate_if()</code></a></li>
-<li class="chapter" data-level="15.6.10" data-path="pandas.html"><a href="pandas.html#group_by-and-summarize-1"><i class="fa fa-check"></i><b>15.6.10</b> <code>group_by()</code> and <code>summarize()</code></a></li>
-<li class="chapter" data-level="15.6.11" data-path="pandas.html"><a href="pandas.html#rename-1"><i class="fa fa-check"></i><b>15.6.11</b> <code>rename()</code></a></li>
+<li class="chapter" data-level="17.2.1" data-path="regular-expression.html"><a href="regular-expression.html#re.search"><i class="fa fa-check"></i><b>17.2.1</b> <code>re.search()</code></a></li>
+<li class="chapter" data-level="17.2.2" data-path="regular-expression.html"><a href="regular-expression.html#re.findall"><i class="fa fa-check"></i><b>17.2.2</b> <code>re.findall()</code></a></li>
+<li class="chapter" data-level="17.2.3" data-path="regular-expression.html"><a href="regular-expression.html#re.finditer"><i class="fa fa-check"></i><b>17.2.3</b> <code>re.finditer()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="15.7" data-path="pandas.html"><a href="pandas.html#joincombine-data-frames"><i class="fa fa-check"></i><b>15.7</b> Join/Combine Data Frames</a></li>
-<li class="chapter" data-level="15.8" data-path="pandas.html"><a href="pandas.html#statistics"><i class="fa fa-check"></i><b>15.8</b> Statistics</a></li>
-<li class="chapter" data-level="15.9" data-path="pandas.html"><a href="pandas.html#generic-functions"><i class="fa fa-check"></i><b>15.9</b> Generic Functions</a></li>
-<li class="chapter" data-level="15.10" data-path="pandas.html"><a href="pandas.html#references-1"><i class="fa fa-check"></i><b>15.10</b> References</a></li>
-</ul></li>
-<li class="chapter" data-level="16" data-path="nltk.html"><a href="nltk.html"><i class="fa fa-check"></i><b>16</b> NLTK</a>
+<li class="chapter" data-level="17.3" data-path="regular-expression.html"><a href="regular-expression.html#special-falgssettings-for-regular-expressions"><i class="fa fa-check"></i><b>17.3</b> Special Falgs/Settings for Regular Expressions</a></li>
+<li class="chapter" data-level="17.4" data-path="regular-expression.html"><a href="regular-expression.html#regular-expression-in-python"><i class="fa fa-check"></i><b>17.4</b> Regular Expression in Python</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="nltk.html"><a href="nltk.html#installation"><i class="fa fa-check"></i><b>16.1</b> Installation</a></li>
-<li class="chapter" data-level="16.2" data-path="nltk.html"><a href="nltk.html#corpora-data"><i class="fa fa-check"></i><b>16.2</b> Corpora Data</a></li>
-<li class="chapter" data-level="16.3" data-path="nltk.html"><a href="nltk.html#wordnet"><i class="fa fa-check"></i><b>16.3</b> WordNet</a>
-<ul>
-<li class="chapter" data-level="16.3.1" data-path="nltk.html"><a href="nltk.html#a-dictionary-resource"><i class="fa fa-check"></i><b>16.3.1</b> A Dictionary Resource</a></li>
-<li class="chapter" data-level="16.3.2" data-path="nltk.html"><a href="nltk.html#lexical-relations"><i class="fa fa-check"></i><b>16.3.2</b> Lexical Relations</a></li>
-<li class="chapter" data-level="16.3.3" data-path="nltk.html"><a href="nltk.html#semantic-similarity-computation"><i class="fa fa-check"></i><b>16.3.3</b> Semantic Similarity Computation</a></li>
+<li class="chapter" data-level="17.4.1" data-path="regular-expression.html"><a href="regular-expression.html#raw-string-notation"><i class="fa fa-check"></i><b>17.4.1</b> Raw String Notation</a></li>
+<li class="chapter" data-level="17.4.2" data-path="regular-expression.html"><a href="regular-expression.html#find-all-matches"><i class="fa fa-check"></i><b>17.4.2</b> Find all matches</a></li>
+<li class="chapter" data-level="17.4.3" data-path="regular-expression.html"><a href="regular-expression.html#group-vs.-groups"><i class="fa fa-check"></i><b>17.4.3</b> <code>group()</code> vs. <code>groups()</code></a></li>
+<li class="chapter" data-level="17.4.4" data-path="regular-expression.html"><a href="regular-expression.html#string-format-validation"><i class="fa fa-check"></i><b>17.4.4</b> string format validation</a></li>
+<li class="chapter" data-level="17.4.5" data-path="regular-expression.html"><a href="regular-expression.html#re.match-vs.-re.search"><i class="fa fa-check"></i><b>17.4.5</b> <code>re.match()</code> vs. <code>re.search()</code></a></li>
+<li class="chapter" data-level="17.4.6" data-path="regular-expression.html"><a href="regular-expression.html#re.split"><i class="fa fa-check"></i><b>17.4.6</b> <code>re.split()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="16.4" data-path="nltk.html"><a href="nltk.html#discovering-word-collocations"><i class="fa fa-check"></i><b>16.4</b> Discovering Word Collocations</a></li>
-<li class="chapter" data-level="16.5" data-path="nltk.html"><a href="nltk.html#tokenization"><i class="fa fa-check"></i><b>16.5</b> Tokenization</a></li>
-<li class="chapter" data-level="16.6" data-path="nltk.html"><a href="nltk.html#chinese-word-segmentation"><i class="fa fa-check"></i><b>16.6</b> Chinese Word Segmentation</a></li>
+<li class="chapter" data-level="17.5" data-path="regular-expression.html"><a href="regular-expression.html#text-munging"><i class="fa fa-check"></i><b>17.5</b> Text Munging</a></li>
+<li class="chapter" data-level="17.6" data-path="regular-expression.html"><a href="regular-expression.html#references"><i class="fa fa-check"></i><b>17.6</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="web-scraping.html"><a href="web-scraping.html"><i class="fa fa-check"></i><b>17</b> Web Scraping</a>
+<li class="chapter" data-level="18" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>18</b> Pandas</a>
 <ul>
-<li class="chapter" data-level="17.1" data-path="web-scraping.html"><a href="web-scraping.html#webbrowswer-module"><i class="fa fa-check"></i><b>17.1</b> <code>webbrowswer</code> module</a></li>
-<li class="chapter" data-level="17.2" data-path="web-scraping.html"><a href="web-scraping.html#requests-module"><i class="fa fa-check"></i><b>17.2</b> <code>requests</code> Module</a></li>
-<li class="chapter" data-level="17.3" data-path="web-scraping.html"><a href="web-scraping.html#bs4-module-beautiful-soup"><i class="fa fa-check"></i><b>17.3</b> <code>bs4</code> Module (Beautiful Soup)</a></li>
-<li class="chapter" data-level="17.4" data-path="web-scraping.html"><a href="web-scraping.html#reference"><i class="fa fa-check"></i><b>17.4</b> Reference</a></li>
+<li class="chapter" data-level="18.1" data-path="pandas.html"><a href="pandas.html#libraries"><i class="fa fa-check"></i><b>18.1</b> Libraries</a></li>
+<li class="chapter" data-level="18.2" data-path="pandas.html"><a href="pandas.html#importingexporting-data"><i class="fa fa-check"></i><b>18.2</b> Importing/Exporting Data</a></li>
+<li class="chapter" data-level="18.3" data-path="pandas.html"><a href="pandas.html#inspecting-data-frame"><i class="fa fa-check"></i><b>18.3</b> Inspecting Data Frame</a></li>
+<li class="chapter" data-level="18.4" data-path="pandas.html"><a href="pandas.html#basic-functions"><i class="fa fa-check"></i><b>18.4</b> Basic Functions</a></li>
+<li class="chapter" data-level="18.5" data-path="pandas.html"><a href="pandas.html#subsetting-data-frame"><i class="fa fa-check"></i><b>18.5</b> Subsetting Data Frame</a></li>
+<li class="chapter" data-level="18.6" data-path="pandas.html"><a href="pandas.html#exploration"><i class="fa fa-check"></i><b>18.6</b> Exploration</a>
+<ul>
+<li class="chapter" data-level="18.6.1" data-path="pandas.html"><a href="pandas.html#na-values"><i class="fa fa-check"></i><b>18.6.1</b> NA Values</a></li>
+<li class="chapter" data-level="18.6.2" data-path="pandas.html"><a href="pandas.html#converting-data-types"><i class="fa fa-check"></i><b>18.6.2</b> Converting Data Types</a></li>
+<li class="chapter" data-level="18.6.3" data-path="pandas.html"><a href="pandas.html#pandas-supported-data-types"><i class="fa fa-check"></i><b>18.6.3</b> Pandas-supported Data Types</a></li>
+<li class="chapter" data-level="18.6.4" data-path="pandas.html"><a href="pandas.html#transformation"><i class="fa fa-check"></i><b>18.6.4</b> Transformation</a></li>
+<li class="chapter" data-level="18.6.5" data-path="pandas.html"><a href="pandas.html#filter-1"><i class="fa fa-check"></i><b>18.6.5</b> <code>filter()</code></a></li>
+<li class="chapter" data-level="18.6.6" data-path="pandas.html"><a href="pandas.html#arrange-1"><i class="fa fa-check"></i><b>18.6.6</b> <code>arrange()</code></a></li>
+<li class="chapter" data-level="18.6.7" data-path="pandas.html"><a href="pandas.html#select-1"><i class="fa fa-check"></i><b>18.6.7</b> <code>select()</code></a></li>
+<li class="chapter" data-level="18.6.8" data-path="pandas.html"><a href="pandas.html#mutate-1"><i class="fa fa-check"></i><b>18.6.8</b> <code>mutate()</code></a></li>
+<li class="chapter" data-level="18.6.9" data-path="pandas.html"><a href="pandas.html#apply-mutate_if"><i class="fa fa-check"></i><b>18.6.9</b> <code>apply()</code>, <code>mutate_if()</code></a></li>
+<li class="chapter" data-level="18.6.10" data-path="pandas.html"><a href="pandas.html#group_by-and-summarize-1"><i class="fa fa-check"></i><b>18.6.10</b> <code>group_by()</code> and <code>summarize()</code></a></li>
+<li class="chapter" data-level="18.6.11" data-path="pandas.html"><a href="pandas.html#rename-1"><i class="fa fa-check"></i><b>18.6.11</b> <code>rename()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="18.7" data-path="pandas.html"><a href="pandas.html#joincombine-data-frames"><i class="fa fa-check"></i><b>18.7</b> Join/Combine Data Frames</a></li>
+<li class="chapter" data-level="18.8" data-path="pandas.html"><a href="pandas.html#statistics"><i class="fa fa-check"></i><b>18.8</b> Statistics</a></li>
+<li class="chapter" data-level="18.9" data-path="pandas.html"><a href="pandas.html#generic-functions"><i class="fa fa-check"></i><b>18.9</b> Generic Functions</a></li>
+<li class="chapter" data-level="18.10" data-path="pandas.html"><a href="pandas.html#references-1"><i class="fa fa-check"></i><b>18.10</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="nltk.html"><a href="nltk.html"><i class="fa fa-check"></i><b>19</b> NLTK</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="nltk.html"><a href="nltk.html#installation"><i class="fa fa-check"></i><b>19.1</b> Installation</a></li>
+<li class="chapter" data-level="19.2" data-path="nltk.html"><a href="nltk.html#corpora-data"><i class="fa fa-check"></i><b>19.2</b> Corpora Data</a></li>
+<li class="chapter" data-level="19.3" data-path="nltk.html"><a href="nltk.html#wordnet"><i class="fa fa-check"></i><b>19.3</b> WordNet</a>
+<ul>
+<li class="chapter" data-level="19.3.1" data-path="nltk.html"><a href="nltk.html#a-dictionary-resource"><i class="fa fa-check"></i><b>19.3.1</b> A Dictionary Resource</a></li>
+<li class="chapter" data-level="19.3.2" data-path="nltk.html"><a href="nltk.html#lexical-relations"><i class="fa fa-check"></i><b>19.3.2</b> Lexical Relations</a></li>
+<li class="chapter" data-level="19.3.3" data-path="nltk.html"><a href="nltk.html#semantic-similarity-computation"><i class="fa fa-check"></i><b>19.3.3</b> Semantic Similarity Computation</a></li>
+</ul></li>
+<li class="chapter" data-level="19.4" data-path="nltk.html"><a href="nltk.html#discovering-word-collocations"><i class="fa fa-check"></i><b>19.4</b> Discovering Word Collocations</a></li>
+<li class="chapter" data-level="19.5" data-path="nltk.html"><a href="nltk.html#tokenization"><i class="fa fa-check"></i><b>19.5</b> Tokenization</a></li>
+<li class="chapter" data-level="19.6" data-path="nltk.html"><a href="nltk.html#chinese-word-segmentation"><i class="fa fa-check"></i><b>19.6</b> Chinese Word Segmentation</a></li>
+<li class="chapter" data-level="19.7" data-path="nltk.html"><a href="nltk.html#afterwords"><i class="fa fa-check"></i><b>19.7</b> Afterwords</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="web-scraping.html"><a href="web-scraping.html"><i class="fa fa-check"></i><b>20</b> Web Scraping</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="web-scraping.html"><a href="web-scraping.html#webbrowswer-module"><i class="fa fa-check"></i><b>20.1</b> <code>webbrowswer</code> module</a></li>
+<li class="chapter" data-level="20.2" data-path="web-scraping.html"><a href="web-scraping.html#requests-module"><i class="fa fa-check"></i><b>20.2</b> <code>requests</code> Module</a></li>
+<li class="chapter" data-level="20.3" data-path="web-scraping.html"><a href="web-scraping.html#bs4-module-beautiful-soup"><i class="fa fa-check"></i><b>20.3</b> <code>bs4</code> Module (Beautiful Soup)</a></li>
+<li class="chapter" data-level="20.4" data-path="web-scraping.html"><a href="web-scraping.html#reference-1"><i class="fa fa-check"></i><b>20.4</b> Reference</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="transcribing.html"><a href="transcribing.html"><i class="fa fa-check"></i><b>21</b> Transcribing</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="transcribing.html"><a href="transcribing.html#working-with-audio-files"><i class="fa fa-check"></i><b>21.1</b> Working with Audio Files</a></li>
+<li class="chapter" data-level="21.2" data-path="transcribing.html"><a href="transcribing.html#working-with-microphone-inputs"><i class="fa fa-check"></i><b>21.2</b> Working with Microphone Inputs</a></li>
+<li class="chapter" data-level="21.3" data-path="transcribing.html"><a href="transcribing.html#references-2"><i class="fa fa-check"></i><b>21.3</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="downloading-youtube-videos.html"><a href="downloading-youtube-videos.html"><i class="fa fa-check"></i><b>22</b> Downloading YouTube Videos</a>
+<ul>
+<li class="chapter" data-level="22.1" data-path="downloading-youtube-videos.html"><a href="downloading-youtube-videos.html#the-module-pytube"><i class="fa fa-check"></i><b>22.1</b> The Module <code>pytube</code></a></li>
+<li class="chapter" data-level="22.2" data-path="downloading-youtube-videos.html"><a href="downloading-youtube-videos.html#downloading-videos"><i class="fa fa-check"></i><b>22.2</b> Downloading Videos</a></li>
+<li class="chapter" data-level="22.3" data-path="downloading-youtube-videos.html"><a href="downloading-youtube-videos.html#downloading-audios"><i class="fa fa-check"></i><b>22.3</b> Downloading Audios</a></li>
+<li class="chapter" data-level="22.4" data-path="downloading-youtube-videos.html"><a href="downloading-youtube-videos.html#downloading-captions"><i class="fa fa-check"></i><b>22.4</b> Downloading Captions</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="the-shell.html"><a href="the-shell.html"><i class="fa fa-check"></i><b>A</b> The Shell</a>
@@ -472,9 +525,9 @@ div.csl-indent {
 <li class="chapter" data-level="A.2" data-path="the-shell.html"><a href="the-shell.html#shebang-line"><i class="fa fa-check"></i><b>A.2</b> Shebang Line</a></li>
 <li class="chapter" data-level="A.3" data-path="the-shell.html"><a href="the-shell.html#basic-shell-commands"><i class="fa fa-check"></i><b>A.3</b> Basic Shell Commands</a></li>
 <li class="chapter" data-level="A.4" data-path="the-shell.html"><a href="the-shell.html#text-analytic-related-commands"><i class="fa fa-check"></i><b>A.4</b> Text-Analytic Related Commands</a></li>
-<li class="chapter" data-level="A.5" data-path="the-shell.html"><a href="the-shell.html#references-2"><i class="fa fa-check"></i><b>A.5</b> References</a></li>
+<li class="chapter" data-level="A.5" data-path="the-shell.html"><a href="the-shell.html#references-3"><i class="fa fa-check"></i><b>A.5</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="references-3.html"><a href="references-3.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="references-4.html"><a href="references-4.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://web.ntnu.edu.tw/~alvinchen" target ="blank">Alvin Chen </a></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -496,10 +549,10 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="regular-expression" class="section level1" number="14">
-<h1><span class="header-section-number">Chapter 14</span> Regular Expression</h1>
-<div id="comparison-of-r-and-python" class="section level2" number="14.1">
-<h2><span class="header-section-number">14.1</span> Comparison of R and Python</h2>
+<div id="regular-expression" class="section level1" number="17">
+<h1><span class="header-section-number">Chapter 17</span> Regular Expression</h1>
+<div id="comparison-of-r-and-python" class="section level2" number="17.1">
+<h2><span class="header-section-number">17.1</span> Comparison of R and Python</h2>
 <table>
 <thead>
 <tr class="header">
@@ -548,145 +601,145 @@ div.csl-indent {
 </table>
 <p>The above table shows the similarities and differences in terms of the regular expression functions in Python and R. They are more or less similar. These mappings can be helpful for R users to understand the re in Python.</p>
 </div>
-<div id="structure-of-regular-expression-usage" class="section level2" number="14.2">
-<h2><span class="header-section-number">14.2</span> Structure of Regular Expression Usage</h2>
-<div id="re.search" class="section level3" number="14.2.1">
-<h3><span class="header-section-number">14.2.1</span> <code>re.search()</code></h3>
+<div id="structure-of-regular-expression-usage" class="section level2" number="17.2">
+<h2><span class="header-section-number">17.2</span> Structure of Regular Expression Usage</h2>
+<div id="re.search" class="section level3" number="17.2.1">
+<h3><span class="header-section-number">17.2.1</span> <code>re.search()</code></h3>
 <ul>
 <li>Import the regex module with <code>import re</code></li>
 <li>Create a <code>Regex</code> object by compiling a regular expression pattern (<code>re.compile()</code>). Remember to use a raw string.</li>
 <li>Use the pattern for search (<code>re.search()</code>) by passing the string you want to search into the <code>Regex</code> object’s search method. This returns a <code>Match</code> object.</li>
 <li>Call the <code>Match</code> object’s <code>group()</code> method to return a string of the actual matched text.</li>
 </ul>
-<div class="sourceCode" id="cb550"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb550-1"><a href="regular-expression.html#cb550-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
-<span id="cb550-2"><a href="regular-expression.html#cb550-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb550-3"><a href="regular-expression.html#cb550-3" aria-hidden="true" tabindex="-1"></a>text_to_search <span class="op">=</span> <span class="st">&#39;&#39;&#39;</span></span>
-<span id="cb550-4"><a href="regular-expression.html#cb550-4" aria-hidden="true" tabindex="-1"></a><span class="st">abcdefghijklmnopqurtuvwxyz</span></span>
-<span id="cb550-5"><a href="regular-expression.html#cb550-5" aria-hidden="true" tabindex="-1"></a><span class="st">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span></span>
-<span id="cb550-6"><a href="regular-expression.html#cb550-6" aria-hidden="true" tabindex="-1"></a><span class="st">1234567890</span></span>
-<span id="cb550-7"><a href="regular-expression.html#cb550-7" aria-hidden="true" tabindex="-1"></a><span class="st">Ha HaHa</span></span>
-<span id="cb550-8"><a href="regular-expression.html#cb550-8" aria-hidden="true" tabindex="-1"></a><span class="st">MetaCharacters (Need to be escaped):</span></span>
-<span id="cb550-9"><a href="regular-expression.html#cb550-9" aria-hidden="true" tabindex="-1"></a><span class="st">. ^ $ * + ? { } [ ] \ | ( )</span></span>
-<span id="cb550-10"><a href="regular-expression.html#cb550-10" aria-hidden="true" tabindex="-1"></a><span class="st">coreyms.com</span></span>
-<span id="cb550-11"><a href="regular-expression.html#cb550-11" aria-hidden="true" tabindex="-1"></a><span class="st">321-555-4321</span></span>
-<span id="cb550-12"><a href="regular-expression.html#cb550-12" aria-hidden="true" tabindex="-1"></a><span class="st">123.555.1234</span></span>
-<span id="cb550-13"><a href="regular-expression.html#cb550-13" aria-hidden="true" tabindex="-1"></a><span class="st">123*555*1234</span></span>
-<span id="cb550-14"><a href="regular-expression.html#cb550-14" aria-hidden="true" tabindex="-1"></a><span class="st">800-555-1234</span></span>
-<span id="cb550-15"><a href="regular-expression.html#cb550-15" aria-hidden="true" tabindex="-1"></a><span class="st">900-555-1234</span></span>
-<span id="cb550-16"><a href="regular-expression.html#cb550-16" aria-hidden="true" tabindex="-1"></a><span class="st">Mr. Schafer</span></span>
-<span id="cb550-17"><a href="regular-expression.html#cb550-17" aria-hidden="true" tabindex="-1"></a><span class="st">Mr Smith</span></span>
-<span id="cb550-18"><a href="regular-expression.html#cb550-18" aria-hidden="true" tabindex="-1"></a><span class="st">Ms Davis</span></span>
-<span id="cb550-19"><a href="regular-expression.html#cb550-19" aria-hidden="true" tabindex="-1"></a><span class="st">Mrs. Robinson</span></span>
-<span id="cb550-20"><a href="regular-expression.html#cb550-20" aria-hidden="true" tabindex="-1"></a><span class="st">Mr. T</span></span>
-<span id="cb550-21"><a href="regular-expression.html#cb550-21" aria-hidden="true" tabindex="-1"></a><span class="st">&#39;&#39;&#39;</span></span>
-<span id="cb550-22"><a href="regular-expression.html#cb550-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb550-23"><a href="regular-expression.html#cb550-23" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> <span class="st">&#39;Start a sentence and then bring it to an end&#39;</span></span>
-<span id="cb550-24"><a href="regular-expression.html#cb550-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb550-25"><a href="regular-expression.html#cb550-25" aria-hidden="true" tabindex="-1"></a>pattern <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r&#39;\d</span><span class="sc">{3}</span><span class="vs">-\d</span><span class="sc">{3}</span><span class="vs">-\d</span><span class="sc">{4}</span><span class="vs">&#39;</span>, re.I)</span></code></pre></div>
+<div class="sourceCode" id="cb697"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb697-1"><a href="regular-expression.html#cb697-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb697-2"><a href="regular-expression.html#cb697-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb697-3"><a href="regular-expression.html#cb697-3" aria-hidden="true" tabindex="-1"></a>text_to_search <span class="op">=</span> <span class="st">&#39;&#39;&#39;</span></span>
+<span id="cb697-4"><a href="regular-expression.html#cb697-4" aria-hidden="true" tabindex="-1"></a><span class="st">abcdefghijklmnopqurtuvwxyz</span></span>
+<span id="cb697-5"><a href="regular-expression.html#cb697-5" aria-hidden="true" tabindex="-1"></a><span class="st">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span></span>
+<span id="cb697-6"><a href="regular-expression.html#cb697-6" aria-hidden="true" tabindex="-1"></a><span class="st">1234567890</span></span>
+<span id="cb697-7"><a href="regular-expression.html#cb697-7" aria-hidden="true" tabindex="-1"></a><span class="st">Ha HaHa</span></span>
+<span id="cb697-8"><a href="regular-expression.html#cb697-8" aria-hidden="true" tabindex="-1"></a><span class="st">MetaCharacters (Need to be escaped):</span></span>
+<span id="cb697-9"><a href="regular-expression.html#cb697-9" aria-hidden="true" tabindex="-1"></a><span class="st">. ^ $ * + ? { } [ ] \ | ( )</span></span>
+<span id="cb697-10"><a href="regular-expression.html#cb697-10" aria-hidden="true" tabindex="-1"></a><span class="st">coreyms.com</span></span>
+<span id="cb697-11"><a href="regular-expression.html#cb697-11" aria-hidden="true" tabindex="-1"></a><span class="st">321-555-4321</span></span>
+<span id="cb697-12"><a href="regular-expression.html#cb697-12" aria-hidden="true" tabindex="-1"></a><span class="st">123.555.1234</span></span>
+<span id="cb697-13"><a href="regular-expression.html#cb697-13" aria-hidden="true" tabindex="-1"></a><span class="st">123*555*1234</span></span>
+<span id="cb697-14"><a href="regular-expression.html#cb697-14" aria-hidden="true" tabindex="-1"></a><span class="st">800-555-1234</span></span>
+<span id="cb697-15"><a href="regular-expression.html#cb697-15" aria-hidden="true" tabindex="-1"></a><span class="st">900-555-1234</span></span>
+<span id="cb697-16"><a href="regular-expression.html#cb697-16" aria-hidden="true" tabindex="-1"></a><span class="st">Mr. Schafer</span></span>
+<span id="cb697-17"><a href="regular-expression.html#cb697-17" aria-hidden="true" tabindex="-1"></a><span class="st">Mr Smith</span></span>
+<span id="cb697-18"><a href="regular-expression.html#cb697-18" aria-hidden="true" tabindex="-1"></a><span class="st">Ms Davis</span></span>
+<span id="cb697-19"><a href="regular-expression.html#cb697-19" aria-hidden="true" tabindex="-1"></a><span class="st">Mrs. Robinson</span></span>
+<span id="cb697-20"><a href="regular-expression.html#cb697-20" aria-hidden="true" tabindex="-1"></a><span class="st">Mr. T</span></span>
+<span id="cb697-21"><a href="regular-expression.html#cb697-21" aria-hidden="true" tabindex="-1"></a><span class="st">&#39;&#39;&#39;</span></span>
+<span id="cb697-22"><a href="regular-expression.html#cb697-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb697-23"><a href="regular-expression.html#cb697-23" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> <span class="st">&#39;Start a sentence and then bring it to an end&#39;</span></span>
+<span id="cb697-24"><a href="regular-expression.html#cb697-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb697-25"><a href="regular-expression.html#cb697-25" aria-hidden="true" tabindex="-1"></a>pattern <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r&#39;\d</span><span class="sc">{3}</span><span class="vs">-\d</span><span class="sc">{3}</span><span class="vs">-\d</span><span class="sc">{4}</span><span class="vs">&#39;</span>, re.I)</span></code></pre></div>
 </div>
-<div id="re.findall" class="section level3" number="14.2.2">
-<h3><span class="header-section-number">14.2.2</span> <code>re.findall()</code></h3>
+<div id="re.findall" class="section level3" number="17.2.2">
+<h3><span class="header-section-number">17.2.2</span> <code>re.findall()</code></h3>
 <ul>
 <li>While <code>search()</code> will return a <code>Match</code> object of the <em>first</em> matched text in the searched string, the <code>findall()</code> method will return the strings of every match in the searched string. (<code>re.findall()</code> will not return a <code>Match</code> object but a list of strings–*as long as there are no groups in the regular expression.)</li>
 </ul>
-<div class="sourceCode" id="cb551"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb551-1"><a href="regular-expression.html#cb551-1" aria-hidden="true" tabindex="-1"></a><span class="co">## perform a search</span></span>
-<span id="cb551-2"><a href="regular-expression.html#cb551-2" aria-hidden="true" tabindex="-1"></a>matches<span class="op">=</span> pattern.findall(text_to_search)</span>
-<span id="cb551-3"><a href="regular-expression.html#cb551-3" aria-hidden="true" tabindex="-1"></a>matches</span></code></pre></div>
+<div class="sourceCode" id="cb698"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb698-1"><a href="regular-expression.html#cb698-1" aria-hidden="true" tabindex="-1"></a><span class="co">## perform a search</span></span>
+<span id="cb698-2"><a href="regular-expression.html#cb698-2" aria-hidden="true" tabindex="-1"></a>matches<span class="op">=</span> pattern.findall(text_to_search)</span>
+<span id="cb698-3"><a href="regular-expression.html#cb698-3" aria-hidden="true" tabindex="-1"></a>matches</span></code></pre></div>
 <pre class="Rout"><code>[&#39;321-555-4321&#39;, &#39;800-555-1234&#39;, &#39;900-555-1234&#39;]</code></pre>
 <ul>
 <li>If there are groups in the regular expressions, then <code>re.findall()</code> will return a list of tuples.</li>
 </ul>
-<div class="sourceCode" id="cb553"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb553-1"><a href="regular-expression.html#cb553-1" aria-hidden="true" tabindex="-1"></a>pattern2 <span class="op">=</span>  re.<span class="bu">compile</span>(<span class="vs">r&#39;(\d</span><span class="sc">{3}</span><span class="vs">)-(\d</span><span class="sc">{3}</span><span class="vs">)-(\d</span><span class="sc">{4}</span><span class="vs">)&#39;</span>, re.I)</span>
-<span id="cb553-2"><a href="regular-expression.html#cb553-2" aria-hidden="true" tabindex="-1"></a>pattern2.findall(text_to_search)</span></code></pre></div>
+<div class="sourceCode" id="cb700"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb700-1"><a href="regular-expression.html#cb700-1" aria-hidden="true" tabindex="-1"></a>pattern2 <span class="op">=</span>  re.<span class="bu">compile</span>(<span class="vs">r&#39;(\d</span><span class="sc">{3}</span><span class="vs">)-(\d</span><span class="sc">{3}</span><span class="vs">)-(\d</span><span class="sc">{4}</span><span class="vs">)&#39;</span>, re.I)</span>
+<span id="cb700-2"><a href="regular-expression.html#cb700-2" aria-hidden="true" tabindex="-1"></a>pattern2.findall(text_to_search)</span></code></pre></div>
 <pre class="Rout"><code>[(&#39;321&#39;, &#39;555&#39;, &#39;4321&#39;), (&#39;800&#39;, &#39;555&#39;, &#39;1234&#39;), (&#39;900&#39;, &#39;555&#39;, &#39;1234&#39;)]</code></pre>
 </div>
-<div id="re.finditer" class="section level3" number="14.2.3">
-<h3><span class="header-section-number">14.2.3</span> <code>re.finditer()</code></h3>
-<div class="sourceCode" id="cb555"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb555-1"><a href="regular-expression.html#cb555-1" aria-hidden="true" tabindex="-1"></a><span class="co">## find all matches</span></span>
-<span id="cb555-2"><a href="regular-expression.html#cb555-2" aria-hidden="true" tabindex="-1"></a>matches <span class="op">=</span> pattern.finditer(text_to_search)</span>
-<span id="cb555-3"><a href="regular-expression.html#cb555-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> matches:</span>
-<span id="cb555-4"><a href="regular-expression.html#cb555-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> m <span class="kw">in</span> matches:</span>
-<span id="cb555-5"><a href="regular-expression.html#cb555-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;</span><span class="sc">%02d</span><span class="st">-</span><span class="sc">%02d</span><span class="st">: </span><span class="sc">%s</span><span class="st">&quot;</span> <span class="op">%</span> (m.start(), m.end(), m.group()))</span>
-<span id="cb555-6"><a href="regular-expression.html#cb555-6" aria-hidden="true" tabindex="-1"></a>        </span></code></pre></div>
+<div id="re.finditer" class="section level3" number="17.2.3">
+<h3><span class="header-section-number">17.2.3</span> <code>re.finditer()</code></h3>
+<div class="sourceCode" id="cb702"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb702-1"><a href="regular-expression.html#cb702-1" aria-hidden="true" tabindex="-1"></a><span class="co">## find all matches</span></span>
+<span id="cb702-2"><a href="regular-expression.html#cb702-2" aria-hidden="true" tabindex="-1"></a>matches <span class="op">=</span> pattern.finditer(text_to_search)</span>
+<span id="cb702-3"><a href="regular-expression.html#cb702-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> matches:</span>
+<span id="cb702-4"><a href="regular-expression.html#cb702-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> m <span class="kw">in</span> matches:</span>
+<span id="cb702-5"><a href="regular-expression.html#cb702-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;</span><span class="sc">%02d</span><span class="st">-</span><span class="sc">%02d</span><span class="st">: </span><span class="sc">%s</span><span class="st">&quot;</span> <span class="op">%</span> (m.start(), m.end(), m.group()))</span>
+<span id="cb702-6"><a href="regular-expression.html#cb702-6" aria-hidden="true" tabindex="-1"></a>        </span></code></pre></div>
 <pre class="Rout"><code>151-163: 321-555-4321
 190-202: 800-555-1234
 203-215: 900-555-1234</code></pre>
 </div>
 </div>
-<div id="special-falgssettings-for-regular-expressions" class="section level2" number="14.3">
-<h2><span class="header-section-number">14.3</span> Special Falgs/Settings for Regular Expressions</h2>
+<div id="special-falgssettings-for-regular-expressions" class="section level2" number="17.3">
+<h2><span class="header-section-number">17.3</span> Special Falgs/Settings for Regular Expressions</h2>
 <ul>
 <li><code>re.IGNORECASE</code>: case-insensitive for pattern matching</li>
 <li><code>re.DOTALL</code>: to allow the wildcard <code>*</code> to match linebreaks</li>
 <li><code>re.VERBOSE</code>: to create complex regular expressions with multilines and comments (#)</li>
 </ul>
-<div class="sourceCode" id="cb557"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb557-1"><a href="regular-expression.html#cb557-1" aria-hidden="true" tabindex="-1"></a>pattern3 <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r&#39;&#39;&#39;</span></span>
-<span id="cb557-2"><a href="regular-expression.html#cb557-2" aria-hidden="true" tabindex="-1"></a><span class="vs">  (\d</span><span class="sc">{3}</span><span class="vs">)       # area code</span></span>
-<span id="cb557-3"><a href="regular-expression.html#cb557-3" aria-hidden="true" tabindex="-1"></a><span class="vs">  -             # delimiter</span></span>
-<span id="cb557-4"><a href="regular-expression.html#cb557-4" aria-hidden="true" tabindex="-1"></a><span class="vs">  (\d</span><span class="sc">{3}</span><span class="vs">)       # first 3 digits</span></span>
-<span id="cb557-5"><a href="regular-expression.html#cb557-5" aria-hidden="true" tabindex="-1"></a><span class="vs">  -             # delimiter</span></span>
-<span id="cb557-6"><a href="regular-expression.html#cb557-6" aria-hidden="true" tabindex="-1"></a><span class="vs">  (\d</span><span class="sc">{4}</span><span class="vs">)       # last 4 digits</span></span>
-<span id="cb557-7"><a href="regular-expression.html#cb557-7" aria-hidden="true" tabindex="-1"></a><span class="vs">&#39;&#39;&#39;</span>, re.VERBOSE)</span>
-<span id="cb557-8"><a href="regular-expression.html#cb557-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb557-9"><a href="regular-expression.html#cb557-9" aria-hidden="true" tabindex="-1"></a>pattern3.findall(text_to_search)</span></code></pre></div>
+<div class="sourceCode" id="cb704"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb704-1"><a href="regular-expression.html#cb704-1" aria-hidden="true" tabindex="-1"></a>pattern3 <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r&#39;&#39;&#39;</span></span>
+<span id="cb704-2"><a href="regular-expression.html#cb704-2" aria-hidden="true" tabindex="-1"></a><span class="vs">  (\d</span><span class="sc">{3}</span><span class="vs">)       # area code</span></span>
+<span id="cb704-3"><a href="regular-expression.html#cb704-3" aria-hidden="true" tabindex="-1"></a><span class="vs">  -             # delimiter</span></span>
+<span id="cb704-4"><a href="regular-expression.html#cb704-4" aria-hidden="true" tabindex="-1"></a><span class="vs">  (\d</span><span class="sc">{3}</span><span class="vs">)       # first 3 digits</span></span>
+<span id="cb704-5"><a href="regular-expression.html#cb704-5" aria-hidden="true" tabindex="-1"></a><span class="vs">  -             # delimiter</span></span>
+<span id="cb704-6"><a href="regular-expression.html#cb704-6" aria-hidden="true" tabindex="-1"></a><span class="vs">  (\d</span><span class="sc">{4}</span><span class="vs">)       # last 4 digits</span></span>
+<span id="cb704-7"><a href="regular-expression.html#cb704-7" aria-hidden="true" tabindex="-1"></a><span class="vs">&#39;&#39;&#39;</span>, re.VERBOSE)</span>
+<span id="cb704-8"><a href="regular-expression.html#cb704-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb704-9"><a href="regular-expression.html#cb704-9" aria-hidden="true" tabindex="-1"></a>pattern3.findall(text_to_search)</span></code></pre></div>
 <pre class="Rout"><code>[(&#39;321&#39;, &#39;555&#39;, &#39;4321&#39;), (&#39;800&#39;, &#39;555&#39;, &#39;1234&#39;), (&#39;900&#39;, &#39;555&#39;, &#39;1234&#39;)]</code></pre>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-78" class="exercise"><strong>Exercise 14.1  </strong></span>With the <code>text_to_search</code>, how to create a more complete regular expression to extract all the phone numbers, including those numbers that have other delimiters (e.g., <code>*</code>)</p>
+<p><span id="exr:unlabeled-div-82" class="exercise"><strong>Exercise 17.1  </strong></span>With the <code>text_to_search</code>, how to create a more complete regular expression to extract all the phone numbers, including those numbers that have other delimiters (e.g., <code>*</code>)</p>
 </div>
 <pre class="Rout"><code>[(&#39;321&#39;, &#39;555&#39;, &#39;4321&#39;), (&#39;123&#39;, &#39;555&#39;, &#39;1234&#39;), (&#39;123&#39;, &#39;555&#39;, &#39;1234&#39;), (&#39;800&#39;, &#39;555&#39;, &#39;1234&#39;), (&#39;900&#39;, &#39;555&#39;, &#39;1234&#39;)]</code></pre>
 </div>
-<div id="regular-expression-in-python" class="section level2" number="14.4">
-<h2><span class="header-section-number">14.4</span> Regular Expression in Python</h2>
-<div id="raw-string-notation" class="section level3" number="14.4.1">
-<h3><span class="header-section-number">14.4.1</span> Raw String Notation</h3>
+<div id="regular-expression-in-python" class="section level2" number="17.4">
+<h2><span class="header-section-number">17.4</span> Regular Expression in Python</h2>
+<div id="raw-string-notation" class="section level3" number="17.4.1">
+<h3><span class="header-section-number">17.4.1</span> Raw String Notation</h3>
 <p>Raw string notation (<code>r'text'</code>) keeps regular expressions sane. Without it, every backslash (<code>''</code>) in a regular expression would have to be prefixed with another one to escape it. For example, the two following lines of code are functionally identical:</p>
 </div>
-<div id="find-all-matches" class="section level3" number="14.4.2">
-<h3><span class="header-section-number">14.4.2</span> Find all matches</h3>
+<div id="find-all-matches" class="section level3" number="17.4.2">
+<h3><span class="header-section-number">17.4.2</span> Find all matches</h3>
 <ul>
 <li><p><code>re.findall()</code>: matches all occurrences of a pattern, not just the first one as <code>re.search()</code> does.</p></li>
 <li><p><code>re.finditer()</code>: If one wants more information about all matches of a pattern than the matched text, <code>re.finditer()</code> is useful as it provides match objects instead of strings.</p></li>
 </ul>
 </div>
-<div id="group-vs.-groups" class="section level3" number="14.4.3">
-<h3><span class="header-section-number">14.4.3</span> <code>group()</code> vs. <code>groups()</code></h3>
+<div id="group-vs.-groups" class="section level3" number="17.4.3">
+<h3><span class="header-section-number">17.4.3</span> <code>group()</code> vs. <code>groups()</code></h3>
 <ul>
 <li><code>group()</code>: by default, returns the whole match of the pattern</li>
 <li><code>groups()</code>: by default, returns all capturing groups</li>
 </ul>
-<div class="sourceCode" id="cb560"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb560-1"><a href="regular-expression.html#cb560-1" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> re.match(<span class="st">&quot;a(.)(.)&quot;</span>,<span class="st">&quot;abcedf&quot;</span>)</span>
-<span id="cb560-2"><a href="regular-expression.html#cb560-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb560-3"><a href="regular-expression.html#cb560-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(m.group(<span class="dv">0</span>)) <span class="co"># return the whole match</span></span></code></pre></div>
+<div class="sourceCode" id="cb707"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb707-1"><a href="regular-expression.html#cb707-1" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> re.match(<span class="st">&quot;a(.)(.)&quot;</span>,<span class="st">&quot;abcedf&quot;</span>)</span>
+<span id="cb707-2"><a href="regular-expression.html#cb707-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb707-3"><a href="regular-expression.html#cb707-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(m.group(<span class="dv">0</span>)) <span class="co"># return the whole match</span></span></code></pre></div>
 <pre class="Rout"><code>abc</code></pre>
-<div class="sourceCode" id="cb562"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb562-1"><a href="regular-expression.html#cb562-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(m.group()) <span class="co"># return the whole match, same as above</span></span></code></pre></div>
+<div class="sourceCode" id="cb709"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb709-1"><a href="regular-expression.html#cb709-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(m.group()) <span class="co"># return the whole match, same as above</span></span></code></pre></div>
 <pre class="Rout"><code>abc</code></pre>
-<div class="sourceCode" id="cb564"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb564-1"><a href="regular-expression.html#cb564-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(m.groups()) <span class="co"># return each capturing group match</span></span></code></pre></div>
+<div class="sourceCode" id="cb711"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb711-1"><a href="regular-expression.html#cb711-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(m.groups()) <span class="co"># return each capturing group match</span></span></code></pre></div>
 <pre class="Rout"><code>(&#39;b&#39;, &#39;c&#39;)</code></pre>
-<div class="sourceCode" id="cb566"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb566-1"><a href="regular-expression.html#cb566-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(m.group(<span class="dv">1</span>)) <span class="co"># return first capturing gorup match</span></span></code></pre></div>
+<div class="sourceCode" id="cb713"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb713-1"><a href="regular-expression.html#cb713-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(m.group(<span class="dv">1</span>)) <span class="co"># return first capturing gorup match</span></span></code></pre></div>
 <pre class="Rout"><code>b</code></pre>
 </div>
-<div id="string-format-validation" class="section level3" number="14.4.4">
-<h3><span class="header-section-number">14.4.4</span> string format validation</h3>
-<div class="sourceCode" id="cb568"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb568-1"><a href="regular-expression.html#cb568-1" aria-hidden="true" tabindex="-1"></a>valid <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r&quot;^[a-z]+@[a-z]+\.[a-z]</span><span class="sc">{3}</span><span class="vs">$&quot;</span>)</span>
-<span id="cb568-2"><a href="regular-expression.html#cb568-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(valid.match(<span class="st">&#39;alvin@ntnu.edu&#39;</span>))</span></code></pre></div>
+<div id="string-format-validation" class="section level3" number="17.4.4">
+<h3><span class="header-section-number">17.4.4</span> string format validation</h3>
+<div class="sourceCode" id="cb715"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb715-1"><a href="regular-expression.html#cb715-1" aria-hidden="true" tabindex="-1"></a>valid <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r&quot;^[a-z]+@[a-z]+\.[a-z]</span><span class="sc">{3}</span><span class="vs">$&quot;</span>)</span>
+<span id="cb715-2"><a href="regular-expression.html#cb715-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(valid.match(<span class="st">&#39;alvin@ntnu.edu&#39;</span>))</span></code></pre></div>
 <pre class="Rout"><code>&lt;re.Match object; span=(0, 14), match=&#39;alvin@ntnu.edu&#39;&gt;</code></pre>
-<div class="sourceCode" id="cb570"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb570-1"><a href="regular-expression.html#cb570-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(valid.match(<span class="st">&#39;alvin123@ntnu.edu&#39;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb717"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb717-1"><a href="regular-expression.html#cb717-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(valid.match(<span class="st">&#39;alvin123@ntnu.edu&#39;</span>))</span></code></pre></div>
 <pre class="Rout"><code>None</code></pre>
-<div class="sourceCode" id="cb572"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb572-1"><a href="regular-expression.html#cb572-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(valid.match(<span class="st">&#39;alvin@ntnu.homeschool&#39;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb719"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb719-1"><a href="regular-expression.html#cb719-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(valid.match(<span class="st">&#39;alvin@ntnu.homeschool&#39;</span>))</span></code></pre></div>
 <pre class="Rout"><code>None</code></pre>
 </div>
-<div id="re.match-vs.-re.search" class="section level3" number="14.4.5">
-<h3><span class="header-section-number">14.4.5</span> <code>re.match()</code> vs. <code>re.search()</code></h3>
+<div id="re.match-vs.-re.search" class="section level3" number="17.4.5">
+<h3><span class="header-section-number">17.4.5</span> <code>re.match()</code> vs. <code>re.search()</code></h3>
 <p>Python offers two different primitive operations based on regular expressions:</p>
 <ul>
 <li><code>re.match()</code> checks for a match <strong>only at the beginning</strong> of the string</li>
 <li><code>re.search()</code> checks for a match anywhere in the string (this is what Perl does by default).</li>
 </ul>
-<div class="sourceCode" id="cb574"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb574-1"><a href="regular-expression.html#cb574-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.match(<span class="st">&quot;c&quot;</span>, <span class="st">&quot;abcdef&quot;</span>))    <span class="co"># No match</span></span></code></pre></div>
+<div class="sourceCode" id="cb721"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb721-1"><a href="regular-expression.html#cb721-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.match(<span class="st">&quot;c&quot;</span>, <span class="st">&quot;abcdef&quot;</span>))    <span class="co"># No match</span></span></code></pre></div>
 <pre class="Rout"><code>None</code></pre>
-<div class="sourceCode" id="cb576"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb576-1"><a href="regular-expression.html#cb576-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.search(<span class="st">&quot;^c&quot;</span>, <span class="st">&quot;abcdef&quot;</span>))  <span class="co"># No match, same as above</span></span></code></pre></div>
+<div class="sourceCode" id="cb723"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb723-1"><a href="regular-expression.html#cb723-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.search(<span class="st">&quot;^c&quot;</span>, <span class="st">&quot;abcdef&quot;</span>))  <span class="co"># No match, same as above</span></span></code></pre></div>
 <pre class="Rout"><code>None</code></pre>
-<div class="sourceCode" id="cb578"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb578-1"><a href="regular-expression.html#cb578-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.search(<span class="st">&quot;c&quot;</span>, <span class="st">&quot;abcdef&quot;</span>))   <span class="co"># Match</span></span></code></pre></div>
+<div class="sourceCode" id="cb725"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb725-1"><a href="regular-expression.html#cb725-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.search(<span class="st">&quot;c&quot;</span>, <span class="st">&quot;abcdef&quot;</span>))   <span class="co"># Match</span></span></code></pre></div>
 <pre class="Rout"><code>&lt;re.Match object; span=(2, 3), match=&#39;c&#39;&gt;</code></pre>
 <div class="try">
 <ul>
@@ -694,85 +747,85 @@ div.csl-indent {
 <li><code>re.search</code> however, when in MULTILINE mode, is able to search at the beginning of every line if used in combination with <code>^</code>.</li>
 </ul>
 </div>
-<div class="sourceCode" id="cb580"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb580-1"><a href="regular-expression.html#cb580-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.match(<span class="st">&#39;X&#39;</span>, <span class="st">&#39;A</span><span class="ch">\n</span><span class="st">B</span><span class="ch">\n</span><span class="st">X&#39;</span>, re.MULTILINE))  <span class="co"># No match</span></span></code></pre></div>
+<div class="sourceCode" id="cb727"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb727-1"><a href="regular-expression.html#cb727-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.match(<span class="st">&#39;X&#39;</span>, <span class="st">&#39;A</span><span class="ch">\n</span><span class="st">B</span><span class="ch">\n</span><span class="st">X&#39;</span>, re.MULTILINE))  <span class="co"># No match</span></span></code></pre></div>
 <pre class="Rout"><code>None</code></pre>
-<div class="sourceCode" id="cb582"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb582-1"><a href="regular-expression.html#cb582-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.search(<span class="st">&#39;^X&#39;</span>, <span class="st">&#39;A</span><span class="ch">\n</span><span class="st">B</span><span class="ch">\n</span><span class="st">X&#39;</span>, re.MULTILINE))  <span class="co"># Match</span></span></code></pre></div>
+<div class="sourceCode" id="cb729"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb729-1"><a href="regular-expression.html#cb729-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.search(<span class="st">&#39;^X&#39;</span>, <span class="st">&#39;A</span><span class="ch">\n</span><span class="st">B</span><span class="ch">\n</span><span class="st">X&#39;</span>, re.MULTILINE))  <span class="co"># Match</span></span></code></pre></div>
 <pre class="Rout"><code>&lt;re.Match object; span=(4, 5), match=&#39;X&#39;&gt;</code></pre>
-<div class="sourceCode" id="cb584"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb584-1"><a href="regular-expression.html#cb584-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.search(<span class="st">&#39;^X&#39;</span>, <span class="st">&#39;A</span><span class="ch">\n</span><span class="st">B</span><span class="ch">\n</span><span class="st">X&#39;</span>)) <span class="co"># No match</span></span></code></pre></div>
+<div class="sourceCode" id="cb731"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb731-1"><a href="regular-expression.html#cb731-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.search(<span class="st">&#39;^X&#39;</span>, <span class="st">&#39;A</span><span class="ch">\n</span><span class="st">B</span><span class="ch">\n</span><span class="st">X&#39;</span>)) <span class="co"># No match</span></span></code></pre></div>
 <pre class="Rout"><code>None</code></pre>
 </div>
-<div id="re.split" class="section level3" number="14.4.6">
-<h3><span class="header-section-number">14.4.6</span> <code>re.split()</code></h3>
-<div class="sourceCode" id="cb586"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb586-1"><a href="regular-expression.html#cb586-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;&quot;&quot;Ross McFluff: 834.345.1254 155 Elm Street</span></span>
-<span id="cb586-2"><a href="regular-expression.html#cb586-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb586-3"><a href="regular-expression.html#cb586-3" aria-hidden="true" tabindex="-1"></a><span class="st">Ronald Heathmore: 892.345.3428 436 Finley Avenue</span></span>
-<span id="cb586-4"><a href="regular-expression.html#cb586-4" aria-hidden="true" tabindex="-1"></a><span class="st">Frank Burger: 925.541.7625 662 South Dogwood Way</span></span>
-<span id="cb586-5"><a href="regular-expression.html#cb586-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb586-6"><a href="regular-expression.html#cb586-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb586-7"><a href="regular-expression.html#cb586-7" aria-hidden="true" tabindex="-1"></a><span class="st">Heather Albrecht: 548.326.4584 919 Park Place&quot;&quot;&quot;</span></span></code></pre></div>
-<div class="sourceCode" id="cb587"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb587-1"><a href="regular-expression.html#cb587-1" aria-hidden="true" tabindex="-1"></a><span class="co"># split text into lines</span></span>
-<span id="cb587-2"><a href="regular-expression.html#cb587-2" aria-hidden="true" tabindex="-1"></a>re.split(<span class="vs">r&#39;\n&#39;</span>,text)</span></code></pre></div>
+<div id="re.split" class="section level3" number="17.4.6">
+<h3><span class="header-section-number">17.4.6</span> <code>re.split()</code></h3>
+<div class="sourceCode" id="cb733"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb733-1"><a href="regular-expression.html#cb733-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;&quot;&quot;Ross McFluff: 834.345.1254 155 Elm Street</span></span>
+<span id="cb733-2"><a href="regular-expression.html#cb733-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb733-3"><a href="regular-expression.html#cb733-3" aria-hidden="true" tabindex="-1"></a><span class="st">Ronald Heathmore: 892.345.3428 436 Finley Avenue</span></span>
+<span id="cb733-4"><a href="regular-expression.html#cb733-4" aria-hidden="true" tabindex="-1"></a><span class="st">Frank Burger: 925.541.7625 662 South Dogwood Way</span></span>
+<span id="cb733-5"><a href="regular-expression.html#cb733-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb733-6"><a href="regular-expression.html#cb733-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb733-7"><a href="regular-expression.html#cb733-7" aria-hidden="true" tabindex="-1"></a><span class="st">Heather Albrecht: 548.326.4584 919 Park Place&quot;&quot;&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb734"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb734-1"><a href="regular-expression.html#cb734-1" aria-hidden="true" tabindex="-1"></a><span class="co"># split text into lines</span></span>
+<span id="cb734-2"><a href="regular-expression.html#cb734-2" aria-hidden="true" tabindex="-1"></a>re.split(<span class="vs">r&#39;\n&#39;</span>,text)</span></code></pre></div>
 <pre class="Rout"><code>[&#39;Ross McFluff: 834.345.1254 155 Elm Street&#39;, &#39;&#39;, &#39;Ronald Heathmore: 892.345.3428 436 Finley Avenue&#39;, &#39;Frank Burger: 925.541.7625 662 South Dogwood Way&#39;, &#39;&#39;, &#39;&#39;, &#39;Heather Albrecht: 548.326.4584 919 Park Place&#39;]</code></pre>
-<div class="sourceCode" id="cb589"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb589-1"><a href="regular-expression.html#cb589-1" aria-hidden="true" tabindex="-1"></a>re.split(<span class="vs">r&#39;\n+&#39;</span>, text)</span></code></pre></div>
+<div class="sourceCode" id="cb736"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb736-1"><a href="regular-expression.html#cb736-1" aria-hidden="true" tabindex="-1"></a>re.split(<span class="vs">r&#39;\n+&#39;</span>, text)</span></code></pre></div>
 <pre class="Rout"><code>[&#39;Ross McFluff: 834.345.1254 155 Elm Street&#39;, &#39;Ronald Heathmore: 892.345.3428 436 Finley Avenue&#39;, &#39;Frank Burger: 925.541.7625 662 South Dogwood Way&#39;, &#39;Heather Albrecht: 548.326.4584 919 Park Place&#39;]</code></pre>
-<div class="sourceCode" id="cb591"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb591-1"><a href="regular-expression.html#cb591-1" aria-hidden="true" tabindex="-1"></a>entries <span class="op">=</span> re.split(<span class="vs">r&#39;\n+&#39;</span>, text)</span></code></pre></div>
-<div class="sourceCode" id="cb592"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb592-1"><a href="regular-expression.html#cb592-1" aria-hidden="true" tabindex="-1"></a>[re.split(<span class="vs">r&#39;\s&#39;</span>, entry) <span class="cf">for</span> entry <span class="kw">in</span> entries]</span></code></pre></div>
+<div class="sourceCode" id="cb738"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb738-1"><a href="regular-expression.html#cb738-1" aria-hidden="true" tabindex="-1"></a>entries <span class="op">=</span> re.split(<span class="vs">r&#39;\n+&#39;</span>, text)</span></code></pre></div>
+<div class="sourceCode" id="cb739"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb739-1"><a href="regular-expression.html#cb739-1" aria-hidden="true" tabindex="-1"></a>[re.split(<span class="vs">r&#39;\s&#39;</span>, entry) <span class="cf">for</span> entry <span class="kw">in</span> entries]</span></code></pre></div>
 <pre class="Rout"><code>[[&#39;Ross&#39;, &#39;McFluff:&#39;, &#39;834.345.1254&#39;, &#39;155&#39;, &#39;Elm&#39;, &#39;Street&#39;], [&#39;Ronald&#39;, &#39;Heathmore:&#39;, &#39;892.345.3428&#39;, &#39;436&#39;, &#39;Finley&#39;, &#39;Avenue&#39;], [&#39;Frank&#39;, &#39;Burger:&#39;, &#39;925.541.7625&#39;, &#39;662&#39;, &#39;South&#39;, &#39;Dogwood&#39;, &#39;Way&#39;], [&#39;Heather&#39;, &#39;Albrecht:&#39;, &#39;548.326.4584&#39;, &#39;919&#39;, &#39;Park&#39;, &#39;Place&#39;]]</code></pre>
-<div class="sourceCode" id="cb594"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb594-1"><a href="regular-expression.html#cb594-1" aria-hidden="true" tabindex="-1"></a>[re.split(<span class="vs">r&#39;:?\s&#39;</span>, entry, maxsplit<span class="op">=</span><span class="dv">3</span>) <span class="cf">for</span> entry <span class="kw">in</span> entries]</span></code></pre></div>
+<div class="sourceCode" id="cb741"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb741-1"><a href="regular-expression.html#cb741-1" aria-hidden="true" tabindex="-1"></a>[re.split(<span class="vs">r&#39;:?\s&#39;</span>, entry, maxsplit<span class="op">=</span><span class="dv">3</span>) <span class="cf">for</span> entry <span class="kw">in</span> entries]</span></code></pre></div>
 <pre class="Rout"><code>[[&#39;Ross&#39;, &#39;McFluff&#39;, &#39;834.345.1254&#39;, &#39;155 Elm Street&#39;], [&#39;Ronald&#39;, &#39;Heathmore&#39;, &#39;892.345.3428&#39;, &#39;436 Finley Avenue&#39;], [&#39;Frank&#39;, &#39;Burger&#39;, &#39;925.541.7625&#39;, &#39;662 South Dogwood Way&#39;], [&#39;Heather&#39;, &#39;Albrecht&#39;, &#39;548.326.4584&#39;, &#39;919 Park Place&#39;]]</code></pre>
 </div>
 </div>
-<div id="text-munging" class="section level2" number="14.5">
-<h2><span class="header-section-number">14.5</span> Text Munging</h2>
+<div id="text-munging" class="section level2" number="17.5">
+<h2><span class="header-section-number">17.5</span> Text Munging</h2>
 <ul>
 <li><code>re.sub()</code></li>
 </ul>
-<div class="sourceCode" id="cb596"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb596-1"><a href="regular-expression.html#cb596-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&#39;&#39;&#39;Peter Piper picked a peck of pickled peppers</span></span>
-<span id="cb596-2"><a href="regular-expression.html#cb596-2" aria-hidden="true" tabindex="-1"></a><span class="st">A peck of pickled peppers Peter Piper picked</span></span>
-<span id="cb596-3"><a href="regular-expression.html#cb596-3" aria-hidden="true" tabindex="-1"></a><span class="st">If Peter Piper picked a peck of pickled peppers</span></span>
-<span id="cb596-4"><a href="regular-expression.html#cb596-4" aria-hidden="true" tabindex="-1"></a><span class="st">Where’s the peck of pickled peppers Peter Piper picked?&#39;&#39;&#39;</span></span></code></pre></div>
-<div class="sourceCode" id="cb597"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb597-1"><a href="regular-expression.html#cb597-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.sub(<span class="vs">r&#39;[aeiou]&#39;</span>,<span class="st">&#39;_&#39;</span>, text))</span></code></pre></div>
+<div class="sourceCode" id="cb743"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb743-1"><a href="regular-expression.html#cb743-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&#39;&#39;&#39;Peter Piper picked a peck of pickled peppers</span></span>
+<span id="cb743-2"><a href="regular-expression.html#cb743-2" aria-hidden="true" tabindex="-1"></a><span class="st">A peck of pickled peppers Peter Piper picked</span></span>
+<span id="cb743-3"><a href="regular-expression.html#cb743-3" aria-hidden="true" tabindex="-1"></a><span class="st">If Peter Piper picked a peck of pickled peppers</span></span>
+<span id="cb743-4"><a href="regular-expression.html#cb743-4" aria-hidden="true" tabindex="-1"></a><span class="st">Where’s the peck of pickled peppers Peter Piper picked?&#39;&#39;&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb744"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb744-1"><a href="regular-expression.html#cb744-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.sub(<span class="vs">r&#39;[aeiou]&#39;</span>,<span class="st">&#39;_&#39;</span>, text))</span></code></pre></div>
 <pre class="Rout"><code>P_t_r P_p_r p_ck_d _ p_ck _f p_ckl_d p_pp_rs
 A p_ck _f p_ckl_d p_pp_rs P_t_r P_p_r p_ck_d
 If P_t_r P_p_r p_ck_d _ p_ck _f p_ckl_d p_pp_rs
 Wh_r_’s th_ p_ck _f p_ckl_d p_pp_rs P_t_r P_p_r p_ck_d?</code></pre>
-<div class="sourceCode" id="cb599"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb599-1"><a href="regular-expression.html#cb599-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.sub(<span class="vs">r&#39;([aeiou])&#39;</span>,<span class="vs">r&#39;[\1]&#39;</span>, text))</span></code></pre></div>
+<div class="sourceCode" id="cb746"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb746-1"><a href="regular-expression.html#cb746-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.sub(<span class="vs">r&#39;([aeiou])&#39;</span>,<span class="vs">r&#39;[\1]&#39;</span>, text))</span></code></pre></div>
 <pre class="Rout"><code>P[e]t[e]r P[i]p[e]r p[i]ck[e]d [a] p[e]ck [o]f p[i]ckl[e]d p[e]pp[e]rs
 A p[e]ck [o]f p[i]ckl[e]d p[e]pp[e]rs P[e]t[e]r P[i]p[e]r p[i]ck[e]d
 If P[e]t[e]r P[i]p[e]r p[i]ck[e]d [a] p[e]ck [o]f p[i]ckl[e]d p[e]pp[e]rs
 Wh[e]r[e]’s th[e] p[e]ck [o]f p[i]ckl[e]d p[e]pp[e]rs P[e]t[e]r P[i]p[e]r p[i]ck[e]d?</code></pre>
-<div class="sourceCode" id="cb601"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb601-1"><a href="regular-expression.html#cb601-1" aria-hidden="true" tabindex="-1"></a>American_dates <span class="op">=</span> [<span class="st">&quot;7/31/1976&quot;</span>, <span class="st">&quot;02.15.1970&quot;</span>, <span class="st">&quot;11-31-1986&quot;</span>, <span class="st">&quot;04/01.2020&quot;</span>]</span></code></pre></div>
-<div class="sourceCode" id="cb602"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb602-1"><a href="regular-expression.html#cb602-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(American_dates)</span></code></pre></div>
+<div class="sourceCode" id="cb748"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb748-1"><a href="regular-expression.html#cb748-1" aria-hidden="true" tabindex="-1"></a>American_dates <span class="op">=</span> [<span class="st">&quot;7/31/1976&quot;</span>, <span class="st">&quot;02.15.1970&quot;</span>, <span class="st">&quot;11-31-1986&quot;</span>, <span class="st">&quot;04/01.2020&quot;</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb749"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb749-1"><a href="regular-expression.html#cb749-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(American_dates)</span></code></pre></div>
 <pre class="Rout"><code>[&#39;7/31/1976&#39;, &#39;02.15.1970&#39;, &#39;11-31-1986&#39;, &#39;04/01.2020&#39;]</code></pre>
-<div class="sourceCode" id="cb604"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb604-1"><a href="regular-expression.html#cb604-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>([re.sub(<span class="vs">r&#39;(\d+)(\D)(\d+)(\D)(\d+)&#39;</span>, <span class="vs">r&#39;\3\2\1\4\5&#39;</span>, date) <span class="cf">for</span> date <span class="kw">in</span> American_dates])</span></code></pre></div>
+<div class="sourceCode" id="cb751"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb751-1"><a href="regular-expression.html#cb751-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>([re.sub(<span class="vs">r&#39;(\d+)(\D)(\d+)(\D)(\d+)&#39;</span>, <span class="vs">r&#39;\3\2\1\4\5&#39;</span>, date) <span class="cf">for</span> date <span class="kw">in</span> American_dates])</span></code></pre></div>
 <pre class="Rout"><code>[&#39;31/7/1976&#39;, &#39;15.02.1970&#39;, &#39;31-11-1986&#39;, &#39;01/04.2020&#39;]</code></pre>
 <ul>
 <li>In <code>re.sub(repl, string)</code>, the <code>repl</code> argument can be a function. If <code>repl</code> is a function, it is called for every non-overlapping occurrence of pattern. The function takes a single match object argument, and returns the replacement string.</li>
 </ul>
-<div class="sourceCode" id="cb606"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb606-1"><a href="regular-expression.html#cb606-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">&quot;This is a simple sentence.&quot;</span></span>
-<span id="cb606-2"><a href="regular-expression.html#cb606-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb606-3"><a href="regular-expression.html#cb606-3" aria-hidden="true" tabindex="-1"></a>pat_vowels <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r&#39;[aeiou]&#39;</span>)</span>
-<span id="cb606-4"><a href="regular-expression.html#cb606-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb606-5"><a href="regular-expression.html#cb606-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> replaceVowels(m):</span>
-<span id="cb606-6"><a href="regular-expression.html#cb606-6" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> m.group(<span class="dv">0</span>)</span>
-<span id="cb606-7"><a href="regular-expression.html#cb606-7" aria-hidden="true" tabindex="-1"></a>    c2 <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
-<span id="cb606-8"><a href="regular-expression.html#cb606-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> c <span class="kw">in</span> <span class="st">&quot;ie&quot;</span>:</span>
-<span id="cb606-9"><a href="regular-expression.html#cb606-9" aria-hidden="true" tabindex="-1"></a>        c2 <span class="op">=</span> <span class="st">&quot;F&quot;</span></span>
-<span id="cb606-10"><a href="regular-expression.html#cb606-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb606-11"><a href="regular-expression.html#cb606-11" aria-hidden="true" tabindex="-1"></a>        c2 <span class="op">=</span> <span class="st">&quot;B&quot;</span></span>
-<span id="cb606-12"><a href="regular-expression.html#cb606-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> c2</span>
-<span id="cb606-13"><a href="regular-expression.html#cb606-13" aria-hidden="true" tabindex="-1"></a>pat_vowels.sub(replaceVowels, s)</span></code></pre></div>
+<div class="sourceCode" id="cb753"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb753-1"><a href="regular-expression.html#cb753-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">&quot;This is a simple sentence.&quot;</span></span>
+<span id="cb753-2"><a href="regular-expression.html#cb753-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb753-3"><a href="regular-expression.html#cb753-3" aria-hidden="true" tabindex="-1"></a>pat_vowels <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r&#39;[aeiou]&#39;</span>)</span>
+<span id="cb753-4"><a href="regular-expression.html#cb753-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb753-5"><a href="regular-expression.html#cb753-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> replaceVowels(m):</span>
+<span id="cb753-6"><a href="regular-expression.html#cb753-6" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> m.group(<span class="dv">0</span>)</span>
+<span id="cb753-7"><a href="regular-expression.html#cb753-7" aria-hidden="true" tabindex="-1"></a>    c2 <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb753-8"><a href="regular-expression.html#cb753-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> c <span class="kw">in</span> <span class="st">&quot;ie&quot;</span>:</span>
+<span id="cb753-9"><a href="regular-expression.html#cb753-9" aria-hidden="true" tabindex="-1"></a>        c2 <span class="op">=</span> <span class="st">&quot;F&quot;</span></span>
+<span id="cb753-10"><a href="regular-expression.html#cb753-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb753-11"><a href="regular-expression.html#cb753-11" aria-hidden="true" tabindex="-1"></a>        c2 <span class="op">=</span> <span class="st">&quot;B&quot;</span></span>
+<span id="cb753-12"><a href="regular-expression.html#cb753-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> c2</span>
+<span id="cb753-13"><a href="regular-expression.html#cb753-13" aria-hidden="true" tabindex="-1"></a>pat_vowels.sub(replaceVowels, s)</span></code></pre></div>
 <pre class="Rout"><code>&#39;ThFs Fs B sFmplF sFntFncF.&#39;</code></pre>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-79" class="exercise"><strong>Exercise 14.2  </strong></span>Create a small program to extract both emails and phone numbers from the texts on this faculty page: <a href="https://www.eng.ntnu.edu.tw/index.php/full-time-faculty/">Department o English, NTNU</a>.</p>
+<p><span id="exr:unlabeled-div-83" class="exercise"><strong>Exercise 17.2  </strong></span>Create a small program to extract both emails and phone numbers from the texts on this faculty page: <a href="https://www.eng.ntnu.edu.tw/index.php/full-time-faculty/">Department o English, NTNU</a>.</p>
 </div>
 <pre class="Rout"><code>All Phone Numbers:</code></pre>
-<pre class="Rout"><code>[&#39;02-7749-1801&#39;, &#39;02-7749-1772&#39;, &#39;02-7749-1775&#39;, &#39;02-7749-1783&#39;, &#39;02-7749-1767&#39;, &#39;02-7749-1757&#39;, &#39;02-7749-1781&#39;, &#39;02-7749-1777&#39;, &#39;02-7749-1773&#39;, &#39;02-7749-1759&#39;, &#39;02-7749-1768&#39;, &#39;02-7749-1822&#39;, &#39;02-7749-1760&#39;, &#39;02-7749-1764&#39;, &#39;02-7749-1769&#39;, &#39;02-7749-1817&#39;, &#39;02-7749-1756&#39;, &#39;02-7749-1788&#39;, &#39;02-7749-1758&#39;, &#39;02-7749-1754&#39;, &#39;02-7749-1821&#39;, &#39;02-7749-1787&#39;, &#39;02-7749-1776&#39;, &#39;02-7749-1770&#39;, &#39;02-7749-1786&#39;, &#39;02-7749-1789&#39;, &#39;02-7749-1816&#39;, &#39;02-7749-1774&#39;, &#39;02-7749-1765&#39;, &#39;02-7749-1819&#39;, &#39;02-7749-1778&#39;, &#39;02-7749-1761&#39;, &#39;02-7749-1541&#39;, &#39;02-7749-1761&#39;, &#39;02-7749-1823&#39;, &#39;02-7749-1540&#39;, &#39;02-7749-1763&#39;, &#39;02-7749-1762&#39;, &#39;02-7749-1785&#39;, &#39;02-7749-1820&#39;, &#39;02-7749-1766&#39;, &#39;02-7749-1782&#39;, &#39;02-7749-1811&#39;, &#39;02-7749-1821&#39;, &#39;02-7749-1779&#39;, &#39;02-7749-1762&#39;, &#39;02-7749-1784&#39;, &#39;02-7749-1755&#39;, &#39;02-7749-1800&#39;, &#39;02-2363-4793&#39;]</code></pre>
+<pre class="Rout"><code>[&#39;02-7749-1801&#39;, &#39;02-7749-1772&#39;, &#39;02-7749-1775&#39;, &#39;02-7749-1783&#39;, &#39;02-7749-1767&#39;, &#39;02-7749-1757&#39;, &#39;02-7749-1781&#39;, &#39;02-7749-1777&#39;, &#39;02-7749-1773&#39;, &#39;02-7749-1759&#39;, &#39;02-7749-1768&#39;, &#39;02-7749-1822&#39;, &#39;02-7749-1760&#39;, &#39;02-7749-1764&#39;, &#39;02-7749-1769&#39;, &#39;02-7749-1817&#39;, &#39;02-7749-1756&#39;, &#39;02-7749-1788&#39;, &#39;02-7749-1758&#39;, &#39;02-7749-1754&#39;, &#39;02-7749-1821&#39;, &#39;02-7749-1819&#39;, &#39;02-7749-1790&#39;, &#39;02-7749-1787&#39;, &#39;02-7749-1776&#39;, &#39;02-7749-1770&#39;, &#39;02-7749-1786&#39;, &#39;02-7749-1789&#39;, &#39;02-7749-1816&#39;, &#39;02-7749-1774&#39;, &#39;02-7749-1765&#39;, &#39;02-7749-1778&#39;, &#39;02-7749-1761&#39;, &#39;02-7749-1541&#39;, &#39;02-7749-1761&#39;, &#39;02-7749-1823&#39;, &#39;02-7749-1540&#39;, &#39;02-7749-1763&#39;, &#39;02-7749-1762&#39;, &#39;02-7749-1821&#39;, &#39;02-7749-1785&#39;, &#39;02-7749-1820&#39;, &#39;02-7749-1766&#39;, &#39;02-7749-1782&#39;, &#39;02-7749-1811&#39;, &#39;02-7749-1779&#39;, &#39;02-7749-1762&#39;, &#39;02-7749-1784&#39;, &#39;02-7749-1755&#39;, &#39;02-7749-1800&#39;, &#39;02-2363-4793&#39;]</code></pre>
 <pre class="Rout"><code>All Emails:</code></pre>
-<pre class="Rout"><code>[&#39;chunyin@gapps.ntnu.edu.tw&#39;, &#39;mhchang@ntnu.edu.tw&#39;, &#39;clchern@ntnu.edu.tw&#39;, &#39;t22035@ntnu.edu.tw&#39;, &#39;joanchang@ntnu.edu.tw&#39;, &#39;hjchen@ntnu.edu.tw&#39;, &#39;tcsu@ntnu.edu.tw&#39;, &#39;t22028@ntnu.edu.tw&#39;, &#39;lip@ntnu.edu.tw&#39;, &#39;ting@ntnu.edu.tw&#39;, &#39;hclee@ntnu.edu.tw&#39;, &#39;hslin@ntnu.edu.tw&#39;, &#39;chyhuang@ntnu.edu.tw&#39;, &#39;profgood@ntnu.edu.tw&#39;, &#39;cclin@ntnu.edu.tw&#39;, &#39;iriswu@ntnu.edu.tw&#39;, &#39;yeutingliu@gapps.ntnu.edu.tw&#39;, &#39;ioana.luca@ntnu.edu.tw&#39;, &#39;lindsey@ntnu.edu.tw&#39;, &#39;jprystash@ntnu.edu.tw&#39;, &#39;brianyeh@ntnu.edu.tw&#39;, &#39;lijeni@ntnu.edu.tw&#39;, &#39;ykhsu@ntnu.edu.tw&#39;, &#39;ycshao@ntnu.edu.tw&#39;, &#39;t22045@ntnu.edu.tw&#39;, &#39;jjwu@ntnu.edu.tw&#39;, &#39;mlhsieh@ntnu.edu.tw&#39;, &#39;jungsu@ntnu.edu.tw&#39;, &#39;hsysu@ntnu.edu.tw&#39;, &#39;t22001@ntnu.edu.tw&#39;, &#39;shiaohui@ntnu.edu.tw&#39;, &#39;jjtseng@gapps.ntnu.edu.tw&#39;, &#39;peichinchang@ntnu.edu.tw&#39;, &#39;aaron.c.deveson@ntnu.edu.tw&#39;, &#39;t22050@ntnu.edu.tw&#39;, &#39;lihsin@ntnu.edu.tw&#39;, &#39;wanghc@gapps.ntnu.edu.tw&#39;, &#39;hllin@ntnu.edu.tw&#39;, &#39;jiaqiwu8@ntnu.edu.tw&#39;, &#39;angelawu@ntnu.edu.tw&#39;, &#39;yichien@ntnu.edu.tw&#39;, &#39;gfsayang@ntnu.edu.tw&#39;, &#39;alvinchen@ntnu.edu.tw&#39;, &#39;yuchentai@gapps.ntnu.edu.tw&#39;, &#39;fwkung@ntnu.edu.tw&#39;, &#39;t22040@ntnu.edu.tw&#39;, &#39;curran@ntnu.edu.tw&#39;, &#39;english@ntnu.edu.tw&#39;]</code></pre>
+<pre class="Rout"><code>[&#39;chunyin@gapps.ntnu.edu.tw&#39;, &#39;mhchang@ntnu.edu.tw&#39;, &#39;clchern@ntnu.edu.tw&#39;, &#39;t22035@ntnu.edu.tw&#39;, &#39;joanchang@ntnu.edu.tw&#39;, &#39;hjchen@ntnu.edu.tw&#39;, &#39;tcsu@ntnu.edu.tw&#39;, &#39;t22028@ntnu.edu.tw&#39;, &#39;lip@ntnu.edu.tw&#39;, &#39;ting@ntnu.edu.tw&#39;, &#39;hclee@ntnu.edu.tw&#39;, &#39;hslin@ntnu.edu.tw&#39;, &#39;chyhuang@ntnu.edu.tw&#39;, &#39;profgood@ntnu.edu.tw&#39;, &#39;cclin@ntnu.edu.tw&#39;, &#39;iriswu@ntnu.edu.tw&#39;, &#39;yeutingliu@gapps.ntnu.edu.tw&#39;, &#39;ioana.luca@ntnu.edu.tw&#39;, &#39;lindsey@ntnu.edu.tw&#39;, &#39;jprystash@ntnu.edu.tw&#39;, &#39;hsysu@ntnu.edu.tw&#39;, &#39;hannes.bergthaller@ntnu.edu.tw&#39;, &#39;brianyeh@ntnu.edu.tw&#39;, &#39;lijeni@ntnu.edu.tw&#39;, &#39;ykhsu@ntnu.edu.tw&#39;, &#39;ycshao@ntnu.edu.tw&#39;, &#39;t22045@ntnu.edu.tw&#39;, &#39;jjwu@ntnu.edu.tw&#39;, &#39;mlhsieh@ntnu.edu.tw&#39;, &#39;jungsu@ntnu.edu.tw&#39;, &#39;t22001@ntnu.edu.tw&#39;, &#39;shiaohui@ntnu.edu.tw&#39;, &#39;jjtseng@gapps.ntnu.edu.tw&#39;, &#39;peichinchang@ntnu.edu.tw&#39;, &#39;aaron.c.deveson@ntnu.edu.tw&#39;, &#39;t22050@ntnu.edu.tw&#39;, &#39;lihsin@ntnu.edu.tw&#39;, &#39;wanghc@gapps.ntnu.edu.tw&#39;, &#39;alvinchen@ntnu.edu.tw&#39;, &#39;hllin@ntnu.edu.tw&#39;, &#39;jiaqiwu8@ntnu.edu.tw&#39;, &#39;angelawu@ntnu.edu.tw&#39;, &#39;yichien@ntnu.edu.tw&#39;, &#39;gfsayang@ntnu.edu.tw&#39;, &#39;yuchentai@gapps.ntnu.edu.tw&#39;, &#39;fwkung@ntnu.edu.tw&#39;, &#39;t22040@ntnu.edu.tw&#39;, &#39;curran@ntnu.edu.tw&#39;, &#39;english@ntnu.edu.tw&#39;]</code></pre>
 </div>
-<div id="references" class="section level2" number="14.6">
-<h2><span class="header-section-number">14.6</span> References</h2>
+<div id="references" class="section level2" number="17.6">
+<h2><span class="header-section-number">17.6</span> References</h2>
 <ul>
 <li><a href="https://learnbyexample.github.io/python-regex-cheatsheet/">Python regular expression cheatsheet</a></li>
 <li><a href="https://docs.python.org/3/library/re.html">Python official regular expression documentation</a></li>
@@ -787,7 +840,7 @@ Wh[e]r[e]’s th[e] p[e]ck [o]f p[i]ckl[e]d p[e]pp[e]rs P[e]t[e]r P[i]p[e]r p[i]
           </div>
         </div>
       </div>
-<a href="python-fundamentals.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="object-orientation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="pandas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

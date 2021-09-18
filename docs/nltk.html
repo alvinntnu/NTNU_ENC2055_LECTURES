@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 16 NLTK | ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
+  <title>Chapter 19 NLTK | ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
   <meta name="description" content="ENC2055 Course material second edition" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 16 NLTK | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
+  <meta property="og:title" content="Chapter 19 NLTK | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 16 NLTK | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
+  <meta name="twitter:title" content="Chapter 19 NLTK | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
   
   <meta name="twitter:description" content="ENC2055 Course material second edition" />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-06-20" />
+<meta name="date" content="2021-09-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="pandas.html"/>
 <link rel="next" href="web-scraping.html"/>
-<script src="libs/header-attrs-2.8.6/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -55,6 +55,17 @@
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
+<script src="libs/str_view-binding-1.4.0/str_view.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
+<link href="libs/font-awesome-5.13.0/css/all.min.css" rel="stylesheet" />
+<link href="libs/font-awesome-5.13.0/css/v4-shims.min.css" rel="stylesheet" />
+<script src="https://hypothes.is/embed.js" async></script>
 
 
 <style type="text/css">
@@ -122,6 +133,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style-new.css" type="text/css" />
 </head>
@@ -145,6 +178,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-objective"><i class="fa fa-check"></i>Course Objective</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#textbook"><i class="fa fa-check"></i>Textbook</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-website"><i class="fa fa-check"></i>Course Website</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributing-to-the-lecture-notes"><i class="fa fa-check"></i>Contributing to the Lecture Notes</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-demo-data"><i class="fa fa-check"></i>Course Demo Data</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#questions"><i class="fa fa-check"></i>Questions?</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#necessary-packages"><i class="fa fa-check"></i>Necessary Packages</a></li>
@@ -193,248 +227,296 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.4" data-path="subsetting.html"><a href="subsetting.html#data-frame"><i class="fa fa-check"></i><b>4.4</b> Data Frame</a></li>
 <li class="chapter" data-level="4.5" data-path="subsetting.html"><a href="subsetting.html#tibble"><i class="fa fa-check"></i><b>4.5</b> Tibble</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>5</b> Data Visualization</a>
+<li class="chapter" data-level="5" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html"><i class="fa fa-check"></i><b>5</b> Conditions and Loops</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="data-visualization.html"><a href="data-visualization.html#why-visualization"><i class="fa fa-check"></i><b>5.1</b> Why Visualization?</a>
+<li class="chapter" data-level="5.1" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#conditions"><i class="fa fa-check"></i><b>5.1</b> Conditions</a>
 <ul>
-<li class="chapter" data-level="5.1.1" data-path="data-visualization.html"><a href="data-visualization.html#datasaurus-dozen-dataset"><i class="fa fa-check"></i><b>5.1.1</b> Datasaurus Dozen Dataset</a></li>
-<li class="chapter" data-level="5.1.2" data-path="data-visualization.html"><a href="data-visualization.html#simpsons-paradox"><i class="fa fa-check"></i><b>5.1.2</b> Simpson’s Paradox</a></li>
+<li class="chapter" data-level="5.1.1" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#boolean-values"><i class="fa fa-check"></i><b>5.1.1</b> Boolean Values</a></li>
+<li class="chapter" data-level="5.1.2" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#comparison-operators"><i class="fa fa-check"></i><b>5.1.2</b> Comparison Operators</a></li>
+<li class="chapter" data-level="5.1.3" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#boolean-operators"><i class="fa fa-check"></i><b>5.1.3</b> Boolean Operators</a></li>
+<li class="chapter" data-level="5.1.4" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#elements-of-flow-control"><i class="fa fa-check"></i><b>5.1.4</b> Elements of Flow Control</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="data-visualization.html"><a href="data-visualization.html#ggplot2"><i class="fa fa-check"></i><b>5.2</b> <code>ggplot2</code></a></li>
-<li class="chapter" data-level="5.3" data-path="data-visualization.html"><a href="data-visualization.html#variables-and-data-type"><i class="fa fa-check"></i><b>5.3</b> Variables and Data Type</a></li>
-<li class="chapter" data-level="5.4" data-path="data-visualization.html"><a href="data-visualization.html#one-variable-graph"><i class="fa fa-check"></i><b>5.4</b> One-variable Graph</a></li>
-<li class="chapter" data-level="5.5" data-path="data-visualization.html"><a href="data-visualization.html#two-variable-graph"><i class="fa fa-check"></i><b>5.5</b> Two-variable Graph</a></li>
-<li class="chapter" data-level="5.6" data-path="data-visualization.html"><a href="data-visualization.html#adding-other-aesthetic-features"><i class="fa fa-check"></i><b>5.6</b> Adding Other Aesthetic Features</a>
-<ul>
-<li class="chapter" data-level="5.6.1" data-path="data-visualization.html"><a href="data-visualization.html#color"><i class="fa fa-check"></i><b>5.6.1</b> <code>color</code></a></li>
-<li class="chapter" data-level="5.6.2" data-path="data-visualization.html"><a href="data-visualization.html#shape"><i class="fa fa-check"></i><b>5.6.2</b> <code>shape</code></a></li>
-<li class="chapter" data-level="5.6.3" data-path="data-visualization.html"><a href="data-visualization.html#other-geom_...-layers"><i class="fa fa-check"></i><b>5.6.3</b> Other <code>geom_...</code> Layers</a></li>
-<li class="chapter" data-level="5.6.4" data-path="data-visualization.html"><a href="data-visualization.html#labels"><i class="fa fa-check"></i><b>5.6.4</b> Labels</a></li>
-<li class="chapter" data-level="5.6.5" data-path="data-visualization.html"><a href="data-visualization.html#fill"><i class="fa fa-check"></i><b>5.6.5</b> <code>fill</code></a></li>
-<li class="chapter" data-level="5.6.6" data-path="data-visualization.html"><a href="data-visualization.html#interim-summary"><i class="fa fa-check"></i><b>5.6.6</b> Interim Summary</a></li>
+<li class="chapter" data-level="5.2" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#if-statements"><i class="fa fa-check"></i><b>5.2</b> <code>if</code> Statements</a></li>
+<li class="chapter" data-level="5.3" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#for"><i class="fa fa-check"></i><b>5.3</b> <code>for</code></a></li>
+<li class="chapter" data-level="5.4" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#while-loop"><i class="fa fa-check"></i><b>5.4</b> <code>while</code> loop</a></li>
+<li class="chapter" data-level="5.5" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#toy-example"><i class="fa fa-check"></i><b>5.5</b> Toy Example</a></li>
 </ul></li>
-<li class="chapter" data-level="5.7" data-path="data-visualization.html"><a href="data-visualization.html#saving-plots"><i class="fa fa-check"></i><b>5.7</b> Saving Plots</a></li>
-<li class="chapter" data-level="5.8" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-iris"><i class="fa fa-check"></i><b>5.8</b> Exercises on <code>iris</code></a></li>
-<li class="chapter" data-level="5.9" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-covid-19"><i class="fa fa-check"></i><b>5.9</b> Exercises on COVID-19</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="data-manipulation.html"><a href="data-manipulation.html"><i class="fa fa-check"></i><b>6</b> Data Manipulation</a>
+<li class="chapter" data-level="6" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>6</b> Functions</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="data-manipulation.html"><a href="data-manipulation.html#dataset"><i class="fa fa-check"></i><b>6.1</b> Dataset</a></li>
-<li class="chapter" data-level="6.2" data-path="data-manipulation.html"><a href="data-manipulation.html#rename"><i class="fa fa-check"></i><b>6.2</b> <code>rename()</code></a></li>
-<li class="chapter" data-level="6.3" data-path="data-manipulation.html"><a href="data-manipulation.html#pipe"><i class="fa fa-check"></i><b>6.3</b> Pipe <code>%&gt;%</code></a></li>
-<li class="chapter" data-level="6.4" data-path="data-manipulation.html"><a href="data-manipulation.html#mutate"><i class="fa fa-check"></i><b>6.4</b> <code>mutate()</code></a></li>
-<li class="chapter" data-level="6.5" data-path="data-manipulation.html"><a href="data-manipulation.html#select"><i class="fa fa-check"></i><b>6.5</b> <code>select()</code></a></li>
-<li class="chapter" data-level="6.6" data-path="data-manipulation.html"><a href="data-manipulation.html#filter"><i class="fa fa-check"></i><b>6.6</b> <code>filter()</code></a></li>
-<li class="chapter" data-level="6.7" data-path="data-manipulation.html"><a href="data-manipulation.html#arrange"><i class="fa fa-check"></i><b>6.7</b> <code>arrange()</code></a></li>
-<li class="chapter" data-level="6.8" data-path="data-manipulation.html"><a href="data-manipulation.html#group_by-and-summarize"><i class="fa fa-check"></i><b>6.8</b> <code>group_by()</code> and <code>summarize()</code></a></li>
-<li class="chapter" data-level="6.9" data-path="data-manipulation.html"><a href="data-manipulation.html#count"><i class="fa fa-check"></i><b>6.9</b> <code>count()</code></a></li>
-<li class="chapter" data-level="6.10" data-path="data-manipulation.html"><a href="data-manipulation.html#tidy-data"><i class="fa fa-check"></i><b>6.10</b> Tidy Data</a>
-<ul>
-<li class="chapter" data-level="6.10.1" data-path="data-manipulation.html"><a href="data-manipulation.html#an-long-to-wide-example"><i class="fa fa-check"></i><b>6.10.1</b> An Long-to-Wide Example</a></li>
-<li class="chapter" data-level="6.10.2" data-path="data-manipulation.html"><a href="data-manipulation.html#a-wide-to-long-example"><i class="fa fa-check"></i><b>6.10.2</b> A Wide-to-Long Example</a></li>
+<li class="chapter" data-level="6.1" data-path="functions.html"><a href="functions.html#a-quick-start"><i class="fa fa-check"></i><b>6.1</b> A Quick Start</a></li>
+<li class="chapter" data-level="6.2" data-path="functions.html"><a href="functions.html#why-do-we-need-functions"><i class="fa fa-check"></i><b>6.2</b> Why do we need functions?</a></li>
+<li class="chapter" data-level="6.3" data-path="functions.html"><a href="functions.html#functions-with-parameters"><i class="fa fa-check"></i><b>6.3</b> Functions with parameters</a></li>
+<li class="chapter" data-level="6.4" data-path="functions.html"><a href="functions.html#recap-of-important-concepts-so-far"><i class="fa fa-check"></i><b>6.4</b> Recap of Important Concepts So Far</a></li>
+<li class="chapter" data-level="6.5" data-path="functions.html"><a href="functions.html#return-statements"><i class="fa fa-check"></i><b>6.5</b> RETURN Statements</a></li>
+<li class="chapter" data-level="6.6" data-path="functions.html"><a href="functions.html#parameters-order"><i class="fa fa-check"></i><b>6.6</b> Parameters Order</a></li>
+<li class="chapter" data-level="6.7" data-path="functions.html"><a href="functions.html#stacking-functions"><i class="fa fa-check"></i><b>6.7</b> Stacking Functions</a></li>
+<li class="chapter" data-level="6.8" data-path="functions.html"><a href="functions.html#local-and-global-scope"><i class="fa fa-check"></i><b>6.8</b> Local and Global Scope</a></li>
+<li class="chapter" data-level="6.9" data-path="functions.html"><a href="functions.html#exception-handling"><i class="fa fa-check"></i><b>6.9</b> Exception Handling</a></li>
 </ul></li>
-<li class="chapter" data-level="6.11" data-path="data-manipulation.html"><a href="data-manipulation.html#exerceises"><i class="fa fa-check"></i><b>6.11</b> Exerceises</a></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="string-manipulation.html"><a href="string-manipulation.html"><i class="fa fa-check"></i><b>7</b> String Manipulation</a>
+<li class="chapter" data-level="7" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>7</b> Data Visualization</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="string-manipulation.html"><a href="string-manipulation.html#what-is-regular-expression"><i class="fa fa-check"></i><b>7.1</b> What is Regular Expression?</a></li>
-<li class="chapter" data-level="7.2" data-path="string-manipulation.html"><a href="string-manipulation.html#string-basics"><i class="fa fa-check"></i><b>7.2</b> String Basics</a></li>
-<li class="chapter" data-level="7.3" data-path="string-manipulation.html"><a href="string-manipulation.html#a-good-tool-regexplain"><i class="fa fa-check"></i><b>7.3</b> A Good Tool: <code>RegExplain</code></a></li>
-<li class="chapter" data-level="7.4" data-path="string-manipulation.html"><a href="string-manipulation.html#regular-expression-grammar"><i class="fa fa-check"></i><b>7.4</b> Regular Expression Grammar</a>
+<li class="chapter" data-level="7.1" data-path="data-visualization.html"><a href="data-visualization.html#why-visualization"><i class="fa fa-check"></i><b>7.1</b> Why Visualization?</a>
 <ul>
-<li class="chapter" data-level="7.4.1" data-path="string-manipulation.html"><a href="string-manipulation.html#metacharacters"><i class="fa fa-check"></i><b>7.4.1</b> Metacharacters</a></li>
-<li class="chapter" data-level="7.4.2" data-path="string-manipulation.html"><a href="string-manipulation.html#anchors"><i class="fa fa-check"></i><b>7.4.2</b> Anchors</a></li>
-<li class="chapter" data-level="7.4.3" data-path="string-manipulation.html"><a href="string-manipulation.html#character-set"><i class="fa fa-check"></i><b>7.4.3</b> Character Set</a></li>
-<li class="chapter" data-level="7.4.4" data-path="string-manipulation.html"><a href="string-manipulation.html#alternatives"><i class="fa fa-check"></i><b>7.4.4</b> Alternatives</a></li>
-<li class="chapter" data-level="7.4.5" data-path="string-manipulation.html"><a href="string-manipulation.html#quantifiers"><i class="fa fa-check"></i><b>7.4.5</b> Quantifiers</a></li>
-<li class="chapter" data-level="7.4.6" data-path="string-manipulation.html"><a href="string-manipulation.html#greedy-vs.-non-greedy-match"><i class="fa fa-check"></i><b>7.4.6</b> Greedy vs. Non-greedy match</a></li>
-<li class="chapter" data-level="7.4.7" data-path="string-manipulation.html"><a href="string-manipulation.html#group-and-back-reference"><i class="fa fa-check"></i><b>7.4.7</b> Group and Back-reference</a></li>
+<li class="chapter" data-level="7.1.1" data-path="data-visualization.html"><a href="data-visualization.html#datasaurus-dozen-dataset"><i class="fa fa-check"></i><b>7.1.1</b> Datasaurus Dozen Dataset</a></li>
+<li class="chapter" data-level="7.1.2" data-path="data-visualization.html"><a href="data-visualization.html#simpsons-paradox"><i class="fa fa-check"></i><b>7.1.2</b> Simpson’s Paradox</a></li>
 </ul></li>
-<li class="chapter" data-level="7.5" data-path="string-manipulation.html"><a href="string-manipulation.html#pattern-matching"><i class="fa fa-check"></i><b>7.5</b> Pattern Matching</a>
+<li class="chapter" data-level="7.2" data-path="data-visualization.html"><a href="data-visualization.html#ggplot2"><i class="fa fa-check"></i><b>7.2</b> <code>ggplot2</code></a></li>
+<li class="chapter" data-level="7.3" data-path="data-visualization.html"><a href="data-visualization.html#variables-and-data-type"><i class="fa fa-check"></i><b>7.3</b> Variables and Data Type</a></li>
+<li class="chapter" data-level="7.4" data-path="data-visualization.html"><a href="data-visualization.html#one-variable-graph"><i class="fa fa-check"></i><b>7.4</b> One-variable Graph</a></li>
+<li class="chapter" data-level="7.5" data-path="data-visualization.html"><a href="data-visualization.html#two-variable-graph"><i class="fa fa-check"></i><b>7.5</b> Two-variable Graph</a></li>
+<li class="chapter" data-level="7.6" data-path="data-visualization.html"><a href="data-visualization.html#adding-other-aesthetic-features"><i class="fa fa-check"></i><b>7.6</b> Adding Other Aesthetic Features</a>
 <ul>
-<li class="chapter" data-level="7.5.1" data-path="string-manipulation.html"><a href="string-manipulation.html#str_detect"><i class="fa fa-check"></i><b>7.5.1</b> <code>str_detect()</code></a></li>
-<li class="chapter" data-level="7.5.2" data-path="string-manipulation.html"><a href="string-manipulation.html#str_subset"><i class="fa fa-check"></i><b>7.5.2</b> <code>str_subset()</code></a></li>
-<li class="chapter" data-level="7.5.3" data-path="string-manipulation.html"><a href="string-manipulation.html#str_extract"><i class="fa fa-check"></i><b>7.5.3</b> <code>str_extract()</code></a></li>
-<li class="chapter" data-level="7.5.4" data-path="string-manipulation.html"><a href="string-manipulation.html#str_match"><i class="fa fa-check"></i><b>7.5.4</b> <code>str_match()</code></a></li>
-<li class="chapter" data-level="7.5.5" data-path="string-manipulation.html"><a href="string-manipulation.html#str_replace"><i class="fa fa-check"></i><b>7.5.5</b> <code>str_replace()</code></a></li>
-<li class="chapter" data-level="7.5.6" data-path="string-manipulation.html"><a href="string-manipulation.html#str_split"><i class="fa fa-check"></i><b>7.5.6</b> <code>str_split()</code></a></li>
+<li class="chapter" data-level="7.6.1" data-path="data-visualization.html"><a href="data-visualization.html#color"><i class="fa fa-check"></i><b>7.6.1</b> <code>color</code></a></li>
+<li class="chapter" data-level="7.6.2" data-path="data-visualization.html"><a href="data-visualization.html#shape"><i class="fa fa-check"></i><b>7.6.2</b> <code>shape</code></a></li>
+<li class="chapter" data-level="7.6.3" data-path="data-visualization.html"><a href="data-visualization.html#other-geom_...-layers"><i class="fa fa-check"></i><b>7.6.3</b> Other <code>geom_...</code> Layers</a></li>
+<li class="chapter" data-level="7.6.4" data-path="data-visualization.html"><a href="data-visualization.html#labels"><i class="fa fa-check"></i><b>7.6.4</b> Labels</a></li>
+<li class="chapter" data-level="7.6.5" data-path="data-visualization.html"><a href="data-visualization.html#fill"><i class="fa fa-check"></i><b>7.6.5</b> <code>fill</code></a></li>
+<li class="chapter" data-level="7.6.6" data-path="data-visualization.html"><a href="data-visualization.html#interim-summary"><i class="fa fa-check"></i><b>7.6.6</b> Interim Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="7.6" data-path="string-manipulation.html"><a href="string-manipulation.html#advanced-pattern-matching-look-ahead-and-behind"><i class="fa fa-check"></i><b>7.6</b> Advanced Pattern Matching: Look Ahead and Behind</a></li>
-<li class="chapter" data-level="7.7" data-path="string-manipulation.html"><a href="string-manipulation.html#more-practices"><i class="fa fa-check"></i><b>7.7</b> More Practices</a>
+<li class="chapter" data-level="7.7" data-path="data-visualization.html"><a href="data-visualization.html#saving-plots"><i class="fa fa-check"></i><b>7.7</b> Saving Plots</a></li>
+<li class="chapter" data-level="7.8" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-iris"><i class="fa fa-check"></i><b>7.8</b> Exercises on <code>iris</code></a></li>
+<li class="chapter" data-level="7.9" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-covid-19"><i class="fa fa-check"></i><b>7.9</b> Exercises on COVID-19</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="data-manipulation.html"><a href="data-manipulation.html"><i class="fa fa-check"></i><b>8</b> Data Manipulation</a>
 <ul>
-<li class="chapter" data-level="7.7.1" data-path="string-manipulation.html"><a href="string-manipulation.html#case-1"><i class="fa fa-check"></i><b>7.7.1</b> Case 1</a></li>
-<li class="chapter" data-level="7.7.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-2"><i class="fa fa-check"></i><b>7.7.2</b> Case 2</a></li>
-<li class="chapter" data-level="7.7.3" data-path="string-manipulation.html"><a href="string-manipulation.html#case-3"><i class="fa fa-check"></i><b>7.7.3</b> Case 3</a></li>
-</ul></li>
-<li class="chapter" data-level="7.8" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-chinese-four-character-idioms"><i class="fa fa-check"></i><b>7.8</b> Case Study: Chinese Four-Character Idioms</a>
+<li class="chapter" data-level="8.1" data-path="data-manipulation.html"><a href="data-manipulation.html#dataset"><i class="fa fa-check"></i><b>8.1</b> Dataset</a></li>
+<li class="chapter" data-level="8.2" data-path="data-manipulation.html"><a href="data-manipulation.html#rename"><i class="fa fa-check"></i><b>8.2</b> <code>rename()</code></a></li>
+<li class="chapter" data-level="8.3" data-path="data-manipulation.html"><a href="data-manipulation.html#pipe"><i class="fa fa-check"></i><b>8.3</b> Pipe <code>%&gt;%</code></a></li>
+<li class="chapter" data-level="8.4" data-path="data-manipulation.html"><a href="data-manipulation.html#mutate"><i class="fa fa-check"></i><b>8.4</b> <code>mutate()</code></a></li>
+<li class="chapter" data-level="8.5" data-path="data-manipulation.html"><a href="data-manipulation.html#select"><i class="fa fa-check"></i><b>8.5</b> <code>select()</code></a></li>
+<li class="chapter" data-level="8.6" data-path="data-manipulation.html"><a href="data-manipulation.html#filter"><i class="fa fa-check"></i><b>8.6</b> <code>filter()</code></a></li>
+<li class="chapter" data-level="8.7" data-path="data-manipulation.html"><a href="data-manipulation.html#arrange"><i class="fa fa-check"></i><b>8.7</b> <code>arrange()</code></a></li>
+<li class="chapter" data-level="8.8" data-path="data-manipulation.html"><a href="data-manipulation.html#group_by-and-summarize"><i class="fa fa-check"></i><b>8.8</b> <code>group_by()</code> and <code>summarize()</code></a></li>
+<li class="chapter" data-level="8.9" data-path="data-manipulation.html"><a href="data-manipulation.html#count"><i class="fa fa-check"></i><b>8.9</b> <code>count()</code></a></li>
+<li class="chapter" data-level="8.10" data-path="data-manipulation.html"><a href="data-manipulation.html#tidy-data"><i class="fa fa-check"></i><b>8.10</b> Tidy Data</a>
 <ul>
-<li class="chapter" data-level="7.8.1" data-path="string-manipulation.html"><a href="string-manipulation.html#dictionary-entries"><i class="fa fa-check"></i><b>7.8.1</b> Dictionary Entries</a></li>
-<li class="chapter" data-level="7.8.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-x來y去"><i class="fa fa-check"></i><b>7.8.2</b> Case Study: <code>X來Y去</code></a></li>
+<li class="chapter" data-level="8.10.1" data-path="data-manipulation.html"><a href="data-manipulation.html#an-long-to-wide-example"><i class="fa fa-check"></i><b>8.10.1</b> An Long-to-Wide Example</a></li>
+<li class="chapter" data-level="8.10.2" data-path="data-manipulation.html"><a href="data-manipulation.html#a-wide-to-long-example"><i class="fa fa-check"></i><b>8.10.2</b> A Wide-to-Long Example</a></li>
 </ul></li>
+<li class="chapter" data-level="8.11" data-path="data-manipulation.html"><a href="data-manipulation.html#exerceises"><i class="fa fa-check"></i><b>8.11</b> Exerceises</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="data-import.html"><a href="data-import.html"><i class="fa fa-check"></i><b>8</b> Data Import</a>
+<li class="chapter" data-level="9" data-path="string-manipulation.html"><a href="string-manipulation.html"><i class="fa fa-check"></i><b>9</b> String Manipulation</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="data-import.html"><a href="data-import.html#overview"><i class="fa fa-check"></i><b>8.1</b> Overview</a>
+<li class="chapter" data-level="9.1" data-path="string-manipulation.html"><a href="string-manipulation.html#what-is-regular-expression"><i class="fa fa-check"></i><b>9.1</b> What is Regular Expression?</a></li>
+<li class="chapter" data-level="9.2" data-path="string-manipulation.html"><a href="string-manipulation.html#string-basics"><i class="fa fa-check"></i><b>9.2</b> String Basics</a></li>
+<li class="chapter" data-level="9.3" data-path="string-manipulation.html"><a href="string-manipulation.html#a-good-tool-regexplain"><i class="fa fa-check"></i><b>9.3</b> A Good Tool: <code>RegExplain</code></a></li>
+<li class="chapter" data-level="9.4" data-path="string-manipulation.html"><a href="string-manipulation.html#regular-expression-grammar"><i class="fa fa-check"></i><b>9.4</b> Regular Expression Grammar</a>
 <ul>
-<li class="chapter" data-level="8.1.1" data-path="data-import.html"><a href="data-import.html#what-is-a-csv-file"><i class="fa fa-check"></i><b>8.1.1</b> What is a <code>CSV</code> file?</a></li>
-<li class="chapter" data-level="8.1.2" data-path="data-import.html"><a href="data-import.html#why-are-.csv-files-used"><i class="fa fa-check"></i><b>8.1.2</b> Why are <code>.CSV</code> files used?</a></li>
-<li class="chapter" data-level="8.1.3" data-path="data-import.html"><a href="data-import.html#how-do-i-save-csv-files"><i class="fa fa-check"></i><b>8.1.3</b> How do I save CSV files?</a></li>
-<li class="chapter" data-level="8.1.4" data-path="data-import.html"><a href="data-import.html#what-about-other-types-of-data"><i class="fa fa-check"></i><b>8.1.4</b> What about other types of data?</a></li>
+<li class="chapter" data-level="9.4.1" data-path="string-manipulation.html"><a href="string-manipulation.html#metacharacters"><i class="fa fa-check"></i><b>9.4.1</b> Metacharacters</a></li>
+<li class="chapter" data-level="9.4.2" data-path="string-manipulation.html"><a href="string-manipulation.html#anchors"><i class="fa fa-check"></i><b>9.4.2</b> Anchors</a></li>
+<li class="chapter" data-level="9.4.3" data-path="string-manipulation.html"><a href="string-manipulation.html#character-set"><i class="fa fa-check"></i><b>9.4.3</b> Character Set</a></li>
+<li class="chapter" data-level="9.4.4" data-path="string-manipulation.html"><a href="string-manipulation.html#alternatives"><i class="fa fa-check"></i><b>9.4.4</b> Alternatives</a></li>
+<li class="chapter" data-level="9.4.5" data-path="string-manipulation.html"><a href="string-manipulation.html#quantifiers"><i class="fa fa-check"></i><b>9.4.5</b> Quantifiers</a></li>
+<li class="chapter" data-level="9.4.6" data-path="string-manipulation.html"><a href="string-manipulation.html#greedy-vs.-non-greedy-match"><i class="fa fa-check"></i><b>9.4.6</b> Greedy vs. Non-greedy match</a></li>
+<li class="chapter" data-level="9.4.7" data-path="string-manipulation.html"><a href="string-manipulation.html#group-and-back-reference"><i class="fa fa-check"></i><b>9.4.7</b> Group and Back-reference</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="data-import.html"><a href="data-import.html#importing-data"><i class="fa fa-check"></i><b>8.2</b> Importing Data</a></li>
-<li class="chapter" data-level="8.3" data-path="data-import.html"><a href="data-import.html#character-encoding"><i class="fa fa-check"></i><b>8.3</b> Character Encoding</a>
+<li class="chapter" data-level="9.5" data-path="string-manipulation.html"><a href="string-manipulation.html#pattern-matching"><i class="fa fa-check"></i><b>9.5</b> Pattern Matching</a>
 <ul>
-<li class="chapter" data-level="8.3.1" data-path="data-import.html"><a href="data-import.html#problems-with-ascii"><i class="fa fa-check"></i><b>8.3.1</b> Problems with ASCII</a></li>
-<li class="chapter" data-level="8.3.2" data-path="data-import.html"><a href="data-import.html#from-7-bit-to-one-byte-encoding"><i class="fa fa-check"></i><b>8.3.2</b> From 7-bit to One-Byte Encoding</a></li>
-<li class="chapter" data-level="8.3.3" data-path="data-import.html"><a href="data-import.html#problems-with-single-byte-encoding"><i class="fa fa-check"></i><b>8.3.3</b> Problems with Single-Byte Encoding</a></li>
-<li class="chapter" data-level="8.3.4" data-path="data-import.html"><a href="data-import.html#problems-with-multi-byte-encoding"><i class="fa fa-check"></i><b>8.3.4</b> Problems with Multi-byte Encoding</a></li>
-<li class="chapter" data-level="8.3.5" data-path="data-import.html"><a href="data-import.html#unicode-and-utf-8"><i class="fa fa-check"></i><b>8.3.5</b> Unicode and UTF-8</a></li>
-<li class="chapter" data-level="8.3.6" data-path="data-import.html"><a href="data-import.html#suggestions"><i class="fa fa-check"></i><b>8.3.6</b> Suggestions</a></li>
+<li class="chapter" data-level="9.5.1" data-path="string-manipulation.html"><a href="string-manipulation.html#str_detect"><i class="fa fa-check"></i><b>9.5.1</b> <code>str_detect()</code></a></li>
+<li class="chapter" data-level="9.5.2" data-path="string-manipulation.html"><a href="string-manipulation.html#str_subset"><i class="fa fa-check"></i><b>9.5.2</b> <code>str_subset()</code></a></li>
+<li class="chapter" data-level="9.5.3" data-path="string-manipulation.html"><a href="string-manipulation.html#str_extract"><i class="fa fa-check"></i><b>9.5.3</b> <code>str_extract()</code></a></li>
+<li class="chapter" data-level="9.5.4" data-path="string-manipulation.html"><a href="string-manipulation.html#str_match"><i class="fa fa-check"></i><b>9.5.4</b> <code>str_match()</code></a></li>
+<li class="chapter" data-level="9.5.5" data-path="string-manipulation.html"><a href="string-manipulation.html#str_replace"><i class="fa fa-check"></i><b>9.5.5</b> <code>str_replace()</code></a></li>
+<li class="chapter" data-level="9.5.6" data-path="string-manipulation.html"><a href="string-manipulation.html#str_split"><i class="fa fa-check"></i><b>9.5.6</b> <code>str_split()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="data-import.html"><a href="data-import.html#character-code-point-and-hexadecimal-mode"><i class="fa fa-check"></i><b>8.4</b> Character, Code Point, and Hexadecimal Mode</a></li>
-<li class="chapter" data-level="8.5" data-path="data-import.html"><a href="data-import.html#r-base-functions"><i class="fa fa-check"></i><b>8.5</b> R Base Functions</a>
+<li class="chapter" data-level="9.6" data-path="string-manipulation.html"><a href="string-manipulation.html#advanced-pattern-matching-look-ahead-and-behind"><i class="fa fa-check"></i><b>9.6</b> Advanced Pattern Matching: Look Ahead and Behind</a></li>
+<li class="chapter" data-level="9.7" data-path="string-manipulation.html"><a href="string-manipulation.html#more-practices"><i class="fa fa-check"></i><b>9.7</b> More Practices</a>
 <ul>
-<li class="chapter" data-level="8.5.1" data-path="data-import.html"><a href="data-import.html#readlines"><i class="fa fa-check"></i><b>8.5.1</b> <code>readLines()</code></a></li>
-<li class="chapter" data-level="8.5.2" data-path="data-import.html"><a href="data-import.html#writelines"><i class="fa fa-check"></i><b>8.5.2</b> <code>writeLines()</code></a></li>
+<li class="chapter" data-level="9.7.1" data-path="string-manipulation.html"><a href="string-manipulation.html#case-1"><i class="fa fa-check"></i><b>9.7.1</b> Case 1</a></li>
+<li class="chapter" data-level="9.7.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-2"><i class="fa fa-check"></i><b>9.7.2</b> Case 2</a></li>
+<li class="chapter" data-level="9.7.3" data-path="string-manipulation.html"><a href="string-manipulation.html#case-3"><i class="fa fa-check"></i><b>9.7.3</b> Case 3</a></li>
 </ul></li>
-<li class="chapter" data-level="8.6" data-path="data-import.html"><a href="data-import.html#readr-functions"><i class="fa fa-check"></i><b>8.6</b> <code>readr</code> Functions</a>
+<li class="chapter" data-level="9.8" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-chinese-four-character-idioms"><i class="fa fa-check"></i><b>9.8</b> Case Study: Chinese Four-Character Idioms</a>
 <ul>
-<li class="chapter" data-level="8.6.1" data-path="data-import.html"><a href="data-import.html#readrread_csv"><i class="fa fa-check"></i><b>8.6.1</b> <code>readr::read_csv()</code></a></li>
-<li class="chapter" data-level="8.6.2" data-path="data-import.html"><a href="data-import.html#readrwrite_csv"><i class="fa fa-check"></i><b>8.6.2</b> <code>readr::write_csv()</code></a></li>
+<li class="chapter" data-level="9.8.1" data-path="string-manipulation.html"><a href="string-manipulation.html#dictionary-entries"><i class="fa fa-check"></i><b>9.8.1</b> Dictionary Entries</a></li>
+<li class="chapter" data-level="9.8.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-x來y去"><i class="fa fa-check"></i><b>9.8.2</b> Case Study: <code>X來Y去</code></a></li>
 </ul></li>
-<li class="chapter" data-level="8.7" data-path="data-import.html"><a href="data-import.html#directory-operations"><i class="fa fa-check"></i><b>8.7</b> Directory Operations</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html"><i class="fa fa-check"></i><b>9</b> Conditions and Loops</a>
+<li class="chapter" data-level="10" data-path="data-import.html"><a href="data-import.html"><i class="fa fa-check"></i><b>10</b> Data Import</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#if-statements"><i class="fa fa-check"></i><b>9.1</b> <code>if</code> Statements</a></li>
-<li class="chapter" data-level="9.2" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#for"><i class="fa fa-check"></i><b>9.2</b> <code>for</code></a></li>
-<li class="chapter" data-level="9.3" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#while-loop"><i class="fa fa-check"></i><b>9.3</b> <code>while</code> loop</a></li>
-<li class="chapter" data-level="9.4" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#toy-example"><i class="fa fa-check"></i><b>9.4</b> Toy Example</a></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="iteration.html"><a href="iteration.html"><i class="fa fa-check"></i><b>10</b> Iteration</a>
+<li class="chapter" data-level="10.1" data-path="data-import.html"><a href="data-import.html#overview"><i class="fa fa-check"></i><b>10.1</b> Overview</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="iteration.html"><a href="iteration.html#code-duplication"><i class="fa fa-check"></i><b>10.1</b> Code Duplication</a></li>
-<li class="chapter" data-level="10.2" data-path="iteration.html"><a href="iteration.html#vector-vs.-list-in-r"><i class="fa fa-check"></i><b>10.2</b> <code>vector</code> vs. <code>list</code> in <code>R</code></a></li>
-<li class="chapter" data-level="10.3" data-path="iteration.html"><a href="iteration.html#iteration-1"><i class="fa fa-check"></i><b>10.3</b> Iteration</a></li>
-<li class="chapter" data-level="10.4" data-path="iteration.html"><a href="iteration.html#purr"><i class="fa fa-check"></i><b>10.4</b> <code>purr</code></a></li>
-<li class="chapter" data-level="10.5" data-path="iteration.html"><a href="iteration.html#purr-dplyr"><i class="fa fa-check"></i><b>10.5</b> <code>purr</code> + <code>dplyr</code></a></li>
-<li class="chapter" data-level="10.6" data-path="iteration.html"><a href="iteration.html#writing-own-functions"><i class="fa fa-check"></i><b>10.6</b> Writing Own Functions</a></li>
+<li class="chapter" data-level="10.1.1" data-path="data-import.html"><a href="data-import.html#what-is-a-csv-file"><i class="fa fa-check"></i><b>10.1.1</b> What is a <code>CSV</code> file?</a></li>
+<li class="chapter" data-level="10.1.2" data-path="data-import.html"><a href="data-import.html#why-are-.csv-files-used"><i class="fa fa-check"></i><b>10.1.2</b> Why are <code>.CSV</code> files used?</a></li>
+<li class="chapter" data-level="10.1.3" data-path="data-import.html"><a href="data-import.html#how-do-i-save-csv-files"><i class="fa fa-check"></i><b>10.1.3</b> How do I save CSV files?</a></li>
+<li class="chapter" data-level="10.1.4" data-path="data-import.html"><a href="data-import.html#what-about-other-types-of-data"><i class="fa fa-check"></i><b>10.1.4</b> What about other types of data?</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html"><i class="fa fa-check"></i><b>11</b> Data Scientist First Step</a>
+<li class="chapter" data-level="10.2" data-path="data-import.html"><a href="data-import.html#importing-data"><i class="fa fa-check"></i><b>10.2</b> Importing Data</a></li>
+<li class="chapter" data-level="10.3" data-path="data-import.html"><a href="data-import.html#character-encoding"><i class="fa fa-check"></i><b>10.3</b> Character Encoding</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#loading-nobel-laureates-dataset"><i class="fa fa-check"></i><b>11.1</b> Loading Nobel Laureates Dataset</a></li>
-<li class="chapter" data-level="11.2" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#column-names"><i class="fa fa-check"></i><b>11.2</b> Column Names</a></li>
-<li class="chapter" data-level="11.3" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#data-completeness-na"><i class="fa fa-check"></i><b>11.3</b> Data Completeness <code>NA</code></a></li>
-<li class="chapter" data-level="11.4" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#data-preprocessing"><i class="fa fa-check"></i><b>11.4</b> Data Preprocessing</a></li>
-<li class="chapter" data-level="11.5" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#exploratory-analysis"><i class="fa fa-check"></i><b>11.5</b> Exploratory Analysis</a>
-<ul>
-<li class="chapter" data-level="11.5.1" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#discipline-distribution"><i class="fa fa-check"></i><b>11.5.1</b> Discipline Distribution</a></li>
-<li class="chapter" data-level="11.5.2" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#age-distribution"><i class="fa fa-check"></i><b>11.5.2</b> Age Distribution</a></li>
-<li class="chapter" data-level="11.5.3" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#category-x-age-interaction"><i class="fa fa-check"></i><b>11.5.3</b> Category x Age Interaction</a></li>
-<li class="chapter" data-level="11.5.4" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#gender-distribution"><i class="fa fa-check"></i><b>11.5.4</b> Gender Distribution</a></li>
-<li class="chapter" data-level="11.5.5" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#age-x-gender-interaction"><i class="fa fa-check"></i><b>11.5.5</b> Age x Gender Interaction</a></li>
+<li class="chapter" data-level="10.3.1" data-path="data-import.html"><a href="data-import.html#problems-with-ascii"><i class="fa fa-check"></i><b>10.3.1</b> Problems with ASCII</a></li>
+<li class="chapter" data-level="10.3.2" data-path="data-import.html"><a href="data-import.html#from-7-bit-to-one-byte-encoding"><i class="fa fa-check"></i><b>10.3.2</b> From 7-bit to One-Byte Encoding</a></li>
+<li class="chapter" data-level="10.3.3" data-path="data-import.html"><a href="data-import.html#problems-with-single-byte-encoding"><i class="fa fa-check"></i><b>10.3.3</b> Problems with Single-Byte Encoding</a></li>
+<li class="chapter" data-level="10.3.4" data-path="data-import.html"><a href="data-import.html#problems-with-multi-byte-encoding"><i class="fa fa-check"></i><b>10.3.4</b> Problems with Multi-byte Encoding</a></li>
+<li class="chapter" data-level="10.3.5" data-path="data-import.html"><a href="data-import.html#unicode-and-utf-8"><i class="fa fa-check"></i><b>10.3.5</b> Unicode and UTF-8</a></li>
+<li class="chapter" data-level="10.3.6" data-path="data-import.html"><a href="data-import.html#suggestions"><i class="fa fa-check"></i><b>10.3.6</b> Suggestions</a></li>
 </ul></li>
-<li class="chapter" data-level="11.6" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#exercises"><i class="fa fa-check"></i><b>11.6</b> Exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html"><i class="fa fa-check"></i><b>12</b> Text Analytics: A Start</a>
+<li class="chapter" data-level="10.4" data-path="data-import.html"><a href="data-import.html#character-code-point-and-hexadecimal-mode"><i class="fa fa-check"></i><b>10.4</b> Character, Code Point, and Hexadecimal Mode</a></li>
+<li class="chapter" data-level="10.5" data-path="data-import.html"><a href="data-import.html#r-base-functions"><i class="fa fa-check"></i><b>10.5</b> R Base Functions</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#installing-quanteda"><i class="fa fa-check"></i><b>12.1</b> Installing <code>quanteda</code></a></li>
-<li class="chapter" data-level="12.2" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#building-a-corpus-from-character-vector"><i class="fa fa-check"></i><b>12.2</b> Building a <code>corpus</code> from character vector</a></li>
-<li class="chapter" data-level="12.3" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyword-in-context-kwic"><i class="fa fa-check"></i><b>12.3</b> Keyword-in-Context (KWIC)</a></li>
-<li class="chapter" data-level="12.4" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#kwic-with-regular-expressions"><i class="fa fa-check"></i><b>12.4</b> KWIC with Regular Expressions</a></li>
-<li class="chapter" data-level="12.5" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#lexical-density-plot"><i class="fa fa-check"></i><b>12.5</b> Lexical Density Plot</a></li>
-<li class="chapter" data-level="12.6" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#document-feature-matrix"><i class="fa fa-check"></i><b>12.6</b> Document-Feature Matrix</a></li>
-<li class="chapter" data-level="12.7" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#feature-selection"><i class="fa fa-check"></i><b>12.7</b> Feature Selection</a></li>
-<li class="chapter" data-level="12.8" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#top-features"><i class="fa fa-check"></i><b>12.8</b> Top Features</a></li>
-<li class="chapter" data-level="12.9" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#wordclouds"><i class="fa fa-check"></i><b>12.9</b> Wordclouds</a></li>
-<li class="chapter" data-level="12.10" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyness-analysis"><i class="fa fa-check"></i><b>12.10</b> Keyness Analysis</a></li>
-<li class="chapter" data-level="12.11" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#flowchart"><i class="fa fa-check"></i><b>12.11</b> Flowchart</a></li>
-<li class="chapter" data-level="12.12" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#exercises-1"><i class="fa fa-check"></i><b>12.12</b> Exercises</a></li>
+<li class="chapter" data-level="10.5.1" data-path="data-import.html"><a href="data-import.html#readlines"><i class="fa fa-check"></i><b>10.5.1</b> <code>readLines()</code></a></li>
+<li class="chapter" data-level="10.5.2" data-path="data-import.html"><a href="data-import.html#writelines"><i class="fa fa-check"></i><b>10.5.2</b> <code>writeLines()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="data-import.html"><a href="data-import.html#readr-functions"><i class="fa fa-check"></i><b>10.6</b> <code>readr</code> Functions</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="data-import.html"><a href="data-import.html#readrread_csv"><i class="fa fa-check"></i><b>10.6.1</b> <code>readr::read_csv()</code></a></li>
+<li class="chapter" data-level="10.6.2" data-path="data-import.html"><a href="data-import.html#readrwrite_csv"><i class="fa fa-check"></i><b>10.6.2</b> <code>readr::write_csv()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="data-import.html"><a href="data-import.html#directory-operations"><i class="fa fa-check"></i><b>10.7</b> Directory Operations</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="iteration.html"><a href="iteration.html"><i class="fa fa-check"></i><b>11</b> Iteration</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="iteration.html"><a href="iteration.html#code-duplication"><i class="fa fa-check"></i><b>11.1</b> Code Duplication</a></li>
+<li class="chapter" data-level="11.2" data-path="iteration.html"><a href="iteration.html#vector-vs.-list-in-r"><i class="fa fa-check"></i><b>11.2</b> <code>vector</code> vs. <code>list</code> in <code>R</code></a></li>
+<li class="chapter" data-level="11.3" data-path="iteration.html"><a href="iteration.html#iteration-1"><i class="fa fa-check"></i><b>11.3</b> Iteration</a></li>
+<li class="chapter" data-level="11.4" data-path="iteration.html"><a href="iteration.html#purr"><i class="fa fa-check"></i><b>11.4</b> <code>purr</code></a></li>
+<li class="chapter" data-level="11.5" data-path="iteration.html"><a href="iteration.html#purr-dplyr"><i class="fa fa-check"></i><b>11.5</b> <code>purr</code> + <code>dplyr</code></a></li>
+<li class="chapter" data-level="11.6" data-path="iteration.html"><a href="iteration.html#writing-own-functions"><i class="fa fa-check"></i><b>11.6</b> Writing Own Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html"><i class="fa fa-check"></i><b>12</b> Data Scientist First Step</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#loading-nobel-laureates-dataset"><i class="fa fa-check"></i><b>12.1</b> Loading Nobel Laureates Dataset</a></li>
+<li class="chapter" data-level="12.2" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#column-names"><i class="fa fa-check"></i><b>12.2</b> Column Names</a></li>
+<li class="chapter" data-level="12.3" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#data-completeness-na"><i class="fa fa-check"></i><b>12.3</b> Data Completeness <code>NA</code></a></li>
+<li class="chapter" data-level="12.4" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#data-preprocessing"><i class="fa fa-check"></i><b>12.4</b> Data Preprocessing</a></li>
+<li class="chapter" data-level="12.5" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#exploratory-analysis"><i class="fa fa-check"></i><b>12.5</b> Exploratory Analysis</a>
+<ul>
+<li class="chapter" data-level="12.5.1" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#discipline-distribution"><i class="fa fa-check"></i><b>12.5.1</b> Discipline Distribution</a></li>
+<li class="chapter" data-level="12.5.2" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#age-distribution"><i class="fa fa-check"></i><b>12.5.2</b> Age Distribution</a></li>
+<li class="chapter" data-level="12.5.3" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#category-x-age-interaction"><i class="fa fa-check"></i><b>12.5.3</b> Category x Age Interaction</a></li>
+<li class="chapter" data-level="12.5.4" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#gender-distribution"><i class="fa fa-check"></i><b>12.5.4</b> Gender Distribution</a></li>
+<li class="chapter" data-level="12.5.5" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#age-x-gender-interaction"><i class="fa fa-check"></i><b>12.5.5</b> Age x Gender Interaction</a></li>
+</ul></li>
+<li class="chapter" data-level="12.6" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#exercises"><i class="fa fa-check"></i><b>12.6</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html"><i class="fa fa-check"></i><b>13</b> Text Analytics: A Start</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#installing-quanteda"><i class="fa fa-check"></i><b>13.1</b> Installing <code>quanteda</code></a></li>
+<li class="chapter" data-level="13.2" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#building-a-corpus-from-character-vector"><i class="fa fa-check"></i><b>13.2</b> Building a <code>corpus</code> from character vector</a></li>
+<li class="chapter" data-level="13.3" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyword-in-context-kwic"><i class="fa fa-check"></i><b>13.3</b> Keyword-in-Context (KWIC)</a></li>
+<li class="chapter" data-level="13.4" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#kwic-with-regular-expressions"><i class="fa fa-check"></i><b>13.4</b> KWIC with Regular Expressions</a></li>
+<li class="chapter" data-level="13.5" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#lexical-density-plot"><i class="fa fa-check"></i><b>13.5</b> Lexical Density Plot</a></li>
+<li class="chapter" data-level="13.6" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#document-feature-matrix"><i class="fa fa-check"></i><b>13.6</b> Document-Feature Matrix</a></li>
+<li class="chapter" data-level="13.7" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#feature-selection"><i class="fa fa-check"></i><b>13.7</b> Feature Selection</a></li>
+<li class="chapter" data-level="13.8" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#top-features"><i class="fa fa-check"></i><b>13.8</b> Top Features</a></li>
+<li class="chapter" data-level="13.9" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#wordclouds"><i class="fa fa-check"></i><b>13.9</b> Wordclouds</a></li>
+<li class="chapter" data-level="13.10" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyness-analysis"><i class="fa fa-check"></i><b>13.10</b> Keyness Analysis</a></li>
+<li class="chapter" data-level="13.11" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#flowchart"><i class="fa fa-check"></i><b>13.11</b> Flowchart</a></li>
+<li class="chapter" data-level="13.12" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#exercises-1"><i class="fa fa-check"></i><b>13.12</b> Exercises</a></li>
 </ul></li>
 <li class="part"><span><b>PART 2: Python Language</b></span></li>
-<li class="chapter" data-level="13" data-path="python-fundamentals.html"><a href="python-fundamentals.html"><i class="fa fa-check"></i><b>13</b> Python Fundamentals</a>
+<li class="chapter" data-level="14" data-path="python-fundamentals.html"><a href="python-fundamentals.html"><i class="fa fa-check"></i><b>14</b> Python Fundamentals</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="python-fundamentals.html"><a href="python-fundamentals.html#set-up-environment"><i class="fa fa-check"></i><b>13.1</b> Set up Environment</a></li>
-<li class="chapter" data-level="13.2" data-path="python-fundamentals.html"><a href="python-fundamentals.html#conda-environment"><i class="fa fa-check"></i><b>13.2</b> Conda Environment</a></li>
-<li class="chapter" data-level="13.3" data-path="python-fundamentals.html"><a href="python-fundamentals.html#data-type"><i class="fa fa-check"></i><b>13.3</b> Data Type</a></li>
-<li class="chapter" data-level="13.4" data-path="python-fundamentals.html"><a href="python-fundamentals.html#data-structure-1"><i class="fa fa-check"></i><b>13.4</b> Data Structure</a></li>
-<li class="chapter" data-level="13.5" data-path="python-fundamentals.html"><a href="python-fundamentals.html#string"><i class="fa fa-check"></i><b>13.5</b> String</a></li>
-<li class="chapter" data-level="13.6" data-path="python-fundamentals.html"><a href="python-fundamentals.html#control-structure"><i class="fa fa-check"></i><b>13.6</b> Control Structure</a></li>
-<li class="chapter" data-level="13.7" data-path="python-fundamentals.html"><a href="python-fundamentals.html#function-1"><i class="fa fa-check"></i><b>13.7</b> Function</a></li>
-<li class="chapter" data-level="13.8" data-path="python-fundamentals.html"><a href="python-fundamentals.html#list-comprehension"><i class="fa fa-check"></i><b>13.8</b> List Comprehension</a></li>
-<li class="chapter" data-level="13.9" data-path="python-fundamentals.html"><a href="python-fundamentals.html#python-scripts"><i class="fa fa-check"></i><b>13.9</b> Python Scripts</a></li>
-<li class="chapter" data-level="13.10" data-path="python-fundamentals.html"><a href="python-fundamentals.html#modules"><i class="fa fa-check"></i><b>13.10</b> Modules</a></li>
-<li class="chapter" data-level="13.11" data-path="python-fundamentals.html"><a href="python-fundamentals.html#inputoutput"><i class="fa fa-check"></i><b>13.11</b> Input/Output</a></li>
+<li class="chapter" data-level="14.1" data-path="python-fundamentals.html"><a href="python-fundamentals.html#set-up-environment"><i class="fa fa-check"></i><b>14.1</b> Set up Environment</a></li>
+<li class="chapter" data-level="14.2" data-path="python-fundamentals.html"><a href="python-fundamentals.html#conda-environment"><i class="fa fa-check"></i><b>14.2</b> Conda Environment</a></li>
+<li class="chapter" data-level="14.3" data-path="python-fundamentals.html"><a href="python-fundamentals.html#data-type"><i class="fa fa-check"></i><b>14.3</b> Data Type</a></li>
+<li class="chapter" data-level="14.4" data-path="python-fundamentals.html"><a href="python-fundamentals.html#data-structure-1"><i class="fa fa-check"></i><b>14.4</b> Data Structure</a></li>
+<li class="chapter" data-level="14.5" data-path="python-fundamentals.html"><a href="python-fundamentals.html#string"><i class="fa fa-check"></i><b>14.5</b> String</a></li>
+<li class="chapter" data-level="14.6" data-path="python-fundamentals.html"><a href="python-fundamentals.html#control-structure"><i class="fa fa-check"></i><b>14.6</b> Control Structure</a></li>
+<li class="chapter" data-level="14.7" data-path="python-fundamentals.html"><a href="python-fundamentals.html#function-1"><i class="fa fa-check"></i><b>14.7</b> Function</a></li>
+<li class="chapter" data-level="14.8" data-path="python-fundamentals.html"><a href="python-fundamentals.html#list-comprehension"><i class="fa fa-check"></i><b>14.8</b> List Comprehension</a></li>
+<li class="chapter" data-level="14.9" data-path="python-fundamentals.html"><a href="python-fundamentals.html#python-scripts"><i class="fa fa-check"></i><b>14.9</b> Python Scripts</a></li>
+<li class="chapter" data-level="14.10" data-path="python-fundamentals.html"><a href="python-fundamentals.html#modules"><i class="fa fa-check"></i><b>14.10</b> Modules</a></li>
+<li class="chapter" data-level="14.11" data-path="python-fundamentals.html"><a href="python-fundamentals.html#inputoutput"><i class="fa fa-check"></i><b>14.11</b> Input/Output</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="regular-expression.html"><a href="regular-expression.html"><i class="fa fa-check"></i><b>14</b> Regular Expression</a>
+<li class="chapter" data-level="15" data-path="organizing-files.html"><a href="organizing-files.html"><i class="fa fa-check"></i><b>15</b> Organizing Files</a>
 <ul>
-<li class="chapter" data-level="14.1" data-path="regular-expression.html"><a href="regular-expression.html#comparison-of-r-and-python"><i class="fa fa-check"></i><b>14.1</b> Comparison of R and Python</a></li>
-<li class="chapter" data-level="14.2" data-path="regular-expression.html"><a href="regular-expression.html#structure-of-regular-expression-usage"><i class="fa fa-check"></i><b>14.2</b> Structure of Regular Expression Usage</a>
-<ul>
-<li class="chapter" data-level="14.2.1" data-path="regular-expression.html"><a href="regular-expression.html#re.search"><i class="fa fa-check"></i><b>14.2.1</b> <code>re.search()</code></a></li>
-<li class="chapter" data-level="14.2.2" data-path="regular-expression.html"><a href="regular-expression.html#re.findall"><i class="fa fa-check"></i><b>14.2.2</b> <code>re.findall()</code></a></li>
-<li class="chapter" data-level="14.2.3" data-path="regular-expression.html"><a href="regular-expression.html#re.finditer"><i class="fa fa-check"></i><b>14.2.3</b> <code>re.finditer()</code></a></li>
+<li class="chapter" data-level="15.1" data-path="organizing-files.html"><a href="organizing-files.html#shutil"><i class="fa fa-check"></i><b>15.1</b> <code>shutil</code></a></li>
 </ul></li>
-<li class="chapter" data-level="14.3" data-path="regular-expression.html"><a href="regular-expression.html#special-falgssettings-for-regular-expressions"><i class="fa fa-check"></i><b>14.3</b> Special Falgs/Settings for Regular Expressions</a></li>
-<li class="chapter" data-level="14.4" data-path="regular-expression.html"><a href="regular-expression.html#regular-expression-in-python"><i class="fa fa-check"></i><b>14.4</b> Regular Expression in Python</a>
+<li class="chapter" data-level="16" data-path="object-orientation.html"><a href="object-orientation.html"><i class="fa fa-check"></i><b>16</b> Object Orientation</a>
 <ul>
-<li class="chapter" data-level="14.4.1" data-path="regular-expression.html"><a href="regular-expression.html#raw-string-notation"><i class="fa fa-check"></i><b>14.4.1</b> Raw String Notation</a></li>
-<li class="chapter" data-level="14.4.2" data-path="regular-expression.html"><a href="regular-expression.html#find-all-matches"><i class="fa fa-check"></i><b>14.4.2</b> Find all matches</a></li>
-<li class="chapter" data-level="14.4.3" data-path="regular-expression.html"><a href="regular-expression.html#group-vs.-groups"><i class="fa fa-check"></i><b>14.4.3</b> <code>group()</code> vs. <code>groups()</code></a></li>
-<li class="chapter" data-level="14.4.4" data-path="regular-expression.html"><a href="regular-expression.html#string-format-validation"><i class="fa fa-check"></i><b>14.4.4</b> string format validation</a></li>
-<li class="chapter" data-level="14.4.5" data-path="regular-expression.html"><a href="regular-expression.html#re.match-vs.-re.search"><i class="fa fa-check"></i><b>14.4.5</b> <code>re.match()</code> vs. <code>re.search()</code></a></li>
-<li class="chapter" data-level="14.4.6" data-path="regular-expression.html"><a href="regular-expression.html#re.split"><i class="fa fa-check"></i><b>14.4.6</b> <code>re.split()</code></a></li>
+<li class="chapter" data-level="16.1" data-path="object-orientation.html"><a href="object-orientation.html#what-is-object-orientation"><i class="fa fa-check"></i><b>16.1</b> What is Object Orientation?</a></li>
+<li class="chapter" data-level="16.2" data-path="object-orientation.html"><a href="object-orientation.html#class-defition"><i class="fa fa-check"></i><b>16.2</b> <strong>Class</strong> Defition</a></li>
+<li class="chapter" data-level="16.3" data-path="object-orientation.html"><a href="object-orientation.html#types-of-methods"><i class="fa fa-check"></i><b>16.3</b> Types of Methods</a></li>
+<li class="chapter" data-level="16.4" data-path="object-orientation.html"><a href="object-orientation.html#class-inheritance"><i class="fa fa-check"></i><b>16.4</b> Class Inheritance</a></li>
+<li class="chapter" data-level="16.5" data-path="object-orientation.html"><a href="object-orientation.html#special-methods"><i class="fa fa-check"></i><b>16.5</b> Special Methods</a></li>
+<li class="chapter" data-level="16.6" data-path="object-orientation.html"><a href="object-orientation.html#property-decorator"><i class="fa fa-check"></i><b>16.6</b> Property Decorator</a></li>
+<li class="chapter" data-level="16.7" data-path="object-orientation.html"><a href="object-orientation.html#checking-functions"><i class="fa fa-check"></i><b>16.7</b> Checking Functions</a></li>
+<li class="chapter" data-level="16.8" data-path="object-orientation.html"><a href="object-orientation.html#name-mangling"><i class="fa fa-check"></i><b>16.8</b> Name Mangling</a></li>
+<li class="chapter" data-level="16.9" data-path="object-orientation.html"><a href="object-orientation.html#reference"><i class="fa fa-check"></i><b>16.9</b> Reference</a></li>
 </ul></li>
-<li class="chapter" data-level="14.5" data-path="regular-expression.html"><a href="regular-expression.html#text-munging"><i class="fa fa-check"></i><b>14.5</b> Text Munging</a></li>
-<li class="chapter" data-level="14.6" data-path="regular-expression.html"><a href="regular-expression.html#references"><i class="fa fa-check"></i><b>14.6</b> References</a></li>
-</ul></li>
-<li class="chapter" data-level="15" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>15</b> Pandas</a>
+<li class="chapter" data-level="17" data-path="regular-expression.html"><a href="regular-expression.html"><i class="fa fa-check"></i><b>17</b> Regular Expression</a>
 <ul>
-<li class="chapter" data-level="15.1" data-path="pandas.html"><a href="pandas.html#libraries"><i class="fa fa-check"></i><b>15.1</b> Libraries</a></li>
-<li class="chapter" data-level="15.2" data-path="pandas.html"><a href="pandas.html#importingexporting-data"><i class="fa fa-check"></i><b>15.2</b> Importing/Exporting Data</a></li>
-<li class="chapter" data-level="15.3" data-path="pandas.html"><a href="pandas.html#inspecting-data-frame"><i class="fa fa-check"></i><b>15.3</b> Inspecting Data Frame</a></li>
-<li class="chapter" data-level="15.4" data-path="pandas.html"><a href="pandas.html#basic-functions"><i class="fa fa-check"></i><b>15.4</b> Basic Functions</a></li>
-<li class="chapter" data-level="15.5" data-path="pandas.html"><a href="pandas.html#subsetting-data-frame"><i class="fa fa-check"></i><b>15.5</b> Subsetting Data Frame</a></li>
-<li class="chapter" data-level="15.6" data-path="pandas.html"><a href="pandas.html#exploration"><i class="fa fa-check"></i><b>15.6</b> Exploration</a>
+<li class="chapter" data-level="17.1" data-path="regular-expression.html"><a href="regular-expression.html#comparison-of-r-and-python"><i class="fa fa-check"></i><b>17.1</b> Comparison of R and Python</a></li>
+<li class="chapter" data-level="17.2" data-path="regular-expression.html"><a href="regular-expression.html#structure-of-regular-expression-usage"><i class="fa fa-check"></i><b>17.2</b> Structure of Regular Expression Usage</a>
 <ul>
-<li class="chapter" data-level="15.6.1" data-path="pandas.html"><a href="pandas.html#na-values"><i class="fa fa-check"></i><b>15.6.1</b> NA Values</a></li>
-<li class="chapter" data-level="15.6.2" data-path="pandas.html"><a href="pandas.html#converting-data-types"><i class="fa fa-check"></i><b>15.6.2</b> Converting Data Types</a></li>
-<li class="chapter" data-level="15.6.3" data-path="pandas.html"><a href="pandas.html#pandas-supported-data-types"><i class="fa fa-check"></i><b>15.6.3</b> Pandas-supported Data Types</a></li>
-<li class="chapter" data-level="15.6.4" data-path="pandas.html"><a href="pandas.html#transformation"><i class="fa fa-check"></i><b>15.6.4</b> Transformation</a></li>
-<li class="chapter" data-level="15.6.5" data-path="pandas.html"><a href="pandas.html#filter-1"><i class="fa fa-check"></i><b>15.6.5</b> <code>filter()</code></a></li>
-<li class="chapter" data-level="15.6.6" data-path="pandas.html"><a href="pandas.html#arrange-1"><i class="fa fa-check"></i><b>15.6.6</b> <code>arrange()</code></a></li>
-<li class="chapter" data-level="15.6.7" data-path="pandas.html"><a href="pandas.html#select-1"><i class="fa fa-check"></i><b>15.6.7</b> <code>select()</code></a></li>
-<li class="chapter" data-level="15.6.8" data-path="pandas.html"><a href="pandas.html#mutate-1"><i class="fa fa-check"></i><b>15.6.8</b> <code>mutate()</code></a></li>
-<li class="chapter" data-level="15.6.9" data-path="pandas.html"><a href="pandas.html#apply-mutate_if"><i class="fa fa-check"></i><b>15.6.9</b> <code>apply()</code>, <code>mutate_if()</code></a></li>
-<li class="chapter" data-level="15.6.10" data-path="pandas.html"><a href="pandas.html#group_by-and-summarize-1"><i class="fa fa-check"></i><b>15.6.10</b> <code>group_by()</code> and <code>summarize()</code></a></li>
-<li class="chapter" data-level="15.6.11" data-path="pandas.html"><a href="pandas.html#rename-1"><i class="fa fa-check"></i><b>15.6.11</b> <code>rename()</code></a></li>
+<li class="chapter" data-level="17.2.1" data-path="regular-expression.html"><a href="regular-expression.html#re.search"><i class="fa fa-check"></i><b>17.2.1</b> <code>re.search()</code></a></li>
+<li class="chapter" data-level="17.2.2" data-path="regular-expression.html"><a href="regular-expression.html#re.findall"><i class="fa fa-check"></i><b>17.2.2</b> <code>re.findall()</code></a></li>
+<li class="chapter" data-level="17.2.3" data-path="regular-expression.html"><a href="regular-expression.html#re.finditer"><i class="fa fa-check"></i><b>17.2.3</b> <code>re.finditer()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="15.7" data-path="pandas.html"><a href="pandas.html#joincombine-data-frames"><i class="fa fa-check"></i><b>15.7</b> Join/Combine Data Frames</a></li>
-<li class="chapter" data-level="15.8" data-path="pandas.html"><a href="pandas.html#statistics"><i class="fa fa-check"></i><b>15.8</b> Statistics</a></li>
-<li class="chapter" data-level="15.9" data-path="pandas.html"><a href="pandas.html#generic-functions"><i class="fa fa-check"></i><b>15.9</b> Generic Functions</a></li>
-<li class="chapter" data-level="15.10" data-path="pandas.html"><a href="pandas.html#references-1"><i class="fa fa-check"></i><b>15.10</b> References</a></li>
-</ul></li>
-<li class="chapter" data-level="16" data-path="nltk.html"><a href="nltk.html"><i class="fa fa-check"></i><b>16</b> NLTK</a>
+<li class="chapter" data-level="17.3" data-path="regular-expression.html"><a href="regular-expression.html#special-falgssettings-for-regular-expressions"><i class="fa fa-check"></i><b>17.3</b> Special Falgs/Settings for Regular Expressions</a></li>
+<li class="chapter" data-level="17.4" data-path="regular-expression.html"><a href="regular-expression.html#regular-expression-in-python"><i class="fa fa-check"></i><b>17.4</b> Regular Expression in Python</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="nltk.html"><a href="nltk.html#installation"><i class="fa fa-check"></i><b>16.1</b> Installation</a></li>
-<li class="chapter" data-level="16.2" data-path="nltk.html"><a href="nltk.html#corpora-data"><i class="fa fa-check"></i><b>16.2</b> Corpora Data</a></li>
-<li class="chapter" data-level="16.3" data-path="nltk.html"><a href="nltk.html#wordnet"><i class="fa fa-check"></i><b>16.3</b> WordNet</a>
-<ul>
-<li class="chapter" data-level="16.3.1" data-path="nltk.html"><a href="nltk.html#a-dictionary-resource"><i class="fa fa-check"></i><b>16.3.1</b> A Dictionary Resource</a></li>
-<li class="chapter" data-level="16.3.2" data-path="nltk.html"><a href="nltk.html#lexical-relations"><i class="fa fa-check"></i><b>16.3.2</b> Lexical Relations</a></li>
-<li class="chapter" data-level="16.3.3" data-path="nltk.html"><a href="nltk.html#semantic-similarity-computation"><i class="fa fa-check"></i><b>16.3.3</b> Semantic Similarity Computation</a></li>
+<li class="chapter" data-level="17.4.1" data-path="regular-expression.html"><a href="regular-expression.html#raw-string-notation"><i class="fa fa-check"></i><b>17.4.1</b> Raw String Notation</a></li>
+<li class="chapter" data-level="17.4.2" data-path="regular-expression.html"><a href="regular-expression.html#find-all-matches"><i class="fa fa-check"></i><b>17.4.2</b> Find all matches</a></li>
+<li class="chapter" data-level="17.4.3" data-path="regular-expression.html"><a href="regular-expression.html#group-vs.-groups"><i class="fa fa-check"></i><b>17.4.3</b> <code>group()</code> vs. <code>groups()</code></a></li>
+<li class="chapter" data-level="17.4.4" data-path="regular-expression.html"><a href="regular-expression.html#string-format-validation"><i class="fa fa-check"></i><b>17.4.4</b> string format validation</a></li>
+<li class="chapter" data-level="17.4.5" data-path="regular-expression.html"><a href="regular-expression.html#re.match-vs.-re.search"><i class="fa fa-check"></i><b>17.4.5</b> <code>re.match()</code> vs. <code>re.search()</code></a></li>
+<li class="chapter" data-level="17.4.6" data-path="regular-expression.html"><a href="regular-expression.html#re.split"><i class="fa fa-check"></i><b>17.4.6</b> <code>re.split()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="16.4" data-path="nltk.html"><a href="nltk.html#discovering-word-collocations"><i class="fa fa-check"></i><b>16.4</b> Discovering Word Collocations</a></li>
-<li class="chapter" data-level="16.5" data-path="nltk.html"><a href="nltk.html#tokenization"><i class="fa fa-check"></i><b>16.5</b> Tokenization</a></li>
-<li class="chapter" data-level="16.6" data-path="nltk.html"><a href="nltk.html#chinese-word-segmentation"><i class="fa fa-check"></i><b>16.6</b> Chinese Word Segmentation</a></li>
-<li class="chapter" data-level="16.7" data-path="nltk.html"><a href="nltk.html#afterwords"><i class="fa fa-check"></i><b>16.7</b> Afterwords</a></li>
+<li class="chapter" data-level="17.5" data-path="regular-expression.html"><a href="regular-expression.html#text-munging"><i class="fa fa-check"></i><b>17.5</b> Text Munging</a></li>
+<li class="chapter" data-level="17.6" data-path="regular-expression.html"><a href="regular-expression.html#references"><i class="fa fa-check"></i><b>17.6</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="web-scraping.html"><a href="web-scraping.html"><i class="fa fa-check"></i><b>17</b> Web Scraping</a>
+<li class="chapter" data-level="18" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>18</b> Pandas</a>
 <ul>
-<li class="chapter" data-level="17.1" data-path="web-scraping.html"><a href="web-scraping.html#webbrowswer-module"><i class="fa fa-check"></i><b>17.1</b> <code>webbrowswer</code> module</a></li>
-<li class="chapter" data-level="17.2" data-path="web-scraping.html"><a href="web-scraping.html#requests-module"><i class="fa fa-check"></i><b>17.2</b> <code>requests</code> Module</a></li>
-<li class="chapter" data-level="17.3" data-path="web-scraping.html"><a href="web-scraping.html#bs4-module-beautiful-soup"><i class="fa fa-check"></i><b>17.3</b> <code>bs4</code> Module (Beautiful Soup)</a></li>
-<li class="chapter" data-level="17.4" data-path="web-scraping.html"><a href="web-scraping.html#reference"><i class="fa fa-check"></i><b>17.4</b> Reference</a></li>
+<li class="chapter" data-level="18.1" data-path="pandas.html"><a href="pandas.html#libraries"><i class="fa fa-check"></i><b>18.1</b> Libraries</a></li>
+<li class="chapter" data-level="18.2" data-path="pandas.html"><a href="pandas.html#importingexporting-data"><i class="fa fa-check"></i><b>18.2</b> Importing/Exporting Data</a></li>
+<li class="chapter" data-level="18.3" data-path="pandas.html"><a href="pandas.html#inspecting-data-frame"><i class="fa fa-check"></i><b>18.3</b> Inspecting Data Frame</a></li>
+<li class="chapter" data-level="18.4" data-path="pandas.html"><a href="pandas.html#basic-functions"><i class="fa fa-check"></i><b>18.4</b> Basic Functions</a></li>
+<li class="chapter" data-level="18.5" data-path="pandas.html"><a href="pandas.html#subsetting-data-frame"><i class="fa fa-check"></i><b>18.5</b> Subsetting Data Frame</a></li>
+<li class="chapter" data-level="18.6" data-path="pandas.html"><a href="pandas.html#exploration"><i class="fa fa-check"></i><b>18.6</b> Exploration</a>
+<ul>
+<li class="chapter" data-level="18.6.1" data-path="pandas.html"><a href="pandas.html#na-values"><i class="fa fa-check"></i><b>18.6.1</b> NA Values</a></li>
+<li class="chapter" data-level="18.6.2" data-path="pandas.html"><a href="pandas.html#converting-data-types"><i class="fa fa-check"></i><b>18.6.2</b> Converting Data Types</a></li>
+<li class="chapter" data-level="18.6.3" data-path="pandas.html"><a href="pandas.html#pandas-supported-data-types"><i class="fa fa-check"></i><b>18.6.3</b> Pandas-supported Data Types</a></li>
+<li class="chapter" data-level="18.6.4" data-path="pandas.html"><a href="pandas.html#transformation"><i class="fa fa-check"></i><b>18.6.4</b> Transformation</a></li>
+<li class="chapter" data-level="18.6.5" data-path="pandas.html"><a href="pandas.html#filter-1"><i class="fa fa-check"></i><b>18.6.5</b> <code>filter()</code></a></li>
+<li class="chapter" data-level="18.6.6" data-path="pandas.html"><a href="pandas.html#arrange-1"><i class="fa fa-check"></i><b>18.6.6</b> <code>arrange()</code></a></li>
+<li class="chapter" data-level="18.6.7" data-path="pandas.html"><a href="pandas.html#select-1"><i class="fa fa-check"></i><b>18.6.7</b> <code>select()</code></a></li>
+<li class="chapter" data-level="18.6.8" data-path="pandas.html"><a href="pandas.html#mutate-1"><i class="fa fa-check"></i><b>18.6.8</b> <code>mutate()</code></a></li>
+<li class="chapter" data-level="18.6.9" data-path="pandas.html"><a href="pandas.html#apply-mutate_if"><i class="fa fa-check"></i><b>18.6.9</b> <code>apply()</code>, <code>mutate_if()</code></a></li>
+<li class="chapter" data-level="18.6.10" data-path="pandas.html"><a href="pandas.html#group_by-and-summarize-1"><i class="fa fa-check"></i><b>18.6.10</b> <code>group_by()</code> and <code>summarize()</code></a></li>
+<li class="chapter" data-level="18.6.11" data-path="pandas.html"><a href="pandas.html#rename-1"><i class="fa fa-check"></i><b>18.6.11</b> <code>rename()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="18.7" data-path="pandas.html"><a href="pandas.html#joincombine-data-frames"><i class="fa fa-check"></i><b>18.7</b> Join/Combine Data Frames</a></li>
+<li class="chapter" data-level="18.8" data-path="pandas.html"><a href="pandas.html#statistics"><i class="fa fa-check"></i><b>18.8</b> Statistics</a></li>
+<li class="chapter" data-level="18.9" data-path="pandas.html"><a href="pandas.html#generic-functions"><i class="fa fa-check"></i><b>18.9</b> Generic Functions</a></li>
+<li class="chapter" data-level="18.10" data-path="pandas.html"><a href="pandas.html#references-1"><i class="fa fa-check"></i><b>18.10</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="nltk.html"><a href="nltk.html"><i class="fa fa-check"></i><b>19</b> NLTK</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="nltk.html"><a href="nltk.html#installation"><i class="fa fa-check"></i><b>19.1</b> Installation</a></li>
+<li class="chapter" data-level="19.2" data-path="nltk.html"><a href="nltk.html#corpora-data"><i class="fa fa-check"></i><b>19.2</b> Corpora Data</a></li>
+<li class="chapter" data-level="19.3" data-path="nltk.html"><a href="nltk.html#wordnet"><i class="fa fa-check"></i><b>19.3</b> WordNet</a>
+<ul>
+<li class="chapter" data-level="19.3.1" data-path="nltk.html"><a href="nltk.html#a-dictionary-resource"><i class="fa fa-check"></i><b>19.3.1</b> A Dictionary Resource</a></li>
+<li class="chapter" data-level="19.3.2" data-path="nltk.html"><a href="nltk.html#lexical-relations"><i class="fa fa-check"></i><b>19.3.2</b> Lexical Relations</a></li>
+<li class="chapter" data-level="19.3.3" data-path="nltk.html"><a href="nltk.html#semantic-similarity-computation"><i class="fa fa-check"></i><b>19.3.3</b> Semantic Similarity Computation</a></li>
+</ul></li>
+<li class="chapter" data-level="19.4" data-path="nltk.html"><a href="nltk.html#discovering-word-collocations"><i class="fa fa-check"></i><b>19.4</b> Discovering Word Collocations</a></li>
+<li class="chapter" data-level="19.5" data-path="nltk.html"><a href="nltk.html#tokenization"><i class="fa fa-check"></i><b>19.5</b> Tokenization</a></li>
+<li class="chapter" data-level="19.6" data-path="nltk.html"><a href="nltk.html#chinese-word-segmentation"><i class="fa fa-check"></i><b>19.6</b> Chinese Word Segmentation</a></li>
+<li class="chapter" data-level="19.7" data-path="nltk.html"><a href="nltk.html#afterwords"><i class="fa fa-check"></i><b>19.7</b> Afterwords</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="web-scraping.html"><a href="web-scraping.html"><i class="fa fa-check"></i><b>20</b> Web Scraping</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="web-scraping.html"><a href="web-scraping.html#webbrowswer-module"><i class="fa fa-check"></i><b>20.1</b> <code>webbrowswer</code> module</a></li>
+<li class="chapter" data-level="20.2" data-path="web-scraping.html"><a href="web-scraping.html#requests-module"><i class="fa fa-check"></i><b>20.2</b> <code>requests</code> Module</a></li>
+<li class="chapter" data-level="20.3" data-path="web-scraping.html"><a href="web-scraping.html#bs4-module-beautiful-soup"><i class="fa fa-check"></i><b>20.3</b> <code>bs4</code> Module (Beautiful Soup)</a></li>
+<li class="chapter" data-level="20.4" data-path="web-scraping.html"><a href="web-scraping.html#reference-1"><i class="fa fa-check"></i><b>20.4</b> Reference</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="transcribing.html"><a href="transcribing.html"><i class="fa fa-check"></i><b>21</b> Transcribing</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="transcribing.html"><a href="transcribing.html#working-with-audio-files"><i class="fa fa-check"></i><b>21.1</b> Working with Audio Files</a></li>
+<li class="chapter" data-level="21.2" data-path="transcribing.html"><a href="transcribing.html#working-with-microphone-inputs"><i class="fa fa-check"></i><b>21.2</b> Working with Microphone Inputs</a></li>
+<li class="chapter" data-level="21.3" data-path="transcribing.html"><a href="transcribing.html#references-2"><i class="fa fa-check"></i><b>21.3</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="downloading-youtube-videos.html"><a href="downloading-youtube-videos.html"><i class="fa fa-check"></i><b>22</b> Downloading YouTube Videos</a>
+<ul>
+<li class="chapter" data-level="22.1" data-path="downloading-youtube-videos.html"><a href="downloading-youtube-videos.html#the-module-pytube"><i class="fa fa-check"></i><b>22.1</b> The Module <code>pytube</code></a></li>
+<li class="chapter" data-level="22.2" data-path="downloading-youtube-videos.html"><a href="downloading-youtube-videos.html#downloading-videos"><i class="fa fa-check"></i><b>22.2</b> Downloading Videos</a></li>
+<li class="chapter" data-level="22.3" data-path="downloading-youtube-videos.html"><a href="downloading-youtube-videos.html#downloading-audios"><i class="fa fa-check"></i><b>22.3</b> Downloading Audios</a></li>
+<li class="chapter" data-level="22.4" data-path="downloading-youtube-videos.html"><a href="downloading-youtube-videos.html#downloading-captions"><i class="fa fa-check"></i><b>22.4</b> Downloading Captions</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="the-shell.html"><a href="the-shell.html"><i class="fa fa-check"></i><b>A</b> The Shell</a>
@@ -443,9 +525,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="A.2" data-path="the-shell.html"><a href="the-shell.html#shebang-line"><i class="fa fa-check"></i><b>A.2</b> Shebang Line</a></li>
 <li class="chapter" data-level="A.3" data-path="the-shell.html"><a href="the-shell.html#basic-shell-commands"><i class="fa fa-check"></i><b>A.3</b> Basic Shell Commands</a></li>
 <li class="chapter" data-level="A.4" data-path="the-shell.html"><a href="the-shell.html#text-analytic-related-commands"><i class="fa fa-check"></i><b>A.4</b> Text-Analytic Related Commands</a></li>
-<li class="chapter" data-level="A.5" data-path="the-shell.html"><a href="the-shell.html#references-2"><i class="fa fa-check"></i><b>A.5</b> References</a></li>
+<li class="chapter" data-level="A.5" data-path="the-shell.html"><a href="the-shell.html#references-3"><i class="fa fa-check"></i><b>A.5</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="references-3.html"><a href="references-3.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="references-4.html"><a href="references-4.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://web.ntnu.edu.tw/~alvinchen" target ="blank">Alvin Chen </a></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -467,13 +549,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="nltk" class="section level1" number="16">
-<h1><span class="header-section-number">Chapter 16</span> NLTK</h1>
+<div id="nltk" class="section level1" number="19">
+<h1><span class="header-section-number">Chapter 19</span> NLTK</h1>
 <ul>
 <li>The almighty <code>nltk</code> package!</li>
 </ul>
-<div id="installation" class="section level2" number="16.1">
-<h2><span class="header-section-number">16.1</span> Installation</h2>
+<div id="installation" class="section level2" number="19.1">
+<h2><span class="header-section-number">19.1</span> Installation</h2>
 <ul>
 <li>Install package in the terminal</li>
 </ul>
@@ -483,15 +565,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <pre><code>import nltk
 nltk.download(&#39;all&#39;, halt_on_error=False)</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb3-1"><a href="nltk.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nltk</span>
-<span id="cb3-2"><a href="nltk.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># nltk.download()</span></span></code></pre></div>
+<div class="sourceCode" id="cb879"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb879-1"><a href="nltk.html#cb879-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nltk</span>
+<span id="cb879-2"><a href="nltk.html#cb879-2" aria-hidden="true" tabindex="-1"></a><span class="co"># nltk.download()</span></span></code></pre></div>
 <div class="warning">
 <p>The complete collection of the <code>nltk.corpus</code> is huge. You probably don’t need all of the corpora data.
 You can use <code>nltk.download()</code> to initialize a User Window for installation of specific datasets.</p>
 </div>
 </div>
-<div id="corpora-data" class="section level2" number="16.2">
-<h2><span class="header-section-number">16.2</span> Corpora Data</h2>
+<div id="corpora-data" class="section level2" number="19.2">
+<h2><span class="header-section-number">19.2</span> Corpora Data</h2>
 <ul>
 <li>The package includes a lot of pre-loaded corpora datasets</li>
 <li>The default <code>nltk_data</code> directory is in <code>/Users/YOUT_NAME/nltk_data/</code></li>
@@ -502,60 +584,60 @@ You can use <code>nltk.download()</code> to initialize a User Window for install
 <li>WordNet</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb4-1"><a href="nltk.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> gutenberg, brown, reuters</span>
-<span id="cb4-2"><a href="nltk.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># brown corpus</span></span>
-<span id="cb4-3"><a href="nltk.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Categories (topics?)</span></span>
-<span id="cb4-4"><a href="nltk.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Brown Corpus Total Categories: &#39;</span>, <span class="bu">len</span>(brown.categories()))</span></code></pre></div>
+<div class="sourceCode" id="cb880"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb880-1"><a href="nltk.html#cb880-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> gutenberg, brown, reuters</span>
+<span id="cb880-2"><a href="nltk.html#cb880-2" aria-hidden="true" tabindex="-1"></a><span class="co"># brown corpus</span></span>
+<span id="cb880-3"><a href="nltk.html#cb880-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Categories (topics?)</span></span>
+<span id="cb880-4"><a href="nltk.html#cb880-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Brown Corpus Total Categories: &#39;</span>, <span class="bu">len</span>(brown.categories()))</span></code></pre></div>
 <pre class="Rout"><code>Brown Corpus Total Categories:  15</code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb6-1"><a href="nltk.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Categories List: &#39;</span>, brown.categories())</span></code></pre></div>
+<div class="sourceCode" id="cb882"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb882-1"><a href="nltk.html#cb882-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Categories List: &#39;</span>, brown.categories())</span></code></pre></div>
 <pre class="Rout"><code>Categories List:  [&#39;adventure&#39;, &#39;belles_lettres&#39;, &#39;editorial&#39;, &#39;fiction&#39;, &#39;government&#39;, &#39;hobbies&#39;, &#39;humor&#39;, &#39;learned&#39;, &#39;lore&#39;, &#39;mystery&#39;, &#39;news&#39;, &#39;religion&#39;, &#39;reviews&#39;, &#39;romance&#39;, &#39;science_fiction&#39;]</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb8-1"><a href="nltk.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sentences</span></span>
-<span id="cb8-2"><a href="nltk.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(brown.sents()[<span class="dv">0</span>]) <span class="co">## first sentence</span></span></code></pre></div>
+<div class="sourceCode" id="cb884"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb884-1"><a href="nltk.html#cb884-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sentences</span></span>
+<span id="cb884-2"><a href="nltk.html#cb884-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(brown.sents()[<span class="dv">0</span>]) <span class="co">## first sentence</span></span></code></pre></div>
 <pre class="Rout"><code>[&#39;The&#39;, &#39;Fulton&#39;, &#39;County&#39;, &#39;Grand&#39;, &#39;Jury&#39;, &#39;said&#39;, &#39;Friday&#39;, &#39;an&#39;, &#39;investigation&#39;, &#39;of&#39;, &quot;Atlanta&#39;s&quot;, &#39;recent&#39;, &#39;primary&#39;, &#39;election&#39;, &#39;produced&#39;, &#39;``&#39;, &#39;no&#39;, &#39;evidence&#39;, &quot;&#39;&#39;&quot;, &#39;that&#39;, &#39;any&#39;, &#39;irregularities&#39;, &#39;took&#39;, &#39;place&#39;, &#39;.&#39;]</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb10-1"><a href="nltk.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(brown.sents(categories<span class="op">=</span><span class="st">&#39;fiction&#39;</span>)) <span class="co">## first sentence for fiction texts</span></span></code></pre></div>
+<div class="sourceCode" id="cb886"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb886-1"><a href="nltk.html#cb886-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(brown.sents(categories<span class="op">=</span><span class="st">&#39;fiction&#39;</span>)) <span class="co">## first sentence for fiction texts</span></span></code></pre></div>
 <pre class="Rout"><code>[[&#39;Thirty-three&#39;], [&#39;Scotty&#39;, &#39;did&#39;, &#39;not&#39;, &#39;go&#39;, &#39;back&#39;, &#39;to&#39;, &#39;school&#39;, &#39;.&#39;], ...]</code></pre>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb12-1"><a href="nltk.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Tagged Sentences</span></span>
-<span id="cb12-2"><a href="nltk.html#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(brown.tagged_sents()[<span class="dv">0</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb888"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb888-1"><a href="nltk.html#cb888-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Tagged Sentences</span></span>
+<span id="cb888-2"><a href="nltk.html#cb888-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(brown.tagged_sents()[<span class="dv">0</span>])</span></code></pre></div>
 <pre class="Rout"><code>[(&#39;The&#39;, &#39;AT&#39;), (&#39;Fulton&#39;, &#39;NP-TL&#39;), (&#39;County&#39;, &#39;NN-TL&#39;), (&#39;Grand&#39;, &#39;JJ-TL&#39;), (&#39;Jury&#39;, &#39;NN-TL&#39;), (&#39;said&#39;, &#39;VBD&#39;), (&#39;Friday&#39;, &#39;NR&#39;), (&#39;an&#39;, &#39;AT&#39;), (&#39;investigation&#39;, &#39;NN&#39;), (&#39;of&#39;, &#39;IN&#39;), (&quot;Atlanta&#39;s&quot;, &#39;NP$&#39;), (&#39;recent&#39;, &#39;JJ&#39;), (&#39;primary&#39;, &#39;NN&#39;), (&#39;election&#39;, &#39;NN&#39;), (&#39;produced&#39;, &#39;VBD&#39;), (&#39;``&#39;, &#39;``&#39;), (&#39;no&#39;, &#39;AT&#39;), (&#39;evidence&#39;, &#39;NN&#39;), (&quot;&#39;&#39;&quot;, &quot;&#39;&#39;&quot;), (&#39;that&#39;, &#39;CS&#39;), (&#39;any&#39;, &#39;DTI&#39;), (&#39;irregularities&#39;, &#39;NNS&#39;), (&#39;took&#39;, &#39;VBD&#39;), (&#39;place&#39;, &#39;NN&#39;), (&#39;.&#39;, &#39;.&#39;)]</code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb14-1"><a href="nltk.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Sentence in natural forms</span></span>
-<span id="cb14-2"><a href="nltk.html#cb14-2" aria-hidden="true" tabindex="-1"></a>sents <span class="op">=</span> brown.sents(categories<span class="op">=</span><span class="st">&#39;fiction&#39;</span>)</span>
-<span id="cb14-3"><a href="nltk.html#cb14-3" aria-hidden="true" tabindex="-1"></a>[<span class="st">&#39; &#39;</span>.join(sent) <span class="cf">for</span> sent <span class="kw">in</span> sents[<span class="dv">1</span>:<span class="dv">5</span>]]</span></code></pre></div>
+<div class="sourceCode" id="cb890"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb890-1"><a href="nltk.html#cb890-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Sentence in natural forms</span></span>
+<span id="cb890-2"><a href="nltk.html#cb890-2" aria-hidden="true" tabindex="-1"></a>sents <span class="op">=</span> brown.sents(categories<span class="op">=</span><span class="st">&#39;fiction&#39;</span>)</span>
+<span id="cb890-3"><a href="nltk.html#cb890-3" aria-hidden="true" tabindex="-1"></a>[<span class="st">&#39; &#39;</span>.join(sent) <span class="cf">for</span> sent <span class="kw">in</span> sents[<span class="dv">1</span>:<span class="dv">5</span>]]</span></code></pre></div>
 <pre class="Rout"><code>[&#39;Scotty did not go back to school .&#39;, &#39;His parents talked seriously and lengthily to their own doctor and to a specialist at the University Hospital -- Mr. McKinley was entitled to a discount for members of his family -- and it was decided it would be best for him to take the remainder of the term off , spend a lot of time in bed and , for the rest , do pretty much as he chose -- provided , of course , he chose to do nothing too exciting or too debilitating .&#39;, &#39;His teacher and his school principal were conferred with and everyone agreed that , if he kept up with a certain amount of work at home , there was little danger of his losing a term .&#39;, &#39;Scotty accepted the decision with indifference and did not enter the arguments .&#39;]</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb16-1"><a href="nltk.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Get tagged words</span></span>
-<span id="cb16-2"><a href="nltk.html#cb16-2" aria-hidden="true" tabindex="-1"></a>tagged_words <span class="op">=</span> brown.tagged_words(categories<span class="op">=</span><span class="st">&#39;fiction&#39;</span>)</span>
-<span id="cb16-3"><a href="nltk.html#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="nltk.html#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co">#print(tagged_words[1]) ## a tuple</span></span>
-<span id="cb16-5"><a href="nltk.html#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-6"><a href="nltk.html#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co">## Get all nouns </span></span>
-<span id="cb16-7"><a href="nltk.html#cb16-7" aria-hidden="true" tabindex="-1"></a>nouns <span class="op">=</span> [(word, tag) <span class="cf">for</span> word, tag <span class="kw">in</span> tagged_words </span>
-<span id="cb16-8"><a href="nltk.html#cb16-8" aria-hidden="true" tabindex="-1"></a>                      <span class="cf">if</span> <span class="bu">any</span> (noun_tag <span class="kw">in</span> tag <span class="cf">for</span> noun_tag <span class="kw">in</span> [<span class="st">&#39;NP&#39;</span>,<span class="st">&#39;NN&#39;</span>])]</span>
-<span id="cb16-9"><a href="nltk.html#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="co">## Check first ten nouns</span></span>
-<span id="cb16-10"><a href="nltk.html#cb16-10" aria-hidden="true" tabindex="-1"></a>nouns[:<span class="dv">10</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb892"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb892-1"><a href="nltk.html#cb892-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Get tagged words</span></span>
+<span id="cb892-2"><a href="nltk.html#cb892-2" aria-hidden="true" tabindex="-1"></a>tagged_words <span class="op">=</span> brown.tagged_words(categories<span class="op">=</span><span class="st">&#39;fiction&#39;</span>)</span>
+<span id="cb892-3"><a href="nltk.html#cb892-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb892-4"><a href="nltk.html#cb892-4" aria-hidden="true" tabindex="-1"></a><span class="co">#print(tagged_words[1]) ## a tuple</span></span>
+<span id="cb892-5"><a href="nltk.html#cb892-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb892-6"><a href="nltk.html#cb892-6" aria-hidden="true" tabindex="-1"></a><span class="co">## Get all nouns </span></span>
+<span id="cb892-7"><a href="nltk.html#cb892-7" aria-hidden="true" tabindex="-1"></a>nouns <span class="op">=</span> [(word, tag) <span class="cf">for</span> word, tag <span class="kw">in</span> tagged_words </span>
+<span id="cb892-8"><a href="nltk.html#cb892-8" aria-hidden="true" tabindex="-1"></a>                      <span class="cf">if</span> <span class="bu">any</span> (noun_tag <span class="kw">in</span> tag <span class="cf">for</span> noun_tag <span class="kw">in</span> [<span class="st">&#39;NP&#39;</span>,<span class="st">&#39;NN&#39;</span>])]</span>
+<span id="cb892-9"><a href="nltk.html#cb892-9" aria-hidden="true" tabindex="-1"></a><span class="co">## Check first ten nouns</span></span>
+<span id="cb892-10"><a href="nltk.html#cb892-10" aria-hidden="true" tabindex="-1"></a>nouns[:<span class="dv">10</span>]</span></code></pre></div>
 <pre class="Rout"><code>[(&#39;Scotty&#39;, &#39;NP&#39;), (&#39;school&#39;, &#39;NN&#39;), (&#39;parents&#39;, &#39;NNS&#39;), (&#39;doctor&#39;, &#39;NN&#39;), (&#39;specialist&#39;, &#39;NN&#39;), (&#39;University&#39;, &#39;NN-TL&#39;), (&#39;Hospital&#39;, &#39;NN-TL&#39;), (&#39;Mr.&#39;, &#39;NP&#39;), (&#39;McKinley&#39;, &#39;NP&#39;), (&#39;discount&#39;, &#39;NN&#39;)]</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb18-1"><a href="nltk.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Creating Freq list</span></span>
-<span id="cb18-2"><a href="nltk.html#cb18-2" aria-hidden="true" tabindex="-1"></a>nouns_freq <span class="op">=</span> nltk.FreqDist([w <span class="cf">for</span> w, t <span class="kw">in</span> nouns])</span>
-<span id="cb18-3"><a href="nltk.html#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span>(nouns_freq.items(),key<span class="op">=</span><span class="kw">lambda</span> x:x[<span class="dv">1</span>], reverse<span class="op">=</span><span class="va">True</span>)[:<span class="dv">20</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb894"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb894-1"><a href="nltk.html#cb894-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Creating Freq list</span></span>
+<span id="cb894-2"><a href="nltk.html#cb894-2" aria-hidden="true" tabindex="-1"></a>nouns_freq <span class="op">=</span> nltk.FreqDist([w <span class="cf">for</span> w, t <span class="kw">in</span> nouns])</span>
+<span id="cb894-3"><a href="nltk.html#cb894-3" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span>(nouns_freq.items(),key<span class="op">=</span><span class="kw">lambda</span> x:x[<span class="dv">1</span>], reverse<span class="op">=</span><span class="va">True</span>)[:<span class="dv">20</span>]</span></code></pre></div>
 <pre class="Rout"><code>[(&#39;man&#39;, 111), (&#39;time&#39;, 99), (&#39;men&#39;, 72), (&#39;room&#39;, 63), (&#39;way&#39;, 62), (&#39;eyes&#39;, 60), (&#39;face&#39;, 55), (&#39;house&#39;, 54), (&#39;head&#39;, 54), (&#39;night&#39;, 53), (&#39;day&#39;, 52), (&#39;hand&#39;, 50), (&#39;door&#39;, 47), (&#39;life&#39;, 44), (&#39;years&#39;, 44), (&#39;Mrs.&#39;, 41), (&#39;God&#39;, 41), (&#39;Kate&#39;, 40), (&#39;Mr.&#39;, 39), (&#39;people&#39;, 39)]</code></pre>
-<div class="sourceCode" id="cb20"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb20-1"><a href="nltk.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span>(nouns_freq.items(),key<span class="op">=</span><span class="kw">lambda</span> x:x[<span class="dv">0</span>], reverse<span class="op">=</span><span class="va">True</span>)[:<span class="dv">20</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb896"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb896-1"><a href="nltk.html#cb896-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span>(nouns_freq.items(),key<span class="op">=</span><span class="kw">lambda</span> x:x[<span class="dv">0</span>], reverse<span class="op">=</span><span class="va">True</span>)[:<span class="dv">20</span>]</span></code></pre></div>
 <pre class="Rout"><code>[(&#39;zoo&#39;, 2), (&#39;zlotys&#39;, 1), (&#39;zenith&#39;, 1), (&#39;youth&#39;, 5), (&#39;yelling&#39;, 1), (&#39;years&#39;, 44), (&#39;yearning&#39;, 1), (&quot;year&#39;s&quot;, 1), (&#39;year&#39;, 9), (&#39;yards&#39;, 4), (&#39;yard&#39;, 7), (&#39;yachts&#39;, 1), (&#39;writing&#39;, 2), (&#39;writers&#39;, 1), (&#39;writer&#39;, 4), (&#39;wrists&#39;, 1), (&#39;wrist&#39;, 2), (&#39;wrinkles&#39;, 1), (&#39;wrinkle&#39;, 1), (&#39;wretch&#39;, 1)]</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb22-1"><a href="nltk.html#cb22-1" aria-hidden="true" tabindex="-1"></a>nouns_freq.most_common(<span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb898"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb898-1"><a href="nltk.html#cb898-1" aria-hidden="true" tabindex="-1"></a>nouns_freq.most_common(<span class="dv">10</span>)</span></code></pre></div>
 <pre class="Rout"><code>[(&#39;man&#39;, 111), (&#39;time&#39;, 99), (&#39;men&#39;, 72), (&#39;room&#39;, 63), (&#39;way&#39;, 62), (&#39;eyes&#39;, 60), (&#39;face&#39;, 55), (&#39;house&#39;, 54), (&#39;head&#39;, 54), (&#39;night&#39;, 53)]</code></pre>
-<div class="sourceCode" id="cb24"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb24-1"><a href="nltk.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Accsess data via fileid</span></span>
-<span id="cb24-2"><a href="nltk.html#cb24-2" aria-hidden="true" tabindex="-1"></a>brown.fileids(categories<span class="op">=</span><span class="st">&#39;fiction&#39;</span>)[<span class="dv">0</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb900"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb900-1"><a href="nltk.html#cb900-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Accsess data via fileid</span></span>
+<span id="cb900-2"><a href="nltk.html#cb900-2" aria-hidden="true" tabindex="-1"></a>brown.fileids(categories<span class="op">=</span><span class="st">&#39;fiction&#39;</span>)[<span class="dv">0</span>]</span></code></pre></div>
 <pre class="Rout"><code>&#39;ck01&#39;</code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb26-1"><a href="nltk.html#cb26-1" aria-hidden="true" tabindex="-1"></a>brown.sents(fileids<span class="op">=</span><span class="st">&#39;ck01&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb902"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb902-1"><a href="nltk.html#cb902-1" aria-hidden="true" tabindex="-1"></a>brown.sents(fileids<span class="op">=</span><span class="st">&#39;ck01&#39;</span>)</span></code></pre></div>
 <pre class="Rout"><code>[[&#39;Thirty-three&#39;], [&#39;Scotty&#39;, &#39;did&#39;, &#39;not&#39;, &#39;go&#39;, &#39;back&#39;, &#39;to&#39;, &#39;school&#39;, &#39;.&#39;], ...]</code></pre>
 </div>
-<div id="wordnet" class="section level2" number="16.3">
-<h2><span class="header-section-number">16.3</span> WordNet</h2>
-<div id="a-dictionary-resource" class="section level3" number="16.3.1">
-<h3><span class="header-section-number">16.3.1</span> A Dictionary Resource</h3>
-<div class="sourceCode" id="cb28"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb28-1"><a href="nltk.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> wordnet <span class="im">as</span> wn</span>
-<span id="cb28-2"><a href="nltk.html#cb28-2" aria-hidden="true" tabindex="-1"></a>word <span class="op">=</span> <span class="st">&#39;walk&#39;</span></span>
-<span id="cb28-3"><a href="nltk.html#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-4"><a href="nltk.html#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co"># get synsets</span></span>
-<span id="cb28-5"><a href="nltk.html#cb28-5" aria-hidden="true" tabindex="-1"></a>word_synsets <span class="op">=</span> wn.synsets(word, pos<span class="op">=</span><span class="st">&#39;v&#39;</span>)</span>
-<span id="cb28-6"><a href="nltk.html#cb28-6" aria-hidden="true" tabindex="-1"></a>word_synsets</span></code></pre></div>
+<div id="wordnet" class="section level2" number="19.3">
+<h2><span class="header-section-number">19.3</span> WordNet</h2>
+<div id="a-dictionary-resource" class="section level3" number="19.3.1">
+<h3><span class="header-section-number">19.3.1</span> A Dictionary Resource</h3>
+<div class="sourceCode" id="cb904"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb904-1"><a href="nltk.html#cb904-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> wordnet <span class="im">as</span> wn</span>
+<span id="cb904-2"><a href="nltk.html#cb904-2" aria-hidden="true" tabindex="-1"></a>word <span class="op">=</span> <span class="st">&#39;walk&#39;</span></span>
+<span id="cb904-3"><a href="nltk.html#cb904-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb904-4"><a href="nltk.html#cb904-4" aria-hidden="true" tabindex="-1"></a><span class="co"># get synsets</span></span>
+<span id="cb904-5"><a href="nltk.html#cb904-5" aria-hidden="true" tabindex="-1"></a>word_synsets <span class="op">=</span> wn.synsets(word, pos<span class="op">=</span><span class="st">&#39;v&#39;</span>)</span>
+<span id="cb904-6"><a href="nltk.html#cb904-6" aria-hidden="true" tabindex="-1"></a>word_synsets</span></code></pre></div>
 <pre class="Rout"><code>[Synset(&#39;walk.v.01&#39;), Synset(&#39;walk.v.02&#39;), Synset(&#39;walk.v.03&#39;), Synset(&#39;walk.v.04&#39;), Synset(&#39;walk.v.05&#39;), Synset(&#39;walk.v.06&#39;), Synset(&#39;walk.v.07&#39;), Synset(&#39;walk.v.08&#39;), Synset(&#39;walk.v.09&#39;), Synset(&#39;walk.v.10&#39;)]</code></pre>
 <div class="alert">
 <p>Word sense is closely connected to its parts-of-speech. Therefore, in WordNet it is crucial to specify the POS tag of the word to obtain the correct synset of the word. There are four common part-of-speech tags in WordNet, as shown below:</p>
@@ -589,22 +671,22 @@ You can use <code>nltk.download()</code> to initialize a User Window for install
 <ul>
 <li>Check the definition of a synset (i.e., a specific sense of the word):</li>
 </ul>
-<div class="sourceCode" id="cb30"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb30-1"><a href="nltk.html#cb30-1" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].definition()</span></code></pre></div>
+<div class="sourceCode" id="cb906"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb906-1"><a href="nltk.html#cb906-1" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].definition()</span></code></pre></div>
 <pre class="Rout"><code>&quot;use one&#39;s feet to advance; advance by steps&quot;</code></pre>
 <ul>
 <li>Check the examples of a synset:</li>
 </ul>
-<div class="sourceCode" id="cb32"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb32-1"><a href="nltk.html#cb32-1" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].examples()</span></code></pre></div>
+<div class="sourceCode" id="cb908"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb908-1"><a href="nltk.html#cb908-1" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].examples()</span></code></pre></div>
 <pre class="Rout"><code>[&quot;Walk, don&#39;t run!&quot;, &#39;We walked instead of driving&#39;, &#39;She walks with a slight limp&#39;, &#39;The patient cannot walk yet&#39;, &#39;Walk over to the cabinet&#39;]</code></pre>
-<div class="sourceCode" id="cb34"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb34-1"><a href="nltk.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Get details of each synset</span></span>
-<span id="cb34-2"><a href="nltk.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> s <span class="kw">in</span> word_synsets:</span>
-<span id="cb34-3"><a href="nltk.html#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">str</span>(s.name()).startswith(<span class="st">&#39;walk.v&#39;</span>):</span>
-<span id="cb34-4"><a href="nltk.html#cb34-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(</span>
-<span id="cb34-5"><a href="nltk.html#cb34-5" aria-hidden="true" tabindex="-1"></a>            <span class="st">&#39;Syset ID: </span><span class="sc">%s</span><span class="st"> </span><span class="ch">\n</span><span class="st">&#39;</span></span>
-<span id="cb34-6"><a href="nltk.html#cb34-6" aria-hidden="true" tabindex="-1"></a>            <span class="st">&#39;POS Tag: </span><span class="sc">%s</span><span class="st"> </span><span class="ch">\n</span><span class="st">&#39;</span></span>
-<span id="cb34-7"><a href="nltk.html#cb34-7" aria-hidden="true" tabindex="-1"></a>            <span class="st">&#39;Definition: </span><span class="sc">%s</span><span class="st"> </span><span class="ch">\n</span><span class="st">&#39;</span></span>
-<span id="cb34-8"><a href="nltk.html#cb34-8" aria-hidden="true" tabindex="-1"></a>            <span class="st">&#39;Examples: </span><span class="sc">%s</span><span class="st"> </span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">%</span> (s.name(), s.pos(), s.definition(),s.examples())</span>
-<span id="cb34-9"><a href="nltk.html#cb34-9" aria-hidden="true" tabindex="-1"></a>        )</span></code></pre></div>
+<div class="sourceCode" id="cb910"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb910-1"><a href="nltk.html#cb910-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Get details of each synset</span></span>
+<span id="cb910-2"><a href="nltk.html#cb910-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> s <span class="kw">in</span> word_synsets:</span>
+<span id="cb910-3"><a href="nltk.html#cb910-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">str</span>(s.name()).startswith(<span class="st">&#39;walk.v&#39;</span>):</span>
+<span id="cb910-4"><a href="nltk.html#cb910-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(</span>
+<span id="cb910-5"><a href="nltk.html#cb910-5" aria-hidden="true" tabindex="-1"></a>            <span class="st">&#39;Syset ID: </span><span class="sc">%s</span><span class="st"> </span><span class="ch">\n</span><span class="st">&#39;</span></span>
+<span id="cb910-6"><a href="nltk.html#cb910-6" aria-hidden="true" tabindex="-1"></a>            <span class="st">&#39;POS Tag: </span><span class="sc">%s</span><span class="st"> </span><span class="ch">\n</span><span class="st">&#39;</span></span>
+<span id="cb910-7"><a href="nltk.html#cb910-7" aria-hidden="true" tabindex="-1"></a>            <span class="st">&#39;Definition: </span><span class="sc">%s</span><span class="st"> </span><span class="ch">\n</span><span class="st">&#39;</span></span>
+<span id="cb910-8"><a href="nltk.html#cb910-8" aria-hidden="true" tabindex="-1"></a>            <span class="st">&#39;Examples: </span><span class="sc">%s</span><span class="st"> </span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">%</span> (s.name(), s.pos(), s.definition(),s.examples())</span>
+<span id="cb910-9"><a href="nltk.html#cb910-9" aria-hidden="true" tabindex="-1"></a>        )</span></code></pre></div>
 <pre class="Rout"><code>Syset ID: walk.v.01 
 POS Tag: v 
 Definition: use one&#39;s feet to advance; advance by steps 
@@ -655,41 +737,41 @@ POS Tag: v
 Definition: take a walk; go for a walk; walk for pleasure 
 Examples: [&#39;The lovers held hands while walking&#39;, &#39;We like to walk every Sunday&#39;] </code></pre>
 </div>
-<div id="lexical-relations" class="section level3" number="16.3.2">
-<h3><span class="header-section-number">16.3.2</span> Lexical Relations</h3>
+<div id="lexical-relations" class="section level3" number="19.3.2">
+<h3><span class="header-section-number">19.3.2</span> Lexical Relations</h3>
 <ul>
 <li>Extract words that maintain some lexical relations with the synset:</li>
 </ul>
-<div class="sourceCode" id="cb36"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb36-1"><a href="nltk.html#cb36-1" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].hypernyms() <span class="co"># hypernym</span></span></code></pre></div>
+<div class="sourceCode" id="cb912"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb912-1"><a href="nltk.html#cb912-1" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].hypernyms() <span class="co"># hypernym</span></span></code></pre></div>
 <pre class="Rout"><code>[Synset(&#39;travel.v.01&#39;)]</code></pre>
-<div class="sourceCode" id="cb38"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb38-1"><a href="nltk.html#cb38-1" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].hypernyms()[<span class="dv">0</span>].hyponyms() <span class="co"># similar words</span></span></code></pre></div>
+<div class="sourceCode" id="cb914"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb914-1"><a href="nltk.html#cb914-1" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].hypernyms()[<span class="dv">0</span>].hyponyms() <span class="co"># similar words</span></span></code></pre></div>
 <pre class="Rout"><code>[Synset(&#39;accompany.v.02&#39;), Synset(&#39;advance.v.01&#39;), Synset(&#39;angle.v.01&#39;), Synset(&#39;ascend.v.01&#39;), Synset(&#39;automobile.v.01&#39;), Synset(&#39;back.v.02&#39;), Synset(&#39;bang.v.04&#39;), Synset(&#39;beetle.v.02&#39;), Synset(&#39;betake_oneself.v.01&#39;), Synset(&#39;billow.v.02&#39;), Synset(&#39;bounce.v.03&#39;), Synset(&#39;breeze.v.02&#39;), Synset(&#39;caravan.v.01&#39;), Synset(&#39;career.v.01&#39;), Synset(&#39;carry.v.36&#39;), Synset(&#39;circle.v.01&#39;), Synset(&#39;circle.v.02&#39;), Synset(&#39;circuit.v.01&#39;), Synset(&#39;circulate.v.07&#39;), Synset(&#39;come.v.01&#39;), Synset(&#39;come.v.11&#39;), Synset(&#39;crawl.v.01&#39;), Synset(&#39;cruise.v.02&#39;), Synset(&#39;derail.v.02&#39;), Synset(&#39;descend.v.01&#39;), Synset(&#39;do.v.13&#39;), Synset(&#39;drag.v.04&#39;), Synset(&#39;draw.v.12&#39;), Synset(&#39;drive.v.02&#39;), Synset(&#39;drive.v.14&#39;), Synset(&#39;ease.v.01&#39;), Synset(&#39;fall.v.01&#39;), Synset(&#39;fall.v.15&#39;), Synset(&#39;ferry.v.03&#39;), Synset(&#39;float.v.01&#39;), Synset(&#39;float.v.02&#39;), Synset(&#39;float.v.05&#39;), Synset(&#39;flock.v.01&#39;), Synset(&#39;fly.v.01&#39;), Synset(&#39;fly.v.06&#39;), Synset(&#39;follow.v.01&#39;), Synset(&#39;follow.v.04&#39;), Synset(&#39;forge.v.05&#39;), Synset(&#39;get_around.v.04&#39;), Synset(&#39;ghost.v.01&#39;), Synset(&#39;glide.v.01&#39;), Synset(&#39;go_around.v.02&#39;), Synset(&#39;hiss.v.02&#39;), Synset(&#39;hurtle.v.01&#39;), Synset(&#39;island_hop.v.01&#39;), Synset(&#39;lance.v.01&#39;), Synset(&#39;lurch.v.03&#39;), Synset(&#39;outflank.v.01&#39;), Synset(&#39;pace.v.02&#39;), Synset(&#39;pan.v.01&#39;), Synset(&#39;pass.v.01&#39;), Synset(&#39;pass_over.v.04&#39;), Synset(&#39;play.v.09&#39;), Synset(&#39;plow.v.03&#39;), Synset(&#39;prance.v.02&#39;), Synset(&#39;precede.v.04&#39;), Synset(&#39;precess.v.01&#39;), Synset(&#39;proceed.v.02&#39;), Synset(&#39;propagate.v.02&#39;), Synset(&#39;pursue.v.02&#39;), Synset(&#39;push.v.09&#39;), Synset(&#39;raft.v.02&#39;), Synset(&#39;repair.v.03&#39;), Synset(&#39;retreat.v.02&#39;), Synset(&#39;retrograde.v.02&#39;), Synset(&#39;return.v.01&#39;), Synset(&#39;ride.v.01&#39;), Synset(&#39;ride.v.04&#39;), Synset(&#39;ride.v.10&#39;), Synset(&#39;rise.v.01&#39;), Synset(&#39;roll.v.12&#39;), Synset(&#39;round.v.01&#39;), Synset(&#39;run.v.11&#39;), Synset(&#39;run.v.34&#39;), Synset(&#39;rush.v.01&#39;), Synset(&#39;scramble.v.01&#39;), Synset(&#39;seek.v.04&#39;), Synset(&#39;shuttle.v.01&#39;), Synset(&#39;sift.v.01&#39;), Synset(&#39;ski.v.01&#39;), Synset(&#39;slice_into.v.01&#39;), Synset(&#39;slither.v.01&#39;), Synset(&#39;snowshoe.v.01&#39;), Synset(&#39;speed.v.04&#39;), Synset(&#39;steamer.v.01&#39;), Synset(&#39;step.v.01&#39;), Synset(&#39;step.v.02&#39;), Synset(&#39;step.v.06&#39;), Synset(&#39;stray.v.02&#39;), Synset(&#39;swap.v.02&#39;), Synset(&#39;swash.v.01&#39;), Synset(&#39;swim.v.01&#39;), Synset(&#39;swim.v.05&#39;), Synset(&#39;swing.v.03&#39;), Synset(&#39;taxi.v.01&#39;), Synset(&#39;trail.v.03&#39;), Synset(&#39;tram.v.01&#39;), Synset(&#39;transfer.v.06&#39;), Synset(&#39;travel.v.04&#39;), Synset(&#39;travel.v.05&#39;), Synset(&#39;travel.v.06&#39;), Synset(&#39;travel_by.v.01&#39;), Synset(&#39;travel_purposefully.v.01&#39;), Synset(&#39;travel_rapidly.v.01&#39;), Synset(&#39;trundle.v.01&#39;), Synset(&#39;turn.v.06&#39;), Synset(&#39;walk.v.01&#39;), Synset(&#39;walk.v.10&#39;), Synset(&#39;weave.v.04&#39;), Synset(&#39;wend.v.01&#39;), Synset(&#39;wheel.v.03&#39;), Synset(&#39;whine.v.01&#39;), Synset(&#39;whish.v.02&#39;), Synset(&#39;whisk.v.02&#39;), Synset(&#39;whistle.v.02&#39;), Synset(&#39;withdraw.v.01&#39;), Synset(&#39;zigzag.v.01&#39;), Synset(&#39;zoom.v.02&#39;)]</code></pre>
-<div class="sourceCode" id="cb40"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb40-1"><a href="nltk.html#cb40-1" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].root_hypernyms() <span class="co"># root </span></span></code></pre></div>
+<div class="sourceCode" id="cb916"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb916-1"><a href="nltk.html#cb916-1" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].root_hypernyms() <span class="co"># root </span></span></code></pre></div>
 <pre class="Rout"><code>[Synset(&#39;travel.v.01&#39;)]</code></pre>
-<div class="sourceCode" id="cb42"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb42-1"><a href="nltk.html#cb42-1" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].hypernym_paths() <span class="co"># from root to this synset in WordNet</span></span></code></pre></div>
+<div class="sourceCode" id="cb918"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb918-1"><a href="nltk.html#cb918-1" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].hypernym_paths() <span class="co"># from root to this synset in WordNet</span></span></code></pre></div>
 <pre class="Rout"><code>[[Synset(&#39;travel.v.01&#39;), Synset(&#39;walk.v.01&#39;)]]</code></pre>
 <ul>
 <li>Synonyms</li>
 </ul>
-<div class="sourceCode" id="cb44"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb44-1"><a href="nltk.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Collect synonyms of all synsets</span></span>
-<span id="cb44-2"><a href="nltk.html#cb44-2" aria-hidden="true" tabindex="-1"></a>synonyms <span class="op">=</span> []</span>
-<span id="cb44-3"><a href="nltk.html#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> syn <span class="kw">in</span> wn.synsets(<span class="st">&#39;book&#39;</span>, pos<span class="op">=</span><span class="st">&#39;v&#39;</span>):</span>
-<span id="cb44-4"><a href="nltk.html#cb44-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> lemma <span class="kw">in</span> syn.lemmas():</span>
-<span id="cb44-5"><a href="nltk.html#cb44-5" aria-hidden="true" tabindex="-1"></a>        synonyms.append(lemma.name())</span>
-<span id="cb44-6"><a href="nltk.html#cb44-6" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(synonyms)</span></code></pre></div>
+<div class="sourceCode" id="cb920"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb920-1"><a href="nltk.html#cb920-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Collect synonyms of all synsets</span></span>
+<span id="cb920-2"><a href="nltk.html#cb920-2" aria-hidden="true" tabindex="-1"></a>synonyms <span class="op">=</span> []</span>
+<span id="cb920-3"><a href="nltk.html#cb920-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> syn <span class="kw">in</span> wn.synsets(<span class="st">&#39;book&#39;</span>, pos<span class="op">=</span><span class="st">&#39;v&#39;</span>):</span>
+<span id="cb920-4"><a href="nltk.html#cb920-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> lemma <span class="kw">in</span> syn.lemmas():</span>
+<span id="cb920-5"><a href="nltk.html#cb920-5" aria-hidden="true" tabindex="-1"></a>        synonyms.append(lemma.name())</span>
+<span id="cb920-6"><a href="nltk.html#cb920-6" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(synonyms)</span></code></pre></div>
 <pre class="Rout"><code>6</code></pre>
-<div class="sourceCode" id="cb46"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb46-1"><a href="nltk.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(<span class="bu">set</span>(synonyms))</span></code></pre></div>
+<div class="sourceCode" id="cb922"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb922-1"><a href="nltk.html#cb922-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(<span class="bu">set</span>(synonyms))</span></code></pre></div>
 <pre class="Rout"><code>3</code></pre>
-<div class="sourceCode" id="cb48"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb48-1"><a href="nltk.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">set</span>(synonyms))</span></code></pre></div>
-<pre class="Rout"><code>{&#39;hold&#39;, &#39;book&#39;, &#39;reserve&#39;}</code></pre>
+<div class="sourceCode" id="cb924"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb924-1"><a href="nltk.html#cb924-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">set</span>(synonyms))</span></code></pre></div>
+<pre class="Rout"><code>{&#39;reserve&#39;, &#39;book&#39;, &#39;hold&#39;}</code></pre>
 <ul>
 <li>Antonyms</li>
 </ul>
-<div class="sourceCode" id="cb50"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb50-1"><a href="nltk.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First Synset Lemma String</span></span>
-<span id="cb50-2"><a href="nltk.html#cb50-2" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].lemmas()[<span class="dv">0</span>].name() </span>
-<span id="cb50-3"><a href="nltk.html#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Antonyms of the First Synset</span></span></code></pre></div>
+<div class="sourceCode" id="cb926"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb926-1"><a href="nltk.html#cb926-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First Synset Lemma String</span></span>
+<span id="cb926-2"><a href="nltk.html#cb926-2" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].lemmas()[<span class="dv">0</span>].name() </span>
+<span id="cb926-3"><a href="nltk.html#cb926-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Antonyms of the First Synset</span></span></code></pre></div>
 <pre class="Rout"><code>&#39;walk&#39;</code></pre>
-<div class="sourceCode" id="cb52"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb52-1"><a href="nltk.html#cb52-1" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].lemmas()[<span class="dv">0</span>].antonyms()[<span class="dv">0</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb928"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb928-1"><a href="nltk.html#cb928-1" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].lemmas()[<span class="dv">0</span>].antonyms()[<span class="dv">0</span>]</span></code></pre></div>
 <pre class="Rout"><code>Lemma(&#39;ride.v.02.ride&#39;)</code></pre>
 <div class="info">
 <p>While previous taxonomic relations (e.g., hypernymy and hyponymy) are in-between synsets, the synonymy and antonymy relations are in-between lemmas. We need to be very clear about the use of the three variants in WordNet:</p>
@@ -700,96 +782,96 @@ Examples: [&#39;The lovers held hands while walking&#39;, &#39;We like to walk e
 </ul>
 </div>
 </div>
-<div id="semantic-similarity-computation" class="section level3" number="16.3.3">
-<h3><span class="header-section-number">16.3.3</span> Semantic Similarity Computation</h3>
+<div id="semantic-similarity-computation" class="section level3" number="19.3.3">
+<h3><span class="header-section-number">19.3.3</span> Semantic Similarity Computation</h3>
 <p>Synsets are organized in a <strong>hypernym tree</strong>, which can be used for reasoning about the semantic similarity of two Synsets. The closer the two Synsets are in the tree, the more similar they are.</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb54-1"><a href="nltk.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># syn1 = wn.synsets(&#39;walk&#39;, pos=&#39;v&#39;)[0]</span></span>
-<span id="cb54-2"><a href="nltk.html#cb54-2" aria-hidden="true" tabindex="-1"></a>syn1 <span class="op">=</span> wn.synset(<span class="st">&#39;walk.v.01&#39;</span>)</span>
-<span id="cb54-3"><a href="nltk.html#cb54-3" aria-hidden="true" tabindex="-1"></a>syn2 <span class="op">=</span> wn.synset(<span class="st">&#39;toddle.v.01&#39;</span>)</span>
-<span id="cb54-4"><a href="nltk.html#cb54-4" aria-hidden="true" tabindex="-1"></a>syn3 <span class="op">=</span> wn.synset(<span class="st">&#39;think.v.01&#39;</span>)</span>
-<span id="cb54-5"><a href="nltk.html#cb54-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-6"><a href="nltk.html#cb54-6" aria-hidden="true" tabindex="-1"></a>syn1.wup_similarity(syn2)</span></code></pre></div>
+<div class="sourceCode" id="cb930"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb930-1"><a href="nltk.html#cb930-1" aria-hidden="true" tabindex="-1"></a><span class="co"># syn1 = wn.synsets(&#39;walk&#39;, pos=&#39;v&#39;)[0]</span></span>
+<span id="cb930-2"><a href="nltk.html#cb930-2" aria-hidden="true" tabindex="-1"></a>syn1 <span class="op">=</span> wn.synset(<span class="st">&#39;walk.v.01&#39;</span>)</span>
+<span id="cb930-3"><a href="nltk.html#cb930-3" aria-hidden="true" tabindex="-1"></a>syn2 <span class="op">=</span> wn.synset(<span class="st">&#39;toddle.v.01&#39;</span>)</span>
+<span id="cb930-4"><a href="nltk.html#cb930-4" aria-hidden="true" tabindex="-1"></a>syn3 <span class="op">=</span> wn.synset(<span class="st">&#39;think.v.01&#39;</span>)</span>
+<span id="cb930-5"><a href="nltk.html#cb930-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb930-6"><a href="nltk.html#cb930-6" aria-hidden="true" tabindex="-1"></a>syn1.wup_similarity(syn2)</span></code></pre></div>
 <pre class="Rout"><code>0.8</code></pre>
-<div class="sourceCode" id="cb56"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb56-1"><a href="nltk.html#cb56-1" aria-hidden="true" tabindex="-1"></a>syn1.wup_similarity(syn3)</span></code></pre></div>
+<div class="sourceCode" id="cb932"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb932-1"><a href="nltk.html#cb932-1" aria-hidden="true" tabindex="-1"></a>syn1.wup_similarity(syn3)</span></code></pre></div>
 <pre class="Rout"><code>0.2857142857142857</code></pre>
-<div class="sourceCode" id="cb58"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb58-1"><a href="nltk.html#cb58-1" aria-hidden="true" tabindex="-1"></a>syn1.path_similarity(syn2)</span></code></pre></div>
+<div class="sourceCode" id="cb934"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb934-1"><a href="nltk.html#cb934-1" aria-hidden="true" tabindex="-1"></a>syn1.path_similarity(syn2)</span></code></pre></div>
 <pre class="Rout"><code>0.5</code></pre>
-<div class="sourceCode" id="cb60"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb60-1"><a href="nltk.html#cb60-1" aria-hidden="true" tabindex="-1"></a>syn1.path_similarity(syn3)</span></code></pre></div>
+<div class="sourceCode" id="cb936"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb936-1"><a href="nltk.html#cb936-1" aria-hidden="true" tabindex="-1"></a>syn1.path_similarity(syn3)</span></code></pre></div>
 <pre class="Rout"><code>0.16666666666666666</code></pre>
-<div class="sourceCode" id="cb62"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb62-1"><a href="nltk.html#cb62-1" aria-hidden="true" tabindex="-1"></a>ref <span class="op">=</span> syn1.hypernyms()[<span class="dv">0</span>]</span>
-<span id="cb62-2"><a href="nltk.html#cb62-2" aria-hidden="true" tabindex="-1"></a>syn1.shortest_path_distance(ref)</span></code></pre></div>
+<div class="sourceCode" id="cb938"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb938-1"><a href="nltk.html#cb938-1" aria-hidden="true" tabindex="-1"></a>ref <span class="op">=</span> syn1.hypernyms()[<span class="dv">0</span>]</span>
+<span id="cb938-2"><a href="nltk.html#cb938-2" aria-hidden="true" tabindex="-1"></a>syn1.shortest_path_distance(ref)</span></code></pre></div>
 <pre class="Rout"><code>1</code></pre>
-<div class="sourceCode" id="cb64"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb64-1"><a href="nltk.html#cb64-1" aria-hidden="true" tabindex="-1"></a>syn2.shortest_path_distance(ref)</span></code></pre></div>
+<div class="sourceCode" id="cb940"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb940-1"><a href="nltk.html#cb940-1" aria-hidden="true" tabindex="-1"></a>syn2.shortest_path_distance(ref)</span></code></pre></div>
 <pre class="Rout"><code>2</code></pre>
-<div class="sourceCode" id="cb66"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb66-1"><a href="nltk.html#cb66-1" aria-hidden="true" tabindex="-1"></a>syn1.shortest_path_distance(syn2)</span></code></pre></div>
+<div class="sourceCode" id="cb942"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb942-1"><a href="nltk.html#cb942-1" aria-hidden="true" tabindex="-1"></a>syn1.shortest_path_distance(syn2)</span></code></pre></div>
 <pre class="Rout"><code>1</code></pre>
-<div class="sourceCode" id="cb68"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb68-1"><a href="nltk.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ref.definition())</span></code></pre></div>
+<div class="sourceCode" id="cb944"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb944-1"><a href="nltk.html#cb944-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ref.definition())</span></code></pre></div>
 <pre class="Rout"><code>change location; move, travel, or proceed, also metaphorically</code></pre>
-<div class="sourceCode" id="cb70"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb70-1"><a href="nltk.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>([l.name() <span class="cf">for</span> l <span class="kw">in</span> ref.lemmas()])</span></code></pre></div>
+<div class="sourceCode" id="cb946"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb946-1"><a href="nltk.html#cb946-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>([l.name() <span class="cf">for</span> l <span class="kw">in</span> ref.lemmas()])</span></code></pre></div>
 <pre class="Rout"><code>[&#39;travel&#39;, &#39;go&#39;, &#39;move&#39;, &#39;locomote&#39;]</code></pre>
-<div class="sourceCode" id="cb72"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb72-1"><a href="nltk.html#cb72-1" aria-hidden="true" tabindex="-1"></a>syn1.hypernym_paths()</span></code></pre></div>
+<div class="sourceCode" id="cb948"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb948-1"><a href="nltk.html#cb948-1" aria-hidden="true" tabindex="-1"></a>syn1.hypernym_paths()</span></code></pre></div>
 <pre class="Rout"><code>[[Synset(&#39;travel.v.01&#39;), Synset(&#39;walk.v.01&#39;)]]</code></pre>
-<div class="sourceCode" id="cb74"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb74-1"><a href="nltk.html#cb74-1" aria-hidden="true" tabindex="-1"></a>syn2.hypernym_paths()</span></code></pre></div>
+<div class="sourceCode" id="cb950"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb950-1"><a href="nltk.html#cb950-1" aria-hidden="true" tabindex="-1"></a>syn2.hypernym_paths()</span></code></pre></div>
 <pre class="Rout"><code>[[Synset(&#39;travel.v.01&#39;), Synset(&#39;walk.v.01&#39;), Synset(&#39;toddle.v.01&#39;)]]</code></pre>
-<div class="sourceCode" id="cb76"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb76-1"><a href="nltk.html#cb76-1" aria-hidden="true" tabindex="-1"></a>syn3.hypernym_paths()</span></code></pre></div>
+<div class="sourceCode" id="cb952"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb952-1"><a href="nltk.html#cb952-1" aria-hidden="true" tabindex="-1"></a>syn3.hypernym_paths()</span></code></pre></div>
 <pre class="Rout"><code>[[Synset(&#39;think.v.03&#39;), Synset(&#39;evaluate.v.02&#39;), Synset(&#39;think.v.01&#39;)]]</code></pre>
 <div class="info">
 <p>The <code>wup_similarity</code> method is short for <strong>Wu-Pamler Similarity</strong>. It is a scoring method for how similar the word senses are based on where the Synsets occur relative to each other in the hypernym tree. For more information or other scoring methods, please check <a href="https://www.nltk.org/howto/wordnet.html">NLTK WordNet documentation</a>.</p>
 </div>
 </div>
 </div>
-<div id="discovering-word-collocations" class="section level2" number="16.4">
-<h2><span class="header-section-number">16.4</span> Discovering Word Collocations</h2>
-<div class="sourceCode" id="cb78"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb78-1"><a href="nltk.html#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> brown</span>
-<span id="cb78-2"><a href="nltk.html#cb78-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.collocations <span class="im">import</span> BigramCollocationFinder</span>
-<span id="cb78-3"><a href="nltk.html#cb78-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-4"><a href="nltk.html#cb78-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.metrics <span class="im">import</span> BigramAssocMeasures</span>
-<span id="cb78-5"><a href="nltk.html#cb78-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-6"><a href="nltk.html#cb78-6" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [w.lower() <span class="cf">for</span> w <span class="kw">in</span> brown.words()]</span>
-<span id="cb78-7"><a href="nltk.html#cb78-7" aria-hidden="true" tabindex="-1"></a>bcf <span class="op">=</span> BigramCollocationFinder.from_words(words)</span>
-<span id="cb78-8"><a href="nltk.html#cb78-8" aria-hidden="true" tabindex="-1"></a>bcf.nbest(BigramAssocMeasures.likelihood_ratio, <span class="dv">4</span>)</span></code></pre></div>
+<div id="discovering-word-collocations" class="section level2" number="19.4">
+<h2><span class="header-section-number">19.4</span> Discovering Word Collocations</h2>
+<div class="sourceCode" id="cb954"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb954-1"><a href="nltk.html#cb954-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> brown</span>
+<span id="cb954-2"><a href="nltk.html#cb954-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.collocations <span class="im">import</span> BigramCollocationFinder</span>
+<span id="cb954-3"><a href="nltk.html#cb954-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb954-4"><a href="nltk.html#cb954-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.metrics <span class="im">import</span> BigramAssocMeasures</span>
+<span id="cb954-5"><a href="nltk.html#cb954-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb954-6"><a href="nltk.html#cb954-6" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [w.lower() <span class="cf">for</span> w <span class="kw">in</span> brown.words()]</span>
+<span id="cb954-7"><a href="nltk.html#cb954-7" aria-hidden="true" tabindex="-1"></a>bcf <span class="op">=</span> BigramCollocationFinder.from_words(words)</span>
+<span id="cb954-8"><a href="nltk.html#cb954-8" aria-hidden="true" tabindex="-1"></a>bcf.nbest(BigramAssocMeasures.likelihood_ratio, <span class="dv">4</span>)</span></code></pre></div>
 <pre class="Rout"><code>[(&#39;;&#39;, &#39;;&#39;), (&#39;?&#39;, &#39;?&#39;), (&#39;of&#39;, &#39;the&#39;), (&#39;.&#39;, &#39;``&#39;)]</code></pre>
-<div class="sourceCode" id="cb80"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb80-1"><a href="nltk.html#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co"># deal with stopwords</span></span>
-<span id="cb80-2"><a href="nltk.html#cb80-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> stopwords</span>
-<span id="cb80-3"><a href="nltk.html#cb80-3" aria-hidden="true" tabindex="-1"></a>stopset <span class="op">=</span> <span class="bu">set</span>(stopwords.words(<span class="st">&#39;english&#39;</span>))</span>
-<span id="cb80-4"><a href="nltk.html#cb80-4" aria-hidden="true" tabindex="-1"></a><span class="co">## Fitler critera:</span></span>
-<span id="cb80-5"><a href="nltk.html#cb80-5" aria-hidden="true" tabindex="-1"></a><span class="co">## remove words whose length &lt; 3 or which are on the stop word list</span></span>
-<span id="cb80-6"><a href="nltk.html#cb80-6" aria-hidden="true" tabindex="-1"></a>filter_stops <span class="op">=</span> <span class="kw">lambda</span> w: <span class="bu">len</span>(w) <span class="op">&lt;</span> <span class="dv">3</span> <span class="kw">or</span> w <span class="kw">in</span> stopset</span>
-<span id="cb80-7"><a href="nltk.html#cb80-7" aria-hidden="true" tabindex="-1"></a>bcf.apply_word_filter(filter_stops)</span>
-<span id="cb80-8"><a href="nltk.html#cb80-8" aria-hidden="true" tabindex="-1"></a>bcf.nbest(BigramAssocMeasures.likelihood_ratio, <span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb956"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb956-1"><a href="nltk.html#cb956-1" aria-hidden="true" tabindex="-1"></a><span class="co"># deal with stopwords</span></span>
+<span id="cb956-2"><a href="nltk.html#cb956-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> stopwords</span>
+<span id="cb956-3"><a href="nltk.html#cb956-3" aria-hidden="true" tabindex="-1"></a>stopset <span class="op">=</span> <span class="bu">set</span>(stopwords.words(<span class="st">&#39;english&#39;</span>))</span>
+<span id="cb956-4"><a href="nltk.html#cb956-4" aria-hidden="true" tabindex="-1"></a><span class="co">## Fitler critera:</span></span>
+<span id="cb956-5"><a href="nltk.html#cb956-5" aria-hidden="true" tabindex="-1"></a><span class="co">## remove words whose length &lt; 3 or which are on the stop word list</span></span>
+<span id="cb956-6"><a href="nltk.html#cb956-6" aria-hidden="true" tabindex="-1"></a>filter_stops <span class="op">=</span> <span class="kw">lambda</span> w: <span class="bu">len</span>(w) <span class="op">&lt;</span> <span class="dv">3</span> <span class="kw">or</span> w <span class="kw">in</span> stopset</span>
+<span id="cb956-7"><a href="nltk.html#cb956-7" aria-hidden="true" tabindex="-1"></a>bcf.apply_word_filter(filter_stops)</span>
+<span id="cb956-8"><a href="nltk.html#cb956-8" aria-hidden="true" tabindex="-1"></a>bcf.nbest(BigramAssocMeasures.likelihood_ratio, <span class="dv">10</span>)</span></code></pre></div>
 <pre class="Rout"><code>[(&#39;united&#39;, &#39;states&#39;), (&#39;new&#39;, &#39;york&#39;), (&#39;per&#39;, &#39;cent&#39;), (&#39;years&#39;, &#39;ago&#39;), (&#39;rhode&#39;, &#39;island&#39;), (&#39;los&#39;, &#39;angeles&#39;), (&#39;peace&#39;, &#39;corps&#39;), (&#39;san&#39;, &#39;francisco&#39;), (&#39;high&#39;, &#39;school&#39;), (&#39;fiscal&#39;, &#39;year&#39;)]</code></pre>
-<div class="sourceCode" id="cb82"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb82-1"><a href="nltk.html#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="co">## apply freq-based filter</span></span>
-<span id="cb82-2"><a href="nltk.html#cb82-2" aria-hidden="true" tabindex="-1"></a>bcf.apply_freq_filter(<span class="dv">3</span>)</span>
-<span id="cb82-3"><a href="nltk.html#cb82-3" aria-hidden="true" tabindex="-1"></a>bcf.nbest(BigramAssocMeasures.likelihood_ratio, <span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb958"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb958-1"><a href="nltk.html#cb958-1" aria-hidden="true" tabindex="-1"></a><span class="co">## apply freq-based filter</span></span>
+<span id="cb958-2"><a href="nltk.html#cb958-2" aria-hidden="true" tabindex="-1"></a>bcf.apply_freq_filter(<span class="dv">3</span>)</span>
+<span id="cb958-3"><a href="nltk.html#cb958-3" aria-hidden="true" tabindex="-1"></a>bcf.nbest(BigramAssocMeasures.likelihood_ratio, <span class="dv">10</span>)</span></code></pre></div>
 <pre class="Rout"><code>[(&#39;united&#39;, &#39;states&#39;), (&#39;new&#39;, &#39;york&#39;), (&#39;per&#39;, &#39;cent&#39;), (&#39;years&#39;, &#39;ago&#39;), (&#39;rhode&#39;, &#39;island&#39;), (&#39;los&#39;, &#39;angeles&#39;), (&#39;peace&#39;, &#39;corps&#39;), (&#39;san&#39;, &#39;francisco&#39;), (&#39;high&#39;, &#39;school&#39;), (&#39;fiscal&#39;, &#39;year&#39;)]</code></pre>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-1" class="exercise"><strong>Exercise 16.1  </strong></span>Try to identify bigram collocations in the corpus, Alice in the Wonderland. The texts are available in <code>nltk.corpus.gutenburg</code>.</p>
+<p><span id="exr:unlabeled-div-84" class="exercise"><strong>Exercise 19.1  </strong></span>Try to identify bigram collocations in the corpus, Alice in the Wonderland. The texts are available in <code>nltk.corpus.gutenburg</code>.</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-2" class="exercise"><strong>Exercise 16.2  </strong></span>Following the same strategy of bigram collocation extraction, please try to extract <strong>trigrams</strong> from the <code>brown</code> corpus. Remove stop words and short words as we did in the lecture. Include only trigrams whose frequency &gt; 5.</p>
+<p><span id="exr:unlabeled-div-85" class="exercise"><strong>Exercise 19.2  </strong></span>Following the same strategy of bigram collocation extraction, please try to extract <strong>trigrams</strong> from the <code>brown</code> corpus. Remove stop words and short words as we did in the lecture. Include only trigrams whose frequency &gt; 5.</p>
 </div>
 </div>
-<div id="tokenization" class="section level2" number="16.5">
-<h2><span class="header-section-number">16.5</span> Tokenization</h2>
-<div class="sourceCode" id="cb84"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb84-1"><a href="nltk.html#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nltk</span>
-<span id="cb84-2"><a href="nltk.html#cb84-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> word_tokenize, sent_tokenize</span>
-<span id="cb84-3"><a href="nltk.html#cb84-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb84-4"><a href="nltk.html#cb84-4" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;&quot;&quot;Three blind mice! See how they run!</span></span>
-<span id="cb84-5"><a href="nltk.html#cb84-5" aria-hidden="true" tabindex="-1"></a><span class="st">They all ran after the farmer&#39;s wife,</span></span>
-<span id="cb84-6"><a href="nltk.html#cb84-6" aria-hidden="true" tabindex="-1"></a><span class="st">Who cut off their tails with a carving knife.</span></span>
-<span id="cb84-7"><a href="nltk.html#cb84-7" aria-hidden="true" tabindex="-1"></a><span class="st">Did you ever see such a thing in your life</span></span>
-<span id="cb84-8"><a href="nltk.html#cb84-8" aria-hidden="true" tabindex="-1"></a><span class="st">As three blind mice?</span></span>
-<span id="cb84-9"><a href="nltk.html#cb84-9" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span></span>
-<span id="cb84-10"><a href="nltk.html#cb84-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb84-11"><a href="nltk.html#cb84-11" aria-hidden="true" tabindex="-1"></a>text_sent <span class="op">=</span> sent_tokenize(text)</span>
-<span id="cb84-12"><a href="nltk.html#cb84-12" aria-hidden="true" tabindex="-1"></a>text_word <span class="op">=</span> word_tokenize(text)</span>
-<span id="cb84-13"><a href="nltk.html#cb84-13" aria-hidden="true" tabindex="-1"></a>text_pos <span class="op">=</span> nltk.pos_tag(text_word)</span></code></pre></div>
+<div id="tokenization" class="section level2" number="19.5">
+<h2><span class="header-section-number">19.5</span> Tokenization</h2>
+<div class="sourceCode" id="cb960"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb960-1"><a href="nltk.html#cb960-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nltk</span>
+<span id="cb960-2"><a href="nltk.html#cb960-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> word_tokenize, sent_tokenize</span>
+<span id="cb960-3"><a href="nltk.html#cb960-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb960-4"><a href="nltk.html#cb960-4" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;&quot;&quot;Three blind mice! See how they run!</span></span>
+<span id="cb960-5"><a href="nltk.html#cb960-5" aria-hidden="true" tabindex="-1"></a><span class="st">They all ran after the farmer&#39;s wife,</span></span>
+<span id="cb960-6"><a href="nltk.html#cb960-6" aria-hidden="true" tabindex="-1"></a><span class="st">Who cut off their tails with a carving knife.</span></span>
+<span id="cb960-7"><a href="nltk.html#cb960-7" aria-hidden="true" tabindex="-1"></a><span class="st">Did you ever see such a thing in your life</span></span>
+<span id="cb960-8"><a href="nltk.html#cb960-8" aria-hidden="true" tabindex="-1"></a><span class="st">As three blind mice?</span></span>
+<span id="cb960-9"><a href="nltk.html#cb960-9" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb960-10"><a href="nltk.html#cb960-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb960-11"><a href="nltk.html#cb960-11" aria-hidden="true" tabindex="-1"></a>text_sent <span class="op">=</span> sent_tokenize(text)</span>
+<span id="cb960-12"><a href="nltk.html#cb960-12" aria-hidden="true" tabindex="-1"></a>text_word <span class="op">=</span> word_tokenize(text)</span>
+<span id="cb960-13"><a href="nltk.html#cb960-13" aria-hidden="true" tabindex="-1"></a>text_pos <span class="op">=</span> nltk.pos_tag(text_word)</span></code></pre></div>
 <ul>
 <li>With words, we can create a frequency list:</li>
 </ul>
-<div class="sourceCode" id="cb85"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb85-1"><a href="nltk.html#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pprint <span class="im">as</span> pp</span>
-<span id="cb85-2"><a href="nltk.html#cb85-2" aria-hidden="true" tabindex="-1"></a>text_fd<span class="op">=</span> nltk.FreqDist([w.lower() <span class="cf">for</span> w <span class="kw">in</span> text_word])</span>
-<span id="cb85-3"><a href="nltk.html#cb85-3" aria-hidden="true" tabindex="-1"></a>pp.pprint(text_fd.most_common(<span class="dv">10</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb961"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb961-1"><a href="nltk.html#cb961-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pprint <span class="im">as</span> pp</span>
+<span id="cb961-2"><a href="nltk.html#cb961-2" aria-hidden="true" tabindex="-1"></a>text_fd<span class="op">=</span> nltk.FreqDist([w.lower() <span class="cf">for</span> w <span class="kw">in</span> text_word])</span>
+<span id="cb961-3"><a href="nltk.html#cb961-3" aria-hidden="true" tabindex="-1"></a>pp.pprint(text_fd.most_common(<span class="dv">10</span>))</span></code></pre></div>
 <pre class="Rout"><code>[(&#39;three&#39;, 2),
  (&#39;blind&#39;, 2),
  (&#39;mice&#39;, 2),
@@ -801,9 +883,9 @@ Examples: [&#39;The lovers held hands while walking&#39;, &#39;We like to walk e
  (&#39;run&#39;, 1),
  (&#39;all&#39;, 1)]</code></pre>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-3" class="exercise"><strong>Exercise 16.3  </strong></span>Provide the word frequency list of the top 30 nouns in Alice in the Wonderland. The raw texts of the novel is available in NTLK (see below).</p>
+<p><span id="exr:unlabeled-div-86" class="exercise"><strong>Exercise 19.3  </strong></span>Provide the word frequency list of the top 30 nouns in Alice in the Wonderland. The raw texts of the novel is available in NTLK (see below).</p>
 </div>
-<div class="sourceCode" id="cb87"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb87-1"><a href="nltk.html#cb87-1" aria-hidden="true" tabindex="-1"></a>alice <span class="op">=</span> nltk.corpus.gutenberg.raw(fileids<span class="op">=</span><span class="st">&#39;carroll-alice.txt&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb963"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb963-1"><a href="nltk.html#cb963-1" aria-hidden="true" tabindex="-1"></a>alice <span class="op">=</span> nltk.corpus.gutenberg.raw(fileids<span class="op">=</span><span class="st">&#39;carroll-alice.txt&#39;</span>)</span></code></pre></div>
 <pre class="Rout"><code>[(&#39;Alice&#39;, 392),
  (&#39;Queen&#39;, 71),
  (&#39;time&#39;, 65),
@@ -835,25 +917,25 @@ Examples: [&#39;The lovers held hands while walking&#39;, &#39;We like to walk e
  (&#39;Cat&#39;, 25),
  (&#39;round&#39;, 23)]</code></pre>
 </div>
-<div id="chinese-word-segmentation" class="section level2" number="16.6">
-<h2><span class="header-section-number">16.6</span> Chinese Word Segmentation</h2>
-<div class="sourceCode" id="cb89"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb89-1"><a href="nltk.html#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> jieba</span>
-<span id="cb89-2"><a href="nltk.html#cb89-2" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span></span>
-<span id="cb89-3"><a href="nltk.html#cb89-3" aria-hidden="true" tabindex="-1"></a><span class="st">高速公路局說，目前在國道3號北向水上系統至中埔路段車多壅塞，已回堵約3公里。另外，國道1號北向仁德至永康路段路段，已回堵約有7公里。建議駕駛人提前避開壅塞路段改道行駛，行經車多路段請保持行車安全距離，小心行駛。</span></span>
-<span id="cb89-4"><a href="nltk.html#cb89-4" aria-hidden="true" tabindex="-1"></a><span class="st">國道車多壅塞路段還有國1內湖-五堵北向路段、楊梅-新竹南向路段；國3三鶯-關西服務區南向路段、快官-霧峰南向路段、水上系統-中埔北向路段；國6霧峰系統-東草屯東向路段、國10燕巢-燕巢系統東向路段。</span></span>
-<span id="cb89-5"><a href="nltk.html#cb89-5" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span></span>
-<span id="cb89-6"><a href="nltk.html#cb89-6" aria-hidden="true" tabindex="-1"></a>text_jb <span class="op">=</span> jieba.lcut(text)</span></code></pre></div>
+<div id="chinese-word-segmentation" class="section level2" number="19.6">
+<h2><span class="header-section-number">19.6</span> Chinese Word Segmentation</h2>
+<div class="sourceCode" id="cb965"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb965-1"><a href="nltk.html#cb965-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> jieba</span>
+<span id="cb965-2"><a href="nltk.html#cb965-2" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb965-3"><a href="nltk.html#cb965-3" aria-hidden="true" tabindex="-1"></a><span class="st">高速公路局說，目前在國道3號北向水上系統至中埔路段車多壅塞，已回堵約3公里。另外，國道1號北向仁德至永康路段路段，已回堵約有7公里。建議駕駛人提前避開壅塞路段改道行駛，行經車多路段請保持行車安全距離，小心行駛。</span></span>
+<span id="cb965-4"><a href="nltk.html#cb965-4" aria-hidden="true" tabindex="-1"></a><span class="st">國道車多壅塞路段還有國1內湖-五堵北向路段、楊梅-新竹南向路段；國3三鶯-關西服務區南向路段、快官-霧峰南向路段、水上系統-中埔北向路段；國6霧峰系統-東草屯東向路段、國10燕巢-燕巢系統東向路段。</span></span>
+<span id="cb965-5"><a href="nltk.html#cb965-5" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb965-6"><a href="nltk.html#cb965-6" aria-hidden="true" tabindex="-1"></a>text_jb <span class="op">=</span> jieba.lcut(text)</span></code></pre></div>
 <pre class="Rout"><code>Building prefix dict from the default dictionary ...
 Loading model from cache /var/folders/n7/ltpzwx813c599nfxfb94s_640000gn/T/jieba.cache
-Loading model cost 0.752 seconds.
+Loading model cost 0.747 seconds.
 Prefix dict has been built successfully.</code></pre>
-<div class="sourceCode" id="cb91"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb91-1"><a href="nltk.html#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39; | &#39;</span>.join(text_jb))</span></code></pre></div>
+<div class="sourceCode" id="cb967"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb967-1"><a href="nltk.html#cb967-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39; | &#39;</span>.join(text_jb))</span></code></pre></div>
 <pre class="Rout"><code>
  | 高速公路 | 局說 | ， | 目前 | 在 | 國道 | 3 | 號 | 北向 | 水上 | 系統 | 至 | 中埔 | 路段 | 車多 | 壅塞 | ， | 已回 | 堵約 | 3 | 公里 | 。 | 另外 | ， | 國道 | 1 | 號 | 北向 | 仁德 | 至 | 永康 | 路段 | 路段 | ， | 已回 | 堵 | 約 | 有 | 7 | 公里 | 。 | 建議 | 駕駛人 | 提前 | 避開 | 壅塞 | 路段 | 改道 | 行駛 | ， | 行經車 | 多 | 路段 | 請 | 保持 | 行車 | 安全 | 距離 | ， | 小心 | 行駛 | 。 | 
  | 國道 | 車多 | 壅塞 | 路段 | 還有國 | 1 | 內湖 | - | 五堵 | 北向 | 路段 | 、 | 楊梅 | - | 新竹 | 南向 | 路段 | ； | 國 | 3 | 三鶯 | - | 關 | 西服 | 務區 | 南向 | 路段 | 、 | 快官 | - | 霧峰 | 南向 | 路段 | 、 | 水上 | 系統 | - | 中埔 | 北向 | 路段 | ； | 國 | 6 | 霧峰 | 系統 | - | 東 | 草屯 | 東向 | 路段 | 、 | 國 | 10 | 燕巢 | - | 燕巢 | 系統 | 東向 | 路段 | 。 | </code></pre>
 </div>
-<div id="afterwords" class="section level2" number="16.7">
-<h2><span class="header-section-number">16.7</span> Afterwords</h2>
+<div id="afterwords" class="section level2" number="19.7">
+<h2><span class="header-section-number">19.7</span> Afterwords</h2>
 <ul>
 <li>There are many other aspects that we need to take into account when processing texts. Text segmentation is a non-trivial task in natural language processing. The base units that we work with will turn out to be connected to the specific research questions we aim to asnwer.</li>
 <li>If you would like to know more about computational text analytics, I would highly recommend you to move on to two more advanced courses:
@@ -912,6 +994,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
