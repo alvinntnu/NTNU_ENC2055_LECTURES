@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-09-20" />
+<meta name="date" content="2021-09-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -556,9 +556,9 @@ div.csl-indent {
 <div id="a-quick-start" class="section level2" number="6.1">
 <h2><span class="header-section-number">6.1</span> A Quick Start</h2>
 <p>To better understand how a function works, let’s create a simple one. The following code chunk creates a <code>function</code> object, named <code>hello</code>.</p>
-<div class="sourceCode" id="cb227"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb227-1"><a href="functions.html#cb227-1" aria-hidden="true" tabindex="-1"></a>hello <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb227-2"><a href="functions.html#cb227-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">&quot;How are you going?&quot;</span>)</span>
-<span id="cb227-3"><a href="functions.html#cb227-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb231-1"><a href="functions.html#cb231-1" aria-hidden="true" tabindex="-1"></a>hello <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb231-2"><a href="functions.html#cb231-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">&quot;How are you going?&quot;</span>)</span>
+<span id="cb231-3"><a href="functions.html#cb231-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>A function object includes several important elements:</p>
 <ul>
 <li>We use the <code>function()</code> to define a new function object.</li>
@@ -566,9 +566,9 @@ div.csl-indent {
 <li>Every function is assigned to a user-defined name (e.g., <code>hello</code> in the above example.)</li>
 </ul>
 <p>After the function is defined, the code in the body of the function will be executed every time when the function object is called.</p>
-<div class="sourceCode" id="cb228"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb228-1"><a href="functions.html#cb228-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hello</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb232-1"><a href="functions.html#cb232-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hello</span>()</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;How are you going?&quot;</code></pre>
-<div class="sourceCode" id="cb230"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb230-1"><a href="functions.html#cb230-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hello</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb234-1"><a href="functions.html#cb234-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hello</span>()</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;How are you going?&quot;</code></pre>
 </div>
 <div id="why-do-we-need-functions" class="section level2" number="6.2">
@@ -580,10 +580,10 @@ div.csl-indent {
 <div id="functions-with-parameters" class="section level2" number="6.3">
 <h2><span class="header-section-number">6.3</span> Functions with parameters</h2>
 <p>When we use the built-in R functions like <code>cat()</code> or <code>length()</code>, we can pass them values, called <em>arguments</em>, in the parentheses. In our self-defined functions, we can also define a function which accepts arguments.</p>
-<div class="sourceCode" id="cb232"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb232-1"><a href="functions.html#cb232-1" aria-hidden="true" tabindex="-1"></a>hello <span class="ot">&lt;-</span> <span class="cf">function</span>(name) {</span>
-<span id="cb232-2"><a href="functions.html#cb232-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&quot;How are you doing,&quot;</span>, name)</span>
-<span id="cb232-3"><a href="functions.html#cb232-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb233"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb233-1"><a href="functions.html#cb233-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hello</span>(<span class="at">name =</span> <span class="st">&quot;Alvin&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb236-1"><a href="functions.html#cb236-1" aria-hidden="true" tabindex="-1"></a>hello <span class="ot">&lt;-</span> <span class="cf">function</span>(name) {</span>
+<span id="cb236-2"><a href="functions.html#cb236-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&quot;How are you doing,&quot;</span>, name)</span>
+<span id="cb236-3"><a href="functions.html#cb236-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb237"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb237-1"><a href="functions.html#cb237-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hello</span>(<span class="at">name =</span> <span class="st">&quot;Alvin&quot;</span>)</span></code></pre></div>
 <pre class="Rout"><code>How are you doing, Alvin</code></pre>
 <p>The new <code>hello()</code> function has a parameter called <code>name</code>. <em>Parameters</em> are variables that contain arguments. When a function is called with an argument (e.g., <code>Alvin</code>), this argument is stored in the parameters(e.g., <code>name</code>).</p>
 <p>When the function <code>hello(name = 'Alvin)</code> is called:</p>
@@ -593,7 +593,7 @@ div.csl-indent {
 <li>within the code block, the parameter <code>name</code> is automatically set to <code>Alvin</code>.</li>
 </ul>
 <p>It is important to note that the value stored in the parameter is forgotten when the function returns. That is, we cannot access the parameter <code>name</code> in the main program:</p>
-<div class="sourceCode" id="cb235"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb235-1"><a href="functions.html#cb235-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(name)</span></code></pre></div>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb239-1"><a href="functions.html#cb239-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(name)</span></code></pre></div>
 <pre><code>Error in cat(name): object &#39;name&#39; not found</code></pre>
 <p>In short, the parameters of a function are destroyed after a function call <code>hello(name = 'Alvin')</code> returns.</p>
 </div>
@@ -614,18 +614,18 @@ div.csl-indent {
 <h2><span class="header-section-number">6.5</span> RETURN Statements</h2>
 <p>When we define a function, we can specify what the return values should be using the <code>return()</code> statement. This value that a function call returns can be assigned to another object for later use in the program.</p>
 <p>In R, there are many built-in functions that return values:</p>
-<div class="sourceCode" id="cb237"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb237-1"><a href="functions.html#cb237-1" aria-hidden="true" tabindex="-1"></a>num <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">3</span>)</span>
-<span id="cb237-2"><a href="functions.html#cb237-2" aria-hidden="true" tabindex="-1"></a>num</span></code></pre></div>
+<div class="sourceCode" id="cb241"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb241-1"><a href="functions.html#cb241-1" aria-hidden="true" tabindex="-1"></a>num <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">3</span>)</span>
+<span id="cb241-2"><a href="functions.html#cb241-2" aria-hidden="true" tabindex="-1"></a>num</span></code></pre></div>
 <pre class="Rout"><code>[1] 3 5 8</code></pre>
 <p>When a function returns nothing, by default the return value of the function is <code>NULL</code>, which is a unique data type in R referring to <code>NoneType</code>.</p>
-<div class="sourceCode" id="cb239"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb239-1"><a href="functions.html#cb239-1" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">cat</span>(<span class="st">&quot;This is a sentence&quot;</span>)  <span class="co"># `cat()` has no return</span></span></code></pre></div>
+<div class="sourceCode" id="cb243"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb243-1"><a href="functions.html#cb243-1" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">cat</span>(<span class="st">&quot;This is a sentence&quot;</span>)  <span class="co"># `cat()` has no return</span></span></code></pre></div>
 <pre class="Rout"><code>This is a sentence</code></pre>
-<div class="sourceCode" id="cb241"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb241-1"><a href="functions.html#cb241-1" aria-hidden="true" tabindex="-1"></a>out</span></code></pre></div>
+<div class="sourceCode" id="cb245"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb245-1"><a href="functions.html#cb245-1" aria-hidden="true" tabindex="-1"></a>out</span></code></pre></div>
 <pre class="Rout"><code>NULL</code></pre>
 <p>Now how about the <code>hello()</code> function we created earlier? We didn’t specify the <code>return()</code> statement in the function definition.</p>
-<div class="sourceCode" id="cb243"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb243-1"><a href="functions.html#cb243-1" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">hello</span>(<span class="at">name =</span> <span class="st">&quot;John&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb247-1"><a href="functions.html#cb247-1" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">hello</span>(<span class="at">name =</span> <span class="st">&quot;John&quot;</span>)</span></code></pre></div>
 <pre class="Rout"><code>How are you doing, John</code></pre>
-<div class="sourceCode" id="cb245"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb245-1"><a href="functions.html#cb245-1" aria-hidden="true" tabindex="-1"></a>out</span></code></pre></div>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb249-1"><a href="functions.html#cb249-1" aria-hidden="true" tabindex="-1"></a>out</span></code></pre></div>
 <pre class="Rout"><code>NULL</code></pre>
 <div class="warning">
 <p>In the definition of <code>hello()</code>, we did not specify the <code>return()</code> statement; therefore, by default, this function returns <code>NULL</code>. But how come we can still see the outputs of the function? The answer is: in the code block of <code>hello()</code> definition, the <code>cat()</code> displays text on the R console only. Therefore, displaying texts on the R console and returning the values are two different things.</p>
@@ -633,24 +633,24 @@ div.csl-indent {
 <div class="exercise">
 <p><span id="exr:unlabeled-div-15" class="exercise"><strong>Exercise 6.1  </strong></span>Can you try to create a new version of <code>hello()</code>, which returns the strings so that one can assign the outputs of the <code>hello()</code> to another object name? (Please note that in the following example, the return value <code>out</code> is not a <code>NULL</code> anymore.)</p>
 </div>
-<div class="sourceCode" id="cb247"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb247-1"><a href="functions.html#cb247-1" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">hello</span>(<span class="at">name =</span> <span class="st">&quot;Alvin&quot;</span>)</span>
-<span id="cb247-2"><a href="functions.html#cb247-2" aria-hidden="true" tabindex="-1"></a>out</span></code></pre></div>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb251-1"><a href="functions.html#cb251-1" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">hello</span>(<span class="at">name =</span> <span class="st">&quot;Alvin&quot;</span>)</span>
+<span id="cb251-2"><a href="functions.html#cb251-2" aria-hidden="true" tabindex="-1"></a>out</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;How are you doing, Alvin&quot;</code></pre>
 </div>
 <div id="parameters-order" class="section level2" number="6.6">
 <h2><span class="header-section-number">6.6</span> Parameters Order</h2>
 <p>We’ve seen functions with parameters. When a function has many parameters, there are two alternatives to assign the arguments to the parameters in the function call.</p>
 <p>First, we can assign the arguments to the parameters specified in the function call:</p>
-<div class="sourceCode" id="cb249"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb249-1"><a href="functions.html#cb249-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb249-2"><a href="functions.html#cb249-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>), <span class="at">size =</span> <span class="dv">5</span>, <span class="at">replace =</span> <span class="cn">FALSE</span>, <span class="at">prob =</span> <span class="cn">NULL</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb253-1"><a href="functions.html#cb253-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb253-2"><a href="functions.html#cb253-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>), <span class="at">size =</span> <span class="dv">5</span>, <span class="at">replace =</span> <span class="cn">FALSE</span>, <span class="at">prob =</span> <span class="cn">NULL</span>)</span></code></pre></div>
 <pre class="Rout"><code>[1]  3 10  2  8  6</code></pre>
 <p>Alternatively, we can assign the arguments to the parameters according to the order of the parameters in th function definition without specifying the parameter names:</p>
-<div class="sourceCode" id="cb251"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb251-1"><a href="functions.html#cb251-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb251-2"><a href="functions.html#cb251-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>), <span class="dv">5</span>, <span class="cn">FALSE</span>, <span class="cn">NULL</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb255-1"><a href="functions.html#cb255-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb255-2"><a href="functions.html#cb255-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>), <span class="dv">5</span>, <span class="cn">FALSE</span>, <span class="cn">NULL</span>)</span></code></pre></div>
 <pre class="Rout"><code>[1]  3 10  2  8  6</code></pre>
 <div class="info">
 <p>In the function definition, we can also assign default values to the parameters. For example, in the documentation of <code>sample(x, size, replace = FALSE, prob = NULL)</code>, we can see that the parameters <code>replace=</code> and <code>prob=</code> have default values. That means in the function call we can use these default values as the arguments without specifying them in the call.</p>
-<div class="sourceCode" id="cb253"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb253-1"><a href="functions.html#cb253-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>), <span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb257-1"><a href="functions.html#cb257-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>), <span class="dv">5</span>)</span></code></pre></div>
 <pre class="Rout"><code>[1] 5 4 6 8 1</code></pre>
 </div>
 </div>
@@ -658,19 +658,19 @@ div.csl-indent {
 <h2><span class="header-section-number">6.7</span> Stacking Functions</h2>
 <p>A function can also call another function within its code block. If Function A calls Function B in its code block, the execution would return to Function B first, before returning from the original function call.</p>
 <p>For example, let’s define two functions, <code>hello()</code> and <code>email()</code>. It is clear to see that within the code block of <code>hello()</code>, we have a function call of <code>email()</code>.</p>
-<div class="sourceCode" id="cb255"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb255-1"><a href="functions.html#cb255-1" aria-hidden="true" tabindex="-1"></a>hello <span class="ot">&lt;-</span> <span class="cf">function</span>(name) {</span>
-<span id="cb255-2"><a href="functions.html#cb255-2" aria-hidden="true" tabindex="-1"></a>    user_email <span class="ot">&lt;-</span> <span class="fu">email</span>(<span class="at">user =</span> name)</span>
-<span id="cb255-3"><a href="functions.html#cb255-3" aria-hidden="true" tabindex="-1"></a>    out <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;How are you doing, &quot;</span>, name, <span class="st">&quot;. &quot;</span>, user_email)</span>
-<span id="cb255-4"><a href="functions.html#cb255-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb255-5"><a href="functions.html#cb255-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(out)</span>
-<span id="cb255-6"><a href="functions.html#cb255-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb255-7"><a href="functions.html#cb255-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb255-8"><a href="functions.html#cb255-8" aria-hidden="true" tabindex="-1"></a>email <span class="ot">&lt;-</span> <span class="cf">function</span>(user) {</span>
-<span id="cb255-9"><a href="functions.html#cb255-9" aria-hidden="true" tabindex="-1"></a>    out <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;Your email is: &quot;</span>, <span class="fu">tolower</span>(user), <span class="st">&quot;@whatever.org&quot;</span>)</span>
-<span id="cb255-10"><a href="functions.html#cb255-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(out)</span>
-<span id="cb255-11"><a href="functions.html#cb255-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb259"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb259-1"><a href="functions.html#cb259-1" aria-hidden="true" tabindex="-1"></a>hello <span class="ot">&lt;-</span> <span class="cf">function</span>(name) {</span>
+<span id="cb259-2"><a href="functions.html#cb259-2" aria-hidden="true" tabindex="-1"></a>    user_email <span class="ot">&lt;-</span> <span class="fu">email</span>(<span class="at">user =</span> name)</span>
+<span id="cb259-3"><a href="functions.html#cb259-3" aria-hidden="true" tabindex="-1"></a>    out <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;How are you doing, &quot;</span>, name, <span class="st">&quot;. &quot;</span>, user_email)</span>
+<span id="cb259-4"><a href="functions.html#cb259-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb259-5"><a href="functions.html#cb259-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(out)</span>
+<span id="cb259-6"><a href="functions.html#cb259-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb259-7"><a href="functions.html#cb259-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb259-8"><a href="functions.html#cb259-8" aria-hidden="true" tabindex="-1"></a>email <span class="ot">&lt;-</span> <span class="cf">function</span>(user) {</span>
+<span id="cb259-9"><a href="functions.html#cb259-9" aria-hidden="true" tabindex="-1"></a>    out <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;Your email is: &quot;</span>, <span class="fu">tolower</span>(user), <span class="st">&quot;@whatever.org&quot;</span>)</span>
+<span id="cb259-10"><a href="functions.html#cb259-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(out)</span>
+<span id="cb259-11"><a href="functions.html#cb259-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>When <code>hello()</code> is called, it calls <code>email()</code> first and returns the user’s email address. Once execution returns to the code in <code>hello()</code> that called <code>email()</code>, it returns to the line in <code>hello()</code> that called <code>email()</code>. Then the execution continues to the end of <code>hello()</code>.</p>
-<div class="sourceCode" id="cb256"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb256-1"><a href="functions.html#cb256-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hello</span>(<span class="st">&quot;Alvin&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb260"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb260-1"><a href="functions.html#cb260-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hello</span>(<span class="st">&quot;Alvin&quot;</span>)</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;How are you doing, Alvin. Your email is: alvin@whatever.org&quot;</code></pre>
 <p>With this embedding structionre, we can create effective functions for more sophisticated tasks.</p>
 </div>
@@ -698,59 +698,59 @@ div.csl-indent {
 <ul>
 <li>The following code chunk shows that local variables cannot be used in the global scope.</li>
 </ul>
-<div class="sourceCode" id="cb258"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb258-1"><a href="functions.html#cb258-1" aria-hidden="true" tabindex="-1"></a>customer <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb258-2"><a href="functions.html#cb258-2" aria-hidden="true" tabindex="-1"></a>    id <span class="ot">=</span> <span class="dv">123</span></span>
-<span id="cb258-3"><a href="functions.html#cb258-3" aria-hidden="true" tabindex="-1"></a>    age <span class="ot">=</span> <span class="dv">25</span></span>
-<span id="cb258-4"><a href="functions.html#cb258-4" aria-hidden="true" tabindex="-1"></a>    nation <span class="ot">=</span> <span class="st">&quot;TW&quot;</span></span>
-<span id="cb258-5"><a href="functions.html#cb258-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb258-6"><a href="functions.html#cb258-6" aria-hidden="true" tabindex="-1"></a><span class="fu">customer</span>()</span>
-<span id="cb258-7"><a href="functions.html#cb258-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(id)</span></code></pre></div>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb262-1"><a href="functions.html#cb262-1" aria-hidden="true" tabindex="-1"></a>customer <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb262-2"><a href="functions.html#cb262-2" aria-hidden="true" tabindex="-1"></a>    id <span class="ot">=</span> <span class="dv">123</span></span>
+<span id="cb262-3"><a href="functions.html#cb262-3" aria-hidden="true" tabindex="-1"></a>    age <span class="ot">=</span> <span class="dv">25</span></span>
+<span id="cb262-4"><a href="functions.html#cb262-4" aria-hidden="true" tabindex="-1"></a>    nation <span class="ot">=</span> <span class="st">&quot;TW&quot;</span></span>
+<span id="cb262-5"><a href="functions.html#cb262-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb262-6"><a href="functions.html#cb262-6" aria-hidden="true" tabindex="-1"></a><span class="fu">customer</span>()</span>
+<span id="cb262-7"><a href="functions.html#cb262-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(id)</span></code></pre></div>
 <pre><code>Error in cat(id): argument 1 (type &#39;closure&#39;) cannot be handled by &#39;cat&#39;</code></pre>
 <ul>
 <li>The following code chunk shows that local scopes cannot use variables in other local scopes.</li>
 </ul>
-<div class="sourceCode" id="cb260"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb260-1"><a href="functions.html#cb260-1" aria-hidden="true" tabindex="-1"></a>customer <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb260-2"><a href="functions.html#cb260-2" aria-hidden="true" tabindex="-1"></a>    id <span class="ot">=</span> <span class="dv">123</span></span>
-<span id="cb260-3"><a href="functions.html#cb260-3" aria-hidden="true" tabindex="-1"></a>    age <span class="ot">=</span> <span class="dv">25</span></span>
-<span id="cb260-4"><a href="functions.html#cb260-4" aria-hidden="true" tabindex="-1"></a>    nation <span class="ot">=</span> <span class="st">&quot;TW&quot;</span></span>
-<span id="cb260-5"><a href="functions.html#cb260-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(age)</span>
-<span id="cb260-6"><a href="functions.html#cb260-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb260-7"><a href="functions.html#cb260-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb260-8"><a href="functions.html#cb260-8" aria-hidden="true" tabindex="-1"></a>client <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb260-9"><a href="functions.html#cb260-9" aria-hidden="true" tabindex="-1"></a>    age <span class="ot">=</span> <span class="dv">50</span></span>
-<span id="cb260-10"><a href="functions.html#cb260-10" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb260-11"><a href="functions.html#cb260-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb260-12"><a href="functions.html#cb260-12" aria-hidden="true" tabindex="-1"></a><span class="fu">customer</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb264-1"><a href="functions.html#cb264-1" aria-hidden="true" tabindex="-1"></a>customer <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb264-2"><a href="functions.html#cb264-2" aria-hidden="true" tabindex="-1"></a>    id <span class="ot">=</span> <span class="dv">123</span></span>
+<span id="cb264-3"><a href="functions.html#cb264-3" aria-hidden="true" tabindex="-1"></a>    age <span class="ot">=</span> <span class="dv">25</span></span>
+<span id="cb264-4"><a href="functions.html#cb264-4" aria-hidden="true" tabindex="-1"></a>    nation <span class="ot">=</span> <span class="st">&quot;TW&quot;</span></span>
+<span id="cb264-5"><a href="functions.html#cb264-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(age)</span>
+<span id="cb264-6"><a href="functions.html#cb264-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb264-7"><a href="functions.html#cb264-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb264-8"><a href="functions.html#cb264-8" aria-hidden="true" tabindex="-1"></a>client <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb264-9"><a href="functions.html#cb264-9" aria-hidden="true" tabindex="-1"></a>    age <span class="ot">=</span> <span class="dv">50</span></span>
+<span id="cb264-10"><a href="functions.html#cb264-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb264-11"><a href="functions.html#cb264-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb264-12"><a href="functions.html#cb264-12" aria-hidden="true" tabindex="-1"></a><span class="fu">customer</span>()</span></code></pre></div>
 <pre class="Rout"><code>[1] 25</code></pre>
 <ul>
 <li>The following code chunk shows a local scope can access global variables.</li>
 </ul>
-<div class="sourceCode" id="cb262"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb262-1"><a href="functions.html#cb262-1" aria-hidden="true" tabindex="-1"></a>customer <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb262-2"><a href="functions.html#cb262-2" aria-hidden="true" tabindex="-1"></a>    age <span class="ot">=</span> <span class="dv">25</span></span>
-<span id="cb262-3"><a href="functions.html#cb262-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&quot;The custmer works at&quot;</span>, company)</span>
-<span id="cb262-4"><a href="functions.html#cb262-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb262-5"><a href="functions.html#cb262-5" aria-hidden="true" tabindex="-1"></a>company <span class="ot">&lt;-</span> <span class="st">&quot;NTNU&quot;</span></span>
-<span id="cb262-6"><a href="functions.html#cb262-6" aria-hidden="true" tabindex="-1"></a><span class="fu">customer</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb266"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb266-1"><a href="functions.html#cb266-1" aria-hidden="true" tabindex="-1"></a>customer <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb266-2"><a href="functions.html#cb266-2" aria-hidden="true" tabindex="-1"></a>    age <span class="ot">=</span> <span class="dv">25</span></span>
+<span id="cb266-3"><a href="functions.html#cb266-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&quot;The custmer works at&quot;</span>, company)</span>
+<span id="cb266-4"><a href="functions.html#cb266-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb266-5"><a href="functions.html#cb266-5" aria-hidden="true" tabindex="-1"></a>company <span class="ot">&lt;-</span> <span class="st">&quot;NTNU&quot;</span></span>
+<span id="cb266-6"><a href="functions.html#cb266-6" aria-hidden="true" tabindex="-1"></a><span class="fu">customer</span>()</span></code></pre></div>
 <pre class="Rout"><code>The custmer works at NTNU</code></pre>
 <div class="warning">
 <p>Technically, it is OK to use the same variable name for a global variable and local variable in different scopes. But to make your life easier, please avoid doing this.</p>
-<div class="sourceCode" id="cb264"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb264-1"><a href="functions.html#cb264-1" aria-hidden="true" tabindex="-1"></a>customer <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb264-2"><a href="functions.html#cb264-2" aria-hidden="true" tabindex="-1"></a>    age <span class="ot">&lt;-</span> <span class="dv">25</span></span>
-<span id="cb264-3"><a href="functions.html#cb264-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(age)</span>
-<span id="cb264-4"><a href="functions.html#cb264-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb264-5"><a href="functions.html#cb264-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb264-6"><a href="functions.html#cb264-6" aria-hidden="true" tabindex="-1"></a>client <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb264-7"><a href="functions.html#cb264-7" aria-hidden="true" tabindex="-1"></a>    age <span class="ot">&lt;-</span> <span class="dv">55</span></span>
-<span id="cb264-8"><a href="functions.html#cb264-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(age)</span>
-<span id="cb264-9"><a href="functions.html#cb264-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb264-10"><a href="functions.html#cb264-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb264-11"><a href="functions.html#cb264-11" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb264-12"><a href="functions.html#cb264-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb264-13"><a href="functions.html#cb264-13" aria-hidden="true" tabindex="-1"></a><span class="fu">customer</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb268-1"><a href="functions.html#cb268-1" aria-hidden="true" tabindex="-1"></a>customer <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb268-2"><a href="functions.html#cb268-2" aria-hidden="true" tabindex="-1"></a>    age <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb268-3"><a href="functions.html#cb268-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(age)</span>
+<span id="cb268-4"><a href="functions.html#cb268-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb268-5"><a href="functions.html#cb268-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb268-6"><a href="functions.html#cb268-6" aria-hidden="true" tabindex="-1"></a>client <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb268-7"><a href="functions.html#cb268-7" aria-hidden="true" tabindex="-1"></a>    age <span class="ot">&lt;-</span> <span class="dv">55</span></span>
+<span id="cb268-8"><a href="functions.html#cb268-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(age)</span>
+<span id="cb268-9"><a href="functions.html#cb268-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb268-10"><a href="functions.html#cb268-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb268-11"><a href="functions.html#cb268-11" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb268-12"><a href="functions.html#cb268-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb268-13"><a href="functions.html#cb268-13" aria-hidden="true" tabindex="-1"></a><span class="fu">customer</span>()</span></code></pre></div>
 <pre class="Rout"><code>25</code></pre>
-<div class="sourceCode" id="cb266"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb266-1"><a href="functions.html#cb266-1" aria-hidden="true" tabindex="-1"></a><span class="fu">client</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb270-1"><a href="functions.html#cb270-1" aria-hidden="true" tabindex="-1"></a><span class="fu">client</span>()</span></code></pre></div>
 <pre class="Rout"><code>55</code></pre>
-<div class="sourceCode" id="cb268"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb268-1"><a href="functions.html#cb268-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(age)</span></code></pre></div>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb272-1"><a href="functions.html#cb272-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(age)</span></code></pre></div>
 <pre class="Rout"><code>100</code></pre>
 </div>
 </div>
@@ -758,21 +758,21 @@ div.csl-indent {
 <h2><span class="header-section-number">6.9</span> Exception Handling</h2>
 <p>A good function handles exceptions properly so that the main program would not be terminated by unexpected errors from the function.</p>
 <p>For example, if we create a function <code>myLog()</code>, which takes a number and takes the log value of the number with the specified base.</p>
-<div class="sourceCode" id="cb270"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb270-1"><a href="functions.html#cb270-1" aria-hidden="true" tabindex="-1"></a>myLog <span class="ot">&lt;-</span> <span class="cf">function</span>(x, myBase) {</span>
-<span id="cb270-2"><a href="functions.html#cb270-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">log</span>(x, myBase))</span>
-<span id="cb270-3"><a href="functions.html#cb270-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb271"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb271-1"><a href="functions.html#cb271-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">100</span>, <span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb274-1"><a href="functions.html#cb274-1" aria-hidden="true" tabindex="-1"></a>myLog <span class="ot">&lt;-</span> <span class="cf">function</span>(x, myBase) {</span>
+<span id="cb274-2"><a href="functions.html#cb274-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">log</span>(x, myBase))</span>
+<span id="cb274-3"><a href="functions.html#cb274-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb275-1"><a href="functions.html#cb275-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">100</span>, <span class="dv">10</span>)</span></code></pre></div>
 <pre class="Rout"><code>[1] 2</code></pre>
-<div class="sourceCode" id="cb273"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb273-1"><a href="functions.html#cb273-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">8</span>, <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb277-1"><a href="functions.html#cb277-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">8</span>, <span class="dv">2</span>)</span></code></pre></div>
 <pre class="Rout"><code>[1] 3</code></pre>
 <p>There are a few cases where the return values may be problematic:</p>
-<div class="sourceCode" id="cb275"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb275-1"><a href="functions.html#cb275-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">10</span>, <span class="sc">-</span><span class="dv">1</span>)  <span class="co"># base is negative</span></span></code></pre></div>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb279-1"><a href="functions.html#cb279-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">10</span>, <span class="sc">-</span><span class="dv">1</span>)  <span class="co"># base is negative</span></span></code></pre></div>
 <pre><code>Warning in log(x, myBase): NaNs produced</code></pre>
 <pre class="Rout"><code>[1] NaN</code></pre>
-<div class="sourceCode" id="cb278"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb278-1"><a href="functions.html#cb278-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">10</span>)  <span class="co"># x is negative</span></span></code></pre></div>
+<div class="sourceCode" id="cb282"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb282-1"><a href="functions.html#cb282-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">10</span>)  <span class="co"># x is negative</span></span></code></pre></div>
 <pre><code>Warning in log(x, myBase): NaNs produced</code></pre>
 <pre class="Rout"><code>[1] NaN</code></pre>
-<div class="sourceCode" id="cb281"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb281-1"><a href="functions.html#cb281-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="st">&quot;100&quot;</span>, <span class="dv">10</span>)  <span class="co"># x is not numeric</span></span></code></pre></div>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb285-1"><a href="functions.html#cb285-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="st">&quot;100&quot;</span>, <span class="dv">10</span>)  <span class="co"># x is not numeric</span></span></code></pre></div>
 <pre><code>Error in log(x, myBase): non-numeric argument to mathematical function</code></pre>
 <p>To make sure that the function <code>myLog()</code> does not terminate the main program when encountering errors or warnings, it is often a good idea to include exception handing in the function code block.</p>
 <p>In R, <code>tryCatch()</code> function can help deal with errors and warnings. Its structure is as follows:</p>
@@ -802,31 +802,31 @@ div.csl-indent {
 <li><code>error</code>: When the <code>expr</code> cuases an error, the program execution immediately moves to the code in the <code>error</code> code block.</li>
 </ul>
 <p>Now let’s try to include <code>tryCatch()</code> in our code block of the function <code>myLog()</code>:</p>
-<div class="sourceCode" id="cb284"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb284-1"><a href="functions.html#cb284-1" aria-hidden="true" tabindex="-1"></a>myLog <span class="ot">&lt;-</span> <span class="cf">function</span>(x, myBase) {</span>
-<span id="cb284-2"><a href="functions.html#cb284-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tryCatch</span>({</span>
-<span id="cb284-3"><a href="functions.html#cb284-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">return</span>(<span class="fu">log</span>(x, myBase))</span>
-<span id="cb284-4"><a href="functions.html#cb284-4" aria-hidden="true" tabindex="-1"></a>    }, <span class="at">warning =</span> <span class="cf">function</span>(w) {</span>
-<span id="cb284-5"><a href="functions.html#cb284-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (x <span class="sc">&lt;</span> <span class="dv">0</span>)</span>
-<span id="cb284-6"><a href="functions.html#cb284-6" aria-hidden="true" tabindex="-1"></a>            <span class="fu">print</span>(<span class="st">&quot;x needs to be a positive number&quot;</span>)</span>
-<span id="cb284-7"><a href="functions.html#cb284-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (myBase <span class="sc">&lt;</span> <span class="dv">0</span>)</span>
-<span id="cb284-8"><a href="functions.html#cb284-8" aria-hidden="true" tabindex="-1"></a>            <span class="fu">print</span>(<span class="st">&quot;myBase needs to be a positive number&quot;</span>)</span>
-<span id="cb284-9"><a href="functions.html#cb284-9" aria-hidden="true" tabindex="-1"></a>    }, <span class="at">error =</span> <span class="cf">function</span>(e) {</span>
-<span id="cb284-10"><a href="functions.html#cb284-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.numeric</span>(x) <span class="sc">|</span> <span class="sc">!</span><span class="fu">is.numeric</span>(myBase))</span>
-<span id="cb284-11"><a href="functions.html#cb284-11" aria-hidden="true" tabindex="-1"></a>            <span class="fu">print</span>(<span class="st">&quot;x/myBase needs to be a positive number not a string&quot;</span>)</span>
-<span id="cb284-12"><a href="functions.html#cb284-12" aria-hidden="true" tabindex="-1"></a>    }, <span class="at">finally =</span> {</span>
-<span id="cb284-13"><a href="functions.html#cb284-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb284-14"><a href="functions.html#cb284-14" aria-hidden="true" tabindex="-1"></a>    })</span>
-<span id="cb284-15"><a href="functions.html#cb284-15" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb285"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb285-1"><a href="functions.html#cb285-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">10</span>, <span class="sc">-</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb288"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb288-1"><a href="functions.html#cb288-1" aria-hidden="true" tabindex="-1"></a>myLog <span class="ot">&lt;-</span> <span class="cf">function</span>(x, myBase) {</span>
+<span id="cb288-2"><a href="functions.html#cb288-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tryCatch</span>({</span>
+<span id="cb288-3"><a href="functions.html#cb288-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">return</span>(<span class="fu">log</span>(x, myBase))</span>
+<span id="cb288-4"><a href="functions.html#cb288-4" aria-hidden="true" tabindex="-1"></a>    }, <span class="at">warning =</span> <span class="cf">function</span>(w) {</span>
+<span id="cb288-5"><a href="functions.html#cb288-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (x <span class="sc">&lt;</span> <span class="dv">0</span>)</span>
+<span id="cb288-6"><a href="functions.html#cb288-6" aria-hidden="true" tabindex="-1"></a>            <span class="fu">print</span>(<span class="st">&quot;x needs to be a positive number&quot;</span>)</span>
+<span id="cb288-7"><a href="functions.html#cb288-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (myBase <span class="sc">&lt;</span> <span class="dv">0</span>)</span>
+<span id="cb288-8"><a href="functions.html#cb288-8" aria-hidden="true" tabindex="-1"></a>            <span class="fu">print</span>(<span class="st">&quot;myBase needs to be a positive number&quot;</span>)</span>
+<span id="cb288-9"><a href="functions.html#cb288-9" aria-hidden="true" tabindex="-1"></a>    }, <span class="at">error =</span> <span class="cf">function</span>(e) {</span>
+<span id="cb288-10"><a href="functions.html#cb288-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.numeric</span>(x) <span class="sc">|</span> <span class="sc">!</span><span class="fu">is.numeric</span>(myBase))</span>
+<span id="cb288-11"><a href="functions.html#cb288-11" aria-hidden="true" tabindex="-1"></a>            <span class="fu">print</span>(<span class="st">&quot;x/myBase needs to be a positive number not a string&quot;</span>)</span>
+<span id="cb288-12"><a href="functions.html#cb288-12" aria-hidden="true" tabindex="-1"></a>    }, <span class="at">finally =</span> {</span>
+<span id="cb288-13"><a href="functions.html#cb288-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb288-14"><a href="functions.html#cb288-14" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb288-15"><a href="functions.html#cb288-15" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb289"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb289-1"><a href="functions.html#cb289-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">10</span>, <span class="sc">-</span><span class="dv">1</span>)</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;myBase needs to be a positive number&quot;</code></pre>
-<div class="sourceCode" id="cb287"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb287-1"><a href="functions.html#cb287-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="st">&quot;w12&quot;</span>, <span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb291"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb291-1"><a href="functions.html#cb291-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="st">&quot;w12&quot;</span>, <span class="dv">0</span>)</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;x/myBase needs to be a positive number not a string&quot;</code></pre>
-<div class="sourceCode" id="cb289"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb289-1"><a href="functions.html#cb289-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">8</span>, <span class="st">&quot;2&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb293"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb293-1"><a href="functions.html#cb293-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">8</span>, <span class="st">&quot;2&quot;</span>)</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;x/myBase needs to be a positive number not a string&quot;</code></pre>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-16" class="exercise"><strong>Exercise 6.2  </strong></span>Create a function that produces a simple animation, i.e., the zigzag outputs as shown below. The function will create a back-and-forth zigzag pattern with the laps and the indent size as the parameters of the function. Alternatively, users can stop the animation anytime by pressing CTRL+C.</p>
 </div>
-<div class="sourceCode" id="cb291"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb291-1"><a href="functions.html#cb291-1" aria-hidden="true" tabindex="-1"></a><span class="fu">zigzag</span>(<span class="at">lap =</span> <span class="dv">3</span>, <span class="at">indent_max =</span> <span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb295"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb295-1"><a href="functions.html#cb295-1" aria-hidden="true" tabindex="-1"></a><span class="fu">zigzag</span>(<span class="at">lap =</span> <span class="dv">3</span>, <span class="at">indent_max =</span> <span class="dv">5</span>)</span></code></pre></div>
 <pre class="Rout"><code> ***** 
   ***** 
     ***** 

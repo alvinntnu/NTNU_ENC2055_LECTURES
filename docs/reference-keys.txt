@@ -1,12 +1,12 @@
 fig:rstudiointerface
 exr:unnamed-chunk-23
 exr:unnamed-chunk-25
-exr:unnamed-chunk-39
+exr:unnamed-chunk-40
 fig:help1
 fig:help2
-exr:unnamed-chunk-53
-exr:unnamed-chunk-55
+exr:unnamed-chunk-54
 exr:unnamed-chunk-56
+exr:unnamed-chunk-57
 exr:unnamed-chunk-81
 exr:unnamed-chunk-84
 exr:unnamed-chunk-87
