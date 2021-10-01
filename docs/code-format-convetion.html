@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-09-29" />
+<meta name="date" content="2021-10-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -552,7 +552,7 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="code-format-convetion" class="section level1" number="3">
 <h1><span class="header-section-number">Chapter 3</span> Code Format Convention</h1>
-<p>Like the first time we learn English writing, we need to know the conventional writing styles and formats in coding as well. This is very important because scripts of good formats would increase their readability. This would save us a lot of time in case of future debugging and maintenace.</p>
+<p>Like the first time we learn English writing, we need to know the conventional writing styles and formats in coding as well. This is very important because scripts of good formats would increase their readability. This would save us a lot of time in case of future debugging and maintenance.</p>
 <p>This chapter will discuss common practices among most R users.</p>
 <div id="assignment--" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Assignment <code>&lt;-</code></h2>
@@ -576,7 +576,7 @@ div.csl-indent {
 </div>
 <div id="script-naming" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Script Naming</h2>
-<p>When you name your R script files, don’t be TOO creative. Use meaningul strings. Most importantly, use alphanumeric characters ONLY. Never use Chinese characters. For multiword names, it is suggested to connect words with <code>-</code>.</p>
+<p>When you name your R script files, don’t be TOO creative. Use meaningful strings. Most importantly, use alphanumeric characters ONLY. Never use Chinese characters. For multiword names, it is suggested to connect words with <code>-</code>.</p>
 <pre><code># Recommended
 my-first-script.R
 my-first-assignment.R
@@ -598,12 +598,12 @@ my first script.R
 </div>
 <div id="whitespace" class="section level2" number="3.5">
 <h2><span class="header-section-number">3.5</span> Whitespace</h2>
-<p>For operators (i.e., <code>=</code>, <code>+</code>, <code>-</code>, <code>&lt;-</code>), they are usually embraced by whitespaces, which would make your script easier to read:</p>
+<p>For operators (i.e., <code>=</code>, <code>+</code>, <code>-</code>, <code>&lt;-</code>), they are usually embraced by white spaces, which would make your script easier to read:</p>
 <pre><code># Recommended
 grade_average &lt;- mean(midterm * 0.5 + final * 0.5)
 # NOT Recommended
 grade_average&lt;-mean(midterm*0.5+final*0.5)</code></pre>
-<p>For <code>:</code> and <code>::</code>, usually we do not put whitespaces around them:</p>
+<p>For <code>:</code> and <code>::</code>, usually we do not put white spaces around them:</p>
 <div class="sourceCode" id="cb80"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb80-1"><a href="code-format-convetion.html#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Recommended</span></span>
 <span id="cb80-2"><a href="code-format-convetion.html#cb80-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
 <span id="cb80-3"><a href="code-format-convetion.html#cb80-3" aria-hidden="true" tabindex="-1"></a>tidyr<span class="sc">::</span><span class="fu">separate</span>()</span>
@@ -618,7 +618,7 @@ grade_average&lt;-mean(midterm*0.5+final*0.5)</code></pre>
 <code>::</code> is an expression to access a particular object/function from a library without having the entire library loaded in your current R environment. For example, <code>tidyr::separate()</code> calls the function <code>separate()</code> from the library <code>tidyr</code> but the other objects in <code>tidyr</code> are still NOT included. You cannot use the other objects defined in <code>tidyr</code>.
 </p>
 </div>
-<p>For parentheses <code>(</code>, if it is in the control structure, we usually put a whitespace before the initial <code>(</code>:</p>
+<p>For parentheses <code>(</code>, if it is in the control structure, we usually put a white space before the initial <code>(</code>:</p>
 <div class="sourceCode" id="cb81"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb81-1"><a href="code-format-convetion.html#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="co"># for-loop</span></span>
 <span id="cb81-2"><a href="code-format-convetion.html#cb81-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
 <span id="cb81-3"><a href="code-format-convetion.html#cb81-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(i)</span>
@@ -641,10 +641,10 @@ grade_average&lt;-mean(midterm*0.5+final*0.5)</code></pre>
 <span id="cb83-6"><a href="code-format-convetion.html#cb83-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">&quot;The answer is greater than 1!&quot;</span>)</span>
 <span id="cb83-7"><a href="code-format-convetion.html#cb83-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;The answer is greater than 1!&quot;</code></pre>
-<p>But if the parenthesis is in the function call (i.e., where we specify the arguments of the parameters), we don’t put a whitespace before the initial <code>(</code>:</p>
+<p>But if the parenthesis is in the function call (i.e., where we specify the arguments of the parameters), we don’t put a white space before the initial <code>(</code>:</p>
 <div class="sourceCode" id="cb85"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb85-1"><a href="code-format-convetion.html#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span>
 <span id="cb85-2"><a href="code-format-convetion.html#cb85-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> money, <span class="at">y =</span> achievement))</span></code></pre></div>
-<p>For curely brackets, we usually put a linebreak after the initial <code>{</code> and the ending <code>}</code> should be one single line. Also, as sometimes you would embed many different control structures at the same time, leading to many ending <code>}</code> lines, it is always good to commit properly which ending <code>}</code> goes with which control structure.</p>
+<p>For curly brackets, we usually put a line break after the initial <code>{</code> and the ending <code>}</code> should be one single line. Also, as sometimes you would embed many different control structures at the same time, leading to many ending <code>}</code> lines, it is always good to commit properly which ending <code>}</code> goes with which control structure.</p>
 <div class="sourceCode" id="cb86"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb86-1"><a href="code-format-convetion.html#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
 <span id="cb86-2"><a href="code-format-convetion.html#cb86-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (i <span class="sc">&lt;</span> <span class="dv">5</span>) {</span>
 <span id="cb86-3"><a href="code-format-convetion.html#cb86-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">print</span>(i)</span>
@@ -665,14 +665,14 @@ grade_average&lt;-mean(midterm*0.5+final*0.5)</code></pre>
 </div>
 <div id="indention-and-linebreaks" class="section level2" number="3.6">
 <h2><span class="header-section-number">3.6</span> Indention and Linebreaks</h2>
-<p>R does not care about line breaks, whitespaces, or tabs in your R script. But these formating characters are important because you need all these characters to help you quickly keep track of the script’s structure. Make good use of the indention to increase the readability of your script.</p>
+<p>R does not care about line breaks, white spaces, or tabs in your R script. But these formatting characters are important because you need all these characters to help you quickly keep track of the script’s structure. Make good use of the indention to increase the readability of your script.</p>
 <div class="sourceCode" id="cb88"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb88-1"><a href="code-format-convetion.html#cb88-1" aria-hidden="true" tabindex="-1"></a>long_function_name <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">a =</span> <span class="st">&quot;a long argument&quot;</span>, </span>
 <span id="cb88-2"><a href="code-format-convetion.html#cb88-2" aria-hidden="true" tabindex="-1"></a>                               <span class="at">b =</span> <span class="st">&quot;another argument&quot;</span>,</span>
 <span id="cb88-3"><a href="code-format-convetion.html#cb88-3" aria-hidden="true" tabindex="-1"></a>                               <span class="at">c =</span> <span class="st">&quot;another long argument&quot;</span>) {</span>
 <span id="cb88-4"><a href="code-format-convetion.html#cb88-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># As usual code is indented by two spaces.</span></span>
 <span id="cb88-5"><a href="code-format-convetion.html#cb88-5" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb88-6"><a href="code-format-convetion.html#cb88-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb88-7"><a href="code-format-convetion.html#cb88-7" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">8</span>), <span class="co"># datasource</span></span>
+<span id="cb88-7"><a href="code-format-convetion.html#cb88-7" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">8</span>), <span class="co"># data source</span></span>
 <span id="cb88-8"><a href="code-format-convetion.html#cb88-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">nrow =</span> <span class="dv">2</span>, <span class="co"># two rows</span></span>
 <span id="cb88-9"><a href="code-format-convetion.html#cb88-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">byrow =</span> <span class="cn">TRUE</span>) <span class="co"># filling values by row</span></span>
 <span id="cb88-10"><a href="code-format-convetion.html#cb88-10" aria-hidden="true" tabindex="-1"></a>y</span></code></pre></div>
@@ -693,7 +693,7 @@ grade_average&lt;-mean(midterm*0.5+final*0.5)</code></pre>
 <li>Please specify the <em>start</em> and <em>end</em> of each of your exercise solution.</li>
 <li>Please indicate very clearly the chapter <em>number</em> and <em>title</em> as well as the exercise <em>number</em> in your script.</li>
 <li>Please name your R script as follows: <code>ch2-alvin.R</code>, <code>ch3-alvin.R</code></li>
-<li>Please provide your descriptions/explanations in comments <code>#</code> (when you are asked to get familiar with packages, functions, or datasets).</li>
+<li>Please provide your descriptions/explanations in comments <code>#</code> (when you are asked to get familiar with packages, functions, or data sets).</li>
 </ul>
 <p><img src="images/assignment-script-template.png" width="90%" /></p>
 
