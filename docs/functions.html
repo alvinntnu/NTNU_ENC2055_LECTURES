@@ -587,7 +587,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>In R, there are many built-in functions that return values:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb11-1"><a href="functions.html#cb11-1" aria-hidden="true" tabindex="-1"></a>num <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">3</span>)</span>
 <span id="cb11-2"><a href="functions.html#cb11-2" aria-hidden="true" tabindex="-1"></a>num</span></code></pre></div>
-<pre class="Rout"><code>[1]  2 10  1</code></pre>
+<pre class="Rout"><code>[1]  7 10  5</code></pre>
 <p>When a function returns nothing, by default the return value of the function is <code>NULL</code>, which is a unique data type in R referring to <code>NoneType</code>.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb13-1"><a href="functions.html#cb13-1" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">cat</span>(<span class="st">&quot;This is a sentence&quot;</span>)  <span class="co"># `cat()` has no return</span></span></code></pre></div>
 <pre class="Rout"><code>This is a sentence</code></pre>
@@ -852,7 +852,18 @@ out</code></pre>
 [1] &quot;Program interrupted!!&quot;</code></pre>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-4" class="exercise"><strong>Exercise 6.4  </strong></span>Create a simple function to play rock, paper, scissors with the user.</p>
+<p>Your program should achieve the following:</p>
+<ul>
+<li>Invite the user to make a move with text inputs (i.e., rock, paper, or scissors).</li>
+<li>The program randomly makes a move.</li>
+<li>The program makes sure that the user can only make legitimate moves.</li>
+<li>The program reports the result of each hand game (i.e., win, lose, or tie)</li>
+<li>The user can continue playing the game util they indicate quitting.</li>
+<li>Upon user’s quitting of the game, the program reports the total results of all the games, in terms of the number of wins, loses, and ties.</li>
+</ul>
+<p>An example of how the function works is provided below.</p>
 </div>
+<p><img src="images/play_hand_game_sample.png" width="100%" /></p>
 
 </div>
 </div>
