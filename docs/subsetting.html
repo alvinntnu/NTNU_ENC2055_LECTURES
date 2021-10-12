@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-10-04" />
+<meta name="date" content="2021-10-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="code-format-convetion.html"/>
 <link rel="next" href="conditions-and-loops.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -537,7 +537,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb1"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1-1"><a href="subsetting.html#cb1-1" aria-hidden="true" tabindex="-1"></a>char.vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;one&quot;</span>, <span class="st">&quot;two&quot;</span>, <span class="st">&quot;three&quot;</span>,<span class="st">&quot;four&quot;</span>, <span class="st">&quot;five&quot;</span>)</span>
 <span id="cb1-2"><a href="subsetting.html#cb1-2" aria-hidden="true" tabindex="-1"></a>char.vec[<span class="dv">1</span>]</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;one&quot;</code></pre>
-<p>You can also assess several elements of a vector by putting in several indices, <code>c()</code>, in the <code>[]</code>:</p>
+<p>You can also retrieve several elements from a vector all at once, using a numeric vector as the indices, <code>c()</code>, in the <code>[]</code>:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb3-1"><a href="subsetting.html#cb3-1" aria-hidden="true" tabindex="-1"></a>char.vec[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>)]</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;one&quot;  &quot;four&quot;</code></pre>
 <ul>
@@ -900,7 +900,7 @@ Please compare the following two ways of accessing a column from the data frame.
 </div>
 
 <div class="exercise">
-<span id="exr:df3" class="exercise"><strong>Exercise 4.10  </strong></span>Following Exercise <a href="subsetting.html#exr:df2">4.9</a>, write a single line of code that will extract frome <code>dframe</code> just the names and ages of any records where the individual is male and has a level of funniness equal to <code>Low</code> OR <code>Mid</code>.
+<span id="exr:df3" class="exercise"><strong>Exercise 4.10  </strong></span>Following Exercise <a href="subsetting.html#exr:df2">4.9</a>, write a single line of code that will extract from <code>dframe</code> just the names and ages of any records where the individual is male and has a level of funniness equal to <code>Low</code> OR <code>Mid</code>.
 </div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
