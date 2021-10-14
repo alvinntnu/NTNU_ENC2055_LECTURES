@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 Conditions and Loops | ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
   <meta name="description" content="ENC2055 Course material second edition" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 Conditions and Loops | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-10-08" />
+<meta name="date" content="2021-10-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,8 @@
   
 <link rel="prev" href="subsetting.html"/>
 <link rel="next" href="functions.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -362,16 +362,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="13.1" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#installing-quanteda"><i class="fa fa-check"></i><b>13.1</b> Installing <code>quanteda</code></a></li>
 <li class="chapter" data-level="13.2" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#building-a-corpus-from-character-vector"><i class="fa fa-check"></i><b>13.2</b> Building a <code>corpus</code> from character vector</a></li>
-<li class="chapter" data-level="13.3" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyword-in-context-kwic"><i class="fa fa-check"></i><b>13.3</b> Keyword-in-Context (KWIC)</a></li>
-<li class="chapter" data-level="13.4" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#kwic-with-regular-expressions"><i class="fa fa-check"></i><b>13.4</b> KWIC with Regular Expressions</a></li>
-<li class="chapter" data-level="13.5" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#lexical-density-plot"><i class="fa fa-check"></i><b>13.5</b> Lexical Density Plot</a></li>
-<li class="chapter" data-level="13.6" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#document-feature-matrix"><i class="fa fa-check"></i><b>13.6</b> Document-Feature Matrix</a></li>
-<li class="chapter" data-level="13.7" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#feature-selection"><i class="fa fa-check"></i><b>13.7</b> Feature Selection</a></li>
-<li class="chapter" data-level="13.8" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#top-features"><i class="fa fa-check"></i><b>13.8</b> Top Features</a></li>
-<li class="chapter" data-level="13.9" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#wordclouds"><i class="fa fa-check"></i><b>13.9</b> Wordclouds</a></li>
-<li class="chapter" data-level="13.10" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyness-analysis"><i class="fa fa-check"></i><b>13.10</b> Keyness Analysis</a></li>
-<li class="chapter" data-level="13.11" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#flowchart"><i class="fa fa-check"></i><b>13.11</b> Flowchart</a></li>
-<li class="chapter" data-level="13.12" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#exercises-1"><i class="fa fa-check"></i><b>13.12</b> Exercises</a></li>
+<li class="chapter" data-level="13.3" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#tokenization"><i class="fa fa-check"></i><b>13.3</b> Tokenization</a></li>
+<li class="chapter" data-level="13.4" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyword-in-context-kwic"><i class="fa fa-check"></i><b>13.4</b> Keyword-in-Context (KWIC)</a></li>
+<li class="chapter" data-level="13.5" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#kwic-with-regular-expressions"><i class="fa fa-check"></i><b>13.5</b> KWIC with Regular Expressions</a></li>
+<li class="chapter" data-level="13.6" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#lexical-density-plot"><i class="fa fa-check"></i><b>13.6</b> Lexical Density Plot</a></li>
+<li class="chapter" data-level="13.7" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#document-feature-matrix"><i class="fa fa-check"></i><b>13.7</b> Document-Feature Matrix</a></li>
+<li class="chapter" data-level="13.8" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#feature-selection"><i class="fa fa-check"></i><b>13.8</b> Feature Selection</a></li>
+<li class="chapter" data-level="13.9" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#top-features"><i class="fa fa-check"></i><b>13.9</b> Top Features</a></li>
+<li class="chapter" data-level="13.10" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#wordclouds"><i class="fa fa-check"></i><b>13.10</b> Wordclouds</a></li>
+<li class="chapter" data-level="13.11" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyness-analysis"><i class="fa fa-check"></i><b>13.11</b> Keyness Analysis</a></li>
+<li class="chapter" data-level="13.12" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#flowchart"><i class="fa fa-check"></i><b>13.12</b> Flowchart</a></li>
+<li class="chapter" data-level="13.13" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#exercises-1"><i class="fa fa-check"></i><b>13.13</b> Exercises</a></li>
 </ul></li>
 <li class="part"><span><b>PART 2: Python Language</b></span></li>
 <li class="chapter" data-level="14" data-path="python-fundamentals.html"><a href="python-fundamentals.html"><i class="fa fa-check"></i><b>14</b> Python Fundamentals</a>
@@ -463,7 +464,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="19.3.3" data-path="nltk.html"><a href="nltk.html#semantic-similarity-computation"><i class="fa fa-check"></i><b>19.3.3</b> Semantic Similarity Computation</a></li>
 </ul></li>
 <li class="chapter" data-level="19.4" data-path="nltk.html"><a href="nltk.html#discovering-word-collocations"><i class="fa fa-check"></i><b>19.4</b> Discovering Word Collocations</a></li>
-<li class="chapter" data-level="19.5" data-path="nltk.html"><a href="nltk.html#tokenization"><i class="fa fa-check"></i><b>19.5</b> Tokenization</a></li>
+<li class="chapter" data-level="19.5" data-path="nltk.html"><a href="nltk.html#tokenization-1"><i class="fa fa-check"></i><b>19.5</b> Tokenization</a></li>
 <li class="chapter" data-level="19.6" data-path="nltk.html"><a href="nltk.html#chinese-word-segmentation"><i class="fa fa-check"></i><b>19.6</b> Chinese Word Segmentation</a></li>
 <li class="chapter" data-level="19.7" data-path="nltk.html"><a href="nltk.html#afterwords"><i class="fa fa-check"></i><b>19.7</b> Afterwords</a></li>
 </ul></li>
@@ -701,11 +702,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <hr />
 <p>Now we can ask R to read the input directly from the user’s input in the R console:</p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb38-1"><a href="conditions-and-loops.html#cb38-1" aria-hidden="true" tabindex="-1"></a>input <span class="ot">&lt;-</span> <span class="fu">readline</span>(<span class="at">prompt=</span><span class="st">&quot;Please enter your password:&quot;</span>)</span>
-<span id="cb38-2"><a href="conditions-and-loops.html#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(input <span class="sc">==</span> <span class="dv">987</span>){</span>
-<span id="cb38-3"><a href="conditions-and-loops.html#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(<span class="st">&quot;Congratulations! Now you may get in!&quot;</span>)</span>
-<span id="cb38-4"><a href="conditions-and-loops.html#cb38-4" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span>{</span>
-<span id="cb38-5"><a href="conditions-and-loops.html#cb38-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(<span class="st">&quot;Sorry! Wrong password.&quot;</span>)</span>
-<span id="cb38-6"><a href="conditions-and-loops.html#cb38-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<span id="cb38-2"><a href="conditions-and-loops.html#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-3"><a href="conditions-and-loops.html#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-4"><a href="conditions-and-loops.html#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(input <span class="sc">==</span> <span class="dv">987</span>){</span>
+<span id="cb38-5"><a href="conditions-and-loops.html#cb38-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(<span class="st">&quot;Congratulations! Now you may get in!&quot;</span>)</span>
+<span id="cb38-6"><a href="conditions-and-loops.html#cb38-6" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb38-7"><a href="conditions-and-loops.html#cb38-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(<span class="st">&quot;Sorry! Wrong password.&quot;</span>)</span>
+<span id="cb38-8"><a href="conditions-and-loops.html#cb38-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="alert">
 <p>In R, there are two very similar functions, <code>readline()</code> and <code>readLines()</code>. Please check the documentations of these two to make sure you understand their differences.</p>
 </div>
@@ -1058,6 +1061,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "lunr",
+"options": null
+},
 "toc": {
 "collapse": "section"
 }
