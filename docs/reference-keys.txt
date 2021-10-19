@@ -411,3 +411,13 @@ exr:unnamed-chunk-51
 exr:unnamed-chunk-53
 exr:unnamed-chunk-45
 exr:unnamed-chunk-55
+adding-more-aesthetic-features-or-layers
+labels-and-annotations
+facets
+exr:unnamed-chunk-44
+exr:unnamed-chunk-58
+exr:unnamed-chunk-60
+alpha
+size
+themes
+exr:unnamed-chunk-5
