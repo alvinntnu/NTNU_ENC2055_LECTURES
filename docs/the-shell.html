@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-10-01" />
+<meta name="date" content="2021-10-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,8 +32,8 @@
   
   
 <link rel="prev" href="downloading-youtube-videos.html"/>
-<link rel="next" href="references-4.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<link rel="next" href="reproducible-report.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -65,7 +65,6 @@
 <script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
 <link href="libs/font-awesome-5.13.0/css/all.min.css" rel="stylesheet" />
 <link href="libs/font-awesome-5.13.0/css/v4-shims.min.css" rel="stylesheet" />
-<script src="https://hypothes.is/embed.js" async></script>
 
 
 <style type="text/css">
@@ -263,16 +262,28 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="data-visualization.html"><a href="data-visualization.html#ggplot2"><i class="fa fa-check"></i><b>7.2</b> <code>ggplot2</code></a></li>
 <li class="chapter" data-level="7.3" data-path="data-visualization.html"><a href="data-visualization.html#variables-and-data-type"><i class="fa fa-check"></i><b>7.3</b> Variables and Data Type</a></li>
-<li class="chapter" data-level="7.4" data-path="data-visualization.html"><a href="data-visualization.html#one-variable-graph"><i class="fa fa-check"></i><b>7.4</b> One-variable Graph</a></li>
-<li class="chapter" data-level="7.5" data-path="data-visualization.html"><a href="data-visualization.html#two-variable-graph"><i class="fa fa-check"></i><b>7.5</b> Two-variable Graph</a></li>
-<li class="chapter" data-level="7.6" data-path="data-visualization.html"><a href="data-visualization.html#adding-other-aesthetic-features"><i class="fa fa-check"></i><b>7.6</b> Adding Other Aesthetic Features</a>
+<li class="chapter" data-level="7.4" data-path="data-visualization.html"><a href="data-visualization.html#one-variable-graph"><i class="fa fa-check"></i><b>7.4</b> One-variable Graph</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="data-visualization.html"><a href="data-visualization.html#continuous-variable"><i class="fa fa-check"></i><b>7.4.1</b> Continuous Variable</a></li>
+<li class="chapter" data-level="7.4.2" data-path="data-visualization.html"><a href="data-visualization.html#categorical-variable"><i class="fa fa-check"></i><b>7.4.2</b> Categorical Variable</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="data-visualization.html"><a href="data-visualization.html#two-variable-graph"><i class="fa fa-check"></i><b>7.5</b> Two-variable Graph</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="data-visualization.html"><a href="data-visualization.html#continuous-x-continuous-y"><i class="fa fa-check"></i><b>7.5.1</b> Continuous X, Continuous Y</a></li>
+<li class="chapter" data-level="7.5.2" data-path="data-visualization.html"><a href="data-visualization.html#categorical-x-continuous-y"><i class="fa fa-check"></i><b>7.5.2</b> Categorical X, Continuous Y</a></li>
+<li class="chapter" data-level="7.5.3" data-path="data-visualization.html"><a href="data-visualization.html#categorical-x-categorical-y"><i class="fa fa-check"></i><b>7.5.3</b> Categorical X, Categorical Y</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="data-visualization.html"><a href="data-visualization.html#adding-more-aesthetic-features-or-layers"><i class="fa fa-check"></i><b>7.6</b> Adding More Aesthetic Features or Layers</a>
 <ul>
 <li class="chapter" data-level="7.6.1" data-path="data-visualization.html"><a href="data-visualization.html#color"><i class="fa fa-check"></i><b>7.6.1</b> <code>color</code></a></li>
-<li class="chapter" data-level="7.6.2" data-path="data-visualization.html"><a href="data-visualization.html#shape"><i class="fa fa-check"></i><b>7.6.2</b> <code>shape</code></a></li>
-<li class="chapter" data-level="7.6.3" data-path="data-visualization.html"><a href="data-visualization.html#other-geom_...-layers"><i class="fa fa-check"></i><b>7.6.3</b> Other <code>geom_...</code> Layers</a></li>
-<li class="chapter" data-level="7.6.4" data-path="data-visualization.html"><a href="data-visualization.html#labels"><i class="fa fa-check"></i><b>7.6.4</b> Labels</a></li>
-<li class="chapter" data-level="7.6.5" data-path="data-visualization.html"><a href="data-visualization.html#fill"><i class="fa fa-check"></i><b>7.6.5</b> <code>fill</code></a></li>
-<li class="chapter" data-level="7.6.6" data-path="data-visualization.html"><a href="data-visualization.html#interim-summary"><i class="fa fa-check"></i><b>7.6.6</b> Interim Summary</a></li>
+<li class="chapter" data-level="7.6.2" data-path="data-visualization.html"><a href="data-visualization.html#alpha"><i class="fa fa-check"></i><b>7.6.2</b> <code>alpha</code></a></li>
+<li class="chapter" data-level="7.6.3" data-path="data-visualization.html"><a href="data-visualization.html#size"><i class="fa fa-check"></i><b>7.6.3</b> <code>size</code></a></li>
+<li class="chapter" data-level="7.6.4" data-path="data-visualization.html"><a href="data-visualization.html#fill"><i class="fa fa-check"></i><b>7.6.4</b> <code>fill</code></a></li>
+<li class="chapter" data-level="7.6.5" data-path="data-visualization.html"><a href="data-visualization.html#shape"><i class="fa fa-check"></i><b>7.6.5</b> <code>shape</code></a></li>
+<li class="chapter" data-level="7.6.6" data-path="data-visualization.html"><a href="data-visualization.html#other-geom_...-layers"><i class="fa fa-check"></i><b>7.6.6</b> Other <code>geom_...</code> Layers</a></li>
+<li class="chapter" data-level="7.6.7" data-path="data-visualization.html"><a href="data-visualization.html#labels-and-annotations"><i class="fa fa-check"></i><b>7.6.7</b> Labels and Annotations</a></li>
+<li class="chapter" data-level="7.6.8" data-path="data-visualization.html"><a href="data-visualization.html#facets"><i class="fa fa-check"></i><b>7.6.8</b> Facets</a></li>
+<li class="chapter" data-level="7.6.9" data-path="data-visualization.html"><a href="data-visualization.html#themes"><i class="fa fa-check"></i><b>7.6.9</b> Themes</a></li>
 </ul></li>
 <li class="chapter" data-level="7.7" data-path="data-visualization.html"><a href="data-visualization.html#saving-plots"><i class="fa fa-check"></i><b>7.7</b> Saving Plots</a></li>
 <li class="chapter" data-level="7.8" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-iris"><i class="fa fa-check"></i><b>7.8</b> Exercises on <code>iris</code></a></li>
@@ -394,16 +405,17 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="13.1" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#installing-quanteda"><i class="fa fa-check"></i><b>13.1</b> Installing <code>quanteda</code></a></li>
 <li class="chapter" data-level="13.2" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#building-a-corpus-from-character-vector"><i class="fa fa-check"></i><b>13.2</b> Building a <code>corpus</code> from character vector</a></li>
-<li class="chapter" data-level="13.3" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyword-in-context-kwic"><i class="fa fa-check"></i><b>13.3</b> Keyword-in-Context (KWIC)</a></li>
-<li class="chapter" data-level="13.4" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#kwic-with-regular-expressions"><i class="fa fa-check"></i><b>13.4</b> KWIC with Regular Expressions</a></li>
-<li class="chapter" data-level="13.5" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#lexical-density-plot"><i class="fa fa-check"></i><b>13.5</b> Lexical Density Plot</a></li>
-<li class="chapter" data-level="13.6" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#document-feature-matrix"><i class="fa fa-check"></i><b>13.6</b> Document-Feature Matrix</a></li>
-<li class="chapter" data-level="13.7" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#feature-selection"><i class="fa fa-check"></i><b>13.7</b> Feature Selection</a></li>
-<li class="chapter" data-level="13.8" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#top-features"><i class="fa fa-check"></i><b>13.8</b> Top Features</a></li>
-<li class="chapter" data-level="13.9" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#wordclouds"><i class="fa fa-check"></i><b>13.9</b> Wordclouds</a></li>
-<li class="chapter" data-level="13.10" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyness-analysis"><i class="fa fa-check"></i><b>13.10</b> Keyness Analysis</a></li>
-<li class="chapter" data-level="13.11" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#flowchart"><i class="fa fa-check"></i><b>13.11</b> Flowchart</a></li>
-<li class="chapter" data-level="13.12" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#exercises-1"><i class="fa fa-check"></i><b>13.12</b> Exercises</a></li>
+<li class="chapter" data-level="13.3" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#tokenization"><i class="fa fa-check"></i><b>13.3</b> Tokenization</a></li>
+<li class="chapter" data-level="13.4" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyword-in-context-kwic"><i class="fa fa-check"></i><b>13.4</b> Keyword-in-Context (KWIC)</a></li>
+<li class="chapter" data-level="13.5" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#kwic-with-regular-expressions"><i class="fa fa-check"></i><b>13.5</b> KWIC with Regular Expressions</a></li>
+<li class="chapter" data-level="13.6" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#lexical-density-plot"><i class="fa fa-check"></i><b>13.6</b> Lexical Density Plot</a></li>
+<li class="chapter" data-level="13.7" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#document-feature-matrix"><i class="fa fa-check"></i><b>13.7</b> Document-Feature Matrix</a></li>
+<li class="chapter" data-level="13.8" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#feature-selection"><i class="fa fa-check"></i><b>13.8</b> Feature Selection</a></li>
+<li class="chapter" data-level="13.9" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#top-features"><i class="fa fa-check"></i><b>13.9</b> Top Features</a></li>
+<li class="chapter" data-level="13.10" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#wordclouds"><i class="fa fa-check"></i><b>13.10</b> Wordclouds</a></li>
+<li class="chapter" data-level="13.11" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyness-analysis"><i class="fa fa-check"></i><b>13.11</b> Keyness Analysis</a></li>
+<li class="chapter" data-level="13.12" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#flowchart"><i class="fa fa-check"></i><b>13.12</b> Flowchart</a></li>
+<li class="chapter" data-level="13.13" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#exercises-1"><i class="fa fa-check"></i><b>13.13</b> Exercises</a></li>
 </ul></li>
 <li class="part"><span><b>PART 2: Python Language</b></span></li>
 <li class="chapter" data-level="14" data-path="python-fundamentals.html"><a href="python-fundamentals.html"><i class="fa fa-check"></i><b>14</b> Python Fundamentals</a>
@@ -495,7 +507,7 @@ div.csl-indent {
 <li class="chapter" data-level="19.3.3" data-path="nltk.html"><a href="nltk.html#semantic-similarity-computation"><i class="fa fa-check"></i><b>19.3.3</b> Semantic Similarity Computation</a></li>
 </ul></li>
 <li class="chapter" data-level="19.4" data-path="nltk.html"><a href="nltk.html#discovering-word-collocations"><i class="fa fa-check"></i><b>19.4</b> Discovering Word Collocations</a></li>
-<li class="chapter" data-level="19.5" data-path="nltk.html"><a href="nltk.html#tokenization"><i class="fa fa-check"></i><b>19.5</b> Tokenization</a></li>
+<li class="chapter" data-level="19.5" data-path="nltk.html"><a href="nltk.html#tokenization-1"><i class="fa fa-check"></i><b>19.5</b> Tokenization</a></li>
 <li class="chapter" data-level="19.6" data-path="nltk.html"><a href="nltk.html#chinese-word-segmentation"><i class="fa fa-check"></i><b>19.6</b> Chinese Word Segmentation</a></li>
 <li class="chapter" data-level="19.7" data-path="nltk.html"><a href="nltk.html#afterwords"><i class="fa fa-check"></i><b>19.7</b> Afterwords</a></li>
 </ul></li>
@@ -528,7 +540,16 @@ div.csl-indent {
 <li class="chapter" data-level="A.4" data-path="the-shell.html"><a href="the-shell.html#text-analytic-related-commands"><i class="fa fa-check"></i><b>A.4</b> Text-Analytic Related Commands</a></li>
 <li class="chapter" data-level="A.5" data-path="the-shell.html"><a href="the-shell.html#references-3"><i class="fa fa-check"></i><b>A.5</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="references-4.html"><a href="references-4.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="B" data-path="reproducible-report.html"><a href="reproducible-report.html"><i class="fa fa-check"></i><b>B</b> Reproducible Report</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="reproducible-report.html"><a href="reproducible-report.html#r-markdown"><i class="fa fa-check"></i><b>B.1</b> R Markdown</a></li>
+<li class="chapter" data-level="B.2" data-path="reproducible-report.html"><a href="reproducible-report.html#open-science"><i class="fa fa-check"></i><b>B.2</b> Open Science</a></li>
+<li class="chapter" data-level="B.3" data-path="reproducible-report.html"><a href="reproducible-report.html#installing-r-markdown"><i class="fa fa-check"></i><b>B.3</b> Installing R Markdown</a></li>
+<li class="chapter" data-level="B.4" data-path="reproducible-report.html"><a href="reproducible-report.html#r-markdown-components"><i class="fa fa-check"></i><b>B.4</b> R Markdown Components</a></li>
+<li class="chapter" data-level="B.5" data-path="reproducible-report.html"><a href="reproducible-report.html#tips"><i class="fa fa-check"></i><b>B.5</b> Tips</a></li>
+<li class="chapter" data-level="B.6" data-path="reproducible-report.html"><a href="reproducible-report.html#references-4"><i class="fa fa-check"></i><b>B.6</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references-5.html"><a href="references-5.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://web.ntnu.edu.tw/~alvinchen" target ="blank">Alvin Chen </a></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -652,7 +673,7 @@ Janssens, Jeroen. 2014. <em>Data Science at the Command Line: Facing the Future 
         </div>
       </div>
 <a href="downloading-youtube-videos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references-4.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="reproducible-report.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-10-06" />
+<meta name="date" content="2021-10-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="r-fundamentals.html"/>
 <link rel="next" href="subsetting.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -55,7 +55,16 @@
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<script src="https://hypothes.is/embed.js" async></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
+<script src="libs/str_view-binding-1.4.0/str_view.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
+<link href="libs/font-awesome-5.13.0/css/all.min.css" rel="stylesheet" />
+<link href="libs/font-awesome-5.13.0/css/v4-shims.min.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -123,6 +132,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style-new.css" type="text/css" />
 </head>
@@ -231,16 +262,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="data-visualization.html"><a href="data-visualization.html#ggplot2"><i class="fa fa-check"></i><b>7.2</b> <code>ggplot2</code></a></li>
 <li class="chapter" data-level="7.3" data-path="data-visualization.html"><a href="data-visualization.html#variables-and-data-type"><i class="fa fa-check"></i><b>7.3</b> Variables and Data Type</a></li>
-<li class="chapter" data-level="7.4" data-path="data-visualization.html"><a href="data-visualization.html#one-variable-graph"><i class="fa fa-check"></i><b>7.4</b> One-variable Graph</a></li>
-<li class="chapter" data-level="7.5" data-path="data-visualization.html"><a href="data-visualization.html#two-variable-graph"><i class="fa fa-check"></i><b>7.5</b> Two-variable Graph</a></li>
-<li class="chapter" data-level="7.6" data-path="data-visualization.html"><a href="data-visualization.html#adding-other-aesthetic-features"><i class="fa fa-check"></i><b>7.6</b> Adding Other Aesthetic Features</a>
+<li class="chapter" data-level="7.4" data-path="data-visualization.html"><a href="data-visualization.html#one-variable-graph"><i class="fa fa-check"></i><b>7.4</b> One-variable Graph</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="data-visualization.html"><a href="data-visualization.html#continuous-variable"><i class="fa fa-check"></i><b>7.4.1</b> Continuous Variable</a></li>
+<li class="chapter" data-level="7.4.2" data-path="data-visualization.html"><a href="data-visualization.html#categorical-variable"><i class="fa fa-check"></i><b>7.4.2</b> Categorical Variable</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="data-visualization.html"><a href="data-visualization.html#two-variable-graph"><i class="fa fa-check"></i><b>7.5</b> Two-variable Graph</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="data-visualization.html"><a href="data-visualization.html#continuous-x-continuous-y"><i class="fa fa-check"></i><b>7.5.1</b> Continuous X, Continuous Y</a></li>
+<li class="chapter" data-level="7.5.2" data-path="data-visualization.html"><a href="data-visualization.html#categorical-x-continuous-y"><i class="fa fa-check"></i><b>7.5.2</b> Categorical X, Continuous Y</a></li>
+<li class="chapter" data-level="7.5.3" data-path="data-visualization.html"><a href="data-visualization.html#categorical-x-categorical-y"><i class="fa fa-check"></i><b>7.5.3</b> Categorical X, Categorical Y</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="data-visualization.html"><a href="data-visualization.html#adding-more-aesthetic-features-or-layers"><i class="fa fa-check"></i><b>7.6</b> Adding More Aesthetic Features or Layers</a>
 <ul>
 <li class="chapter" data-level="7.6.1" data-path="data-visualization.html"><a href="data-visualization.html#color"><i class="fa fa-check"></i><b>7.6.1</b> <code>color</code></a></li>
-<li class="chapter" data-level="7.6.2" data-path="data-visualization.html"><a href="data-visualization.html#shape"><i class="fa fa-check"></i><b>7.6.2</b> <code>shape</code></a></li>
-<li class="chapter" data-level="7.6.3" data-path="data-visualization.html"><a href="data-visualization.html#other-geom_...-layers"><i class="fa fa-check"></i><b>7.6.3</b> Other <code>geom_...</code> Layers</a></li>
-<li class="chapter" data-level="7.6.4" data-path="data-visualization.html"><a href="data-visualization.html#labels"><i class="fa fa-check"></i><b>7.6.4</b> Labels</a></li>
-<li class="chapter" data-level="7.6.5" data-path="data-visualization.html"><a href="data-visualization.html#fill"><i class="fa fa-check"></i><b>7.6.5</b> <code>fill</code></a></li>
-<li class="chapter" data-level="7.6.6" data-path="data-visualization.html"><a href="data-visualization.html#interim-summary"><i class="fa fa-check"></i><b>7.6.6</b> Interim Summary</a></li>
+<li class="chapter" data-level="7.6.2" data-path="data-visualization.html"><a href="data-visualization.html#alpha"><i class="fa fa-check"></i><b>7.6.2</b> <code>alpha</code></a></li>
+<li class="chapter" data-level="7.6.3" data-path="data-visualization.html"><a href="data-visualization.html#size"><i class="fa fa-check"></i><b>7.6.3</b> <code>size</code></a></li>
+<li class="chapter" data-level="7.6.4" data-path="data-visualization.html"><a href="data-visualization.html#fill"><i class="fa fa-check"></i><b>7.6.4</b> <code>fill</code></a></li>
+<li class="chapter" data-level="7.6.5" data-path="data-visualization.html"><a href="data-visualization.html#shape"><i class="fa fa-check"></i><b>7.6.5</b> <code>shape</code></a></li>
+<li class="chapter" data-level="7.6.6" data-path="data-visualization.html"><a href="data-visualization.html#other-geom_...-layers"><i class="fa fa-check"></i><b>7.6.6</b> Other <code>geom_...</code> Layers</a></li>
+<li class="chapter" data-level="7.6.7" data-path="data-visualization.html"><a href="data-visualization.html#labels-and-annotations"><i class="fa fa-check"></i><b>7.6.7</b> Labels and Annotations</a></li>
+<li class="chapter" data-level="7.6.8" data-path="data-visualization.html"><a href="data-visualization.html#facets"><i class="fa fa-check"></i><b>7.6.8</b> Facets</a></li>
+<li class="chapter" data-level="7.6.9" data-path="data-visualization.html"><a href="data-visualization.html#themes"><i class="fa fa-check"></i><b>7.6.9</b> Themes</a></li>
 </ul></li>
 <li class="chapter" data-level="7.7" data-path="data-visualization.html"><a href="data-visualization.html#saving-plots"><i class="fa fa-check"></i><b>7.7</b> Saving Plots</a></li>
 <li class="chapter" data-level="7.8" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-iris"><i class="fa fa-check"></i><b>7.8</b> Exercises on <code>iris</code></a></li>
@@ -362,16 +405,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="13.1" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#installing-quanteda"><i class="fa fa-check"></i><b>13.1</b> Installing <code>quanteda</code></a></li>
 <li class="chapter" data-level="13.2" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#building-a-corpus-from-character-vector"><i class="fa fa-check"></i><b>13.2</b> Building a <code>corpus</code> from character vector</a></li>
-<li class="chapter" data-level="13.3" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyword-in-context-kwic"><i class="fa fa-check"></i><b>13.3</b> Keyword-in-Context (KWIC)</a></li>
-<li class="chapter" data-level="13.4" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#kwic-with-regular-expressions"><i class="fa fa-check"></i><b>13.4</b> KWIC with Regular Expressions</a></li>
-<li class="chapter" data-level="13.5" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#lexical-density-plot"><i class="fa fa-check"></i><b>13.5</b> Lexical Density Plot</a></li>
-<li class="chapter" data-level="13.6" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#document-feature-matrix"><i class="fa fa-check"></i><b>13.6</b> Document-Feature Matrix</a></li>
-<li class="chapter" data-level="13.7" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#feature-selection"><i class="fa fa-check"></i><b>13.7</b> Feature Selection</a></li>
-<li class="chapter" data-level="13.8" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#top-features"><i class="fa fa-check"></i><b>13.8</b> Top Features</a></li>
-<li class="chapter" data-level="13.9" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#wordclouds"><i class="fa fa-check"></i><b>13.9</b> Wordclouds</a></li>
-<li class="chapter" data-level="13.10" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyness-analysis"><i class="fa fa-check"></i><b>13.10</b> Keyness Analysis</a></li>
-<li class="chapter" data-level="13.11" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#flowchart"><i class="fa fa-check"></i><b>13.11</b> Flowchart</a></li>
-<li class="chapter" data-level="13.12" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#exercises-1"><i class="fa fa-check"></i><b>13.12</b> Exercises</a></li>
+<li class="chapter" data-level="13.3" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#tokenization"><i class="fa fa-check"></i><b>13.3</b> Tokenization</a></li>
+<li class="chapter" data-level="13.4" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyword-in-context-kwic"><i class="fa fa-check"></i><b>13.4</b> Keyword-in-Context (KWIC)</a></li>
+<li class="chapter" data-level="13.5" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#kwic-with-regular-expressions"><i class="fa fa-check"></i><b>13.5</b> KWIC with Regular Expressions</a></li>
+<li class="chapter" data-level="13.6" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#lexical-density-plot"><i class="fa fa-check"></i><b>13.6</b> Lexical Density Plot</a></li>
+<li class="chapter" data-level="13.7" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#document-feature-matrix"><i class="fa fa-check"></i><b>13.7</b> Document-Feature Matrix</a></li>
+<li class="chapter" data-level="13.8" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#feature-selection"><i class="fa fa-check"></i><b>13.8</b> Feature Selection</a></li>
+<li class="chapter" data-level="13.9" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#top-features"><i class="fa fa-check"></i><b>13.9</b> Top Features</a></li>
+<li class="chapter" data-level="13.10" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#wordclouds"><i class="fa fa-check"></i><b>13.10</b> Wordclouds</a></li>
+<li class="chapter" data-level="13.11" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyness-analysis"><i class="fa fa-check"></i><b>13.11</b> Keyness Analysis</a></li>
+<li class="chapter" data-level="13.12" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#flowchart"><i class="fa fa-check"></i><b>13.12</b> Flowchart</a></li>
+<li class="chapter" data-level="13.13" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#exercises-1"><i class="fa fa-check"></i><b>13.13</b> Exercises</a></li>
 </ul></li>
 <li class="part"><span><b>PART 2: Python Language</b></span></li>
 <li class="chapter" data-level="14" data-path="python-fundamentals.html"><a href="python-fundamentals.html"><i class="fa fa-check"></i><b>14</b> Python Fundamentals</a>
@@ -463,7 +507,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="19.3.3" data-path="nltk.html"><a href="nltk.html#semantic-similarity-computation"><i class="fa fa-check"></i><b>19.3.3</b> Semantic Similarity Computation</a></li>
 </ul></li>
 <li class="chapter" data-level="19.4" data-path="nltk.html"><a href="nltk.html#discovering-word-collocations"><i class="fa fa-check"></i><b>19.4</b> Discovering Word Collocations</a></li>
-<li class="chapter" data-level="19.5" data-path="nltk.html"><a href="nltk.html#tokenization"><i class="fa fa-check"></i><b>19.5</b> Tokenization</a></li>
+<li class="chapter" data-level="19.5" data-path="nltk.html"><a href="nltk.html#tokenization-1"><i class="fa fa-check"></i><b>19.5</b> Tokenization</a></li>
 <li class="chapter" data-level="19.6" data-path="nltk.html"><a href="nltk.html#chinese-word-segmentation"><i class="fa fa-check"></i><b>19.6</b> Chinese Word Segmentation</a></li>
 <li class="chapter" data-level="19.7" data-path="nltk.html"><a href="nltk.html#afterwords"><i class="fa fa-check"></i><b>19.7</b> Afterwords</a></li>
 </ul></li>
@@ -496,7 +540,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="A.4" data-path="the-shell.html"><a href="the-shell.html#text-analytic-related-commands"><i class="fa fa-check"></i><b>A.4</b> Text-Analytic Related Commands</a></li>
 <li class="chapter" data-level="A.5" data-path="the-shell.html"><a href="the-shell.html#references-3"><i class="fa fa-check"></i><b>A.5</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="references-4.html"><a href="references-4.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="B" data-path="reproducible-report.html"><a href="reproducible-report.html"><i class="fa fa-check"></i><b>B</b> Reproducible Report</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="reproducible-report.html"><a href="reproducible-report.html#r-markdown"><i class="fa fa-check"></i><b>B.1</b> R Markdown</a></li>
+<li class="chapter" data-level="B.2" data-path="reproducible-report.html"><a href="reproducible-report.html#open-science"><i class="fa fa-check"></i><b>B.2</b> Open Science</a></li>
+<li class="chapter" data-level="B.3" data-path="reproducible-report.html"><a href="reproducible-report.html#installing-r-markdown"><i class="fa fa-check"></i><b>B.3</b> Installing R Markdown</a></li>
+<li class="chapter" data-level="B.4" data-path="reproducible-report.html"><a href="reproducible-report.html#r-markdown-components"><i class="fa fa-check"></i><b>B.4</b> R Markdown Components</a></li>
+<li class="chapter" data-level="B.5" data-path="reproducible-report.html"><a href="reproducible-report.html#tips"><i class="fa fa-check"></i><b>B.5</b> Tips</a></li>
+<li class="chapter" data-level="B.6" data-path="reproducible-report.html"><a href="reproducible-report.html#references-4"><i class="fa fa-check"></i><b>B.6</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references-5.html"><a href="references-5.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://web.ntnu.edu.tw/~alvinchen" target ="blank">Alvin Chen </a></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -525,25 +578,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="assignment--" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Assignment <code>&lt;-</code></h2>
 <p>In R, people normally use <code>&lt;-</code> to assign values to object names. In other languages such as Python, people often use <code>=</code>. Although R still understands the value-assignment when you use <code>=</code>, I would still suggest to use <code>&lt;-</code> just to avoid the chance of confusing your R.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1-1"><a href="code-format-convetion.html#cb1-1" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="st">&quot;This is a sentence.&quot;</span></span>
-<span id="cb1-2"><a href="code-format-convetion.html#cb1-2" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">=</span> <span class="st">&quot;This is a sentence.&quot;</span></span>
-<span id="cb1-3"><a href="code-format-convetion.html#cb1-3" aria-hidden="true" tabindex="-1"></a>x1</span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb72-1"><a href="code-format-convetion.html#cb72-1" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="st">&quot;This is a sentence.&quot;</span></span>
+<span id="cb72-2"><a href="code-format-convetion.html#cb72-2" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">=</span> <span class="st">&quot;This is a sentence.&quot;</span></span>
+<span id="cb72-3"><a href="code-format-convetion.html#cb72-3" aria-hidden="true" tabindex="-1"></a>x1</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;This is a sentence.&quot;</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb3-1"><a href="code-format-convetion.html#cb3-1" aria-hidden="true" tabindex="-1"></a>x2</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb74-1"><a href="code-format-convetion.html#cb74-1" aria-hidden="true" tabindex="-1"></a>x2</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;This is a sentence.&quot;</code></pre>
 </div>
 <div id="comment" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Comment <code>#</code></h2>
 <p>When you write codes, you would need to commit your code extensively. This is very important because we often forget why and how we write it this way. In your R script, any strings after the <code>#</code> will be treated as comments, which will NOT be processed by R. We can often add additional <code>-</code> and <code>=</code> after the <code>#</code> to separate different code chunks.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb5-1"><a href="code-format-convetion.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ====================</span></span>
-<span id="cb5-2"><a href="code-format-convetion.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Variable Assignment</span></span>
-<span id="cb5-3"><a href="code-format-convetion.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ====================</span></span>
-<span id="cb5-4"><a href="code-format-convetion.html#cb5-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="st">&quot;This is a sentence&quot;</span></span>
-<span id="cb5-5"><a href="code-format-convetion.html#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="code-format-convetion.html#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># ====================</span></span>
-<span id="cb5-7"><a href="code-format-convetion.html#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Variable Printing</span></span>
-<span id="cb5-8"><a href="code-format-convetion.html#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># ====================</span></span>
-<span id="cb5-9"><a href="code-format-convetion.html#cb5-9" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb76-1"><a href="code-format-convetion.html#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ====================</span></span>
+<span id="cb76-2"><a href="code-format-convetion.html#cb76-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Variable Assignment</span></span>
+<span id="cb76-3"><a href="code-format-convetion.html#cb76-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ====================</span></span>
+<span id="cb76-4"><a href="code-format-convetion.html#cb76-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="st">&quot;This is a sentence&quot;</span></span>
+<span id="cb76-5"><a href="code-format-convetion.html#cb76-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-6"><a href="code-format-convetion.html#cb76-6" aria-hidden="true" tabindex="-1"></a><span class="co"># ====================</span></span>
+<span id="cb76-7"><a href="code-format-convetion.html#cb76-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Variable Printing</span></span>
+<span id="cb76-8"><a href="code-format-convetion.html#cb76-8" aria-hidden="true" tabindex="-1"></a><span class="co"># ====================</span></span>
+<span id="cb76-9"><a href="code-format-convetion.html#cb76-9" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;This is a sentence&quot;</code></pre>
 </div>
 <div id="script-naming" class="section level2" number="3.3">
@@ -576,12 +629,12 @@ grade_average &lt;- mean(midterm * 0.5 + final * 0.5)
 # NOT Recommended
 grade_average&lt;-mean(midterm*0.5+final*0.5)</code></pre>
 <p>For <code>:</code> and <code>::</code>, usually we do not put white spaces around them:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb9-1"><a href="code-format-convetion.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Recommended</span></span>
-<span id="cb9-2"><a href="code-format-convetion.html#cb9-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
-<span id="cb9-3"><a href="code-format-convetion.html#cb9-3" aria-hidden="true" tabindex="-1"></a>tidyr<span class="sc">::</span><span class="fu">separate</span>()</span>
-<span id="cb9-4"><a href="code-format-convetion.html#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># NOT Recommended</span></span>
-<span id="cb9-5"><a href="code-format-convetion.html#cb9-5" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span> <span class="sc">:</span> <span class="dv">10</span>)</span>
-<span id="cb9-6"><a href="code-format-convetion.html#cb9-6" aria-hidden="true" tabindex="-1"></a>tidyr <span class="sc">::</span> <span class="fu">separate</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb80-1"><a href="code-format-convetion.html#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Recommended</span></span>
+<span id="cb80-2"><a href="code-format-convetion.html#cb80-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
+<span id="cb80-3"><a href="code-format-convetion.html#cb80-3" aria-hidden="true" tabindex="-1"></a>tidyr<span class="sc">::</span><span class="fu">separate</span>()</span>
+<span id="cb80-4"><a href="code-format-convetion.html#cb80-4" aria-hidden="true" tabindex="-1"></a><span class="co"># NOT Recommended</span></span>
+<span id="cb80-5"><a href="code-format-convetion.html#cb80-5" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span> <span class="sc">:</span> <span class="dv">10</span>)</span>
+<span id="cb80-6"><a href="code-format-convetion.html#cb80-6" aria-hidden="true" tabindex="-1"></a>tidyr <span class="sc">::</span> <span class="fu">separate</span>()</span></code></pre></div>
 <div class="info">
 <p>
 <code>:</code> is an expression in R to create a sequence of numbers. For example, <code>c(1:10)</code> is the same as <code>c(1,2,3,4,5,6,7,8,9,10)</code>.
@@ -591,10 +644,10 @@ grade_average&lt;-mean(midterm*0.5+final*0.5)</code></pre>
 </p>
 </div>
 <p>For parentheses <code>(</code>, if it is in the control structure, we usually put a white space before the initial <code>(</code>:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb10-1"><a href="code-format-convetion.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># for-loop</span></span>
-<span id="cb10-2"><a href="code-format-convetion.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
-<span id="cb10-3"><a href="code-format-convetion.html#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
-<span id="cb10-4"><a href="code-format-convetion.html#cb10-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb81-1"><a href="code-format-convetion.html#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="co"># for-loop</span></span>
+<span id="cb81-2"><a href="code-format-convetion.html#cb81-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
+<span id="cb81-3"><a href="code-format-convetion.html#cb81-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb81-4"><a href="code-format-convetion.html#cb81-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre class="Rout"><code>[1] 1
 [1] 2
 [1] 3
@@ -605,25 +658,25 @@ grade_average&lt;-mean(midterm*0.5+final*0.5)</code></pre>
 [1] 8
 [1] 9
 [1] 10</code></pre>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb12-1"><a href="code-format-convetion.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># if-conditional</span></span>
-<span id="cb12-2"><a href="code-format-convetion.html#cb12-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb12-3"><a href="code-format-convetion.html#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">==</span> <span class="dv">1</span>){</span>
-<span id="cb12-4"><a href="code-format-convetion.html#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;The answer is 1!&quot;</span>)</span>
-<span id="cb12-5"><a href="code-format-convetion.html#cb12-5" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb12-6"><a href="code-format-convetion.html#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;The answer is greater than 1!&quot;</span>)</span>
-<span id="cb12-7"><a href="code-format-convetion.html#cb12-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb83-1"><a href="code-format-convetion.html#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="co"># if-conditional</span></span>
+<span id="cb83-2"><a href="code-format-convetion.html#cb83-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb83-3"><a href="code-format-convetion.html#cb83-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">==</span> <span class="dv">1</span>){</span>
+<span id="cb83-4"><a href="code-format-convetion.html#cb83-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;The answer is 1!&quot;</span>)</span>
+<span id="cb83-5"><a href="code-format-convetion.html#cb83-5" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb83-6"><a href="code-format-convetion.html#cb83-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;The answer is greater than 1!&quot;</span>)</span>
+<span id="cb83-7"><a href="code-format-convetion.html#cb83-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;The answer is greater than 1!&quot;</code></pre>
 <p>But if the parenthesis is in the function call (i.e., where we specify the arguments of the parameters), we don’t put a white space before the initial <code>(</code>:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb14-1"><a href="code-format-convetion.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span>
-<span id="cb14-2"><a href="code-format-convetion.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> money, <span class="at">y =</span> achievement))</span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb85-1"><a href="code-format-convetion.html#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span>
+<span id="cb85-2"><a href="code-format-convetion.html#cb85-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> money, <span class="at">y =</span> achievement))</span></code></pre></div>
 <p>For curly brackets, we usually put a line break after the initial <code>{</code> and the ending <code>}</code> should be one single line. Also, as sometimes you would embed many different control structures at the same time, leading to many ending <code>}</code> lines, it is always good to commit properly which ending <code>}</code> goes with which control structure.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb15-1"><a href="code-format-convetion.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
-<span id="cb15-2"><a href="code-format-convetion.html#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (i <span class="sc">&lt;</span> <span class="dv">5</span>){</span>
-<span id="cb15-3"><a href="code-format-convetion.html#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(i)    </span>
-<span id="cb15-4"><a href="code-format-convetion.html#cb15-4" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb15-5"><a href="code-format-convetion.html#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(i<span class="sc">+</span><span class="dv">10</span>)</span>
-<span id="cb15-6"><a href="code-format-convetion.html#cb15-6" aria-hidden="true" tabindex="-1"></a>  } <span class="co">#endif</span></span>
-<span id="cb15-7"><a href="code-format-convetion.html#cb15-7" aria-hidden="true" tabindex="-1"></a>} <span class="co">#endfor</span></span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb86-1"><a href="code-format-convetion.html#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
+<span id="cb86-2"><a href="code-format-convetion.html#cb86-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (i <span class="sc">&lt;</span> <span class="dv">5</span>){</span>
+<span id="cb86-3"><a href="code-format-convetion.html#cb86-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(i)    </span>
+<span id="cb86-4"><a href="code-format-convetion.html#cb86-4" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb86-5"><a href="code-format-convetion.html#cb86-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(i<span class="sc">+</span><span class="dv">10</span>)</span>
+<span id="cb86-6"><a href="code-format-convetion.html#cb86-6" aria-hidden="true" tabindex="-1"></a>  } <span class="co">#endif</span></span>
+<span id="cb86-7"><a href="code-format-convetion.html#cb86-7" aria-hidden="true" tabindex="-1"></a>} <span class="co">#endfor</span></span></code></pre></div>
 <pre class="Rout"><code>[1] 1
 [1] 2
 [1] 3
@@ -638,16 +691,16 @@ grade_average&lt;-mean(midterm*0.5+final*0.5)</code></pre>
 <div id="indention-and-linebreaks" class="section level2" number="3.6">
 <h2><span class="header-section-number">3.6</span> Indention and Linebreaks</h2>
 <p>R does not care about line breaks, white spaces, or tabs in your R script. But these formatting characters are important because you need all these characters to help you quickly keep track of the script’s structure. Make good use of the indention to increase the readability of your script.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb17-1"><a href="code-format-convetion.html#cb17-1" aria-hidden="true" tabindex="-1"></a>long_function_name <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">a =</span> <span class="st">&quot;a long argument&quot;</span>, </span>
-<span id="cb17-2"><a href="code-format-convetion.html#cb17-2" aria-hidden="true" tabindex="-1"></a>                               <span class="at">b =</span> <span class="st">&quot;another argument&quot;</span>,</span>
-<span id="cb17-3"><a href="code-format-convetion.html#cb17-3" aria-hidden="true" tabindex="-1"></a>                               <span class="at">c =</span> <span class="st">&quot;another long argument&quot;</span>) {</span>
-<span id="cb17-4"><a href="code-format-convetion.html#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># As usual code is indented by two spaces.</span></span>
-<span id="cb17-5"><a href="code-format-convetion.html#cb17-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb17-6"><a href="code-format-convetion.html#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-7"><a href="code-format-convetion.html#cb17-7" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">8</span>), <span class="co"># data source</span></span>
-<span id="cb17-8"><a href="code-format-convetion.html#cb17-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">nrow =</span> <span class="dv">2</span>, <span class="co"># two rows</span></span>
-<span id="cb17-9"><a href="code-format-convetion.html#cb17-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">byrow =</span> <span class="cn">TRUE</span>) <span class="co"># filling values by row</span></span>
-<span id="cb17-10"><a href="code-format-convetion.html#cb17-10" aria-hidden="true" tabindex="-1"></a>y</span></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb88-1"><a href="code-format-convetion.html#cb88-1" aria-hidden="true" tabindex="-1"></a>long_function_name <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">a =</span> <span class="st">&quot;a long argument&quot;</span>, </span>
+<span id="cb88-2"><a href="code-format-convetion.html#cb88-2" aria-hidden="true" tabindex="-1"></a>                               <span class="at">b =</span> <span class="st">&quot;another argument&quot;</span>,</span>
+<span id="cb88-3"><a href="code-format-convetion.html#cb88-3" aria-hidden="true" tabindex="-1"></a>                               <span class="at">c =</span> <span class="st">&quot;another long argument&quot;</span>) {</span>
+<span id="cb88-4"><a href="code-format-convetion.html#cb88-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># As usual code is indented by two spaces.</span></span>
+<span id="cb88-5"><a href="code-format-convetion.html#cb88-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb88-6"><a href="code-format-convetion.html#cb88-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb88-7"><a href="code-format-convetion.html#cb88-7" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">8</span>), <span class="co"># data source</span></span>
+<span id="cb88-8"><a href="code-format-convetion.html#cb88-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">nrow =</span> <span class="dv">2</span>, <span class="co"># two rows</span></span>
+<span id="cb88-9"><a href="code-format-convetion.html#cb88-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">byrow =</span> <span class="cn">TRUE</span>) <span class="co"># filling values by row</span></span>
+<span id="cb88-10"><a href="code-format-convetion.html#cb88-10" aria-hidden="true" tabindex="-1"></a>y</span></code></pre></div>
 <pre class="Rout"><code>     [,1] [,2]
 [1,]    2    5
 [2,]    7    8</code></pre>
@@ -672,7 +725,7 @@ grade_average&lt;-mean(midterm*0.5+final*0.5)</code></pre>
 <li>Finally, in case that you still don’t know where to find the exercises for assignments, please look for the <strong>exercise</strong> green box in each chapter (see below). All exercises are numbered.</li>
 </ul>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-1" class="exercise"><strong>Exercise 3.1  </strong></span>This is a demo of the Exercise Box you would look for in each chapter.</p>
+<p><span id="exr:unlabeled-div-7" class="exercise"><strong>Exercise 3.1  </strong></span>This is a demo of the Exercise Box you would look for in each chapter.</p>
 </div>
 
 </div>
@@ -724,6 +777,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
