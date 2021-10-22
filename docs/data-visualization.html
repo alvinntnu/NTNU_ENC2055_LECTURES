@@ -1267,7 +1267,7 @@ x_shape
 <span id="cb11-6"><a href="data-visualization.html#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">10</span>,<span class="dv">46</span>,<span class="dv">1</span>))</span></code></pre></div>
 <p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-16-2.png" width="672" /></p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb12-1"><a href="data-visualization.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="do">## You can check the min or max of each bin</span></span>
-<span id="cb12-2"><a href="data-visualization.html#cb12-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(hwy)) <span class="sc">+</span> <span class="fu">geom_histogram</span>()</span>
+<span id="cb12-2"><a href="data-visualization.html#cb12-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(hwy)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">color=</span><span class="st">&quot;white&quot;</span>)</span>
 <span id="cb12-3"><a href="data-visualization.html#cb12-3" aria-hidden="true" tabindex="-1"></a>g</span></code></pre></div>
 <p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-16-3.png" width="672" /></p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb13-1"><a href="data-visualization.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot_build</span>(g)<span class="sc">$</span>data[[<span class="dv">1</span>]]<span class="sc">$</span>xmin</span></code></pre></div>
@@ -1289,8 +1289,8 @@ x_shape
 </ul>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb17-1"><a href="data-visualization.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> class)) <span class="sc">+</span> </span>
 <span id="cb17-2"><a href="data-visualization.html#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-18-1.png" width="672" />
-When creating the bar plot, we can also use the normalized frequencies of each category, instead of the raw frequency counts. Any idea?</p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p>When creating the bar plot, we can also use the normalized frequencies of each category, instead of the raw frequency counts. Any idea?</p>
 <p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 
 <div class="exercise">

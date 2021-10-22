@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-10-21" />
+<meta name="date" content="2021-10-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -609,7 +609,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>In R, there are many built-in functions that return values:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb11-1"><a href="functions.html#cb11-1" aria-hidden="true" tabindex="-1"></a>num <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">3</span>)</span>
 <span id="cb11-2"><a href="functions.html#cb11-2" aria-hidden="true" tabindex="-1"></a>num</span></code></pre></div>
-<pre class="Rout"><code>[1]  4  6 10</code></pre>
+<pre class="Rout"><code>[1] 10  9  1</code></pre>
 <p>When a function returns nothing, by default the return value of the function is <code>NULL</code>, which is a unique data type in R referring to <code>NoneType</code>.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb13-1"><a href="functions.html#cb13-1" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">cat</span>(<span class="st">&quot;This is a sentence&quot;</span>)  <span class="co"># `cat()` has no return</span></span></code></pre></div>
 <pre class="Rout"><code>This is a sentence</code></pre>
@@ -826,54 +826,13 @@ out</code></pre>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb66-1"><a href="functions.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">8</span>, <span class="st">&quot;2&quot;</span>)</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;x/myBase needs to be a positive number not a string&quot;</code></pre>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-3" class="exercise"><strong>Exercise 6.3  </strong></span>Create a function that produces a simple animation, i.e., the zigzag outputs as shown below. The function will create a back-and-forth zigzag pattern with the laps and the indent size as the parameters of the function. Alternatively, users can stop the animation anytime by pressing CTRL+C.</p>
+<p><span id="exr:unlabeled-div-3" class="exercise"><strong>Exercise 6.3  </strong></span>Create a function that produces a simple animation, i.e., the zigzag outputs as shown below. The function will <strong>slowly</strong> create a back-and-forth zigzag pattern with the laps and the indent size as the parameters of the function. Alternatively, users can stop the animation anytime by pressing CTRL+C.</p>
 </div>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb68-1"><a href="functions.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">zigzag</span>(<span class="at">lap =</span> <span class="dv">3</span>, <span class="at">indent_max =</span> <span class="dv">5</span>)</span></code></pre></div>
-<pre class="Rout"><code> ***** 
-  ***** 
-    ***** 
-      ***** 
-        ***** 
-          ***** 
-        ***** 
-      ***** 
-    ***** 
-  ***** 
- ***** 
-  ***** 
-    ***** 
-      ***** 
-        ***** 
-          ***** 
-        ***** 
-      ***** 
-    ***** 
-  ***** 
- ***** 
-  ***** 
-    ***** 
-      ***** 
-        ***** 
-          ***** 
-        ***** 
-      ***** 
-    ***** 
-  ***** </code></pre>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb68-1"><a href="functions.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">zigzag</span>(<span class="at">lap =</span> <span class="dv">5</span>, <span class="at">indent_max =</span> <span class="dv">10</span>)</span></code></pre></div>
+<p><img src="images/zigzag.gif" /><!-- --></p>
 <ul>
-<li>Also, the user can interrupt the program/function by pressing CTRL+C and your function should stop properly (using <code>tryCatch</code>).</li>
+<li>Please note that the user can interrupt the program/function by pressing CTRL+C and your function should stop properly (using <code>tryCatch</code>).</li>
 </ul>
-<pre><code>&gt; zigzag(lap = 3, indent_max = 5)
- ***** 
-  ***** 
-    ***** 
-      ***** 
-        ***** 
-          ***** 
-        ***** 
-      ***** 
-    ***** 
-  ***** 
-[1] &quot;Program interrupted!!&quot;</code></pre>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-4" class="exercise"><strong>Exercise 6.4  </strong></span>Create a simple function to play rock, paper, scissors with the user.</p>
 <p>Your program should achieve the following:</p>
