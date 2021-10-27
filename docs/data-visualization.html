@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-10-23" />
+<meta name="date" content="2021-10-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -1243,7 +1243,7 @@ x_shape
 <p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-14-2.png" width="672" /></p>
 <p>We can also combine the histogram and density plots into one:</p>
 <p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
-<p>Any thoughts how to do that?</p>
+<p>Any thoughts about how to do that?</p>
 <div class="info">
 <p>The way we examine the distribution of the continuous variable (i.e., numbers) is to divide the entire range of values into a series of intervals, i.e., <strong>bins</strong>, and then count how many values in the data set fall into each interval.</p>
 <p>In other words, the shape of your histogram may vary depending on two parameters:</p>
@@ -1252,25 +1252,33 @@ x_shape
 <li>Bin width: the size of each interval</li>
 </ul>
 <p>Changes of either of the parameters would lead to a histogram of a different shape.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb10-1"><a href="data-visualization.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(hwy)) <span class="sc">+</span> </span>
-<span id="cb10-2"><a href="data-visualization.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color=</span><span class="st">&#39;white&#39;</span>, </span>
-<span id="cb10-3"><a href="data-visualization.html#cb10-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">fill=</span><span class="st">&#39;steelblue&#39;</span>, </span>
-<span id="cb10-4"><a href="data-visualization.html#cb10-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">alpha=</span><span class="fl">0.7</span>,</span>
-<span id="cb10-5"><a href="data-visualization.html#cb10-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">bins =</span> <span class="dv">10</span>) <span class="sc">+</span></span>
-<span id="cb10-6"><a href="data-visualization.html#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">10</span>, <span class="dv">46</span>, <span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb10-1"><a href="data-visualization.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(hwy)) <span class="sc">+</span></span>
+<span id="cb10-2"><a href="data-visualization.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(</span>
+<span id="cb10-3"><a href="data-visualization.html#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&#39;white&#39;</span>,</span>
+<span id="cb10-4"><a href="data-visualization.html#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">&#39;steelblue&#39;</span>,</span>
+<span id="cb10-5"><a href="data-visualization.html#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.7</span>,</span>
+<span id="cb10-6"><a href="data-visualization.html#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">bins =</span> <span class="dv">10</span></span>
+<span id="cb10-7"><a href="data-visualization.html#cb10-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb10-8"><a href="data-visualization.html#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">10</span>, <span class="dv">46</span>, <span class="dv">1</span>))</span></code></pre></div>
 <p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb11-1"><a href="data-visualization.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(hwy)) <span class="sc">+</span> </span>
-<span id="cb11-2"><a href="data-visualization.html#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color=</span><span class="st">&#39;white&#39;</span>, </span>
-<span id="cb11-3"><a href="data-visualization.html#cb11-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">fill=</span><span class="st">&#39;steelblue&#39;</span>, </span>
-<span id="cb11-4"><a href="data-visualization.html#cb11-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">alpha=</span><span class="fl">0.7</span>,</span>
-<span id="cb11-5"><a href="data-visualization.html#cb11-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">binwidth =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb11-6"><a href="data-visualization.html#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">10</span>,<span class="dv">46</span>,<span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb11-1"><a href="data-visualization.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(hwy)) <span class="sc">+</span></span>
+<span id="cb11-2"><a href="data-visualization.html#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(</span>
+<span id="cb11-3"><a href="data-visualization.html#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&#39;white&#39;</span>,</span>
+<span id="cb11-4"><a href="data-visualization.html#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">&#39;steelblue&#39;</span>,</span>
+<span id="cb11-5"><a href="data-visualization.html#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.7</span>,</span>
+<span id="cb11-6"><a href="data-visualization.html#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">binwidth =</span> <span class="dv">2</span></span>
+<span id="cb11-7"><a href="data-visualization.html#cb11-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-8"><a href="data-visualization.html#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">10</span>, <span class="dv">46</span>, <span class="dv">1</span>))</span></code></pre></div>
 <p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-16-2.png" width="672" /></p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb12-1"><a href="data-visualization.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="do">## You can check the min or max of each bin</span></span>
-<span id="cb12-2"><a href="data-visualization.html#cb12-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(hwy)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">color=</span><span class="st">&quot;white&quot;</span>)</span>
-<span id="cb12-3"><a href="data-visualization.html#cb12-3" aria-hidden="true" tabindex="-1"></a>g</span></code></pre></div>
+<span id="cb12-2"><a href="data-visualization.html#cb12-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(hwy)) <span class="sc">+</span></span>
+<span id="cb12-3"><a href="data-visualization.html#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">&quot;white&quot;</span>)</span>
+<span id="cb12-4"><a href="data-visualization.html#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="data-visualization.html#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Auto-print the ggplot</span></span>
+<span id="cb12-6"><a href="data-visualization.html#cb12-6" aria-hidden="true" tabindex="-1"></a>g</span></code></pre></div>
 <p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-16-3.png" width="672" /></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb13-1"><a href="data-visualization.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot_build</span>(g)<span class="sc">$</span>data[[<span class="dv">1</span>]]<span class="sc">$</span>xmin</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb13-1"><a href="data-visualization.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Checking bin interval min and max</span></span>
+<span id="cb13-2"><a href="data-visualization.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot_build</span>(g)<span class="sc">$</span>data[[<span class="dv">1</span>]]<span class="sc">$</span>xmin</span></code></pre></div>
 <pre class="Rout"><code> [1] 11.58621 12.68966 13.79310 14.89655 16.00000 17.10345 18.20690 19.31034
  [9] 20.41379 21.51724 22.62069 23.72414 24.82759 25.93103 27.03448 28.13793
 [17] 29.24138 30.34483 31.44828 32.55172 33.65517 34.75862 35.86207 36.96552
@@ -1325,17 +1333,21 @@ Hint: check <code>reorder()</code>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb20-1"><a href="data-visualization.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
 <span id="cb20-2"><a href="data-visualization.html#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
 <p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<div class="info">
+<p>If you would like to know more about boxplots, please check this <a href="https://towardsdatascience.com/understanding-boxplots-5e2df7bcbd51">blog post</a>. The following illustration is taken from the blog post, which shows the meanings of different boxplot parts.</p>
+<p><img src="images/boxplot.png" width="700" /></p>
+</div>
 <ul>
 <li>Error Plot</li>
 </ul>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb21-1"><a href="data-visualization.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> hwy)) <span class="sc">+</span></span>
 <span id="cb21-2"><a href="data-visualization.html#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun.data =</span> mean_cl_boot, <span class="at">geom =</span> <span class="st">&quot;pointrange&quot;</span>)</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
 <div class="info">
 <p>The functions, <code>mean_cl_normal()</code> and <code>mean_cl_boot()</code> are two wrappers around functions from <code>Hmisc</code> library. The <code>mean_cl_normal()</code> computes the mean and the confidence limits based on a <strong>t-distribution</strong>. As an alternative, <code>mean_cl_boot</code> would produce a less assumption laden bootstrapped confidence interval.</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb22-1"><a href="data-visualization.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> hwy)) <span class="sc">+</span></span>
 <span id="cb22-2"><a href="data-visualization.html#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun.data =</span> mean_cl_normal, <span class="at">geom =</span> <span class="st">&quot;pointrange&quot;</span>)</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
 </div>
 <div class="alert">
 <p>If you run into problems plotting the error plot using <code>stat_summary()</code>, probably you did not have the necessary packages installed in your current R environment. Please make sure that you have installed the package <code>tidyverse</code> or <code>ggplot2</code> properly <strong>without any error messages in the process of installation</strong>.</p>
@@ -1351,9 +1363,14 @@ Hint: check <code>reorder()</code>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb23-1"><a href="data-visualization.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> manufacturer, <span class="at">y =</span> class)) <span class="sc">+</span></span>
 <span id="cb23-2"><a href="data-visualization.html#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_count</span>() <span class="sc">+</span> </span>
 <span id="cb23-3"><a href="data-visualization.html#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle=</span><span class="sc">-</span><span class="dv">90</span>))</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
-<p>We can also create a heatmap for two categorical variables:</p>
 <p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<p>We can also create a heatmap for two categorical variables:</p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-2" class="exercise"><strong>Exercise 7.2  </strong></span>Please create a heat map as shown above. In order to create a heat map, you may also need the frequency counts of each level combination.</p>
+<p>Also, please include these frequency counts in the heat map as well.</p>
+<p>Hint: <code>geom_tile()</code>; <code>geom_text()</code></p>
+</div>
 </div>
 </div>
 <div id="adding-more-aesthetic-features-or-layers" class="section level2" number="7.6">
@@ -1364,31 +1381,32 @@ Hint: check <code>reorder()</code>
 <p>Earlier we create a scatter plot using the following code:</p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb24-1"><a href="data-visualization.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
 <span id="cb24-2"><a href="data-visualization.html#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
 <p>The above plot includes two variables into the graph, <code>x = displ</code> and <code>y = hwy</code>.</p>
-<p>The additional aesthetic features include things like colors, sizes, shapes, line-types, widths etc. The idea is that we can introduce a <strong>third variable</strong> into the plot by modifying the color of the points based on the value of that third variable.</p>
+<p>The additional aesthetic features may include things like colors, sizes, shapes, line-types, widths etc. The idea is that we can introduce a <strong>third variable</strong> into the plot by modifying these <strong>aesthetic attributes</strong> based on the value of that third variable.</p>
 <ul>
 <li>For example, you can add <code>color = ...</code> in the <code>aes(x = ..., y = ..., color = ...)</code> to create the graphs on the basis of another grouping factor.</li>
 </ul>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb25-1"><a href="data-visualization.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy, <span class="at">color =</span> drv)) <span class="sc">+</span> </span>
 <span id="cb25-2"><a href="data-visualization.html#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
-<p>In the above example, <code>color</code> is an aesthetic and the color of each point is now mapped to the variable <code>drv</code>. In this case, points belonging to each group of <code>drv</code> would be of different colors—different drive train types have different colors in points.</p>
-<p>Note that the x-coordinates and y-coordinates are aesthetics too, and they got mapped to the <code>displ</code> and <code>hwy</code> variables, respectively. We further map the color to the third variable <code>drv</code>, which indicates whether a car is front wheel drive, rear wheel drive, or 4-wheel drive.</p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+<p>In the above example, <code>color</code> is an aesthetics (put in the <code>aes()</code>).</p>
+<p>This would suggest that <strong>the color of each point</strong> is now mapped to the variable <code>drv</code>. In this case, points belonging to different groups of <code>drv</code> would be of different colors—different drive train types have different colors in points.</p>
+<p>Note that the x-coordinates and y-coordinates are aesthetics too, and they are mapped to the <code>displ</code> and <code>hwy</code> variables, respectively. Now we enrich the graph by further mapping the <strong>color</strong> to the third variable <code>drv</code>, which indicates whether a car is front wheel drive, rear wheel drive, or 4-wheel drive.</p>
 <div class="info">
 <p>If you would like to know more about the color names available in R, I would highly recommend this <a href="https://www.nceas.ucsb.edu/sites/default/files/2020-04/colorPaletteCheatsheet.pdf">R Color Cheat Sheet</a>.</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-2" class="exercise"><strong>Exercise 7.2  </strong></span>When creating a graph, the aesthetic feature <code>color</code> can also be specified within the <code>geom_*()</code> as well.</p>
+<p><span id="exr:unlabeled-div-3" class="exercise"><strong>Exercise 7.3  </strong></span>When creating a graph, the aesthetic feature <code>color</code> can also be specified within the <code>geom_*()</code> as well.</p>
 <p>Please compare the following two ways of <strong>color specification</strong> and describe their respective functional differences.</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb26-1"><a href="data-visualization.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Method 1</span></span>
 <span id="cb26-2"><a href="data-visualization.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy, <span class="at">color =</span> drv)) <span class="sc">+</span> </span>
 <span id="cb26-3"><a href="data-visualization.html#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb27-1"><a href="data-visualization.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Method 2</span></span>
 <span id="cb27-2"><a href="data-visualization.html#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy)) <span class="sc">+</span></span>
 <span id="cb27-3"><a href="data-visualization.html#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;steelblue&quot;</span>)</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-31-2.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-32-2.png" width="672" /></p>
 </div>
 </div>
 <div id="alpha" class="section level3" number="7.6.2">
@@ -1396,44 +1414,44 @@ Hint: check <code>reorder()</code>
 <p>Transparency (<code>alpha</code>) can sometimes be helpful in data visualization.</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb28-1"><a href="data-visualization.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy, <span class="at">color =</span> drv)) <span class="sc">+</span> </span>
 <span id="cb28-2"><a href="data-visualization.html#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">size =</span> <span class="dv">4</span>)</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
 </div>
 <div id="size" class="section level3" number="7.6.3">
 <h3><span class="header-section-number">7.6.3</span> <code>size</code></h3>
 <p>We can also map a grouping factor to the aesthetic feature <code>size</code>. That is, different groups will be represented by geometric objects of varying sizes.</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb29-1"><a href="data-visualization.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy, <span class="at">size =</span> drv, <span class="at">color=</span> drv)) <span class="sc">+</span> </span>
 <span id="cb29-2"><a href="data-visualization.html#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> .<span class="dv">5</span>)</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
 </div>
 <div id="fill" class="section level3" number="7.6.4">
 <h3><span class="header-section-number">7.6.4</span> <code>fill</code></h3>
 <p>For bar plots or histograms, we can fill the bars with different colors by adding <code>fill = ...</code> in the <code>aes()</code>.</p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb30-1"><a href="data-visualization.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">fill=</span> class)) <span class="sc">+</span> </span>
 <span id="cb30-2"><a href="data-visualization.html#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">color=</span><span class="st">&#39;white&#39;</span>)</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb31-1"><a href="data-visualization.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> hwy, <span class="at">fill =</span> class)) <span class="sc">+</span> </span>
 <span id="cb31-2"><a href="data-visualization.html#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">color=</span><span class="st">&#39;black&#39;</span>)</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-34-2.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-35-2.png" width="672" /></p>
 </div>
 <div id="shape" class="section level3" number="7.6.5">
 <h3><span class="header-section-number">7.6.5</span> <code>shape</code></h3>
 <p>We can map a third variable to the graph using <code>shape</code> as well.</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb32-1"><a href="data-visualization.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy, <span class="at">shape =</span> drv)) <span class="sc">+</span> </span>
 <span id="cb32-2"><a href="data-visualization.html#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
 <p>And of course you can map both <code>shape</code> and <code>color</code> to the same third variable:</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb33-1"><a href="data-visualization.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy, <span class="at">color =</span> drv, <span class="at">shape=</span>drv)) <span class="sc">+</span> </span>
 <span id="cb33-2"><a href="data-visualization.html#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-3" class="exercise"><strong>Exercise 7.3  </strong></span>In Section <a href="data-visualization.html#two-variable-graph">7.5</a>, we talked about how to create a bubble plot.</p>
+<p><span id="exr:unlabeled-div-4" class="exercise"><strong>Exercise 7.4  </strong></span>In Section <a href="data-visualization.html#two-variable-graph">7.5</a>, we talked about how to create a bubble plot.</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb34-1"><a href="data-visualization.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> manufacturer, <span class="at">y =</span> class)) <span class="sc">+</span></span>
 <span id="cb34-2"><a href="data-visualization.html#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_count</span>() <span class="sc">+</span> </span>
 <span id="cb34-3"><a href="data-visualization.html#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle=</span><span class="sc">-</span><span class="dv">90</span>))</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
 <p>Please adjust the codes to create a similar bubble plot with not only the <strong>sizes</strong> but also the <strong>colors</strong> of the bubbles indicating the varying token numbers in each level combination.</p>
 </div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
 </div>
 <div id="other-geom_...-layers" class="section level3" number="7.6.6">
 <h3><span class="header-section-number">7.6.6</span> Other <code>geom_...</code> Layers</h3>
@@ -1441,7 +1459,7 @@ Hint: check <code>reorder()</code>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb35-1"><a href="data-visualization.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
 <span id="cb35-2"><a href="data-visualization.html#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
 <span id="cb35-3"><a href="data-visualization.html#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
 <div class="info">
 <p>
 Could you predict what kind of graph you would get with the following code?
@@ -1459,42 +1477,47 @@ Could you predict what kind of graph you would get with the following code?
 <span id="cb37-3"><a href="data-visualization.html#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&#39;lm&#39;</span>) <span class="sc">+</span></span>
 <span id="cb37-4"><a href="data-visualization.html#cb37-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Correlation between Displacement and Highway Miles per Gallon&quot;</span>,</span>
 <span id="cb37-5"><a href="data-visualization.html#cb37-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Displacement&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Miles/Per Gallon&quot;</span>)</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb38-1"><a href="data-visualization.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy, <span class="at">color =</span> drv)) <span class="sc">+</span> </span>
-<span id="cb38-2"><a href="data-visualization.html#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb38-3"><a href="data-visualization.html#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Engine Displacement (litres)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Highway Miles per Gallon&quot;</span>,</span>
-<span id="cb38-4"><a href="data-visualization.html#cb38-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Scatter Plot -- DISPL by HWY&quot;</span>)</span></code></pre></div>
 <p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-43-1.png" width="672" /></p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb38-1"><a href="data-visualization.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy, <span class="at">color =</span> drv)) <span class="sc">+</span></span>
+<span id="cb38-2"><a href="data-visualization.html#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb38-3"><a href="data-visualization.html#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Engine Displacement (litres)&quot;</span>,</span>
+<span id="cb38-4"><a href="data-visualization.html#cb38-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Highway Miles per Gallon&quot;</span>,</span>
+<span id="cb38-5"><a href="data-visualization.html#cb38-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Scatter Plot -- DISPL by HWY&quot;</span>)</span></code></pre></div>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
 </div>
 <div id="facets" class="section level3" number="7.6.8">
 <h3><span class="header-section-number">7.6.8</span> Facets</h3>
-<p>Sometimes we may want to create plots based on a conditional factor. For example, we can check the relationship between <code>cty</code> and <code>hwy</code> for cars by different manufacturers.</p>
+<p>Sometimes we may want to create plots based on a <strong>conditional factor</strong>. For example, we can check the relationship between <code>cty</code> and <code>hwy</code> for cars by different manufacturers.</p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb39-1"><a href="data-visualization.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> cty, <span class="at">y =</span> hwy)) <span class="sc">+</span></span>
 <span id="cb39-2"><a href="data-visualization.html#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb39-3"><a href="data-visualization.html#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>) <span class="sc">+</span></span>
-<span id="cb39-4"><a href="data-visualization.html#cb39-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(manufacturer <span class="sc">~</span> .)</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
+<span id="cb39-4"><a href="data-visualization.html#cb39-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(class))</span></code></pre></div>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
+<div class="info">
+<p>Please check <code>facet_grid()</code> on your own.</p>
+</div>
 </div>
 <div id="themes" class="section level3" number="7.6.9">
 <h3><span class="header-section-number">7.6.9</span> Themes</h3>
 <p>We can easily change the aesthetic themes of the graph by adding one layer of <code>theme_*()</code>.</p>
 <div class="sourceCode" id="cb40"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb40-1"><a href="data-visualization.html#cb40-1" aria-hidden="true" tabindex="-1"></a>graph1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy, <span class="at">color =</span> drv)) <span class="sc">+</span></span>
 <span id="cb40-2"><a href="data-visualization.html#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb40-3"><a href="data-visualization.html#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Engine Displacement (litres)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Highway Miles per Gallon&quot;</span>,</span>
-<span id="cb40-4"><a href="data-visualization.html#cb40-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Scatter Plot -- DISPL by HWY&quot;</span>)</span>
-<span id="cb40-5"><a href="data-visualization.html#cb40-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-6"><a href="data-visualization.html#cb40-6" aria-hidden="true" tabindex="-1"></a>graph1</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
+<span id="cb40-3"><a href="data-visualization.html#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Engine Displacement (litres)&quot;</span>,</span>
+<span id="cb40-4"><a href="data-visualization.html#cb40-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Highway Miles per Gallon&quot;</span>,</span>
+<span id="cb40-5"><a href="data-visualization.html#cb40-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Scatter Plot -- DISPL by HWY&quot;</span>)</span>
+<span id="cb40-6"><a href="data-visualization.html#cb40-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-7"><a href="data-visualization.html#cb40-7" aria-hidden="true" tabindex="-1"></a>graph1</span></code></pre></div>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
 <div class="sourceCode" id="cb41"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb41-1"><a href="data-visualization.html#cb41-1" aria-hidden="true" tabindex="-1"></a>graph1 <span class="sc">+</span> <span class="fu">theme_bw</span>(<span class="at">base_family =</span> <span class="st">&quot;Times New Roman&quot;</span>)</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-45-2.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-46-2.png" width="672" /></p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb42-1"><a href="data-visualization.html#cb42-1" aria-hidden="true" tabindex="-1"></a>graph1 <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-45-3.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-46-3.png" width="672" /></p>
 <div class="sourceCode" id="cb43"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb43-1"><a href="data-visualization.html#cb43-1" aria-hidden="true" tabindex="-1"></a>graph1 <span class="sc">+</span> <span class="fu">theme_dark</span>()</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-45-4.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-46-4.png" width="672" /></p>
 <div class="sourceCode" id="cb44"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb44-1"><a href="data-visualization.html#cb44-1" aria-hidden="true" tabindex="-1"></a>graph1 <span class="sc">+</span> <span class="fu">theme_classic</span>()</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-45-5.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-46-5.png" width="672" /></p>
 <div class="sourceCode" id="cb45"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb45-1"><a href="data-visualization.html#cb45-1" aria-hidden="true" tabindex="-1"></a>graph1 <span class="sc">+</span> <span class="fu">theme_light</span>()</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-45-6.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-46-6.png" width="672" /></p>
 </div>
 </div>
 <div id="saving-plots" class="section level2" number="7.7">
@@ -1511,7 +1534,7 @@ Could you predict what kind of graph you would get with the following code?
 <pre class="Rout"><code>[1] &quot;gg&quot;     &quot;ggplot&quot;</code></pre>
 <div class="sourceCode" id="cb48"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb48-1"><a href="data-visualization.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># summary(my_first_graph) # check the properties of the graph</span></span>
 <span id="cb48-2"><a href="data-visualization.html#cb48-2" aria-hidden="true" tabindex="-1"></a>my_first_graph <span class="co"># auto-print the ggplot</span></span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-47-1.png" width="672" /></p>
 <div class="sourceCode" id="cb49"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb49-1"><a href="data-visualization.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(</span>
 <span id="cb49-2"><a href="data-visualization.html#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">filename =</span> <span class="st">&quot;my_first_plot.png&quot;</span>,</span>
 <span id="cb49-3"><a href="data-visualization.html#cb49-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">plot =</span> my_first_graph,</span>
@@ -1531,17 +1554,17 @@ Could you predict what kind of graph you would get with the following code?
 </div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-49" class="exercise"><strong>Exercise 7.4  </strong></span>Please create a scatter plot showing the relationship between <code>Sepal.Length</code> and <code>Petal.Length</code> for different iris <code>Species</code>. Also, please add the regression lines for each species. Your graph should look as close to the sample as possible.
+<span id="exr:unnamed-chunk-50" class="exercise"><strong>Exercise 7.5  </strong></span>Please create a scatter plot showing the relationship between <code>Sepal.Length</code> and <code>Petal.Length</code> for different iris <code>Species</code>. Also, please add the regression lines for each species. Your graph should look as close to the sample as possible.
 </div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-51" class="exercise"><strong>Exercise 7.5  </strong></span>Please create a boxplot showing the <code>Petal.Width</code> distributions of each iris <code>Species</code>.
+<span id="exr:unnamed-chunk-52" class="exercise"><strong>Exercise 7.6  </strong></span>Please create a boxplot showing the <code>Petal.Width</code> distributions of each iris <code>Species</code>.
 </div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-53" class="exercise"><strong>Exercise 7.6  </strong></span>Please create boxplots showing the distributions of <code>Petal.Width</code> and <code>Sepal.Width</code> of different iris <code>Species</code> on the same graph.</p>
+<p><span id="exr:unnamed-chunk-54" class="exercise"><strong>Exercise 7.7  </strong></span>Please create boxplots showing the distributions of <code>Petal.Width</code> and <code>Sepal.Width</code> of different iris <code>Species</code> on the same graph.</p>
 Hint: You may need to transform your data into a longer format, as shown below, before you create the boxplot. See <code>tidyr::pivot_longer()</code>. Please work on this exercise when we finish Chapter <a href="data-manipulation.html#data-manipulation">8</a>.
 </div>
 <div data-pagedtable="false">
@@ -1549,7 +1572,7 @@ Hint: You may need to transform your data into a longer format, as shown below, 
 {"columns":[{"label":["Width.Types"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Values"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Species"],"name":[3],"type":["fct"],"align":["left"]}],"data":[{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.5","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.0","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.2","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.1","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.6","3":"setosa"},{"1":"Petal.Width","2":"0.4","3":"setosa"},{"1":"Sepal.Width","2":"3.9","3":"setosa"},{"1":"Petal.Width","2":"0.3","3":"setosa"},{"1":"Sepal.Width","2":"3.4","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.4","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"2.9","3":"setosa"},{"1":"Petal.Width","2":"0.1","3":"setosa"},{"1":"Sepal.Width","2":"3.1","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.7","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.4","3":"setosa"},{"1":"Petal.Width","2":"0.1","3":"setosa"},{"1":"Sepal.Width","2":"3.0","3":"setosa"},{"1":"Petal.Width","2":"0.1","3":"setosa"},{"1":"Sepal.Width","2":"3.0","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"4.0","3":"setosa"},{"1":"Petal.Width","2":"0.4","3":"setosa"},{"1":"Sepal.Width","2":"4.4","3":"setosa"},{"1":"Petal.Width","2":"0.4","3":"setosa"},{"1":"Sepal.Width","2":"3.9","3":"setosa"},{"1":"Petal.Width","2":"0.3","3":"setosa"},{"1":"Sepal.Width","2":"3.5","3":"setosa"},{"1":"Petal.Width","2":"0.3","3":"setosa"},{"1":"Sepal.Width","2":"3.8","3":"setosa"},{"1":"Petal.Width","2":"0.3","3":"setosa"},{"1":"Sepal.Width","2":"3.8","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.4","3":"setosa"},{"1":"Petal.Width","2":"0.4","3":"setosa"},{"1":"Sepal.Width","2":"3.7","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.6","3":"setosa"},{"1":"Petal.Width","2":"0.5","3":"setosa"},{"1":"Sepal.Width","2":"3.3","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.4","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.0","3":"setosa"},{"1":"Petal.Width","2":"0.4","3":"setosa"},{"1":"Sepal.Width","2":"3.4","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.5","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.4","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.2","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.1","3":"setosa"},{"1":"Petal.Width","2":"0.4","3":"setosa"},{"1":"Sepal.Width","2":"3.4","3":"setosa"},{"1":"Petal.Width","2":"0.1","3":"setosa"},{"1":"Sepal.Width","2":"4.1","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"4.2","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.1","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.2","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.5","3":"setosa"},{"1":"Petal.Width","2":"0.1","3":"setosa"},{"1":"Sepal.Width","2":"3.6","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.0","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.4","3":"setosa"},{"1":"Petal.Width","2":"0.3","3":"setosa"},{"1":"Sepal.Width","2":"3.5","3":"setosa"},{"1":"Petal.Width","2":"0.3","3":"setosa"},{"1":"Sepal.Width","2":"2.3","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.2","3":"setosa"},{"1":"Petal.Width","2":"0.6","3":"setosa"},{"1":"Sepal.Width","2":"3.5","3":"setosa"},{"1":"Petal.Width","2":"0.4","3":"setosa"},{"1":"Sepal.Width","2":"3.8","3":"setosa"},{"1":"Petal.Width","2":"0.3","3":"setosa"},{"1":"Sepal.Width","2":"3.0","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.8","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.2","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.7","3":"setosa"},{"1":"Petal.Width","2":"0.2","3":"setosa"},{"1":"Sepal.Width","2":"3.3","3":"setosa"},{"1":"Petal.Width","2":"1.4","3":"versicolor"},{"1":"Sepal.Width","2":"3.2","3":"versicolor"},{"1":"Petal.Width","2":"1.5","3":"versicolor"},{"1":"Sepal.Width","2":"3.2","3":"versicolor"},{"1":"Petal.Width","2":"1.5","3":"versicolor"},{"1":"Sepal.Width","2":"3.1","3":"versicolor"},{"1":"Petal.Width","2":"1.3","3":"versicolor"},{"1":"Sepal.Width","2":"2.3","3":"versicolor"},{"1":"Petal.Width","2":"1.5","3":"versicolor"},{"1":"Sepal.Width","2":"2.8","3":"versicolor"},{"1":"Petal.Width","2":"1.3","3":"versicolor"},{"1":"Sepal.Width","2":"2.8","3":"versicolor"},{"1":"Petal.Width","2":"1.6","3":"versicolor"},{"1":"Sepal.Width","2":"3.3","3":"versicolor"},{"1":"Petal.Width","2":"1.0","3":"versicolor"},{"1":"Sepal.Width","2":"2.4","3":"versicolor"},{"1":"Petal.Width","2":"1.3","3":"versicolor"},{"1":"Sepal.Width","2":"2.9","3":"versicolor"},{"1":"Petal.Width","2":"1.4","3":"versicolor"},{"1":"Sepal.Width","2":"2.7","3":"versicolor"},{"1":"Petal.Width","2":"1.0","3":"versicolor"},{"1":"Sepal.Width","2":"2.0","3":"versicolor"},{"1":"Petal.Width","2":"1.5","3":"versicolor"},{"1":"Sepal.Width","2":"3.0","3":"versicolor"},{"1":"Petal.Width","2":"1.0","3":"versicolor"},{"1":"Sepal.Width","2":"2.2","3":"versicolor"},{"1":"Petal.Width","2":"1.4","3":"versicolor"},{"1":"Sepal.Width","2":"2.9","3":"versicolor"},{"1":"Petal.Width","2":"1.3","3":"versicolor"},{"1":"Sepal.Width","2":"2.9","3":"versicolor"},{"1":"Petal.Width","2":"1.4","3":"versicolor"},{"1":"Sepal.Width","2":"3.1","3":"versicolor"},{"1":"Petal.Width","2":"1.5","3":"versicolor"},{"1":"Sepal.Width","2":"3.0","3":"versicolor"},{"1":"Petal.Width","2":"1.0","3":"versicolor"},{"1":"Sepal.Width","2":"2.7","3":"versicolor"},{"1":"Petal.Width","2":"1.5","3":"versicolor"},{"1":"Sepal.Width","2":"2.2","3":"versicolor"},{"1":"Petal.Width","2":"1.1","3":"versicolor"},{"1":"Sepal.Width","2":"2.5","3":"versicolor"},{"1":"Petal.Width","2":"1.8","3":"versicolor"},{"1":"Sepal.Width","2":"3.2","3":"versicolor"},{"1":"Petal.Width","2":"1.3","3":"versicolor"},{"1":"Sepal.Width","2":"2.8","3":"versicolor"},{"1":"Petal.Width","2":"1.5","3":"versicolor"},{"1":"Sepal.Width","2":"2.5","3":"versicolor"},{"1":"Petal.Width","2":"1.2","3":"versicolor"},{"1":"Sepal.Width","2":"2.8","3":"versicolor"},{"1":"Petal.Width","2":"1.3","3":"versicolor"},{"1":"Sepal.Width","2":"2.9","3":"versicolor"},{"1":"Petal.Width","2":"1.4","3":"versicolor"},{"1":"Sepal.Width","2":"3.0","3":"versicolor"},{"1":"Petal.Width","2":"1.4","3":"versicolor"},{"1":"Sepal.Width","2":"2.8","3":"versicolor"},{"1":"Petal.Width","2":"1.7","3":"versicolor"},{"1":"Sepal.Width","2":"3.0","3":"versicolor"},{"1":"Petal.Width","2":"1.5","3":"versicolor"},{"1":"Sepal.Width","2":"2.9","3":"versicolor"},{"1":"Petal.Width","2":"1.0","3":"versicolor"},{"1":"Sepal.Width","2":"2.6","3":"versicolor"},{"1":"Petal.Width","2":"1.1","3":"versicolor"},{"1":"Sepal.Width","2":"2.4","3":"versicolor"},{"1":"Petal.Width","2":"1.0","3":"versicolor"},{"1":"Sepal.Width","2":"2.4","3":"versicolor"},{"1":"Petal.Width","2":"1.2","3":"versicolor"},{"1":"Sepal.Width","2":"2.7","3":"versicolor"},{"1":"Petal.Width","2":"1.6","3":"versicolor"},{"1":"Sepal.Width","2":"2.7","3":"versicolor"},{"1":"Petal.Width","2":"1.5","3":"versicolor"},{"1":"Sepal.Width","2":"3.0","3":"versicolor"},{"1":"Petal.Width","2":"1.6","3":"versicolor"},{"1":"Sepal.Width","2":"3.4","3":"versicolor"},{"1":"Petal.Width","2":"1.5","3":"versicolor"},{"1":"Sepal.Width","2":"3.1","3":"versicolor"},{"1":"Petal.Width","2":"1.3","3":"versicolor"},{"1":"Sepal.Width","2":"2.3","3":"versicolor"},{"1":"Petal.Width","2":"1.3","3":"versicolor"},{"1":"Sepal.Width","2":"3.0","3":"versicolor"},{"1":"Petal.Width","2":"1.3","3":"versicolor"},{"1":"Sepal.Width","2":"2.5","3":"versicolor"},{"1":"Petal.Width","2":"1.2","3":"versicolor"},{"1":"Sepal.Width","2":"2.6","3":"versicolor"},{"1":"Petal.Width","2":"1.4","3":"versicolor"},{"1":"Sepal.Width","2":"3.0","3":"versicolor"},{"1":"Petal.Width","2":"1.2","3":"versicolor"},{"1":"Sepal.Width","2":"2.6","3":"versicolor"},{"1":"Petal.Width","2":"1.0","3":"versicolor"},{"1":"Sepal.Width","2":"2.3","3":"versicolor"},{"1":"Petal.Width","2":"1.3","3":"versicolor"},{"1":"Sepal.Width","2":"2.7","3":"versicolor"},{"1":"Petal.Width","2":"1.2","3":"versicolor"},{"1":"Sepal.Width","2":"3.0","3":"versicolor"},{"1":"Petal.Width","2":"1.3","3":"versicolor"},{"1":"Sepal.Width","2":"2.9","3":"versicolor"},{"1":"Petal.Width","2":"1.3","3":"versicolor"},{"1":"Sepal.Width","2":"2.9","3":"versicolor"},{"1":"Petal.Width","2":"1.1","3":"versicolor"},{"1":"Sepal.Width","2":"2.5","3":"versicolor"},{"1":"Petal.Width","2":"1.3","3":"versicolor"},{"1":"Sepal.Width","2":"2.8","3":"versicolor"},{"1":"Petal.Width","2":"2.5","3":"virginica"},{"1":"Sepal.Width","2":"3.3","3":"virginica"},{"1":"Petal.Width","2":"1.9","3":"virginica"},{"1":"Sepal.Width","2":"2.7","3":"virginica"},{"1":"Petal.Width","2":"2.1","3":"virginica"},{"1":"Sepal.Width","2":"3.0","3":"virginica"},{"1":"Petal.Width","2":"1.8","3":"virginica"},{"1":"Sepal.Width","2":"2.9","3":"virginica"},{"1":"Petal.Width","2":"2.2","3":"virginica"},{"1":"Sepal.Width","2":"3.0","3":"virginica"},{"1":"Petal.Width","2":"2.1","3":"virginica"},{"1":"Sepal.Width","2":"3.0","3":"virginica"},{"1":"Petal.Width","2":"1.7","3":"virginica"},{"1":"Sepal.Width","2":"2.5","3":"virginica"},{"1":"Petal.Width","2":"1.8","3":"virginica"},{"1":"Sepal.Width","2":"2.9","3":"virginica"},{"1":"Petal.Width","2":"1.8","3":"virginica"},{"1":"Sepal.Width","2":"2.5","3":"virginica"},{"1":"Petal.Width","2":"2.5","3":"virginica"},{"1":"Sepal.Width","2":"3.6","3":"virginica"},{"1":"Petal.Width","2":"2.0","3":"virginica"},{"1":"Sepal.Width","2":"3.2","3":"virginica"},{"1":"Petal.Width","2":"1.9","3":"virginica"},{"1":"Sepal.Width","2":"2.7","3":"virginica"},{"1":"Petal.Width","2":"2.1","3":"virginica"},{"1":"Sepal.Width","2":"3.0","3":"virginica"},{"1":"Petal.Width","2":"2.0","3":"virginica"},{"1":"Sepal.Width","2":"2.5","3":"virginica"},{"1":"Petal.Width","2":"2.4","3":"virginica"},{"1":"Sepal.Width","2":"2.8","3":"virginica"},{"1":"Petal.Width","2":"2.3","3":"virginica"},{"1":"Sepal.Width","2":"3.2","3":"virginica"},{"1":"Petal.Width","2":"1.8","3":"virginica"},{"1":"Sepal.Width","2":"3.0","3":"virginica"},{"1":"Petal.Width","2":"2.2","3":"virginica"},{"1":"Sepal.Width","2":"3.8","3":"virginica"},{"1":"Petal.Width","2":"2.3","3":"virginica"},{"1":"Sepal.Width","2":"2.6","3":"virginica"},{"1":"Petal.Width","2":"1.5","3":"virginica"},{"1":"Sepal.Width","2":"2.2","3":"virginica"},{"1":"Petal.Width","2":"2.3","3":"virginica"},{"1":"Sepal.Width","2":"3.2","3":"virginica"},{"1":"Petal.Width","2":"2.0","3":"virginica"},{"1":"Sepal.Width","2":"2.8","3":"virginica"},{"1":"Petal.Width","2":"2.0","3":"virginica"},{"1":"Sepal.Width","2":"2.8","3":"virginica"},{"1":"Petal.Width","2":"1.8","3":"virginica"},{"1":"Sepal.Width","2":"2.7","3":"virginica"},{"1":"Petal.Width","2":"2.1","3":"virginica"},{"1":"Sepal.Width","2":"3.3","3":"virginica"},{"1":"Petal.Width","2":"1.8","3":"virginica"},{"1":"Sepal.Width","2":"3.2","3":"virginica"},{"1":"Petal.Width","2":"1.8","3":"virginica"},{"1":"Sepal.Width","2":"2.8","3":"virginica"},{"1":"Petal.Width","2":"1.8","3":"virginica"},{"1":"Sepal.Width","2":"3.0","3":"virginica"},{"1":"Petal.Width","2":"2.1","3":"virginica"},{"1":"Sepal.Width","2":"2.8","3":"virginica"},{"1":"Petal.Width","2":"1.6","3":"virginica"},{"1":"Sepal.Width","2":"3.0","3":"virginica"},{"1":"Petal.Width","2":"1.9","3":"virginica"},{"1":"Sepal.Width","2":"2.8","3":"virginica"},{"1":"Petal.Width","2":"2.0","3":"virginica"},{"1":"Sepal.Width","2":"3.8","3":"virginica"},{"1":"Petal.Width","2":"2.2","3":"virginica"},{"1":"Sepal.Width","2":"2.8","3":"virginica"},{"1":"Petal.Width","2":"1.5","3":"virginica"},{"1":"Sepal.Width","2":"2.8","3":"virginica"},{"1":"Petal.Width","2":"1.4","3":"virginica"},{"1":"Sepal.Width","2":"2.6","3":"virginica"},{"1":"Petal.Width","2":"2.3","3":"virginica"},{"1":"Sepal.Width","2":"3.0","3":"virginica"},{"1":"Petal.Width","2":"2.4","3":"virginica"},{"1":"Sepal.Width","2":"3.4","3":"virginica"},{"1":"Petal.Width","2":"1.8","3":"virginica"},{"1":"Sepal.Width","2":"3.1","3":"virginica"},{"1":"Petal.Width","2":"1.8","3":"virginica"},{"1":"Sepal.Width","2":"3.0","3":"virginica"},{"1":"Petal.Width","2":"2.1","3":"virginica"},{"1":"Sepal.Width","2":"3.1","3":"virginica"},{"1":"Petal.Width","2":"2.4","3":"virginica"},{"1":"Sepal.Width","2":"3.1","3":"virginica"},{"1":"Petal.Width","2":"2.3","3":"virginica"},{"1":"Sepal.Width","2":"3.1","3":"virginica"},{"1":"Petal.Width","2":"1.9","3":"virginica"},{"1":"Sepal.Width","2":"2.7","3":"virginica"},{"1":"Petal.Width","2":"2.3","3":"virginica"},{"1":"Sepal.Width","2":"3.2","3":"virginica"},{"1":"Petal.Width","2":"2.5","3":"virginica"},{"1":"Sepal.Width","2":"3.3","3":"virginica"},{"1":"Petal.Width","2":"2.3","3":"virginica"},{"1":"Sepal.Width","2":"3.0","3":"virginica"},{"1":"Petal.Width","2":"1.9","3":"virginica"},{"1":"Sepal.Width","2":"2.5","3":"virginica"},{"1":"Petal.Width","2":"2.0","3":"virginica"},{"1":"Sepal.Width","2":"3.0","3":"virginica"},{"1":"Petal.Width","2":"2.3","3":"virginica"},{"1":"Sepal.Width","2":"3.4","3":"virginica"},{"1":"Petal.Width","2":"1.8","3":"virginica"},{"1":"Sepal.Width","2":"3.0","3":"virginica"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
 </div>
 <div id="exercises-on-covid-19" class="section level2" number="7.9">
 <h2><span class="header-section-number">7.9</span> Exercises on COVID-19</h2>
@@ -1557,7 +1580,7 @@ Hint: You may need to transform your data into a longer format, as shown below, 
 <p>The following exercises are based on a dataset downloaded from <a href="https://www.kaggle.com/sudalairajkumar/novel-corona-virus-2019-dataset">Kaggle</a>. The dataset is also available in <code>demo_data/data-covid19.csv</code>.</p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-55" class="exercise"><strong>Exercise 7.7  </strong></span>Load the dataset in <code>demo_data/data-covid19.csv</code> into R as a data frame named <code>covid19</code>.</p>
+<p><span id="exr:unnamed-chunk-56" class="exercise"><strong>Exercise 7.8  </strong></span>Load the dataset in <code>demo_data/data-covid19.csv</code> into R as a data frame named <code>covid19</code>.</p>
 Hint: Check <code>readr::read_csv()</code>
 </div>
 <div data-pagedtable="false">
@@ -1585,25 +1608,25 @@ Hint: Check <code>readr::read_csv()</code>
 </div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-59" class="exercise"><strong>Exercise 7.8  </strong></span>Use <code>ggplot2</code> to create a line plot showing the number of confirmed cases by month for the following countries: Taiwan, Japan, US, UK, Germany, Netherlands, Mainland China. A sample graph is shown below.
+<span id="exr:unnamed-chunk-60" class="exercise"><strong>Exercise 7.9  </strong></span>Use <code>ggplot2</code> to create a line plot showing the number of confirmed cases by month for the following countries: Taiwan, Japan, US, UK, Germany, Netherlands, Mainland China. A sample graph is shown below.
 </div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-60-1.png" width="90%" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-61-1.png" width="90%" /></p>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-61" class="exercise"><strong>Exercise 7.9  </strong></span>Create a bar plot showing the top 10 countries ranked according to their number of confirmed cases of the COVID19.
+<span id="exr:unnamed-chunk-62" class="exercise"><strong>Exercise 7.10  </strong></span>Create a bar plot showing the top 10 countries ranked according to their number of confirmed cases of the COVID19.
 </div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-62-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-63-1.png" width="672" /></p>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-63" class="exercise"><strong>Exercise 7.10  </strong></span>Create a bar plot showing the top 10 countries ranked according to their death rates of the COVID19. (Death rates are defined as the number of deaths divided by the number of confirmed cases.)
+<span id="exr:unnamed-chunk-64" class="exercise"><strong>Exercise 7.11  </strong></span>Create a bar plot showing the top 10 countries ranked according to their death rates of the COVID19. (Death rates are defined as the number of deaths divided by the number of confirmed cases.)
 </div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-64-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-65-1.png" width="672" /></p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-65" class="exercise"><strong>Exercise 7.11  (bonus)  </strong></span>Create a world map showing the current outbreak of covid19.</p>
+<p><span id="exr:unnamed-chunk-66" class="exercise"><strong>Exercise 7.12  (bonus)  </strong></span>Create a world map showing the current outbreak of covid19.</p>
 Hint: Please check <code>ggplot2::geom_polygon()</code> and the package <code>library(maps)</code>. This exercise is made to see if you know how to find resources online for more complex tasks like this. Please note that the country names may not match.
 </div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-66-1.png" width="100%" height="100%" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-67-1.png" width="100%" height="100%" /></p>
 
 </div>
 </div>
