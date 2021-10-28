@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-10-28" />
+<meta name="date" content="2021-10-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -293,7 +293,7 @@ div.csl-indent {
 <li class="chapter" data-level="8.9" data-path="data-manipulation.html"><a href="data-manipulation.html#count"><i class="fa fa-check"></i><b>8.9</b> <code>count()</code></a></li>
 <li class="chapter" data-level="8.10" data-path="data-manipulation.html"><a href="data-manipulation.html#tidy-data"><i class="fa fa-check"></i><b>8.10</b> Tidy Data</a>
 <ul>
-<li class="chapter" data-level="8.10.1" data-path="data-manipulation.html"><a href="data-manipulation.html#an-long-to-wide-example"><i class="fa fa-check"></i><b>8.10.1</b> An Long-to-Wide Example</a></li>
+<li class="chapter" data-level="8.10.1" data-path="data-manipulation.html"><a href="data-manipulation.html#a-long-to-wide-example"><i class="fa fa-check"></i><b>8.10.1</b> A Long-to-Wide Example</a></li>
 <li class="chapter" data-level="8.10.2" data-path="data-manipulation.html"><a href="data-manipulation.html#a-wide-to-long-example"><i class="fa fa-check"></i><b>8.10.2</b> A Wide-to-Long Example</a></li>
 </ul></li>
 <li class="chapter" data-level="8.11" data-path="data-manipulation.html"><a href="data-manipulation.html#exerceises"><i class="fa fa-check"></i><b>8.11</b> Exerceises</a></li>
@@ -894,10 +894,14 @@ Please check <a href="subsetting.html#vector">Chapter 4.1 Vector</a> for more lo
 {"columns":[{"label":["gender"],"name":[1],"type":["chr"],"align":["left"]},{"label":["math_average"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["math_median"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["math_sd"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"female","2":"63.63320","3":"65","4":"15.49145"},{"1":"male","2":"68.72822","3":"69","4":"14.35628"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
+<hr />
+<p><img src="images/groupby-demo.gif" /><!-- --></p>
+<hr />
 </div>
 <div id="count" class="section level2" number="8.9">
 <h2><span class="header-section-number">8.9</span> <code>count()</code></h2>
-<p>One of the most-often used feature when we have data frames is to tally the frequencies of the subjects according to some of the columns. The function <code>count()</code> is born for this. For example, we can create a frequency distribution of male and female students of different parental levels of education (i.e., <code>parent_edu</code> x <code>gender</code> contingency table):</p>
+<p>One of the most-often used feature when we have data frames is to tally the frequencies of the subjects according to some of the columns. These columns are often categorical variables in the forms of <code>character</code> or <code>factor</code>.</p>
+<p>The function <code>count()</code> is born for this. For example, we can create a frequency distribution of male and female students of different parental levels of education (i.e., <code>parent_edu</code> x <code>gender</code> contingency table):</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb33-1"><a href="data-manipulation.html#cb33-1" aria-hidden="true" tabindex="-1"></a>student1 <span class="sc">%&gt;%</span></span>
 <span id="cb33-2"><a href="data-manipulation.html#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(parent_edu, gender)</span></code></pre></div>
 <div data-pagedtable="false">
@@ -907,7 +911,7 @@ Please check <a href="subsetting.html#vector">Chapter 4.1 Vector</a> for more lo
 </div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-33" class="exercise"><strong>Exercise 8.3  </strong></span>Continuing the above example, how can you create another column, which includes the percentage of male and female students for those of the same parental level education (see below)?
+<span id="exr:unnamed-chunk-34" class="exercise"><strong>Exercise 8.3  </strong></span>Continuing the above example, how can you create another column, which includes the percentage of male and female students for those of the same parental level education (see below)?
 </div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
@@ -930,8 +934,8 @@ Please check <a href="subsetting.html#vector">Chapter 4.1 Vector</a> for more lo
 <li>One variable might be spread across multiple columns (from long to wide)</li>
 <li>One observation might be scattered across multiple rows (from wide to long)</li>
 </ol>
-<div id="an-long-to-wide-example" class="section level3" number="8.10.1">
-<h3><span class="header-section-number">8.10.1</span> An Long-to-Wide Example</h3>
+<div id="a-long-to-wide-example" class="section level3" number="8.10.1">
+<h3><span class="header-section-number">8.10.1</span> A Long-to-Wide Example</h3>
 <p>Here I would like to illustrate the idea of tidy dataset and also ways of tidying with a simple dataset provided in <span class="citation"><a href="#ref-hadley2017" role="doc-biblioref">Wickham and Grolemund</a> (<a href="#ref-hadley2017" role="doc-biblioref">2017</a>)</span>, Chapter 12.</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb34-1"><a href="data-manipulation.html#cb34-1" aria-hidden="true" tabindex="-1"></a>people <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
 <span id="cb34-2"><a href="data-manipulation.html#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>name,             <span class="sc">~</span>profile,  <span class="sc">~</span>values,</span>
@@ -986,21 +990,22 @@ Figure 8.1: From Long to Wide: <code>pivot_wider()</code>
 {"columns":[{"label":["pregnant"],"name":[1],"type":["chr"],"align":["left"]},{"label":["male"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["female"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"yes","2":"NA","3":"10"},{"1":"no","2":"20","3":"12"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<p>The above dataset <code>preg</code> can be tidied up as follows:</p>
+<p>The above dataset <code>preg</code> may not be tidy enough because not all the observations have their own rows. Also, there is an underlying factor that gets spread into different columns by its levels, i.e., GENDER -&gt; [male, female].</p>
+<p>This dataset can be tidied up as follows:</p>
 <ul>
-<li>we can have a column <code>sex</code></li>
-<li>we can have a column <code>pregnant</code></li>
-<li>we can have a column <code>count</code> (representing the number of observations for the combinations of <code>sex</code> and <code>pregnant</code>)</li>
+<li>We can have a column <code>gender</code></li>
+<li>We can have a column <code>pregnant</code></li>
+<li>We can have a column <code>count</code> (representing the number of observations for the combinations of <code>gender</code> and <code>pregnant</code>)</li>
 </ul>
-<p>In other words, we need strategy II:</p>
+<p>In other words, we can use strategy II:</p>
 <blockquote>
 <p>One observation might be scattered across multiple rows (from wide to long)</p>
 </blockquote>
-<p>(Each level combination of <code>pregnant</code> and <code>sex</code> can be one observation.)</p>
+<p>(Each level combination of <code>pregnant</code> and <code>gender</code> can be one observation.)</p>
 <p>And the function <code>tidyr::pivot_longer()</code> is made for this. There are three important parameters:</p>
 <ul>
 <li><code>cols = ...</code>: The set of columns whose names are values, not variables. Here they are <code>male</code> and <code>female</code>.</li>
-<li><code>names_to = ...</code>: The name of the variable to move the column names to. Here it is <code>sex</code>.</li>
+<li><code>names_to = ...</code>: The name of the variable to move the column names to. Here it is <code>gender</code>.</li>
 <li><code>values_to = ...</code>: The name of the variable to move the values to. Here it is <code>count</code>.</li>
 </ul>
 <div class="figure"><span id="fig:wide2long"></span>
@@ -1011,16 +1016,16 @@ Figure 8.2: From Wide to Long: <code>pivot_longer()</code>
 </div>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb37-1"><a href="data-manipulation.html#cb37-1" aria-hidden="true" tabindex="-1"></a>preg <span class="sc">%&gt;%</span></span>
 <span id="cb37-2"><a href="data-manipulation.html#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols=</span><span class="fu">c</span>(<span class="st">&quot;male&quot;</span>,<span class="st">&quot;female&quot;</span>), </span>
-<span id="cb37-3"><a href="data-manipulation.html#cb37-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">names_to =</span> <span class="st">&quot;sex&quot;</span>,</span>
+<span id="cb37-3"><a href="data-manipulation.html#cb37-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">names_to =</span> <span class="st">&quot;gender&quot;</span>,</span>
 <span id="cb37-4"><a href="data-manipulation.html#cb37-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">values_to =</span> <span class="st">&quot;count&quot;</span>)</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["pregnant"],"name":[1],"type":["chr"],"align":["left"]},{"label":["sex"],"name":[2],"type":["chr"],"align":["left"]},{"label":["count"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"yes","2":"male","3":"NA"},{"1":"yes","2":"female","3":"10"},{"1":"no","2":"male","3":"20"},{"1":"no","2":"female","3":"12"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["pregnant"],"name":[1],"type":["chr"],"align":["left"]},{"label":["gender"],"name":[2],"type":["chr"],"align":["left"]},{"label":["count"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"yes","2":"male","3":"NA"},{"1":"yes","2":"female","3":"10"},{"1":"no","2":"male","3":"20"},{"1":"no","2":"female","3":"12"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-40" class="exercise"><strong>Exercise 8.4  </strong></span>Please get familiar with <code>tidyr::separate()</code> and <code>tidyr::unite()</code>, which are two important functions to manipulate the columns of the data frame.
+<span id="exr:unnamed-chunk-41" class="exercise"><strong>Exercise 8.4  </strong></span>Please get familiar with <code>tidyr::separate()</code> and <code>tidyr::unite()</code>, which are two important functions to manipulate the columns of the data frame.
 </div>
 </div>
 </div>
@@ -1064,7 +1069,7 @@ Figure 8.2: From Wide to Long: <code>pivot_longer()</code>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-44" class="exercise"><strong>Exercise 8.8  </strong></span>In terms of Parental Education Levels (i.e., <code>parent_edu</code>), it would be better to be coded as an ordered factor. Can you tranform the variable <code>parent_edu</code> into a <code>ordered factor</code> and regenerate the outputs requested in Exercise <a href="data-manipulation.html#exr:ex3">8.7</a>.</p>
+<p><span id="exr:unnamed-chunk-45" class="exercise"><strong>Exercise 8.8  </strong></span>In terms of Parental Education Levels (i.e., <code>parent_edu</code>), it would be better to be coded as an ordered factor. Can you tranform the variable <code>parent_edu</code> into a <code>ordered factor</code> and regenerate the outputs requested in Exercise <a href="data-manipulation.html#exr:ex3">8.7</a>.</p>
 Let us assume that the factor <code>parent_edu</code> follows the following order: <code>some high school</code> &lt; <code>high school</code> &lt; <code>some college</code> &lt; <code>associate's degree</code> &lt; <code>bachelor's degree</code> &lt; <code>master's degree</code>
 </div>
 <div data-pagedtable="false">
@@ -1076,10 +1081,10 @@ Let us assume that the factor <code>parent_edu</code> follows the following orde
 <div class="exercise">
 <span id="exr:ex5" class="exercise"><strong>Exercise 8.9  </strong></span>Have you any ideas how to generate the following graphs using <code>ggplot2()</code>? Your goal is to re-create graphs that look as similar to the following as possible.
 </div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-46-1.png" width="672" /><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-46-2.png" width="672" /><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-46-3.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-47-1.png" width="672" /><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-47-2.png" width="672" /><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-47-3.png" width="672" /></p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-47" class="exercise"><strong>Exercise 8.10  </strong></span>In this exercise, please first download the dataset <code>demo_data/data-word-freq.csv</code>. You may use <code>readr::read_csv()</code> to load the dataset into R. This is a dataset including word frequencies in two different corpora. For example, the word <em>the</em> appears 346 times in <code>perl</code> corpus but 229 times in <code>python</code> corpus. In other words, each row in <code>word_freq</code> in fact represents the combination of (<code>WORD</code>, <code>CORPUS</code>) because the column <code>FREQ</code> contains the values for those variables. In addition, the same word appears twice in the dataset in the rows (e.g., <em>the</em>, <em>a</em>).</p>
+<p><span id="exr:unnamed-chunk-48" class="exercise"><strong>Exercise 8.10  </strong></span>In this exercise, please first download the dataset <code>demo_data/data-word-freq.csv</code>. You may use <code>readr::read_csv()</code> to load the dataset into R. This is a dataset including word frequencies in two different corpora. For example, the word <em>the</em> appears 346 times in <code>perl</code> corpus but 229 times in <code>python</code> corpus. In other words, each row in <code>word_freq</code> in fact represents the combination of (<code>WORD</code>, <code>CORPUS</code>) because the column <code>FREQ</code> contains the values for those variables. In addition, the same word appears twice in the dataset in the rows (e.g., <em>the</em>, <em>a</em>).</p>
 Please transform <code>word_freq</code> into a wider format, where the word frequencies in each corpus can be independent columns (as shown in the second table). If the word appears in only one of the corpora, its frequency would be 0.
 </div>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb38-1"><a href="data-manipulation.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(readr)</span>

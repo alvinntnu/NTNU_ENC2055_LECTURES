@@ -394,3 +394,8 @@ exr:unnamed-chunk-5
 exr:unnamed-chunk-33
 exr:unnamed-chunk-40
 exr:unnamed-chunk-47
+a-long-to-wide-example
+exr:unnamed-chunk-34
+exr:unnamed-chunk-41
+exr:unnamed-chunk-45
+exr:unnamed-chunk-48

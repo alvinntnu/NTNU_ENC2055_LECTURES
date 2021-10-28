@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-10-15" />
+<meta name="date" content="2021-10-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -123,6 +123,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style-new.css" type="text/css" />
 </head>
@@ -231,16 +253,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="data-visualization.html"><a href="data-visualization.html#ggplot2"><i class="fa fa-check"></i><b>7.2</b> <code>ggplot2</code></a></li>
 <li class="chapter" data-level="7.3" data-path="data-visualization.html"><a href="data-visualization.html#variables-and-data-type"><i class="fa fa-check"></i><b>7.3</b> Variables and Data Type</a></li>
-<li class="chapter" data-level="7.4" data-path="data-visualization.html"><a href="data-visualization.html#one-variable-graph"><i class="fa fa-check"></i><b>7.4</b> One-variable Graph</a></li>
-<li class="chapter" data-level="7.5" data-path="data-visualization.html"><a href="data-visualization.html#two-variable-graph"><i class="fa fa-check"></i><b>7.5</b> Two-variable Graph</a></li>
-<li class="chapter" data-level="7.6" data-path="data-visualization.html"><a href="data-visualization.html#adding-other-aesthetic-features"><i class="fa fa-check"></i><b>7.6</b> Adding Other Aesthetic Features</a>
+<li class="chapter" data-level="7.4" data-path="data-visualization.html"><a href="data-visualization.html#one-variable-graph"><i class="fa fa-check"></i><b>7.4</b> One-variable Graph</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="data-visualization.html"><a href="data-visualization.html#continuous-variable"><i class="fa fa-check"></i><b>7.4.1</b> Continuous Variable</a></li>
+<li class="chapter" data-level="7.4.2" data-path="data-visualization.html"><a href="data-visualization.html#categorical-variable"><i class="fa fa-check"></i><b>7.4.2</b> Categorical Variable</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="data-visualization.html"><a href="data-visualization.html#two-variable-graph"><i class="fa fa-check"></i><b>7.5</b> Two-variable Graph</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="data-visualization.html"><a href="data-visualization.html#continuous-x-continuous-y"><i class="fa fa-check"></i><b>7.5.1</b> Continuous X, Continuous Y</a></li>
+<li class="chapter" data-level="7.5.2" data-path="data-visualization.html"><a href="data-visualization.html#categorical-x-continuous-y"><i class="fa fa-check"></i><b>7.5.2</b> Categorical X, Continuous Y</a></li>
+<li class="chapter" data-level="7.5.3" data-path="data-visualization.html"><a href="data-visualization.html#categorical-x-categorical-y"><i class="fa fa-check"></i><b>7.5.3</b> Categorical X, Categorical Y</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="data-visualization.html"><a href="data-visualization.html#adding-more-aesthetic-features-or-layers"><i class="fa fa-check"></i><b>7.6</b> Adding More Aesthetic Features or Layers</a>
 <ul>
 <li class="chapter" data-level="7.6.1" data-path="data-visualization.html"><a href="data-visualization.html#color"><i class="fa fa-check"></i><b>7.6.1</b> <code>color</code></a></li>
-<li class="chapter" data-level="7.6.2" data-path="data-visualization.html"><a href="data-visualization.html#shape"><i class="fa fa-check"></i><b>7.6.2</b> <code>shape</code></a></li>
-<li class="chapter" data-level="7.6.3" data-path="data-visualization.html"><a href="data-visualization.html#other-geom_...-layers"><i class="fa fa-check"></i><b>7.6.3</b> Other <code>geom_...</code> Layers</a></li>
-<li class="chapter" data-level="7.6.4" data-path="data-visualization.html"><a href="data-visualization.html#labels"><i class="fa fa-check"></i><b>7.6.4</b> Labels</a></li>
-<li class="chapter" data-level="7.6.5" data-path="data-visualization.html"><a href="data-visualization.html#fill"><i class="fa fa-check"></i><b>7.6.5</b> <code>fill</code></a></li>
-<li class="chapter" data-level="7.6.6" data-path="data-visualization.html"><a href="data-visualization.html#interim-summary"><i class="fa fa-check"></i><b>7.6.6</b> Interim Summary</a></li>
+<li class="chapter" data-level="7.6.2" data-path="data-visualization.html"><a href="data-visualization.html#alpha"><i class="fa fa-check"></i><b>7.6.2</b> <code>alpha</code></a></li>
+<li class="chapter" data-level="7.6.3" data-path="data-visualization.html"><a href="data-visualization.html#size"><i class="fa fa-check"></i><b>7.6.3</b> <code>size</code></a></li>
+<li class="chapter" data-level="7.6.4" data-path="data-visualization.html"><a href="data-visualization.html#fill"><i class="fa fa-check"></i><b>7.6.4</b> <code>fill</code></a></li>
+<li class="chapter" data-level="7.6.5" data-path="data-visualization.html"><a href="data-visualization.html#shape"><i class="fa fa-check"></i><b>7.6.5</b> <code>shape</code></a></li>
+<li class="chapter" data-level="7.6.6" data-path="data-visualization.html"><a href="data-visualization.html#other-geom_...-layers"><i class="fa fa-check"></i><b>7.6.6</b> Other <code>geom_...</code> Layers</a></li>
+<li class="chapter" data-level="7.6.7" data-path="data-visualization.html"><a href="data-visualization.html#labels-and-annotations"><i class="fa fa-check"></i><b>7.6.7</b> Labels and Annotations</a></li>
+<li class="chapter" data-level="7.6.8" data-path="data-visualization.html"><a href="data-visualization.html#facets"><i class="fa fa-check"></i><b>7.6.8</b> Facets</a></li>
+<li class="chapter" data-level="7.6.9" data-path="data-visualization.html"><a href="data-visualization.html#themes"><i class="fa fa-check"></i><b>7.6.9</b> Themes</a></li>
 </ul></li>
 <li class="chapter" data-level="7.7" data-path="data-visualization.html"><a href="data-visualization.html#saving-plots"><i class="fa fa-check"></i><b>7.7</b> Saving Plots</a></li>
 <li class="chapter" data-level="7.8" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-iris"><i class="fa fa-check"></i><b>7.8</b> Exercises on <code>iris</code></a></li>
@@ -259,7 +293,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.9" data-path="data-manipulation.html"><a href="data-manipulation.html#count"><i class="fa fa-check"></i><b>8.9</b> <code>count()</code></a></li>
 <li class="chapter" data-level="8.10" data-path="data-manipulation.html"><a href="data-manipulation.html#tidy-data"><i class="fa fa-check"></i><b>8.10</b> Tidy Data</a>
 <ul>
-<li class="chapter" data-level="8.10.1" data-path="data-manipulation.html"><a href="data-manipulation.html#an-long-to-wide-example"><i class="fa fa-check"></i><b>8.10.1</b> An Long-to-Wide Example</a></li>
+<li class="chapter" data-level="8.10.1" data-path="data-manipulation.html"><a href="data-manipulation.html#a-long-to-wide-example"><i class="fa fa-check"></i><b>8.10.1</b> A Long-to-Wide Example</a></li>
 <li class="chapter" data-level="8.10.2" data-path="data-manipulation.html"><a href="data-manipulation.html#a-wide-to-long-example"><i class="fa fa-check"></i><b>8.10.2</b> A Wide-to-Long Example</a></li>
 </ul></li>
 <li class="chapter" data-level="8.11" data-path="data-manipulation.html"><a href="data-manipulation.html#exerceises"><i class="fa fa-check"></i><b>8.11</b> Exerceises</a></li>
@@ -497,7 +531,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="A.4" data-path="the-shell.html"><a href="the-shell.html#text-analytic-related-commands"><i class="fa fa-check"></i><b>A.4</b> Text-Analytic Related Commands</a></li>
 <li class="chapter" data-level="A.5" data-path="the-shell.html"><a href="the-shell.html#references-3"><i class="fa fa-check"></i><b>A.5</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="references-4.html"><a href="references-4.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="B" data-path="reproducible-report.html"><a href="reproducible-report.html"><i class="fa fa-check"></i><b>B</b> Reproducible Report</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="reproducible-report.html"><a href="reproducible-report.html#r-markdown"><i class="fa fa-check"></i><b>B.1</b> R Markdown</a></li>
+<li class="chapter" data-level="B.2" data-path="reproducible-report.html"><a href="reproducible-report.html#open-science"><i class="fa fa-check"></i><b>B.2</b> Open Science</a></li>
+<li class="chapter" data-level="B.3" data-path="reproducible-report.html"><a href="reproducible-report.html#installing-r-markdown"><i class="fa fa-check"></i><b>B.3</b> Installing R Markdown</a></li>
+<li class="chapter" data-level="B.4" data-path="reproducible-report.html"><a href="reproducible-report.html#r-markdown-components"><i class="fa fa-check"></i><b>B.4</b> R Markdown Components</a></li>
+<li class="chapter" data-level="B.5" data-path="reproducible-report.html"><a href="reproducible-report.html#tips"><i class="fa fa-check"></i><b>B.5</b> Tips</a></li>
+<li class="chapter" data-level="B.6" data-path="reproducible-report.html"><a href="reproducible-report.html#references-4"><i class="fa fa-check"></i><b>B.6</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references-5.html"><a href="references-5.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://web.ntnu.edu.tw/~alvinchen" target ="blank">Alvin Chen </a></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
