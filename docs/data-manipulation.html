@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-11-04" />
+<meta name="date" content="2021-11-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -1053,9 +1053,9 @@ Figure 8.2: From Wide to Long: <code>pivot_longer()</code>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb39-1"><a href="data-manipulation.html#cb39-1" aria-hidden="true" tabindex="-1"></a>preg <span class="sc">%&gt;%</span></span>
 <span id="cb39-2"><a href="data-manipulation.html#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols=</span><span class="fu">c</span>(<span class="st">&quot;male&quot;</span>,<span class="st">&quot;female&quot;</span>), </span>
 <span id="cb39-3"><a href="data-manipulation.html#cb39-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">names_to =</span> <span class="st">&quot;gender&quot;</span>,</span>
-<span id="cb39-4"><a href="data-manipulation.html#cb39-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">values_to =</span> <span class="st">&quot;count&quot;</span>, ) <span class="ot">-&gt;</span> preg_wide</span>
+<span id="cb39-4"><a href="data-manipulation.html#cb39-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">values_to =</span> <span class="st">&quot;count&quot;</span>, ) <span class="ot">-&gt;</span> preg_longer</span>
 <span id="cb39-5"><a href="data-manipulation.html#cb39-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-6"><a href="data-manipulation.html#cb39-6" aria-hidden="true" tabindex="-1"></a>preg_wide <span class="sc">%&gt;%</span></span>
+<span id="cb39-6"><a href="data-manipulation.html#cb39-6" aria-hidden="true" tabindex="-1"></a>preg_longer <span class="sc">%&gt;%</span></span>
 <span id="cb39-7"><a href="data-manipulation.html#cb39-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(pregnant,count, <span class="at">fill=</span> gender)) <span class="sc">+</span></span>
 <span id="cb39-8"><a href="data-manipulation.html#cb39-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>, <span class="at">position=</span><span class="fu">position_dodge2</span>())</span></code></pre></div>
 <p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-43-1.png" width="672" /></p>
