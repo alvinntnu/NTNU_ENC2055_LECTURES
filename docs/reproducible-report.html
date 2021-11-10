@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-10-28" />
+<meta name="date" content="2021-11-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -303,7 +303,7 @@ div.csl-indent {
 <li class="chapter" data-level="8.9" data-path="data-manipulation.html"><a href="data-manipulation.html#count"><i class="fa fa-check"></i><b>8.9</b> <code>count()</code></a></li>
 <li class="chapter" data-level="8.10" data-path="data-manipulation.html"><a href="data-manipulation.html#tidy-data"><i class="fa fa-check"></i><b>8.10</b> Tidy Data</a>
 <ul>
-<li class="chapter" data-level="8.10.1" data-path="data-manipulation.html"><a href="data-manipulation.html#an-long-to-wide-example"><i class="fa fa-check"></i><b>8.10.1</b> An Long-to-Wide Example</a></li>
+<li class="chapter" data-level="8.10.1" data-path="data-manipulation.html"><a href="data-manipulation.html#a-long-to-wide-example"><i class="fa fa-check"></i><b>8.10.1</b> A Long-to-Wide Example</a></li>
 <li class="chapter" data-level="8.10.2" data-path="data-manipulation.html"><a href="data-manipulation.html#a-wide-to-long-example"><i class="fa fa-check"></i><b>8.10.2</b> A Wide-to-Long Example</a></li>
 </ul></li>
 <li class="chapter" data-level="8.11" data-path="data-manipulation.html"><a href="data-manipulation.html#exerceises"><i class="fa fa-check"></i><b>8.11</b> Exerceises</a></li>
@@ -615,12 +615,12 @@ div.csl-indent {
 </div>
 <div id="installing-r-markdown" class="section level2" number="24.3">
 <h2><span class="header-section-number">B.3</span> Installing R Markdown</h2>
-<div class="sourceCode" id="cb1095"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1095-1"><a href="reproducible-report.html#cb1095-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install from CRAN</span></span>
-<span id="cb1095-2"><a href="reproducible-report.html#cb1095-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;rmarkdown&#39;</span>, <span class="at">dep =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1097"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1097-1"><a href="reproducible-report.html#cb1097-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install from CRAN</span></span>
+<span id="cb1097-2"><a href="reproducible-report.html#cb1097-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;rmarkdown&#39;</span>, <span class="at">dep =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p>If you need to generate PDF output from R markdown, you will need to install LaTeX. If you don’t have LaTeX yet, it is recommended that you install TinyTeX.</p>
-<div class="sourceCode" id="cb1096"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1096-1"><a href="reproducible-report.html#cb1096-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Optional (Only needed for PDF format)</span></span>
-<span id="cb1096-2"><a href="reproducible-report.html#cb1096-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;tinytex&#39;</span>)</span>
-<span id="cb1096-3"><a href="reproducible-report.html#cb1096-3" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()  <span class="co"># install TinyTeX</span></span></code></pre></div>
+<div class="sourceCode" id="cb1098"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1098-1"><a href="reproducible-report.html#cb1098-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Optional (Only needed for PDF format)</span></span>
+<span id="cb1098-2"><a href="reproducible-report.html#cb1098-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;tinytex&#39;</span>)</span>
+<span id="cb1098-3"><a href="reproducible-report.html#cb1098-3" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()  <span class="co"># install TinyTeX</span></span></code></pre></div>
 </div>
 <div id="r-markdown-components" class="section level2" number="24.4">
 <h2><span class="header-section-number">B.4</span> R Markdown Components</h2>
