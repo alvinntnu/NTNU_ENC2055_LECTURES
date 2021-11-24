@@ -437,3 +437,13 @@ exr:unnamed-chunk-32
 exr:unnamed-chunk-35
 what-is-a-csv-file-self-study
 exr:unnamed-chunk-37
+exr:unnamed-chunk-15
+exr:unnamed-chunk-25
+exr:unnamed-chunk-31
+map-with-self-defined-functions
+exr:unnamed-chunk-39
+exr:unnamed-chunk-40
+working-directory
+relative-vs.-absolute-paths
+exr:unnamed-chunk-41
+directory-operations-1
