@@ -447,3 +447,8 @@ working-directory
 relative-vs.-absolute-paths
 exr:unnamed-chunk-41
 directory-operations-1
+exr:unnamed-chunk-69
+exr:unnamed-chunk-86
+exr:unnamed-chunk-89
+exr:unnamed-chunk-94
+exr:unnamed-chunk-101
