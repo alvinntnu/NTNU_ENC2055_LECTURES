@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 10 Data Import | ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
   <meta name="description" content="ENC2055 Course material second edition" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 10 Data Import | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
   <meta property="og:type" content="book" />
@@ -34,7 +34,7 @@
 <link rel="prev" href="string-manipulation.html"/>
 <link rel="next" href="iteration.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -55,7 +55,7 @@
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
@@ -564,9 +564,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="importing-data" class="section level2" number="10.2">
 <h2><span class="header-section-number">10.2</span> Importing Data</h2>
-<div class="figure"><span id="fig:dataio"></span>
-<div id="htmlwidget-6150d1bbeaf0b163a9cd" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6150d1bbeaf0b163a9cd">{"x":{"diagram":"digraph {\n  \ngraph[layout = dot]\n\nnode[style=filled, color = grey90, penwidth = 0.3, fontcolor = grey30]\nedge[color= grey40, alpha = 0.2, penwidth= 0.4, arrowsize=0.8, arrowhead = normal]\n\na [label = \"External Data Files\", shape = folder, fillcolor= \"#B0E2FC\"]\nb [label = \"TXT\", shape = folder, fillcolor= \"#B0E2FC\"]\nc [label = \"CSV\", shape = folder, fillcolor= \"#B0E2FC\"]\n\nb1 [label = \"readLines()\", shape=document, fillcolor= \"#96F597\"]\nc1 [label = \"readr::read_csv()\", shape=document, fillcolor= \"#96F597\"]\nd [label = \"vector\", shape = folder, fillcolor= \"#B0E2FC\"]\nd1 [label = \"writeLines()\", shape=document, fillcolor= \"#96F597\"]\ne [label = \"data.frame\", shape = folder, fillcolor= \"#B0E2FC\"]\ne1 [label = \"readr::write_csv()\", shape=document, fillcolor= \"#96F597\"]\nf [label = \"TXT\", shape = folder, fillcolor= \"#B0E2FC\"]\ng [label = \"CSV\", shape = folder, fillcolor= \"#B0E2FC\"]\n\na->b\na->c\n\nb->b1->d->d1->f\nc->c1->e->e1->g\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="figure"><span style="display:block;" id="fig:dataio"></span>
+<div id="htmlwidget-3800c712c0b2b18c68b8" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3800c712c0b2b18c68b8">{"x":{"diagram":"digraph {\n  \ngraph[layout = dot]\n\nnode[style=filled, color = grey90, penwidth = 0.3, fontcolor = grey30]\nedge[color= grey40, alpha = 0.2, penwidth= 0.4, arrowsize=0.8, arrowhead = normal]\n\na [label = \"External Data Files\", shape = folder, fillcolor= \"#B0E2FC\"]\nb [label = \"TXT\", shape = folder, fillcolor= \"#B0E2FC\"]\nc [label = \"CSV\", shape = folder, fillcolor= \"#B0E2FC\"]\n\nb1 [label = \"readLines()\", shape=document, fillcolor= \"#96F597\"]\nc1 [label = \"readr::read_csv()\", shape=document, fillcolor= \"#96F597\"]\nd [label = \"vector\", shape = folder, fillcolor= \"#B0E2FC\"]\nd1 [label = \"writeLines()\", shape=document, fillcolor= \"#96F597\"]\ne [label = \"data.frame\", shape = folder, fillcolor= \"#B0E2FC\"]\ne1 [label = \"readr::write_csv()\", shape=document, fillcolor= \"#96F597\"]\nf [label = \"TXT\", shape = folder, fillcolor= \"#B0E2FC\"]\ng [label = \"CSV\", shape = folder, fillcolor= \"#B0E2FC\"]\n\na->b\na->c\n\nb->b1->d->d1->f\nc->c1->e->e1->g\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figure 10.1: Data I/O
 </p>
@@ -741,8 +741,8 @@ Please also note that all these tabular files can be named with the extension <c
 <li><em>Hexadecimal</em>: A positional system that represents numbers using a base of 16.</li>
 </ul>
 <hr />
-<div id="htmlwidget-99950173a7b17984203f" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-99950173a7b17984203f">{"x":{"diagram":"digraph {\n  \ngraph[layout = dot]\n\nnode[style=filled, color = grey90, penwidth = 0.3, fontcolor = grey30]\nedge[color= grey40, alpha = 0.2, penwidth= 0.4, arrowsize=0.8, arrowhead = normal]\n\na [label = \"Character\", shape = folder, fillcolor= \"#B0E2FC\"]\na1 [label = \"utf8ToInt()\", shape=document, fillcolor= \"#96F597\"]\nb [label = \"Code Point (Decimals)\", shape = folder, fillcolor= \"#B0E2FC\"]\n\na->a1->b\n\nb1 [label = \"as.hexamode()\", shape=document, fillcolor= \"#96F597\"]\nb2 [label = \"intToUtf8()\", shape=document, fillcolor= \"#96F597\"]\n\nb->b1\nb->b2\n\nc[label = \"UTF-8 Code Point (Hexadecimals)\", shape = folder, fillcolor= \"#B0E2FC\"]\n\nb1->c\n\nd[label = \"Unicode Character\", shape = folder, fillcolor= \"#B0E2FC\"]\n\nb2->d\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-e91b44e076642ed069ff" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e91b44e076642ed069ff">{"x":{"diagram":"digraph {\n  \ngraph[layout = dot]\n\nnode[style=filled, color = grey90, penwidth = 0.3, fontcolor = grey30]\nedge[color= grey40, alpha = 0.2, penwidth= 0.4, arrowsize=0.8, arrowhead = normal]\n\na [label = \"Character\", shape = folder, fillcolor= \"#B0E2FC\"]\na1 [label = \"utf8ToInt()\", shape=document, fillcolor= \"#96F597\"]\nb [label = \"Code Point (Decimals)\", shape = folder, fillcolor= \"#B0E2FC\"]\n\na->a1->b\n\nb1 [label = \"as.hexamode()\", shape=document, fillcolor= \"#96F597\"]\nb2 [label = \"intToUtf8()\", shape=document, fillcolor= \"#96F597\"]\n\nb->b1\nb->b2\n\nc[label = \"UTF-8 Code Point (Hexadecimals)\", shape = folder, fillcolor= \"#B0E2FC\"]\n\nb1->c\n\nd[label = \"Unicode Character\", shape = folder, fillcolor= \"#B0E2FC\"]\n\nb2->d\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <hr />
 <p>In R, there are a few base functions that work with these concepts:</p>
 <ul>
@@ -878,21 +878,30 @@ If each paragraph in the text file is a <em>paragraph</em>, you get a <em>paragr
 <p>For Mac, it’s UTF-8, which is perfect. However, for Windows, it is NOT. It depends on your OS language.</p>
 <p>Can you try to do the following and check the encoding of the output file?</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb32-1"><a href="data-import.html#cb32-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="st">&quot;鳳凰臺上鳳凰遊，鳳去臺空江自流。&quot;</span></span>
-<span id="cb32-2"><a href="data-import.html#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-3"><a href="data-import.html#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Encoding</span>(x) <span class="co"># `iconvlist()` check all encodings</span></span></code></pre></div>
+<span id="cb32-2"><a href="data-import.html#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Encoding</span>(x) <span class="co"># `iconvlist()` check all encodings</span></span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;UTF-8&quot;</code></pre>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb34-1"><a href="data-import.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="do">## method1</span></span>
-<span id="cb34-2"><a href="data-import.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(x,<span class="at">con =</span> <span class="st">&quot;output_test_1.txt&quot;</span>)</span>
-<span id="cb34-3"><a href="data-import.html#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-4"><a href="data-import.html#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="do">## method2</span></span>
-<span id="cb34-5"><a href="data-import.html#cb34-5" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">file</span>(<span class="at">description =</span> <span class="st">&quot;output_test_2.txt&quot;</span>, <span class="at">encoding=</span><span class="st">&quot;big-5&quot;</span>)</span>
-<span id="cb34-6"><a href="data-import.html#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(x, con)</span>
-<span id="cb34-7"><a href="data-import.html#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="fu">close</span>(con)</span>
-<span id="cb34-8"><a href="data-import.html#cb34-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-9"><a href="data-import.html#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="do">## method3</span></span>
-<span id="cb34-10"><a href="data-import.html#cb34-10" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">file</span>(<span class="at">description =</span> <span class="st">&quot;output_test_3.txt&quot;</span>, <span class="at">encoding=</span><span class="st">&quot;utf-8&quot;</span>)</span>
-<span id="cb34-11"><a href="data-import.html#cb34-11" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(x, con)</span>
-<span id="cb34-12"><a href="data-import.html#cb34-12" aria-hidden="true" tabindex="-1"></a><span class="fu">close</span>(con)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb34-1"><a href="data-import.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="do">## For Mac Users, we can output files in different encodings as follows.</span></span>
+<span id="cb34-2"><a href="data-import.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="do">## method1</span></span>
+<span id="cb34-3"><a href="data-import.html#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(x, <span class="at">con =</span> <span class="st">&quot;output_test_1.txt&quot;</span>)</span>
+<span id="cb34-4"><a href="data-import.html#cb34-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-5"><a href="data-import.html#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="do">## method2</span></span>
+<span id="cb34-6"><a href="data-import.html#cb34-6" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">file</span>(<span class="at">description =</span> <span class="st">&quot;output_test_2.txt&quot;</span>, <span class="at">encoding=</span><span class="st">&quot;big-5&quot;</span>)</span>
+<span id="cb34-7"><a href="data-import.html#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(x, con)</span>
+<span id="cb34-8"><a href="data-import.html#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="fu">close</span>(con)</span>
+<span id="cb34-9"><a href="data-import.html#cb34-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-10"><a href="data-import.html#cb34-10" aria-hidden="true" tabindex="-1"></a><span class="do">## method3</span></span>
+<span id="cb34-11"><a href="data-import.html#cb34-11" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">file</span>(<span class="at">description =</span> <span class="st">&quot;output_test_3.txt&quot;</span>, <span class="at">encoding=</span><span class="st">&quot;utf-8&quot;</span>)</span>
+<span id="cb34-12"><a href="data-import.html#cb34-12" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(x, con)</span>
+<span id="cb34-13"><a href="data-import.html#cb34-13" aria-hidden="true" tabindex="-1"></a><span class="fu">close</span>(con)</span>
+<span id="cb34-14"><a href="data-import.html#cb34-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-15"><a href="data-import.html#cb34-15" aria-hidden="true" tabindex="-1"></a><span class="do">## For Windows Users, please try the following?</span></span>
+<span id="cb34-16"><a href="data-import.html#cb34-16" aria-hidden="true" tabindex="-1"></a>x_big5 <span class="ot">&lt;-</span> <span class="fu">iconv</span>(x, <span class="at">from=</span><span class="st">&quot;utf-8&quot;</span>, <span class="at">to =</span> <span class="st">&quot;big-5&quot;</span>)</span>
+<span id="cb34-17"><a href="data-import.html#cb34-17" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(x, <span class="at">con =</span> <span class="st">&quot;output_test_w_1.txt&quot;</span>, <span class="at">useBytes =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb34-18"><a href="data-import.html#cb34-18" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(x_big5, <span class="at">con =</span> <span class="st">&quot;output_test_w_2.txt&quot;</span>, <span class="at">useBytes =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+</div>
+<div class="info">
+<p>It is said that <code>writeLines()</code> will attempt to <em>re-encode</em> the provided text to the native encoding of the system. This works fine when the system default is UTF-8. But in Windows, the default is NOT UTF-8.</p>
+<p>I can’t say I fully understand how the encoding system works with Windows. If you would like to know more about this, please refer to this article: <a href="https://kevinushey.github.io/blog/2018/02/21/string-encoding-and-r/">String Encoding and R</a>.</p>
 </div>
 <hr />
 
@@ -1151,6 +1160,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "lunr",
+"options": null
+},
 "toc": {
 "collapse": "section"
 }
