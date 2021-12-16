@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 10 Data Import | ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
   <meta name="description" content="ENC2055 Course material second edition" />
-  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 10 Data Import | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-12-03" />
+<meta name="date" content="2021-12-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -34,7 +34,7 @@
 <link rel="prev" href="string-manipulation.html"/>
 <link rel="next" href="iteration.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
-<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -55,7 +55,7 @@
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
@@ -367,7 +367,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="12.1" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#loading-nobel-laureates-dataset"><i class="fa fa-check"></i><b>12.1</b> Loading Nobel Laureates Dataset</a></li>
 <li class="chapter" data-level="12.2" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#column-names"><i class="fa fa-check"></i><b>12.2</b> Column Names</a></li>
-<li class="chapter" data-level="12.3" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#data-completeness-na"><i class="fa fa-check"></i><b>12.3</b> Data Completeness <code>NA</code></a></li>
+<li class="chapter" data-level="12.3" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#missing-data-na-values"><i class="fa fa-check"></i><b>12.3</b> Missing Data (<code>NA</code> values)</a></li>
 <li class="chapter" data-level="12.4" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#data-preprocessing"><i class="fa fa-check"></i><b>12.4</b> Data Preprocessing</a></li>
 <li class="chapter" data-level="12.5" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#exploratory-analysis"><i class="fa fa-check"></i><b>12.5</b> Exploratory Analysis</a>
 <ul>
@@ -564,9 +564,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="importing-data" class="section level2" number="10.2">
 <h2><span class="header-section-number">10.2</span> Importing Data</h2>
-<div class="figure"><span style="display:block;" id="fig:dataio"></span>
-<div id="htmlwidget-3800c712c0b2b18c68b8" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3800c712c0b2b18c68b8">{"x":{"diagram":"digraph {\n  \ngraph[layout = dot]\n\nnode[style=filled, color = grey90, penwidth = 0.3, fontcolor = grey30]\nedge[color= grey40, alpha = 0.2, penwidth= 0.4, arrowsize=0.8, arrowhead = normal]\n\na [label = \"External Data Files\", shape = folder, fillcolor= \"#B0E2FC\"]\nb [label = \"TXT\", shape = folder, fillcolor= \"#B0E2FC\"]\nc [label = \"CSV\", shape = folder, fillcolor= \"#B0E2FC\"]\n\nb1 [label = \"readLines()\", shape=document, fillcolor= \"#96F597\"]\nc1 [label = \"readr::read_csv()\", shape=document, fillcolor= \"#96F597\"]\nd [label = \"vector\", shape = folder, fillcolor= \"#B0E2FC\"]\nd1 [label = \"writeLines()\", shape=document, fillcolor= \"#96F597\"]\ne [label = \"data.frame\", shape = folder, fillcolor= \"#B0E2FC\"]\ne1 [label = \"readr::write_csv()\", shape=document, fillcolor= \"#96F597\"]\nf [label = \"TXT\", shape = folder, fillcolor= \"#B0E2FC\"]\ng [label = \"CSV\", shape = folder, fillcolor= \"#B0E2FC\"]\n\na->b\na->c\n\nb->b1->d->d1->f\nc->c1->e->e1->g\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="figure"><span id="fig:dataio"></span>
+<div id="htmlwidget-fcfbb8f0b558c80c1e81" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fcfbb8f0b558c80c1e81">{"x":{"diagram":"digraph {\n  \ngraph[layout = dot]\n\nnode[style=filled, color = grey90, penwidth = 0.3, fontcolor = grey30]\nedge[color= grey40, alpha = 0.2, penwidth= 0.4, arrowsize=0.8, arrowhead = normal]\n\na [label = \"External Data Files\", shape = folder, fillcolor= \"#B0E2FC\"]\nb [label = \"TXT\", shape = folder, fillcolor= \"#B0E2FC\"]\nc [label = \"CSV\", shape = folder, fillcolor= \"#B0E2FC\"]\n\nb1 [label = \"readLines()\", shape=document, fillcolor= \"#96F597\"]\nc1 [label = \"readr::read_csv()\", shape=document, fillcolor= \"#96F597\"]\nd [label = \"vector\", shape = folder, fillcolor= \"#B0E2FC\"]\nd1 [label = \"writeLines()\", shape=document, fillcolor= \"#96F597\"]\ne [label = \"data.frame\", shape = folder, fillcolor= \"#B0E2FC\"]\ne1 [label = \"readr::write_csv()\", shape=document, fillcolor= \"#96F597\"]\nf [label = \"TXT\", shape = folder, fillcolor= \"#B0E2FC\"]\ng [label = \"CSV\", shape = folder, fillcolor= \"#B0E2FC\"]\n\na->b\na->c\n\nb->b1->d->d1->f\nc->c1->e->e1->g\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figure 10.1: Data I/O
 </p>
@@ -741,8 +741,8 @@ Please also note that all these tabular files can be named with the extension <c
 <li><em>Hexadecimal</em>: A positional system that represents numbers using a base of 16.</li>
 </ul>
 <hr />
-<div id="htmlwidget-e91b44e076642ed069ff" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e91b44e076642ed069ff">{"x":{"diagram":"digraph {\n  \ngraph[layout = dot]\n\nnode[style=filled, color = grey90, penwidth = 0.3, fontcolor = grey30]\nedge[color= grey40, alpha = 0.2, penwidth= 0.4, arrowsize=0.8, arrowhead = normal]\n\na [label = \"Character\", shape = folder, fillcolor= \"#B0E2FC\"]\na1 [label = \"utf8ToInt()\", shape=document, fillcolor= \"#96F597\"]\nb [label = \"Code Point (Decimals)\", shape = folder, fillcolor= \"#B0E2FC\"]\n\na->a1->b\n\nb1 [label = \"as.hexamode()\", shape=document, fillcolor= \"#96F597\"]\nb2 [label = \"intToUtf8()\", shape=document, fillcolor= \"#96F597\"]\n\nb->b1\nb->b2\n\nc[label = \"UTF-8 Code Point (Hexadecimals)\", shape = folder, fillcolor= \"#B0E2FC\"]\n\nb1->c\n\nd[label = \"Unicode Character\", shape = folder, fillcolor= \"#B0E2FC\"]\n\nb2->d\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-4951dc7f680af032f29c" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4951dc7f680af032f29c">{"x":{"diagram":"digraph {\n  \ngraph[layout = dot]\n\nnode[style=filled, color = grey90, penwidth = 0.3, fontcolor = grey30]\nedge[color= grey40, alpha = 0.2, penwidth= 0.4, arrowsize=0.8, arrowhead = normal]\n\na [label = \"Character\", shape = folder, fillcolor= \"#B0E2FC\"]\na1 [label = \"utf8ToInt()\", shape=document, fillcolor= \"#96F597\"]\nb [label = \"Code Point (Decimals)\", shape = folder, fillcolor= \"#B0E2FC\"]\n\na->a1->b\n\nb1 [label = \"as.hexamode()\", shape=document, fillcolor= \"#96F597\"]\nb2 [label = \"intToUtf8()\", shape=document, fillcolor= \"#96F597\"]\n\nb->b1\nb->b2\n\nc[label = \"UTF-8 Code Point (Hexadecimals)\", shape = folder, fillcolor= \"#B0E2FC\"]\n\nb1->c\n\nd[label = \"Unicode Character\", shape = folder, fillcolor= \"#B0E2FC\"]\n\nb2->d\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <hr />
 <p>In R, there are a few base functions that work with these concepts:</p>
 <ul>
@@ -999,7 +999,7 @@ Please figure out ways to load these files into R as vectors properly.
 <pre><code>&quot;C:/Users/Alvin/Documents/ENC2055/demo_data/data-bnc-bigrams.csv&quot;</code></pre>
 <p>However, it can be very troublesome if we need to specify the full paths all the time.</p>
 <hr />
-<p>The other alternative is to specify the <strong>relative path</strong> to the file in relation to the <strong>current working directory</strong>. That is, the file paths start with the working directory. By default, R will look for the file path from the <strong>working directory</strong> of the current R session.</p>
+<p>The other alternative is to specify the <strong>relative path</strong> to the file in relation to the <strong>current working directory</strong>. That is, a relative file path starts with the working directory. By default, if you have only the filename, R will look for the file from the <strong>working directory</strong> of the current R session.</p>
 <p>For example, in the following code, R will look for a file called <code>data-bnc-bigram.csv</code> under the working directory. If there is no such file, you will get an error message.</p>
 <div class="sourceCode" id="cb41"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb41-1"><a href="data-import.html#cb41-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data-bnc-bigram.csv&quot;</span>)</span></code></pre></div>
 <p>In the following code, R will look for a sub-directory under the working directory called <code>demo_data</code>, and within the <code>demo_data</code> sub-directory, R will further look for the file <code>data-bnc-bigram-csv</code>.</p>
@@ -1007,7 +1007,7 @@ Please figure out ways to load these files into R as vectors properly.
 <p>In the following code, R will look for a file called <code>data-bnc-bigram.csv</code> from the <strong>parent directory</strong> of the working directory.</p>
 <div class="sourceCode" id="cb43"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb43-1"><a href="data-import.html#cb43-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;../data-bnc-bigram.csv&quot;</span>)</span></code></pre></div>
 <div class="info">
-<p>When using the relative path to specify file locations, the <code>..</code> signifies the parent directory of the current working directory. People sometimes use the <code>.</code> to refer to the current working directory.</p>
+<p>When using the relative path to specify file locations, the <code>..</code> signifies the <strong>parent</strong> directory of the current working directory. People sometimes use the <code>.</code> to refer to the <strong>current</strong> working directory.</p>
 </div>
 </div>
 <div id="directory-operations-1" class="section level3" number="10.8.3">
@@ -1031,14 +1031,19 @@ Please figure out ways to load these files into R as vectors properly.
 <li>First, we need to get a list of the <strong>filenames</strong> included in the directory.</li>
 <li>Then we need to load the data of each file into R based on the filenames.</li>
 </ul>
-<p>Please download the four text files from <code>demo_data/shapespeare</code> for the following example.</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb46-1"><a href="data-import.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Get the filenames from the directory</span></span>
-<span id="cb46-2"><a href="data-import.html#cb46-2" aria-hidden="true" tabindex="-1"></a>flist <span class="ot">&lt;-</span> <span class="fu">dir</span>(<span class="st">&quot;demo_data/shakespeare/&quot;</span>, <span class="at">full.names =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb46-3"><a href="data-import.html#cb46-3" aria-hidden="true" tabindex="-1"></a>flist</span></code></pre></div>
-<pre class="Rout"><code>[1] &quot;demo_data/shakespeare//Hamlet, Prince of Denmark.txt&quot;  
-[2] &quot;demo_data/shakespeare//King Lear.txt&quot;                  
-[3] &quot;demo_data/shakespeare//Macbeth.txt&quot;                    
-[4] &quot;demo_data/shakespeare//Othello, the Moor of Venice.txt&quot;</code></pre>
+<p>Please download the four text files from <code>demo_data/shakespeare</code> for the following example.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb46-1"><a href="data-import.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Corpus root directory</span></span>
+<span id="cb46-2"><a href="data-import.html#cb46-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-3"><a href="data-import.html#cb46-3" aria-hidden="true" tabindex="-1"></a>corpus_root_dir <span class="ot">&lt;-</span> <span class="st">&quot;demo_data/shakespeare&quot;</span></span>
+<span id="cb46-4"><a href="data-import.html#cb46-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-5"><a href="data-import.html#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Get the filenames from the directory</span></span>
+<span id="cb46-6"><a href="data-import.html#cb46-6" aria-hidden="true" tabindex="-1"></a>flist <span class="ot">&lt;-</span> <span class="fu">dir</span>(<span class="at">path =</span> corpus_root_dir,</span>
+<span id="cb46-7"><a href="data-import.html#cb46-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">full.names =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb46-8"><a href="data-import.html#cb46-8" aria-hidden="true" tabindex="-1"></a>flist</span></code></pre></div>
+<pre class="Rout"><code>[1] &quot;demo_data/shakespeare/Hamlet, Prince of Denmark.txt&quot;  
+[2] &quot;demo_data/shakespeare/King Lear.txt&quot;                  
+[3] &quot;demo_data/shakespeare/Macbeth.txt&quot;                    
+[4] &quot;demo_data/shakespeare/Othello, the Moor of Venice.txt&quot;</code></pre>
 <div class="sourceCode" id="cb48"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb48-1"><a href="data-import.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Holder</span></span>
 <span id="cb48-2"><a href="data-import.html#cb48-2" aria-hidden="true" tabindex="-1"></a>flist_texts <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
 <span id="cb48-3"><a href="data-import.html#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1101,11 +1106,11 @@ Please figure out ways to load these files into R as vectors properly.
 [50] &quot;\tFor this relief much thanks; &#39;tis bitter cold,&quot;                 </code></pre>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-42" class="exercise"><strong>Exercise 10.9  </strong></span>Please make yourself familar with the following commands: <code>file.create()</code>, <code>dir.create()</code>, <code>unlink()</code>, <code>basename()</code>,<code>file.info()</code>, <code>save()</code>, and <code>load()</code>.
+<span id="exr:unnamed-chunk-43" class="exercise"><strong>Exercise 10.9  </strong></span>Please make yourself familar with the following commands: <code>file.create()</code>, <code>dir.create()</code>, <code>unlink()</code>, <code>basename()</code>,<code>file.info()</code>, <code>save()</code>, and <code>load()</code>.
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-43" class="exercise"><strong>Exercise 10.10  </strong></span>Please create a sub-directory in your working directory, named <code>temp</code>.</p>
+<p><span id="exr:unnamed-chunk-44" class="exercise"><strong>Exercise 10.10  </strong></span>Please create a sub-directory in your working directory, named <code>temp</code>.</p>
 <p>Load the dataset <code>demo_data/data-bnc-bigram.csv</code> and subset bigrams whose bigram frequencies (<code>bi.freq</code> column) are larger than 200.</p>
 Order the sub data frame according to the bigram frequencies in a descending order and save the sub data frame into a csv file named <code>data-bnc-bigram-freq200.csv</code> in the <code>temp</code> directory.
 </div>
@@ -1160,10 +1165,6 @@ gitbook.start({
 "text": null
 },
 "download": null,
-"search": {
-"engine": "lunr",
-"options": null
-},
 "toc": {
 "collapse": "section"
 }
