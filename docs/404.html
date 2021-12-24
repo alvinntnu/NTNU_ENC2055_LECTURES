@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-12-03" />
+<meta name="date" content="2021-12-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,8 +56,9 @@
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
-<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
-<script src="libs/str_view-binding-1.4.0/str_view.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
 <script src="https://hypothes.is/embed.js" async></script>
 
 
@@ -365,18 +366,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html"><i class="fa fa-check"></i><b>12</b> Data Scientist First Step</a>
 <ul>
 <li class="chapter" data-level="12.1" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#loading-nobel-laureates-dataset"><i class="fa fa-check"></i><b>12.1</b> Loading Nobel Laureates Dataset</a></li>
-<li class="chapter" data-level="12.2" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#column-names"><i class="fa fa-check"></i><b>12.2</b> Column Names</a></li>
-<li class="chapter" data-level="12.3" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#data-completeness-na"><i class="fa fa-check"></i><b>12.3</b> Data Completeness <code>NA</code></a></li>
-<li class="chapter" data-level="12.4" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#data-preprocessing"><i class="fa fa-check"></i><b>12.4</b> Data Preprocessing</a></li>
-<li class="chapter" data-level="12.5" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#exploratory-analysis"><i class="fa fa-check"></i><b>12.5</b> Exploratory Analysis</a>
+<li class="chapter" data-level="12.2" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#workflow"><i class="fa fa-check"></i><b>12.2</b> Workflow</a></li>
+<li class="chapter" data-level="12.3" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#column-names"><i class="fa fa-check"></i><b>12.3</b> Column Names</a></li>
+<li class="chapter" data-level="12.4" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#missing-data-na-values"><i class="fa fa-check"></i><b>12.4</b> Missing Data (<code>NA</code> values)</a></li>
+<li class="chapter" data-level="12.5" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#data-preprocessing"><i class="fa fa-check"></i><b>12.5</b> Data Preprocessing</a></li>
+<li class="chapter" data-level="12.6" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#exploratory-analysis"><i class="fa fa-check"></i><b>12.6</b> Exploratory Analysis</a>
 <ul>
-<li class="chapter" data-level="12.5.1" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#discipline-distribution"><i class="fa fa-check"></i><b>12.5.1</b> Discipline Distribution</a></li>
-<li class="chapter" data-level="12.5.2" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#age-distribution"><i class="fa fa-check"></i><b>12.5.2</b> Age Distribution</a></li>
-<li class="chapter" data-level="12.5.3" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#category-x-age-interaction"><i class="fa fa-check"></i><b>12.5.3</b> Category x Age Interaction</a></li>
-<li class="chapter" data-level="12.5.4" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#gender-distribution"><i class="fa fa-check"></i><b>12.5.4</b> Gender Distribution</a></li>
-<li class="chapter" data-level="12.5.5" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#age-x-gender-interaction"><i class="fa fa-check"></i><b>12.5.5</b> Age x Gender Interaction</a></li>
+<li class="chapter" data-level="12.6.1" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#discipline-distribution"><i class="fa fa-check"></i><b>12.6.1</b> Discipline Distribution</a></li>
+<li class="chapter" data-level="12.6.2" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#age-distribution"><i class="fa fa-check"></i><b>12.6.2</b> Age Distribution</a></li>
+<li class="chapter" data-level="12.6.3" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#category-x-age-interaction"><i class="fa fa-check"></i><b>12.6.3</b> Category x Age Interaction</a></li>
+<li class="chapter" data-level="12.6.4" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#gender-distribution"><i class="fa fa-check"></i><b>12.6.4</b> Gender Distribution</a></li>
+<li class="chapter" data-level="12.6.5" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#age-x-gender-interaction"><i class="fa fa-check"></i><b>12.6.5</b> Age x Gender Interaction</a></li>
 </ul></li>
-<li class="chapter" data-level="12.6" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#exercises-1"><i class="fa fa-check"></i><b>12.6</b> Exercises</a></li>
+<li class="chapter" data-level="12.7" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#exercises-1"><i class="fa fa-check"></i><b>12.7</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html"><i class="fa fa-check"></i><b>13</b> Text Analytics: A Start</a>
 <ul>
@@ -500,13 +502,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="21.1" data-path="transcribing.html"><a href="transcribing.html#working-with-audio-files"><i class="fa fa-check"></i><b>21.1</b> Working with Audio Files</a></li>
 <li class="chapter" data-level="21.2" data-path="transcribing.html"><a href="transcribing.html#working-with-microphone-inputs"><i class="fa fa-check"></i><b>21.2</b> Working with Microphone Inputs</a></li>
 <li class="chapter" data-level="21.3" data-path="transcribing.html"><a href="transcribing.html#references-2"><i class="fa fa-check"></i><b>21.3</b> References</a></li>
-</ul></li>
-<li class="chapter" data-level="22" data-path="downloading-youtube-videos.html"><a href="downloading-youtube-videos.html"><i class="fa fa-check"></i><b>22</b> Downloading YouTube Videos</a>
-<ul>
-<li class="chapter" data-level="22.1" data-path="downloading-youtube-videos.html"><a href="downloading-youtube-videos.html#the-module-pytube"><i class="fa fa-check"></i><b>22.1</b> The Module <code>pytube</code></a></li>
-<li class="chapter" data-level="22.2" data-path="downloading-youtube-videos.html"><a href="downloading-youtube-videos.html#downloading-videos"><i class="fa fa-check"></i><b>22.2</b> Downloading Videos</a></li>
-<li class="chapter" data-level="22.3" data-path="downloading-youtube-videos.html"><a href="downloading-youtube-videos.html#downloading-audios"><i class="fa fa-check"></i><b>22.3</b> Downloading Audios</a></li>
-<li class="chapter" data-level="22.4" data-path="downloading-youtube-videos.html"><a href="downloading-youtube-videos.html#downloading-captions"><i class="fa fa-check"></i><b>22.4</b> Downloading Captions</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="the-shell.html"><a href="the-shell.html"><i class="fa fa-check"></i><b>A</b> The Shell</a>

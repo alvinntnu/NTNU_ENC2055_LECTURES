@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 12 Data Scientist First Step | ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
   <meta name="description" content="ENC2055 Course material second edition" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 12 Data Scientist First Step | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
   <meta property="og:type" content="book" />
@@ -34,7 +34,7 @@
 <link rel="prev" href="iteration.html"/>
 <link rel="next" href="text-analytics-a-start.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -55,7 +55,7 @@
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
@@ -503,13 +503,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="21.2" data-path="transcribing.html"><a href="transcribing.html#working-with-microphone-inputs"><i class="fa fa-check"></i><b>21.2</b> Working with Microphone Inputs</a></li>
 <li class="chapter" data-level="21.3" data-path="transcribing.html"><a href="transcribing.html#references-2"><i class="fa fa-check"></i><b>21.3</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="22" data-path="downloading-youtube-videos.html"><a href="downloading-youtube-videos.html"><i class="fa fa-check"></i><b>22</b> Downloading YouTube Videos</a>
-<ul>
-<li class="chapter" data-level="22.1" data-path="downloading-youtube-videos.html"><a href="downloading-youtube-videos.html#the-module-pytube"><i class="fa fa-check"></i><b>22.1</b> The Module <code>pytube</code></a></li>
-<li class="chapter" data-level="22.2" data-path="downloading-youtube-videos.html"><a href="downloading-youtube-videos.html#downloading-videos"><i class="fa fa-check"></i><b>22.2</b> Downloading Videos</a></li>
-<li class="chapter" data-level="22.3" data-path="downloading-youtube-videos.html"><a href="downloading-youtube-videos.html#downloading-audios"><i class="fa fa-check"></i><b>22.3</b> Downloading Audios</a></li>
-<li class="chapter" data-level="22.4" data-path="downloading-youtube-videos.html"><a href="downloading-youtube-videos.html#downloading-captions"><i class="fa fa-check"></i><b>22.4</b> Downloading Captions</a></li>
-</ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="the-shell.html"><a href="the-shell.html"><i class="fa fa-check"></i><b>A</b> The Shell</a>
 <ul>
@@ -567,8 +560,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="workflow" class="section level2" number="12.2">
 <h2><span class="header-section-number">12.2</span> Workflow</h2>
-<div id="htmlwidget-1882438ae14f42fbd74d" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1882438ae14f42fbd74d">{"x":{"diagram":"digraph {\n  \ngraph[layout = dot]\n\nnode[style=filled, color = grey90, penwidth = 0.3, fontcolor = grey30]\nedge[color= grey40, alpha = 0.2, penwidth= 0.4, arrowsize=0.8, arrowhead = normal]\n\na1 [label = \"Collect Data\", shape = folder, fillcolor= \"#B0E2FC\"]\na2 [label = \"Import Data\", shape=document, fillcolor= \"#96F597\"]\na3 [label = \"Normalize Column Names\", shape=document, fillcolor= \"#96F597\"]\na4 [label = \"Check Missing Data\", shape=document, fillcolor= \"#96F597\"]\na5 [label = \"Data Preprocessing\", shape=document, fillcolor= \"#96F597\"]\n\na51 [label = \"Duplicates\", shape=oval, fillcolor= \"#96F597\"]\na52 [label = \"Errors\", shape=oval, fillcolor= \"#96F597\"]\n\nb [label = \"Exploratory Data Analysis\", shape=document, fillcolor= \"#96F597\"]\nb1 [label = \"Descriptive Statistics\", shape=oval, fillcolor= \"#96F597\"]\nb2 [label = \"Data Visualization\", shape=oval, fillcolor= \"#96F597\"]\nc [label = \"Statistical Analysis\", shape=document, fillcolor= \"#F5A9F2\"]\nd [label = \"Reports\", shape=document, fillcolor= \"#F5A9F2\"]\n\n\na1 -> a2 -> a3 -> a4 -> a5 \n\na5 -> a51\na5 -> a52\n\na51->b\na52->b\n\nb->b1\nb->b2\nb1->c\nb2->c\nc->d\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-870ac1900ca76d780f86" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-870ac1900ca76d780f86">{"x":{"diagram":"digraph {\n  \ngraph[layout = dot]\n\nnode[style=filled, color = grey90, penwidth = 0.3, fontcolor = grey30]\nedge[color= grey40, alpha = 0.2, penwidth= 0.4, arrowsize=0.8, arrowhead = normal]\n\na1 [label = \"Collect Data\", shape = folder, fillcolor= \"#B0E2FC\"]\na2 [label = \"Import Data\", shape=document, fillcolor= \"#96F597\"]\na3 [label = \"Normalize Column Names\", shape=document, fillcolor= \"#96F597\"]\na4 [label = \"Check Missing Data\", shape=document, fillcolor= \"#96F597\"]\na5 [label = \"Data Preprocessing\", shape=document, fillcolor= \"#96F597\"]\n\na51 [label = \"Duplicates\", shape=oval, fillcolor= \"#96F597\"]\na52 [label = \"Errors\", shape=oval, fillcolor= \"#96F597\"]\n\nb [label = \"Exploratory Data Analysis\", shape=document, fillcolor= \"#96F597\"]\nb1 [label = \"Descriptive Statistics\", shape=oval, fillcolor= \"#96F597\"]\nb2 [label = \"Data Visualization\", shape=oval, fillcolor= \"#96F597\"]\nc [label = \"Statistical Analysis\", shape=document, fillcolor= \"#F5A9F2\"]\nd [label = \"Reports\", shape=document, fillcolor= \"#F5A9F2\"]\n\n\na1 -> a2 -> a3 -> a4 -> a5 \n\na5 -> a51\na5 -> a52\n\na51->b\na52->b\n\nb->b1\nb->b2\nb1->c\nb2->c\nc->d\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="column-names" class="section level2" number="12.3">
 <h2><span class="header-section-number">12.3</span> Column Names</h2>
@@ -1026,6 +1019,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "lunr",
+"options": null
+},
 "toc": {
 "collapse": "section"
 }
