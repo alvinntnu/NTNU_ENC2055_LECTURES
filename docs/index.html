@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
   <meta name="description" content="ENC2055 Course material second edition" />
-  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-12-24" />
+<meta name="date" content="2022-05-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -35,6 +35,7 @@
 <link rel="next" href="intro-ds.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -572,7 +572,7 @@ div.csl-indent {
 <div id="header">
 <h1 class="title">ENC2055: Introduction to Programming Languages for Linguistic Analysis</h1>
 <p class="author"><em>Alvin Chen (陳正賢）</em></p>
-<p class="date"><em>2021-12-24</em></p>
+<p class="date"><em>2022-05-14</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
@@ -591,7 +591,7 @@ Please note that while this course has no prerequisite from the students, it wil
 f(x)=\frac{1}{\sqrt{2 \pi}} e^{-\frac{1}{2} x^{2}}
 \]</span></p>
 <p><span class="math display">\[
- P(A) = \sum P(\{ (e_1,\dotsc,e_N) \})  =  \binom{N}{k} \cdot p^kq^{N-k}
+P(A) = \sum P(\{ (e_1,\dotsc,e_N) \})  =  \binom{N}{k} \cdot p^kq^{N-k}
 \]</span></p>
 <p>We will not be dealing with lingusitic theories as well. No <em>transformations</em>. No <em>movements</em>. No <em>bindings</em>. This course is all about computational coding.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
@@ -607,11 +607,11 @@ f(x)=\frac{1}{\sqrt{2 \pi}} e^{-\frac{1}{2} x^{2}}
 </div>
 <div id="textbook" class="section level2 unnumbered">
 <h2>Textbook</h2>
-<p>Throughout the semester, we will follow the materials provided on our course website (see below). We will not use a particular textbook for the course. However, I do like to recommend <span class="citation"><a href="#ref-hadley2017" role="doc-biblioref">Wickham and Grolemund</a> (<a href="#ref-hadley2017" role="doc-biblioref">2017</a>)</span> for its simplicity.</p>
+<p>Throughout the semester, we will follow the materials provided on our course website (see below). We will not use a particular textbook for the course. However, I do like to recommend <span class="citation">Wickham &amp; Grolemund (<a href="#ref-hadley2017" role="doc-biblioref">2017</a>)</span> for its simplicity.</p>
 <p><img src="images/r4dbook.png" width="35%" /></p>
-<p>Also, another great book for R lovers, by <span class="citation"><a href="#ref-davies2016" role="doc-biblioref">Davies</a> (<a href="#ref-davies2016" role="doc-biblioref">2016</a>)</span>:</p>
+<p>Also, another great book for R lovers, by <span class="citation">Davies (<a href="#ref-davies2016" role="doc-biblioref">2016</a>)</span>:</p>
 <p><img src="images/book-R-cover.png" width="35%" /></p>
-<p>And two more comprehensive books for Python basics: <span class="citation"><a href="#ref-gerrard2016" role="doc-biblioref">Gerrard</a> (<a href="#ref-gerrard2016" role="doc-biblioref">2016</a>)</span> and <span class="citation"><a href="#ref-sweigart2020" role="doc-biblioref">Sweigart</a> (<a href="#ref-sweigart2020" role="doc-biblioref">2020</a>)</span>:</p>
+<p>And two more comprehensive books for Python basics: <span class="citation">Gerrard (<a href="#ref-gerrard2016" role="doc-biblioref">2016</a>)</span> and <span class="citation">Sweigart (<a href="#ref-sweigart2020" role="doc-biblioref">2020</a>)</span>:</p>
 <p><img src="images/book-lean-python.jpeg" width="35%" /><img src="images/book-automate-boring-python.jpg" width="35%" /></p>
 </div>
 <div id="course-website" class="section level2 unnumbered">
@@ -672,18 +672,18 @@ library(tidyverse)</code></pre>
 
 
 <h3>References</h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-davies2016" class="csl-entry">
-Davies, Tilman M. 2016. <em>The Book of <span>R</span>: A First Course in Programming and Statistics</em>. 1st ed. San Franscisco, US: No Starch Press, Inc.
+Davies, T. M. (2016). <em>The book of <span>R</span>: A first course in programming and statistics</em> (1st ed.). No Starch Press, Inc.
 </div>
 <div id="ref-gerrard2016" class="csl-entry">
-Gerrard, Paul. 2016. <em>Lean Python: Learn Just Enough Python to Build Useful Tools</em>. Apress.
+Gerrard, P. (2016). <em>Lean python: Learn just enough python to build useful tools</em>. Apress.
 </div>
 <div id="ref-sweigart2020" class="csl-entry">
-Sweigart, Al. 2020. <em>Automate the Boring Stuff with Python: Practical Programming for Total Beginners. 2nd Edition.</em> No Starch Press.
+Sweigart, A. (2020). <em>Automate the boring stuff with python: Practical programming for total beginners. 2nd edition.</em> No Starch Press.
 </div>
 <div id="ref-hadley2017" class="csl-entry">
-Wickham, Hadley, and Garrett Grolemund. 2017. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. 1st ed. O’Reilly Media, Inc.
+Wickham, H., &amp; Grolemund, G. (2017). <em>R for data science: Import, tidy, transform, visualize, and model data</em> (1st ed.). O’Reilly Media, Inc.
 </div>
 </div>
             </section>
@@ -696,7 +696,6 @@ Wickham, Hadley, and Garrett Grolemund. 2017. <em>R for Data Science: Import, Ti
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -727,7 +726,7 @@ gitbook.start({
 },
 "download": null,
 "search": {
-"engine": "lunr",
+"engine": "fuse",
 "options": null
 },
 "toc": {

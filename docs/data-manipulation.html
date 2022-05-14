@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 8 Data Manipulation | ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
   <meta name="description" content="ENC2055 Course material second edition" />
-  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 8 Data Manipulation | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-12-24" />
+<meta name="date" content="2022-05-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -35,6 +35,7 @@
 <link rel="next" href="string-manipulation.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -682,10 +682,14 @@ div.csl-indent {
 </div>
 <div class="danger">
 <p>
-Please note that in our earlier code, we save the output of <code>rename()</code> to a new object named <code>student1</code>. In other words, the object <code>student1</code> should contain a new data frame with all column names fixed as above.
+Please note that in our earlier code, we save the output of
+<code>rename()</code> to a new object named <code>student1</code>. In
+other words, the object <code>student1</code> should contain a new data
+frame with all column names fixed as above.
 </p>
 <p>
-Most importantly, the original data frame <code>student</code> is still available in the working memory.
+Most importantly, the original data frame <code>student</code> is
+still available in the working memory.
 </p>
 </div>
 </div>
@@ -758,7 +762,12 @@ Most importantly, the original data frame <code>student</code> is still availabl
 </div>
 <div class="danger">
 <p>
-In the above practices of <code>mutate()</code>, we did not save the output of <code>mutate()</code> to a new object name. We only print the output directly to the console. In other words, the original data frame is still the same (i.e., <code>student</code>, <code>student1</code>); no new variables have been created with respect to these original data frames.
+In the above practices of <code>mutate()</code>, we did not save the
+output of <code>mutate()</code> to a new object name. We only print the
+output directly to the console. In other words, the original data frame
+is still the same (i.e., <code>student</code>, <code>student1</code>);
+no new variables have been created with respect to these original data
+frames.
 </p>
 </div>
 </div>
@@ -862,7 +871,8 @@ In the above practices of <code>mutate()</code>, we did not save the output of <
 </div>
 <div class="info">
 <p>
-Please check <a href="subsetting.html#vector">Chapter 4.1 Vector</a> for more logical operations.
+Please check <a href="subsetting.html#vector">Chapter 4.1 Vector</a> for more
+logical operations.
 </p>
 </div>
 </div>
@@ -955,7 +965,7 @@ Please check <a href="subsetting.html#vector">Chapter 4.1 Vector</a> for more lo
 </div>
 <div id="tidy-data" class="section level2" number="8.10">
 <h2><span class="header-section-number">8.10</span> Tidy Data</h2>
-<p>Now I would like to talk about the idea of <em>tidy dataset</em>. <span class="citation"><a href="#ref-hadley2017" role="doc-biblioref">Wickham and Grolemund</a> (<a href="#ref-hadley2017" role="doc-biblioref">2017</a>)</span> suggests that a tidy dataset needs to satisfy the following three interrelated rules:</p>
+<p>Now I would like to talk about the idea of <em>tidy dataset</em>. <span class="citation">Wickham &amp; Grolemund (<a href="#ref-hadley2017" role="doc-biblioref">2017</a>)</span> suggests that a tidy dataset needs to satisfy the following three interrelated rules:</p>
 <ul>
 <li>Each variable must have its own column.</li>
 <li>Each observation must have its own row.</li>
@@ -963,14 +973,14 @@ Please check <a href="subsetting.html#vector">Chapter 4.1 Vector</a> for more lo
 </ul>
 <p><img src="images/tidy-1.png" width="90%" /></p>
 <p>However, in real life, we often encounter datasets that are NOT tidy at all.</p>
-<p>Instead of expecting others to do the tidying work for you (which is very unlikely), we might as well learn how to deal with messy dataset. <span class="citation"><a href="#ref-hadley2017" role="doc-biblioref">Wickham and Grolemund</a> (<a href="#ref-hadley2017" role="doc-biblioref">2017</a>)</span> suggests two common strategies data scientists often apply to the untidy dataset:</p>
+<p>Instead of expecting others to do the tidying work for you (which is very unlikely), we might as well learn how to deal with messy dataset. <span class="citation">Wickham &amp; Grolemund (<a href="#ref-hadley2017" role="doc-biblioref">2017</a>)</span> suggests two common strategies data scientists often apply to the untidy dataset:</p>
 <ol style="list-style-type: decimal">
 <li>One variable might be spread across multiple columns (from long to wide)</li>
 <li>One observation might be scattered across multiple rows (from wide to long)</li>
 </ol>
 <div id="a-long-to-wide-example" class="section level3" number="8.10.1">
 <h3><span class="header-section-number">8.10.1</span> A Long-to-Wide Example</h3>
-<p>Here I would like to illustrate the idea of tidy dataset and also ways of tidying with a simple dataset provided in <span class="citation"><a href="#ref-hadley2017" role="doc-biblioref">Wickham and Grolemund</a> (<a href="#ref-hadley2017" role="doc-biblioref">2017</a>)</span>, Chapter 12.</p>
+<p>Here I would like to illustrate the idea of tidy dataset and also ways of tidying with a simple dataset provided in <span class="citation">Wickham &amp; Grolemund (<a href="#ref-hadley2017" role="doc-biblioref">2017</a>)</span>, Chapter 12.</p>
 <div class="sourceCode" id="cb393"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb393-1"><a href="data-manipulation.html#cb393-1" aria-hidden="true" tabindex="-1"></a>people <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
 <span id="cb393-2"><a href="data-manipulation.html#cb393-2" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>name,             <span class="sc">~</span>profile,  <span class="sc">~</span>values,</span>
 <span id="cb393-3"><a href="data-manipulation.html#cb393-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">#-----------------|--------|------</span></span>
@@ -1150,9 +1160,9 @@ Please transform <code>word_freq</code> into a wider format, where the word freq
 </div>
 </div>
 <h3>References</h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-hadley2017" class="csl-entry">
-Wickham, Hadley, and Garrett Grolemund. 2017. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. 1st ed. O’Reilly Media, Inc.
+Wickham, H., &amp; Grolemund, G. (2017). <em>R for data science: Import, tidy, transform, visualize, and model data</em> (1st ed.). O’Reilly Media, Inc.
 </div>
 </div>
             </section>
@@ -1165,7 +1175,6 @@ Wickham, Hadley, and Garrett Grolemund. 2017. <em>R for Data Science: Import, Ti
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -1196,7 +1205,7 @@ gitbook.start({
 },
 "download": null,
 "search": {
-"engine": "lunr",
+"engine": "fuse",
 "options": null
 },
 "toc": {

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>A The Shell | ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
   <meta name="description" content="ENC2055 Course material second edition" />
-  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="A The Shell | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-12-24" />
+<meta name="date" content="2022-05-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -35,6 +35,7 @@
 <link rel="next" href="reproducible-report.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -573,7 +573,7 @@ div.csl-indent {
 <h1><span class="header-section-number">A</span> The Shell</h1>
 <div id="why-do-you-need-to-know-shell-commands" class="section level2" number="22.1">
 <h2><span class="header-section-number">A.1</span> Why do you need to know <em>shell commands</em>?</h2>
-<p>The command line has many great advantages that can make you a more efficient and productive data scientist. <span class="citation"><a href="#ref-janssens2014" role="doc-biblioref">Janssens</a> (<a href="#ref-janssens2014" role="doc-biblioref">2014</a>)</span> has nicely summarized the strengths of command lines in five points:</p>
+<p>The command line has many great advantages that can make you a more efficient and productive data scientist. <span class="citation">Janssens (<a href="#ref-janssens2014" role="doc-biblioref">2014</a>)</span> has nicely summarized the strengths of command lines in five points:</p>
 <ul>
 <li>The command line is <em>agile</em></li>
 <li>The command line is <em>augmenting</em></li>
@@ -648,7 +648,12 @@ div.csl-indent {
 </ul>
 <div class="info">
 <p>
-So when you see a file with the extention of <code>*.tar.gz</code>, this indicates that this file is a zipped file, which compresses a list of multiple files into one tar archive. Usually people pass their collection of multiple text files (i.e., a corpus) in this way because it is often easier to share one file instead of tons of files at a time.
+So when you see a file with the extention of <code>*.tar.gz</code>,
+this indicates that this file is a zipped file, which compresses a list
+of multiple files into one tar archive. Usually people pass their
+collection of multiple text files (i.e., a corpus) in this way because
+it is often easier to share one file instead of tons of files at a
+time.
 </p>
 </div>
 </div>
@@ -660,9 +665,9 @@ So when you see a file with the extention of <code>*.tar.gz</code>, this indicat
 </div>
 </div>
 <h3>References</h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-janssens2014" class="csl-entry">
-Janssens, Jeroen. 2014. <em>Data Science at the Command Line: Facing the Future with Time-Tested Tools</em>. " O’Reilly Media, Inc.".
+Janssens, J. (2014). <em>Data science at the command line: Facing the future with time-tested tools</em>. " O’Reilly Media, Inc.".
 </div>
 </div>
             </section>
@@ -675,7 +680,6 @@ Janssens, Jeroen. 2014. <em>Data Science at the Command Line: Facing the Future 
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -706,7 +710,7 @@ gitbook.start({
 },
 "download": null,
 "search": {
-"engine": "lunr",
+"engine": "fuse",
 "options": null
 },
 "toc": {

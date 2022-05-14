@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 4 Subsetting | ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
   <meta name="description" content="ENC2055 Course material second edition" />
-  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 Subsetting | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-12-24" />
+<meta name="date" content="2022-05-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -35,6 +35,7 @@
 <link rel="next" href="conditions-and-loops.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -600,7 +600,11 @@ div.csl-indent {
 <pre class="Rout"><code>[1] &quot;one&quot;   &quot;three&quot;</code></pre>
 <div class="info">
 <p>
-You may use different logical operators to check each element of the vector according to some criteria. R will decide whether elements of the vector satisfy the condition given in the logical expression and return a Boolean vector of the same length. Common logical operators include:
+You may use different logical operators to check each element of the
+vector according to some criteria. R will decide whether elements of the
+vector satisfy the condition given in the logical expression and return
+a Boolean vector of the same length. Common logical operators
+include:
 </p>
 <ul>
 <li>
@@ -778,10 +782,16 @@ factors</code></pre>
 <pre class="Rout"><code>[1] NA</code></pre>
 <div class="info">
 <p>
-The difference between <code>vector</code> and <code>factor</code> may look trivial for the moment but they are statistically very crucial. The choice of whether to instruct R to treat a vector as a factor, or even an ordered factor, will have important consequences in the implementation of many statistical methods, such as regression or other generalized linear modeling.
+The difference between <code>vector</code> and <code>factor</code>
+may look trivial for the moment but they are statistically very crucial.
+The choice of whether to instruct R to treat a vector as a factor, or
+even an ordered factor, will have important consequences in the
+implementation of many statistical methods, such as regression or other
+generalized linear modeling.
 </p>
 <p>
-<strong>Rule of thumb</strong>: Always pay attention to what kind of object class you are dealing with:)
+<strong>Rule of thumb</strong>: Always pay attention to what kind of
+object class you are dealing with:)
 </p>
 </div>
 </div>
@@ -817,10 +827,12 @@ $three
 <pre class="Rout"><code>[1] 1 2 3</code></pre>
 <div class="info">
 <p>
-We can also subset a <code>List</code> by the <strong>names</strong> of its elements.
+We can also subset a <code>List</code> by the <strong>names</strong>
+of its elements.
 </p>
 <p>
-Before you try the following codes in the R console, could you first predict the outputs?
+Before you try the following codes in the R console, could you first
+predict the outputs?
 </p>
 </div>
 <pre><code>  ind &lt;- c(&quot;one&quot;, &quot;three&quot;)
@@ -832,7 +844,7 @@ Before you try the following codes in the R console, could you first predict the
 <ul>
 <li>a sequence of 20 evenly spaced numbers between -4 and 4; (hint: check <code>seq()</code>)</li>
 <li>a 3 x 3 matrix of the logical vector <code>c(F,T,T,T,F,T,T,F,F)</code> filled column-wise;</li>
-<li>a character vector with the two strings “don,” and “quixote”;</li>
+<li>a character vector with the two strings “don”, and “quixote”;</li>
 <li>a factor containing the observations <code>c("LOW',"MID","LOW","MID","MID","HIGH")</code>.</li>
 </ul>
 </div>
@@ -918,7 +930,8 @@ Levels: HIGH LOW MID</code></pre>
 </div>
 <div class="info">
 <p>
-Please compare the following two ways of accessing a column from the data frame. Can you tell the differences in the returned results?
+Please compare the following two ways of accessing a column from the
+data frame. Can you tell the differences in the returned results?
 </p>
 </div>
 <div class="sourceCode" id="cb171"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb171-1"><a href="subsetting.html#cb171-1" aria-hidden="true" tabindex="-1"></a>ex_df[, <span class="fu">c</span>(<span class="st">&quot;FREQ&quot;</span>)]</span>
@@ -977,18 +990,22 @@ Please compare the following two ways of accessing a column from the data frame.
 <hr />
 <div class="info">
 <p>
-There is another way to create a <code>tibble</code>. You can use <code>tribble()</code>, short for transposed tibble. <code>tribble()</code> is customized for data entry in code:
+There is another way to create a <code>tibble</code>. You can use
+<code>tribble()</code>, short for transposed tibble.
+<code>tribble()</code> is customized for data entry in code:
 </p>
 <ul>
 <li>
-column headings are defined by formulas (i.e. they start with <code>~</code>);
+column headings are defined by formulas (i.e. they start with
+<code>~</code>);
 </li>
 <li>
 entries are separated by <code>commas</code>.
 </li>
 </ul>
 <p>
-This makes it possible to lay out small amounts of data in easy-to-read form.
+This makes it possible to lay out small amounts of data in
+easy-to-read form.
 </p>
 </div>
 <div class="sourceCode" id="cb173"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb173-1"><a href="subsetting.html#cb173-1" aria-hidden="true" tabindex="-1"></a>ex_tb_2 <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
@@ -1039,17 +1056,25 @@ This makes it possible to lay out small amounts of data in easy-to-read form.
 <pre class="Rout"><code>[1] 1104   35  104   34</code></pre>
 <div class="info">
 <p>
-There are three major advantages with <code>tibble()</code> when compared with <code>data.frame()</code>:
+There are three major advantages with <code>tibble()</code> when
+compared with <code>data.frame()</code>:
 </p>
 <ul>
 <li>
-A <code>tibble</code> set strings to default to character vectors while <code>data.frame(, stringsAsFactors = T)</code> converts all character vectors to factors by default
+A <code>tibble</code> set strings to default to character vectors
+while <code>data.frame(, stringsAsFactors = T)</code> converts all
+character vectors to factors by default
 </li>
 <li>
-When auto-printing the contents, <code>tibble</code> would only display the first ten rows, but <code>data.frame</code> would print out everything. This could be devastating! (Imagine that you have a table with hundreds of thousands rows.)
+When auto-printing the contents, <code>tibble</code> would only
+display the first ten rows, but <code>data.frame</code> would print out
+everything. This could be devastating! (Imagine that you have a table
+with hundreds of thousands rows.)
 </li>
 <li>
-The auto-printing of the <code>tibble</code> is a lot more informative, providing additional attributes of the <code>tibble</code> such as (a) row and column numbers and (b) data type of each column
+The auto-printing of the <code>tibble</code> is a lot more
+informative, providing additional attributes of the <code>tibble</code>
+such as (a) row and column numbers and (b) data type of each column
 </li>
 </ul>
 </div>
@@ -1096,7 +1121,6 @@ Please discuss the differences of the objects loaded from these two methods.
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -1127,7 +1151,7 @@ gitbook.start({
 },
 "download": null,
 "search": {
-"engine": "lunr",
+"engine": "fuse",
 "options": null
 },
 "toc": {

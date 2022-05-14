@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 R Fundamentals | ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
   <meta name="description" content="ENC2055 Course material second edition" />
-  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 R Fundamentals | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-12-24" />
+<meta name="date" content="2022-05-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -35,6 +35,7 @@
 <link rel="next" href="code-format-convetion.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -601,7 +601,8 @@ div.csl-indent {
 Important notes:
 <ul>
 <li>
-Do not have Chinese characters in your directory names or on the path to the files
+Do not have Chinese characters in your directory names or on the
+path to the files
 </li>
 <li>
 Do not have spaces and weird symbols in your file path:
@@ -656,7 +657,7 @@ Figure 2.1: Rstudio Interface
 <p>In the above example (Figure <a href="r-fundamentals.html#fig:rstudiointerface">2.1</a>), I wrote a few lines of codes in a R script file (cf. the <code>Editor</code> frame) and asked R to run these lines of codes in the R <code>Console</code>. And the graphic output of the R script was printed in the <code>Output</code> frame.</p>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-27" class="exercise"><strong>Exercise 2.1  </strong></span>Please create a new R script in Rstudio. You may name the script as “ch2.R.” Please write the following codes in the script and pass the whole script to the R Console.
+<span id="exr:unnamed-chunk-27" class="exercise"><strong>Exercise 2.1  </strong></span>Please create a new R script in Rstudio. You may name the script as “ch2.R”. Please write the following codes in the script and pass the whole script to the R Console.
 </div>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb15-1"><a href="r-fundamentals.html#cb15-1" aria-hidden="true" tabindex="-1"></a>scores <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="at">mean =</span> <span class="dv">75</span>, <span class="at">sd =</span> <span class="fl">5.8</span>)</span>
 <span id="cb15-2"><a href="r-fundamentals.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(scores))</span>
@@ -755,7 +756,9 @@ Figure 2.1: Rstudio Interface
 <p>When creating a matrix, we specify the values for the <strong>parameters</strong>, <code>byrow =</code> and <code>nrow =</code>. These specifications provide clues for R to create a matrix with <em>N</em> rows and arrange the numbers <em>by rows</em>. The actual values of the parameters that we use, i.e., <code>T</code> and <code>2</code>, are referred to as <strong>arguments</strong>.</p>
 <div class="info">
 <p>
-<strong>Parameter</strong> is a variable in the declaration of function. <strong>Argument</strong> is the actual value of this variable that gets passed to function.
+<strong>Parameter</strong> is a variable in the declaration of
+function. <strong>Argument</strong> is the actual value of this variable
+that gets passed to function.
 </p>
 </div>
 <hr />
@@ -808,7 +811,8 @@ Figure 2.1: Rstudio Interface
 <pre class="Rout"><code>[1] FALSE FALSE  TRUE FALSE</code></pre>
 <div class="info">
 <p>
-For more information on vectorization, please watch the following YouTube clip from Roger Peng.
+For more information on vectorization, please watch the following
+YouTube clip from Roger Peng.
 </p>
 </div>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YH3qtw7mTyA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
@@ -829,40 +833,62 @@ For more information on vectorization, please watch the following YouTube clip f
 <p>In this course, I would like to recommend all of you to install the package <code>tidyverse</code>, which is a bundle including several useful packages for data analysis. During the installation, if you are asked about whether to install the package from <strong>source</strong>, please enter <code>yes</code> (See below for more detail).</p>
 <div class="danger">
 <p>
-During the R package installation, if you see messages like <code>installation of package XXX had non-zero exit status</code>, this indicates that the package has <strong>NOT</strong> been properly installed in your R environment. That is, something is <strong>WRONG</strong> (See below as well). You need to figure out a way to solve the issues indicated in the error messages so that you can successfully install the package in your R system.
+During the R package installation, if you see messages like
+<code>installation of package XXX had non-zero exit status</code>, this
+indicates that the package has <strong>NOT</strong> been properly
+installed in your R environment. That is, something is
+<strong>WRONG</strong> (See below as well). You need to figure out a way
+to solve the issues indicated in the error messages so that you can
+successfully install the package in your R system.
 </p>
 </div>
 <div class="info">
 <p>
-Before you install R packages from source, you need to install a few R tools for your operating system. These tools are necessary for you to build the R packages from the source.
+Before you install R packages from source, you need to install a few
+R tools for your operating system. These tools are necessary for you to
+build the R packages from the source.
 </p>
 <p>
-For MacOS Catalina users, please install the following applications on your own. They are necessary for building R packages from source.
+For MacOS Catalina users, please install the following applications
+on your own. They are necessary for building R packages from source.
 </p>
 <ul>
 <li>
-<a href="https://developer.apple.com/download/more/">Command Line Tools for Xcode 11.X</a>
+<a href="https://developer.apple.com/download/more/">Command Line
+Tools for Xcode 11.X</a>
 <ul>
 <li>
-You may need to log in with your Apple ID and find the <em>download</em> page.
+You may need to log in with your Apple ID and find the
+<em>download</em> page.
 </li>
 </ul>
 </li>
 <li>
-clang7/8 from <a href="https://cran.r-project.org/bin/macosx/tools/" class="uri">https://cran.r-project.org/bin/macosx/tools/</a>
+clang7/8 from <a href="https://cran.r-project.org/bin/macosx/tools/"
+class="uri">https://cran.r-project.org/bin/macosx/tools/</a>
 </li>
 <li>
-gfortran6.1 from <a href="https://cran.r-project.org/bin/macosx/tools/" class="uri">https://cran.r-project.org/bin/macosx/tools/</a>
+gfortran6.1 from <a
+href="https://cran.r-project.org/bin/macosx/tools/"
+class="uri">https://cran.r-project.org/bin/macosx/tools/</a>
 </li>
 </ul>
 <p>
-For Windows users, please install <a href="https://cran.r-project.org/bin/windows/Rtools/">Rtools from CRAN</a> (Please install the version according to your R version).
+For Windows users, please install <a
+href="https://cran.r-project.org/bin/windows/Rtools/">Rtools from
+CRAN</a> (Please install the version according to your R version).
 </p>
 <p>
-After you install all the above source-building tools, you can now install the package <code>tidyverse</code> from source. Please install the package from the <strong>source</strong>. This step is <strong>very important</strong> because some of the dependent packages require you to do so.
+After you install all the above source-building tools, you can now
+install the package <code>tidyverse</code> from source. Please install
+the package from the <strong>source</strong>. This step is <strong>very
+important</strong> because some of the dependent packages require you to
+do so.
 </p>
 <p>
-However, for the other packages, I would still recommend you to install the packages in a normal way, i.e., installing NOT from source, but from the compiled version on CRAN.
+However, for the other packages, I would still recommend you to
+install the packages in a normal way, i.e., installing NOT from source,
+but from the compiled version on CRAN.
 </p>
 </div>
 </div>
@@ -1012,7 +1038,6 @@ myfac &lt;- function(x){
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -1043,7 +1068,7 @@ gitbook.start({
 },
 "download": null,
 "search": {
-"engine": "lunr",
+"engine": "fuse",
 "options": null
 },
 "toc": {

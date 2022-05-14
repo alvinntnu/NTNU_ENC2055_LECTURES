@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 17 Regular Expression | ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
   <meta name="description" content="ENC2055 Course material second edition" />
-  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 17 Regular Expression | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-12-24" />
+<meta name="date" content="2022-05-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -35,6 +35,7 @@
 <link rel="next" href="pandas.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -840,9 +840,9 @@ Wh[e]r[e]’s th[e] p[e]ck [o]f p[i]ckl[e]d p[e]pp[e]rs P[e]t[e]r P[i]p[e]r p[i]
 <p><span id="exr:unlabeled-div-20" class="exercise"><strong>Exercise 17.2  </strong></span>Create a small program to extract both emails and phone numbers from the texts on this faculty page: <a href="https://www.eng.ntnu.edu.tw/index.php/full-time-faculty/">Department o English, NTNU</a>.</p>
 </div>
 <pre class="Rout"><code>All Phone Numbers:</code></pre>
-<pre class="Rout"><code>[&#39;02-7749-1801&#39;, &#39;02-7749-1772&#39;, &#39;02-7749-1775&#39;, &#39;02-7749-1783&#39;, &#39;02-7749-1767&#39;, &#39;02-7749-1757&#39;, &#39;02-7749-1781&#39;, &#39;02-7749-1777&#39;, &#39;02-7749-1773&#39;, &#39;02-7749-1759&#39;, &#39;02-7749-1768&#39;, &#39;02-7749-1822&#39;, &#39;02-7749-1760&#39;, &#39;02-7749-1764&#39;, &#39;02-7749-1769&#39;, &#39;02-7749-1817&#39;, &#39;02-7749-1756&#39;, &#39;02-7749-1788&#39;, &#39;02-7749-1758&#39;, &#39;02-7749-1754&#39;, &#39;02-7749-1821&#39;, &#39;02-7749-1819&#39;, &#39;02-7749-1790&#39;, &#39;02-7749-1787&#39;, &#39;02-7749-1776&#39;, &#39;02-7749-1770&#39;, &#39;02-7749-1786&#39;, &#39;02-7749-1789&#39;, &#39;02-7749-1816&#39;, &#39;02-7749-1774&#39;, &#39;02-7749-1765&#39;, &#39;02-7749-1778&#39;, &#39;02-7749-1761&#39;, &#39;02-7749-1541&#39;, &#39;02-7749-1761&#39;, &#39;02-7749-1823&#39;, &#39;02-7749-1540&#39;, &#39;02-7749-1763&#39;, &#39;02-7749-1762&#39;, &#39;02-7749-1821&#39;, &#39;02-7749-1785&#39;, &#39;02-7749-1820&#39;, &#39;02-7749-1766&#39;, &#39;02-7749-1782&#39;, &#39;02-7749-1811&#39;, &#39;02-7749-1779&#39;, &#39;02-7749-1762&#39;, &#39;02-7749-1784&#39;, &#39;02-7749-1755&#39;, &#39;02-7749-1800&#39;, &#39;02-2363-4793&#39;]</code></pre>
+<pre class="Rout"><code>[&#39;02-7749-1801&#39;, &#39;02-7749-1772&#39;, &#39;02-7749-1759&#39;, &#39;02-7749-1783&#39;, &#39;02-7749-1767&#39;, &#39;02-7749-1757&#39;, &#39;02-7749-1781&#39;, &#39;02-7749-1777&#39;, &#39;02-7749-1773&#39;, &#39;02-7749-1775&#39;, &#39;02-7749-1768&#39;, &#39;02-7749-1822&#39;, &#39;02-7749-1760&#39;, &#39;02-7749-1764&#39;, &#39;02-7749-1769&#39;, &#39;02-7749-1817&#39;, &#39;02-7749-1756&#39;, &#39;02-7749-1788&#39;, &#39;02-7749-1758&#39;, &#39;02-7749-1754&#39;, &#39;02-7749-1821&#39;, &#39;02-7749-1819&#39;, &#39;02-7749-1790&#39;, &#39;02-7749-1761&#39;, &#39;02-7749-1776&#39;, &#39;02-7749-1770&#39;, &#39;02-7749-1786&#39;, &#39;02-7749-1789&#39;, &#39;02-7749-1816&#39;, &#39;02-7749-1774&#39;, &#39;02-7749-1765&#39;, &#39;02-7749-1778&#39;, &#39;02-7749-1761&#39;, &#39;02-7749-1541&#39;, &#39;02-7749-1823&#39;, &#39;02-7749-1540&#39;, &#39;02-7749-1763&#39;, &#39;02-7749-1762&#39;, &#39;02-7749-1821&#39;, &#39;02-7749-1785&#39;, &#39;02-7749-1820&#39;, &#39;02-7749-1766&#39;, &#39;02-7749-1782&#39;, &#39;02-7749-1811&#39;, &#39;02-7749-1779&#39;, &#39;02-7749-1762&#39;, &#39;02-7749-1784&#39;, &#39;02-7749-1755&#39;, &#39;02-7749-1800&#39;, &#39;02-2363-4793&#39;]</code></pre>
 <pre class="Rout"><code>All Emails:</code></pre>
-<pre class="Rout"><code>[&#39;chunyin@gapps.ntnu.edu.tw&#39;, &#39;mhchang@ntnu.edu.tw&#39;, &#39;clchern@ntnu.edu.tw&#39;, &#39;t22035@ntnu.edu.tw&#39;, &#39;joanchang@ntnu.edu.tw&#39;, &#39;hjchen@ntnu.edu.tw&#39;, &#39;tcsu@ntnu.edu.tw&#39;, &#39;t22028@ntnu.edu.tw&#39;, &#39;lip@ntnu.edu.tw&#39;, &#39;ting@ntnu.edu.tw&#39;, &#39;hclee@ntnu.edu.tw&#39;, &#39;hslin@ntnu.edu.tw&#39;, &#39;chyhuang@ntnu.edu.tw&#39;, &#39;profgood@ntnu.edu.tw&#39;, &#39;cclin@ntnu.edu.tw&#39;, &#39;iriswu@ntnu.edu.tw&#39;, &#39;yeutingliu@gapps.ntnu.edu.tw&#39;, &#39;ioana.luca@ntnu.edu.tw&#39;, &#39;lindsey@ntnu.edu.tw&#39;, &#39;jprystash@ntnu.edu.tw&#39;, &#39;hsysu@ntnu.edu.tw&#39;, &#39;hannes.bergthaller@ntnu.edu.tw&#39;, &#39;brianyeh@ntnu.edu.tw&#39;, &#39;lijeni@ntnu.edu.tw&#39;, &#39;ykhsu@ntnu.edu.tw&#39;, &#39;ycshao@ntnu.edu.tw&#39;, &#39;t22045@ntnu.edu.tw&#39;, &#39;jjwu@ntnu.edu.tw&#39;, &#39;mlhsieh@ntnu.edu.tw&#39;, &#39;jungsu@ntnu.edu.tw&#39;, &#39;t22001@ntnu.edu.tw&#39;, &#39;shiaohui@ntnu.edu.tw&#39;, &#39;jjtseng@gapps.ntnu.edu.tw&#39;, &#39;peichinchang@ntnu.edu.tw&#39;, &#39;aaron.c.deveson@ntnu.edu.tw&#39;, &#39;t22050@ntnu.edu.tw&#39;, &#39;lihsin@ntnu.edu.tw&#39;, &#39;wanghc@gapps.ntnu.edu.tw&#39;, &#39;alvinchen@ntnu.edu.tw&#39;, &#39;hllin@ntnu.edu.tw&#39;, &#39;jiaqiwu8@ntnu.edu.tw&#39;, &#39;angelawu@ntnu.edu.tw&#39;, &#39;yichien@ntnu.edu.tw&#39;, &#39;gfsayang@ntnu.edu.tw&#39;, &#39;yuchentai@gapps.ntnu.edu.tw&#39;, &#39;fwkung@ntnu.edu.tw&#39;, &#39;t22040@ntnu.edu.tw&#39;, &#39;curran@ntnu.edu.tw&#39;, &#39;english@ntnu.edu.tw&#39;]</code></pre>
+<pre class="Rout"><code>[&#39;chunyin@gapps.ntnu.edu.tw&#39;, &#39;lip@ntnu.edu.tw&#39;, &#39;clchern@ntnu.edu.tw&#39;, &#39;t22035@ntnu.edu.tw&#39;, &#39;joanchang@ntnu.edu.tw&#39;, &#39;hjchen@ntnu.edu.tw&#39;, &#39;tcsu@ntnu.edu.tw&#39;, &#39;t22028@ntnu.edu.tw&#39;, &#39;mhchang@ntnu.edu.tw&#39;, &#39;ting@ntnu.edu.tw&#39;, &#39;hclee@ntnu.edu.tw&#39;, &#39;hslin@ntnu.edu.tw&#39;, &#39;chyhuang@ntnu.edu.tw&#39;, &#39;profgood@ntnu.edu.tw&#39;, &#39;cclin@ntnu.edu.tw&#39;, &#39;iriswu@ntnu.edu.tw&#39;, &#39;yeutingliu@gapps.ntnu.edu.tw&#39;, &#39;ioana.luca@ntnu.edu.tw&#39;, &#39;lindsey@ntnu.edu.tw&#39;, &#39;jprystash@ntnu.edu.tw&#39;, &#39;hsysu@ntnu.edu.tw&#39;, &#39;hannes.bergthaller@ntnu.edu.tw&#39;, &#39;peichinchang@ntnu.edu.tw&#39;, &#39;lijeni@ntnu.edu.tw&#39;, &#39;ykhsu@ntnu.edu.tw&#39;, &#39;ycshao@ntnu.edu.tw&#39;, &#39;t22045@ntnu.edu.tw&#39;, &#39;jjwu@ntnu.edu.tw&#39;, &#39;mlhsieh@ntnu.edu.tw&#39;, &#39;jungsu@ntnu.edu.tw&#39;, &#39;t22001@ntnu.edu.tw&#39;, &#39;shiaohui@ntnu.edu.tw&#39;, &#39;jjtseng@gapps.ntnu.edu.tw&#39;, &#39;aaron.c.deveson@ntnu.edu.tw&#39;, &#39;t22050@ntnu.edu.tw&#39;, &#39;lihsin@ntnu.edu.tw&#39;, &#39;wanghc@gapps.ntnu.edu.tw&#39;, &#39;alvinchen@ntnu.edu.tw&#39;, &#39;hllin@ntnu.edu.tw&#39;, &#39;jiaqiwu8@ntnu.edu.tw&#39;, &#39;angelawu@ntnu.edu.tw&#39;, &#39;yichien@ntnu.edu.tw&#39;, &#39;gfsayang@ntnu.edu.tw&#39;, &#39;yuchentai@gapps.ntnu.edu.tw&#39;, &#39;fwkung@ntnu.edu.tw&#39;, &#39;t22040@ntnu.edu.tw&#39;, &#39;curran@ntnu.edu.tw&#39;, &#39;english@ntnu.edu.tw&#39;]</code></pre>
 </div>
 <div id="references" class="section level2" number="17.6">
 <h2><span class="header-section-number">17.6</span> References</h2>
@@ -865,7 +865,6 @@ Wh[e]r[e]’s th[e] p[e]ck [o]f p[i]ckl[e]d p[e]pp[e]rs P[e]t[e]r P[i]p[e]r p[i]
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -896,7 +895,7 @@ gitbook.start({
 },
 "download": null,
 "search": {
-"engine": "lunr",
+"engine": "fuse",
 "options": null
 },
 "toc": {

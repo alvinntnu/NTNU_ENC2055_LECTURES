@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 9 String Manipulation | ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
   <meta name="description" content="ENC2055 Course material second edition" />
-  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 9 String Manipulation | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-12-24" />
+<meta name="date" content="2022-05-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -35,6 +35,7 @@
 <link rel="next" href="data-import.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -625,10 +625,13 @@ div.csl-indent {
 <hr />
 <div class="danger">
 <p>
-Please note that the following code generates a different result from the above. Can you tell the differences?
+Please note that the following code generates a different result from
+the above. Can you tell the differences?
 </p>
 <p>
-How can you create exactly the same results by using <code>str_c(word_string,…)</code>? Please check <code>?str_c</code>.
+How can you create exactly the same results by using
+<code>str_c(word_string,…)</code>? Please check
+<code>?str_c</code>.
 </p>
 </div>
 <div class="sourceCode" id="cb406"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb406-1"><a href="string-manipulation.html#cb406-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_c</span>(word_string, <span class="at">sep =</span> <span class="st">&quot;_&quot;</span>)</span></code></pre></div>
@@ -783,10 +786,16 @@ apple peel</code></pre>
 <script type="application/json" data-for="htmlwidget-b6824b9aa69378d93644">{"x":{"html":"<ul>\n  <li>apple pie<\/li>\n  <li><span class='match'>apple<\/span><\/li>\n  <li>apple cake<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <div class="info">
 <p>
-The anchors are evaluated according to the base unit you are matching. In our previous examples, the RegEx pattern is applied to find a match in each element of the vector. The vector includes words. Therefore, the <code>^</code> indicates a word-initial position; <code>$</code> indicates a word-final position.
+The anchors are evaluated according to the base unit you are
+matching. In our previous examples, the RegEx pattern is applied to find
+a match in each element of the vector. The vector includes words.
+Therefore, the <code>^</code> indicates a word-initial position;
+<code>$</code> indicates a word-final position.
 </p>
 <p>
-If you have a vector of sentences, the <code>^</code> would indicate a sentence-initial position; <code>$</code> would indicate a sentence-final position. (See below)
+If you have a vector of sentences, the <code>^</code> would indicate
+a sentence-initial position; <code>$</code> would indicate a
+sentence-final position. (See below)
 </p>
 </div>
 <div class="sourceCode" id="cb431"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb431-1"><a href="string-manipulation.html#cb431-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;apple is good&quot;</span>, </span>
@@ -825,7 +834,11 @@ If you have a vector of sentences, the <code>^</code> would indicate a sentence-
 <p>The difference of finding-the-first-match (<code>str_view()</code>) vs. finding-all-the-matches (<code>str_view_all()</code>) will turn out to be very important in practical tasks. Please bear this in mind.</p>
 <div class="info">
 <p>
-In the above comparison of the two meta-character sets, <code>.</code> and <code>\w</code>, it is clear that the <code>\w</code> includes alphanumeric characters plus the underscore <code>_</code>. It does NOT include the hyphen <code>-</code>, which however can be a word-internal component.
+In the above comparison of the two meta-character sets,
+<code>.</code> and <code>\w</code>, it is clear that the
+<code>\w</code> includes alphanumeric characters plus the underscore
+<code>_</code>. It does NOT include the hyphen <code>-</code>, which
+however can be a word-internal component.
 </p>
 </div>
 </div>
@@ -843,7 +856,11 @@ In the above comparison of the two meta-character sets, <code>.</code> and <code
 <script type="application/json" data-for="htmlwidget-ff06f2b1b662377c0741">{"x":{"html":"<ul>\n  <li><span class='match'>grey<\/span><\/li>\n  <li><span class='match'>gray<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <div class="info">
 <p>
-If you know very well which characters you are to match/find, use <strong>inclusive</strong> character sets, i.e., <code>[…]</code>. If you know very well which characters you do NOT like to match/find, use <strong>exclusive</strong> character sets, i.e., <code>[^...]</code>.
+If you know very well which characters you are to match/find, use
+<strong>inclusive</strong> character sets, i.e., <code>[…]</code>. If
+you know very well which characters you do NOT like to match/find, use
+<strong>exclusive</strong> character sets, i.e.,
+<code>[^...]</code>.
 </p>
 </div>
 <p>For example, what if we would like to find all non-vowel letters in the words? Instead of coming up with an inclusive character set <code>[...]</code>, which include all possible consonant letters, it would be more efficient if you create an exclusive character set, <code>[^aeiou]</code>, which suggests that you need any characters that do not belong to vowels.</p>
@@ -854,7 +871,7 @@ If you know very well which characters you are to match/find, use <strong>inclus
 </div>
 <div id="quantifiers" class="section level3" number="9.4.5">
 <h3><span class="header-section-number">9.4.5</span> Quantifiers</h3>
-<p>Usually we do not know beforehand the exact length of the match. The match can be variable in sizes. For example, you may want to find words starting with “a.” In that case, you need to create a regular expression that can match strings of variable lengths.</p>
+<p>Usually we do not know beforehand the exact length of the match. The match can be variable in sizes. For example, you may want to find words starting with “a”. In that case, you need to create a regular expression that can match strings of variable lengths.</p>
 <p>We can use <strong>quantifiers</strong> to specify the number of occurrences of a particular unit (i.e., <strong>the character preceding the quantifier</strong>) in the regular expression:</p>
 <ul>
 <li><code>?</code>: 0 or 1</li>
@@ -947,13 +964,13 @@ If you know very well which characters you are to match/find, use <strong>inclus
 <hr />
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-360" class="exercise"><strong>Exercise 9.1  </strong></span>With the same set of fruit names in <code>x</code>, how do we match fruits with a <code>abab</code> pattern, such as “banana?”
+<span id="exr:unnamed-chunk-360" class="exercise"><strong>Exercise 9.1  </strong></span>With the same set of fruit names in <code>x</code>, how do we match fruits with a <code>abab</code> pattern, such as “banana”?
 </div>
 <div id="htmlwidget-9227149bca907937caff" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-9227149bca907937caff">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>b<span class='match'>anan<\/span>a<\/li>\n  <li>bell pepper<\/li>\n  <li>bilberry<\/li>\n  <li>blackberry<\/li>\n  <li>blackcurrant<\/li>\n  <li>blood orange<\/li>\n  <li>blueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-362" class="exercise"><strong>Exercise 9.2  </strong></span>With the same set of fruit names in <code>x</code>, how do we match fruits with a <code>abba</code> pattern, such as “pepper?”
+<span id="exr:unnamed-chunk-362" class="exercise"><strong>Exercise 9.2  </strong></span>With the same set of fruit names in <code>x</code>, how do we match fruits with a <code>abba</code> pattern, such as “pepper”?
 </div>
 <div id="htmlwidget-20018f6b463ec3b08ffe" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-20018f6b463ec3b08ffe">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>banana<\/li>\n  <li>bell p<span class='match'>eppe<\/span>r<\/li>\n  <li>bilberry<\/li>\n  <li>blackberry<\/li>\n  <li>blackcurrant<\/li>\n  <li>blood orange<\/li>\n  <li>blueberry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
@@ -1158,7 +1175,7 @@ If you know very well which characters you are to match/find, use <strong>inclus
 <pre class="Rout"><code>[1] &quot;31/7/1976&quot;  &quot;15.02.1970&quot; &quot;31-11-1986&quot; &quot;01/04.2020&quot;</code></pre>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-385" class="exercise"><strong>Exercise 9.7  </strong></span>Please use the default <code>sentences</code> vector as your input and find all patterns of “any BE verbs + words ending with ‘en’ or ‘ed’.” Please extract these matches from the sentences and your result should be a vector of these matches, as shown below.
+<span id="exr:unnamed-chunk-385" class="exercise"><strong>Exercise 9.7  </strong></span>Please use the default <code>sentences</code> vector as your input and find all patterns of “any BE verbs + words ending with ‘en’ or ‘ed’”. Please extract these matches from the sentences and your result should be a vector of these matches, as shown below.
 </div>
 <div class="sourceCode" id="cb481"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb481-1"><a href="string-manipulation.html#cb481-1" aria-hidden="true" tabindex="-1"></a>sentences[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;The birch canoe slid on the smooth planks.&quot; 
@@ -1275,7 +1292,7 @@ If you know very well which characters you are to match/find, use <strong>inclus
 <hr />
 
 <div class="exercise">
-<p><span id="exr:exa" class="exercise"><strong>Exercise 9.12  </strong></span>Please use the first ten words in the <code>fruit</code> vector for this exercise. Based on the fruit vocabulary, can you identify all the <code>a</code> that is followed by <code>STOP_SOUNDS</code> and replace them with “V?”</p>
+<p><span id="exr:exa" class="exercise"><strong>Exercise 9.12  </strong></span>Please use the first ten words in the <code>fruit</code> vector for this exercise. Based on the fruit vocabulary, can you identify all the <code>a</code> that is followed by <code>STOP_SOUNDS</code> and replace them with “V”?</p>
 <p><code>STOP_SOUNDS</code> refer to <code>p, t, k, b, d, g</code></p>
 Hint: <code>str_replace_all()</code>
 </div>
@@ -1298,7 +1315,7 @@ Hint: <code>str_replace_all()</code>
 <hr />
 
 <div class="exercise">
-<p><span id="exr:exall" class="exercise"><strong>Exercise 9.13  </strong></span>Similar to the previous example, Exercise <a href="string-manipulation.html#exr:exa">9.12</a>, also based on the first ten words in <code>fruit</code>, please identify all the <em>vowels</em> that are both followed and preceded by <code>STOP_SOUNDS</code> and replace them with “V.”</p>
+<p><span id="exr:exall" class="exercise"><strong>Exercise 9.13  </strong></span>Similar to the previous example, Exercise <a href="string-manipulation.html#exr:exa">9.12</a>, also based on the first ten words in <code>fruit</code>, please identify all the <em>vowels</em> that are both followed and preceded by <code>STOP_SOUNDS</code> and replace them with “V”.</p>
 <p><em>Vowels</em> are defined as letters including <em>a</em>, <em>e</em>, <em>i</em>, <em>o</em>,and <em>u</em>,</p>
 </div>
 <ul>
@@ -1357,7 +1374,7 @@ Hint: <code>str_replace_all()</code>
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-412" class="exercise"><strong>Exercise 9.15  </strong></span>If we have a data frame like <code>dt</code> below, how do we extract all the vowels of the words in the <code>WORD</code> column and create two additional columns:</p>
 <ul>
-<li>Because a word may have several vowels, create a new column, which shows all the vowels in the word by combining them into a long string with the delimiter "_"</li>
+<li>Because a word may have several vowels, create a new column, which shows all the vowels in the word by combining them into a long string with the delimiter “_”</li>
 <li>Create another column for the number of vowels for each word</li>
 </ul>
 Vowels are defined as <code>[aeiou]</code>.
@@ -1597,7 +1614,7 @@ Sample answers have been provided below.
 <hr />
 
 <div class="exercise">
-<span id="exr:exidiom3" class="exercise"><strong>Exercise 9.21  </strong></span>Following Exercise <a href="string-manipulation.html#exr:exidiom2">9.20</a>, for each type of the idioms (i.e., “A_A_” or "_A_A"), please provide their respective proportions of W<sub>1</sub> = W<sub>2</sub> vs. W<sub>1</sub> != W<sub>2</sub>, where W<sub>1</sub> and W<sub>2</sub> refer to the words filled in the variable slots of the idiomatic templates.
+<span id="exr:exidiom3" class="exercise"><strong>Exercise 9.21  </strong></span>Following Exercise <a href="string-manipulation.html#exr:exidiom2">9.20</a>, for each type of the idioms (i.e., “A_A_” or “_A_A”), please provide their respective proportions of W<sub>1</sub> = W<sub>2</sub> vs. W<sub>1</sub> != W<sub>2</sub>, where W<sub>1</sub> and W<sub>2</sub> refer to the words filled in the variable slots of the idiomatic templates.
 </div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
@@ -1640,7 +1657,6 @@ Sample answers have been provided below.
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -1671,7 +1687,7 @@ gitbook.start({
 },
 "download": null,
 "search": {
-"engine": "lunr",
+"engine": "fuse",
 "options": null
 },
 "toc": {

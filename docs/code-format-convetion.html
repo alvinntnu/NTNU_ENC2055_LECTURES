@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 Code Format Convention | ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
   <meta name="description" content="ENC2055 Course material second edition" />
-  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 Code Format Convention | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-12-24" />
+<meta name="date" content="2022-05-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -35,6 +35,7 @@
 <link rel="next" href="subsetting.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -635,10 +635,18 @@ grade_average&lt;-mean(midterm*0.5+final*0.5)</code></pre>
 <span id="cb80-6"><a href="code-format-convetion.html#cb80-6" aria-hidden="true" tabindex="-1"></a>tidyr <span class="sc">::</span> <span class="fu">separate</span>()</span></code></pre></div>
 <div class="info">
 <p>
-<code>:</code> is an expression in R to create a sequence of numbers. For example, <code>c(1:10)</code> is the same as <code>c(1,2,3,4,5,6,7,8,9,10)</code>.
+<code>:</code> is an expression in R to create a sequence of numbers.
+For example, <code>c(1:10)</code> is the same as
+<code>c(1,2,3,4,5,6,7,8,9,10)</code>.
 </p>
 <p>
-<code>::</code> is an expression to access a particular object/function from a library without having the entire library loaded in your current R environment. For example, <code>tidyr::separate()</code> calls the function <code>separate()</code> from the library <code>tidyr</code> but the other objects in <code>tidyr</code> are still NOT included. You cannot use the other objects defined in <code>tidyr</code>.
+<code>::</code> is an expression to access a particular
+object/function from a library without having the entire library loaded
+in your current R environment. For example,
+<code>tidyr::separate()</code> calls the function
+<code>separate()</code> from the library <code>tidyr</code> but the
+other objects in <code>tidyr</code> are still NOT included. You cannot
+use the other objects defined in <code>tidyr</code>.
 </p>
 </div>
 <p>For parentheses <code>(</code>, if it is in the control structure, we usually put a white space before the initial <code>(</code>:</p>
@@ -738,7 +746,6 @@ grade_average&lt;-mean(midterm*0.5+final*0.5)</code></pre>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -769,7 +776,7 @@ gitbook.start({
 },
 "download": null,
 "search": {
-"engine": "lunr",
+"engine": "fuse",
 "options": null
 },
 "toc": {

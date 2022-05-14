@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 10 Data Import | ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
   <meta name="description" content="ENC2055 Course material second edition" />
-  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 10 Data Import | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-12-24" />
+<meta name="date" content="2022-05-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -35,6 +35,7 @@
 <link rel="next" href="iteration.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -612,13 +612,19 @@ Mike Jones,mike@example.com,098-765-4321,321 Fake Avenue</code></pre>
 </div>
 <div id="how-do-i-save-csv-files" class="section level3" number="10.3.2">
 <h3><span class="header-section-number">10.3.2</span> How do I save CSV files?</h3>
-<p>Saving CSV files is relatively easy. You just need to know where to change the file type. With a normal spreadsheet application (e.g., MS Excel), under the “File” section in the “Save As” tab, you can select it and change default file extension to "CSV (Comma delimited) (*.csv)".</p>
+<p>Saving CSV files is relatively easy. You just need to know where to change the file type. With a normal spreadsheet application (e.g., MS Excel), under the “File” section in the “Save As” tab, you can select it and change default file extension to “CSV (Comma delimited) (*.csv)“.</p>
 <div class="info">
 <p>
-Although people mostly use the comma character to separate (or delimit) data, sometimes people use other characters like the tab, i.e., <code>\t</code>. Therefore, sometimes people use the file extension <code>TSV</code> to indicate that the tabular data in the file are delimited by <code>tab</code> (indicating the column boundaries).
+Although people mostly use the comma character to separate (or
+delimit) data, sometimes people use other characters like the tab, i.e.,
+<code>\t</code>. Therefore, sometimes people use the file extension
+<code>TSV</code> to indicate that the tabular data in the file are
+delimited by <code>tab</code> (indicating the column boundaries).
 </p>
 <p>
-Please also note that all these tabular files can be named with the extension <code>.txt</code> as well. However, a more intuitive file extension is definitely better for data management.
+Please also note that all these tabular files can be named with the
+extension <code>.txt</code> as well. However, a more intuitive file
+extension is definitely better for data management.
 </p>
 </div>
 </div>
@@ -811,7 +817,13 @@ Which character is larger in terms of the code points?
 </div>
 <div class="info">
 <p>
-<strong>Hexadecimal numerals</strong> are widely used by computer system designers and programmers, as they provide a human-friendly representation of binary-coded values. One single byte can encode 256 different characters, whose values may range from <code>00000000</code> to <code>11111111</code> in <strong>binary</strong> form. These binary forms can be represented as <code>00</code> to <code>FF</code> in <strong>hexadecimal</strong>.
+<strong>Hexadecimal numerals</strong> are widely used by computer
+system designers and programmers, as they provide a human-friendly
+representation of binary-coded values. One single byte can encode 256
+different characters, whose values may range from <code>00000000</code>
+to <code>11111111</code> in <strong>binary</strong> form. These binary
+forms can be represented as <code>00</code> to <code>FF</code> in
+<strong>hexadecimal</strong>.
 </p>
 </div>
 </div>
@@ -838,17 +850,21 @@ Which character is larger in terms of the code points?
 <pre class="Rout"><code>[1] 3331</code></pre>
 <div class="info">
 <p>
-Depending on how you arrange the contents in the text file, you may sometimes get a vector of different types:
+Depending on how you arrange the contents in the text file, you may
+sometimes get a vector of different types:
 </p>
 <ul>
 <li>
-If each paragraph in the text file is a <em>word</em>, you get a <em>word</em>-based vector.
+If each paragraph in the text file is a <em>word</em>, you get a
+<em>word</em>-based vector.
 </li>
 <li>
-If each paragraph in the text file is a <em>sentence</em>, you get a <em>sentence</em>-based vector.
+If each paragraph in the text file is a <em>sentence</em>, you get a
+<em>sentence</em>-based vector.
 </li>
 <li>
-If each paragraph in the text file is a <em>paragraph</em>, you get a <em>paragraph</em>-based vector.
+If each paragraph in the text file is a <em>paragraph</em>, you get
+a <em>paragraph</em>-based vector.
 </li>
 </ul>
 </div>
@@ -1155,7 +1171,6 @@ Order the sub data frame according to the bigram frequencies in a descending ord
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -1186,7 +1201,7 @@ gitbook.start({
 },
 "download": null,
 "search": {
-"engine": "lunr",
+"engine": "fuse",
 "options": null
 },
 "toc": {

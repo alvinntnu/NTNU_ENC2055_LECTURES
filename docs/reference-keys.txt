@@ -394,5 +394,3 @@ installing-r-markdown
 r-markdown-components
 tips
 references-4
-exr:unnamed-chunk-25
-exr:unnamed-chunk-31

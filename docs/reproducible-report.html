@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>B Reproducible Report | ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
   <meta name="description" content="ENC2055 Course material second edition" />
-  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="B Reproducible Report | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-12-24" />
+<meta name="date" content="2022-05-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -35,6 +35,7 @@
 <link rel="next" href="references-5.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -612,12 +612,12 @@ div.csl-indent {
 </div>
 <div id="installing-r-markdown" class="section level2" number="23.3">
 <h2><span class="header-section-number">B.3</span> Installing R Markdown</h2>
-<div class="sourceCode" id="cb1117"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1117-1"><a href="reproducible-report.html#cb1117-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install from CRAN</span></span>
-<span id="cb1117-2"><a href="reproducible-report.html#cb1117-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;rmarkdown&#39;</span>, <span class="at">dep =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1115"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1115-1"><a href="reproducible-report.html#cb1115-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install from CRAN</span></span>
+<span id="cb1115-2"><a href="reproducible-report.html#cb1115-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;rmarkdown&#39;</span>, <span class="at">dep =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p>If you need to generate PDF output from R markdown, you will need to install LaTeX. If you don’t have LaTeX yet, it is recommended that you install TinyTeX.</p>
-<div class="sourceCode" id="cb1118"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1118-1"><a href="reproducible-report.html#cb1118-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Optional (Only needed for PDF format)</span></span>
-<span id="cb1118-2"><a href="reproducible-report.html#cb1118-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;tinytex&#39;</span>)</span>
-<span id="cb1118-3"><a href="reproducible-report.html#cb1118-3" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()  <span class="co"># install TinyTeX</span></span></code></pre></div>
+<div class="sourceCode" id="cb1116"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1116-1"><a href="reproducible-report.html#cb1116-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Optional (Only needed for PDF format)</span></span>
+<span id="cb1116-2"><a href="reproducible-report.html#cb1116-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;tinytex&#39;</span>)</span>
+<span id="cb1116-3"><a href="reproducible-report.html#cb1116-3" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()  <span class="co"># install TinyTeX</span></span></code></pre></div>
 </div>
 <div id="r-markdown-components" class="section level2" number="23.4">
 <h2><span class="header-section-number">B.4</span> R Markdown Components</h2>
@@ -670,7 +670,6 @@ div.csl-indent {
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -701,7 +700,7 @@ gitbook.start({
 },
 "download": null,
 "search": {
-"engine": "lunr",
+"engine": "fuse",
 "options": null
 },
 "toc": {

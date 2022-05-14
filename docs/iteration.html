@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 11 Iteration | ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
   <meta name="description" content="ENC2055 Course material second edition" />
-  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 11 Iteration | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2021-12-24" />
+<meta name="date" content="2022-05-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -35,6 +35,7 @@
 <link rel="next" href="data-scientist-first-step.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -581,7 +581,7 @@ div.csl-indent {
 <li>Use <strong>iteration</strong></li>
 </ul>
 <hr />
-<p>According to <span class="citation"><a href="#ref-hadley2017" role="doc-biblioref">Wickham and Grolemund</a> (<a href="#ref-hadley2017" role="doc-biblioref">2017</a>)</span> <a href="https://r4ds.had.co.nz/iteration.html#introduction-14">Chapter 21 Iteration</a>, there are three main advantages of reducing code duplication:</p>
+<p>According to <span class="citation">Wickham &amp; Grolemund (<a href="#ref-hadley2017" role="doc-biblioref">2017</a>)</span> <a href="https://r4ds.had.co.nz/iteration.html#introduction-14">Chapter 21 Iteration</a>, there are three main advantages of reducing code duplication:</p>
 <ol style="list-style-type: decimal">
 <li>It’s easier to see the <strong>intent/objective of your code</strong>, because your eyes are drawn to what’s different, not what stays the same.</li>
 <li>It’s easier to <strong>respond to changes</strong> required for code maintenance. Without much code duplication, you only need to make changes in one place, rather than remembering to change every place that you have copied-and-pasted the code.</li>
@@ -896,9 +896,9 @@ Please present the result as a data frame.
 </div>
 </div>
 <h3>References</h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-hadley2017" class="csl-entry">
-Wickham, Hadley, and Garrett Grolemund. 2017. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. 1st ed. O’Reilly Media, Inc.
+Wickham, H., &amp; Grolemund, G. (2017). <em>R for data science: Import, tidy, transform, visualize, and model data</em> (1st ed.). O’Reilly Media, Inc.
 </div>
 </div>
             </section>
@@ -911,7 +911,6 @@ Wickham, Hadley, and Garrett Grolemund. 2017. <em>R for Data Science: Import, Ti
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -942,7 +941,7 @@ gitbook.start({
 },
 "download": null,
 "search": {
-"engine": "lunr",
+"engine": "fuse",
 "options": null
 },
 "toc": {
