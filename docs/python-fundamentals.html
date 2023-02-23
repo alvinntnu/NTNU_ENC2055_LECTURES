@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 14 Python Fundamentals | ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
   <meta name="description" content="ENC2055 Course material second edition" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 14 Python Fundamentals | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="ENC2055 Course material second edition" />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2022-05-14" />
+<meta name="date" content="2023-02-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,6 @@
   
 <link rel="prev" href="text-analytics-a-start.html"/>
 <link rel="next" href="organizing-files.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -53,16 +51,15 @@
 
 <link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
-<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
-<script src="libs/str_view-binding-1.4.0/str_view.js"></script>
+<script src="libs/htmlwidgets-1.6.0/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
+<script src="libs/grViz-binding-1.0.9/grViz.js"></script>
 <script src="https://hypothes.is/embed.js" async></script>
 
 
@@ -104,7 +101,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -117,7 +114,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -167,8 +164,9 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="https://alvinntnu.github.io/NTNU_ENC2055/index.html"> <img src="images/alerts/home.svg" height="20" width ="20" style="display:inline"> Course Website </a></lo>
-<li><a href="./index.html"> <img src="images/alerts/book-solid.svg" height="20" width ="20" style="display:inline"> ENC 2055 Introduction to Programming Languages For Linguistic Analysis</a></li>
+<li><a href="https://mybinder.org/v2/gh/alvinntnu/NTNU_ENC2055_BINDER/HEAD?urlpath=rstudio" target ="blank"> <img src="https://mybinder.org/badge_logo.svg"> </a></li>
+<li><a href="https://alvinntnu.github.io/NTNU_ENC2055/index.html" target ="blank"> <img src="images/alerts/home.svg" height="20" width ="20" style="display:inline"> Course Website </a></li>
+<li><a href="./index.html"> <img src="images/alerts/book-solid.svg" height="20" width ="20" style="display:inline"> ENC2055 Homepage</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
@@ -176,10 +174,12 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-objective"><i class="fa fa-check"></i>Course Objective</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#textbook"><i class="fa fa-check"></i>Textbook</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-website"><i class="fa fa-check"></i>Course Website</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#assignments"><i class="fa fa-check"></i>Assignments</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributing-to-the-lecture-notes"><i class="fa fa-check"></i>Contributing to the Lecture Notes</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-demo-data"><i class="fa fa-check"></i>Course Demo Data</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#questions"><i class="fa fa-check"></i>Questions?</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#necessary-packages"><i class="fa fa-check"></i>Necessary Packages</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#interative-live-environment"><i class="fa fa-check"></i>Interative Live Environment</a></li>
 </ul></li>
 <li class="part"><span><b>PART 1: R Language</b></span></li>
 <li class="chapter" data-level="1" data-path="intro-ds.html"><a href="intro-ds.html"><i class="fa fa-check"></i><b>1</b> Data Science and R</a>
@@ -569,18 +569,18 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="python-fundamentals" class="section level1" number="14">
-<h1><span class="header-section-number">Chapter 14</span> Python Fundamentals</h1>
+<div id="python-fundamentals" class="section level1 hasAnchor" number="14">
+<h1><span class="header-section-number">Chapter 14</span> Python Fundamentals<a href="python-fundamentals.html#python-fundamentals" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>This unit covers Python fundamentals. All the codes here are Python codes.</p>
-<div id="set-up-environment" class="section level2" number="14.1">
-<h2><span class="header-section-number">14.1</span> Set up Environment</h2>
+<div id="set-up-environment" class="section level2 hasAnchor" number="14.1">
+<h2><span class="header-section-number">14.1</span> Set up Environment<a href="python-fundamentals.html#set-up-environment" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>Install <a href="https://www.anaconda.com/products/individual">Anaconda</a></li>
 <li>Install Jupyter Notebook/Lab (See Jupyter Notebook <a href="https://jupyter.org/install">installation documentation</a>)</li>
 <li>Run the codes in notebooks</li>
 </ul>
 <!-- info > try > alert > warning > danger -->
-<!-- Inline R output 2022-05-14 code format.  -->
+<!-- Inline R output 2023-02-24 code format.  -->
 <!-- Inline code `inline codes` format. -->
 <!-- ::: {.info} -->
 <!-- **Info!** -->
@@ -608,8 +608,8 @@ div.csl-indent {
 <!-- been noted, and _will be reported to the authorities_! -->
 <!-- ::: -->
 </div>
-<div id="conda-environment" class="section level2" number="14.2">
-<h2><span class="header-section-number">14.2</span> Conda Environment</h2>
+<div id="conda-environment" class="section level2 hasAnchor" number="14.2">
+<h2><span class="header-section-number">14.2</span> Conda Environment<a href="python-fundamentals.html#conda-environment" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>We can create a conda environment using:</li>
 </ul>
@@ -631,40 +631,40 @@ div.csl-indent {
 </ul>
 </div>
 </div>
-<div id="data-type" class="section level2" number="14.3">
-<h2><span class="header-section-number">14.3</span> Data Type</h2>
+<div id="data-type" class="section level2 hasAnchor" number="14.3">
+<h2><span class="header-section-number">14.3</span> Data Type<a href="python-fundamentals.html#data-type" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>String</li>
 <li>Numbers (Integers and Floats)</li>
 <li>Data Type Conversion</li>
 <li>Input</li>
 </ul>
-<div class="sourceCode" id="cb690"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb690-1"><a href="python-fundamentals.html#cb690-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="st">&#39;cats&#39;</span></span>
-<span id="cb690-2"><a href="python-fundamentals.html#cb690-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="st">&#39;dogs&#39;</span></span>
-<span id="cb690-3"><a href="python-fundamentals.html#cb690-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">+</span> b)</span></code></pre></div>
+<div class="sourceCode" id="cb729"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb729-1"><a href="python-fundamentals.html#cb729-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="st">&#39;cats&#39;</span></span>
+<span id="cb729-2"><a href="python-fundamentals.html#cb729-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="st">&#39;dogs&#39;</span></span>
+<span id="cb729-3"><a href="python-fundamentals.html#cb729-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">+</span> b)</span></code></pre></div>
 <pre class="Rout"><code>catsdogs</code></pre>
-<div class="sourceCode" id="cb692"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb692-1"><a href="python-fundamentals.html#cb692-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">12</span></span>
-<span id="cb692-2"><a href="python-fundamentals.html#cb692-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">13</span></span>
-<span id="cb692-3"><a href="python-fundamentals.html#cb692-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a<span class="op">+</span>b)</span></code></pre></div>
+<div class="sourceCode" id="cb731"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb731-1"><a href="python-fundamentals.html#cb731-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">12</span></span>
+<span id="cb731-2"><a href="python-fundamentals.html#cb731-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">13</span></span>
+<span id="cb731-3"><a href="python-fundamentals.html#cb731-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a<span class="op">+</span>b)</span></code></pre></div>
 <pre class="Rout"><code>25</code></pre>
 </div>
-<div id="data-structure-1" class="section level2" number="14.4">
-<h2><span class="header-section-number">14.4</span> Data Structure</h2>
+<div id="data-structure-1" class="section level2 hasAnchor" number="14.4">
+<h2><span class="header-section-number">14.4</span> Data Structure<a href="python-fundamentals.html#data-structure-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>List</li>
 <li>Tuple</li>
 <li>Dictionary</li>
 </ul>
-<div class="sourceCode" id="cb694"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb694-1"><a href="python-fundamentals.html#cb694-1" aria-hidden="true" tabindex="-1"></a>vocab <span class="op">=</span> [<span class="st">&#39;cat&#39;</span>, <span class="st">&#39;dog&#39;</span>, <span class="st">&#39;bird&#39;</span>]</span>
-<span id="cb694-2"><a href="python-fundamentals.html#cb694-2" aria-hidden="true" tabindex="-1"></a>word_pos <span class="op">=</span> ((<span class="st">&#39;cat&#39;</span>,<span class="st">&#39;n&#39;</span>),(<span class="st">&#39;dog&#39;</span>,<span class="st">&#39;n&#39;</span>),(<span class="st">&#39;bark&#39;</span>,<span class="st">&#39;v&#39;</span>))</span>
-<span id="cb694-3"><a href="python-fundamentals.html#cb694-3" aria-hidden="true" tabindex="-1"></a>word_freq <span class="op">=</span> {<span class="st">&#39;cat&#39;</span>: <span class="dv">3</span>, <span class="st">&#39;dog&#39;</span>: <span class="dv">1</span>, <span class="st">&#39;bird&#39;</span>: <span class="dv">5</span>}</span>
-<span id="cb694-4"><a href="python-fundamentals.html#cb694-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(vocab)</span></code></pre></div>
+<div class="sourceCode" id="cb733"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb733-1"><a href="python-fundamentals.html#cb733-1" aria-hidden="true" tabindex="-1"></a>vocab <span class="op">=</span> [<span class="st">&#39;cat&#39;</span>, <span class="st">&#39;dog&#39;</span>, <span class="st">&#39;bird&#39;</span>]</span>
+<span id="cb733-2"><a href="python-fundamentals.html#cb733-2" aria-hidden="true" tabindex="-1"></a>word_pos <span class="op">=</span> ((<span class="st">&#39;cat&#39;</span>,<span class="st">&#39;n&#39;</span>),(<span class="st">&#39;dog&#39;</span>,<span class="st">&#39;n&#39;</span>),(<span class="st">&#39;bark&#39;</span>,<span class="st">&#39;v&#39;</span>))</span>
+<span id="cb733-3"><a href="python-fundamentals.html#cb733-3" aria-hidden="true" tabindex="-1"></a>word_freq <span class="op">=</span> {<span class="st">&#39;cat&#39;</span>: <span class="dv">3</span>, <span class="st">&#39;dog&#39;</span>: <span class="dv">1</span>, <span class="st">&#39;bird&#39;</span>: <span class="dv">5</span>}</span>
+<span id="cb733-4"><a href="python-fundamentals.html#cb733-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(vocab)</span></code></pre></div>
 <pre class="Rout"><code>[&#39;cat&#39;, &#39;dog&#39;, &#39;bird&#39;]</code></pre>
-<div class="sourceCode" id="cb696"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb696-1"><a href="python-fundamentals.html#cb696-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(vocab))</span></code></pre></div>
+<div class="sourceCode" id="cb735"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb735-1"><a href="python-fundamentals.html#cb735-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(vocab))</span></code></pre></div>
 <pre class="Rout"><code>&lt;class &#39;list&#39;&gt;</code></pre>
-<div class="sourceCode" id="cb698"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb698-1"><a href="python-fundamentals.html#cb698-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(word_pos))</span></code></pre></div>
+<div class="sourceCode" id="cb737"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb737-1"><a href="python-fundamentals.html#cb737-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(word_pos))</span></code></pre></div>
 <pre class="Rout"><code>&lt;class &#39;tuple&#39;&gt;</code></pre>
-<div class="sourceCode" id="cb700"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb700-1"><a href="python-fundamentals.html#cb700-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(word_freq))</span></code></pre></div>
+<div class="sourceCode" id="cb739"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb739-1"><a href="python-fundamentals.html#cb739-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(word_freq))</span></code></pre></div>
 <pre class="Rout"><code>&lt;class &#39;dict&#39;&gt;</code></pre>
 
 <div class="info">
@@ -672,136 +672,133 @@ div.csl-indent {
 That is, when a List is created, particular elements of it can be reassigned. Along with this, the entire list can be reassigned. Elements and slices of elements can be deleted from the list. But these changes will not be possible for a Tuple.
 </div>
 </div>
-<div id="string" class="section level2" number="14.5">
-<h2><span class="header-section-number">14.5</span> String</h2>
-<div class="sourceCode" id="cb702"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb702-1"><a href="python-fundamentals.html#cb702-1" aria-hidden="true" tabindex="-1"></a>vocab1 <span class="op">=</span>  [<span class="st">&#39;cat&#39;</span>, <span class="st">&#39;dog&#39;</span>, <span class="st">&#39;bird&#39;</span>]</span>
-<span id="cb702-2"><a href="python-fundamentals.html#cb702-2" aria-hidden="true" tabindex="-1"></a>vocab2 <span class="op">=</span>  (<span class="st">&#39;cat&#39;</span>, <span class="st">&#39;dog&#39;</span>, <span class="st">&#39;bird&#39;</span>)</span>
-<span id="cb702-3"><a href="python-fundamentals.html#cb702-3" aria-hidden="true" tabindex="-1"></a>vocab1[<span class="dv">0</span>] <span class="op">=</span> <span class="st">&#39;human&#39;</span></span>
-<span id="cb702-4"><a href="python-fundamentals.html#cb702-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(vocab1)</span></code></pre></div>
+<div id="string" class="section level2 hasAnchor" number="14.5">
+<h2><span class="header-section-number">14.5</span> String<a href="python-fundamentals.html#string" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb741"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb741-1"><a href="python-fundamentals.html#cb741-1" aria-hidden="true" tabindex="-1"></a>vocab1 <span class="op">=</span>  [<span class="st">&#39;cat&#39;</span>, <span class="st">&#39;dog&#39;</span>, <span class="st">&#39;bird&#39;</span>]</span>
+<span id="cb741-2"><a href="python-fundamentals.html#cb741-2" aria-hidden="true" tabindex="-1"></a>vocab2 <span class="op">=</span>  (<span class="st">&#39;cat&#39;</span>, <span class="st">&#39;dog&#39;</span>, <span class="st">&#39;bird&#39;</span>)</span>
+<span id="cb741-3"><a href="python-fundamentals.html#cb741-3" aria-hidden="true" tabindex="-1"></a>vocab1[<span class="dv">0</span>] <span class="op">=</span> <span class="st">&#39;human&#39;</span></span>
+<span id="cb741-4"><a href="python-fundamentals.html#cb741-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(vocab1)</span></code></pre></div>
 <pre class="Rout"><code>[&#39;human&#39;, &#39;dog&#39;, &#39;bird&#39;]</code></pre>
-<div class="sourceCode" id="cb704"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb704-1"><a href="python-fundamentals.html#cb704-1" aria-hidden="true" tabindex="-1"></a>vocab2[<span class="dv">0</span>] <span class="op">=</span> <span class="st">&#39;human&#39;</span></span></code></pre></div>
-<pre><code>Error in py_call_impl(callable, dots$args, dots$keywords): TypeError: &#39;tuple&#39; object does not support item assignment
-
-Detailed traceback:
-  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;</code></pre>
-<div class="sourceCode" id="cb706"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb706-1"><a href="python-fundamentals.html#cb706-1" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> <span class="st">&#39;wonderful&#39;</span></span>
-<span id="cb706-2"><a href="python-fundamentals.html#cb706-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(w)</span></code></pre></div>
+<div class="sourceCode" id="cb743"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb743-1"><a href="python-fundamentals.html#cb743-1" aria-hidden="true" tabindex="-1"></a>vocab2[<span class="dv">0</span>] <span class="op">=</span> <span class="st">&#39;human&#39;</span></span></code></pre></div>
+<pre><code>Error in py_call_impl(callable, dots$args, dots$keywords): TypeError: &#39;tuple&#39; object does not support item assignment</code></pre>
+<div class="sourceCode" id="cb745"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb745-1"><a href="python-fundamentals.html#cb745-1" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> <span class="st">&#39;wonderful&#39;</span></span>
+<span id="cb745-2"><a href="python-fundamentals.html#cb745-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(w)</span></code></pre></div>
 <pre class="Rout"><code>&lt;class &#39;str&#39;&gt;</code></pre>
-<div class="sourceCode" id="cb708"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb708-1"><a href="python-fundamentals.html#cb708-1" aria-hidden="true" tabindex="-1"></a>w[:<span class="dv">3</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb747"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb747-1"><a href="python-fundamentals.html#cb747-1" aria-hidden="true" tabindex="-1"></a>w[:<span class="dv">3</span>]</span></code></pre></div>
 <pre class="Rout"><code>&#39;won&#39;</code></pre>
 <p>In Python, a <code>String</code> functions as a <code>List</code>:</p>
-<div class="sourceCode" id="cb710"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb710-1"><a href="python-fundamentals.html#cb710-1" aria-hidden="true" tabindex="-1"></a><span class="co">&#39;o&#39;</span> <span class="kw">in</span> w</span></code></pre></div>
+<div class="sourceCode" id="cb749"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb749-1"><a href="python-fundamentals.html#cb749-1" aria-hidden="true" tabindex="-1"></a><span class="co">&#39;o&#39;</span> <span class="kw">in</span> w</span></code></pre></div>
 <pre class="Rout"><code>True</code></pre>
-<div class="sourceCode" id="cb712"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb712-1"><a href="python-fundamentals.html#cb712-1" aria-hidden="true" tabindex="-1"></a>w2 <span class="op">=</span> <span class="st">&#39;book&#39;</span></span>
-<span id="cb712-2"><a href="python-fundamentals.html#cb712-2" aria-hidden="true" tabindex="-1"></a>w <span class="op">+</span> w2</span></code></pre></div>
+<div class="sourceCode" id="cb751"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb751-1"><a href="python-fundamentals.html#cb751-1" aria-hidden="true" tabindex="-1"></a>w2 <span class="op">=</span> <span class="st">&#39;book&#39;</span></span>
+<span id="cb751-2"><a href="python-fundamentals.html#cb751-2" aria-hidden="true" tabindex="-1"></a>w <span class="op">+</span> w2</span></code></pre></div>
 <pre class="Rout"><code>&#39;wonderfulbook&#39;</code></pre>
-<div class="sourceCode" id="cb714"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb714-1"><a href="python-fundamentals.html#cb714-1" aria-hidden="true" tabindex="-1"></a><span class="co">&#39; &#39;</span>.join(w)</span></code></pre></div>
+<div class="sourceCode" id="cb753"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb753-1"><a href="python-fundamentals.html#cb753-1" aria-hidden="true" tabindex="-1"></a><span class="co">&#39; &#39;</span>.join(w)</span></code></pre></div>
 <pre class="Rout"><code>&#39;w o n d e r f u l&#39;</code></pre>
 <ul>
 <li>Useful functions for <code>String</code>:</li>
 </ul>
-<div class="sourceCode" id="cb716"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb716-1"><a href="python-fundamentals.html#cb716-1" aria-hidden="true" tabindex="-1"></a>sent <span class="op">=</span> <span class="st">&#39;   This is a sentence example with leading/trailing spaces.   &#39;</span></span>
-<span id="cb716-2"><a href="python-fundamentals.html#cb716-2" aria-hidden="true" tabindex="-1"></a>sent.capitalize()</span></code></pre></div>
+<div class="sourceCode" id="cb755"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb755-1"><a href="python-fundamentals.html#cb755-1" aria-hidden="true" tabindex="-1"></a>sent <span class="op">=</span> <span class="st">&#39;   This is a sentence example with leading/trailing spaces.   &#39;</span></span>
+<span id="cb755-2"><a href="python-fundamentals.html#cb755-2" aria-hidden="true" tabindex="-1"></a>sent.capitalize()</span></code></pre></div>
 <pre class="Rout"><code>&#39;   this is a sentence example with leading/trailing spaces.   &#39;</code></pre>
-<div class="sourceCode" id="cb718"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb718-1"><a href="python-fundamentals.html#cb718-1" aria-hidden="true" tabindex="-1"></a>sent.title()</span></code></pre></div>
+<div class="sourceCode" id="cb757"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb757-1"><a href="python-fundamentals.html#cb757-1" aria-hidden="true" tabindex="-1"></a>sent.title()</span></code></pre></div>
 <pre class="Rout"><code>&#39;   This Is A Sentence Example With Leading/Trailing Spaces.   &#39;</code></pre>
-<div class="sourceCode" id="cb720"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb720-1"><a href="python-fundamentals.html#cb720-1" aria-hidden="true" tabindex="-1"></a>sent.upper()</span></code></pre></div>
+<div class="sourceCode" id="cb759"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb759-1"><a href="python-fundamentals.html#cb759-1" aria-hidden="true" tabindex="-1"></a>sent.upper()</span></code></pre></div>
 <pre class="Rout"><code>&#39;   THIS IS A SENTENCE EXAMPLE WITH LEADING/TRAILING SPACES.   &#39;</code></pre>
-<div class="sourceCode" id="cb722"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb722-1"><a href="python-fundamentals.html#cb722-1" aria-hidden="true" tabindex="-1"></a>sent.lower()</span></code></pre></div>
+<div class="sourceCode" id="cb761"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb761-1"><a href="python-fundamentals.html#cb761-1" aria-hidden="true" tabindex="-1"></a>sent.lower()</span></code></pre></div>
 <pre class="Rout"><code>&#39;   this is a sentence example with leading/trailing spaces.   &#39;</code></pre>
-<div class="sourceCode" id="cb724"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb724-1"><a href="python-fundamentals.html#cb724-1" aria-hidden="true" tabindex="-1"></a>sent.rstrip()</span></code></pre></div>
+<div class="sourceCode" id="cb763"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb763-1"><a href="python-fundamentals.html#cb763-1" aria-hidden="true" tabindex="-1"></a>sent.rstrip()</span></code></pre></div>
 <pre class="Rout"><code>&#39;   This is a sentence example with leading/trailing spaces.&#39;</code></pre>
-<div class="sourceCode" id="cb726"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb726-1"><a href="python-fundamentals.html#cb726-1" aria-hidden="true" tabindex="-1"></a>sent.lstrip()</span></code></pre></div>
+<div class="sourceCode" id="cb765"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb765-1"><a href="python-fundamentals.html#cb765-1" aria-hidden="true" tabindex="-1"></a>sent.lstrip()</span></code></pre></div>
 <pre class="Rout"><code>&#39;This is a sentence example with leading/trailing spaces.   &#39;</code></pre>
-<div class="sourceCode" id="cb728"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb728-1"><a href="python-fundamentals.html#cb728-1" aria-hidden="true" tabindex="-1"></a>sent.strip()</span></code></pre></div>
+<div class="sourceCode" id="cb767"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb767-1"><a href="python-fundamentals.html#cb767-1" aria-hidden="true" tabindex="-1"></a>sent.strip()</span></code></pre></div>
 <pre class="Rout"><code>&#39;This is a sentence example with leading/trailing spaces.&#39;</code></pre>
-<div class="sourceCode" id="cb730"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb730-1"><a href="python-fundamentals.html#cb730-1" aria-hidden="true" tabindex="-1"></a>sent.find(<span class="st">&#39;is&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb769"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb769-1"><a href="python-fundamentals.html#cb769-1" aria-hidden="true" tabindex="-1"></a>sent.find(<span class="st">&#39;is&#39;</span>)</span></code></pre></div>
 <pre class="Rout"><code>5</code></pre>
-<div class="sourceCode" id="cb732"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb732-1"><a href="python-fundamentals.html#cb732-1" aria-hidden="true" tabindex="-1"></a>sent.replace(<span class="st">&#39;is&#39;</span>,<span class="st">&#39;was&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb771"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb771-1"><a href="python-fundamentals.html#cb771-1" aria-hidden="true" tabindex="-1"></a>sent.replace(<span class="st">&#39;is&#39;</span>,<span class="st">&#39;was&#39;</span>)</span></code></pre></div>
 <pre class="Rout"><code>&#39;   Thwas was a sentence example with leading/trailing spaces.   &#39;</code></pre>
 <ul>
 <li>String formatting</li>
 </ul>
-<div class="sourceCode" id="cb734"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb734-1"><a href="python-fundamentals.html#cb734-1" aria-hidden="true" tabindex="-1"></a>nwords <span class="op">=</span> <span class="dv">50</span></span>
-<span id="cb734-2"><a href="python-fundamentals.html#cb734-2" aria-hidden="true" tabindex="-1"></a>textid <span class="op">=</span> <span class="st">&#39;diary&#39;</span></span>
-<span id="cb734-3"><a href="python-fundamentals.html#cb734-3" aria-hidden="true" tabindex="-1"></a><span class="co">&#39;%s has %d words&#39;</span> <span class="op">%</span> (textid.upper(), nwords)</span></code></pre></div>
+<div class="sourceCode" id="cb773"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb773-1"><a href="python-fundamentals.html#cb773-1" aria-hidden="true" tabindex="-1"></a>nwords <span class="op">=</span> <span class="dv">50</span></span>
+<span id="cb773-2"><a href="python-fundamentals.html#cb773-2" aria-hidden="true" tabindex="-1"></a>textid <span class="op">=</span> <span class="st">&#39;diary&#39;</span></span>
+<span id="cb773-3"><a href="python-fundamentals.html#cb773-3" aria-hidden="true" tabindex="-1"></a><span class="co">&#39;%s has %d words&#39;</span> <span class="op">%</span> (textid.upper(), nwords)</span></code></pre></div>
 <pre class="Rout"><code>&#39;DIARY has 50 words&#39;</code></pre>
 </div>
-<div id="control-structure" class="section level2" number="14.6">
-<h2><span class="header-section-number">14.6</span> Control Structure</h2>
+<div id="control-structure" class="section level2 hasAnchor" number="14.6">
+<h2><span class="header-section-number">14.6</span> Control Structure<a href="python-fundamentals.html#control-structure" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>Iteration (<code>for-loop</code>)</li>
 </ul>
-<div class="sourceCode" id="cb736"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb736-1"><a href="python-fundamentals.html#cb736-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> w <span class="kw">in</span> vocab:</span>
-<span id="cb736-2"><a href="python-fundamentals.html#cb736-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&quot;_&quot;</span> <span class="op">+</span> w <span class="op">+</span> <span class="st">&quot;_&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb775"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb775-1"><a href="python-fundamentals.html#cb775-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> w <span class="kw">in</span> vocab:</span>
+<span id="cb775-2"><a href="python-fundamentals.html#cb775-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&quot;_&quot;</span> <span class="op">+</span> w <span class="op">+</span> <span class="st">&quot;_&quot;</span>)</span></code></pre></div>
 <pre class="Rout"><code>_cat_
 _dog_
 _bird_</code></pre>
 <ul>
 <li>Condition (<code>if-else</code>)</li>
 </ul>
-<div class="sourceCode" id="cb738"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb738-1"><a href="python-fundamentals.html#cb738-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> w <span class="kw">in</span> vocab:</span>
-<span id="cb738-2"><a href="python-fundamentals.html#cb738-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(w[<span class="dv">0</span>]<span class="op">==</span><span class="st">&quot;c&quot;</span>):</span>
-<span id="cb738-3"><a href="python-fundamentals.html#cb738-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(w)</span></code></pre></div>
+<div class="sourceCode" id="cb777"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb777-1"><a href="python-fundamentals.html#cb777-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> w <span class="kw">in</span> vocab:</span>
+<span id="cb777-2"><a href="python-fundamentals.html#cb777-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(w[<span class="dv">0</span>]<span class="op">==</span><span class="st">&quot;c&quot;</span>):</span>
+<span id="cb777-3"><a href="python-fundamentals.html#cb777-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(w)</span></code></pre></div>
 <pre class="Rout"><code>cat</code></pre>
 </div>
-<div id="function-1" class="section level2" number="14.7">
-<h2><span class="header-section-number">14.7</span> Function</h2>
-<div class="sourceCode" id="cb740"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb740-1"><a href="python-fundamentals.html#cb740-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet(name):</span>
-<span id="cb740-2"><a href="python-fundamentals.html#cb740-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&#39;Hello, &#39;</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">&#39;, how are you doing!&#39;</span>)</span>
-<span id="cb740-3"><a href="python-fundamentals.html#cb740-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb740-4"><a href="python-fundamentals.html#cb740-4" aria-hidden="true" tabindex="-1"></a>greet(name<span class="op">=</span><span class="st">&#39;Alvin&#39;</span>)</span></code></pre></div>
+<div id="function-1" class="section level2 hasAnchor" number="14.7">
+<h2><span class="header-section-number">14.7</span> Function<a href="python-fundamentals.html#function-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb779"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb779-1"><a href="python-fundamentals.html#cb779-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet(name):</span>
+<span id="cb779-2"><a href="python-fundamentals.html#cb779-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&#39;Hello, &#39;</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">&#39;, how are you doing!&#39;</span>)</span>
+<span id="cb779-3"><a href="python-fundamentals.html#cb779-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb779-4"><a href="python-fundamentals.html#cb779-4" aria-hidden="true" tabindex="-1"></a>greet(name<span class="op">=</span><span class="st">&#39;Alvin&#39;</span>)</span></code></pre></div>
 <pre class="Rout"><code>Hello, Alvin, how are you doing!</code></pre>
-<div class="sourceCode" id="cb742"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb742-1"><a href="python-fundamentals.html#cb742-1" aria-hidden="true" tabindex="-1"></a>greet(name<span class="op">=</span><span class="st">&#39;Charlie&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb781"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb781-1"><a href="python-fundamentals.html#cb781-1" aria-hidden="true" tabindex="-1"></a>greet(name<span class="op">=</span><span class="st">&#39;Charlie&#39;</span>)</span></code></pre></div>
 <pre class="Rout"><code>Hello, Charlie, how are you doing!</code></pre>
 </div>
-<div id="list-comprehension" class="section level2" number="14.8">
-<h2><span class="header-section-number">14.8</span> List Comprehension</h2>
-<div class="sourceCode" id="cb744"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb744-1"><a href="python-fundamentals.html#cb744-1" aria-hidden="true" tabindex="-1"></a>[<span class="bu">len</span>(w) <span class="cf">for</span> w <span class="kw">in</span> vocab]</span></code></pre></div>
+<div id="list-comprehension" class="section level2 hasAnchor" number="14.8">
+<h2><span class="header-section-number">14.8</span> List Comprehension<a href="python-fundamentals.html#list-comprehension" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb783"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb783-1"><a href="python-fundamentals.html#cb783-1" aria-hidden="true" tabindex="-1"></a>[<span class="bu">len</span>(w) <span class="cf">for</span> w <span class="kw">in</span> vocab]</span></code></pre></div>
 <pre class="Rout"><code>[3, 3, 4]</code></pre>
 </div>
-<div id="python-scripts" class="section level2" number="14.9">
-<h2><span class="header-section-number">14.9</span> Python Scripts</h2>
+<div id="python-scripts" class="section level2 hasAnchor" number="14.9">
+<h2><span class="header-section-number">14.9</span> Python Scripts<a href="python-fundamentals.html#python-scripts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Depending on the editor you use, you may have two types of Python script files:</p>
 <ul>
 <li><code>*.py</code>: A simple python script file</li>
 <li><code>*.ipynb</code>: A Jupyter Notebook file which needs to be run in Jupyter Lab/Notebook</li>
 </ul>
 </div>
-<div id="modules" class="section level2" number="14.10">
-<h2><span class="header-section-number">14.10</span> Modules</h2>
-<div class="sourceCode" id="cb746"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb746-1"><a href="python-fundamentals.html#cb746-1" aria-hidden="true" tabindex="-1"></a>$ pip install PACKAGE_NAME</span></code></pre></div>
+<div id="modules" class="section level2 hasAnchor" number="14.10">
+<h2><span class="header-section-number">14.10</span> Modules<a href="python-fundamentals.html#modules" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb785"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb785-1"><a href="python-fundamentals.html#cb785-1" aria-hidden="true" tabindex="-1"></a>$ pip install PACKAGE_NAME</span></code></pre></div>
 <p>Import packages/libraries</p>
-<div class="sourceCode" id="cb747"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb747-1"><a href="python-fundamentals.html#cb747-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
-<span id="cb747-2"><a href="python-fundamentals.html#cb747-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span></code></pre></div>
+<div class="sourceCode" id="cb786"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb786-1"><a href="python-fundamentals.html#cb786-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb786-2"><a href="python-fundamentals.html#cb786-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span></code></pre></div>
 </div>
-<div id="inputoutput" class="section level2" number="14.11">
-<h2><span class="header-section-number">14.11</span> Input/Output</h2>
-<div class="sourceCode" id="cb748"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb748-1"><a href="python-fundamentals.html#cb748-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;temp.txt&#39;</span>, <span class="st">&#39;w&#39;</span>) <span class="im">as</span> f:</span>
-<span id="cb748-2"><a href="python-fundamentals.html#cb748-2" aria-hidden="true" tabindex="-1"></a>    f.write(<span class="st">&#39;hello world!</span><span class="ch">\n</span><span class="st">&#39;</span><span class="op">+</span><span class="st">&#39;This is a sentence.&#39;</span>)</span>
-<span id="cb748-3"><a href="python-fundamentals.html#cb748-3" aria-hidden="true" tabindex="-1"></a>    </span></code></pre></div>
+<div id="inputoutput" class="section level2 hasAnchor" number="14.11">
+<h2><span class="header-section-number">14.11</span> Input/Output<a href="python-fundamentals.html#inputoutput" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb787"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb787-1"><a href="python-fundamentals.html#cb787-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;temp.txt&#39;</span>, <span class="st">&#39;w&#39;</span>) <span class="im">as</span> f:</span>
+<span id="cb787-2"><a href="python-fundamentals.html#cb787-2" aria-hidden="true" tabindex="-1"></a>    f.write(<span class="st">&#39;hello world!</span><span class="ch">\n</span><span class="st">&#39;</span><span class="op">+</span><span class="st">&#39;This is a sentence.&#39;</span>)</span>
+<span id="cb787-3"><a href="python-fundamentals.html#cb787-3" aria-hidden="true" tabindex="-1"></a>    </span></code></pre></div>
 <pre class="Rout"><code>32</code></pre>
-<div class="sourceCode" id="cb750"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb750-1"><a href="python-fundamentals.html#cb750-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;temp.txt&#39;</span>, <span class="st">&#39;r&#39;</span>) <span class="im">as</span> f:</span>
-<span id="cb750-2"><a href="python-fundamentals.html#cb750-2" aria-hidden="true" tabindex="-1"></a>    texts <span class="op">=</span> [l <span class="cf">for</span> l <span class="kw">in</span> f.readlines()]</span>
-<span id="cb750-3"><a href="python-fundamentals.html#cb750-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(texts)</span></code></pre></div>
+<div class="sourceCode" id="cb789"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb789-1"><a href="python-fundamentals.html#cb789-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;temp.txt&#39;</span>, <span class="st">&#39;r&#39;</span>) <span class="im">as</span> f:</span>
+<span id="cb789-2"><a href="python-fundamentals.html#cb789-2" aria-hidden="true" tabindex="-1"></a>    texts <span class="op">=</span> [l <span class="cf">for</span> l <span class="kw">in</span> f.readlines()]</span>
+<span id="cb789-3"><a href="python-fundamentals.html#cb789-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(texts)</span></code></pre></div>
 <pre class="Rout"><code>[&#39;hello world!\n&#39;, &#39;This is a sentence.&#39;]</code></pre>
-<div class="sourceCode" id="cb752"><pre class="sourceCode bash Rchunk"><code class="sourceCode bash"><span id="cb752-1"><a href="python-fundamentals.html#cb752-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> temp.txt</span></code></pre></div>
+<div class="sourceCode" id="cb791"><pre class="sourceCode bash Rchunk"><code class="sourceCode bash"><span id="cb791-1"><a href="python-fundamentals.html#cb791-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> temp.txt</span></code></pre></div>
 <ul>
 <li>File and Directory Operation</li>
 </ul>
-<div class="sourceCode" id="cb753"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb753-1"><a href="python-fundamentals.html#cb753-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb753-2"><a href="python-fundamentals.html#cb753-2" aria-hidden="true" tabindex="-1"></a>os.getcwdb()</span></code></pre></div>
-<pre class="Rout"><code>b&#39;/Users/alvinchen/Dropbox/NTNU/Programming_Linguistics/Programming_Linguistics_bookdown&#39;</code></pre>
-<div class="sourceCode" id="cb755"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb755-1"><a href="python-fundamentals.html#cb755-1" aria-hidden="true" tabindex="-1"></a>os.unlink()</span>
-<span id="cb755-2"><a href="python-fundamentals.html#cb755-2" aria-hidden="true" tabindex="-1"></a>os.rename()</span>
-<span id="cb755-3"><a href="python-fundamentals.html#cb755-3" aria-hidden="true" tabindex="-1"></a>os.chdir()</span>
-<span id="cb755-4"><a href="python-fundamentals.html#cb755-4" aria-hidden="true" tabindex="-1"></a>os.listdir()</span>
-<span id="cb755-5"><a href="python-fundamentals.html#cb755-5" aria-hidden="true" tabindex="-1"></a>os.getwd()</span>
-<span id="cb755-6"><a href="python-fundamentals.html#cb755-6" aria-hidden="true" tabindex="-1"></a>os.mkdir()</span>
-<span id="cb755-7"><a href="python-fundamentals.html#cb755-7" aria-hidden="true" tabindex="-1"></a>os.rmdir</span>
-<span id="cb755-8"><a href="python-fundamentals.html#cb755-8" aria-hidden="true" tabindex="-1"></a>os.path.exists()</span>
-<span id="cb755-9"><a href="python-fundamentals.html#cb755-9" aria-hidden="true" tabindex="-1"></a>os.path.isfile()</span>
-<span id="cb755-10"><a href="python-fundamentals.html#cb755-10" aria-hidden="true" tabindex="-1"></a>os.path.isdir()</span></code></pre></div>
+<div class="sourceCode" id="cb792"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb792-1"><a href="python-fundamentals.html#cb792-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb792-2"><a href="python-fundamentals.html#cb792-2" aria-hidden="true" tabindex="-1"></a>os.getcwdb()</span></code></pre></div>
+<pre class="Rout"><code>b&#39;/Users/Alvin/Dropbox/NTNU/Programming_Linguistics/Programming_Linguistics_bookdown&#39;</code></pre>
+<div class="sourceCode" id="cb794"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb794-1"><a href="python-fundamentals.html#cb794-1" aria-hidden="true" tabindex="-1"></a>os.unlink()</span>
+<span id="cb794-2"><a href="python-fundamentals.html#cb794-2" aria-hidden="true" tabindex="-1"></a>os.rename()</span>
+<span id="cb794-3"><a href="python-fundamentals.html#cb794-3" aria-hidden="true" tabindex="-1"></a>os.chdir()</span>
+<span id="cb794-4"><a href="python-fundamentals.html#cb794-4" aria-hidden="true" tabindex="-1"></a>os.listdir()</span>
+<span id="cb794-5"><a href="python-fundamentals.html#cb794-5" aria-hidden="true" tabindex="-1"></a>os.getwd()</span>
+<span id="cb794-6"><a href="python-fundamentals.html#cb794-6" aria-hidden="true" tabindex="-1"></a>os.mkdir()</span>
+<span id="cb794-7"><a href="python-fundamentals.html#cb794-7" aria-hidden="true" tabindex="-1"></a>os.rmdir</span>
+<span id="cb794-8"><a href="python-fundamentals.html#cb794-8" aria-hidden="true" tabindex="-1"></a>os.path.exists()</span>
+<span id="cb794-9"><a href="python-fundamentals.html#cb794-9" aria-hidden="true" tabindex="-1"></a>os.path.isfile()</span>
+<span id="cb794-10"><a href="python-fundamentals.html#cb794-10" aria-hidden="true" tabindex="-1"></a>os.path.isdir()</span></code></pre></div>
 
 </div>
 </div>
@@ -861,7 +858,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

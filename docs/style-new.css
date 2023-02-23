@@ -25,6 +25,7 @@
   background-size: 2.5em;
   background-repeat: no-repeat;
   border-radius: 0.5em;
+  box-shadow: 4px 4px 4px #888
 }
 
 .exercise:not(span) {
@@ -37,6 +38,7 @@
   background-repeat: no-repeat;
   border-radius: 0.5em;
   border: 1px solid var(--green);
+  box-shadow: 4px 4px 4px #888
 }
 
 .myquotes {
@@ -49,6 +51,7 @@
   background-size: 2.5em;
   background-repeat: no-repeat;
   border-radius: 0.5em;
+  box-shadow: 4px 4px 4px #888
 }
 
 .myquotes {
@@ -93,7 +96,9 @@
 }
 
 
-
+div.sourceCode {
+    background-color: inherit;
+}
 
 .Rchunk{
   background-color: #e9f9ff !important;
@@ -126,6 +131,28 @@ book.color-theme-1 .book-body .page-wrapper .page-inner section.normal pre, .boo
   border-radius: 5px !important;
   /*font-weight: bolder;*/
   /*color: blue !important;*/
+}
+
+h1.title {
+    font-weight: 900;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+h1 > .header-section-number {
+    display: inline-block;
+    border-bottom: 5px solid;
+}
+
+.header-section-number {
+    padding-right: 0.2em;
+    font-weight: 800;
+}
+
+.level1 h1 {
+    border-bottom: 1px solid;
 }
 
 

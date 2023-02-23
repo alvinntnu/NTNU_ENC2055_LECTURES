@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>B Reproducible Report | ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
   <meta name="description" content="ENC2055 Course material second edition" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="B Reproducible Report | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="ENC2055 Course material second edition" />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2022-05-14" />
+<meta name="date" content="2023-02-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,6 @@
   
 <link rel="prev" href="the-shell.html"/>
 <link rel="next" href="references-5.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -53,16 +51,15 @@
 
 <link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
-<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
-<script src="libs/str_view-binding-1.4.0/str_view.js"></script>
+<script src="libs/htmlwidgets-1.6.0/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
+<script src="libs/grViz-binding-1.0.9/grViz.js"></script>
 <script src="https://hypothes.is/embed.js" async></script>
 
 
@@ -104,7 +101,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -117,7 +114,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -167,8 +164,9 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="https://alvinntnu.github.io/NTNU_ENC2055/index.html"> <img src="images/alerts/home.svg" height="20" width ="20" style="display:inline"> Course Website </a></lo>
-<li><a href="./index.html"> <img src="images/alerts/book-solid.svg" height="20" width ="20" style="display:inline"> ENC 2055 Introduction to Programming Languages For Linguistic Analysis</a></li>
+<li><a href="https://mybinder.org/v2/gh/alvinntnu/NTNU_ENC2055_BINDER/HEAD?urlpath=rstudio" target ="blank"> <img src="https://mybinder.org/badge_logo.svg"> </a></li>
+<li><a href="https://alvinntnu.github.io/NTNU_ENC2055/index.html" target ="blank"> <img src="images/alerts/home.svg" height="20" width ="20" style="display:inline"> Course Website </a></li>
+<li><a href="./index.html"> <img src="images/alerts/book-solid.svg" height="20" width ="20" style="display:inline"> ENC2055 Homepage</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
@@ -176,10 +174,12 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-objective"><i class="fa fa-check"></i>Course Objective</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#textbook"><i class="fa fa-check"></i>Textbook</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-website"><i class="fa fa-check"></i>Course Website</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#assignments"><i class="fa fa-check"></i>Assignments</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributing-to-the-lecture-notes"><i class="fa fa-check"></i>Contributing to the Lecture Notes</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-demo-data"><i class="fa fa-check"></i>Course Demo Data</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#questions"><i class="fa fa-check"></i>Questions?</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#necessary-packages"><i class="fa fa-check"></i>Necessary Packages</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#interative-live-environment"><i class="fa fa-check"></i>Interative Live Environment</a></li>
 </ul></li>
 <li class="part"><span><b>PART 1: R Language</b></span></li>
 <li class="chapter" data-level="1" data-path="intro-ds.html"><a href="intro-ds.html"><i class="fa fa-check"></i><b>1</b> Data Science and R</a>
@@ -569,8 +569,8 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="reproducible-report" class="section level1" number="23">
-<h1><span class="header-section-number">B</span> Reproducible Report</h1>
+<div id="reproducible-report" class="section level1 hasAnchor" number="23">
+<h1><span class="header-section-number">B</span> Reproducible Report<a href="reproducible-report.html#reproducible-report" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Creating reproducible reports is important in data analysis, or in general, open science. The idea behind the <strong>reproducible reports</strong> is that any readers should be able to implement the same analysis on the dataset and obtain the same results.</p>
 <p>A reproducible report usually includes:</p>
 <ul>
@@ -586,12 +586,12 @@ div.csl-indent {
 <li>Slide Formats</li>
 <li>Website</li>
 </ul>
-<div id="r-markdown" class="section level2" number="23.1">
-<h2><span class="header-section-number">B.1</span> R Markdown</h2>
+<div id="r-markdown" class="section level2 hasAnchor" number="23.1">
+<h2><span class="header-section-number">B.1</span> R Markdown<a href="reproducible-report.html#r-markdown" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>R markdown is a variant of the Markdown language, which is a <a href="https://en.wikipedia.org/wiki/Markup_language">markup language</a> that provides a way of creating easy to read plain text file which can incorporate formatted text, images, headers and links to other documents. Another classic example of the markup language is the HTML (<strong>H</strong>ypertext <strong>M</strong>arkup <strong>L</strong>anguage)</p>
 </div>
-<div id="open-science" class="section level2" number="23.2">
-<h2><span class="header-section-number">B.2</span> Open Science</h2>
+<div id="open-science" class="section level2 hasAnchor" number="23.2">
+<h2><span class="header-section-number">B.2</span> Open Science<a href="reproducible-report.html#open-science" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><a href="https://openscience.org/what-exactly-is-open-science/">Open science</a> is a common goal in the academia. As a member of this scientific communicity, we hope that everyone can do as much as they can to make their data, methods, results and inferences transparent and available to everyone.</p>
 <p>There are several important tenets for open science (See <a href="https://openscience.org/what-exactly-is-open-science/">Open science</a>):</p>
 <ul>
@@ -610,17 +610,17 @@ div.csl-indent {
 <p>After data collection, you use R for data exploration and analysis as well. But this time you include all the R code used for exploration and analysis, as well as the analysis outputs (statistical reports and graphs) and your written text in one single R markdown document. This R markdown document can be used to automatically create the final document (e.g., PDF, DOC, HTML etc.).</p>
 </div>
 </div>
-<div id="installing-r-markdown" class="section level2" number="23.3">
-<h2><span class="header-section-number">B.3</span> Installing R Markdown</h2>
-<div class="sourceCode" id="cb1115"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1115-1"><a href="reproducible-report.html#cb1115-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install from CRAN</span></span>
-<span id="cb1115-2"><a href="reproducible-report.html#cb1115-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;rmarkdown&#39;</span>, <span class="at">dep =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div id="installing-r-markdown" class="section level2 hasAnchor" number="23.3">
+<h2><span class="header-section-number">B.3</span> Installing R Markdown<a href="reproducible-report.html#installing-r-markdown" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb1154"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1154-1"><a href="reproducible-report.html#cb1154-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install from CRAN</span></span>
+<span id="cb1154-2"><a href="reproducible-report.html#cb1154-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;rmarkdown&#39;</span>, <span class="at">dep =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p>If you need to generate PDF output from R markdown, you will need to install LaTeX. If you don’t have LaTeX yet, it is recommended that you install TinyTeX.</p>
-<div class="sourceCode" id="cb1116"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1116-1"><a href="reproducible-report.html#cb1116-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Optional (Only needed for PDF format)</span></span>
-<span id="cb1116-2"><a href="reproducible-report.html#cb1116-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;tinytex&#39;</span>)</span>
-<span id="cb1116-3"><a href="reproducible-report.html#cb1116-3" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()  <span class="co"># install TinyTeX</span></span></code></pre></div>
+<div class="sourceCode" id="cb1155"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1155-1"><a href="reproducible-report.html#cb1155-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Optional (Only needed for PDF format)</span></span>
+<span id="cb1155-2"><a href="reproducible-report.html#cb1155-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;tinytex&#39;</span>)</span>
+<span id="cb1155-3"><a href="reproducible-report.html#cb1155-3" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()  <span class="co"># install TinyTeX</span></span></code></pre></div>
 </div>
-<div id="r-markdown-components" class="section level2" number="23.4">
-<h2><span class="header-section-number">B.4</span> R Markdown Components</h2>
+<div id="r-markdown-components" class="section level2 hasAnchor" number="23.4">
+<h2><span class="header-section-number">B.4</span> R Markdown Components<a href="reproducible-report.html#r-markdown-components" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Let’s check the <a href="http://www.utstat.toronto.edu/reid/sta2201s/rmarkdown-reference.pdf">R Markdown Reference Guide</a>.</p>
 <ul>
 <li>YAML header: metadata and options for the entire document</li>
@@ -631,8 +631,8 @@ div.csl-indent {
 <li>Inline R code: In-text R code</li>
 </ul>
 </div>
-<div id="tips" class="section level2" number="23.5">
-<h2><span class="header-section-number">B.5</span> Tips</h2>
+<div id="tips" class="section level2 hasAnchor" number="23.5">
+<h2><span class="header-section-number">B.5</span> Tips<a href="reproducible-report.html#tips" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>We can control the text length to make sure that the codes do not run off the page edge when rendering the R markdown to PDF.</li>
 </ul>
@@ -650,8 +650,8 @@ div.csl-indent {
 </ul>
 <pre><code>knitr::opts_chunk$set(message=FALSE, tidy.opts=list(width.cutoff=60), tidy=TRUE) </code></pre>
 </div>
-<div id="references-4" class="section level2" number="23.6">
-<h2><span class="header-section-number">B.6</span> References</h2>
+<div id="references-4" class="section level2 hasAnchor" number="23.6">
+<h2><span class="header-section-number">B.6</span> References<a href="reproducible-report.html#references-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><a href="https://bookdown.org/yihui/rmarkdown/">R Markdown: The Definitive Guide</a></li>
 <li><a href="http://www.utstat.toronto.edu/reid/sta2201s/rmarkdown-reference.pdf">R Markdown Reference Guide</a></li>
@@ -716,7 +716,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
