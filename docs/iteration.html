@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2023-02-24" />
+<meta name="date" content="2023-03-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -164,7 +164,7 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="https://mybinder.org/v2/gh/alvinntnu/NTNU_ENC2055_BINDER/HEAD?urlpath=rstudio" target ="blank"> <img src="https://mybinder.org/badge_logo.svg"> </a></li>
+<li><a href="https://mybinder.org/v2/gh/alvinntnu/NTNU_ENC2055_BINDER/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252Falvinntnu%252FNTNU_ENC2055_DATA%26urlpath%3Drstudio%252F%26branch%3Dmaster" target ="blank"> <img src="https://mybinder.org/badge_logo.svg"> </a></li>
 <li><a href="https://alvinntnu.github.io/NTNU_ENC2055/index.html" target ="blank"> <img src="images/alerts/home.svg" height="20" width ="20" style="display:inline"> Course Website </a></li>
 <li><a href="./index.html"> <img src="images/alerts/book-solid.svg" height="20" width ="20" style="display:inline"> ENC2055 Homepage</a></li>
 
@@ -738,7 +738,7 @@ $class5
 46.36667 46.06667 51.20000 47.43333 53.56667 </code></pre>
 <hr />
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-502" class="exercise"><strong>Exercise 11.1  </strong></span>Use the same dataset, <code>exam.list</code>, and compute the <code>median</code> and <code>standard deviation</code> values for each class. Have these values returned as vectors.</p>
+<p><span id="exr:unnamed-chunk-478" class="exercise"><strong>Exercise 11.1  </strong></span>Use the same dataset, <code>exam.list</code>, and compute the <code>median</code> and <code>standard deviation</code> values for each class. Have these values returned as vectors.</p>
 </div>
 <ul>
 <li>Median</li>
@@ -751,7 +751,7 @@ $class5
 <pre><code>  class1   class2   class3   class4   class5 
 26.98465 27.10126 29.99241 27.07930 22.37407 </code></pre>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-17" class="exercise"><strong>Exercise 11.2  </strong></span>Similar to the previous exercise, how can you use the same dataset, <code>exam.list</code>, compute the <code>median</code> and <code>standard deviation</code> values for each class, and have both of these values returned as a <code>data.frame</code> (The first row refers to the median values and the second row refers to the standard deviation values.)</p>
+<p><span id="exr:unlabeled-div-33" class="exercise"><strong>Exercise 11.2  </strong></span>Similar to the previous exercise, how can you use the same dataset, <code>exam.list</code>, compute the <code>median</code> and <code>standard deviation</code> values for each class, and have both of these values returned as a <code>data.frame</code> (The first row refers to the median values and the second row refers to the standard deviation values.)</p>
 <p>Please use <code>map_df()</code> to produce the following expected result.</p>
 </div>
 <div data-pagedtable="false">
@@ -796,7 +796,7 @@ $class5
   </script>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-510" class="exercise"><strong>Exercise 11.3  </strong></span>This exercise will use the subset of <code>idiom</code>, which include only four-word idioms with at least one duplicate character in them.</p>
+<p><span id="exr:unnamed-chunk-486" class="exercise"><strong>Exercise 11.3  </strong></span>This exercise will use the subset of <code>idiom</code>, which include only four-word idioms with at least one duplicate character in them.</p>
 <p>Please create a new column, showing how many types of duplications there are in each idiom?</p>
 <p>For example, in <code>阿狗阿貓</code>, there is only one duplicate character <code>阿</code>; but in <code>矮矮胖胖</code>, there are two duplicate characters, <code>矮</code> and <code>胖</code>.</p>
 </div>
@@ -806,7 +806,7 @@ $class5
   </script>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-512" class="exercise"><strong>Exercise 11.4  </strong></span>Continuing the previous exercise, please create another new column, showing all the duplicate characters in each idiom.</p>
+<p><span id="exr:unnamed-chunk-488" class="exercise"><strong>Exercise 11.4  </strong></span>Continuing the previous exercise, please create another new column, showing all the duplicate characters in each idiom.</p>
 <p>For example, in <code>阿狗阿貓</code>, the duplicate character is <code>阿</code>; but in <code>矮矮胖胖</code>, the duplicate character is<code>矮_胖</code>.</p>
 <p>That is, if the idiom has more than one duplicate character, please use the <code>_</code> as the delimiter and concatenate all duplicate characters into a long string.</p>
 </div>
@@ -816,9 +816,9 @@ $class5
   </script>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-514" class="exercise"><strong>Exercise 11.5  </strong></span>Based on the previous exercise, please analyze the distribution of all the duplicate characters in the four-character idioms included in the dictionary (i.e., the <code>duplicate_char</code> column from the previous exercise) and identify the top 20 duplicate characters. Please visualize your results in a bar plot with both the top 20 duplicate characters as well as the number of the character’s duplications in the <code>idiom</code>.</p>
+<p><span id="exr:unnamed-chunk-490" class="exercise"><strong>Exercise 11.5  </strong></span>Based on the previous exercise, please analyze the distribution of all the duplicate characters in the four-character idioms included in the dictionary (i.e., the <code>duplicate_char</code> column from the previous exercise) and identify the top 20 duplicate characters. Please visualize your results in a bar plot with both the top 20 duplicate characters as well as the number of the character’s duplications in the <code>idiom</code>.</p>
 </div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-515-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-491-1.png" width="672" /></p>
 <hr />
 </div>
 <div id="map-with-self-defined-functions" class="section level2 hasAnchor" number="11.6">
@@ -871,13 +871,13 @@ $class5
   </script>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-520" class="exercise"><strong>Exercise 11.7  </strong></span>Create a self-defined function to convert each number of a numeric vector to a “z” score.</p>
+<p><span id="exr:unnamed-chunk-496" class="exercise"><strong>Exercise 11.7  </strong></span>Create a self-defined function to convert each number of a numeric vector to a “z” score.</p>
 </div>
 <div class="sourceCode" id="cb652"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb652-1"><a href="iteration.html#cb652-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">10</span>, <span class="dv">20</span>)</span>
 <span id="cb652-2"><a href="iteration.html#cb652-2" aria-hidden="true" tabindex="-1"></a><span class="fu">my_z</span>(y)</span></code></pre></div>
 <pre class="Rout"><code>[1] -0.9779865 -0.5704921 -0.2988292  0.2444966  1.6028112</code></pre>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-523" class="exercise"><strong>Exercise 11.8  </strong></span>Use the earlier dataset <code>exams.list</code>. For each element in <code>exams.list</code>, please convert the student’s score to a z-score by applying your self-defined function in an iterative structure (e.g., <code>map</code>).</p>
+<p><span id="exr:unnamed-chunk-499" class="exercise"><strong>Exercise 11.8  </strong></span>Use the earlier dataset <code>exams.list</code>. For each element in <code>exams.list</code>, please convert the student’s score to a z-score by applying your self-defined function in an iterative structure (e.g., <code>map</code>).</p>
 <p>Please present the result as a data frame.</p>
 </div>
 <div data-pagedtable="false">

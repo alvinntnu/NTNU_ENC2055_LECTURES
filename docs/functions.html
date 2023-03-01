@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2023-02-24" />
+<meta name="date" content="2023-03-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -164,7 +164,7 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="https://mybinder.org/v2/gh/alvinntnu/NTNU_ENC2055_BINDER/HEAD?urlpath=rstudio" target ="blank"> <img src="https://mybinder.org/badge_logo.svg"> </a></li>
+<li><a href="https://mybinder.org/v2/gh/alvinntnu/NTNU_ENC2055_BINDER/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252Falvinntnu%252FNTNU_ENC2055_DATA%26urlpath%3Drstudio%252F%26branch%3Dmaster" target ="blank"> <img src="https://mybinder.org/badge_logo.svg"> </a></li>
 <li><a href="https://alvinntnu.github.io/NTNU_ENC2055/index.html" target ="blank"> <img src="images/alerts/home.svg" height="20" width ="20" style="display:inline"> Course Website </a></li>
 <li><a href="./index.html"> <img src="images/alerts/book-solid.svg" height="20" width ="20" style="display:inline"> ENC2055 Homepage</a></li>
 
@@ -654,13 +654,13 @@ div.csl-indent {
 <p>In the code block of <code>hello()</code> definition, the <code>cat()</code> displays text on the R console only. Therefore, displaying texts in the R console and returning the values are two different things.</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-6" class="exercise"><strong>Exercise 6.1  </strong></span>Without any change of the function, <code>hello()</code>, how can we assign the values printed in the console by <code>hello()</code> to an object <code>out</code>?</p>
+<p><span id="exr:unlabeled-div-22" class="exercise"><strong>Exercise 6.1  </strong></span>Without any change of the function, <code>hello()</code>, how can we assign the values printed in the console by <code>hello()</code> to an object <code>out</code>?</p>
 <p>That is, how can you modify the following code chunk so that <code>out</code> can store the values printed by <code>hello(name="Alvin")</code>?</p>
 <pre><code>out &lt;- hello(name=&quot;Alvin&quot;)
 out</code></pre>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-7" class="exercise"><strong>Exercise 6.2  </strong></span>Can you try to create a revised version of <code>hello()</code>, which returns the strings so that one can assign the outputs of the <code>hello()</code> to another object name? (Please note that in the following example, the return value <code>out</code> is not a <code>NULL</code> anymore.)</p>
+<p><span id="exr:unlabeled-div-23" class="exercise"><strong>Exercise 6.2  </strong></span>Can you try to create a revised version of <code>hello()</code>, which returns the strings so that one can assign the outputs of the <code>hello()</code> to another object name? (Please note that in the following example, the return value <code>out</code> is not a <code>NULL</code> anymore.)</p>
 </div>
 <div class="sourceCode" id="cb266"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb266-1"><a href="functions.html#cb266-1" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">hello2</span>(<span class="at">name =</span> <span class="st">&quot;Alvin&quot;</span>)</span>
 <span id="cb266-2"><a href="functions.html#cb266-2" aria-hidden="true" tabindex="-1"></a>out</span></code></pre></div>
@@ -855,7 +855,7 @@ out</code></pre>
 <div class="sourceCode" id="cb310"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb310-1"><a href="functions.html#cb310-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">8</span>, <span class="st">&quot;2&quot;</span>)</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;x/myBase needs to be a positive number not a string&quot;</code></pre>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-8" class="exercise"><strong>Exercise 6.3  </strong></span>Create a function that produces a simple animation, i.e., the zigzag outputs as shown below. The function will <strong>slowly</strong> create a back-and-forth zigzag pattern with the laps and the indent size as the parameters of the function. Alternatively, users can stop the animation anytime by pressing CTRL+C.</p>
+<p><span id="exr:unlabeled-div-24" class="exercise"><strong>Exercise 6.3  </strong></span>Create a function that produces a simple animation, i.e., the zigzag outputs as shown below. The function will <strong>slowly</strong> create a back-and-forth zigzag pattern with the laps and the indent size as the parameters of the function. Alternatively, users can stop the animation anytime by pressing CTRL+C.</p>
 </div>
 <div class="sourceCode" id="cb312"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb312-1"><a href="functions.html#cb312-1" aria-hidden="true" tabindex="-1"></a><span class="fu">zigzag</span>(<span class="at">lap =</span> <span class="dv">5</span>, <span class="at">indent_max =</span> <span class="dv">10</span>)</span></code></pre></div>
 <p><img src="images/zigzag.gif" /><!-- --></p>
@@ -863,7 +863,7 @@ out</code></pre>
 <li>Please note that the user can interrupt the program/function by pressing CTRL+C and your function should stop properly (using <code>tryCatch</code>).</li>
 </ul>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-9" class="exercise"><strong>Exercise 6.4  </strong></span>Create a simple function to play rock, paper, scissors with the user.</p>
+<p><span id="exr:unlabeled-div-25" class="exercise"><strong>Exercise 6.4  </strong></span>Create a simple function to play rock, paper, scissors with the user.</p>
 <p>Your program should achieve the following:</p>
 <ul>
 <li>Invite the user to make a move with text inputs (i.e., rock, paper, or scissors).</li>

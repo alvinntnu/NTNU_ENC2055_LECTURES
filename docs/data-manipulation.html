@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2023-02-24" />
+<meta name="date" content="2023-03-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -164,7 +164,7 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="https://mybinder.org/v2/gh/alvinntnu/NTNU_ENC2055_BINDER/HEAD?urlpath=rstudio" target ="blank"> <img src="https://mybinder.org/badge_logo.svg"> </a></li>
+<li><a href="https://mybinder.org/v2/gh/alvinntnu/NTNU_ENC2055_BINDER/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252Falvinntnu%252FNTNU_ENC2055_DATA%26urlpath%3Drstudio%252F%26branch%3Dmaster" target ="blank"> <img src="https://mybinder.org/badge_logo.svg"> </a></li>
 <li><a href="https://alvinntnu.github.io/NTNU_ENC2055/index.html" target ="blank"> <img src="images/alerts/home.svg" height="20" width ="20" style="display:inline"> Course Website </a></li>
 <li><a href="./index.html"> <img src="images/alerts/book-solid.svg" height="20" width ="20" style="display:inline"> ENC2055 Homepage</a></li>
 
@@ -598,7 +598,7 @@ div.csl-indent {
 </ul>
 <hr />
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-266" class="exercise"><strong>Exercise 8.1  </strong></span>Please check the documentations of all the above functions of merging data frames and make sure you understand how two data frames are merged with each function.</p>
+<p><span id="exr:unnamed-chunk-242" class="exercise"><strong>Exercise 8.1  </strong></span>Please check the documentations of all the above functions of merging data frames and make sure you understand how two data frames are merged with each function.</p>
 </div>
 <hr />
 <p>In the second library <code>tidyr</code>, we will focus on:</p>
@@ -865,7 +865,7 @@ frames.
   </script>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-288" class="exercise"><strong>Exercise 8.2  </strong></span>Please check the row numbers of the above three filtered data frames. Any connection?</p>
+<p><span id="exr:unnamed-chunk-264" class="exercise"><strong>Exercise 8.2  </strong></span>Please check the row numbers of the above three filtered data frames. Any connection?</p>
 </div>
 <div class="info">
 <p>
@@ -952,7 +952,7 @@ logical operations.
 <p>The function <code>count()</code> can be seen as a short-hand for <code>group_by()</code> + <code>summarize()</code>. Can you create the same frequency distributions as above using only <code>group_by()</code> and <code>summarize()</code>?</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-297" class="exercise"><strong>Exercise 8.3  </strong></span>Continuing the above example, how can you create another column, which includes the percentage of male and female students for those of the same parental level education (see below)?</p>
+<p><span id="exr:unnamed-chunk-273" class="exercise"><strong>Exercise 8.3  </strong></span>Continuing the above example, how can you create another column, which includes the percentage of male and female students for those of the same parental level education (see below)?</p>
 </div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
@@ -1073,9 +1073,9 @@ Figure 8.2: From Wide to Long: <code>pivot_longer()</code>
 <span id="cb401-6"><a href="data-manipulation.html#cb401-6" aria-hidden="true" tabindex="-1"></a>preg_longer <span class="sc">%&gt;%</span></span>
 <span id="cb401-7"><a href="data-manipulation.html#cb401-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(pregnant,count, <span class="at">fill=</span> gender)) <span class="sc">+</span></span>
 <span id="cb401-8"><a href="data-manipulation.html#cb401-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>, <span class="at">position=</span><span class="fu">position_dodge2</span>())</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-304-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-280-1.png" width="672" /></p>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-305" class="exercise"><strong>Exercise 8.4  </strong></span>Please get familiar with <code>tidyr::separate()</code> and <code>tidyr::unite()</code>, which are two important functions to manipulate the columns of the data frame.</p>
+<p><span id="exr:unnamed-chunk-281" class="exercise"><strong>Exercise 8.4  </strong></span>Please get familiar with <code>tidyr::separate()</code> and <code>tidyr::unite()</code>, which are two important functions to manipulate the columns of the data frame.</p>
 </div>
 </div>
 </div>
@@ -1115,7 +1115,7 @@ Figure 8.2: From Wide to Long: <code>pivot_longer()</code>
   </script>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-309" class="exercise"><strong>Exercise 8.8  </strong></span>In terms of Parental Education Levels (i.e., <code>parent_edu</code>), it would be better to be coded as an ordered factor. Can you transform the variable <code>parent_edu</code> into a <code>ordered factor</code> and regenerate the outputs requested in Exercise <a href="data-manipulation.html#exr:ex3">8.7</a>.</p>
+<p><span id="exr:unnamed-chunk-285" class="exercise"><strong>Exercise 8.8  </strong></span>In terms of Parental Education Levels (i.e., <code>parent_edu</code>), it would be better to be coded as an ordered factor. Can you transform the variable <code>parent_edu</code> into a <code>ordered factor</code> and regenerate the outputs requested in Exercise <a href="data-manipulation.html#exr:ex3">8.7</a>.</p>
 <p>Let us assume that the factor <code>parent_edu</code> follows the following order: <code>some high school</code> &lt; <code>high school</code> &lt; <code>some college</code> &lt; <code>associate's degree</code> &lt; <code>bachelor's degree</code> &lt; <code>master's degree</code></p>
 </div>
 <div data-pagedtable="false">
@@ -1126,11 +1126,11 @@ Figure 8.2: From Wide to Long: <code>pivot_longer()</code>
 <div class="exercise">
 <p><span id="exr:ex5" class="exercise"><strong>Exercise 8.9  </strong></span>Have you any ideas how to generate the following graphs using <code>ggplot2()</code>? Your goal is to re-create graphs that look as similar to the following as possible.</p>
 </div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-311-1.png" width="672" /></p>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-312-1.png" width="672" /><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-312-2.png" width="672" /></p>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-313-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-287-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-288-1.png" width="672" /><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-288-2.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-289-1.png" width="672" /></p>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-314" class="exercise"><strong>Exercise 8.10  </strong></span>In this exercise, please first download the dataset <code>demo_data/data-word-freq.csv</code>. You may use <code>readr::read_csv()</code> to load the dataset into R. This is a dataset including word frequencies in two different corpora. For example, the word <em>the</em> appears 346 times in <code>perl</code> corpus but 229 times in <code>python</code> corpus. In other words, each row in <code>word_freq</code> in fact represents the combination of (<code>WORD</code>, <code>CORPUS</code>) because the column <code>FREQ</code> contains the values for those variables. In addition, the same word appears twice in the dataset in the rows (e.g., <em>the</em>, <em>a</em>).</p>
+<p><span id="exr:unnamed-chunk-290" class="exercise"><strong>Exercise 8.10  </strong></span>In this exercise, please first download the dataset <code>demo_data/data-word-freq.csv</code>. You may use <code>readr::read_csv()</code> to load the dataset into R. This is a dataset including word frequencies in two different corpora. For example, the word <em>the</em> appears 346 times in <code>perl</code> corpus but 229 times in <code>python</code> corpus. In other words, each row in <code>word_freq</code> in fact represents the combination of (<code>WORD</code>, <code>CORPUS</code>) because the column <code>FREQ</code> contains the values for those variables. In addition, the same word appears twice in the dataset in the rows (e.g., <em>the</em>, <em>a</em>).</p>
 <p>Please transform <code>word_freq</code> into a wider format, where the word frequencies in each corpus can be independent columns (as shown in the second table). If the word appears in only one of the corpora, its frequency would be 0.</p>
 </div>
 <div class="sourceCode" id="cb402"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb402-1"><a href="data-manipulation.html#cb402-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(readr)</span>

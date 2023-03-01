@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2023-02-24" />
+<meta name="date" content="2023-03-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -54,6 +54,12 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.0/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.9/grViz.js"></script>
 <script src="https://hypothes.is/embed.js" async></script>
 
 
@@ -158,7 +164,7 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="https://mybinder.org/v2/gh/alvinntnu/NTNU_ENC2055_BINDER/HEAD?urlpath=rstudio" target ="blank"> <img src="https://mybinder.org/badge_logo.svg"> </a></li>
+<li><a href="https://mybinder.org/v2/gh/alvinntnu/NTNU_ENC2055_BINDER/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252Falvinntnu%252FNTNU_ENC2055_DATA%26urlpath%3Drstudio%252F%26branch%3Dmaster" target ="blank"> <img src="https://mybinder.org/badge_logo.svg"> </a></li>
 <li><a href="https://alvinntnu.github.io/NTNU_ENC2055/index.html" target ="blank"> <img src="images/alerts/home.svg" height="20" width ="20" style="display:inline"> Course Website </a></li>
 <li><a href="./index.html"> <img src="images/alerts/book-solid.svg" height="20" width ="20" style="display:inline"> ENC2055 Homepage</a></li>
 
@@ -566,7 +572,7 @@ div.csl-indent {
 <div id="header">
 <h1 class="title">ENC2055: Introduction to Programming Languages for Linguistic Analysis</h1>
 <p class="author"><em>Alvin Chen (陳正賢）</em></p>
-<p class="date"><em>2023-02-24</em></p>
+<p class="date"><em>2023-03-01</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered hasAnchor">
 <h1>Preface<a href="index.html#preface" class="anchor-section" aria-label="Anchor link to header"></a></h1>
@@ -653,11 +659,13 @@ P(A) = \sum P(\{ (e_1,\dotsc,e_N) \})  =  \binom{N}{k} \cdot p^kq^{N-k}
 <div id="necessary-packages" class="section level2 unnumbered hasAnchor">
 <h2>Necessary Packages<a href="index.html#necessary-packages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In this course, we will need the following R packages for tutorials and exercises.</p>
-<pre class="Rchunk"><code>library(dplyr)
+<pre class="Rchunk"><code>library(chatgpt)
+library(dplyr)
 library(foreign)
 library(gganimate)
 library(ggplot2)
 library(ggrepel)
+library(gptchatteR)
 library(Hmisc)
 library(lubridate)
 library(maps)

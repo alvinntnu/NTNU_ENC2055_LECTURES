@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2023-02-24" />
+<meta name="date" content="2023-03-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -164,7 +164,7 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="https://mybinder.org/v2/gh/alvinntnu/NTNU_ENC2055_BINDER/HEAD?urlpath=rstudio" target ="blank"> <img src="https://mybinder.org/badge_logo.svg"> </a></li>
+<li><a href="https://mybinder.org/v2/gh/alvinntnu/NTNU_ENC2055_BINDER/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252Falvinntnu%252FNTNU_ENC2055_DATA%26urlpath%3Drstudio%252F%26branch%3Dmaster" target ="blank"> <img src="https://mybinder.org/badge_logo.svg"> </a></li>
 <li><a href="https://alvinntnu.github.io/NTNU_ENC2055/index.html" target ="blank"> <img src="images/alerts/home.svg" height="20" width ="20" style="display:inline"> Course Website </a></li>
 <li><a href="./index.html"> <img src="images/alerts/book-solid.svg" height="20" width ="20" style="display:inline"> ENC2055 Homepage</a></li>
 
@@ -599,38 +599,16 @@ div.csl-indent {
 <span id="cb98-2"><a href="subsetting.html#cb98-2" aria-hidden="true" tabindex="-1"></a>char.vec[whether.to.extract]</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;one&quot;   &quot;three&quot;</code></pre>
 <div class="info">
-<p>
-You may use different logical operators to check each element of the
-vector according to some criteria. R will decide whether elements of the
-vector satisfy the condition given in the logical expression and return
-a Boolean vector of the same length. Common logical operators
-include:
-</p>
+<p>You may use different logical operators to check each element of the vector according to some criteria. R will decide whether elements of the vector satisfy the condition given in the logical expression and return a Boolean vector of the same length. Common logical operators include:</p>
 <ul>
-<li>
-<code>==</code>: equal to
-</li>
-<li>
-<code>&amp;</code>: and
-</li>
-<li>
-<code>|</code>: or
-</li>
-<li>
-<code>&gt;</code>: greater than
-</li>
-<li>
-<code>&gt;=</code>: greater than or equal to
-</li>
-<li>
-<code>&lt;</code>: less than
-</li>
-<li>
-<code>&lt;=</code>: less than or equal to
-</li>
-<li>
-<code>!=</code>: not equal
-</li>
+<li><code>==</code>: equal to</li>
+<li><code>&amp;</code>: and</li>
+<li><code>|</code>: or</li>
+<li><code>&gt;</code>: greater than</li>
+<li><code>&gt;=</code>: greater than or equal to</li>
+<li><code>&lt;</code>: less than</li>
+<li><code>&lt;=</code>: less than or equal to</li>
+<li><code>!=</code>: not equal</li>
 </ul>
 </div>
 <p>This can be very useful for vector subsetting:</p>
@@ -663,13 +641,11 @@ include:
 <span id="cb116-2"><a href="subsetting.html#cb116-2" aria-hidden="true" tabindex="-1"></a>char.vec</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;one&quot;   &quot;three&quot; &quot;four&quot;  &quot;five&quot; </code></pre>
 <div class="info">
-<p>
-For the two alternatives, which one would be better? Why?
-</p>
+<p>For the two alternatives, which one would be better? Why?</p>
 </div>
 <hr />
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-87" class="exercise"><strong>Exercise 4.1  </strong></span>Create a vector <code>m</code> with the small letters from <code>a</code> to <code>j</code> (in an alphabetical order).</p>
+<p><span id="exr:unlabeled-div-8" class="exercise"><strong>Exercise 4.1  </strong></span>Create a vector <code>m</code> with the small letters from <code>a</code> to <code>j</code> (in an alphabetical order).</p>
 <ul>
 <li>hint: check the object <code>letters</code> in R.</li>
 </ul>
@@ -677,7 +653,7 @@ For the two alternatives, which one would be better? Why?
 <div class="sourceCode" id="cb118"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb118-1"><a href="subsetting.html#cb118-1" aria-hidden="true" tabindex="-1"></a>m</span></code></pre></div>
 <pre class="Rout"><code> [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot;</code></pre>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-90" class="exercise"><strong>Exercise 4.2  </strong></span>Create a vector <code>n</code> with the small letters from a to j (in a random order).</p>
+<p><span id="exr:unlabeled-div-9" class="exercise"><strong>Exercise 4.2  </strong></span>Create a vector <code>n</code> with the small letters from a to j (in a random order).</p>
 <ul>
 <li>hint: check <code>sample()</code>. Also, your results may vary (because of the random ordering of the letters).</li>
 </ul>
@@ -685,7 +661,7 @@ For the two alternatives, which one would be better? Why?
 <div class="sourceCode" id="cb120"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb120-1"><a href="subsetting.html#cb120-1" aria-hidden="true" tabindex="-1"></a>n</span></code></pre></div>
 <pre class="Rout"><code> [1] &quot;e&quot; &quot;h&quot; &quot;d&quot; &quot;i&quot; &quot;c&quot; &quot;a&quot; &quot;b&quot; &quot;g&quot; &quot;f&quot; &quot;j&quot;</code></pre>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-93" class="exercise"><strong>Exercise 4.3  </strong></span>Determine whether letters in <code>n</code> (i.e., the one with the random order) are at the same positions as in <code>m</code> (i.e., the one with the alphabetical order). How many such cases do you find? Which letters are these?</p>
+<p><span id="exr:unlabeled-div-10" class="exercise"><strong>Exercise 4.3  </strong></span>Determine whether letters in <code>n</code> (i.e., the one with the random order) are at the same positions as in <code>m</code> (i.e., the one with the alphabetical order). How many such cases do you find? Which letters are these?</p>
 <ul>
 <li>hint: check <code>table()</code></li>
 </ul>
@@ -778,18 +754,8 @@ Levels: beginner low-inter upper-inter advanced</code></pre>
 factors</code></pre>
 <pre class="Rout"><code>[1] NA</code></pre>
 <div class="info">
-<p>
-The difference between <code>vector</code> and <code>factor</code>
-may look trivial for the moment but they are statistically very crucial.
-The choice of whether to instruct R to treat a vector as a factor, or
-even an ordered factor, will have important consequences in the
-implementation of many statistical methods, such as regression or other
-generalized linear modeling.
-</p>
-<p>
-<strong>Rule of thumb</strong>: Always pay attention to what kind of
-object class you are dealing with:)
-</p>
+<p>The difference between <code>vector</code> and <code>factor</code> may look trivial for the moment but they are statistically very crucial. The choice of whether to instruct R to treat a vector as a factor, or even an ordered factor, will have important consequences in the implementation of many statistical methods, such as regression or other generalized linear modeling.</p>
+<p><strong>Rule of thumb</strong>: Always pay attention to what kind of object class you are dealing with:)</p>
 </div>
 </div>
 <div id="list" class="section level2 hasAnchor" number="4.3">
@@ -823,21 +789,15 @@ $three
 <div class="sourceCode" id="cb161"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb161-1"><a href="subsetting.html#cb161-1" aria-hidden="true" tabindex="-1"></a>list.example[[<span class="st">&quot;one&quot;</span>]]</span></code></pre></div>
 <pre class="Rout"><code>[1] 1 2 3</code></pre>
 <div class="info">
-<p>
-We can also subset a <code>List</code> by the <strong>names</strong>
-of its elements.
-</p>
-<p>
-Before you try the following codes in the R console, could you first
-predict the outputs?
-</p>
+<p>We can also subset a <code>List</code> by the <strong>names</strong> of its elements.</p>
+<p>Before you try the following codes in the R console, could you first predict the outputs?</p>
 </div>
 <pre><code>  ind &lt;- c(&quot;one&quot;, &quot;three&quot;)
   list.example[ind]
   list.example[[ind]]</code></pre>
 <hr />
 <div class="exercise exlist1">
-<p><span id="exr:unlabeled-div-3" class="exercise"><strong>Exercise 4.4  </strong></span>Create a list that contains, in this order:</p>
+<p><span id="exr:unlabeled-div-11" class="exercise"><strong>Exercise 4.4  </strong></span>Create a list that contains, in this order:</p>
 <ul>
 <li>a sequence of 20 evenly spaced numbers between -4 and 4; (hint: check <code>seq()</code>)</li>
 <li>a 3 x 3 matrix of the logical vector <code>c(F,T,T,T,F,T,T,F,F)</code> filled column-wise;</li>
@@ -863,18 +823,18 @@ predict the outputs?
 [[4]]
 [1] LOW  MID  LOW  MID  MID  HIGH
 Levels: HIGH LOW MID</code></pre>
-<div class="exercise">
-<p><span id="exr:exlist2" class="exercise"><strong>Exercise 4.5  </strong></span>Based on Exercise <a href="#exr:exlist1"><strong>??</strong></a>, extract row elements 2 and 1 of columns 2 and 3, in that order, of the logical matrix.</p>
+<div class="exercise exlist2">
+<p><span id="exr:unlabeled-div-12" class="exercise"><strong>Exercise 4.5  </strong></span>Based on Exercise <a href="#exr:exlist1"><strong>??</strong></a>, extract row elements 2 and 1 of columns 2 and 3, in that order, of the logical matrix.</p>
 </div>
 <pre class="Rout"><code>      [,1]  [,2]
 [1,] FALSE FALSE
 [2,]  TRUE  TRUE</code></pre>
-<div class="exercise">
-<p><span id="exr:exlist3" class="exercise"><strong>Exercise 4.6  </strong></span>Based on Exercise <a href="#exr:exlist1"><strong>??</strong></a>, obtain all values from the sequence between -4 and 4 that are greater than 1.</p>
+<div class="exercise exlist3">
+<p><span id="exr:unlabeled-div-13" class="exercise"><strong>Exercise 4.6  </strong></span>Based on Exercise <a href="#exr:exlist1"><strong>??</strong></a>, obtain all values from the sequence between -4 and 4 that are greater than 1.</p>
 </div>
 <pre class="Rout"><code>[1] 1.052632 1.473684 1.894737 2.315789 2.736842 3.157895 3.578947 4.000000</code></pre>
-<div class="exercise">
-<p><span id="exr:exlist4" class="exercise"><strong>Exercise 4.7  </strong></span>Make yourself familar with the function <code>which()</code>. Based on Exercise <a href="#exr:exlist1"><strong>??</strong></a>, using <code>which()</code>, determine which indexes in the factor are assigned the “MID” level.</p>
+<div class="exercise exlist4">
+<p><span id="exr:unlabeled-div-14" class="exercise"><strong>Exercise 4.7  </strong></span>Make yourself familiar with the function <code>which()</code>. Based on Exercise <a href="#exr:exlist1"><strong>??</strong></a>, using <code>which()</code>, determine which indexes in the factor are assigned the “MID” level.</p>
 </div>
 <pre class="Rout"><code>[1] 2 4 5</code></pre>
 <hr />
@@ -923,16 +883,13 @@ Levels: HIGH LOW MID</code></pre>
   </script>
 </div>
 <div class="info">
-<p>
-Please compare the following two ways of accessing a column from the
-data frame. Can you tell the differences in the returned results?
-</p>
+<p>Please compare the following two ways of accessing a column from the data frame. Can you tell the differences in the returned results?</p>
 </div>
 <div class="sourceCode" id="cb175"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb175-1"><a href="subsetting.html#cb175-1" aria-hidden="true" tabindex="-1"></a>ex_df[, <span class="fu">c</span>(<span class="st">&quot;FREQ&quot;</span>)]</span>
 <span id="cb175-2"><a href="subsetting.html#cb175-2" aria-hidden="true" tabindex="-1"></a>ex_df[, <span class="fu">c</span>(<span class="st">&quot;FREQ&quot;</span>), drop <span class="ot">=</span> <span class="cn">FALSE</span>]</span></code></pre></div>
 <hr />
-<div class="exercise">
-<p><span id="exr:df1" class="exercise"><strong>Exercise 4.8  </strong></span>Create and store the following data frame as <code>dframe</code> in your R workspace.</p>
+<div class="exercise df1">
+<p><span id="exr:unlabeled-div-15" class="exercise"><strong>Exercise 4.8  </strong></span>Create and store the following data frame as <code>dframe</code> in your R workspace.</p>
 <ul>
 <li><code>person</code> should be a character vector</li>
 <li><code>sex</code> should be a factor with levels <code>F</code> and <code>M</code></li>
@@ -944,16 +901,16 @@ data frame. Can you tell the differences in the returned results?
 {"columns":[{"label":["person"],"name":[1],"type":["chr"],"align":["left"]},{"label":["sex"],"name":[2],"type":["fct"],"align":["left"]},{"label":["funny"],"name":[3],"type":["fct"],"align":["left"]}],"data":[{"1":"Stan","2":"M","3":"High"},{"1":"Francine","2":"F","3":"Mid"},{"1":"Steve","2":"M","3":"Low"},{"1":"Roger","2":"M","3":"High"},{"1":"Hayley","2":"F","3":"Mid"},{"1":"Klaus","2":"M","3":"Mid"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<div class="exercise">
-<p><span id="exr:df2" class="exercise"><strong>Exercise 4.9  </strong></span>Stan and Francine are 41 years old, Steve is 15, Hayley is 21, and Klaus is 60. Roger is extremely old–1,600 years. Following Exercise <a href="subsetting.html#exr:df1">4.8</a>, append these data as a new numeric column variable in <code>dframe</code> called <code>age</code>.</p>
+<div class="exercise df2">
+<p><span id="exr:unlabeled-div-16" class="exercise"><strong>Exercise 4.9  </strong></span>Stan and Francine are 41 years old, Steve is 15, Hayley is 21, and Klaus is 60. Roger is extremely old–1,600 years. Following Exercise <a href="#exr:df1"><strong>??</strong></a>, append these data as a new numeric column variable in <code>dframe</code> called <code>age</code>.</p>
 </div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["person"],"name":[1],"type":["chr"],"align":["left"]},{"label":["sex"],"name":[2],"type":["fct"],"align":["left"]},{"label":["funny"],"name":[3],"type":["fct"],"align":["left"]},{"label":["age"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"Stan","2":"M","3":"High","4":"41"},{"1":"Francine","2":"F","3":"Mid","4":"41"},{"1":"Steve","2":"M","3":"Low","4":"15"},{"1":"Roger","2":"M","3":"High","4":"1600"},{"1":"Hayley","2":"F","3":"Mid","4":"21"},{"1":"Klaus","2":"M","3":"Mid","4":"60"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<div class="exercise">
-<p><span id="exr:df3" class="exercise"><strong>Exercise 4.10  </strong></span>Following Exercise <a href="subsetting.html#exr:df2">4.9</a>, write a single line of code that will extract from <code>dframe</code> just the names and ages of any records where the individual is male and has a level of funniness equal to <code>Low</code> OR <code>Mid</code>.</p>
+<div class="exercise df3">
+<p><span id="exr:unlabeled-div-17" class="exercise"><strong>Exercise 4.10  </strong></span>Following Exercise <a href="#exr:df2"><strong>??</strong></a>, write a single line of code that will extract from <code>dframe</code> just the names and ages of any records where the individual is male and has a level of funniness equal to <code>Low</code> OR <code>Mid</code>.</p>
 </div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
@@ -980,24 +937,12 @@ data frame. Can you tell the differences in the returned results?
 </div>
 <hr />
 <div class="info">
-<p>
-There is another way to create a <code>tibble</code>. You can use
-<code>tribble()</code>, short for transposed tibble.
-<code>tribble()</code> is customized for data entry in code:
-</p>
+<p>There is another way to create a <code>tibble</code>. You can use <code>tribble()</code>, short for transposed tibble. <code>tribble()</code> is customized for data entry in code:</p>
 <ul>
-<li>
-column headings are defined by formulas (i.e. they start with
-<code>~</code>);
-</li>
-<li>
-entries are separated by <code>commas</code>.
-</li>
+<li>column headings are defined by formulas (i.e. they start with <code>~</code>);</li>
+<li>entries are separated by <code>commas</code>.</li>
 </ul>
-<p>
-This makes it possible to lay out small amounts of data in
-easy-to-read form.
-</p>
+<p>This makes it possible to lay out small amounts of data in easy-to-read form.</p>
 </div>
 <div class="sourceCode" id="cb177"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb177-1"><a href="subsetting.html#cb177-1" aria-hidden="true" tabindex="-1"></a>ex_tb_2 <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
 <span id="cb177-2"><a href="subsetting.html#cb177-2" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>WORD, <span class="sc">~</span>POS,  <span class="sc">~</span>FREQ,</span>
@@ -1034,7 +979,7 @@ easy-to-read form.
   </script>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-123" class="exercise"><strong>Exercise 4.11  </strong></span>Please compare again the following codes and see if you can tell the major differences between tibble and data.frame?</p>
+<p><span id="exr:unlabeled-div-18" class="exercise"><strong>Exercise 4.11  </strong></span>Please compare again the following codes and see if you can tell the major differences between tibble and data.frame?</p>
 </div>
 <div class="sourceCode" id="cb181"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb181-1"><a href="subsetting.html#cb181-1" aria-hidden="true" tabindex="-1"></a>ex_tb[,<span class="fu">c</span>(<span class="st">&quot;FREQ&quot;</span>)] <span class="co"># indexing tibble</span></span></code></pre></div>
 <div data-pagedtable="false">
@@ -1045,31 +990,15 @@ easy-to-read form.
 <div class="sourceCode" id="cb182"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb182-1"><a href="subsetting.html#cb182-1" aria-hidden="true" tabindex="-1"></a>ex_df[,<span class="fu">c</span>(<span class="st">&quot;FREQ&quot;</span>)] <span class="co"># indexing data.frame</span></span></code></pre></div>
 <pre class="Rout"><code>[1] 1104   35  104   34</code></pre>
 <div class="info">
-<p>
-There are three major advantages with <code>tibble()</code> when
-compared with <code>data.frame()</code>:
-</p>
+<p>There are three major advantages with <code>tibble()</code> when compared with <code>data.frame()</code>:</p>
 <ul>
-<li>
-A <code>tibble</code> set strings to default to character vectors
-while <code>data.frame(, stringsAsFactors = T)</code> converts all
-character vectors to factors by default
-</li>
-<li>
-When auto-printing the contents, <code>tibble</code> would only
-display the first ten rows, but <code>data.frame</code> would print out
-everything. This could be devastating! (Imagine that you have a table
-with hundreds of thousands rows.)
-</li>
-<li>
-The auto-printing of the <code>tibble</code> is a lot more
-informative, providing additional attributes of the <code>tibble</code>
-such as (a) row and column numbers and (b) data type of each column
-</li>
+<li>A <code>tibble</code> set strings to default to character vectors while <code>data.frame(, stringsAsFactors = T)</code> converts all character vectors to factors by default</li>
+<li>When auto-printing the contents, <code>tibble</code> would only display the first ten rows, but <code>data.frame</code> would print out everything. This could be devastating! (Imagine that you have a table with hundreds of thousands rows.)</li>
+<li>The auto-printing of the <code>tibble</code> is a lot more informative, providing additional attributes of the <code>tibble</code> such as (a) row and column numbers and (b) data type of each column</li>
 </ul>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-126" class="exercise"><strong>Exercise 4.12  </strong></span>Download the csv file, <code>data-word-freq.csv</code> from the <code>DEMO_DATA</code> Dropbox Drive and load the CSV data into R using two different functions: the default <code>read.csv()</code> and the <code>read_csv</code> from the <code>readr</code> package.</p>
+<p><span id="exr:unlabeled-div-19" class="exercise"><strong>Exercise 4.12  </strong></span>Download the csv file, <code>data-word-freq.csv</code> from the <code>DEMO_DATA</code> Dropbox Drive and load the CSV data into R using two different functions: the default <code>read.csv()</code> and the <code>read_csv</code> from the <code>readr</code> package.</p>
 <p>Please discuss the differences of the objects loaded from these two methods.</p>
 </div>
 <div class="sourceCode" id="cb184"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb184-1"><a href="subsetting.html#cb184-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Please download the csv file from `DEMO_DATA` drive</span></span>

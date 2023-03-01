@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2023-02-24" />
+<meta name="date" content="2023-03-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -164,7 +164,7 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="https://mybinder.org/v2/gh/alvinntnu/NTNU_ENC2055_BINDER/HEAD?urlpath=rstudio" target ="blank"> <img src="https://mybinder.org/badge_logo.svg"> </a></li>
+<li><a href="https://mybinder.org/v2/gh/alvinntnu/NTNU_ENC2055_BINDER/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252Falvinntnu%252FNTNU_ENC2055_DATA%26urlpath%3Drstudio%252F%26branch%3Dmaster" target ="blank"> <img src="https://mybinder.org/badge_logo.svg"> </a></li>
 <li><a href="https://alvinntnu.github.io/NTNU_ENC2055/index.html" target ="blank"> <img src="images/alerts/home.svg" height="20" width ="20" style="display:inline"> Course Website </a></li>
 <li><a href="./index.html"> <img src="images/alerts/book-solid.svg" height="20" width ="20" style="display:inline"> ENC2055 Homepage</a></li>
 
@@ -742,7 +742,7 @@ There are two variants of the integer division:</p>
 <span id="cb670-6"><a href="data-scientist-first-step.html#cb670-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> n), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.25</span>) <span class="sc">+</span></span>
 <span id="cb670-7"><a href="data-scientist-first-step.html#cb670-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;No. of Laureates in Different Disciplines&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Category&quot;</span>, <span class="at">y =</span> <span class="st">&quot;N&quot;</span>) <span class="sc">+</span></span>
 <span id="cb670-8"><a href="data-scientist-first-step.html#cb670-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-539-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-515-1.png" width="672" /></p>
 <div class="sourceCode" id="cb671"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb671-1"><a href="data-scientist-first-step.html#cb671-1" aria-hidden="true" tabindex="-1"></a><span class="co"># barplots (ordered)</span></span>
 <span id="cb671-2"><a href="data-scientist-first-step.html#cb671-2" aria-hidden="true" tabindex="-1"></a>nobel_winners <span class="sc">%&gt;%</span> </span>
 <span id="cb671-3"><a href="data-scientist-first-step.html#cb671-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(Category) <span class="sc">%&gt;%</span> </span>
@@ -751,7 +751,7 @@ There are two variants of the integer division:</p>
 <span id="cb671-6"><a href="data-scientist-first-step.html#cb671-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> n), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.25</span>) <span class="sc">+</span></span>
 <span id="cb671-7"><a href="data-scientist-first-step.html#cb671-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;No. of Laureates in Different Disciplines&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Category&quot;</span>, <span class="at">y =</span> <span class="st">&quot;N&quot;</span>) <span class="sc">+</span></span>
 <span id="cb671-8"><a href="data-scientist-first-step.html#cb671-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-540-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-516-1.png" width="672" /></p>
 <p>An even more dynamic graph:</p>
 <div class="sourceCode" id="cb672"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb672-1"><a href="data-scientist-first-step.html#cb672-1" aria-hidden="true" tabindex="-1"></a><span class="co"># barplot (dynamic)</span></span>
 <span id="cb672-2"><a href="data-scientist-first-step.html#cb672-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gganimate) <span class="co">#install.packages(&quot;gganimate&quot;, dependencies = T)</span></span>
@@ -766,7 +766,7 @@ There are two variants of the integer division:</p>
 <span id="cb672-11"><a href="data-scientist-first-step.html#cb672-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
 <span id="cb672-12"><a href="data-scientist-first-step.html#cb672-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transition_states</span>(Category)  <span class="sc">+</span></span>
 <span id="cb672-13"><a href="data-scientist-first-step.html#cb672-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">shadow_mark</span>(<span class="at">past =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-541-1.gif" /><!-- --></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-517-1.gif" /><!-- --></p>
 </div>
 <div id="age-distribution" class="section level3 hasAnchor" number="12.6.2">
 <h3><span class="header-section-number">12.6.2</span> Age Distribution<a href="data-scientist-first-step.html#age-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -797,13 +797,13 @@ se         0.41820389</code></pre>
 <span id="cb677-3"><a href="data-scientist-first-step.html#cb677-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Prize_Age)) <span class="sc">%&gt;%</span></span>
 <span id="cb677-4"><a href="data-scientist-first-step.html#cb677-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Prize_Age)) <span class="sc">+</span> </span>
 <span id="cb677-5"><a href="data-scientist-first-step.html#cb677-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color=</span><span class="st">&quot;white&quot;</span>)</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-542-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-518-1.png" width="672" /></p>
 <div class="sourceCode" id="cb678"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb678-1"><a href="data-scientist-first-step.html#cb678-1" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot</span></span>
 <span id="cb678-2"><a href="data-scientist-first-step.html#cb678-2" aria-hidden="true" tabindex="-1"></a>nobel_winners <span class="sc">%&gt;%</span></span>
 <span id="cb678-3"><a href="data-scientist-first-step.html#cb678-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Prize_Age)) <span class="sc">%&gt;%</span></span>
 <span id="cb678-4"><a href="data-scientist-first-step.html#cb678-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> Prize_Age)) <span class="sc">+</span></span>
 <span id="cb678-5"><a href="data-scientist-first-step.html#cb678-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-542-2.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-518-2.png" width="672" /></p>
 </div>
 <div id="category-x-age-interaction" class="section level3 hasAnchor" number="12.6.3">
 <h3><span class="header-section-number">12.6.3</span> Category x Age Interaction<a href="data-scientist-first-step.html#category-x-age-interaction" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -830,7 +830,7 @@ se         0.41820389</code></pre>
 <span id="cb680-5"><a href="data-scientist-first-step.html#cb680-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color=</span><span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
 <span id="cb680-6"><a href="data-scientist-first-step.html#cb680-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Category) <span class="sc">+</span></span>
 <span id="cb680-7"><a href="data-scientist-first-step.html#cb680-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-543-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-519-1.png" width="672" /></p>
 <div class="sourceCode" id="cb681"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb681-1"><a href="data-scientist-first-step.html#cb681-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Density graphs</span></span>
 <span id="cb681-2"><a href="data-scientist-first-step.html#cb681-2" aria-hidden="true" tabindex="-1"></a>nobel_winners <span class="sc">%&gt;%</span> </span>
 <span id="cb681-3"><a href="data-scientist-first-step.html#cb681-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Prize_Age)) <span class="sc">%&gt;%</span></span>
@@ -838,13 +838,13 @@ se         0.41820389</code></pre>
 <span id="cb681-5"><a href="data-scientist-first-step.html#cb681-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
 <span id="cb681-6"><a href="data-scientist-first-step.html#cb681-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Category) <span class="sc">+</span></span>
 <span id="cb681-7"><a href="data-scientist-first-step.html#cb681-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-543-2.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-519-2.png" width="672" /></p>
 <div class="sourceCode" id="cb682"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb682-1"><a href="data-scientist-first-step.html#cb682-1" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot</span></span>
 <span id="cb682-2"><a href="data-scientist-first-step.html#cb682-2" aria-hidden="true" tabindex="-1"></a>nobel_winners <span class="sc">%&gt;%</span></span>
 <span id="cb682-3"><a href="data-scientist-first-step.html#cb682-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Prize_Age)) <span class="sc">%&gt;%</span></span>
 <span id="cb682-4"><a href="data-scientist-first-step.html#cb682-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Category, <span class="at">y =</span> Prize_Age, <span class="at">fill =</span> Category))<span class="sc">+</span></span>
 <span id="cb682-5"><a href="data-scientist-first-step.html#cb682-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">notch=</span>T)</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-543-3.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-519-3.png" width="672" /></p>
 <div class="sourceCode" id="cb683"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb683-1"><a href="data-scientist-first-step.html#cb683-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mean and CI plots</span></span>
 <span id="cb683-2"><a href="data-scientist-first-step.html#cb683-2" aria-hidden="true" tabindex="-1"></a>nobel_winners <span class="sc">%&gt;%</span></span>
 <span id="cb683-3"><a href="data-scientist-first-step.html#cb683-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Prize_Age)) <span class="sc">%&gt;%</span></span>
@@ -852,7 +852,7 @@ se         0.41820389</code></pre>
 <span id="cb683-5"><a href="data-scientist-first-step.html#cb683-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">&quot;bar&quot;</span>, <span class="at">fill=</span><span class="st">&quot;white&quot;</span>, <span class="at">color=</span><span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
 <span id="cb683-6"><a href="data-scientist-first-step.html#cb683-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun.data =</span> <span class="cf">function</span>(x) <span class="fu">mean_se</span>(x, <span class="at">mult =</span> <span class="fl">1.96</span>),</span>
 <span id="cb683-7"><a href="data-scientist-first-step.html#cb683-7" aria-hidden="true" tabindex="-1"></a>               <span class="at">geom =</span> <span class="st">&quot;errorbar&quot;</span>, <span class="at">width =</span> <span class="fl">0.1</span>, <span class="at">color=</span><span class="st">&quot;grey40&quot;</span>)</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-543-4.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-519-4.png" width="672" /></p>
 </div>
 <div id="gender-distribution" class="section level3 hasAnchor" number="12.6.4">
 <h3><span class="header-section-number">12.6.4</span> Gender Distribution<a href="data-scientist-first-step.html#gender-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -874,7 +874,7 @@ se         0.41820389</code></pre>
 <span id="cb685-3"><a href="data-scientist-first-step.html#cb685-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Sex)) <span class="sc">%&gt;%</span></span>
 <span id="cb685-4"><a href="data-scientist-first-step.html#cb685-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Sex)) <span class="sc">+</span></span>
 <span id="cb685-5"><a href="data-scientist-first-step.html#cb685-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill=</span><span class="st">&quot;white&quot;</span>,<span class="at">color=</span><span class="st">&quot;black&quot;</span>) </span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-544-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-520-1.png" width="672" /></p>
 </div>
 <div id="age-x-gender-interaction" class="section level3 hasAnchor" number="12.6.5">
 <h3><span class="header-section-number">12.6.5</span> Age x Gender Interaction<a href="data-scientist-first-step.html#age-x-gender-interaction" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -903,7 +903,7 @@ se         0.41820389</code></pre>
 <span id="cb687-3"><a href="data-scientist-first-step.html#cb687-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Sex, Prize_Age, <span class="at">fill=</span>Sex)) <span class="sc">+</span> </span>
 <span id="cb687-4"><a href="data-scientist-first-step.html#cb687-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">notch=</span>T, <span class="at">color=</span><span class="st">&quot;grey30&quot;</span>) <span class="sc">+</span> </span>
 <span id="cb687-5"><a href="data-scientist-first-step.html#cb687-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;lightpink&quot;</span>,<span class="st">&quot;lightblue&quot;</span>))</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-546-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-522-1.png" width="672" /></p>
 <p>Or alternatively, we can create the mean and confidence interval plots for each sex.</p>
 <div class="sourceCode" id="cb688"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb688-1"><a href="data-scientist-first-step.html#cb688-1" aria-hidden="true" tabindex="-1"></a><span class="co">#require(Hmisc) # you have to have this for `stat_summary()`</span></span>
 <span id="cb688-2"><a href="data-scientist-first-step.html#cb688-2" aria-hidden="true" tabindex="-1"></a>nobel_winners <span class="sc">%&gt;%</span></span>
@@ -913,7 +913,7 @@ se         0.41820389</code></pre>
 <span id="cb688-6"><a href="data-scientist-first-step.html#cb688-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun.data =</span> <span class="cf">function</span>(x) <span class="fu">mean_se</span>(x, <span class="at">mult=</span><span class="fl">1.96</span>), </span>
 <span id="cb688-7"><a href="data-scientist-first-step.html#cb688-7" aria-hidden="true" tabindex="-1"></a>               <span class="at">geom =</span> <span class="st">&quot;errorbar&quot;</span>,</span>
 <span id="cb688-8"><a href="data-scientist-first-step.html#cb688-8" aria-hidden="true" tabindex="-1"></a>               <span class="at">width =</span> <span class="fl">0.1</span>)</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-547-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-523-1.png" width="672" /></p>
 <p>We can create an informative graph showing not only the mean ages of male and female winners, but also their respective minimum and maxinum ages.</p>
 <div class="sourceCode" id="cb689"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb689-1"><a href="data-scientist-first-step.html#cb689-1" aria-hidden="true" tabindex="-1"></a>sum_sex_age <span class="sc">%&gt;%</span></span>
 <span id="cb689-2"><a href="data-scientist-first-step.html#cb689-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">&quot;mean_prize_age&quot;</span>,<span class="st">&quot;min_prize_age&quot;</span>, <span class="st">&quot;max_prize_age&quot;</span>),</span>
@@ -925,13 +925,13 @@ se         0.41820389</code></pre>
 <span id="cb689-8"><a href="data-scientist-first-step.html#cb689-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">width =</span> <span class="fl">0.8</span>, </span>
 <span id="cb689-9"><a href="data-scientist-first-step.html#cb689-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">color=</span><span class="st">&quot;white&quot;</span>,</span>
 <span id="cb689-10"><a href="data-scientist-first-step.html#cb689-10" aria-hidden="true" tabindex="-1"></a>           <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.8</span>))</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-548-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-524-1.png" width="672" /></p>
 </div>
 </div>
 <div id="exercises-1" class="section level2 hasAnchor" number="12.7">
 <h2><span class="header-section-number">12.7</span> Exercises<a href="data-scientist-first-step.html#exercises-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-549" class="exercise"><strong>Exercise 12.1  </strong></span>Create a subset of <code>nobel_winners</code>, which includes only winners who won the prizes more than once and in more than one category.</p>
+<p><span id="exr:unnamed-chunk-525" class="exercise"><strong>Exercise 12.1  </strong></span>Create a subset of <code>nobel_winners</code>, which includes only winners who won the prizes more than once and in more than one category.</p>
 </div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
@@ -940,7 +940,7 @@ se         0.41820389</code></pre>
 </div>
 <hr />
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-551" class="exercise"><strong>Exercise 12.2  </strong></span>Please create a data frame of summary statistics, which shows us the distributions of male and female winners in different categories as shown below.
+<p><span id="exr:unnamed-chunk-527" class="exercise"><strong>Exercise 12.2  </strong></span>Please create a data frame of summary statistics, which shows us the distributions of male and female winners in different categories as shown below.
 Also, please show the number of males and females as well as the proportions for each prize category. (i.e., frequencies and normalizaed frequencies)</p>
 </div>
 <div data-pagedtable="false">
@@ -967,9 +967,9 @@ Also, please show the number of males and females as well as the proportions for
 {"columns":[{"label":["Birth_State"],"name":[1],"type":["chr"],"align":["left"]},{"label":["N"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"ny","2":"64"},{"1":"il","2":"25"},{"1":"ma","2":"22"},{"1":"ca","2":"16"},{"1":"pa","2":"14"},{"1":"ct","2":"8"},{"1":"in","2":"8"},{"1":"oh","2":"8"},{"1":"wi","2":"8"},{"1":"dc","2":"7"},{"1":"mi","2":"7"},{"1":"mn","2":"6"},{"1":"nj","2":"5"},{"1":"wa","2":"5"},{"1":"ia","2":"4"},{"1":"mo","2":"4"},{"1":"or","2":"4"},{"1":"tx","2":"4"},{"1":"co","2":"3"},{"1":"ky","2":"3"},{"1":"ne","2":"3"},{"1":"sc","2":"3"},{"1":"ga","2":"2"},{"1":"ks","2":"2"},{"1":"md","2":"2"},{"1":"nc","2":"2"},{"1":"sd","2":"2"},{"1":"tn","2":"2"},{"1":"va","2":"2"},{"1":"vt","2":"2"},{"1":"wv","2":"2"},{"1":"al","2":"1"},{"1":"de","2":"1"},{"1":"fl","2":"1"},{"1":"hi","2":"1"},{"1":"id","2":"1"},{"1":"ms","2":"1"},{"1":"mt","2":"1"},{"1":"nh","2":"1"},{"1":"nm","2":"1"},{"1":"ut","2":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-554-1.png" width="100%" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-530-1.png" width="100%" /></p>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-555" class="exercise"><strong>Exercise 12.4  </strong></span>Following Exercise <a href="data-scientist-first-step.html#exr:exbirthstate">12.3</a>, can you include the full names of states in the above table by adding another column?</p>
+<p><span id="exr:unnamed-chunk-531" class="exercise"><strong>Exercise 12.4  </strong></span>Following Exercise <a href="data-scientist-first-step.html#exr:exbirthstate">12.3</a>, can you include the full names of states in the above table by adding another column?</p>
 <p>In the <code>demo-data/US-states-csv</code>, you can find a csv with the mapping between states abbreviations and their full names.</p>
 </div>
 <ul>

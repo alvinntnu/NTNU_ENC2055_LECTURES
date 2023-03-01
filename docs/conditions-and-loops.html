@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2023-02-24" />
+<meta name="date" content="2023-03-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -164,7 +164,7 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="https://mybinder.org/v2/gh/alvinntnu/NTNU_ENC2055_BINDER/HEAD?urlpath=rstudio" target ="blank"> <img src="https://mybinder.org/badge_logo.svg"> </a></li>
+<li><a href="https://mybinder.org/v2/gh/alvinntnu/NTNU_ENC2055_BINDER/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252Falvinntnu%252FNTNU_ENC2055_DATA%26urlpath%3Drstudio%252F%26branch%3Dmaster" target ="blank"> <img src="https://mybinder.org/badge_logo.svg"> </a></li>
 <li><a href="https://alvinntnu.github.io/NTNU_ENC2055/index.html" target ="blank"> <img src="images/alerts/home.svg" height="20" width ="20" style="display:inline"> Course Website </a></li>
 <li><a href="./index.html"> <img src="images/alerts/book-solid.svg" height="20" width ="20" style="display:inline"> ENC2055 Homepage</a></li>
 
@@ -824,7 +824,7 @@ numOfChars &lt;- for(i in 1:length(word_vec)){
 </code></pre>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-4" class="exercise"><strong>Exercise 5.1  </strong></span>Use the data set from <code>stringr::sentences</code> for this exercise. Create a for-loop structure to get the number of characters for all sentences in the <code>stringr::sentences</code>. Present your results in a data frame of three columns:</p>
+<p><span id="exr:unlabeled-div-20" class="exercise"><strong>Exercise 5.1  </strong></span>Use the data set from <code>stringr::sentences</code> for this exercise. Create a for-loop structure to get the number of characters for all sentences in the <code>stringr::sentences</code>. Present your results in a data frame of three columns:</p>
 <ul>
 <li>Column 1 includes an unique integer ID for each sentence;</li>
 <li>Column 2 includes the texts of each sentence;</li>
@@ -846,7 +846,7 @@ numOfChars &lt;- for(i in 1:length(word_vec)){
   </script>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-5" class="exercise"><strong>Exercise 5.2  </strong></span>Use the data set <code>stringr::fruit</code> for this exercise. Create a <code>for-loop</code> and <code>if</code>-statement to instruct R to go through each fruit name and print out those fruit names that start with the vowel letters only (i.e., a, e, i, o, u).</p>
+<p><span id="exr:unlabeled-div-21" class="exercise"><strong>Exercise 5.2  </strong></span>Use the data set <code>stringr::fruit</code> for this exercise. Create a <code>for-loop</code> and <code>if</code>-statement to instruct R to go through each fruit name and print out those fruit names that start with the vowel letters only (i.e., a, e, i, o, u).</p>
 </div>
 <pre class="Rout"><code>[1] &quot;apple&quot;
 [1] &quot;apricot&quot;
@@ -941,7 +941,7 @@ Now the system is adjusting your `guess` to  90 </code></pre>
 <div class="sourceCode" id="cb238"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb238-1"><a href="conditions-and-loops.html#cb238-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&#39;Great! The passcode is finally cracked.</span><span class="sc">\n</span><span class="st">&#39;</span>)</span></code></pre></div>
 <pre class="Rout"><code>Great! The passcode is finally cracked.</code></pre>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-151" class="exercise"><strong>Exercise 5.3  </strong></span>In the above example, if the <code>guess</code> is smaller than <code>ans</code>, our script works fine. However, if the <code>guess</code> is larger than <code>ans</code>, then our script will crash.</p>
+<p><span id="exr:unnamed-chunk-127" class="exercise"><strong>Exercise 5.3  </strong></span>In the above example, if the <code>guess</code> is smaller than <code>ans</code>, our script works fine. However, if the <code>guess</code> is larger than <code>ans</code>, then our script will crash.</p>
 <p>How to fix it?</p>
 </div>
 <p>In other words, a revised script should produce the following results when <code>guess=83</code> &lt; <code>ans=90</code>:</p>
@@ -1054,7 +1054,7 @@ Now the system is adjusting your `guess` to  90 </code></pre>
 <p>After you load the above code chunk and create the <code>guessMyNumber()</code> function in your current R environment, you can play the game by running the function <code>guessMyNumber()</code>:</p>
 <div class="sourceCode" id="cb243"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb243-1"><a href="conditions-and-loops.html#cb243-1" aria-hidden="true" tabindex="-1"></a><span class="fu">guessMyNumber</span>()</span></code></pre></div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-157" class="exercise"><strong>Exercise 5.4  </strong></span>The above <code>guessMyNumber()</code> can be improved. Sometimes naughty (careless) users would not input numbers as requested. Instead, they may accidentally (or on purpose) enter characters that are NOT digits at all in their guesses.</p>
+<p><span id="exr:unnamed-chunk-133" class="exercise"><strong>Exercise 5.4  </strong></span>The above <code>guessMyNumber()</code> can be improved. Sometimes naughty (careless) users would not input numbers as requested. Instead, they may accidentally (or on purpose) enter characters that are NOT digits at all in their guesses.</p>
 <p>How can you adjust the <code>guessMyNumber()</code> so that when users enter non-digit characters, your program will send out a warning message automatically?</p>
 <p>An example output from the revised version is provided below.</p>
 </div>

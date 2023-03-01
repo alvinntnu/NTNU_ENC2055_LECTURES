@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2023-02-24" />
+<meta name="date" content="2023-03-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -164,7 +164,7 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="https://mybinder.org/v2/gh/alvinntnu/NTNU_ENC2055_BINDER/HEAD?urlpath=rstudio" target ="blank"> <img src="https://mybinder.org/badge_logo.svg"> </a></li>
+<li><a href="https://mybinder.org/v2/gh/alvinntnu/NTNU_ENC2055_BINDER/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252Falvinntnu%252FNTNU_ENC2055_DATA%26urlpath%3Drstudio%252F%26branch%3Dmaster" target ="blank"> <img src="https://mybinder.org/badge_logo.svg"> </a></li>
 <li><a href="https://alvinntnu.github.io/NTNU_ENC2055/index.html" target ="blank"> <img src="images/alerts/home.svg" height="20" width ="20" style="display:inline"> Course Website </a></li>
 <li><a href="./index.html"> <img src="images/alerts/book-solid.svg" height="20" width ="20" style="display:inline"> ENC2055 Homepage</a></li>
 
@@ -656,7 +656,7 @@ How can you create exactly the same results by using
 <ul>
 <li>interactively build your regexp and check the output of common string matching functions</li>
 </ul>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-327"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-303"></span>
 <img src="https://raw.githubusercontent.com/gadenbuie/regexplain/af4fe0988a10f34dc528b4d359b80bb06af7809a/docs/regexplain-selection.gif" alt="Taken from RegExplain Github Page"  />
 <p class="caption">
 Figure 9.1: Taken from RegExplain Github Page
@@ -665,7 +665,7 @@ Figure 9.1: Taken from RegExplain Github Page
 <ul>
 <li>use the included resources to learn regular expressions</li>
 </ul>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-328"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-304"></span>
 <img src="https://raw.githubusercontent.com/gadenbuie/regexplain/af4fe0988a10f34dc528b4d359b80bb06af7809a/docs/regexplain-library.gif" alt="Taken from RegExplain Github Page"  />
 <p class="caption">
 Figure 9.2: Taken from RegExplain Github Page
@@ -674,7 +674,7 @@ Figure 9.2: Taken from RegExplain Github Page
 <ul>
 <li>consult the interactive help pages</li>
 </ul>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-329"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-305"></span>
 <img src="https://raw.githubusercontent.com/gadenbuie/regexplain/af4fe0988a10f34dc528b4d359b80bb06af7809a/docs/regexplain-try-this.gif" alt="Taken from RegExplain Github Page"  />
 <p class="caption">
 Figure 9.3: Taken from RegExplain Github Page
@@ -962,15 +962,15 @@ you know very well which characters you do NOT like to match/find, use
 <p>So <code>(.)\\1</code> means that when the engine matches a character (i.e., <code>.</code> = any character), there has to be another same character following the former.</p>
 <hr />
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-360" class="exercise"><strong>Exercise 9.1  </strong></span>With the same set of fruit names in <code>x</code>, how do we match fruits with a <code>abab</code> pattern, such as “banana”?</p>
+<p><span id="exr:unnamed-chunk-336" class="exercise"><strong>Exercise 9.1  </strong></span>With the same set of fruit names in <code>x</code>, how do we match fruits with a <code>abab</code> pattern, such as “banana”?</p>
 </div>
 <pre class="Rout"><code>[4] │ b&lt;anan&gt;a</code></pre>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-362" class="exercise"><strong>Exercise 9.2  </strong></span>With the same set of fruit names in <code>x</code>, how do we match fruits with a <code>abba</code> pattern, such as “pepper”?</p>
+<p><span id="exr:unnamed-chunk-338" class="exercise"><strong>Exercise 9.2  </strong></span>With the same set of fruit names in <code>x</code>, how do we match fruits with a <code>abba</code> pattern, such as “pepper”?</p>
 </div>
 <pre class="Rout"><code>[5] │ bell p&lt;eppe&gt;r</code></pre>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-364" class="exercise"><strong>Exercise 9.3  </strong></span>With the same set of fruit names in <code>x</code>, please find fruit names which has at least one letter that is the same as their initial letters</p>
+<p><span id="exr:unnamed-chunk-340" class="exercise"><strong>Exercise 9.3  </strong></span>With the same set of fruit names in <code>x</code>, please find fruit names which has at least one letter that is the same as their initial letters</p>
 </div>
 <pre class="Rout"><code> [3] │ &lt;avoca&gt;do
  [6] │ &lt;bilb&gt;erry
@@ -1066,7 +1066,7 @@ you know very well which characters you do NOT like to match/find, use
 <div class="sourceCode" id="cb495"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb495-1"><a href="string-manipulation.html#cb495-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_extract</span>(x, <span class="st">&quot;(bl)([aeiou]+)&quot;</span>)</span></code></pre></div>
 <pre class="Rout"><code> [1] NA     NA     NA     NA     NA     NA     &quot;bla&quot;  &quot;bla&quot;  &quot;bloo&quot; &quot;blue&quot;</code></pre>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-374" class="exercise"><strong>Exercise 9.4  </strong></span>How do you use <code>str_match()</code> to find out all the <code>c+Vowel</code> structures, and at the same time identify which vowels follow the letter <code>c</code>?</p>
+<p><span id="exr:unnamed-chunk-350" class="exercise"><strong>Exercise 9.4  </strong></span>How do you use <code>str_match()</code> to find out all the <code>c+Vowel</code> structures, and at the same time identify which vowels follow the letter <code>c</code>?</p>
 </div>
 <pre class="Rout"><code>[2] │ apri&lt;co&gt;t
 [3] │ avo&lt;ca&gt;do
@@ -1083,7 +1083,7 @@ you know very well which characters you do NOT like to match/find, use
  [9,] NA   NA  
 [10,] NA   NA  </code></pre>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-376" class="exercise"><strong>Exercise 9.5  </strong></span>Please use <code>str_match()</code> to find out all fruit names whose initial letter is a consonant letter (i.e., not any of <code>a, e, i, o, u</code>) and gets repeated in the remaining part of the word.</p>
+<p><span id="exr:unnamed-chunk-352" class="exercise"><strong>Exercise 9.5  </strong></span>Please use <code>str_match()</code> to find out all fruit names whose initial letter is a consonant letter (i.e., not any of <code>a, e, i, o, u</code>) and gets repeated in the remaining part of the word.</p>
 </div>
 <p>The following is a sample output from <code>str_match()</code>. Column 1 refers to the match; Column 2 refers to the initial letter; Column 3 refers to the letters between the initial letter and the repeated same letter; Column 4 refers to the repeated letter, which is the same as the initial letter.</p>
 <pre class="Rout"><code>      [,1]     [,2] [,3]   [,4]
@@ -1163,12 +1163,12 @@ you know very well which characters you do NOT like to match/find, use
 </div>
 <hr />
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-382" class="exercise"><strong>Exercise 9.6  </strong></span>Convert American dates <code>American.dates</code> to British dates using <code>str_replace_all()</code>. Please note that in your output, you need to preserve the original delimiters for each date.</p>
+<p><span id="exr:unnamed-chunk-358" class="exercise"><strong>Exercise 9.6  </strong></span>Convert American dates <code>American.dates</code> to British dates using <code>str_replace_all()</code>. Please note that in your output, you need to preserve the original delimiters for each date.</p>
 </div>
 <div class="sourceCode" id="cb512"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb512-1"><a href="string-manipulation.html#cb512-1" aria-hidden="true" tabindex="-1"></a>American.dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;7/31/1976&quot;</span>, <span class="st">&quot;02.15.1970&quot;</span>, <span class="st">&quot;11-31-1986&quot;</span>, <span class="st">&quot;04/01.2020&quot;</span>)</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;31/7/1976&quot;  &quot;15.02.1970&quot; &quot;31-11-1986&quot; &quot;01/04.2020&quot;</code></pre>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-385" class="exercise"><strong>Exercise 9.7  </strong></span>Please use the default <code>sentences</code> vector as your input and find all patterns of “any BE verbs + words ending with ‘en’ or ‘ed’”. Please extract these matches from the sentences and your result should be a vector of these matches, as shown below.</p>
+<p><span id="exr:unnamed-chunk-361" class="exercise"><strong>Exercise 9.7  </strong></span>Please use the default <code>sentences</code> vector as your input and find all patterns of “any BE verbs + words ending with ‘en’ or ‘ed’”. Please extract these matches from the sentences and your result should be a vector of these matches, as shown below.</p>
 </div>
 <div class="sourceCode" id="cb514"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb514-1"><a href="string-manipulation.html#cb514-1" aria-hidden="true" tabindex="-1"></a>sentences[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;The birch canoe slid on the smooth planks.&quot; 
@@ -1210,7 +1210,7 @@ you know very well which characters you do NOT like to match/find, use
 [20] │ Roads &lt;are paved&gt; with sticky tar.
 ... and 20 more</code></pre>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-13" class="exercise"><strong>Exercise 9.8  </strong></span>Please create a regular expression to extract all word tokens of the sentences from the vector <code>x</code>, which is defined as follows.</p>
+<p><span id="exr:unlabeled-div-29" class="exercise"><strong>Exercise 9.8  </strong></span>Please create a regular expression to extract all word tokens of the sentences from the vector <code>x</code>, which is defined as follows.</p>
 <div class="sourceCode" id="cb520"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb520-1"><a href="string-manipulation.html#cb520-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;It&#39;s a three-legged char.&quot;</span>, <span class="st">&quot;The book (you read) was quite boring!&quot;</span>)</span></code></pre></div>
 <p>The returned object is a <code>list</code>, including the word vectors of each text in <code>x</code>.</p>
 </div>
@@ -1220,11 +1220,11 @@ you know very well which characters you do NOT like to match/find, use
 [[2]]
 [1] &quot;The&quot;    &quot;book&quot;   &quot;you&quot;    &quot;read&quot;   &quot;was&quot;    &quot;quite&quot;  &quot;boring&quot;</code></pre>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-14" class="exercise"><strong>Exercise 9.9  </strong></span>In <code>stringr::sentences</code>, there are 720 English sentences. Please create a regular expression to subset sentences with at least one word containing a hyphen. There are TWO sentences that satisfy the condition.</p>
+<p><span id="exr:unlabeled-div-30" class="exercise"><strong>Exercise 9.9  </strong></span>In <code>stringr::sentences</code>, there are 720 English sentences. Please create a regular expression to subset sentences with at least one word containing a hyphen. There are TWO sentences that satisfy the condition.</p>
 </div>
 <pre class="Rout"><code>[1] &quot;A zestful food is the hot-cross bun.&quot;</code></pre>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-15" class="exercise"><strong>Exercise 9.10  </strong></span>Please extract all the word tokens that are tagged as NOUNS from the following text using a self-defined regular expressions. NOUNS are defined as words with parts-of-speech tags starting with <strong>N</strong>.</p>
+<p><span id="exr:unlabeled-div-31" class="exercise"><strong>Exercise 9.10  </strong></span>Please extract all the word tokens that are tagged as NOUNS from the following text using a self-defined regular expressions. NOUNS are defined as words with parts-of-speech tags starting with <strong>N</strong>.</p>
 <div class="sourceCode" id="cb523"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb523-1"><a href="string-manipulation.html#cb523-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="st">&quot;中央(Nc)　流行(VH)　疫情(Na)　指揮(VC)　中心(Nc)　醫療(VC)　應變組(Nc)　副組長(Na)　羅一鈞(Nb)　今天(Nd)　說明(VE)　，(COMMACATEGORY)　截至(P)　12月(Nd)　1日(Nd)　全球(Nc)　累計(VJ)　至少(Da)　27(Neu)　國(Nc)　、(PAUSECATEGORY)　共有(VJ)　370(Neu)　例(Na)　確診(VA)　感染(VJ)　Omicron(FW)　變異株(Na)　，(COMMACATEGORY)　多(D)　來自(VJ)　南非(Nc)　或(Caa)　具(VJ)　非洲(Nc)　國家(Na)　旅遊史(Na)　。(PERIODCATEGORY)&quot;</span></span></code></pre></div>
 </div>
 <pre class="Rout"><code>[[1]]
@@ -1233,7 +1233,7 @@ you know very well which characters you do NOT like to match/find, use
 [11] &quot;27(Neu)&quot;    &quot;國(Nc)&quot;     &quot;370(Neu)&quot;   &quot;例(Na)&quot;     &quot;變異株(Na)&quot;
 [16] &quot;南非(Nc)&quot;   &quot;非洲(Nc)&quot;   &quot;國家(Na)&quot;   &quot;旅遊史(Na)&quot;</code></pre>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-16" class="exercise"><strong>Exercise 9.11  </strong></span>Please use the same Chinese texts as the input. Please use <code>str_replace_all()</code> along with a self-defined regular expression to remove all part-of-speech tags in the original texts.</p>
+<p><span id="exr:unlabeled-div-32" class="exercise"><strong>Exercise 9.11  </strong></span>Please use the same Chinese texts as the input. Please use <code>str_replace_all()</code> along with a self-defined regular expression to remove all part-of-speech tags in the original texts.</p>
 <div class="sourceCode" id="cb525"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb525-1"><a href="string-manipulation.html#cb525-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="st">&quot;中央(Nc)　流行(VH)　疫情(Na)　指揮(VC)　中心(Nc)　醫療(VC)　應變組(Nc)　副組長(Na)　羅一鈞(Nb)　今天(Nd)　說明(VE)　，(COMMACATEGORY)　截至(P)　12月(Nd)　1日(Nd)　全球(Nc)　累計(VJ)　至少(Da)　27(Neu)　國(Nc)　、(PAUSECATEGORY)　共有(VJ)　370(Neu)　例(Na)　確診(VA)　感染(VJ)　Omicron(FW)　變異株(Na)　，(COMMACATEGORY)　多(D)　來自(VJ)　南非(Nc)　或(Caa)　具(VJ)　非洲(Nc)　國家(Na)　旅遊史(Na)　。(PERIODCATEGORY)&quot;</span></span></code></pre></div>
 </div>
 <pre class="Rout"><code>[1] &quot;中央　流行　疫情　指揮　中心　醫療　應變組　副組長　羅一鈞　今天　說明　，　截至　12月　1日　全球　累計　至少　27　國　、　共有　370　例　確診　感染　Omicron　變異株　，　多　來自　南非　或　具　非洲　國家　旅遊史　。&quot;</code></pre>
@@ -1367,7 +1367,7 @@ you know very well which characters you do NOT like to match/find, use
 <p>This section will show you more examples of the RegEx applications. Most importantly, I will specifically point out the capacities and potentials of regular expressions in helping us manipulating the datasets.</p>
 <p>In Chapter <a href="data-manipulation.html#data-manipulation">8</a>, we have talked about important ways in which we can manipulate our data as a <code>data.frame/tibble</code>. Please refer to the Chapter <a href="data-manipulation.html#data-manipulation">8</a> for a review of the important <em>verbs</em> in <code>dplyr</code>.</p>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-409" class="exercise"><strong>Exercise 9.14  </strong></span>In the library <code>tidyr</code>, there are two very useful functions for data manipulation: <code>separate()</code>, <code>extract()</code> and <code>unnest()</code>. Please read the documentations of these two functions and run the examples provided in the documentation to make sure that you understand how they work.</p>
+<p><span id="exr:unnamed-chunk-385" class="exercise"><strong>Exercise 9.14  </strong></span>In the library <code>tidyr</code>, there are two very useful functions for data manipulation: <code>separate()</code>, <code>extract()</code> and <code>unnest()</code>. Please read the documentations of these two functions and run the examples provided in the documentation to make sure that you understand how they work.</p>
 </div>
 <div id="case-1" class="section level3 hasAnchor" number="9.7.1">
 <h3><span class="header-section-number">9.7.1</span> Case 1<a href="string-manipulation.html#case-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1396,7 +1396,7 @@ you know very well which characters you do NOT like to match/find, use
 </ul>
 <hr />
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-412" class="exercise"><strong>Exercise 9.15  </strong></span>If we have a data frame like <code>dt</code> below, how do we extract all the vowels of the words in the <code>WORD</code> column and create two additional columns:</p>
+<p><span id="exr:unnamed-chunk-388" class="exercise"><strong>Exercise 9.15  </strong></span>If we have a data frame like <code>dt</code> below, how do we extract all the vowels of the words in the <code>WORD</code> column and create two additional columns:</p>
 <ul>
 <li>Because a word may have several vowels, create a new column, which shows all the vowels in the word by combining them into a long string with the delimiter “_”</li>
 <li>Create another column for the number of vowels for each word</li>
@@ -1442,7 +1442,7 @@ you know very well which characters you do NOT like to match/find, use
 <li>We need to know how to extract alphanumeric (or non-alphanumeric) characters from the values of <code>x</code> column.</li>
 </ul>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-418" class="exercise"><strong>Exercise 9.16  </strong></span>How to extract the numbers and split the numbers into <code>START</code> and <code>END</code>?</p>
+<p><span id="exr:unnamed-chunk-394" class="exercise"><strong>Exercise 9.16  </strong></span>How to extract the numbers and split the numbers into <code>START</code> and <code>END</code>?</p>
 </div>
 <p>Original data frame:</p>
 <div class="sourceCode" id="cb555"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb555-1"><a href="string-manipulation.html#cb555-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="st">&quot;1-12周&quot;</span>, <span class="st">&quot;1-10周&quot;</span>, <span class="st">&quot;5-12周&quot;</span>))</span>
@@ -1505,7 +1505,7 @@ you know very well which characters you do NOT like to match/find, use
   </script>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-426" class="exercise"><strong>Exercise 9.18  </strong></span>Based on Exercise <a href="string-manipulation.html#exr:lookaheadex">9.17</a>, can you add another column to the resulting data frame, which records the upper-casing letter that the numbers follow for each row?</p>
+<p><span id="exr:unnamed-chunk-402" class="exercise"><strong>Exercise 9.18  </strong></span>Based on Exercise <a href="string-manipulation.html#exr:lookaheadex">9.17</a>, can you add another column to the resulting data frame, which records the upper-casing letter that the numbers follow for each row?</p>
 </div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
@@ -1592,7 +1592,7 @@ you know very well which characters you do NOT like to match/find, use
 <span id="cb570-2"><a href="string-manipulation.html#cb570-2" aria-hidden="true" tabindex="-1"></a>idiom_laiqu_count <span class="sc">%&gt;%</span></span>
 <span id="cb570-3"><a href="string-manipulation.html#cb570-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(structure, n, <span class="at">fill =</span> structure)) <span class="sc">+</span> </span>
 <span id="cb570-4"><a href="string-manipulation.html#cb570-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-432-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-408-1.png" width="672" /></p>
 <div class="sourceCode" id="cb571"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb571-1"><a href="string-manipulation.html#cb571-1" aria-hidden="true" tabindex="-1"></a><span class="do">##########################</span></span>
 <span id="cb571-2"><a href="string-manipulation.html#cb571-2" aria-hidden="true" tabindex="-1"></a><span class="do">### Another alterantive###</span></span>
 <span id="cb571-3"><a href="string-manipulation.html#cb571-3" aria-hidden="true" tabindex="-1"></a><span class="do">##########################</span></span>
@@ -1629,7 +1629,7 @@ you know very well which characters you do NOT like to match/find, use
 <ul>
 <li>Type Distribution</li>
 </ul>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-437-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-413-1.png" width="672" /></p>
 <hr />
 <div class="exercise">
 <p><span id="exr:exidiom3" class="exercise"><strong>Exercise 9.21  </strong></span>Following Exercise <a href="string-manipulation.html#exr:exidiom2">9.20</a>, for each type of the idioms (i.e., “A_A_” or “_A_A”), please provide their respective proportions of W<sub>1</sub> = W<sub>2</sub> vs. W<sub>1</sub> != W<sub>2</sub>, where W<sub>1</sub> and W<sub>2</sub> refer to the words filled in the variable slots of the idiomatic templates.</p>
