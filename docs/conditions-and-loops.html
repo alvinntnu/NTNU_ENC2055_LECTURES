@@ -54,12 +54,6 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.6.0/htmlwidgets.js"></script>
-<script src="libs/viz-1.8.2/viz.js"></script>
-<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="libs/grViz-binding-1.0.9/grViz.js"></script>
 <script src="https://hypothes.is/embed.js" async></script>
 
 
@@ -128,28 +122,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 <link rel="stylesheet" href="style-new.css" type="text/css" />
 </head>
@@ -604,8 +576,8 @@ div.csl-indent {
 <div id="boolean-values" class="section level3 unnumbered hasAnchor">
 <h3>Boolean Values<a href="conditions-and-loops.html#boolean-values" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Unlike numbers or characters, the <strong>Boolean</strong> data type has only two values, <code>TRUE</code> and <code>FALSE</code>. In R, the Boolean values <code>TRUE</code> and <code>FALSE</code> lack the quotes you place around strings, and they are always uppercase.</p>
-<div class="sourceCode" id="cb214"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb214-1"><a href="conditions-and-loops.html#cb214-1" aria-hidden="true" tabindex="-1"></a>cond1 <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
-<span id="cb214-2"><a href="conditions-and-loops.html#cb214-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(cond1)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1-1"><a href="conditions-and-loops.html#cb1-1" aria-hidden="true" tabindex="-1"></a>cond1 <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb1-2"><a href="conditions-and-loops.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(cond1)</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;logical&quot;</code></pre>
 </div>
 <div id="comparison-operators" class="section level3 unnumbered hasAnchor">
@@ -655,35 +627,35 @@ div.csl-indent {
 </tbody>
 </table>
 <p>These comparison operators return <code>TRUE</code> or <code>FALSE</code> depending on the values we give them.</p>
-<div class="sourceCode" id="cb216"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb216-1"><a href="conditions-and-loops.html#cb216-1" aria-hidden="true" tabindex="-1"></a><span class="dv">45</span> <span class="sc">==</span> <span class="dv">45</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb3-1"><a href="conditions-and-loops.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">45</span> <span class="sc">==</span> <span class="dv">45</span></span></code></pre></div>
 <pre class="Rout"><code>[1] TRUE</code></pre>
-<div class="sourceCode" id="cb218"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb218-1"><a href="conditions-and-loops.html#cb218-1" aria-hidden="true" tabindex="-1"></a><span class="dv">45</span> <span class="sc">&gt;</span> <span class="dv">50</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb5-1"><a href="conditions-and-loops.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">45</span> <span class="sc">&gt;</span> <span class="dv">50</span></span></code></pre></div>
 <pre class="Rout"><code>[1] FALSE</code></pre>
-<div class="sourceCode" id="cb220"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb220-1"><a href="conditions-and-loops.html#cb220-1" aria-hidden="true" tabindex="-1"></a><span class="dv">45</span> <span class="sc">!=</span> <span class="dv">4</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb7-1"><a href="conditions-and-loops.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dv">45</span> <span class="sc">!=</span> <span class="dv">4</span></span></code></pre></div>
 <pre class="Rout"><code>[1] TRUE</code></pre>
 <p>Please note that these operators work not only with numbers but also characters as well.</p>
-<div class="sourceCode" id="cb222"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb222-1"><a href="conditions-and-loops.html#cb222-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="st">&quot;run&quot;</span></span>
-<span id="cb222-2"><a href="conditions-and-loops.html#cb222-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="st">&quot;run&quot;</span></span>
-<span id="cb222-3"><a href="conditions-and-loops.html#cb222-3" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="st">&quot;walk&quot;</span></span>
-<span id="cb222-4"><a href="conditions-and-loops.html#cb222-4" aria-hidden="true" tabindex="-1"></a>all <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;run&quot;</span>,<span class="st">&quot;walk&quot;</span>,<span class="st">&quot;march&quot;</span>)</span>
-<span id="cb222-5"><a href="conditions-and-loops.html#cb222-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb222-6"><a href="conditions-and-loops.html#cb222-6" aria-hidden="true" tabindex="-1"></a>a <span class="sc">==</span> b</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb9-1"><a href="conditions-and-loops.html#cb9-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="st">&quot;run&quot;</span></span>
+<span id="cb9-2"><a href="conditions-and-loops.html#cb9-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="st">&quot;run&quot;</span></span>
+<span id="cb9-3"><a href="conditions-and-loops.html#cb9-3" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="st">&quot;walk&quot;</span></span>
+<span id="cb9-4"><a href="conditions-and-loops.html#cb9-4" aria-hidden="true" tabindex="-1"></a>all <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;run&quot;</span>,<span class="st">&quot;walk&quot;</span>,<span class="st">&quot;march&quot;</span>)</span>
+<span id="cb9-5"><a href="conditions-and-loops.html#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="conditions-and-loops.html#cb9-6" aria-hidden="true" tabindex="-1"></a>a <span class="sc">==</span> b</span></code></pre></div>
 <pre class="Rout"><code>[1] TRUE</code></pre>
-<div class="sourceCode" id="cb224"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb224-1"><a href="conditions-and-loops.html#cb224-1" aria-hidden="true" tabindex="-1"></a>a <span class="sc">==</span> c</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb11-1"><a href="conditions-and-loops.html#cb11-1" aria-hidden="true" tabindex="-1"></a>a <span class="sc">==</span> c</span></code></pre></div>
 <pre class="Rout"><code>[1] FALSE</code></pre>
-<div class="sourceCode" id="cb226"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb226-1"><a href="conditions-and-loops.html#cb226-1" aria-hidden="true" tabindex="-1"></a>c <span class="sc">%in%</span> all</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb13-1"><a href="conditions-and-loops.html#cb13-1" aria-hidden="true" tabindex="-1"></a>c <span class="sc">%in%</span> all</span></code></pre></div>
 <pre class="Rout"><code>[1] TRUE</code></pre>
 <p>When using comparison operators, be careful of the data types (i.e., numeric or character).</p>
-<div class="sourceCode" id="cb228"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb228-1"><a href="conditions-and-loops.html#cb228-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Create objects</span></span>
-<span id="cb228-2"><a href="conditions-and-loops.html#cb228-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="st">&quot;42&quot;</span> <span class="do">## char vec</span></span>
-<span id="cb228-3"><a href="conditions-and-loops.html#cb228-3" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">42</span> <span class="do">## num vec</span></span>
-<span id="cb228-4"><a href="conditions-and-loops.html#cb228-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb228-5"><a href="conditions-and-loops.html#cb228-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Comparison operations</span></span>
-<span id="cb228-6"><a href="conditions-and-loops.html#cb228-6" aria-hidden="true" tabindex="-1"></a>a <span class="sc">==</span> <span class="fl">42.0</span></span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb15-1"><a href="conditions-and-loops.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Create objects</span></span>
+<span id="cb15-2"><a href="conditions-and-loops.html#cb15-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="st">&quot;42&quot;</span> <span class="do">## char vec</span></span>
+<span id="cb15-3"><a href="conditions-and-loops.html#cb15-3" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">42</span> <span class="do">## num vec</span></span>
+<span id="cb15-4"><a href="conditions-and-loops.html#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="conditions-and-loops.html#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Comparison operations</span></span>
+<span id="cb15-6"><a href="conditions-and-loops.html#cb15-6" aria-hidden="true" tabindex="-1"></a>a <span class="sc">==</span> <span class="fl">42.0</span></span></code></pre></div>
 <pre class="Rout"><code>[1] TRUE</code></pre>
-<div class="sourceCode" id="cb230"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb230-1"><a href="conditions-and-loops.html#cb230-1" aria-hidden="true" tabindex="-1"></a>a <span class="sc">&gt;</span> <span class="dv">40</span></span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb17-1"><a href="conditions-and-loops.html#cb17-1" aria-hidden="true" tabindex="-1"></a>a <span class="sc">&gt;</span> <span class="dv">40</span></span></code></pre></div>
 <pre class="Rout"><code>[1] TRUE</code></pre>
-<div class="sourceCode" id="cb232"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb232-1"><a href="conditions-and-loops.html#cb232-1" aria-hidden="true" tabindex="-1"></a>a <span class="sc">==</span> b</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb19-1"><a href="conditions-and-loops.html#cb19-1" aria-hidden="true" tabindex="-1"></a>a <span class="sc">==</span> b</span></code></pre></div>
 <pre class="Rout"><code>[1] TRUE</code></pre>
 <div class="warning">
 <p>Please note from the above example that R does <strong>implicit data type conversion</strong>, which means it automatically converts one data type to another as needed. This can occur in a variety of situations, such as when performing arithmetic operations on different types of data or when assigning a value of one data type to a variable of another data type.</p>
@@ -695,52 +667,52 @@ div.csl-indent {
 <div id="boolean-operators" class="section level3 unnumbered hasAnchor">
 <h3>Boolean Operators<a href="conditions-and-loops.html#boolean-operators" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>There are four Boolean operators in R to combine two conditions: <code>&amp;</code> (AND), <code>|</code> (inclusive OR), <code>xor()</code> (exclusive OR), and <code>!</code> (NOT). That is, we can combine two or more conditions with these operators for more complex conditions.</p>
-<div class="sourceCode" id="cb234"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb234-1"><a href="conditions-and-loops.html#cb234-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Inclusive OR</span></span>
-<span id="cb234-2"><a href="conditions-and-loops.html#cb234-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">47</span></span>
-<span id="cb234-3"><a href="conditions-and-loops.html#cb234-3" aria-hidden="true" tabindex="-1"></a>x <span class="sc">&gt;</span> <span class="dv">30</span> <span class="sc">|</span> x <span class="sc">&lt;</span> <span class="dv">50</span></span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb21-1"><a href="conditions-and-loops.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Inclusive OR</span></span>
+<span id="cb21-2"><a href="conditions-and-loops.html#cb21-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">47</span></span>
+<span id="cb21-3"><a href="conditions-and-loops.html#cb21-3" aria-hidden="true" tabindex="-1"></a>x <span class="sc">&gt;</span> <span class="dv">30</span> <span class="sc">|</span> x <span class="sc">&lt;</span> <span class="dv">50</span></span></code></pre></div>
 <pre class="Rout"><code>[1] TRUE</code></pre>
-<div class="sourceCode" id="cb236"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb236-1"><a href="conditions-and-loops.html#cb236-1" aria-hidden="true" tabindex="-1"></a><span class="do">## AND</span></span>
-<span id="cb236-2"><a href="conditions-and-loops.html#cb236-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">55</span></span>
-<span id="cb236-3"><a href="conditions-and-loops.html#cb236-3" aria-hidden="true" tabindex="-1"></a>x <span class="sc">&gt;</span> <span class="dv">30</span> <span class="sc">&amp;</span> x <span class="sc">&lt;</span> <span class="dv">50</span></span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb23-1"><a href="conditions-and-loops.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="do">## AND</span></span>
+<span id="cb23-2"><a href="conditions-and-loops.html#cb23-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">55</span></span>
+<span id="cb23-3"><a href="conditions-and-loops.html#cb23-3" aria-hidden="true" tabindex="-1"></a>x <span class="sc">&gt;</span> <span class="dv">30</span> <span class="sc">&amp;</span> x <span class="sc">&lt;</span> <span class="dv">50</span></span></code></pre></div>
 <pre class="Rout"><code>[1] FALSE</code></pre>
-<div class="sourceCode" id="cb238"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb238-1"><a href="conditions-and-loops.html#cb238-1" aria-hidden="true" tabindex="-1"></a><span class="do">## NOT</span></span>
-<span id="cb238-2"><a href="conditions-and-loops.html#cb238-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">55</span></span>
-<span id="cb238-3"><a href="conditions-and-loops.html#cb238-3" aria-hidden="true" tabindex="-1"></a>x <span class="sc">&gt;</span> <span class="dv">50</span></span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb25-1"><a href="conditions-and-loops.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="do">## NOT</span></span>
+<span id="cb25-2"><a href="conditions-and-loops.html#cb25-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">55</span></span>
+<span id="cb25-3"><a href="conditions-and-loops.html#cb25-3" aria-hidden="true" tabindex="-1"></a>x <span class="sc">&gt;</span> <span class="dv">50</span></span></code></pre></div>
 <pre class="Rout"><code>[1] TRUE</code></pre>
-<div class="sourceCode" id="cb240"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb240-1"><a href="conditions-and-loops.html#cb240-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>x <span class="sc">&gt;</span> <span class="dv">50</span></span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb27-1"><a href="conditions-and-loops.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>x <span class="sc">&gt;</span> <span class="dv">50</span></span></code></pre></div>
 <pre class="Rout"><code>[1] FALSE</code></pre>
-<div class="sourceCode" id="cb242"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb242-1"><a href="conditions-and-loops.html#cb242-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Create objects</span></span>
-<span id="cb242-2"><a href="conditions-and-loops.html#cb242-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span>
-<span id="cb242-3"><a href="conditions-and-loops.html#cb242-3" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span>
-<span id="cb242-4"><a href="conditions-and-loops.html#cb242-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb242-5"><a href="conditions-and-loops.html#cb242-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Exclusive vs. Inclusive OR</span></span>
-<span id="cb242-6"><a href="conditions-and-loops.html#cb242-6" aria-hidden="true" tabindex="-1"></a><span class="fu">xor</span>(a, b)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb29-1"><a href="conditions-and-loops.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Create objects</span></span>
+<span id="cb29-2"><a href="conditions-and-loops.html#cb29-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb29-3"><a href="conditions-and-loops.html#cb29-3" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb29-4"><a href="conditions-and-loops.html#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="conditions-and-loops.html#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Exclusive vs. Inclusive OR</span></span>
+<span id="cb29-6"><a href="conditions-and-loops.html#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="fu">xor</span>(a, b)</span></code></pre></div>
 <pre class="Rout"><code>[1]  TRUE  TRUE FALSE FALSE</code></pre>
-<div class="sourceCode" id="cb244"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb244-1"><a href="conditions-and-loops.html#cb244-1" aria-hidden="true" tabindex="-1"></a>a<span class="sc">|</span>b</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb31-1"><a href="conditions-and-loops.html#cb31-1" aria-hidden="true" tabindex="-1"></a>a<span class="sc">|</span>b</span></code></pre></div>
 <pre class="Rout"><code>[1]  TRUE  TRUE  TRUE FALSE</code></pre>
 <div class="try">
 <p>Can you analyze the following given piece of R code and predict its output before execution?</p>
 </div>
-<div class="sourceCode" id="cb246"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb246-1"><a href="conditions-and-loops.html#cb246-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exclusive OR</span></span>
-<span id="cb246-2"><a href="conditions-and-loops.html#cb246-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb246-3"><a href="conditions-and-loops.html#cb246-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
-<span id="cb246-4"><a href="conditions-and-loops.html#cb246-4" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">xor</span>(x <span class="sc">%in%</span> y, y <span class="sc">%in%</span> x)</span>
-<span id="cb246-5"><a href="conditions-and-loops.html#cb246-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(z)</span>
-<span id="cb246-6"><a href="conditions-and-loops.html#cb246-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb246-7"><a href="conditions-and-loops.html#cb246-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Inexclusive OR</span></span>
-<span id="cb246-8"><a href="conditions-and-loops.html#cb246-8" aria-hidden="true" tabindex="-1"></a>z2 <span class="ot">&lt;-</span> x <span class="sc">%in%</span> y <span class="sc">|</span> y <span class="sc">%in%</span> x</span>
-<span id="cb246-9"><a href="conditions-and-loops.html#cb246-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(z2)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb33-1"><a href="conditions-and-loops.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exclusive OR</span></span>
+<span id="cb33-2"><a href="conditions-and-loops.html#cb33-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb33-3"><a href="conditions-and-loops.html#cb33-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb33-4"><a href="conditions-and-loops.html#cb33-4" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">xor</span>(x <span class="sc">%in%</span> y, y <span class="sc">%in%</span> x)</span>
+<span id="cb33-5"><a href="conditions-and-loops.html#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(z)</span>
+<span id="cb33-6"><a href="conditions-and-loops.html#cb33-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-7"><a href="conditions-and-loops.html#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Inexclusive OR</span></span>
+<span id="cb33-8"><a href="conditions-and-loops.html#cb33-8" aria-hidden="true" tabindex="-1"></a>z2 <span class="ot">&lt;-</span> x <span class="sc">%in%</span> y <span class="sc">|</span> y <span class="sc">%in%</span> x</span>
+<span id="cb33-9"><a href="conditions-and-loops.html#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(z2)</span></code></pre></div>
 <hr />
 <p>The Boolean operators follow the order of operations in math. That is, R evaluates the <code>!</code> (not) operator first, then the <code>&amp;</code> (and) operator, and then the <code>|</code> (or) operators.</p>
-<div class="sourceCode" id="cb247"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb247-1"><a href="conditions-and-loops.html#cb247-1" aria-hidden="true" tabindex="-1"></a><span class="do">## TRUE &amp; FALSE &amp; TRUE</span></span>
-<span id="cb247-2"><a href="conditions-and-loops.html#cb247-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">4</span> <span class="sc">&amp;</span></span>
-<span id="cb247-3"><a href="conditions-and-loops.html#cb247-3" aria-hidden="true" tabindex="-1"></a>  <span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">5</span> <span class="sc">&amp;</span></span>
-<span id="cb247-4"><a href="conditions-and-loops.html#cb247-4" aria-hidden="true" tabindex="-1"></a>  <span class="dv">2</span> <span class="sc">*</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb34-1"><a href="conditions-and-loops.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="do">## TRUE &amp; FALSE &amp; TRUE</span></span>
+<span id="cb34-2"><a href="conditions-and-loops.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">4</span> <span class="sc">&amp;</span></span>
+<span id="cb34-3"><a href="conditions-and-loops.html#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">5</span> <span class="sc">&amp;</span></span>
+<span id="cb34-4"><a href="conditions-and-loops.html#cb34-4" aria-hidden="true" tabindex="-1"></a>  <span class="dv">2</span> <span class="sc">*</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span></span></code></pre></div>
 <pre class="Rout"><code>[1] FALSE</code></pre>
-<div class="sourceCode" id="cb249"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb249-1"><a href="conditions-and-loops.html#cb249-1" aria-hidden="true" tabindex="-1"></a><span class="do">## TRUE &amp; TRUE &amp; TRUE</span></span>
-<span id="cb249-2"><a href="conditions-and-loops.html#cb249-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">4</span> <span class="sc">&amp;</span></span>
-<span id="cb249-3"><a href="conditions-and-loops.html#cb249-3" aria-hidden="true" tabindex="-1"></a>  <span class="sc">!</span><span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">5</span> <span class="sc">&amp;</span></span>
-<span id="cb249-4"><a href="conditions-and-loops.html#cb249-4" aria-hidden="true" tabindex="-1"></a>  <span class="dv">2</span> <span class="sc">*</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb36-1"><a href="conditions-and-loops.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="do">## TRUE &amp; TRUE &amp; TRUE</span></span>
+<span id="cb36-2"><a href="conditions-and-loops.html#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">4</span> <span class="sc">&amp;</span></span>
+<span id="cb36-3"><a href="conditions-and-loops.html#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="sc">!</span><span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">5</span> <span class="sc">&amp;</span></span>
+<span id="cb36-4"><a href="conditions-and-loops.html#cb36-4" aria-hidden="true" tabindex="-1"></a>  <span class="dv">2</span> <span class="sc">*</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span></span></code></pre></div>
 <pre class="Rout"><code>[1] TRUE</code></pre>
 </div>
 <div id="elements-of-flow-control" class="section level3 unnumbered hasAnchor">
@@ -758,15 +730,15 @@ div.csl-indent {
 <p>An <code>if</code> statement runs a code chunk only if a certain condition is true. This conditional expression allows R to respond differently depending on whether the condition is TRUE or FALSE.</p>
 <p>The basic template of <code>if</code> is as follows:</p>
 <hr />
-<div class="sourceCode" id="cb251"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb251-1"><a href="conditions-and-loops.html#cb251-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(CONDITION IS <span class="cn">TRUE</span>){</span>
-<span id="cb251-2"><a href="conditions-and-loops.html#cb251-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb251-3"><a href="conditions-and-loops.html#cb251-3" aria-hidden="true" tabindex="-1"></a>  DO THIS CODE CHUNK <span class="dv">1</span></span>
-<span id="cb251-4"><a href="conditions-and-loops.html#cb251-4" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb251-5"><a href="conditions-and-loops.html#cb251-5" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb251-6"><a href="conditions-and-loops.html#cb251-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb251-7"><a href="conditions-and-loops.html#cb251-7" aria-hidden="true" tabindex="-1"></a>  DO THIS CODE CHUNK <span class="dv">2</span></span>
-<span id="cb251-8"><a href="conditions-and-loops.html#cb251-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb251-9"><a href="conditions-and-loops.html#cb251-9" aria-hidden="true" tabindex="-1"></a>} <span class="do">## endif</span></span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb38-1"><a href="conditions-and-loops.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(CONDITION IS <span class="cn">TRUE</span>){</span>
+<span id="cb38-2"><a href="conditions-and-loops.html#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-3"><a href="conditions-and-loops.html#cb38-3" aria-hidden="true" tabindex="-1"></a>  DO THIS CODE CHUNK <span class="dv">1</span></span>
+<span id="cb38-4"><a href="conditions-and-loops.html#cb38-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb38-5"><a href="conditions-and-loops.html#cb38-5" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb38-6"><a href="conditions-and-loops.html#cb38-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-7"><a href="conditions-and-loops.html#cb38-7" aria-hidden="true" tabindex="-1"></a>  DO THIS CODE CHUNK <span class="dv">2</span></span>
+<span id="cb38-8"><a href="conditions-and-loops.html#cb38-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-9"><a href="conditions-and-loops.html#cb38-9" aria-hidden="true" tabindex="-1"></a>} <span class="do">## endif</span></span></code></pre></div>
 <hr />
 <ul>
 <li><p>The <em>condition</em> is placed in the parenthesis after <code>if</code> within <code>()</code>.</p></li>
@@ -775,39 +747,39 @@ div.csl-indent {
 </ul>
 <hr />
 <p>Suppose you want to simulate a password checking system. The system requires you to enter a password to access it. The system has a password stored on the server. The gatekeeper of the system will check whether your input password matches the one stored on the server. If your input password does not match the one on the server, you will be banned from accessing the system.</p>
-<div class="sourceCode" id="cb252"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb252-1"><a href="conditions-and-loops.html#cb252-1" aria-hidden="true" tabindex="-1"></a>input <span class="ot">&lt;-</span> <span class="dv">113</span> <span class="co"># assuming that you have the input 113</span></span>
-<span id="cb252-2"><a href="conditions-and-loops.html#cb252-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb252-3"><a href="conditions-and-loops.html#cb252-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Assuming that the system pass code is `987`</span></span>
-<span id="cb252-4"><a href="conditions-and-loops.html#cb252-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb252-5"><a href="conditions-and-loops.html#cb252-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(input <span class="sc">==</span> <span class="dv">987</span>){</span>
-<span id="cb252-6"><a href="conditions-and-loops.html#cb252-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(<span class="st">&quot;Congratulations! Now you may get in!&quot;</span>)</span>
-<span id="cb252-7"><a href="conditions-and-loops.html#cb252-7" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span>{</span>
-<span id="cb252-8"><a href="conditions-and-loops.html#cb252-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(<span class="st">&quot;Sorry! Wrong password.&quot;</span>)</span>
-<span id="cb252-9"><a href="conditions-and-loops.html#cb252-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb39-1"><a href="conditions-and-loops.html#cb39-1" aria-hidden="true" tabindex="-1"></a>input <span class="ot">&lt;-</span> <span class="dv">113</span> <span class="co"># assuming that you have the input 113</span></span>
+<span id="cb39-2"><a href="conditions-and-loops.html#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="conditions-and-loops.html#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Assuming that the system pass code is `987`</span></span>
+<span id="cb39-4"><a href="conditions-and-loops.html#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-5"><a href="conditions-and-loops.html#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(input <span class="sc">==</span> <span class="dv">987</span>){</span>
+<span id="cb39-6"><a href="conditions-and-loops.html#cb39-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(<span class="st">&quot;Congratulations! Now you may get in!&quot;</span>)</span>
+<span id="cb39-7"><a href="conditions-and-loops.html#cb39-7" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span>{</span>
+<span id="cb39-8"><a href="conditions-and-loops.html#cb39-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(<span class="st">&quot;Sorry! Wrong password.&quot;</span>)</span>
+<span id="cb39-9"><a href="conditions-and-loops.html#cb39-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre class="Rout"><code>Sorry! Wrong password.</code></pre>
 <p>If the input matches the system passcode, you will be granted access to the system.</p>
-<div class="sourceCode" id="cb254"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb254-1"><a href="conditions-and-loops.html#cb254-1" aria-hidden="true" tabindex="-1"></a>input <span class="ot">&lt;-</span> <span class="dv">987</span> <span class="co"># assuming that you have the input 987</span></span>
-<span id="cb254-2"><a href="conditions-and-loops.html#cb254-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(input <span class="sc">==</span> <span class="dv">987</span>){</span>
-<span id="cb254-3"><a href="conditions-and-loops.html#cb254-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(<span class="st">&quot;Congratulations! Now you may get in!&quot;</span>)</span>
-<span id="cb254-4"><a href="conditions-and-loops.html#cb254-4" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span>{</span>
-<span id="cb254-5"><a href="conditions-and-loops.html#cb254-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(<span class="st">&quot;Sorry! Wrong password.&quot;</span>)</span>
-<span id="cb254-6"><a href="conditions-and-loops.html#cb254-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb41-1"><a href="conditions-and-loops.html#cb41-1" aria-hidden="true" tabindex="-1"></a>input <span class="ot">&lt;-</span> <span class="dv">987</span> <span class="co"># assuming that you have the input 987</span></span>
+<span id="cb41-2"><a href="conditions-and-loops.html#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(input <span class="sc">==</span> <span class="dv">987</span>){</span>
+<span id="cb41-3"><a href="conditions-and-loops.html#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(<span class="st">&quot;Congratulations! Now you may get in!&quot;</span>)</span>
+<span id="cb41-4"><a href="conditions-and-loops.html#cb41-4" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span>{</span>
+<span id="cb41-5"><a href="conditions-and-loops.html#cb41-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(<span class="st">&quot;Sorry! Wrong password.&quot;</span>)</span>
+<span id="cb41-6"><a href="conditions-and-loops.html#cb41-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre class="Rout"><code>Congratulations! Now you may get in!</code></pre>
 <hr />
 <p>Now we can ask R to prompt the user to input data directly in the R console, using the <code>readline()</code> function. (Note: Please run the entire code chunk all at once.)</p>
-<div class="sourceCode" id="cb256"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb256-1"><a href="conditions-and-loops.html#cb256-1" aria-hidden="true" tabindex="-1"></a><span class="do">## ------------------------------------- ##</span></span>
-<span id="cb256-2"><a href="conditions-and-loops.html#cb256-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Run the entire code chunk all at once ##</span></span>
-<span id="cb256-3"><a href="conditions-and-loops.html#cb256-3" aria-hidden="true" tabindex="-1"></a><span class="do">## ------------------------------------- ##</span></span>
-<span id="cb256-4"><a href="conditions-and-loops.html#cb256-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb256-5"><a href="conditions-and-loops.html#cb256-5" aria-hidden="true" tabindex="-1"></a><span class="do">## User&#39;s input</span></span>
-<span id="cb256-6"><a href="conditions-and-loops.html#cb256-6" aria-hidden="true" tabindex="-1"></a>input <span class="ot">&lt;-</span> <span class="fu">readline</span>(<span class="at">prompt =</span> <span class="st">&quot;Please enter your password:&quot;</span>)</span>
-<span id="cb256-7"><a href="conditions-and-loops.html#cb256-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb256-8"><a href="conditions-and-loops.html#cb256-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Passcode checking &amp; output</span></span>
-<span id="cb256-9"><a href="conditions-and-loops.html#cb256-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (input <span class="sc">==</span> <span class="dv">987</span>) {</span>
-<span id="cb256-10"><a href="conditions-and-loops.html#cb256-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(<span class="st">&quot;Congratulations! Now you may get in!&quot;</span>)</span>
-<span id="cb256-11"><a href="conditions-and-loops.html#cb256-11" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb256-12"><a href="conditions-and-loops.html#cb256-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(<span class="st">&quot;Sorry! Wrong password.&quot;</span>)</span>
-<span id="cb256-13"><a href="conditions-and-loops.html#cb256-13" aria-hidden="true" tabindex="-1"></a>} <span class="do">## endif</span></span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb43-1"><a href="conditions-and-loops.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="do">## ------------------------------------- ##</span></span>
+<span id="cb43-2"><a href="conditions-and-loops.html#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Run the entire code chunk all at once ##</span></span>
+<span id="cb43-3"><a href="conditions-and-loops.html#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="do">## ------------------------------------- ##</span></span>
+<span id="cb43-4"><a href="conditions-and-loops.html#cb43-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-5"><a href="conditions-and-loops.html#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="do">## User&#39;s input</span></span>
+<span id="cb43-6"><a href="conditions-and-loops.html#cb43-6" aria-hidden="true" tabindex="-1"></a>input <span class="ot">&lt;-</span> <span class="fu">readline</span>(<span class="at">prompt =</span> <span class="st">&quot;Please enter your password:&quot;</span>)</span>
+<span id="cb43-7"><a href="conditions-and-loops.html#cb43-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-8"><a href="conditions-and-loops.html#cb43-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Passcode checking &amp; output</span></span>
+<span id="cb43-9"><a href="conditions-and-loops.html#cb43-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (input <span class="sc">==</span> <span class="dv">987</span>) {</span>
+<span id="cb43-10"><a href="conditions-and-loops.html#cb43-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(<span class="st">&quot;Congratulations! Now you may get in!&quot;</span>)</span>
+<span id="cb43-11"><a href="conditions-and-loops.html#cb43-11" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb43-12"><a href="conditions-and-loops.html#cb43-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(<span class="st">&quot;Sorry! Wrong password.&quot;</span>)</span>
+<span id="cb43-13"><a href="conditions-and-loops.html#cb43-13" aria-hidden="true" tabindex="-1"></a>} <span class="do">## endif</span></span></code></pre></div>
 <div class="alert">
 <p>In R, there are two very similar functions, <code>readline()</code> and <code>readLines()</code>. Please check the documentations of these two to make sure you understand their differences.</p>
 <ul>
@@ -823,11 +795,11 @@ div.csl-indent {
 <p>The general structure of the <code>for</code> loop statement is to repeat the operation included a code chunk while incrementing an index or a counter.</p>
 <p>The basic <code>for</code> loop template is as follows:</p>
 <hr />
-<div class="sourceCode" id="cb257"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb257-1"><a href="conditions-and-loops.html#cb257-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(LOOP_INDEX <span class="cf">in</span> LOOP_VECTOR){</span>
-<span id="cb257-2"><a href="conditions-and-loops.html#cb257-2" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb257-3"><a href="conditions-and-loops.html#cb257-3" aria-hidden="true" tabindex="-1"></a>  DO THIS CODE CHUNK</span>
-<span id="cb257-4"><a href="conditions-and-loops.html#cb257-4" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb257-5"><a href="conditions-and-loops.html#cb257-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb44-1"><a href="conditions-and-loops.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(LOOP_INDEX <span class="cf">in</span> LOOP_VECTOR){</span>
+<span id="cb44-2"><a href="conditions-and-loops.html#cb44-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb44-3"><a href="conditions-and-loops.html#cb44-3" aria-hidden="true" tabindex="-1"></a>  DO THIS CODE CHUNK</span>
+<span id="cb44-4"><a href="conditions-and-loops.html#cb44-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb44-5"><a href="conditions-and-loops.html#cb44-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="info">
 <ul>
 <li><p>The <em>LOOP_INDEX</em> is a placeholder that represents an element in the <em>LOOP_VECTOR</em>.</p></li>
@@ -838,21 +810,21 @@ div.csl-indent {
 </div>
 <hr />
 <p>For example, if we have a character vector with a few words in it. We can use a <code>for</code> loop to get the number of characters for each element (i.e., word) in the vector.</p>
-<div class="sourceCode" id="cb258"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb258-1"><a href="conditions-and-loops.html#cb258-1" aria-hidden="true" tabindex="-1"></a>word_vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>,<span class="st">&quot;banana&quot;</span>,<span class="st">&quot;watermelon&quot;</span>,<span class="st">&quot;papaya&quot;</span>)</span>
-<span id="cb258-2"><a href="conditions-and-loops.html#cb258-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb258-3"><a href="conditions-and-loops.html#cb258-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(w <span class="cf">in</span> word_vec){</span>
-<span id="cb258-4"><a href="conditions-and-loops.html#cb258-4" aria-hidden="true" tabindex="-1"></a>  word_nchar <span class="ot">&lt;-</span> <span class="fu">nchar</span>(w)</span>
-<span id="cb258-5"><a href="conditions-and-loops.html#cb258-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(<span class="fu">as.character</span>(word_nchar))</span>
-<span id="cb258-6"><a href="conditions-and-loops.html#cb258-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb45-1"><a href="conditions-and-loops.html#cb45-1" aria-hidden="true" tabindex="-1"></a>word_vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>,<span class="st">&quot;banana&quot;</span>,<span class="st">&quot;watermelon&quot;</span>,<span class="st">&quot;papaya&quot;</span>)</span>
+<span id="cb45-2"><a href="conditions-and-loops.html#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-3"><a href="conditions-and-loops.html#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(w <span class="cf">in</span> word_vec){</span>
+<span id="cb45-4"><a href="conditions-and-loops.html#cb45-4" aria-hidden="true" tabindex="-1"></a>  word_nchar <span class="ot">&lt;-</span> <span class="fu">nchar</span>(w)</span>
+<span id="cb45-5"><a href="conditions-and-loops.html#cb45-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(<span class="fu">as.character</span>(word_nchar))</span>
+<span id="cb45-6"><a href="conditions-and-loops.html#cb45-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre class="Rout"><code>5
 6
 10
 6</code></pre>
 <p>For the above example, there is another way to write the <code>for</code> loop:</p>
-<div class="sourceCode" id="cb260"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb260-1"><a href="conditions-and-loops.html#cb260-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(word_vec)){</span>
-<span id="cb260-2"><a href="conditions-and-loops.html#cb260-2" aria-hidden="true" tabindex="-1"></a>  word_nchar <span class="ot">&lt;-</span> <span class="fu">nchar</span>(word_vec[i])</span>
-<span id="cb260-3"><a href="conditions-and-loops.html#cb260-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(<span class="fu">as.character</span>(word_nchar))</span>
-<span id="cb260-4"><a href="conditions-and-loops.html#cb260-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb47-1"><a href="conditions-and-loops.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(word_vec)){</span>
+<span id="cb47-2"><a href="conditions-and-loops.html#cb47-2" aria-hidden="true" tabindex="-1"></a>  word_nchar <span class="ot">&lt;-</span> <span class="fu">nchar</span>(word_vec[i])</span>
+<span id="cb47-3"><a href="conditions-and-loops.html#cb47-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(<span class="fu">as.character</span>(word_nchar))</span>
+<span id="cb47-4"><a href="conditions-and-loops.html#cb47-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre class="Rout"><code>5
 6
 10
@@ -864,31 +836,31 @@ div.csl-indent {
 <div class="try">
 <p>Try the following code chunk and examine the differences in the outputs between <code>print()</code> and <code>writeLines()</code>. Do you know why the first for-loop does not work?</p>
 </div>
-<div class="sourceCode" id="cb262"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb262-1"><a href="conditions-and-loops.html#cb262-1" aria-hidden="true" tabindex="-1"></a><span class="co"># writeLines() (This for-loop does not work!!)</span></span>
-<span id="cb262-2"><a href="conditions-and-loops.html#cb262-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(word_vec)){</span>
-<span id="cb262-3"><a href="conditions-and-loops.html#cb262-3" aria-hidden="true" tabindex="-1"></a>  word_nchar <span class="ot">&lt;-</span> <span class="fu">nchar</span>(word_vec[i])</span>
-<span id="cb262-4"><a href="conditions-and-loops.html#cb262-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(word_nchar)</span>
-<span id="cb262-5"><a href="conditions-and-loops.html#cb262-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb262-6"><a href="conditions-and-loops.html#cb262-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb262-7"><a href="conditions-and-loops.html#cb262-7" aria-hidden="true" tabindex="-1"></a><span class="co"># `print()`</span></span>
-<span id="cb262-8"><a href="conditions-and-loops.html#cb262-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(word_vec)){</span>
-<span id="cb262-9"><a href="conditions-and-loops.html#cb262-9" aria-hidden="true" tabindex="-1"></a>  word_nchar <span class="ot">&lt;-</span> <span class="fu">nchar</span>(word_vec[i])</span>
-<span id="cb262-10"><a href="conditions-and-loops.html#cb262-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(word_nchar)</span>
-<span id="cb262-11"><a href="conditions-and-loops.html#cb262-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb49-1"><a href="conditions-and-loops.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># writeLines() (This for-loop does not work!!)</span></span>
+<span id="cb49-2"><a href="conditions-and-loops.html#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(word_vec)){</span>
+<span id="cb49-3"><a href="conditions-and-loops.html#cb49-3" aria-hidden="true" tabindex="-1"></a>  word_nchar <span class="ot">&lt;-</span> <span class="fu">nchar</span>(word_vec[i])</span>
+<span id="cb49-4"><a href="conditions-and-loops.html#cb49-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(word_nchar)</span>
+<span id="cb49-5"><a href="conditions-and-loops.html#cb49-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb49-6"><a href="conditions-and-loops.html#cb49-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-7"><a href="conditions-and-loops.html#cb49-7" aria-hidden="true" tabindex="-1"></a><span class="co"># `print()`</span></span>
+<span id="cb49-8"><a href="conditions-and-loops.html#cb49-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(word_vec)){</span>
+<span id="cb49-9"><a href="conditions-and-loops.html#cb49-9" aria-hidden="true" tabindex="-1"></a>  word_nchar <span class="ot">&lt;-</span> <span class="fu">nchar</span>(word_vec[i])</span>
+<span id="cb49-10"><a href="conditions-and-loops.html#cb49-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(word_nchar)</span>
+<span id="cb49-11"><a href="conditions-and-loops.html#cb49-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="alert">
 <p>Please note that the control structures are to <strong>direct</strong> the flow of execution of the codes. Therefore, the control structure itself DOES NOT return any object. That is, you CANNOT assign a for-loop structure to an object. It is <strong>NOT</strong> meaningful and grammatical. The following code chunk would give you an error.</p>
-<div class="sourceCode" id="cb263"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb263-1"><a href="conditions-and-loops.html#cb263-1" aria-hidden="true" tabindex="-1"></a><span class="do">#######################################################</span></span>
-<span id="cb263-2"><a href="conditions-and-loops.html#cb263-2" aria-hidden="true" tabindex="-1"></a><span class="do">## </span><span class="al">WARNING</span><span class="do">!!! This code chunk is UNGRAMMATICAL!!!!!! ##</span></span>
-<span id="cb263-3"><a href="conditions-and-loops.html#cb263-3" aria-hidden="true" tabindex="-1"></a><span class="do">#######################################################</span></span>
-<span id="cb263-4"><a href="conditions-and-loops.html#cb263-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb263-5"><a href="conditions-and-loops.html#cb263-5" aria-hidden="true" tabindex="-1"></a>numOfChars <span class="ot">&lt;-</span> <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(word_vec)){</span>
-<span id="cb263-6"><a href="conditions-and-loops.html#cb263-6" aria-hidden="true" tabindex="-1"></a>  word_nchar <span class="ot">&lt;-</span> <span class="fu">nchar</span>(word_vec[i])</span>
-<span id="cb263-7"><a href="conditions-and-loops.html#cb263-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(<span class="fu">as.character</span>(word_nchar))</span>
-<span id="cb263-8"><a href="conditions-and-loops.html#cb263-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb50-1"><a href="conditions-and-loops.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="do">#######################################################</span></span>
+<span id="cb50-2"><a href="conditions-and-loops.html#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="do">## </span><span class="al">WARNING</span><span class="do">!!! This code chunk is UNGRAMMATICAL!!!!!! ##</span></span>
+<span id="cb50-3"><a href="conditions-and-loops.html#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="do">#######################################################</span></span>
+<span id="cb50-4"><a href="conditions-and-loops.html#cb50-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-5"><a href="conditions-and-loops.html#cb50-5" aria-hidden="true" tabindex="-1"></a>numOfChars <span class="ot">&lt;-</span> <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(word_vec)){</span>
+<span id="cb50-6"><a href="conditions-and-loops.html#cb50-6" aria-hidden="true" tabindex="-1"></a>  word_nchar <span class="ot">&lt;-</span> <span class="fu">nchar</span>(word_vec[i])</span>
+<span id="cb50-7"><a href="conditions-and-loops.html#cb50-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(<span class="fu">as.character</span>(word_nchar))</span>
+<span id="cb50-8"><a href="conditions-and-loops.html#cb50-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 <hr />
 <div class="exercise">
-<p><span id="exr:unlabeled-div-15" class="exercise"><strong>Exercise 5.1  </strong></span>Use the data set from <code>stringr::sentences</code> for this exercise. Create a for-loop structure to get the number of characters for all sentences in the <code>stringr::sentences</code>. Present your results in a data frame of three columns:</p>
+<p><span id="exr:unlabeled-div-1" class="exercise"><strong>Exercise 5.1  </strong></span>Use the data set from <code>stringr::sentences</code> for this exercise. Create a for-loop structure to get the number of characters for all sentences in the <code>stringr::sentences</code>. Present your results in a data frame of three columns:</p>
 <ul>
 <li>Column 1 includes an unique integer ID for each sentence;</li>
 <li>Column 2 includes the texts of each sentence;</li>
@@ -910,7 +882,7 @@ div.csl-indent {
   </script>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-16" class="exercise"><strong>Exercise 5.2  </strong></span>Use the data set <code>stringr::fruit</code> for this exercise. Create a <code>for-loop</code> and <code>if</code>-statement to instruct R to go through each fruit name and print out those fruit names that start with the vowel letters only (i.e., a, e, i, o, u).</p>
+<p><span id="exr:unlabeled-div-2" class="exercise"><strong>Exercise 5.2  </strong></span>Use the data set <code>stringr::fruit</code> for this exercise. Create a <code>for-loop</code> and <code>if</code>-statement to instruct R to go through each fruit name and print out those fruit names that start with the vowel letters only (i.e., a, e, i, o, u).</p>
 </div>
 <pre class="Rout"><code>[1] &quot;apple&quot;
 [1] &quot;apricot&quot;
@@ -926,11 +898,11 @@ div.csl-indent {
 <p>There is another type of loop. Unlike the <code>for</code> loop, which repeats a code chunk by going through every element in a <code>vector/list/data frame</code>, the <code>while</code> loop repeats a code chunk UNTIL a specific condition evaluates to <code>FALSE</code> (It’s like the opposite of <code>if</code>-statement)</p>
 <p>The basic template is as follows:</p>
 <hr />
-<div class="sourceCode" id="cb266"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb266-1"><a href="conditions-and-loops.html#cb266-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(LOOP_CONDITION){</span>
-<span id="cb266-2"><a href="conditions-and-loops.html#cb266-2" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb266-3"><a href="conditions-and-loops.html#cb266-3" aria-hidden="true" tabindex="-1"></a>  DO THIS CODE <span class="fu">CHUNK</span> (UNTIL THE LOOP_CONDITION BECOMES <span class="cn">FALSE</span>)</span>
-<span id="cb266-4"><a href="conditions-and-loops.html#cb266-4" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb266-5"><a href="conditions-and-loops.html#cb266-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb53-1"><a href="conditions-and-loops.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(LOOP_CONDITION){</span>
+<span id="cb53-2"><a href="conditions-and-loops.html#cb53-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb53-3"><a href="conditions-and-loops.html#cb53-3" aria-hidden="true" tabindex="-1"></a>  DO THIS CODE <span class="fu">CHUNK</span> (UNTIL THE LOOP_CONDITION BECOMES <span class="cn">FALSE</span>)</span>
+<span id="cb53-4"><a href="conditions-and-loops.html#cb53-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb53-5"><a href="conditions-and-loops.html#cb53-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <hr />
 <ul>
 <li>Upon the start of a <code>while</code> loop, the <em>LOOP_CONDITION</em> is evaluated.</li>
@@ -958,17 +930,17 @@ div.csl-indent {
 <hr />
 <p>Let’s come back to our password checker. This time let’s create a dumb checker.</p>
 <p>When you give a wrong password which is smaller than the true passcode, it will automatically approach the right answer for you (and of course no real-world application would do that!)</p>
-<div class="sourceCode" id="cb267"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb267-1"><a href="conditions-and-loops.html#cb267-1" aria-hidden="true" tabindex="-1"></a><span class="do">## --------------------------------------------  ##</span></span>
-<span id="cb267-2"><a href="conditions-and-loops.html#cb267-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Please run the entire code chunk all at once! ##</span></span>
-<span id="cb267-3"><a href="conditions-and-loops.html#cb267-3" aria-hidden="true" tabindex="-1"></a><span class="do">## --------------------------------------------  ##</span></span>
-<span id="cb267-4"><a href="conditions-and-loops.html#cb267-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb267-5"><a href="conditions-and-loops.html#cb267-5" aria-hidden="true" tabindex="-1"></a>ans <span class="ot">&lt;-</span> <span class="dv">90</span></span>
-<span id="cb267-6"><a href="conditions-and-loops.html#cb267-6" aria-hidden="true" tabindex="-1"></a>guess <span class="ot">&lt;-</span> <span class="dv">83</span></span>
-<span id="cb267-7"><a href="conditions-and-loops.html#cb267-7" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (guess <span class="sc">!=</span> ans) {</span>
-<span id="cb267-8"><a href="conditions-and-loops.html#cb267-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;Your `guess` is too small! </span><span class="sc">\n</span><span class="st">The system will take care for you!</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb267-9"><a href="conditions-and-loops.html#cb267-9" aria-hidden="true" tabindex="-1"></a>  guess <span class="ot">&lt;-</span> guess <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb267-10"><a href="conditions-and-loops.html#cb267-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;Now the system is adjusting your `guess` to &quot;</span>, guess, <span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">&quot;</span>)</span>
-<span id="cb267-11"><a href="conditions-and-loops.html#cb267-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb54-1"><a href="conditions-and-loops.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="do">## --------------------------------------------  ##</span></span>
+<span id="cb54-2"><a href="conditions-and-loops.html#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Please run the entire code chunk all at once! ##</span></span>
+<span id="cb54-3"><a href="conditions-and-loops.html#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="do">## --------------------------------------------  ##</span></span>
+<span id="cb54-4"><a href="conditions-and-loops.html#cb54-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-5"><a href="conditions-and-loops.html#cb54-5" aria-hidden="true" tabindex="-1"></a>ans <span class="ot">&lt;-</span> <span class="dv">90</span></span>
+<span id="cb54-6"><a href="conditions-and-loops.html#cb54-6" aria-hidden="true" tabindex="-1"></a>guess <span class="ot">&lt;-</span> <span class="dv">83</span></span>
+<span id="cb54-7"><a href="conditions-and-loops.html#cb54-7" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (guess <span class="sc">!=</span> ans) {</span>
+<span id="cb54-8"><a href="conditions-and-loops.html#cb54-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;Your `guess` is too small! </span><span class="sc">\n</span><span class="st">The system will take care for you!</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb54-9"><a href="conditions-and-loops.html#cb54-9" aria-hidden="true" tabindex="-1"></a>  guess <span class="ot">&lt;-</span> guess <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb54-10"><a href="conditions-and-loops.html#cb54-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;Now the system is adjusting your `guess` to &quot;</span>, guess, <span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">&quot;</span>)</span>
+<span id="cb54-11"><a href="conditions-and-loops.html#cb54-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre class="Rout"><code>Your `guess` is too small! 
 The system will take care for you!
 Now the system is adjusting your `guess` to  84 
@@ -996,15 +968,15 @@ Now the system is adjusting your `guess` to  89
 Your `guess` is too small! 
 The system will take care for you!
 Now the system is adjusting your `guess` to  90 </code></pre>
-<div class="sourceCode" id="cb269"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb269-1"><a href="conditions-and-loops.html#cb269-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&#39;Great! The passcode is finally cracked.</span><span class="sc">\n</span><span class="st">&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb56-1"><a href="conditions-and-loops.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&#39;Great! The passcode is finally cracked.</span><span class="sc">\n</span><span class="st">&#39;</span>)</span></code></pre></div>
 <pre class="Rout"><code>Great! The passcode is finally cracked.</code></pre>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-17" class="exercise"><strong>Exercise 5.3  </strong></span>In the above example, if the <code>guess</code> is smaller than <code>ans</code>, our script works fine. However, if the <code>guess</code> is larger than <code>ans</code>, then our script will crash.</p>
+<p><span id="exr:unlabeled-div-3" class="exercise"><strong>Exercise 5.3  </strong></span>In the above example, if the <code>guess</code> is smaller than <code>ans</code>, our script works fine. However, if the <code>guess</code> is larger than <code>ans</code>, then our script will crash.</p>
 <p>How to fix it?</p>
 </div>
 <p>In other words, a revised script should produce the following results when:</p>
-<div class="sourceCode" id="cb271"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb271-1"><a href="conditions-and-loops.html#cb271-1" aria-hidden="true" tabindex="-1"></a>guess <span class="ot">&lt;-</span> <span class="dv">83</span></span>
-<span id="cb271-2"><a href="conditions-and-loops.html#cb271-2" aria-hidden="true" tabindex="-1"></a>ans <span class="ot">&lt;-</span> <span class="dv">90</span></span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb58-1"><a href="conditions-and-loops.html#cb58-1" aria-hidden="true" tabindex="-1"></a>guess <span class="ot">&lt;-</span> <span class="dv">83</span></span>
+<span id="cb58-2"><a href="conditions-and-loops.html#cb58-2" aria-hidden="true" tabindex="-1"></a>ans <span class="ot">&lt;-</span> <span class="dv">90</span></span></code></pre></div>
 <pre class="Rout"><code>Your `guess` is too small!
 The system will take care for you!
 Now the system is adjusting your `guess` to  84 
@@ -1078,42 +1050,42 @@ Now the system is adjusting your `guess` to  90 </code></pre>
 <p>Now we are playing the Guess Game. The game is as follows:</p>
 <p>The program will pick a random number from 1 to 100. A user has to guess which number the computer has picked. Every time the user makes a wrong guess, the computer will tell the user whether the correct answer is higher or lower.</p>
 <p>We first pack the game as an R <code>function</code> object:</p>
-<div class="sourceCode" id="cb274"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb274-1"><a href="conditions-and-loops.html#cb274-1" aria-hidden="true" tabindex="-1"></a><span class="do">## --------------------------------------------  ##</span></span>
-<span id="cb274-2"><a href="conditions-and-loops.html#cb274-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Please run the entire code chunk all at once! ##</span></span>
-<span id="cb274-3"><a href="conditions-and-loops.html#cb274-3" aria-hidden="true" tabindex="-1"></a><span class="do">## --------------------------------------------  ##</span></span>
-<span id="cb274-4"><a href="conditions-and-loops.html#cb274-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb274-5"><a href="conditions-and-loops.html#cb274-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Create a function object</span></span>
-<span id="cb274-6"><a href="conditions-and-loops.html#cb274-6" aria-hidden="true" tabindex="-1"></a>guessMyNumber <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb274-7"><a href="conditions-and-loops.html#cb274-7" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Randomly select an integer from 1 to 100</span></span>
-<span id="cb274-8"><a href="conditions-and-loops.html#cb274-8" aria-hidden="true" tabindex="-1"></a>  ans <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="at">size =</span> <span class="dv">1</span>)</span>
-<span id="cb274-9"><a href="conditions-and-loops.html#cb274-9" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb274-10"><a href="conditions-and-loops.html#cb274-10" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Instructions for user</span></span>
-<span id="cb274-11"><a href="conditions-and-loops.html#cb274-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(<span class="st">&quot;Now I am thinking of a number between 1 and 100.&quot;</span>)</span>
-<span id="cb274-12"><a href="conditions-and-loops.html#cb274-12" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb274-13"><a href="conditions-and-loops.html#cb274-13" aria-hidden="true" tabindex="-1"></a>  <span class="do">## As long as user&#39;s guess is not the answer</span></span>
-<span id="cb274-14"><a href="conditions-and-loops.html#cb274-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> (guess <span class="sc">!=</span> ans) {</span>
-<span id="cb274-15"><a href="conditions-and-loops.html#cb274-15" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Read the prompt input from user</span></span>
-<span id="cb274-16"><a href="conditions-and-loops.html#cb274-16" aria-hidden="true" tabindex="-1"></a>    guess <span class="ot">&lt;-</span> <span class="fu">readline</span>(<span class="at">prompt =</span> <span class="st">&quot;Please guess my number(1~100):&quot;</span>)</span>
-<span id="cb274-17"><a href="conditions-and-loops.html#cb274-17" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb274-18"><a href="conditions-and-loops.html#cb274-18" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Convert input string into integer</span></span>
-<span id="cb274-19"><a href="conditions-and-loops.html#cb274-19" aria-hidden="true" tabindex="-1"></a>    guess <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(guess)</span>
-<span id="cb274-20"><a href="conditions-and-loops.html#cb274-20" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb274-21"><a href="conditions-and-loops.html#cb274-21" aria-hidden="true" tabindex="-1"></a>    <span class="do">## if user&#39;s guess is smaller than the answer</span></span>
-<span id="cb274-22"><a href="conditions-and-loops.html#cb274-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (guess <span class="sc">&lt;</span> ans) {</span>
-<span id="cb274-23"><a href="conditions-and-loops.html#cb274-23" aria-hidden="true" tabindex="-1"></a>      <span class="fu">writeLines</span>(<span class="st">&quot;The answer is HIGHER.&quot;</span>)</span>
-<span id="cb274-24"><a href="conditions-and-loops.html#cb274-24" aria-hidden="true" tabindex="-1"></a>    <span class="do">## if user&#39;s guess is larger than the answer</span></span>
-<span id="cb274-25"><a href="conditions-and-loops.html#cb274-25" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (guess <span class="sc">&gt;</span> ans) {</span>
-<span id="cb274-26"><a href="conditions-and-loops.html#cb274-26" aria-hidden="true" tabindex="-1"></a>      <span class="fu">writeLines</span>(<span class="st">&quot;The asnwer is LOWER&quot;</span>)</span>
-<span id="cb274-27"><a href="conditions-and-loops.html#cb274-27" aria-hidden="true" tabindex="-1"></a>    <span class="do">## correct guess</span></span>
-<span id="cb274-28"><a href="conditions-and-loops.html#cb274-28" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span>{</span>
-<span id="cb274-29"><a href="conditions-and-loops.html#cb274-29" aria-hidden="true" tabindex="-1"></a>      <span class="fu">writeLines</span>(<span class="fu">paste0</span>(<span class="st">&quot;Good Job! You had the correct answer! My number is &quot;</span>, guess))</span>
-<span id="cb274-30"><a href="conditions-and-loops.html#cb274-30" aria-hidden="true" tabindex="-1"></a>    } <span class="do">## endif</span></span>
-<span id="cb274-31"><a href="conditions-and-loops.html#cb274-31" aria-hidden="true" tabindex="-1"></a>  } <span class="do">## endwhile</span></span>
-<span id="cb274-32"><a href="conditions-and-loops.html#cb274-32" aria-hidden="true" tabindex="-1"></a>} <span class="do">## endfunc</span></span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb61-1"><a href="conditions-and-loops.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="do">## --------------------------------------------  ##</span></span>
+<span id="cb61-2"><a href="conditions-and-loops.html#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Please run the entire code chunk all at once! ##</span></span>
+<span id="cb61-3"><a href="conditions-and-loops.html#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="do">## --------------------------------------------  ##</span></span>
+<span id="cb61-4"><a href="conditions-and-loops.html#cb61-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-5"><a href="conditions-and-loops.html#cb61-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Create a function object</span></span>
+<span id="cb61-6"><a href="conditions-and-loops.html#cb61-6" aria-hidden="true" tabindex="-1"></a>guessMyNumber <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb61-7"><a href="conditions-and-loops.html#cb61-7" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Randomly select an integer from 1 to 100</span></span>
+<span id="cb61-8"><a href="conditions-and-loops.html#cb61-8" aria-hidden="true" tabindex="-1"></a>  ans <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="at">size =</span> <span class="dv">1</span>)</span>
+<span id="cb61-9"><a href="conditions-and-loops.html#cb61-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb61-10"><a href="conditions-and-loops.html#cb61-10" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Instructions for user</span></span>
+<span id="cb61-11"><a href="conditions-and-loops.html#cb61-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(<span class="st">&quot;Now I am thinking of a number between 1 and 100.&quot;</span>)</span>
+<span id="cb61-12"><a href="conditions-and-loops.html#cb61-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb61-13"><a href="conditions-and-loops.html#cb61-13" aria-hidden="true" tabindex="-1"></a>  <span class="do">## As long as user&#39;s guess is not the answer</span></span>
+<span id="cb61-14"><a href="conditions-and-loops.html#cb61-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> (guess <span class="sc">!=</span> ans) {</span>
+<span id="cb61-15"><a href="conditions-and-loops.html#cb61-15" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Read the prompt input from user</span></span>
+<span id="cb61-16"><a href="conditions-and-loops.html#cb61-16" aria-hidden="true" tabindex="-1"></a>    guess <span class="ot">&lt;-</span> <span class="fu">readline</span>(<span class="at">prompt =</span> <span class="st">&quot;Please guess my number(1~100):&quot;</span>)</span>
+<span id="cb61-17"><a href="conditions-and-loops.html#cb61-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb61-18"><a href="conditions-and-loops.html#cb61-18" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Convert input string into integer</span></span>
+<span id="cb61-19"><a href="conditions-and-loops.html#cb61-19" aria-hidden="true" tabindex="-1"></a>    guess <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(guess)</span>
+<span id="cb61-20"><a href="conditions-and-loops.html#cb61-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb61-21"><a href="conditions-and-loops.html#cb61-21" aria-hidden="true" tabindex="-1"></a>    <span class="do">## if user&#39;s guess is smaller than the answer</span></span>
+<span id="cb61-22"><a href="conditions-and-loops.html#cb61-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (guess <span class="sc">&lt;</span> ans) {</span>
+<span id="cb61-23"><a href="conditions-and-loops.html#cb61-23" aria-hidden="true" tabindex="-1"></a>      <span class="fu">writeLines</span>(<span class="st">&quot;The answer is HIGHER.&quot;</span>)</span>
+<span id="cb61-24"><a href="conditions-and-loops.html#cb61-24" aria-hidden="true" tabindex="-1"></a>    <span class="do">## if user&#39;s guess is larger than the answer</span></span>
+<span id="cb61-25"><a href="conditions-and-loops.html#cb61-25" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (guess <span class="sc">&gt;</span> ans) {</span>
+<span id="cb61-26"><a href="conditions-and-loops.html#cb61-26" aria-hidden="true" tabindex="-1"></a>      <span class="fu">writeLines</span>(<span class="st">&quot;The answer is LOWER&quot;</span>)</span>
+<span id="cb61-27"><a href="conditions-and-loops.html#cb61-27" aria-hidden="true" tabindex="-1"></a>    <span class="do">## correct guess</span></span>
+<span id="cb61-28"><a href="conditions-and-loops.html#cb61-28" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span>{</span>
+<span id="cb61-29"><a href="conditions-and-loops.html#cb61-29" aria-hidden="true" tabindex="-1"></a>      <span class="fu">writeLines</span>(<span class="fu">paste0</span>(<span class="st">&quot;Good Job! You had the correct answer! My number is &quot;</span>, guess))</span>
+<span id="cb61-30"><a href="conditions-and-loops.html#cb61-30" aria-hidden="true" tabindex="-1"></a>    } <span class="do">## endif</span></span>
+<span id="cb61-31"><a href="conditions-and-loops.html#cb61-31" aria-hidden="true" tabindex="-1"></a>  } <span class="do">## endwhile</span></span>
+<span id="cb61-32"><a href="conditions-and-loops.html#cb61-32" aria-hidden="true" tabindex="-1"></a>} <span class="do">## endfunc</span></span></code></pre></div>
 <p>After you load the above code chunk and create the <code>guessMyNumber()</code> function in your current R environment, you can play the game by running the function <code>guessMyNumber()</code>:</p>
-<div class="sourceCode" id="cb275"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb275-1"><a href="conditions-and-loops.html#cb275-1" aria-hidden="true" tabindex="-1"></a><span class="fu">guessMyNumber</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb62-1"><a href="conditions-and-loops.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">guessMyNumber</span>()</span></code></pre></div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-18" class="exercise"><strong>Exercise 5.4  </strong></span>The above <code>guessMyNumber()</code> can be improved. Sometimes naughty (careless) users would not input numbers as requested. Instead, they may accidentally (or on purpose) enter characters that are NOT digits at all in their guesses or digits that are not within the range of 1 to 100.</p>
+<p><span id="exr:unlabeled-div-4" class="exercise"><strong>Exercise 5.4  </strong></span>The above <code>guessMyNumber()</code> can be improved. Sometimes naughty (careless) users would not input numbers as requested. Instead, they may accidentally (or on purpose) enter characters that are NOT digits at all in their guesses or digits that are not within the range of 1 to 100.</p>
 <p>Please improve the <code>guessMyNumber()</code> function in R to handle non-digit and out-of-range inputs from users. If a user enters non-digit characters or digits outside the range of 1 to 100, the program should send a warning message. Additionally, once the user guesses the correct answer, the program should record the number of guesses the user made in total. The desired output of the revised function should be similar to the example output provided.</p>
 </div>
 <pre><code>&gt; guessMyNumber_v2()
@@ -1194,20 +1166,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>
