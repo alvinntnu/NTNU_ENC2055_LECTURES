@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2023-03-06" />
+<meta name="date" content="2023-03-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -624,7 +624,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>In R, there are many built-in functions that return values:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb11-1"><a href="functions.html#cb11-1" aria-hidden="true" tabindex="-1"></a>num <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">3</span>)</span>
 <span id="cb11-2"><a href="functions.html#cb11-2" aria-hidden="true" tabindex="-1"></a>num</span></code></pre></div>
-<pre class="Rout"><code>[1]  7 10  5</code></pre>
+<pre class="Rout"><code>[1]  5  8 10</code></pre>
 <p>When a function returns nothing, by default the return value of the function is <code>NULL</code>, which is a unique data type in R referring to <code>NoneType</code>.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb13-1"><a href="functions.html#cb13-1" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">cat</span>(<span class="st">&quot;This is a sentence&quot;</span>)  <span class="co"># `cat()` has no return</span></span></code></pre></div>
 <pre class="Rout"><code>This is a sentence</code></pre>
@@ -673,52 +673,59 @@ out</code></pre>
 </div>
 <div id="stacking-functions" class="section level2 hasAnchor" number="6.7">
 <h2><span class="header-section-number">6.7</span> Stacking Functions<a href="functions.html#stacking-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>A function can also call another function within its code block. If Function A calls Function B in its code block, the execution would return to Function B first, before returning from the original function call.</p>
-<p>For example, let’s define two functions, <code>hello()</code> and <code>email()</code>. It is clear to see that within the code block of <code>hello()</code>, we have a function call of <code>email()</code>. That is, the latter is embedded in the former.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb32-1"><a href="functions.html#cb32-1" aria-hidden="true" tabindex="-1"></a>hello <span class="ot">&lt;-</span> <span class="cf">function</span>(name) {</span>
-<span id="cb32-2"><a href="functions.html#cb32-2" aria-hidden="true" tabindex="-1"></a>    user_email <span class="ot">&lt;-</span> <span class="fu">email</span>(<span class="at">user =</span> name)</span>
-<span id="cb32-3"><a href="functions.html#cb32-3" aria-hidden="true" tabindex="-1"></a>    out <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;How are you doing, &quot;</span>, name, <span class="st">&quot;. &quot;</span>, user_email)</span>
-<span id="cb32-4"><a href="functions.html#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-5"><a href="functions.html#cb32-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(out)</span>
-<span id="cb32-6"><a href="functions.html#cb32-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb32-7"><a href="functions.html#cb32-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-8"><a href="functions.html#cb32-8" aria-hidden="true" tabindex="-1"></a>email <span class="ot">&lt;-</span> <span class="cf">function</span>(user) {</span>
-<span id="cb32-9"><a href="functions.html#cb32-9" aria-hidden="true" tabindex="-1"></a>    out <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;Your email is: &quot;</span>, <span class="fu">tolower</span>(user), <span class="st">&quot;@whatever.org&quot;</span>)</span>
-<span id="cb32-10"><a href="functions.html#cb32-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(out)</span>
-<span id="cb32-11"><a href="functions.html#cb32-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<p>When <code>hello()</code> is called, it calls <code>email()</code> first and returns the user’s email address. Once execution returns to the code in <code>hello()</code> that called <code>email()</code>, it returns to the line in <code>hello()</code> that called <code>email()</code>. Then the execution continues to the end of <code>hello()</code>.</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb33-1"><a href="functions.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hello</span>(<span class="st">&quot;Alvin&quot;</span>)</span></code></pre></div>
+<p>A function can also call another function within its code block. When this happens, the execution of the code would move to the called function before returning to the original function call.</p>
+<p>For instance, we can define two functions in R, <code>hello()</code> and <code>email()</code>.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb32-1"><a href="functions.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Main function</span></span>
+<span id="cb32-2"><a href="functions.html#cb32-2" aria-hidden="true" tabindex="-1"></a>hello <span class="ot">&lt;-</span> <span class="cf">function</span>(name) {</span>
+<span id="cb32-3"><a href="functions.html#cb32-3" aria-hidden="true" tabindex="-1"></a>    user_email <span class="ot">&lt;-</span> <span class="fu">email</span>(<span class="at">user =</span> name)</span>
+<span id="cb32-4"><a href="functions.html#cb32-4" aria-hidden="true" tabindex="-1"></a>    out <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;How are you doing, &quot;</span>, name, <span class="st">&quot;. &quot;</span>, user_email)</span>
+<span id="cb32-5"><a href="functions.html#cb32-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-6"><a href="functions.html#cb32-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(out)</span>
+<span id="cb32-7"><a href="functions.html#cb32-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb32-8"><a href="functions.html#cb32-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-9"><a href="functions.html#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Embedded function</span></span>
+<span id="cb32-10"><a href="functions.html#cb32-10" aria-hidden="true" tabindex="-1"></a>email <span class="ot">&lt;-</span> <span class="cf">function</span>(user) {</span>
+<span id="cb32-11"><a href="functions.html#cb32-11" aria-hidden="true" tabindex="-1"></a>    out <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;Your email is: &quot;</span>, <span class="fu">tolower</span>(user), <span class="st">&quot;@whatever.org&quot;</span>)</span>
+<span id="cb32-12"><a href="functions.html#cb32-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(out)</span>
+<span id="cb32-13"><a href="functions.html#cb32-13" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Within the code block of <code>hello()</code>, we can make a function call to <code>email()</code>. This means that <code>email()</code> is <strong>embedded</strong> within <code>hello()</code>, and when <code>hello()</code> is called, it will execute its code block and then move to execute the code block of <code>email()</code>. After the code block of <code>email()</code> is executed, the control will move back to <code>hello()</code> to complete its execution.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb33-1"><a href="functions.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="do">## call `hello()`</span></span>
+<span id="cb33-2"><a href="functions.html#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hello</span>(<span class="st">&quot;Alvin&quot;</span>)</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;How are you doing, Alvin. Your email is: alvin@whatever.org&quot;</code></pre>
-<p>With this embedding structure, we can create effective functions for more sophisticated tasks.</p>
+<p>This ability to call functions within functions is useful in situations where a function needs to perform multiple tasks, and each task can be implemented using a separate function. Rather than writing all the code in a single function, we can call other functions from within it to keep the code organized and easier to understand.</p>
 </div>
 <div id="local-and-global-scope" class="section level2 hasAnchor" number="6.8">
 <h2><span class="header-section-number">6.8</span> Local and Global Scope<a href="functions.html#local-and-global-scope" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Now we know in our main program, we can define <strong>functions</strong> to accomplish specific tasks and these functions can be used multiple times to reduce code duplication.</p>
-<ul>
-<li><p>Variables that are assigned in a called function are said to exist in that function’s <strong>local scope</strong>. These variables are referred to as <strong>local variables</strong>.</p></li>
-<li><p>Variables that are assigned outside all functions are said to exist in the <strong>global scope</strong>. These variables are referred to as <strong>global variables</strong>.</p></li>
-</ul>
+<p>Now we know that functions allow us to organize code into <strong>reusable</strong> blocks that perform specific tasks. We only have to write code once and can call it multiple times with different inputs.</p>
+<p>When we call a function, it creates its own workspace or environment, called the <strong>local scope</strong>. Any variables created or modified inside the function only exist within that function and are known as <strong>local variables</strong>. These variables cannot be accessed or modified outside of the function.</p>
+<p>On the other hand, variables that are created outside of any functions are said to exist in the <strong>global scope</strong>. These variables are known as <strong>global variables</strong> and are accessible to all functions and code blocks in the program. Any changes made to global variables inside a function will affect the global variable’s value outside the function.</p>
 <div class="info">
-<p>A scope is like the life-span of the variable. A local scope is created whenever a function is called. Any variables assigned in the function exist within the function’s <strong>local scope</strong>. When the function returns, the local scope is destroyed, and these <strong>local variables</strong> are forgotten (i.e., removed from the memory of the current working environment).</p>
-<p>The <strong>global scope</strong> is created when the main program starts. When the program terminates, the global scope is destroyed, and all the <strong>global variables</strong> are forgotten.</p>
+<p>A scope is like the life-span of the variable. A local scope is created whenever a function is called. Any variables created in the function exist within the function’s <strong>local scope</strong>. When the function returns, the local scope is destroyed, and these <strong>local variables</strong> are forgotten (i.e., removed from the memory of the current working environment).</p>
+<p>The <strong>global scope</strong> is created when the main program starts (e.g., your current R session). When the program terminates, the global scope is destroyed, and all the <strong>global variables</strong> are forgotten.</p>
 </div>
+<hr />
 <p>There are a few important considerations for variable scope:</p>
 <ul>
 <li>Code in the <strong>global</strong> scope (i.e., outside of all functions) cannot use any <strong>local</strong> variables (i.e., variables within functions).</li>
 <li>Code in a <strong>local</strong> scope can access <strong>global</strong> variables.</li>
+<li>Code in a <strong>local</strong> scope can modify the values of <strong>global</strong> variables.</li>
 <li>Code in a function’s <strong>local</strong> scope cannot use variables in any <strong>other local</strong> scope.</li>
 <li>We can use the same name for different variables <em>if they are in different scopes</em> (e.g., they can be local variables within different functions).</li>
 </ul>
 <div class="alert">
-<p>In small programs, using global variables within functions is fine . But it is a bad habit to rely on global variables when your program gets larger and larger.</p>
+<p>While using global variables within functions in small programs may not cause significant issues, it is generally considered bad practice to rely on global variables in larger programs.</p>
+<p>One issue with using global variables in local functions is that they can be accessed and modified by any part of the program, making it difficult to track changes and debug the code.</p>
+<p>Another issue is that global variables can make it difficult to reuse functions in other parts of the program or in other programs.</p>
+<p>In short, functions that rely on global variables are less <strong>modular</strong> and less <strong>portable</strong>, and can make code maintenance and updates more difficult in the long run.</p>
 </div>
+<hr />
 <ul>
-<li>The following code chunk shows that local variables cannot be used in the global scope.</li>
+<li>The following code chunk shows that local variables cannot be accessed in the global scope.</li>
 </ul>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb35-1"><a href="functions.html#cb35-1" aria-hidden="true" tabindex="-1"></a>customer <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb35-2"><a href="functions.html#cb35-2" aria-hidden="true" tabindex="-1"></a>    id <span class="ot">=</span> <span class="dv">123</span></span>
-<span id="cb35-3"><a href="functions.html#cb35-3" aria-hidden="true" tabindex="-1"></a>    age <span class="ot">=</span> <span class="dv">25</span></span>
-<span id="cb35-4"><a href="functions.html#cb35-4" aria-hidden="true" tabindex="-1"></a>    nation <span class="ot">=</span> <span class="st">&quot;TW&quot;</span></span>
+<span id="cb35-2"><a href="functions.html#cb35-2" aria-hidden="true" tabindex="-1"></a>    id <span class="ot">&lt;-</span> <span class="dv">123</span></span>
+<span id="cb35-3"><a href="functions.html#cb35-3" aria-hidden="true" tabindex="-1"></a>    age <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb35-4"><a href="functions.html#cb35-4" aria-hidden="true" tabindex="-1"></a>    nation <span class="ot">&lt;-</span> <span class="st">&quot;TW&quot;</span></span>
 <span id="cb35-5"><a href="functions.html#cb35-5" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb35-6"><a href="functions.html#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="fu">customer</span>()</span>
 <span id="cb35-7"><a href="functions.html#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(id)</span></code></pre></div>
@@ -727,23 +734,24 @@ out</code></pre>
 <li>The following code chunk shows that local scopes cannot use variables in other local scopes.</li>
 </ul>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb37-1"><a href="functions.html#cb37-1" aria-hidden="true" tabindex="-1"></a>customer <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb37-2"><a href="functions.html#cb37-2" aria-hidden="true" tabindex="-1"></a>    id <span class="ot">=</span> <span class="dv">123</span></span>
-<span id="cb37-3"><a href="functions.html#cb37-3" aria-hidden="true" tabindex="-1"></a>    age <span class="ot">=</span> <span class="dv">25</span></span>
-<span id="cb37-4"><a href="functions.html#cb37-4" aria-hidden="true" tabindex="-1"></a>    nation <span class="ot">=</span> <span class="st">&quot;TW&quot;</span></span>
+<span id="cb37-2"><a href="functions.html#cb37-2" aria-hidden="true" tabindex="-1"></a>    id <span class="ot">&lt;-</span> <span class="dv">123</span></span>
+<span id="cb37-3"><a href="functions.html#cb37-3" aria-hidden="true" tabindex="-1"></a>    age <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb37-4"><a href="functions.html#cb37-4" aria-hidden="true" tabindex="-1"></a>    nation <span class="ot">&lt;-</span> <span class="st">&quot;TW&quot;</span></span>
 <span id="cb37-5"><a href="functions.html#cb37-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(age)</span>
 <span id="cb37-6"><a href="functions.html#cb37-6" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb37-7"><a href="functions.html#cb37-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-8"><a href="functions.html#cb37-8" aria-hidden="true" tabindex="-1"></a>client <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb37-9"><a href="functions.html#cb37-9" aria-hidden="true" tabindex="-1"></a>    age <span class="ot">=</span> <span class="dv">50</span></span>
+<span id="cb37-9"><a href="functions.html#cb37-9" aria-hidden="true" tabindex="-1"></a>    age <span class="ot">&lt;-</span> <span class="dv">50</span></span>
 <span id="cb37-10"><a href="functions.html#cb37-10" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb37-11"><a href="functions.html#cb37-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-12"><a href="functions.html#cb37-12" aria-hidden="true" tabindex="-1"></a><span class="fu">customer</span>()  <span class="co"># returning `age` from `customer()` not from `client()`</span></span></code></pre></div>
+<span id="cb37-12"><a href="functions.html#cb37-12" aria-hidden="true" tabindex="-1"></a><span class="fu">client</span>()</span>
+<span id="cb37-13"><a href="functions.html#cb37-13" aria-hidden="true" tabindex="-1"></a><span class="fu">customer</span>()  <span class="co"># returning `age` from `customer()` not from `client()`</span></span></code></pre></div>
 <pre class="Rout"><code>[1] 25</code></pre>
 <ul>
 <li>The following code chunk shows a local scope can access global variables.</li>
 </ul>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb39-1"><a href="functions.html#cb39-1" aria-hidden="true" tabindex="-1"></a>customer <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb39-2"><a href="functions.html#cb39-2" aria-hidden="true" tabindex="-1"></a>    age <span class="ot">=</span> <span class="dv">25</span></span>
+<span id="cb39-2"><a href="functions.html#cb39-2" aria-hidden="true" tabindex="-1"></a>    age <span class="ot">&lt;-</span> <span class="dv">25</span></span>
 <span id="cb39-3"><a href="functions.html#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&quot;The customer works at&quot;</span>, company)</span>
 <span id="cb39-4"><a href="functions.html#cb39-4" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb39-5"><a href="functions.html#cb39-5" aria-hidden="true" tabindex="-1"></a>company <span class="ot">&lt;-</span> <span class="st">&quot;NTNU&quot;</span></span>
@@ -773,17 +781,18 @@ out</code></pre>
 </div>
 <div id="exception-handling" class="section level2 hasAnchor" number="6.9">
 <h2><span class="header-section-number">6.9</span> Exception Handling<a href="functions.html#exception-handling" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>A good function handles exceptions properly so that the main program would not be terminated by <strong>unexpected</strong> errors from the function.</p>
-<p>For example, if we create a function <code>myLog()</code>, which takes a number and computes the log value of the number with the specified base.</p>
+<p>In programming, <strong>errors</strong> and <strong>warnings</strong> can occur during the execution of code, and these events can cause the program to terminate abruptly or produce unexpected results. In order to prevent the termination of the main program and to handle these events in a more controlled way, developers often include exception handling in their code.</p>
+<p>For example, if we create a function <code>myLog()</code>, which takes a number and computes the log value of the number with the specified base, there are a few cases where the return values may be problematic:</p>
 <div class="sourceCode" id="cb47"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb47-1"><a href="functions.html#cb47-1" aria-hidden="true" tabindex="-1"></a>myLog <span class="ot">&lt;-</span> <span class="cf">function</span>(x, myBase) {</span>
 <span id="cb47-2"><a href="functions.html#cb47-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">log</span>(x, myBase))</span>
 <span id="cb47-3"><a href="functions.html#cb47-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb48-1"><a href="functions.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">100</span>, <span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb48-1"><a href="functions.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="do">## OK</span></span>
+<span id="cb48-2"><a href="functions.html#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">100</span>, <span class="dv">10</span>)</span></code></pre></div>
 <pre class="Rout"><code>[1] 2</code></pre>
 <div class="sourceCode" id="cb50"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb50-1"><a href="functions.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">8</span>, <span class="dv">2</span>)</span></code></pre></div>
 <pre class="Rout"><code>[1] 3</code></pre>
-<p>There are a few cases where the return values may be problematic:</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb52-1"><a href="functions.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">10</span>, <span class="sc">-</span><span class="dv">1</span>)  <span class="co"># base is negative</span></span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb52-1"><a href="functions.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Not OK</span></span>
+<span id="cb52-2"><a href="functions.html#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">10</span>, <span class="sc">-</span><span class="dv">1</span>)  <span class="co"># base is negative</span></span></code></pre></div>
 <pre><code>Warning in log(x, myBase): NaNs produced</code></pre>
 <pre class="Rout"><code>[1] NaN</code></pre>
 <div class="sourceCode" id="cb55"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb55-1"><a href="functions.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">10</span>)  <span class="co"># x is negative</span></span></code></pre></div>
@@ -792,25 +801,28 @@ out</code></pre>
 <div class="sourceCode" id="cb58"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb58-1"><a href="functions.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="st">&quot;100&quot;</span>, <span class="dv">10</span>)  <span class="co"># x is not numeric</span></span></code></pre></div>
 <pre><code>Error in log(x, myBase): non-numeric argument to mathematical function</code></pre>
 <p>To make sure that the function <code>myLog()</code> does not terminate the main program when encountering <strong>errors</strong> or <strong>warnings</strong>, it is often a good idea to include <strong>exception handling</strong> in the function code block.</p>
-<p>In R, <code>tryCatch()</code> function can help deal with (both expected or unexpected) <strong>errors and warnings</strong>. Its structure is as follows:</p>
+<hr />
+<p>In R, exception handling can be achieved using the <code>tryCatch()</code> function. This function allows the programmer to specify what should happen when an error or warning occurs during the execution of a block of code.</p>
+<p>The structure of <code>tryCatch()</code> includes a try block where the code is executed, and a catch block where the handling of errors and warnings is specified. If an error or warning occurs in the try block, the code in the catch block is executed instead of terminating the program.</p>
+<p>Its structure is as follows:</p>
 <div class="infobox">
-<pre><code>result = tryCatch({
-
-    expr
-
-}, warning = function(w) {
-
-    warning-handler-code
-
-}, error = function(e) {
-
-    error-handler-code
-
-}, finally = {
-
-    cleanup-code
-
-})</code></pre>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb60-1"><a href="functions.html#cb60-1" aria-hidden="true" tabindex="-1"></a>result <span class="ot">=</span> <span class="fu">tryCatch</span>({</span>
+<span id="cb60-2"><a href="functions.html#cb60-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-3"><a href="functions.html#cb60-3" aria-hidden="true" tabindex="-1"></a>    expr</span>
+<span id="cb60-4"><a href="functions.html#cb60-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-5"><a href="functions.html#cb60-5" aria-hidden="true" tabindex="-1"></a>}, <span class="at">warning =</span> <span class="cf">function</span>(w) {</span>
+<span id="cb60-6"><a href="functions.html#cb60-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-7"><a href="functions.html#cb60-7" aria-hidden="true" tabindex="-1"></a>    warning <span class="sc">-</span> handler <span class="sc">-</span> code</span>
+<span id="cb60-8"><a href="functions.html#cb60-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-9"><a href="functions.html#cb60-9" aria-hidden="true" tabindex="-1"></a>}, <span class="at">error =</span> <span class="cf">function</span>(e) {</span>
+<span id="cb60-10"><a href="functions.html#cb60-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-11"><a href="functions.html#cb60-11" aria-hidden="true" tabindex="-1"></a>    error <span class="sc">-</span> handler <span class="sc">-</span> code</span>
+<span id="cb60-12"><a href="functions.html#cb60-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-13"><a href="functions.html#cb60-13" aria-hidden="true" tabindex="-1"></a>}, <span class="at">finally =</span> {</span>
+<span id="cb60-14"><a href="functions.html#cb60-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-15"><a href="functions.html#cb60-15" aria-hidden="true" tabindex="-1"></a>    cleanup <span class="sc">-</span> code</span>
+<span id="cb60-16"><a href="functions.html#cb60-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-17"><a href="functions.html#cb60-17" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div>
 </div>
 <p><code>tryCatch()</code> includes the following important elements:</p>
 <ul>
@@ -824,40 +836,45 @@ out</code></pre>
 <span id="cb61-3"><a href="functions.html#cb61-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">return</span>(<span class="fu">log</span>(x, myBase))</span>
 <span id="cb61-4"><a href="functions.html#cb61-4" aria-hidden="true" tabindex="-1"></a>    }, <span class="at">warning =</span> <span class="cf">function</span>(w) {</span>
 <span id="cb61-5"><a href="functions.html#cb61-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (x <span class="sc">&lt;</span> <span class="dv">0</span>)</span>
-<span id="cb61-6"><a href="functions.html#cb61-6" aria-hidden="true" tabindex="-1"></a>            <span class="fu">print</span>(<span class="st">&quot;x needs to be a positive number&quot;</span>)</span>
+<span id="cb61-6"><a href="functions.html#cb61-6" aria-hidden="true" tabindex="-1"></a>            <span class="fu">print</span>(<span class="st">&quot;`x` must be a positive number&quot;</span>)</span>
 <span id="cb61-7"><a href="functions.html#cb61-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (myBase <span class="sc">&lt;</span> <span class="dv">0</span>)</span>
-<span id="cb61-8"><a href="functions.html#cb61-8" aria-hidden="true" tabindex="-1"></a>            <span class="fu">print</span>(<span class="st">&quot;myBase needs to be a positive number&quot;</span>)</span>
+<span id="cb61-8"><a href="functions.html#cb61-8" aria-hidden="true" tabindex="-1"></a>            <span class="fu">print</span>(<span class="st">&quot;`myBase` must be a positive number&quot;</span>)</span>
 <span id="cb61-9"><a href="functions.html#cb61-9" aria-hidden="true" tabindex="-1"></a>    }, <span class="at">error =</span> <span class="cf">function</span>(e) {</span>
 <span id="cb61-10"><a href="functions.html#cb61-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.numeric</span>(x) <span class="sc">|</span> <span class="sc">!</span><span class="fu">is.numeric</span>(myBase))</span>
-<span id="cb61-11"><a href="functions.html#cb61-11" aria-hidden="true" tabindex="-1"></a>            <span class="fu">print</span>(<span class="st">&quot;x/myBase needs to be a positive number not a string&quot;</span>)</span>
+<span id="cb61-11"><a href="functions.html#cb61-11" aria-hidden="true" tabindex="-1"></a>            <span class="fu">print</span>(<span class="st">&quot;Either `x` or `myBase` must be a positive number not a string&quot;</span>)</span>
 <span id="cb61-12"><a href="functions.html#cb61-12" aria-hidden="true" tabindex="-1"></a>    }, <span class="at">finally =</span> {</span>
-<span id="cb61-13"><a href="functions.html#cb61-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb61-14"><a href="functions.html#cb61-14" aria-hidden="true" tabindex="-1"></a>    })</span>
-<span id="cb61-15"><a href="functions.html#cb61-15" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb62-1"><a href="functions.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">10</span>, <span class="sc">-</span><span class="dv">1</span>)</span></code></pre></div>
-<pre class="Rout"><code>[1] &quot;myBase needs to be a positive number&quot;</code></pre>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb64-1"><a href="functions.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="st">&quot;w12&quot;</span>, <span class="dv">0</span>)</span></code></pre></div>
-<pre class="Rout"><code>[1] &quot;x/myBase needs to be a positive number not a string&quot;</code></pre>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb66-1"><a href="functions.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">8</span>, <span class="st">&quot;2&quot;</span>)</span></code></pre></div>
-<pre class="Rout"><code>[1] &quot;x/myBase needs to be a positive number not a string&quot;</code></pre>
+<span id="cb61-13"><a href="functions.html#cb61-13" aria-hidden="true" tabindex="-1"></a>        <span class="do">## print(&#39;Functin completed!!&#39;)</span></span>
+<span id="cb61-14"><a href="functions.html#cb61-14" aria-hidden="true" tabindex="-1"></a>    })  <span class="do">## endtrycatch</span></span>
+<span id="cb61-15"><a href="functions.html#cb61-15" aria-hidden="true" tabindex="-1"></a>}  <span class="do">##endfunc</span></span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb62-1"><a href="functions.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">100</span>, <span class="dv">10</span>)</span></code></pre></div>
+<pre class="Rout"><code>[1] 2</code></pre>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb64-1"><a href="functions.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">100</span>, <span class="fu">exp</span>(<span class="dv">1</span>))</span></code></pre></div>
+<pre class="Rout"><code>[1] 4.60517</code></pre>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb66-1"><a href="functions.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="do">## log(100) ## same as above</span></span>
+<span id="cb66-2"><a href="functions.html#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">10</span>, <span class="sc">-</span><span class="dv">1</span>)</span></code></pre></div>
+<pre class="Rout"><code>[1] &quot;`myBase` must be a positive number&quot;</code></pre>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb68-1"><a href="functions.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="st">&quot;w12&quot;</span>, <span class="dv">0</span>)</span></code></pre></div>
+<pre class="Rout"><code>[1] &quot;Either `x` or `myBase` must be a positive number not a string&quot;</code></pre>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb70-1"><a href="functions.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">8</span>, <span class="st">&quot;2&quot;</span>)</span></code></pre></div>
+<pre class="Rout"><code>[1] &quot;Either `x` or `myBase` must be a positive number not a string&quot;</code></pre>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-3" class="exercise"><strong>Exercise 6.3  </strong></span>Create a function that produces a simple animation, i.e., the zigzag outputs as shown below. The function will <strong>slowly</strong> create a back-and-forth zigzag pattern with the laps and the indent size as the parameters of the function. Alternatively, users can stop the animation anytime by pressing CTRL+C.</p>
+<p><span id="exr:unlabeled-div-3" class="exercise"><strong>Exercise 6.3  </strong></span>Create a function that produces a simple animation, i.e., the zigzag outputs as shown below. The function will <strong>slowly</strong> create a back-and-forth zigzag pattern with the laps and the indent size (i.e., the maximum number of spaces that the zigzag pattern can go) as the parameters of the function.</p>
+<p>The animation should be generated slowly, so that the pattern can be clearly seen as it is being created. Additionally, the user should be able to stop the animation at any time by pressing CTRL+C.</p>
 </div>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb68-1"><a href="functions.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">zigzag</span>(<span class="at">lap =</span> <span class="dv">5</span>, <span class="at">indent_max =</span> <span class="dv">10</span>)</span></code></pre></div>
-<p><img src="images/zigzag.gif" /><!-- --></p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb72-1"><a href="functions.html#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">zigzag</span>(<span class="at">lap =</span> <span class="dv">5</span>, <span class="at">indent_max =</span> <span class="dv">10</span>)</span></code></pre></div>
 <ul>
 <li>Please note that the user can interrupt the program/function by pressing CTRL+C and your function should stop properly (using <code>tryCatch</code>).</li>
 </ul>
+<p><img src="images/zigzag.gif" /><!-- --></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-4" class="exercise"><strong>Exercise 6.4  </strong></span>Create a simple function to play rock, paper, scissors with the user.</p>
-<p>Your program should achieve the following:</p>
+<p><span id="exr:unlabeled-div-4" class="exercise"><strong>Exercise 6.4  </strong></span>Create a function that allows the user to play a game of rock, paper, scissors against the computer. The function should have the following features:</p>
 <ul>
-<li>Invite the user to make a move with text inputs (i.e., rock, paper, or scissors).</li>
-<li>The program randomly makes a move.</li>
-<li>The program makes sure that the user can only make legitimate moves.</li>
-<li>The program reports the result of each hand game (i.e., win, lose, or tie)</li>
-<li>The user can continue playing the game until they indicate quitting.</li>
-<li>Upon user’s quitting of the game, the program reports the total results of all the games, in terms of the number of the user’s wins, loses, and ties.</li>
+<li>The user should be prompted to enter their move as a text input (i.e., rock, paper, or scissors).</li>
+<li>The computer should randomly select a move.</li>
+<li>The program should ensure that the user’s input is a valid move.</li>
+<li>After each round, the program should report the result of the game as a text output, either “You win!”, “You lose.”, or “It’s a tie.”</li>
+<li>The user should be able to play as many rounds as they wish until they choose to quit.</li>
+<li>When the user decides to quit, the program should provide a summary of the number of games won, lost, and tied.</li>
 </ul>
 <p>An example of how the function works is provided below.</p>
 </div>
