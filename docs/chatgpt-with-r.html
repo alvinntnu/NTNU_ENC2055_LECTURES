@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>C ChatGPT with R | ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
+  <meta name="description" content="ENC2055 Course material second edition" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="C ChatGPT with R | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="ENC2055 Course material second edition" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="C ChatGPT with R | ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
+  
+  <meta name="twitter:description" content="ENC2055 Course material second edition" />
+  
+
+<meta name="author" content="Alvin Chen (陳正賢）" />
+
+
+<meta name="date" content="2023-03-08" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="reproducible-report.html"/>
+<link rel="next" href="references-5.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="https://hypothes.is/embed.js" async></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style-new.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://mybinder.org/v2/gh/alvinntnu/NTNU_ENC2055_BINDER/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252Falvinntnu%252FNTNU_ENC2055_DATA%26urlpath%3Drstudio%252F%26branch%3Dmaster" target ="blank"> <img src="https://mybinder.org/badge_logo.svg"> </a></li>
+<li><a href="https://alvinntnu.github.io/NTNU_ENC2055/index.html" target ="blank"> <img src="images/alerts/home.svg" height="20" width ="20" style="display:inline"> Course Website </a></li>
+<li><a href="./index.html"> <img src="images/alerts/book-solid.svg" height="20" width ="20" style="display:inline"> ENC2055 Homepage</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-objective"><i class="fa fa-check"></i>Course Objective</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#textbook"><i class="fa fa-check"></i>Textbook</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-website"><i class="fa fa-check"></i>Course Website</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#assignments"><i class="fa fa-check"></i>Assignments</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributing-to-the-lecture-notes"><i class="fa fa-check"></i>Contributing to the Lecture Notes</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-demo-data"><i class="fa fa-check"></i>Course Demo Data</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#questions"><i class="fa fa-check"></i>Questions?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#necessary-packages"><i class="fa fa-check"></i>Necessary Packages</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#interative-live-environment"><i class="fa fa-check"></i>Interative Live Environment</a></li>
+</ul></li>
+<li class="part"><span><b>PART 1: R Language</b></span></li>
+<li class="chapter" data-level="1" data-path="intro-ds.html"><a href="intro-ds.html"><i class="fa fa-check"></i><b>1</b> Data Science and R</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro-ds.html"><a href="intro-ds.html#what-is-data-science"><i class="fa fa-check"></i><b>1.1</b> What is Data Science?</a></li>
+<li class="chapter" data-level="1.2" data-path="intro-ds.html"><a href="intro-ds.html#working-pipeline-for-data-science"><i class="fa fa-check"></i><b>1.2</b> Working Pipeline for Data Science</a></li>
+<li class="chapter" data-level="1.3" data-path="intro-ds.html"><a href="intro-ds.html#why-r"><i class="fa fa-check"></i><b>1.3</b> Why R?</a></li>
+<li class="chapter" data-level="1.4" data-path="intro-ds.html"><a href="intro-ds.html#tidyverse"><i class="fa fa-check"></i><b>1.4</b> <code>tidyverse</code></a></li>
+<li class="chapter" data-level="1.5" data-path="intro-ds.html"><a href="intro-ds.html#more-skills"><i class="fa fa-check"></i><b>1.5</b> More Skills</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="r-fundamentals.html"><a href="r-fundamentals.html"><i class="fa fa-check"></i><b>2</b> R Fundamentals</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="r-fundamentals.html"><a href="r-fundamentals.html#installing-r"><i class="fa fa-check"></i><b>2.1</b> Installing R</a></li>
+<li class="chapter" data-level="2.2" data-path="r-fundamentals.html"><a href="r-fundamentals.html#installing-rstudio"><i class="fa fa-check"></i><b>2.2</b> Installing RStudio</a></li>
+<li class="chapter" data-level="2.3" data-path="r-fundamentals.html"><a href="r-fundamentals.html#my-current-version"><i class="fa fa-check"></i><b>2.3</b> My Current Version</a></li>
+<li class="chapter" data-level="2.4" data-path="r-fundamentals.html"><a href="r-fundamentals.html#the-interface-of-rstudio"><i class="fa fa-check"></i><b>2.4</b> The Interface of Rstudio</a></li>
+<li class="chapter" data-level="2.5" data-path="r-fundamentals.html"><a href="r-fundamentals.html#assignment"><i class="fa fa-check"></i><b>2.5</b> Assignment</a></li>
+<li class="chapter" data-level="2.6" data-path="r-fundamentals.html"><a href="r-fundamentals.html#data-structure"><i class="fa fa-check"></i><b>2.6</b> Data Structure</a></li>
+<li class="chapter" data-level="2.7" data-path="r-fundamentals.html"><a href="r-fundamentals.html#function"><i class="fa fa-check"></i><b>2.7</b> Function</a></li>
+<li class="chapter" data-level="2.8" data-path="r-fundamentals.html"><a href="r-fundamentals.html#vectorization"><i class="fa fa-check"></i><b>2.8</b> Vectorization</a></li>
+<li class="chapter" data-level="2.9" data-path="r-fundamentals.html"><a href="r-fundamentals.html#script"><i class="fa fa-check"></i><b>2.9</b> Script</a></li>
+<li class="chapter" data-level="2.10" data-path="r-fundamentals.html"><a href="r-fundamentals.html#library"><i class="fa fa-check"></i><b>2.10</b> Library</a></li>
+<li class="chapter" data-level="2.11" data-path="r-fundamentals.html"><a href="r-fundamentals.html#setting"><i class="fa fa-check"></i><b>2.11</b> Setting</a></li>
+<li class="chapter" data-level="2.12" data-path="r-fundamentals.html"><a href="r-fundamentals.html#seeking-help"><i class="fa fa-check"></i><b>2.12</b> Seeking Help</a></li>
+<li class="chapter" data-level="2.13" data-path="r-fundamentals.html"><a href="r-fundamentals.html#language-learning-aint-easy"><i class="fa fa-check"></i><b>2.13</b> Language Learning Ain’t Easy!</a></li>
+<li class="chapter" data-level="2.14" data-path="r-fundamentals.html"><a href="r-fundamentals.html#keyboard-shortcuts"><i class="fa fa-check"></i><b>2.14</b> Keyboard Shortcuts</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="code-format-convetion.html"><a href="code-format-convetion.html"><i class="fa fa-check"></i><b>3</b> Code Format Convention</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="code-format-convetion.html"><a href="code-format-convetion.html#assignment--"><i class="fa fa-check"></i><b>3.1</b> Assignment <code>&lt;-</code></a></li>
+<li class="chapter" data-level="3.2" data-path="code-format-convetion.html"><a href="code-format-convetion.html#comment"><i class="fa fa-check"></i><b>3.2</b> Comment <code>#</code></a></li>
+<li class="chapter" data-level="3.3" data-path="code-format-convetion.html"><a href="code-format-convetion.html#script-naming"><i class="fa fa-check"></i><b>3.3</b> Script Naming</a></li>
+<li class="chapter" data-level="3.4" data-path="code-format-convetion.html"><a href="code-format-convetion.html#object-naming"><i class="fa fa-check"></i><b>3.4</b> Object Naming</a></li>
+<li class="chapter" data-level="3.5" data-path="code-format-convetion.html"><a href="code-format-convetion.html#whitespace"><i class="fa fa-check"></i><b>3.5</b> Whitespace</a></li>
+<li class="chapter" data-level="3.6" data-path="code-format-convetion.html"><a href="code-format-convetion.html#indention-and-linebreaks"><i class="fa fa-check"></i><b>3.6</b> Indention and Linebreaks</a></li>
+<li class="chapter" data-level="3.7" data-path="code-format-convetion.html"><a href="code-format-convetion.html#more-references"><i class="fa fa-check"></i><b>3.7</b> More References</a></li>
+<li class="chapter" data-level="3.8" data-path="code-format-convetion.html"><a href="code-format-convetion.html#template-for-script-assignments"><i class="fa fa-check"></i><b>3.8</b> Template for Script Assignments</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="subsetting.html"><a href="subsetting.html"><i class="fa fa-check"></i><b>4</b> Subsetting</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="subsetting.html"><a href="subsetting.html#vector"><i class="fa fa-check"></i><b>4.1</b> Vector</a>
+<ul>
+<li class="chapter" data-level="" data-path="subsetting.html"><a href="subsetting.html#subsetting-1"><i class="fa fa-check"></i>Subsetting</a></li>
+<li class="chapter" data-level="" data-path="subsetting.html"><a href="subsetting.html#conditional-subsetting"><i class="fa fa-check"></i>Conditional Subsetting</a></li>
+<li class="chapter" data-level="" data-path="subsetting.html"><a href="subsetting.html#sorting"><i class="fa fa-check"></i>Sorting</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="subsetting.html"><a href="subsetting.html#factor"><i class="fa fa-check"></i><b>4.2</b> Factor</a></li>
+<li class="chapter" data-level="4.3" data-path="subsetting.html"><a href="subsetting.html#list"><i class="fa fa-check"></i><b>4.3</b> List</a></li>
+<li class="chapter" data-level="4.4" data-path="subsetting.html"><a href="subsetting.html#data-frame"><i class="fa fa-check"></i><b>4.4</b> Data Frame</a>
+<ul>
+<li class="chapter" data-level="" data-path="subsetting.html"><a href="subsetting.html#subsetting-2"><i class="fa fa-check"></i>Subsetting</a></li>
+<li class="chapter" data-level="" data-path="subsetting.html"><a href="subsetting.html#conditional-subsetting-1"><i class="fa fa-check"></i>Conditional Subsetting</a></li>
+<li class="chapter" data-level="" data-path="subsetting.html"><a href="subsetting.html#sorting-1"><i class="fa fa-check"></i>Sorting</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="subsetting.html"><a href="subsetting.html#tibble-self-study"><i class="fa fa-check"></i><b>4.5</b> Tibble (Self-Study)</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html"><i class="fa fa-check"></i><b>5</b> Conditions and Loops</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#conditions"><i class="fa fa-check"></i><b>5.1</b> Conditions</a>
+<ul>
+<li class="chapter" data-level="" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#boolean-values"><i class="fa fa-check"></i>Boolean Values</a></li>
+<li class="chapter" data-level="" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#comparison-operators"><i class="fa fa-check"></i>Comparison Operators</a></li>
+<li class="chapter" data-level="" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#boolean-operators"><i class="fa fa-check"></i>Boolean Operators</a></li>
+<li class="chapter" data-level="" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#elements-of-flow-control"><i class="fa fa-check"></i>Elements of Flow Control</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#if-statements"><i class="fa fa-check"></i><b>5.2</b> <code>if</code> Statements</a></li>
+<li class="chapter" data-level="5.3" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#for"><i class="fa fa-check"></i><b>5.3</b> <code>for</code></a></li>
+<li class="chapter" data-level="5.4" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#while-loop"><i class="fa fa-check"></i><b>5.4</b> <code>while</code> loop</a></li>
+<li class="chapter" data-level="5.5" data-path="conditions-and-loops.html"><a href="conditions-and-loops.html#toy-example"><i class="fa fa-check"></i><b>5.5</b> Toy Example</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>6</b> Functions</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="functions.html"><a href="functions.html#a-quick-start"><i class="fa fa-check"></i><b>6.1</b> A Quick Start</a></li>
+<li class="chapter" data-level="6.2" data-path="functions.html"><a href="functions.html#why-do-we-need-functions"><i class="fa fa-check"></i><b>6.2</b> Why do we need functions?</a></li>
+<li class="chapter" data-level="6.3" data-path="functions.html"><a href="functions.html#functions-with-parameters"><i class="fa fa-check"></i><b>6.3</b> Functions with parameters</a></li>
+<li class="chapter" data-level="6.4" data-path="functions.html"><a href="functions.html#recap-of-important-concepts-so-far"><i class="fa fa-check"></i><b>6.4</b> Recap of Important Concepts So Far</a></li>
+<li class="chapter" data-level="6.5" data-path="functions.html"><a href="functions.html#return-statements"><i class="fa fa-check"></i><b>6.5</b> RETURN Statements</a></li>
+<li class="chapter" data-level="6.6" data-path="functions.html"><a href="functions.html#parameters-order"><i class="fa fa-check"></i><b>6.6</b> Parameters Order</a></li>
+<li class="chapter" data-level="6.7" data-path="functions.html"><a href="functions.html#stacking-functions"><i class="fa fa-check"></i><b>6.7</b> Stacking Functions</a></li>
+<li class="chapter" data-level="6.8" data-path="functions.html"><a href="functions.html#local-and-global-scope"><i class="fa fa-check"></i><b>6.8</b> Local and Global Scope</a></li>
+<li class="chapter" data-level="6.9" data-path="functions.html"><a href="functions.html#exception-handling"><i class="fa fa-check"></i><b>6.9</b> Exception Handling</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>7</b> Data Visualization</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="data-visualization.html"><a href="data-visualization.html#why-visualization"><i class="fa fa-check"></i><b>7.1</b> Why Visualization?</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-visualization.html"><a href="data-visualization.html#datasaurus-dozen-dataset"><i class="fa fa-check"></i>Datasaurus Dozen Dataset</a></li>
+<li class="chapter" data-level="" data-path="data-visualization.html"><a href="data-visualization.html#simpsons-paradox"><i class="fa fa-check"></i>Simpson’s Paradox</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="data-visualization.html"><a href="data-visualization.html#ggplot2"><i class="fa fa-check"></i><b>7.2</b> <code>ggplot2</code></a></li>
+<li class="chapter" data-level="7.3" data-path="data-visualization.html"><a href="data-visualization.html#variables-and-data-type"><i class="fa fa-check"></i><b>7.3</b> Variables and Data Type</a></li>
+<li class="chapter" data-level="7.4" data-path="data-visualization.html"><a href="data-visualization.html#one-variable-graph"><i class="fa fa-check"></i><b>7.4</b> One-variable Graph</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="data-visualization.html"><a href="data-visualization.html#continuous-variable"><i class="fa fa-check"></i><b>7.4.1</b> Continuous Variable</a></li>
+<li class="chapter" data-level="7.4.2" data-path="data-visualization.html"><a href="data-visualization.html#categorical-variable"><i class="fa fa-check"></i><b>7.4.2</b> Categorical Variable</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="data-visualization.html"><a href="data-visualization.html#two-variable-graph"><i class="fa fa-check"></i><b>7.5</b> Two-variable Graph</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="data-visualization.html"><a href="data-visualization.html#continuous-x-continuous-y"><i class="fa fa-check"></i><b>7.5.1</b> Continuous X, Continuous Y</a></li>
+<li class="chapter" data-level="7.5.2" data-path="data-visualization.html"><a href="data-visualization.html#categorical-x-continuous-y"><i class="fa fa-check"></i><b>7.5.2</b> Categorical X, Continuous Y</a></li>
+<li class="chapter" data-level="7.5.3" data-path="data-visualization.html"><a href="data-visualization.html#categorical-x-categorical-y"><i class="fa fa-check"></i><b>7.5.3</b> Categorical X, Categorical Y</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="data-visualization.html"><a href="data-visualization.html#adding-more-aesthetic-features-or-layers"><i class="fa fa-check"></i><b>7.6</b> Adding More Aesthetic Features or Layers</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="data-visualization.html"><a href="data-visualization.html#color"><i class="fa fa-check"></i><b>7.6.1</b> <code>color</code></a></li>
+<li class="chapter" data-level="7.6.2" data-path="data-visualization.html"><a href="data-visualization.html#alpha"><i class="fa fa-check"></i><b>7.6.2</b> <code>alpha</code></a></li>
+<li class="chapter" data-level="7.6.3" data-path="data-visualization.html"><a href="data-visualization.html#size"><i class="fa fa-check"></i><b>7.6.3</b> <code>size</code></a></li>
+<li class="chapter" data-level="7.6.4" data-path="data-visualization.html"><a href="data-visualization.html#fill"><i class="fa fa-check"></i><b>7.6.4</b> <code>fill</code></a></li>
+<li class="chapter" data-level="7.6.5" data-path="data-visualization.html"><a href="data-visualization.html#shape"><i class="fa fa-check"></i><b>7.6.5</b> <code>shape</code></a></li>
+<li class="chapter" data-level="7.6.6" data-path="data-visualization.html"><a href="data-visualization.html#other-geom_...-layers"><i class="fa fa-check"></i><b>7.6.6</b> Other <code>geom_...</code> Layers</a></li>
+<li class="chapter" data-level="7.6.7" data-path="data-visualization.html"><a href="data-visualization.html#labels-and-annotations"><i class="fa fa-check"></i><b>7.6.7</b> Labels and Annotations</a></li>
+<li class="chapter" data-level="7.6.8" data-path="data-visualization.html"><a href="data-visualization.html#facets"><i class="fa fa-check"></i><b>7.6.8</b> Facets</a></li>
+<li class="chapter" data-level="7.6.9" data-path="data-visualization.html"><a href="data-visualization.html#themes"><i class="fa fa-check"></i><b>7.6.9</b> Themes</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="data-visualization.html"><a href="data-visualization.html#saving-plots"><i class="fa fa-check"></i><b>7.7</b> Saving Plots</a></li>
+<li class="chapter" data-level="7.8" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-iris"><i class="fa fa-check"></i><b>7.8</b> Exercises on <code>iris</code></a></li>
+<li class="chapter" data-level="7.9" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-covid-19"><i class="fa fa-check"></i><b>7.9</b> Exercises on COVID-19</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="data-manipulation.html"><a href="data-manipulation.html"><i class="fa fa-check"></i><b>8</b> Data Manipulation</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="data-manipulation.html"><a href="data-manipulation.html#dataset"><i class="fa fa-check"></i><b>8.1</b> Dataset</a></li>
+<li class="chapter" data-level="8.2" data-path="data-manipulation.html"><a href="data-manipulation.html#rename"><i class="fa fa-check"></i><b>8.2</b> <code>rename()</code></a></li>
+<li class="chapter" data-level="8.3" data-path="data-manipulation.html"><a href="data-manipulation.html#pipe"><i class="fa fa-check"></i><b>8.3</b> Pipe <code>%&gt;%</code></a></li>
+<li class="chapter" data-level="8.4" data-path="data-manipulation.html"><a href="data-manipulation.html#mutate"><i class="fa fa-check"></i><b>8.4</b> <code>mutate()</code></a></li>
+<li class="chapter" data-level="8.5" data-path="data-manipulation.html"><a href="data-manipulation.html#select"><i class="fa fa-check"></i><b>8.5</b> <code>select()</code></a></li>
+<li class="chapter" data-level="8.6" data-path="data-manipulation.html"><a href="data-manipulation.html#filter"><i class="fa fa-check"></i><b>8.6</b> <code>filter()</code></a></li>
+<li class="chapter" data-level="8.7" data-path="data-manipulation.html"><a href="data-manipulation.html#arrange"><i class="fa fa-check"></i><b>8.7</b> <code>arrange()</code></a></li>
+<li class="chapter" data-level="8.8" data-path="data-manipulation.html"><a href="data-manipulation.html#group_by-and-summarize"><i class="fa fa-check"></i><b>8.8</b> <code>group_by()</code> and <code>summarize()</code></a></li>
+<li class="chapter" data-level="8.9" data-path="data-manipulation.html"><a href="data-manipulation.html#count"><i class="fa fa-check"></i><b>8.9</b> <code>count()</code></a></li>
+<li class="chapter" data-level="8.10" data-path="data-manipulation.html"><a href="data-manipulation.html#tidy-data"><i class="fa fa-check"></i><b>8.10</b> Tidy Data</a>
+<ul>
+<li class="chapter" data-level="8.10.1" data-path="data-manipulation.html"><a href="data-manipulation.html#a-long-to-wide-example"><i class="fa fa-check"></i><b>8.10.1</b> A Long-to-Wide Example</a></li>
+<li class="chapter" data-level="8.10.2" data-path="data-manipulation.html"><a href="data-manipulation.html#a-wide-to-long-example"><i class="fa fa-check"></i><b>8.10.2</b> A Wide-to-Long Example</a></li>
+</ul></li>
+<li class="chapter" data-level="8.11" data-path="data-manipulation.html"><a href="data-manipulation.html#exercises"><i class="fa fa-check"></i><b>8.11</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="string-manipulation.html"><a href="string-manipulation.html"><i class="fa fa-check"></i><b>9</b> String Manipulation</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="string-manipulation.html"><a href="string-manipulation.html#what-is-regular-expression"><i class="fa fa-check"></i><b>9.1</b> What is Regular Expression?</a></li>
+<li class="chapter" data-level="9.2" data-path="string-manipulation.html"><a href="string-manipulation.html#string-basics"><i class="fa fa-check"></i><b>9.2</b> String Basics</a></li>
+<li class="chapter" data-level="9.3" data-path="string-manipulation.html"><a href="string-manipulation.html#a-good-tool-regexplain"><i class="fa fa-check"></i><b>9.3</b> A Good Tool: <code>RegExplain</code></a></li>
+<li class="chapter" data-level="9.4" data-path="string-manipulation.html"><a href="string-manipulation.html#regular-expression-grammar"><i class="fa fa-check"></i><b>9.4</b> Regular Expression Grammar</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="string-manipulation.html"><a href="string-manipulation.html#metacharacters"><i class="fa fa-check"></i><b>9.4.1</b> Metacharacters</a></li>
+<li class="chapter" data-level="9.4.2" data-path="string-manipulation.html"><a href="string-manipulation.html#anchors"><i class="fa fa-check"></i><b>9.4.2</b> Anchors</a></li>
+<li class="chapter" data-level="9.4.3" data-path="string-manipulation.html"><a href="string-manipulation.html#character-set"><i class="fa fa-check"></i><b>9.4.3</b> Character Set</a></li>
+<li class="chapter" data-level="9.4.4" data-path="string-manipulation.html"><a href="string-manipulation.html#alternatives"><i class="fa fa-check"></i><b>9.4.4</b> Alternatives</a></li>
+<li class="chapter" data-level="9.4.5" data-path="string-manipulation.html"><a href="string-manipulation.html#quantifiers"><i class="fa fa-check"></i><b>9.4.5</b> Quantifiers</a></li>
+<li class="chapter" data-level="9.4.6" data-path="string-manipulation.html"><a href="string-manipulation.html#greedy-vs.-non-greedy-match"><i class="fa fa-check"></i><b>9.4.6</b> Greedy vs. Non-greedy match</a></li>
+<li class="chapter" data-level="9.4.7" data-path="string-manipulation.html"><a href="string-manipulation.html#group-and-back-reference"><i class="fa fa-check"></i><b>9.4.7</b> Group and Back-reference</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="string-manipulation.html"><a href="string-manipulation.html#pattern-matching"><i class="fa fa-check"></i><b>9.5</b> Pattern Matching</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="string-manipulation.html"><a href="string-manipulation.html#str_detect"><i class="fa fa-check"></i><b>9.5.1</b> <code>str_detect()</code></a></li>
+<li class="chapter" data-level="9.5.2" data-path="string-manipulation.html"><a href="string-manipulation.html#str_subset"><i class="fa fa-check"></i><b>9.5.2</b> <code>str_subset()</code></a></li>
+<li class="chapter" data-level="9.5.3" data-path="string-manipulation.html"><a href="string-manipulation.html#str_extract"><i class="fa fa-check"></i><b>9.5.3</b> <code>str_extract()</code></a></li>
+<li class="chapter" data-level="9.5.4" data-path="string-manipulation.html"><a href="string-manipulation.html#str_match"><i class="fa fa-check"></i><b>9.5.4</b> <code>str_match()</code></a></li>
+<li class="chapter" data-level="9.5.5" data-path="string-manipulation.html"><a href="string-manipulation.html#str_replace"><i class="fa fa-check"></i><b>9.5.5</b> <code>str_replace()</code></a></li>
+<li class="chapter" data-level="9.5.6" data-path="string-manipulation.html"><a href="string-manipulation.html#str_split"><i class="fa fa-check"></i><b>9.5.6</b> <code>str_split()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="string-manipulation.html"><a href="string-manipulation.html#advanced-pattern-matching-look-ahead-and-behind"><i class="fa fa-check"></i><b>9.6</b> Advanced Pattern Matching: Look Ahead and Behind</a></li>
+<li class="chapter" data-level="9.7" data-path="string-manipulation.html"><a href="string-manipulation.html#more-practices"><i class="fa fa-check"></i><b>9.7</b> More Practices</a>
+<ul>
+<li class="chapter" data-level="9.7.1" data-path="string-manipulation.html"><a href="string-manipulation.html#case-1"><i class="fa fa-check"></i><b>9.7.1</b> Case 1</a></li>
+<li class="chapter" data-level="9.7.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-2"><i class="fa fa-check"></i><b>9.7.2</b> Case 2</a></li>
+<li class="chapter" data-level="9.7.3" data-path="string-manipulation.html"><a href="string-manipulation.html#case-3"><i class="fa fa-check"></i><b>9.7.3</b> Case 3</a></li>
+</ul></li>
+<li class="chapter" data-level="9.8" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-chinese-four-character-idioms"><i class="fa fa-check"></i><b>9.8</b> Case Study: Chinese Four-Character Idioms</a>
+<ul>
+<li class="chapter" data-level="9.8.1" data-path="string-manipulation.html"><a href="string-manipulation.html#dictionary-entries"><i class="fa fa-check"></i><b>9.8.1</b> Dictionary Entries</a></li>
+<li class="chapter" data-level="9.8.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-x來y去"><i class="fa fa-check"></i><b>9.8.2</b> Case Study: <code>X來Y去</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="data-import.html"><a href="data-import.html"><i class="fa fa-check"></i><b>10</b> Data Import</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="data-import.html"><a href="data-import.html#overview"><i class="fa fa-check"></i><b>10.1</b> Overview</a></li>
+<li class="chapter" data-level="10.2" data-path="data-import.html"><a href="data-import.html#importing-data"><i class="fa fa-check"></i><b>10.2</b> Importing Data</a></li>
+<li class="chapter" data-level="10.3" data-path="data-import.html"><a href="data-import.html#what-is-a-csv-file-self-study"><i class="fa fa-check"></i><b>10.3</b> What is a <code>CSV</code> file? (Self-study)</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="data-import.html"><a href="data-import.html#why-are-.csv-files-used"><i class="fa fa-check"></i><b>10.3.1</b> Why are <code>.CSV</code> files used?</a></li>
+<li class="chapter" data-level="10.3.2" data-path="data-import.html"><a href="data-import.html#how-do-i-save-csv-files"><i class="fa fa-check"></i><b>10.3.2</b> How do I save CSV files?</a></li>
+<li class="chapter" data-level="10.3.3" data-path="data-import.html"><a href="data-import.html#what-about-other-types-of-data"><i class="fa fa-check"></i><b>10.3.3</b> What about other types of data?</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="data-import.html"><a href="data-import.html#character-encoding-self-study"><i class="fa fa-check"></i><b>10.4</b> Character Encoding (Self-study)</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="data-import.html"><a href="data-import.html#problems-with-ascii"><i class="fa fa-check"></i><b>10.4.1</b> Problems with ASCII</a></li>
+<li class="chapter" data-level="10.4.2" data-path="data-import.html"><a href="data-import.html#from-7-bit-to-one-byte-encoding"><i class="fa fa-check"></i><b>10.4.2</b> From 7-bit to One-Byte Encoding</a></li>
+<li class="chapter" data-level="10.4.3" data-path="data-import.html"><a href="data-import.html#problems-with-single-byte-encoding"><i class="fa fa-check"></i><b>10.4.3</b> Problems with Single-Byte Encoding</a></li>
+<li class="chapter" data-level="10.4.4" data-path="data-import.html"><a href="data-import.html#problems-with-multi-byte-encoding"><i class="fa fa-check"></i><b>10.4.4</b> Problems with Multi-byte Encoding</a></li>
+<li class="chapter" data-level="10.4.5" data-path="data-import.html"><a href="data-import.html#unicode-and-utf-8"><i class="fa fa-check"></i><b>10.4.5</b> Unicode and UTF-8</a></li>
+<li class="chapter" data-level="10.4.6" data-path="data-import.html"><a href="data-import.html#suggestions"><i class="fa fa-check"></i><b>10.4.6</b> Suggestions</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="data-import.html"><a href="data-import.html#character-code-point-and-hexadecimal-mode-self-study"><i class="fa fa-check"></i><b>10.5</b> Character, Code Point, and Hexadecimal Mode (Self-study)</a></li>
+<li class="chapter" data-level="10.6" data-path="data-import.html"><a href="data-import.html#r-base-functions"><i class="fa fa-check"></i><b>10.6</b> R Base Functions</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="data-import.html"><a href="data-import.html#readlines"><i class="fa fa-check"></i><b>10.6.1</b> <code>readLines()</code></a></li>
+<li class="chapter" data-level="10.6.2" data-path="data-import.html"><a href="data-import.html#writelines"><i class="fa fa-check"></i><b>10.6.2</b> <code>writeLines()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="data-import.html"><a href="data-import.html#readr-functions"><i class="fa fa-check"></i><b>10.7</b> <code>readr</code> Functions</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="data-import.html"><a href="data-import.html#readrread_csv"><i class="fa fa-check"></i><b>10.7.1</b> <code>readr::read_csv()</code></a></li>
+<li class="chapter" data-level="10.7.2" data-path="data-import.html"><a href="data-import.html#readrwrite_csv"><i class="fa fa-check"></i><b>10.7.2</b> <code>readr::write_csv()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="10.8" data-path="data-import.html"><a href="data-import.html#directory-operations"><i class="fa fa-check"></i><b>10.8</b> Directory Operations</a>
+<ul>
+<li class="chapter" data-level="10.8.1" data-path="data-import.html"><a href="data-import.html#working-directory"><i class="fa fa-check"></i><b>10.8.1</b> Working Directory</a></li>
+<li class="chapter" data-level="10.8.2" data-path="data-import.html"><a href="data-import.html#relative-vs.-absolute-paths"><i class="fa fa-check"></i><b>10.8.2</b> Relative vs. Absolute Paths</a></li>
+<li class="chapter" data-level="10.8.3" data-path="data-import.html"><a href="data-import.html#directory-operations-1"><i class="fa fa-check"></i><b>10.8.3</b> Directory Operations</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="iteration.html"><a href="iteration.html"><i class="fa fa-check"></i><b>11</b> Iteration</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="iteration.html"><a href="iteration.html#code-duplication"><i class="fa fa-check"></i><b>11.1</b> Code Duplication</a></li>
+<li class="chapter" data-level="11.2" data-path="iteration.html"><a href="iteration.html#vector-vs.-list-in-r"><i class="fa fa-check"></i><b>11.2</b> <code>vector</code> vs. <code>list</code> in <code>R</code></a></li>
+<li class="chapter" data-level="11.3" data-path="iteration.html"><a href="iteration.html#iteration-1"><i class="fa fa-check"></i><b>11.3</b> Iteration</a></li>
+<li class="chapter" data-level="11.4" data-path="iteration.html"><a href="iteration.html#purr"><i class="fa fa-check"></i><b>11.4</b> <code>purr</code></a></li>
+<li class="chapter" data-level="11.5" data-path="iteration.html"><a href="iteration.html#purr-dplyr"><i class="fa fa-check"></i><b>11.5</b> <code>purr</code> + <code>dplyr</code></a></li>
+<li class="chapter" data-level="11.6" data-path="iteration.html"><a href="iteration.html#map-with-self-defined-functions"><i class="fa fa-check"></i><b>11.6</b> <code>map()</code> with self-defined functions</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html"><i class="fa fa-check"></i><b>12</b> Data Scientist First Step</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#loading-nobel-laureates-dataset"><i class="fa fa-check"></i><b>12.1</b> Loading Nobel Laureates Dataset</a></li>
+<li class="chapter" data-level="12.2" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#workflow"><i class="fa fa-check"></i><b>12.2</b> Workflow</a></li>
+<li class="chapter" data-level="12.3" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#column-names"><i class="fa fa-check"></i><b>12.3</b> Column Names</a></li>
+<li class="chapter" data-level="12.4" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#missing-data-na-values"><i class="fa fa-check"></i><b>12.4</b> Missing Data (<code>NA</code> values)</a></li>
+<li class="chapter" data-level="12.5" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#data-preprocessing"><i class="fa fa-check"></i><b>12.5</b> Data Preprocessing</a></li>
+<li class="chapter" data-level="12.6" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#exploratory-analysis"><i class="fa fa-check"></i><b>12.6</b> Exploratory Analysis</a>
+<ul>
+<li class="chapter" data-level="12.6.1" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#discipline-distribution"><i class="fa fa-check"></i><b>12.6.1</b> Discipline Distribution</a></li>
+<li class="chapter" data-level="12.6.2" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#age-distribution"><i class="fa fa-check"></i><b>12.6.2</b> Age Distribution</a></li>
+<li class="chapter" data-level="12.6.3" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#category-x-age-interaction"><i class="fa fa-check"></i><b>12.6.3</b> Category x Age Interaction</a></li>
+<li class="chapter" data-level="12.6.4" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#gender-distribution"><i class="fa fa-check"></i><b>12.6.4</b> Gender Distribution</a></li>
+<li class="chapter" data-level="12.6.5" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#age-x-gender-interaction"><i class="fa fa-check"></i><b>12.6.5</b> Age x Gender Interaction</a></li>
+</ul></li>
+<li class="chapter" data-level="12.7" data-path="data-scientist-first-step.html"><a href="data-scientist-first-step.html#exercises-1"><i class="fa fa-check"></i><b>12.7</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html"><i class="fa fa-check"></i><b>13</b> Text Analytics: A Start</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#installing-quanteda"><i class="fa fa-check"></i><b>13.1</b> Installing <code>quanteda</code></a></li>
+<li class="chapter" data-level="13.2" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#building-a-corpus-from-character-vector"><i class="fa fa-check"></i><b>13.2</b> Building a <code>corpus</code> from character vector</a></li>
+<li class="chapter" data-level="13.3" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#tokenization"><i class="fa fa-check"></i><b>13.3</b> Tokenization</a></li>
+<li class="chapter" data-level="13.4" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyword-in-context-kwic"><i class="fa fa-check"></i><b>13.4</b> Keyword-in-Context (KWIC)</a></li>
+<li class="chapter" data-level="13.5" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#kwic-with-regular-expressions"><i class="fa fa-check"></i><b>13.5</b> KWIC with Regular Expressions</a></li>
+<li class="chapter" data-level="13.6" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#lexical-density-plot"><i class="fa fa-check"></i><b>13.6</b> Lexical Density Plot</a></li>
+<li class="chapter" data-level="13.7" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#document-feature-matrix"><i class="fa fa-check"></i><b>13.7</b> Document-Feature Matrix</a></li>
+<li class="chapter" data-level="13.8" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#feature-selection"><i class="fa fa-check"></i><b>13.8</b> Feature Selection</a></li>
+<li class="chapter" data-level="13.9" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#top-features"><i class="fa fa-check"></i><b>13.9</b> Top Features</a></li>
+<li class="chapter" data-level="13.10" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#wordclouds"><i class="fa fa-check"></i><b>13.10</b> Wordclouds</a></li>
+<li class="chapter" data-level="13.11" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyness-analysis"><i class="fa fa-check"></i><b>13.11</b> Keyness Analysis</a></li>
+<li class="chapter" data-level="13.12" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#flowchart"><i class="fa fa-check"></i><b>13.12</b> Flowchart</a></li>
+<li class="chapter" data-level="13.13" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#exercises-2"><i class="fa fa-check"></i><b>13.13</b> Exercises</a></li>
+</ul></li>
+<li class="part"><span><b>PART 2: Python Language</b></span></li>
+<li class="chapter" data-level="14" data-path="python-fundamentals.html"><a href="python-fundamentals.html"><i class="fa fa-check"></i><b>14</b> Python Fundamentals</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="python-fundamentals.html"><a href="python-fundamentals.html#set-up-environment"><i class="fa fa-check"></i><b>14.1</b> Set up Environment</a></li>
+<li class="chapter" data-level="14.2" data-path="python-fundamentals.html"><a href="python-fundamentals.html#conda-environment"><i class="fa fa-check"></i><b>14.2</b> Conda Environment</a></li>
+<li class="chapter" data-level="14.3" data-path="python-fundamentals.html"><a href="python-fundamentals.html#data-type"><i class="fa fa-check"></i><b>14.3</b> Data Type</a></li>
+<li class="chapter" data-level="14.4" data-path="python-fundamentals.html"><a href="python-fundamentals.html#data-structure-1"><i class="fa fa-check"></i><b>14.4</b> Data Structure</a></li>
+<li class="chapter" data-level="14.5" data-path="python-fundamentals.html"><a href="python-fundamentals.html#string"><i class="fa fa-check"></i><b>14.5</b> String</a></li>
+<li class="chapter" data-level="14.6" data-path="python-fundamentals.html"><a href="python-fundamentals.html#control-structure"><i class="fa fa-check"></i><b>14.6</b> Control Structure</a></li>
+<li class="chapter" data-level="14.7" data-path="python-fundamentals.html"><a href="python-fundamentals.html#function-1"><i class="fa fa-check"></i><b>14.7</b> Function</a></li>
+<li class="chapter" data-level="14.8" data-path="python-fundamentals.html"><a href="python-fundamentals.html#list-comprehension"><i class="fa fa-check"></i><b>14.8</b> List Comprehension</a></li>
+<li class="chapter" data-level="14.9" data-path="python-fundamentals.html"><a href="python-fundamentals.html#python-scripts"><i class="fa fa-check"></i><b>14.9</b> Python Scripts</a></li>
+<li class="chapter" data-level="14.10" data-path="python-fundamentals.html"><a href="python-fundamentals.html#modules"><i class="fa fa-check"></i><b>14.10</b> Modules</a></li>
+<li class="chapter" data-level="14.11" data-path="python-fundamentals.html"><a href="python-fundamentals.html#inputoutput"><i class="fa fa-check"></i><b>14.11</b> Input/Output</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="organizing-files.html"><a href="organizing-files.html"><i class="fa fa-check"></i><b>15</b> Organizing Files</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="organizing-files.html"><a href="organizing-files.html#shutil"><i class="fa fa-check"></i><b>15.1</b> <code>shutil</code></a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="object-orientation.html"><a href="object-orientation.html"><i class="fa fa-check"></i><b>16</b> Object Orientation</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="object-orientation.html"><a href="object-orientation.html#what-is-object-orientation"><i class="fa fa-check"></i><b>16.1</b> What is Object Orientation?</a></li>
+<li class="chapter" data-level="16.2" data-path="object-orientation.html"><a href="object-orientation.html#class-defition"><i class="fa fa-check"></i><b>16.2</b> <strong>Class</strong> Defition</a></li>
+<li class="chapter" data-level="16.3" data-path="object-orientation.html"><a href="object-orientation.html#types-of-methods"><i class="fa fa-check"></i><b>16.3</b> Types of Methods</a></li>
+<li class="chapter" data-level="16.4" data-path="object-orientation.html"><a href="object-orientation.html#class-inheritance"><i class="fa fa-check"></i><b>16.4</b> Class Inheritance</a></li>
+<li class="chapter" data-level="16.5" data-path="object-orientation.html"><a href="object-orientation.html#special-methods"><i class="fa fa-check"></i><b>16.5</b> Special Methods</a></li>
+<li class="chapter" data-level="16.6" data-path="object-orientation.html"><a href="object-orientation.html#property-decorator"><i class="fa fa-check"></i><b>16.6</b> Property Decorator</a></li>
+<li class="chapter" data-level="16.7" data-path="object-orientation.html"><a href="object-orientation.html#checking-functions"><i class="fa fa-check"></i><b>16.7</b> Checking Functions</a></li>
+<li class="chapter" data-level="16.8" data-path="object-orientation.html"><a href="object-orientation.html#name-mangling"><i class="fa fa-check"></i><b>16.8</b> Name Mangling</a></li>
+<li class="chapter" data-level="16.9" data-path="object-orientation.html"><a href="object-orientation.html#reference"><i class="fa fa-check"></i><b>16.9</b> Reference</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="regular-expression.html"><a href="regular-expression.html"><i class="fa fa-check"></i><b>17</b> Regular Expression</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="regular-expression.html"><a href="regular-expression.html#comparison-of-r-and-python"><i class="fa fa-check"></i><b>17.1</b> Comparison of R and Python</a></li>
+<li class="chapter" data-level="17.2" data-path="regular-expression.html"><a href="regular-expression.html#structure-of-regular-expression-usage"><i class="fa fa-check"></i><b>17.2</b> Structure of Regular Expression Usage</a>
+<ul>
+<li class="chapter" data-level="17.2.1" data-path="regular-expression.html"><a href="regular-expression.html#re.search"><i class="fa fa-check"></i><b>17.2.1</b> <code>re.search()</code></a></li>
+<li class="chapter" data-level="17.2.2" data-path="regular-expression.html"><a href="regular-expression.html#re.findall"><i class="fa fa-check"></i><b>17.2.2</b> <code>re.findall()</code></a></li>
+<li class="chapter" data-level="17.2.3" data-path="regular-expression.html"><a href="regular-expression.html#re.finditer"><i class="fa fa-check"></i><b>17.2.3</b> <code>re.finditer()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="regular-expression.html"><a href="regular-expression.html#special-falgssettings-for-regular-expressions"><i class="fa fa-check"></i><b>17.3</b> Special Falgs/Settings for Regular Expressions</a></li>
+<li class="chapter" data-level="17.4" data-path="regular-expression.html"><a href="regular-expression.html#regular-expression-in-python"><i class="fa fa-check"></i><b>17.4</b> Regular Expression in Python</a>
+<ul>
+<li class="chapter" data-level="17.4.1" data-path="regular-expression.html"><a href="regular-expression.html#raw-string-notation"><i class="fa fa-check"></i><b>17.4.1</b> Raw String Notation</a></li>
+<li class="chapter" data-level="17.4.2" data-path="regular-expression.html"><a href="regular-expression.html#find-all-matches"><i class="fa fa-check"></i><b>17.4.2</b> Find all matches</a></li>
+<li class="chapter" data-level="17.4.3" data-path="regular-expression.html"><a href="regular-expression.html#group-vs.-groups"><i class="fa fa-check"></i><b>17.4.3</b> <code>group()</code> vs. <code>groups()</code></a></li>
+<li class="chapter" data-level="17.4.4" data-path="regular-expression.html"><a href="regular-expression.html#string-format-validation"><i class="fa fa-check"></i><b>17.4.4</b> string format validation</a></li>
+<li class="chapter" data-level="17.4.5" data-path="regular-expression.html"><a href="regular-expression.html#re.match-vs.-re.search"><i class="fa fa-check"></i><b>17.4.5</b> <code>re.match()</code> vs. <code>re.search()</code></a></li>
+<li class="chapter" data-level="17.4.6" data-path="regular-expression.html"><a href="regular-expression.html#re.split"><i class="fa fa-check"></i><b>17.4.6</b> <code>re.split()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="17.5" data-path="regular-expression.html"><a href="regular-expression.html#text-munging"><i class="fa fa-check"></i><b>17.5</b> Text Munging</a></li>
+<li class="chapter" data-level="17.6" data-path="regular-expression.html"><a href="regular-expression.html#references"><i class="fa fa-check"></i><b>17.6</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>18</b> Pandas</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="pandas.html"><a href="pandas.html#libraries"><i class="fa fa-check"></i><b>18.1</b> Libraries</a></li>
+<li class="chapter" data-level="18.2" data-path="pandas.html"><a href="pandas.html#importingexporting-data"><i class="fa fa-check"></i><b>18.2</b> Importing/Exporting Data</a></li>
+<li class="chapter" data-level="18.3" data-path="pandas.html"><a href="pandas.html#inspecting-data-frame"><i class="fa fa-check"></i><b>18.3</b> Inspecting Data Frame</a></li>
+<li class="chapter" data-level="18.4" data-path="pandas.html"><a href="pandas.html#basic-functions"><i class="fa fa-check"></i><b>18.4</b> Basic Functions</a></li>
+<li class="chapter" data-level="18.5" data-path="pandas.html"><a href="pandas.html#subsetting-data-frame"><i class="fa fa-check"></i><b>18.5</b> Subsetting Data Frame</a></li>
+<li class="chapter" data-level="18.6" data-path="pandas.html"><a href="pandas.html#exploration"><i class="fa fa-check"></i><b>18.6</b> Exploration</a>
+<ul>
+<li class="chapter" data-level="18.6.1" data-path="pandas.html"><a href="pandas.html#na-values"><i class="fa fa-check"></i><b>18.6.1</b> NA Values</a></li>
+<li class="chapter" data-level="18.6.2" data-path="pandas.html"><a href="pandas.html#converting-data-types"><i class="fa fa-check"></i><b>18.6.2</b> Converting Data Types</a></li>
+<li class="chapter" data-level="18.6.3" data-path="pandas.html"><a href="pandas.html#pandas-supported-data-types"><i class="fa fa-check"></i><b>18.6.3</b> Pandas-supported Data Types</a></li>
+<li class="chapter" data-level="18.6.4" data-path="pandas.html"><a href="pandas.html#transformation"><i class="fa fa-check"></i><b>18.6.4</b> Transformation</a></li>
+<li class="chapter" data-level="18.6.5" data-path="pandas.html"><a href="pandas.html#filter-1"><i class="fa fa-check"></i><b>18.6.5</b> <code>filter()</code></a></li>
+<li class="chapter" data-level="18.6.6" data-path="pandas.html"><a href="pandas.html#arrange-1"><i class="fa fa-check"></i><b>18.6.6</b> <code>arrange()</code></a></li>
+<li class="chapter" data-level="18.6.7" data-path="pandas.html"><a href="pandas.html#select-1"><i class="fa fa-check"></i><b>18.6.7</b> <code>select()</code></a></li>
+<li class="chapter" data-level="18.6.8" data-path="pandas.html"><a href="pandas.html#mutate-1"><i class="fa fa-check"></i><b>18.6.8</b> <code>mutate()</code></a></li>
+<li class="chapter" data-level="18.6.9" data-path="pandas.html"><a href="pandas.html#apply-mutate_if"><i class="fa fa-check"></i><b>18.6.9</b> <code>apply()</code>, <code>mutate_if()</code></a></li>
+<li class="chapter" data-level="18.6.10" data-path="pandas.html"><a href="pandas.html#group_by-and-summarize-1"><i class="fa fa-check"></i><b>18.6.10</b> <code>group_by()</code> and <code>summarize()</code></a></li>
+<li class="chapter" data-level="18.6.11" data-path="pandas.html"><a href="pandas.html#rename-1"><i class="fa fa-check"></i><b>18.6.11</b> <code>rename()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="18.7" data-path="pandas.html"><a href="pandas.html#joincombine-data-frames"><i class="fa fa-check"></i><b>18.7</b> Join/Combine Data Frames</a></li>
+<li class="chapter" data-level="18.8" data-path="pandas.html"><a href="pandas.html#statistics"><i class="fa fa-check"></i><b>18.8</b> Statistics</a></li>
+<li class="chapter" data-level="18.9" data-path="pandas.html"><a href="pandas.html#generic-functions"><i class="fa fa-check"></i><b>18.9</b> Generic Functions</a></li>
+<li class="chapter" data-level="18.10" data-path="pandas.html"><a href="pandas.html#references-1"><i class="fa fa-check"></i><b>18.10</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="nltk.html"><a href="nltk.html"><i class="fa fa-check"></i><b>19</b> NLTK</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="nltk.html"><a href="nltk.html#installation"><i class="fa fa-check"></i><b>19.1</b> Installation</a></li>
+<li class="chapter" data-level="19.2" data-path="nltk.html"><a href="nltk.html#corpora-data"><i class="fa fa-check"></i><b>19.2</b> Corpora Data</a></li>
+<li class="chapter" data-level="19.3" data-path="nltk.html"><a href="nltk.html#wordnet"><i class="fa fa-check"></i><b>19.3</b> WordNet</a>
+<ul>
+<li class="chapter" data-level="19.3.1" data-path="nltk.html"><a href="nltk.html#a-dictionary-resource"><i class="fa fa-check"></i><b>19.3.1</b> A Dictionary Resource</a></li>
+<li class="chapter" data-level="19.3.2" data-path="nltk.html"><a href="nltk.html#lexical-relations"><i class="fa fa-check"></i><b>19.3.2</b> Lexical Relations</a></li>
+<li class="chapter" data-level="19.3.3" data-path="nltk.html"><a href="nltk.html#semantic-similarity-computation"><i class="fa fa-check"></i><b>19.3.3</b> Semantic Similarity Computation</a></li>
+</ul></li>
+<li class="chapter" data-level="19.4" data-path="nltk.html"><a href="nltk.html#discovering-word-collocations"><i class="fa fa-check"></i><b>19.4</b> Discovering Word Collocations</a></li>
+<li class="chapter" data-level="19.5" data-path="nltk.html"><a href="nltk.html#tokenization-1"><i class="fa fa-check"></i><b>19.5</b> Tokenization</a></li>
+<li class="chapter" data-level="19.6" data-path="nltk.html"><a href="nltk.html#chinese-word-segmentation"><i class="fa fa-check"></i><b>19.6</b> Chinese Word Segmentation</a></li>
+<li class="chapter" data-level="19.7" data-path="nltk.html"><a href="nltk.html#afterwords"><i class="fa fa-check"></i><b>19.7</b> Afterwords</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="web-scraping.html"><a href="web-scraping.html"><i class="fa fa-check"></i><b>20</b> Web Scraping</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="web-scraping.html"><a href="web-scraping.html#webbrowswer-module"><i class="fa fa-check"></i><b>20.1</b> <code>webbrowswer</code> module</a></li>
+<li class="chapter" data-level="20.2" data-path="web-scraping.html"><a href="web-scraping.html#requests-module"><i class="fa fa-check"></i><b>20.2</b> <code>requests</code> Module</a></li>
+<li class="chapter" data-level="20.3" data-path="web-scraping.html"><a href="web-scraping.html#bs4-module-beautiful-soup"><i class="fa fa-check"></i><b>20.3</b> <code>bs4</code> Module (Beautiful Soup)</a></li>
+<li class="chapter" data-level="20.4" data-path="web-scraping.html"><a href="web-scraping.html#reference-1"><i class="fa fa-check"></i><b>20.4</b> Reference</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="transcribing.html"><a href="transcribing.html"><i class="fa fa-check"></i><b>21</b> Transcribing</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="transcribing.html"><a href="transcribing.html#working-with-audio-files"><i class="fa fa-check"></i><b>21.1</b> Working with Audio Files</a></li>
+<li class="chapter" data-level="21.2" data-path="transcribing.html"><a href="transcribing.html#working-with-microphone-inputs"><i class="fa fa-check"></i><b>21.2</b> Working with Microphone Inputs</a></li>
+<li class="chapter" data-level="21.3" data-path="transcribing.html"><a href="transcribing.html#references-2"><i class="fa fa-check"></i><b>21.3</b> References</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="the-shell.html"><a href="the-shell.html"><i class="fa fa-check"></i><b>A</b> The Shell</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="the-shell.html"><a href="the-shell.html#why-do-you-need-to-know-shell-commands"><i class="fa fa-check"></i><b>A.1</b> Why do you need to know <em>shell commands</em>?</a></li>
+<li class="chapter" data-level="A.2" data-path="the-shell.html"><a href="the-shell.html#shebang-line"><i class="fa fa-check"></i><b>A.2</b> Shebang Line</a></li>
+<li class="chapter" data-level="A.3" data-path="the-shell.html"><a href="the-shell.html#basic-shell-commands"><i class="fa fa-check"></i><b>A.3</b> Basic Shell Commands</a></li>
+<li class="chapter" data-level="A.4" data-path="the-shell.html"><a href="the-shell.html#text-analytic-related-commands"><i class="fa fa-check"></i><b>A.4</b> Text-Analytic Related Commands</a></li>
+<li class="chapter" data-level="A.5" data-path="the-shell.html"><a href="the-shell.html#references-3"><i class="fa fa-check"></i><b>A.5</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="reproducible-report.html"><a href="reproducible-report.html"><i class="fa fa-check"></i><b>B</b> Reproducible Report</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="reproducible-report.html"><a href="reproducible-report.html#r-markdown"><i class="fa fa-check"></i><b>B.1</b> R Markdown</a></li>
+<li class="chapter" data-level="B.2" data-path="reproducible-report.html"><a href="reproducible-report.html#open-science"><i class="fa fa-check"></i><b>B.2</b> Open Science</a></li>
+<li class="chapter" data-level="B.3" data-path="reproducible-report.html"><a href="reproducible-report.html#installing-r-markdown"><i class="fa fa-check"></i><b>B.3</b> Installing R Markdown</a></li>
+<li class="chapter" data-level="B.4" data-path="reproducible-report.html"><a href="reproducible-report.html#r-markdown-components"><i class="fa fa-check"></i><b>B.4</b> R Markdown Components</a></li>
+<li class="chapter" data-level="B.5" data-path="reproducible-report.html"><a href="reproducible-report.html#tips"><i class="fa fa-check"></i><b>B.5</b> Tips</a></li>
+<li class="chapter" data-level="B.6" data-path="reproducible-report.html"><a href="reproducible-report.html#references-4"><i class="fa fa-check"></i><b>B.6</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html"><i class="fa fa-check"></i><b>C</b> ChatGPT with R</a>
+<ul>
+<li class="chapter" data-level="C.1" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#installation-1"><i class="fa fa-check"></i><b>C.1</b> Installation</a></li>
+<li class="chapter" data-level="C.2" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#chatgpt-api"><i class="fa fa-check"></i><b>C.2</b> ChatGPT API</a></li>
+<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#r-environment-variables-setup"><i class="fa fa-check"></i>R Environment Variables Setup</a></li>
+<li class="chapter" data-level="C.3" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#using-chatgpt"><i class="fa fa-check"></i><b>C.3</b> Using <code>chatgpt</code></a>
+<ul>
+<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#parameters"><i class="fa fa-check"></i>Parameters</a></li>
+<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#ask-questions"><i class="fa fa-check"></i>Ask Questions</a></li>
+<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#comment-codes"><i class="fa fa-check"></i>Comment Codes</a></li>
+<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#perform-basic-nlp"><i class="fa fa-check"></i>Perform Basic NLP</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references-5.html"><a href="references-5.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://web.ntnu.edu.tw/~alvinchen" target ="blank">Alvin Chen </a></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">ENC2055: Introduction to Programming Languages for Linguistic Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="chatgpt-with-r" class="section level1 hasAnchor" number="24">
+<h1><span class="header-section-number">C</span> ChatGPT with R<a href="chatgpt-with-r.html#chatgpt-with-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>ChatGPT has now received tremendous public attention for its powerful performance in many complicated human tasks. This tutorial is to show you how to use the ChatGPT service with R, which in turn can provide you additional assistance in future R scripts.</p>
+<div id="installation-1" class="section level2 hasAnchor" number="24.1">
+<h2><span class="header-section-number">C.1</span> Installation<a href="chatgpt-with-r.html#installation-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You can install the package from CRAN using the following command:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1-1"><a href="chatgpt-with-r.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">&quot;devtools&quot;</span>, <span class="st">&quot;openai&quot;</span>))</span>
+<span id="cb1-2"><a href="chatgpt-with-r.html#cb1-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;jcrodriguez1989/chatgpt&quot;</span>)</span></code></pre></div>
+<p>Please check the <a href="https://github.com/jcrodriguez1989/chatgpt"><code>chatgpt</code> package documentation</a> for more information about installation, setup, and usage.</p>
+</div>
+<div id="chatgpt-api" class="section level2 hasAnchor" number="24.2">
+<h2><span class="header-section-number">C.2</span> ChatGPT API<a href="chatgpt-with-r.html#chatgpt-api" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>API stands for Application Programming Interface. You can see it as a set of rules that lets different computer programs talk to each other. It is often needed when developers like to use service from an application. For example, when you use a self-created script to access data from YouTube, the script is talking to an API to get the media data. APIs allow different apps and programs to work together to create more complex systems. It’s like a language that different programs use to communicate with each other and share information.</p>
+<p>To use the ChatGPT service, you need to get an API key from OpenAI. You can get an API key by signing up for the OpenAI API at <a href="https://platform.openai.com/account/api-keys">OPENAI API</a>.</p>
+<p>After you obtain an OpenAI API, please copy-paste it in a safe document in private space. Please note that the API will no longer be available for copy-and-paste as soon as you closes the pop-up window.</p>
+<p>Once you have an API key, you can store it in your R environment as an environment variable using the <code>Sys.setenv()</code> function:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb2-1"><a href="chatgpt-with-r.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">OPENAI_API_KEY =</span> <span class="st">&quot;your_api_key_here&quot;</span>)</span></code></pre></div>
+<p>Make sure to replace your_api_key_here with your actual API key.</p>
+</div>
+<div id="r-environment-variables-setup" class="section level2 unnumbered hasAnchor info">
+<h2>R Environment Variables Setup<a href="chatgpt-with-r.html#r-environment-variables-setup" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>You can save the environment variable OPENAI_API_KEY in <code>~/.Renvion</code> and every time when you starts your R session, the variable will be accessible.</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb3-1"><a href="chatgpt-with-r.html#cb3-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">edit_r_environ</span>()</span></code></pre></div>
+<ul>
+<li>In the <code>~/.Renvion</code>, please add the following line to the file:</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb4-1"><a href="chatgpt-with-r.html#cb4-1" aria-hidden="true" tabindex="-1"></a>OPENAI_API_KEY<span class="ot">=</span><span class="st">&#39;your_api_key_here&#39;</span></span></code></pre></div>
+<ul>
+<li>Re-start the RStudio, and run the following code to see if the API key is accessible now.</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb5-1"><a href="chatgpt-with-r.html#cb5-1" aria-hidden="true" tabindex="-1"></a>OPENAI_API_KEY<span class="ot">=</span><span class="fu">Sys.getenv</span>(<span class="st">&quot;OPENAI_API_KEY&quot;</span>)</span></code></pre></div>
+<p>Or alternatively, you can save the environment variables at the OS level. Mac and Windows systems have different methods. Please see <a href="https://chlee.co/how-to-setup-environment-variables-for-windows-mac-and-linux/">this article</a> for more information.</p>
+</div>
+<div id="using-chatgpt" class="section level2 hasAnchor" number="24.3">
+<h2><span class="header-section-number">C.3</span> Using <code>chatgpt</code><a href="chatgpt-with-r.html#using-chatgpt" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Once you have installed the chatgpt package and set up your API key, you can load the package and sepcify your OPENAI API KEY (if it is not in your system/R environment variables):</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb6-1"><a href="chatgpt-with-r.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(chatgpt)</span>
+<span id="cb6-2"><a href="chatgpt-with-r.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Sys.setenv(OPENAI_API_KEY = &quot;your_api_key_here&quot;) ## uncomment to specify API</span></span></code></pre></div>
+<div id="parameters" class="section level3 unnumbered hasAnchor">
+<h3>Parameters<a href="chatgpt-with-r.html#parameters" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>ChatGPT model parameters can be tweaked by using more environment variables.</p>
+<p>The following environment variables variables can be set to tweak the behavior, as documented in <a href="https://beta.openai.com/docs/api-reference/completions/create" class="uri">https://beta.openai.com/docs/api-reference/completions/create</a>.</p>
+<ul>
+<li><code>OPENAI_VERBOSE</code>: If you want chatgpt not to show question messages in console, please set the environment variable <code>OPENAI_VERBOSE=FALSE</code>.</li>
+<li><code>OPENAI_MODEL</code>; defaults to “gpt-3.5-turbo”</li>
+<li><code>OPENAI_MAX_TOKENS</code>; defaults to 256</li>
+<li><code>OPENAI_TEMPERATURE</code>; defaults to 1</li>
+<li><code>OPENAI_TOP_P</code>; defaults to 1</li>
+<li><code>OPENAI_FREQUENCY_PENALTY</code>; defaults to 0</li>
+<li><code>OPENAI_PRESENCE_PENALTY</code>; defaults to 0</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb7-1"><a href="chatgpt-with-r.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">OPENAI_MAX_TOKENS =</span> <span class="dv">2048</span>)</span>
+<span id="cb7-2"><a href="chatgpt-with-r.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">OPENAI_VERBOSE=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+</div>
+<div id="ask-questions" class="section level3 unnumbered hasAnchor">
+<h3>Ask Questions<a href="chatgpt-with-r.html#ask-questions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb8-1"><a href="chatgpt-with-r.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(</span>
+<span id="cb8-2"><a href="chatgpt-with-r.html#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ask_chatgpt</span>(</span>
+<span id="cb8-3"><a href="chatgpt-with-r.html#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;You are a R instructor. Can you give me a few specific suggestions on how to start learning the R programming language?&quot;</span></span>
+<span id="cb8-4"><a href="chatgpt-with-r.html#cb8-4" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb8-5"><a href="chatgpt-with-r.html#cb8-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<pre class="Rout"><code>1. Read a book or online tutorial on the basics of R programming such
+as R for Data Science by Hadley Wickham.
+
+2. Download and install the latest version of R on your computer.
+
+3. Start practicing basic coding tasks such as writing loops,
+functions, and data manipulation with tutorials from websites such as
+DataCamp.
+
+4. Participate in online forums such as StackOverflow or Reddit to
+get help with more complex programming tasks.
+
+5. Consider attending a local R meetup or workshop to get more
+hands-on experience with the language.
+
+6. Follow blogs and tutorials from experienced R users to stay
+up-to-date with the latest developments.</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb10-1"><a href="chatgpt-with-r.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(<span class="fu">ask_chatgpt</span>(<span class="st">&quot;Could you explain what a data scientist needs for their career?&quot;</span>))</span></code></pre></div>
+<pre class="Rout"><code>A data scientist needs a solid understanding of mathematics and
+statistics, computer programming and coding languages, data mining
+and machine learning techniques, data visualization, and storytelling
+with data. They should also have a good understanding of the business
+domain they are working in, as well as strong problem-solving and
+communication skills. A strong background in mathematics, statistics,
+and computer science is essential for a successful data scientist.</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb12-1"><a href="chatgpt-with-r.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(<span class="fu">ask_chatgpt</span>(<span class="st">&quot;Can you tell us which programming language is better, python or R?&quot;</span>))</span></code></pre></div>
+<pre class="Rout"><code>It is impossible to say which programming language is better, as it
+really depends on the specific type of project and the needs of the
+user. Python is a general-purpose programming language that is often
+used for web development, data science, and scripting. R is a
+statistical programming language that is often used for data analysis
+and plotting. Both languages have their own strengths and weaknesses,
+so it is best to evaluate the project requirements and user needs to
+determine which language is most suitable.</code></pre>
+</div>
+<div id="comment-codes" class="section level3 unnumbered hasAnchor">
+<h3>Comment Codes<a href="chatgpt-with-r.html#comment-codes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb14-1"><a href="chatgpt-with-r.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(<span class="fu">comment_code</span>(<span class="st">&quot;for (i in 1:10) {</span><span class="sc">\n</span><span class="st">  print(i ** 2)</span><span class="sc">\n</span><span class="st">}&quot;</span>))</span></code></pre></div>
+<pre class="Rout"><code># This loop will print the square of the numbers from 1 to 10
+# Loop starts with &quot;for&quot; and ends with &quot;}&quot;
+for (i in 1:10) { # Loop will iterate over the numbers from 1 to 10
+  print(i ** 2) # Print the square of i
+} # End of loop</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb16-1"><a href="chatgpt-with-r.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(<span class="fu">explain_code</span>(<span class="st">&quot;for (i in 1:10) {</span><span class="sc">\n</span><span class="st">  print(i ** 2)</span><span class="sc">\n</span><span class="st">}&quot;</span>))</span></code></pre></div>
+<pre class="Rout"><code>This code is looping through the numbers 1-10 and printing the result
+of each number squared. It is using the for loop, which starts by
+declaring the iterator (in this case &quot;i&quot;) and then specifying the
+range (in this case 1-10). The loop then runs the code within the
+brackets for each value of the iterator, in this case the code is
+&quot;print(i ** 2)&quot;, which prints the result of &quot;i&quot; squared.</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb18-1"><a href="chatgpt-with-r.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(</span>
+<span id="cb18-2"><a href="chatgpt-with-r.html#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">explain_code</span>(</span>
+<span id="cb18-3"><a href="chatgpt-with-r.html#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;corp %&gt;%</span></span>
+<span id="cb18-4"><a href="chatgpt-with-r.html#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="st">    mutate(NumOfChars = nchar(texts),</span></span>
+<span id="cb18-5"><a href="chatgpt-with-r.html#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="st">           VowelPer = str_count(texts,&#39;[aeiou]&#39;)/NumOfChars,</span></span>
+<span id="cb18-6"><a href="chatgpt-with-r.html#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="st">           ConPer = str_count(texts,&#39;[^aeiou]&#39;)/NumOfChars) %&gt;%</span></span>
+<span id="cb18-7"><a href="chatgpt-with-r.html#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="st">    pivot_longer(c(&#39;VowelPer&#39;, &#39;ConPer&#39;), names_to = &#39;Segment&#39;,values_to = &#39;Percent&#39;) %&gt;%</span></span>
+<span id="cb18-8"><a href="chatgpt-with-r.html#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="st">    ggplot(aes(Segment, Percent, fill=Segment)) + geom_boxplot(notch=TRUE)&quot;</span></span>
+<span id="cb18-9"><a href="chatgpt-with-r.html#cb18-9" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb18-10"><a href="chatgpt-with-r.html#cb18-10" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<pre class="Rout"><code>This code is using the piping operator to manipulate the data frame
+&quot;corp&quot;. It is first mutating the data frame to add two new columns,
+&quot;NumOfChars&quot; and &quot;VowelPer&quot;. &quot;NumOfChars&quot; will store the number of
+characters in the &quot;texts&quot; column, and &quot;VowelPer&quot; will store the
+percentage of vowels in the &quot;texts&quot; column. The code is then using
+the &quot;pivot_longer&quot; function to convert the data from wide to long
+format, renaming the columns &quot;VowelPer&quot; and &quot;ConPer&quot; to &quot;Segment&quot; and
+&quot;Percent&quot;. Finally, it is creating a box plot with the &quot;ggplot&quot;
+function and specifying that the x-axis should be the &quot;Segment&quot;
+column and the y-axis should be the &quot;Percent&quot; column, and that the
+fill color should be determined by the &quot;Segment&quot; column.</code></pre>
+</div>
+<div id="perform-basic-nlp" class="section level3 unnumbered hasAnchor">
+<h3>Perform Basic NLP<a href="chatgpt-with-r.html#perform-basic-nlp" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb20-1"><a href="chatgpt-with-r.html#cb20-1" aria-hidden="true" tabindex="-1"></a>text_zh <span class="ot">&lt;-</span> <span class="st">&quot;記者蘇志畬／台中即時報導</span></span>
+<span id="cb20-2"><a href="chatgpt-with-r.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="st">2023年3月8日 週三 下午12:52世界棒球經典賽今晚7點上演中華隊對上巴拿馬隊，開幕戰票房2萬人完售，滿場應援是助力也是壓力，前職棒球星曹竣崵指出，中華隊投打守正常發揮的話，有機會贏球，「關鍵在心理，要扛住想贏、必須贏的壓力」。</span></span>
+<span id="cb20-3"><a href="chatgpt-with-r.html#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="chatgpt-with-r.html#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="st">「不只現場2萬人，全台2300萬人透過電視收看的人可能更多。」球評、現任台北城市科技大學棒球隊總教練的曹竣崵表示：「在有壓力的情況下打球，要能夠頂得住。」&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb21-1"><a href="chatgpt-with-r.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(<span class="fu">ask_chatgpt</span>(</span>
+<span id="cb21-2"><a href="chatgpt-with-r.html#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste0</span>(</span>
+<span id="cb21-3"><a href="chatgpt-with-r.html#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Can you perform Chinese word segmentation on the following Chinese text (using whitespaces as the word delimiters):</span><span class="sc">\&quot;</span><span class="st">&quot;</span>,</span>
+<span id="cb21-4"><a href="chatgpt-with-r.html#cb21-4" aria-hidden="true" tabindex="-1"></a>    text_zh,</span>
+<span id="cb21-5"><a href="chatgpt-with-r.html#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">&quot;</span></span>
+<span id="cb21-6"><a href="chatgpt-with-r.html#cb21-6" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb21-7"><a href="chatgpt-with-r.html#cb21-7" aria-hidden="true" tabindex="-1"></a>))</span></code></pre></div>
+<pre class="Rout"><code>記者 蘇志畬 ／ 台中 即時 報導 2023 年 3 月 8 日 週三 下午 12:52 世界
+棒球 經典賽 今晚 7 點 上演 中華隊 對上 巴拿馬 隊 ， 開幕 戰 票房 2 萬
+人 完售 ， 滿場 應援 是 助力 也 是 壓力 ， 前 職 棒球 星 曹竣崵 指出
+， 中華隊 投打守 正常 發揮 的 話 ， 有 機會 贏 球 ， 「 關鍵 在 心理
+， 要 扛 住 想 贏 、 必須 贏 的 壓力 」 。
+
+「 不只 現場 2 萬 人 ， 全台 2300 萬 人 透過 電視 收看 的 人 可能
+更多 。 」 球評 、 現任 台北 城市 科技 大學 棒球 隊 總 教練 的 曹竣崵
+表示 ： 「 在 有 壓力 的 情況 下 打 球 ， 要 能夠 頂 得 住 。 」</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb23-1"><a href="chatgpt-with-r.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(<span class="fu">ask_chatgpt</span>(</span>
+<span id="cb23-2"><a href="chatgpt-with-r.html#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste0</span>(</span>
+<span id="cb23-3"><a href="chatgpt-with-r.html#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Can you translate the following Chinese text into English:</span><span class="sc">\&quot;</span><span class="st">&quot;</span>,</span>
+<span id="cb23-4"><a href="chatgpt-with-r.html#cb23-4" aria-hidden="true" tabindex="-1"></a>    text_zh,</span>
+<span id="cb23-5"><a href="chatgpt-with-r.html#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">&quot;</span></span>
+<span id="cb23-6"><a href="chatgpt-with-r.html#cb23-6" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb23-7"><a href="chatgpt-with-r.html#cb23-7" aria-hidden="true" tabindex="-1"></a>))</span></code></pre></div>
+<pre class="Rout"><code>Reporter Su Zhiyu/Taiwan Central Real-time Report
+On March 8th, Wednesday, at 12:52 PM, the World Baseball Classic will
+begin at 7 PM with the Chinese team facing off against the Panama
+team. With a sold-out stadium of 20,000, the cheering crowd is both a
+boost and a pressure. Former professional baseball star Cao Junyan
+pointed out that if the Chinese team performs normally in terms of
+pitching, batting and defense, they have a chance to win. &quot;The key is
+psychological, bearing the pressure of wanting to win and having to
+win.&quot;
+
+&quot;Not only are there 20,000 people in the stadium, but there may be
+more than 23 million people watching through television in Taiwan.&quot;
+Baseball commentator and current head coach of the Taipei City
+University Baseball Team, Cao Junyan said: &quot;Playing under pressure
+requires the ability to bear it.&quot;</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb25-1"><a href="chatgpt-with-r.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(<span class="fu">ask_chatgpt</span>(</span>
+<span id="cb25-2"><a href="chatgpt-with-r.html#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste0</span>(</span>
+<span id="cb25-3"><a href="chatgpt-with-r.html#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Can you summarize the following Chinese text in one sentence:</span><span class="sc">\&quot;</span><span class="st">&quot;</span>,</span>
+<span id="cb25-4"><a href="chatgpt-with-r.html#cb25-4" aria-hidden="true" tabindex="-1"></a>    text_zh,</span>
+<span id="cb25-5"><a href="chatgpt-with-r.html#cb25-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">&quot;</span></span>
+<span id="cb25-6"><a href="chatgpt-with-r.html#cb25-6" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb25-7"><a href="chatgpt-with-r.html#cb25-7" aria-hidden="true" tabindex="-1"></a>))</span></code></pre></div>
+<pre class="Rout"><code>中華隊在開幕戰2萬人滿場應援的壓力下，曹竣崵表示必須把心理扛住，才有機會贏球，尤其是有2300萬台灣人透過電視收看的情況下。</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb27-1"><a href="chatgpt-with-r.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(<span class="fu">ask_chatgpt</span>(</span>
+<span id="cb27-2"><a href="chatgpt-with-r.html#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste0</span>(</span>
+<span id="cb27-3"><a href="chatgpt-with-r.html#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Can you identify all noun phrases from the following Chinese text:</span><span class="sc">\&quot;</span><span class="st">&quot;</span>,</span>
+<span id="cb27-4"><a href="chatgpt-with-r.html#cb27-4" aria-hidden="true" tabindex="-1"></a>    text_zh,</span>
+<span id="cb27-5"><a href="chatgpt-with-r.html#cb27-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">&quot;</span></span>
+<span id="cb27-6"><a href="chatgpt-with-r.html#cb27-6" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb27-7"><a href="chatgpt-with-r.html#cb27-7" aria-hidden="true" tabindex="-1"></a>))</span></code></pre></div>
+<pre class="Rout"><code>Noun Phrases: 
+1. 記者蘇志畬 
+2. 世界棒球經典賽 
+3. 中華隊 
+4. 巴拿馬隊 
+5. 開幕戰 
+6. 票房 
+7. 前職棒球星曹竣崵 
+8. 心理 
+9. 壓力 
+10. 現場 
+11. 全台 
+12. 球評 
+13. 現任台北城市科技大學棒球隊總教練的曹竣崵</code></pre>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="reproducible-report.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references-5.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
