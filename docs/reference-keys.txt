@@ -43,6 +43,7 @@ exr:unlabeled-div-30
 exr:unlabeled-div-31
 exr:unlabeled-div-32
 exr:unlabeled-div-33
+exr:unlabeled-div-34
 exr:unnamed-chunk-249
 exr:unnamed-chunk-271
 exr:unnamed-chunk-280
@@ -65,10 +66,10 @@ exr:unnamed-chunk-357
 exr:unnamed-chunk-359
 exr:unnamed-chunk-365
 exr:unnamed-chunk-368
-exr:unlabeled-div-34
 exr:unlabeled-div-35
 exr:unlabeled-div-36
 exr:unlabeled-div-37
+exr:unlabeled-div-38
 exr:exa
 exr:exall
 exr:unnamed-chunk-392
@@ -91,7 +92,7 @@ exr:unnamed-chunk-458
 exr:unnamed-chunk-467
 exr:unnamed-chunk-468
 exr:unnamed-chunk-485
-exr:unlabeled-div-38
+exr:unlabeled-div-39
 exr:unnamed-chunk-493
 exr:unnamed-chunk-495
 exr:unnamed-chunk-497
@@ -110,7 +111,6 @@ exr:unnamed-chunk-569
 exr:unnamed-chunk-571
 exr:unnamed-chunk-573
 exr:unnamed-chunk-575
-exr:unlabeled-div-39
 exr:unlabeled-div-40
 exr:unlabeled-div-41
 exr:unlabeled-div-42
@@ -118,6 +118,7 @@ exr:unlabeled-div-43
 exr:unlabeled-div-44
 exr:unlabeled-div-45
 exr:unlabeled-div-46
+exr:unlabeled-div-47
 intro-ds
 what-is-data-science
 working-pipeline-for-data-science
@@ -390,3 +391,10 @@ installing-r-markdown
 r-markdown-components
 tips
 references-4
+chatgpt-with-r
+installation-1
+chatgpt-api
+using-chatgpt
+r-assistance
+basic-natural-language-processing
+resources-for-chatgpt-prompts

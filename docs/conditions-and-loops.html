@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2023-03-13" />
+<meta name="date" content="2023-03-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -560,6 +560,32 @@ div.csl-indent {
 <li class="chapter" data-level="B.5" data-path="reproducible-report.html"><a href="reproducible-report.html#tips"><i class="fa fa-check"></i><b>B.5</b> Tips</a></li>
 <li class="chapter" data-level="B.6" data-path="reproducible-report.html"><a href="reproducible-report.html#references-4"><i class="fa fa-check"></i><b>B.6</b> References</a></li>
 </ul></li>
+<li class="chapter" data-level="C" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html"><i class="fa fa-check"></i><b>C</b> ChatGPT with R</a>
+<ul>
+<li class="chapter" data-level="C.1" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#installation-1"><i class="fa fa-check"></i><b>C.1</b> Installation</a></li>
+<li class="chapter" data-level="C.2" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#chatgpt-api"><i class="fa fa-check"></i><b>C.2</b> ChatGPT API</a></li>
+<li class="chapter" data-level="C.3" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#using-chatgpt"><i class="fa fa-check"></i><b>C.3</b> Using <code>chatgpt</code></a>
+<ul>
+<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#parameters"><i class="fa fa-check"></i>Parameters</a></li>
+<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#ask-questions"><i class="fa fa-check"></i>Ask Questions</a></li>
+</ul></li>
+<li class="chapter" data-level="C.4" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#r-assistance"><i class="fa fa-check"></i><b>C.4</b> R Assistance</a>
+<ul>
+<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#comment-code"><i class="fa fa-check"></i>Comment Code</a></li>
+<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#explain-code"><i class="fa fa-check"></i>Explain Code</a></li>
+<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#document-code"><i class="fa fa-check"></i>Document Code</a></li>
+<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#find-issues-in-code"><i class="fa fa-check"></i>Find Issues in Code</a></li>
+<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#optimize-code"><i class="fa fa-check"></i>Optimize Code</a></li>
+</ul></li>
+<li class="chapter" data-level="C.5" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#basic-natural-language-processing"><i class="fa fa-check"></i><b>C.5</b> Basic Natural Language Processing</a>
+<ul>
+<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#np-chunking"><i class="fa fa-check"></i>NP Chunking</a></li>
+<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#word-segmentation"><i class="fa fa-check"></i>Word Segmentation</a></li>
+<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#text-translation"><i class="fa fa-check"></i>Text Translation</a></li>
+<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#text-summarization"><i class="fa fa-check"></i>Text Summarization</a></li>
+</ul></li>
+<li class="chapter" data-level="C.6" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#resources-for-chatgpt-prompts"><i class="fa fa-check"></i><b>C.6</b> Resources for ChatGPT Prompts</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references-5.html"><a href="references-5.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://web.ntnu.edu.tw/~alvinchen" target ="blank">Alvin Chen </a></li>
@@ -971,13 +997,19 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <span id="cb266-2"><a href="conditions-and-loops.html#cb266-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Please run the entire code chunk all at once! ##</span></span>
 <span id="cb266-3"><a href="conditions-and-loops.html#cb266-3" aria-hidden="true" tabindex="-1"></a><span class="do">## --------------------------------------------  ##</span></span>
 <span id="cb266-4"><a href="conditions-and-loops.html#cb266-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb266-5"><a href="conditions-and-loops.html#cb266-5" aria-hidden="true" tabindex="-1"></a>ans <span class="ot">&lt;-</span> <span class="dv">90</span></span>
-<span id="cb266-6"><a href="conditions-and-loops.html#cb266-6" aria-hidden="true" tabindex="-1"></a>guess <span class="ot">&lt;-</span> <span class="dv">83</span></span>
-<span id="cb266-7"><a href="conditions-and-loops.html#cb266-7" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (guess <span class="sc">!=</span> ans) {</span>
-<span id="cb266-8"><a href="conditions-and-loops.html#cb266-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;Your `guess` is too small! </span><span class="sc">\n</span><span class="st">The system will take care for you!</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb266-9"><a href="conditions-and-loops.html#cb266-9" aria-hidden="true" tabindex="-1"></a>  guess <span class="ot">&lt;-</span> guess <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb266-10"><a href="conditions-and-loops.html#cb266-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;Now the system is adjusting your `guess` to &quot;</span>, guess, <span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">&quot;</span>)</span>
-<span id="cb266-11"><a href="conditions-and-loops.html#cb266-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<span id="cb266-5"><a href="conditions-and-loops.html#cb266-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Create a program</span></span>
+<span id="cb266-6"><a href="conditions-and-loops.html#cb266-6" aria-hidden="true" tabindex="-1"></a>app_v1 <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">ans =</span> <span class="dv">90</span>, <span class="at">guess =</span> <span class="dv">83</span>) {</span>
+<span id="cb266-7"><a href="conditions-and-loops.html#cb266-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> (guess <span class="sc">!=</span> ans) {</span>
+<span id="cb266-8"><a href="conditions-and-loops.html#cb266-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&quot;Your `guess` is too small! </span><span class="sc">\n</span><span class="st">The system will take care for you!</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb266-9"><a href="conditions-and-loops.html#cb266-9" aria-hidden="true" tabindex="-1"></a>    guess <span class="ot">&lt;-</span> guess <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb266-10"><a href="conditions-and-loops.html#cb266-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&quot;Now the system is adjusting your `guess` to &quot;</span>, guess, <span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">&quot;</span>)</span>
+<span id="cb266-11"><a href="conditions-and-loops.html#cb266-11" aria-hidden="true" tabindex="-1"></a>  } <span class="do">## endwhile</span></span>
+<span id="cb266-12"><a href="conditions-and-loops.html#cb266-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb266-13"><a href="conditions-and-loops.html#cb266-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&#39;Great! The passcode is finally cracked.</span><span class="sc">\n</span><span class="st">&#39;</span>)</span>
+<span id="cb266-14"><a href="conditions-and-loops.html#cb266-14" aria-hidden="true" tabindex="-1"></a>} <span class="do">## endfunc</span></span>
+<span id="cb266-15"><a href="conditions-and-loops.html#cb266-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb266-16"><a href="conditions-and-loops.html#cb266-16" aria-hidden="true" tabindex="-1"></a><span class="do">## Run the program</span></span>
+<span id="cb266-17"><a href="conditions-and-loops.html#cb266-17" aria-hidden="true" tabindex="-1"></a><span class="fu">app_v1</span>(<span class="at">ans =</span> <span class="dv">90</span>, <span class="at">guess =</span> <span class="dv">83</span>)</span></code></pre></div>
 <pre class="Rout"><code>Your `guess` is too small! 
 The system will take care for you!
 Now the system is adjusting your `guess` to  84 
@@ -1004,33 +1036,16 @@ Now the system is adjusting your `guess` to  89
 
 Your `guess` is too small! 
 The system will take care for you!
-Now the system is adjusting your `guess` to  90 </code></pre>
-<div class="sourceCode" id="cb268"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb268-1"><a href="conditions-and-loops.html#cb268-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&#39;Great! The passcode is finally cracked.</span><span class="sc">\n</span><span class="st">&#39;</span>)</span></code></pre></div>
-<pre class="Rout"><code>Great! The passcode is finally cracked.</code></pre>
+Now the system is adjusting your `guess` to  90 
+
+Great! The passcode is finally cracked.</code></pre>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-17" class="exercise"><strong>Exercise 5.3  </strong></span>In the above example, if the <code>guess</code> is smaller than <code>ans</code>, our script works fine. However, if the <code>guess</code> is larger than <code>ans</code>, then our script will crash.</p>
-<p>How to fix it?</p>
+<p><span id="exr:unlabeled-div-17" class="exercise"><strong>Exercise 5.3  </strong></span>The current implementation of <code>app_v1()</code> works fine when the <code>guess</code> value is smaller than the actual <code>ans</code> value. However, if the <code>guess</code> value is larger than the actual <code>ans</code> value, the script will enter an infinite loop and crash.</p>
+<p>To solve this issue, we need to create an updated version of the program called <code>app_v2()</code>, which should automatically adjust the guessed number to approach the actual answer. This adjustment can be done by incrementally adding or subtracting one from the guessed number until it matches the actual answer.</p>
+<p>The updated <code>app_v2()</code> program should take two parameters as input: <code>ans</code> and <code>guess.</code> It should then compare the <code>guess</code> value to the actual <code>ans</code> value. If the guess value is equal to ans, the program should print a message stating that the guess is correct. Examples are provided below.</p>
 </div>
-<p>In other words, a revised script should produce the following results when:</p>
-<div class="sourceCode" id="cb270"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb270-1"><a href="conditions-and-loops.html#cb270-1" aria-hidden="true" tabindex="-1"></a>guess <span class="ot">&lt;-</span> <span class="dv">83</span></span>
-<span id="cb270-2"><a href="conditions-and-loops.html#cb270-2" aria-hidden="true" tabindex="-1"></a>ans <span class="ot">&lt;-</span> <span class="dv">90</span></span></code></pre></div>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb268-1"><a href="conditions-and-loops.html#cb268-1" aria-hidden="true" tabindex="-1"></a><span class="fu">app_v2</span>(<span class="at">ans =</span> <span class="dv">90</span>, <span class="at">guess =</span> <span class="dv">87</span>)</span></code></pre></div>
 <pre class="Rout"><code>Your `guess` is too small!
-The system will take care for you!
-Now the system is adjusting your `guess` to  84 
-
-Your `guess` is too small!
-The system will take care for you!
-Now the system is adjusting your `guess` to  85 
-
-Your `guess` is too small!
-The system will take care for you!
-Now the system is adjusting your `guess` to  86 
-
-Your `guess` is too small!
-The system will take care for you!
-Now the system is adjusting your `guess` to  87 
-
-Your `guess` is too small!
 The system will take care for you!
 Now the system is adjusting your `guess` to  88 
 
@@ -1041,36 +1056,8 @@ Now the system is adjusting your `guess` to  89
 Your `guess` is too small!
 The system will take care for you!
 Now the system is adjusting your `guess` to  90 </code></pre>
-<p>And your script should produce the following results when:</p>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb270-1"><a href="conditions-and-loops.html#cb270-1" aria-hidden="true" tabindex="-1"></a><span class="fu">app_v2</span>(<span class="at">ans =</span> <span class="dv">90</span>, <span class="at">guess =</span> <span class="dv">93</span>)</span></code></pre></div>
 <pre class="Rout"><code>Your `guess` is too large!
-The system will take care for you!
-Now the system is adjusting your `guess` to  99 
-
-Your `guess` is too large!
-The system will take care for you!
-Now the system is adjusting your `guess` to  98 
-
-Your `guess` is too large!
-The system will take care for you!
-Now the system is adjusting your `guess` to  97 
-
-Your `guess` is too large!
-The system will take care for you!
-Now the system is adjusting your `guess` to  96 
-
-Your `guess` is too large!
-The system will take care for you!
-Now the system is adjusting your `guess` to  95 
-
-Your `guess` is too large!
-The system will take care for you!
-Now the system is adjusting your `guess` to  94 
-
-Your `guess` is too large!
-The system will take care for you!
-Now the system is adjusting your `guess` to  93 
-
-Your `guess` is too large!
 The system will take care for you!
 Now the system is adjusting your `guess` to  92 
 
@@ -1081,46 +1068,48 @@ Now the system is adjusting your `guess` to  91
 Your `guess` is too large!
 The system will take care for you!
 Now the system is adjusting your `guess` to  90 </code></pre>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb272-1"><a href="conditions-and-loops.html#cb272-1" aria-hidden="true" tabindex="-1"></a><span class="fu">app_v2</span>(<span class="at">ans =</span> <span class="dv">90</span>, <span class="at">guess =</span> <span class="dv">90</span>)</span></code></pre></div>
+<pre class="Rout"><code>This is spooky. Your guess is correct!!</code></pre>
 </div>
 <div id="toy-example" class="section level2 hasAnchor" number="5.5">
 <h2><span class="header-section-number">5.5</span> Toy Example<a href="conditions-and-loops.html#toy-example" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Now we are playing the Guess Game. The game is as follows:</p>
 <p>The program will pick a random number from 1 to 100. A user has to guess which number the computer has picked. Every time the user makes a wrong guess, the computer will tell the user whether the correct answer is higher or lower.</p>
 <p>We first pack the game as an R <code>function</code> object:</p>
-<div class="sourceCode" id="cb273"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb273-1"><a href="conditions-and-loops.html#cb273-1" aria-hidden="true" tabindex="-1"></a><span class="do">## --------------------------------------------  ##</span></span>
-<span id="cb273-2"><a href="conditions-and-loops.html#cb273-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Please run the entire code chunk all at once! ##</span></span>
-<span id="cb273-3"><a href="conditions-and-loops.html#cb273-3" aria-hidden="true" tabindex="-1"></a><span class="do">## --------------------------------------------  ##</span></span>
-<span id="cb273-4"><a href="conditions-and-loops.html#cb273-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb273-5"><a href="conditions-and-loops.html#cb273-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Create a function object</span></span>
-<span id="cb273-6"><a href="conditions-and-loops.html#cb273-6" aria-hidden="true" tabindex="-1"></a>guessMyNumber <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb273-7"><a href="conditions-and-loops.html#cb273-7" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Randomly select an integer from 1 to 100</span></span>
-<span id="cb273-8"><a href="conditions-and-loops.html#cb273-8" aria-hidden="true" tabindex="-1"></a>  ans <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="at">size =</span> <span class="dv">1</span>)</span>
-<span id="cb273-9"><a href="conditions-and-loops.html#cb273-9" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb273-10"><a href="conditions-and-loops.html#cb273-10" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Instructions for user</span></span>
-<span id="cb273-11"><a href="conditions-and-loops.html#cb273-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(<span class="st">&quot;Now I am thinking of a number between 1 and 100.&quot;</span>)</span>
-<span id="cb273-12"><a href="conditions-and-loops.html#cb273-12" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb273-13"><a href="conditions-and-loops.html#cb273-13" aria-hidden="true" tabindex="-1"></a>  <span class="do">## As long as user&#39;s guess is not the answer</span></span>
-<span id="cb273-14"><a href="conditions-and-loops.html#cb273-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> (guess <span class="sc">!=</span> ans) {</span>
-<span id="cb273-15"><a href="conditions-and-loops.html#cb273-15" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Read the prompt input from user</span></span>
-<span id="cb273-16"><a href="conditions-and-loops.html#cb273-16" aria-hidden="true" tabindex="-1"></a>    guess <span class="ot">&lt;-</span> <span class="fu">readline</span>(<span class="at">prompt =</span> <span class="st">&quot;Please guess my number(1~100):&quot;</span>)</span>
-<span id="cb273-17"><a href="conditions-and-loops.html#cb273-17" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb273-18"><a href="conditions-and-loops.html#cb273-18" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Convert input string into integer</span></span>
-<span id="cb273-19"><a href="conditions-and-loops.html#cb273-19" aria-hidden="true" tabindex="-1"></a>    guess <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(guess)</span>
-<span id="cb273-20"><a href="conditions-and-loops.html#cb273-20" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb273-21"><a href="conditions-and-loops.html#cb273-21" aria-hidden="true" tabindex="-1"></a>    <span class="do">## if user&#39;s guess is smaller than the answer</span></span>
-<span id="cb273-22"><a href="conditions-and-loops.html#cb273-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (guess <span class="sc">&lt;</span> ans) {</span>
-<span id="cb273-23"><a href="conditions-and-loops.html#cb273-23" aria-hidden="true" tabindex="-1"></a>      <span class="fu">writeLines</span>(<span class="st">&quot;The answer is HIGHER.&quot;</span>)</span>
-<span id="cb273-24"><a href="conditions-and-loops.html#cb273-24" aria-hidden="true" tabindex="-1"></a>    <span class="do">## if user&#39;s guess is larger than the answer</span></span>
-<span id="cb273-25"><a href="conditions-and-loops.html#cb273-25" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (guess <span class="sc">&gt;</span> ans) {</span>
-<span id="cb273-26"><a href="conditions-and-loops.html#cb273-26" aria-hidden="true" tabindex="-1"></a>      <span class="fu">writeLines</span>(<span class="st">&quot;The answer is LOWER&quot;</span>)</span>
-<span id="cb273-27"><a href="conditions-and-loops.html#cb273-27" aria-hidden="true" tabindex="-1"></a>    <span class="do">## correct guess</span></span>
-<span id="cb273-28"><a href="conditions-and-loops.html#cb273-28" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span>{</span>
-<span id="cb273-29"><a href="conditions-and-loops.html#cb273-29" aria-hidden="true" tabindex="-1"></a>      <span class="fu">writeLines</span>(<span class="fu">paste0</span>(<span class="st">&quot;Good Job! You had the correct answer! My number is &quot;</span>, guess))</span>
-<span id="cb273-30"><a href="conditions-and-loops.html#cb273-30" aria-hidden="true" tabindex="-1"></a>    } <span class="do">## endif</span></span>
-<span id="cb273-31"><a href="conditions-and-loops.html#cb273-31" aria-hidden="true" tabindex="-1"></a>  } <span class="do">## endwhile</span></span>
-<span id="cb273-32"><a href="conditions-and-loops.html#cb273-32" aria-hidden="true" tabindex="-1"></a>} <span class="do">## endfunc</span></span></code></pre></div>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb274-1"><a href="conditions-and-loops.html#cb274-1" aria-hidden="true" tabindex="-1"></a><span class="do">## --------------------------------------------  ##</span></span>
+<span id="cb274-2"><a href="conditions-and-loops.html#cb274-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Please run the entire code chunk all at once! ##</span></span>
+<span id="cb274-3"><a href="conditions-and-loops.html#cb274-3" aria-hidden="true" tabindex="-1"></a><span class="do">## --------------------------------------------  ##</span></span>
+<span id="cb274-4"><a href="conditions-and-loops.html#cb274-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb274-5"><a href="conditions-and-loops.html#cb274-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Create a function object</span></span>
+<span id="cb274-6"><a href="conditions-and-loops.html#cb274-6" aria-hidden="true" tabindex="-1"></a>guessMyNumber <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb274-7"><a href="conditions-and-loops.html#cb274-7" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Randomly select an integer from 1 to 100</span></span>
+<span id="cb274-8"><a href="conditions-and-loops.html#cb274-8" aria-hidden="true" tabindex="-1"></a>  ans <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="at">size =</span> <span class="dv">1</span>)</span>
+<span id="cb274-9"><a href="conditions-and-loops.html#cb274-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb274-10"><a href="conditions-and-loops.html#cb274-10" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Instructions for user</span></span>
+<span id="cb274-11"><a href="conditions-and-loops.html#cb274-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(<span class="st">&quot;Now I am thinking of a number between 1 and 100.&quot;</span>)</span>
+<span id="cb274-12"><a href="conditions-and-loops.html#cb274-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb274-13"><a href="conditions-and-loops.html#cb274-13" aria-hidden="true" tabindex="-1"></a>  <span class="do">## As long as user&#39;s guess is not the answer</span></span>
+<span id="cb274-14"><a href="conditions-and-loops.html#cb274-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> (guess <span class="sc">!=</span> ans) {</span>
+<span id="cb274-15"><a href="conditions-and-loops.html#cb274-15" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Read the prompt input from user</span></span>
+<span id="cb274-16"><a href="conditions-and-loops.html#cb274-16" aria-hidden="true" tabindex="-1"></a>    guess <span class="ot">&lt;-</span> <span class="fu">readline</span>(<span class="at">prompt =</span> <span class="st">&quot;Please guess my number(1~100):&quot;</span>)</span>
+<span id="cb274-17"><a href="conditions-and-loops.html#cb274-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb274-18"><a href="conditions-and-loops.html#cb274-18" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Convert input string into integer</span></span>
+<span id="cb274-19"><a href="conditions-and-loops.html#cb274-19" aria-hidden="true" tabindex="-1"></a>    guess <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(guess)</span>
+<span id="cb274-20"><a href="conditions-and-loops.html#cb274-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb274-21"><a href="conditions-and-loops.html#cb274-21" aria-hidden="true" tabindex="-1"></a>    <span class="do">## if user&#39;s guess is smaller than the answer</span></span>
+<span id="cb274-22"><a href="conditions-and-loops.html#cb274-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (guess <span class="sc">&lt;</span> ans) {</span>
+<span id="cb274-23"><a href="conditions-and-loops.html#cb274-23" aria-hidden="true" tabindex="-1"></a>      <span class="fu">writeLines</span>(<span class="st">&quot;The answer is HIGHER.&quot;</span>)</span>
+<span id="cb274-24"><a href="conditions-and-loops.html#cb274-24" aria-hidden="true" tabindex="-1"></a>    <span class="do">## if user&#39;s guess is larger than the answer</span></span>
+<span id="cb274-25"><a href="conditions-and-loops.html#cb274-25" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (guess <span class="sc">&gt;</span> ans) {</span>
+<span id="cb274-26"><a href="conditions-and-loops.html#cb274-26" aria-hidden="true" tabindex="-1"></a>      <span class="fu">writeLines</span>(<span class="st">&quot;The answer is LOWER&quot;</span>)</span>
+<span id="cb274-27"><a href="conditions-and-loops.html#cb274-27" aria-hidden="true" tabindex="-1"></a>    <span class="do">## correct guess</span></span>
+<span id="cb274-28"><a href="conditions-and-loops.html#cb274-28" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span>{</span>
+<span id="cb274-29"><a href="conditions-and-loops.html#cb274-29" aria-hidden="true" tabindex="-1"></a>      <span class="fu">writeLines</span>(<span class="fu">paste0</span>(<span class="st">&quot;Good Job! You had the correct answer! My number is &quot;</span>, guess))</span>
+<span id="cb274-30"><a href="conditions-and-loops.html#cb274-30" aria-hidden="true" tabindex="-1"></a>    } <span class="do">## endif</span></span>
+<span id="cb274-31"><a href="conditions-and-loops.html#cb274-31" aria-hidden="true" tabindex="-1"></a>  } <span class="do">## endwhile</span></span>
+<span id="cb274-32"><a href="conditions-and-loops.html#cb274-32" aria-hidden="true" tabindex="-1"></a>} <span class="do">## endfunc</span></span></code></pre></div>
 <p>After you load the above code chunk and create the <code>guessMyNumber()</code> function in your current R environment, you can play the game by running the function <code>guessMyNumber()</code>:</p>
-<div class="sourceCode" id="cb274"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb274-1"><a href="conditions-and-loops.html#cb274-1" aria-hidden="true" tabindex="-1"></a><span class="fu">guessMyNumber</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb275-1"><a href="conditions-and-loops.html#cb275-1" aria-hidden="true" tabindex="-1"></a><span class="fu">guessMyNumber</span>()</span></code></pre></div>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-18" class="exercise"><strong>Exercise 5.4  </strong></span>The above <code>guessMyNumber()</code> can be improved. Sometimes naughty (careless) users would not input numbers as requested. Instead, they may accidentally (or on purpose) enter characters that are NOT digits at all in their guesses or digits that are not within the range of 1 to 100.</p>
 <p>Please improve the <code>guessMyNumber()</code> function in R to handle non-digit and out-of-range inputs from users. If a user enters non-digit characters or digits outside the range of 1 to 100, the program should send a warning message. Additionally, once the user guesses the correct answer, the program should record the number of guesses the user made in total. The desired output of the revised function should be similar to the example output provided.</p>

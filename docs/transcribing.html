@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2023-03-13" />
+<meta name="date" content="2023-03-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -560,6 +560,32 @@ div.csl-indent {
 <li class="chapter" data-level="B.5" data-path="reproducible-report.html"><a href="reproducible-report.html#tips"><i class="fa fa-check"></i><b>B.5</b> Tips</a></li>
 <li class="chapter" data-level="B.6" data-path="reproducible-report.html"><a href="reproducible-report.html#references-4"><i class="fa fa-check"></i><b>B.6</b> References</a></li>
 </ul></li>
+<li class="chapter" data-level="C" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html"><i class="fa fa-check"></i><b>C</b> ChatGPT with R</a>
+<ul>
+<li class="chapter" data-level="C.1" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#installation-1"><i class="fa fa-check"></i><b>C.1</b> Installation</a></li>
+<li class="chapter" data-level="C.2" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#chatgpt-api"><i class="fa fa-check"></i><b>C.2</b> ChatGPT API</a></li>
+<li class="chapter" data-level="C.3" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#using-chatgpt"><i class="fa fa-check"></i><b>C.3</b> Using <code>chatgpt</code></a>
+<ul>
+<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#parameters"><i class="fa fa-check"></i>Parameters</a></li>
+<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#ask-questions"><i class="fa fa-check"></i>Ask Questions</a></li>
+</ul></li>
+<li class="chapter" data-level="C.4" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#r-assistance"><i class="fa fa-check"></i><b>C.4</b> R Assistance</a>
+<ul>
+<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#comment-code"><i class="fa fa-check"></i>Comment Code</a></li>
+<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#explain-code"><i class="fa fa-check"></i>Explain Code</a></li>
+<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#document-code"><i class="fa fa-check"></i>Document Code</a></li>
+<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#find-issues-in-code"><i class="fa fa-check"></i>Find Issues in Code</a></li>
+<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#optimize-code"><i class="fa fa-check"></i>Optimize Code</a></li>
+</ul></li>
+<li class="chapter" data-level="C.5" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#basic-natural-language-processing"><i class="fa fa-check"></i><b>C.5</b> Basic Natural Language Processing</a>
+<ul>
+<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#np-chunking"><i class="fa fa-check"></i>NP Chunking</a></li>
+<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#word-segmentation"><i class="fa fa-check"></i>Word Segmentation</a></li>
+<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#text-translation"><i class="fa fa-check"></i>Text Translation</a></li>
+<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#text-summarization"><i class="fa fa-check"></i>Text Summarization</a></li>
+</ul></li>
+<li class="chapter" data-level="C.6" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#resources-for-chatgpt-prompts"><i class="fa fa-check"></i><b>C.6</b> Resources for ChatGPT Prompts</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references-5.html"><a href="references-5.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://web.ntnu.edu.tw/~alvinchen" target ="blank">Alvin Chen </a></li>
@@ -604,22 +630,22 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <li><code>AudioData</code>: Process the audio file and record the data from the <code>AudioFile</code> into an <code>AudioData</code> object.</li>
 <li>Choose the API for Speech-to-Text conversion: Use the Recognizer’s method, <code>Recognizer.recognize_google()</code>, to recognize speech in the <code>AudioData</code>.</li>
 </ul>
-<div class="sourceCode" id="cb1179"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1179-1"><a href="transcribing.html#cb1179-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> speech_recognition <span class="im">as</span> sr</span>
-<span id="cb1179-2"><a href="transcribing.html#cb1179-2" aria-hidden="true" tabindex="-1"></a>sr.__version__</span></code></pre></div>
+<div class="sourceCode" id="cb1180"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1180-1"><a href="transcribing.html#cb1180-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> speech_recognition <span class="im">as</span> sr</span>
+<span id="cb1180-2"><a href="transcribing.html#cb1180-2" aria-hidden="true" tabindex="-1"></a>sr.__version__</span></code></pre></div>
 <pre class="Rout"><code>&#39;3.8.1&#39;</code></pre>
-<div class="sourceCode" id="cb1181"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1181-1"><a href="transcribing.html#cb1181-1" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> sr.Recognizer()</span>
-<span id="cb1181-2"><a href="transcribing.html#cb1181-2" aria-hidden="true" tabindex="-1"></a><span class="co">#r.recognize_google()</span></span>
-<span id="cb1181-3"><a href="transcribing.html#cb1181-3" aria-hidden="true" tabindex="-1"></a>havard <span class="op">=</span> sr.AudioFile(<span class="st">&#39;demo_data/audio/語音測試.wav&#39;</span>)</span>
-<span id="cb1181-4"><a href="transcribing.html#cb1181-4" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> havard <span class="im">as</span> source:</span>
-<span id="cb1181-5"><a href="transcribing.html#cb1181-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">## adjust for noise</span></span>
-<span id="cb1181-6"><a href="transcribing.html#cb1181-6" aria-hidden="true" tabindex="-1"></a>  <span class="co">#r.adjust_for_ambient_noise(source)</span></span>
-<span id="cb1181-7"><a href="transcribing.html#cb1181-7" aria-hidden="true" tabindex="-1"></a>  audio <span class="op">=</span> r.record(source)</span>
-<span id="cb1181-8"><a href="transcribing.html#cb1181-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1181-9"><a href="transcribing.html#cb1181-9" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(havard)</span></code></pre></div>
+<div class="sourceCode" id="cb1182"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1182-1"><a href="transcribing.html#cb1182-1" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> sr.Recognizer()</span>
+<span id="cb1182-2"><a href="transcribing.html#cb1182-2" aria-hidden="true" tabindex="-1"></a><span class="co">#r.recognize_google()</span></span>
+<span id="cb1182-3"><a href="transcribing.html#cb1182-3" aria-hidden="true" tabindex="-1"></a>havard <span class="op">=</span> sr.AudioFile(<span class="st">&#39;demo_data/audio/語音測試.wav&#39;</span>)</span>
+<span id="cb1182-4"><a href="transcribing.html#cb1182-4" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> havard <span class="im">as</span> source:</span>
+<span id="cb1182-5"><a href="transcribing.html#cb1182-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">## adjust for noise</span></span>
+<span id="cb1182-6"><a href="transcribing.html#cb1182-6" aria-hidden="true" tabindex="-1"></a>  <span class="co">#r.adjust_for_ambient_noise(source)</span></span>
+<span id="cb1182-7"><a href="transcribing.html#cb1182-7" aria-hidden="true" tabindex="-1"></a>  audio <span class="op">=</span> r.record(source)</span>
+<span id="cb1182-8"><a href="transcribing.html#cb1182-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1182-9"><a href="transcribing.html#cb1182-9" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(havard)</span></code></pre></div>
 <pre class="Rout"><code>&lt;class &#39;speech_recognition.AudioFile&#39;&gt;</code></pre>
-<div class="sourceCode" id="cb1183"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1183-1"><a href="transcribing.html#cb1183-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(audio)</span></code></pre></div>
+<div class="sourceCode" id="cb1184"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1184-1"><a href="transcribing.html#cb1184-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(audio)</span></code></pre></div>
 <pre class="Rout"><code>&lt;class &#39;speech_recognition.AudioData&#39;&gt;</code></pre>
-<div class="sourceCode" id="cb1185"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1185-1"><a href="transcribing.html#cb1185-1" aria-hidden="true" tabindex="-1"></a>r.recognize_google(audio, language<span class="op">=</span><span class="st">&#39;zh&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1186"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1186-1"><a href="transcribing.html#cb1186-1" aria-hidden="true" tabindex="-1"></a>r.recognize_google(audio, language<span class="op">=</span><span class="st">&#39;zh&#39;</span>)</span></code></pre></div>
 <pre class="Rout"><code>&#39;我現在在做基本的語音測試謝謝&#39;</code></pre>
 </div>
 <div id="working-with-microphone-inputs" class="section level2 hasAnchor" number="21.2">
@@ -630,21 +656,21 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <li><code>AudioData</code>: Record the speech data from the <code>Microphone</code> into an <code>AudioData</code> object.</li>
 <li>Choose the API for Speech-to-Text conversion: Use the Recognizer’s method, <code>Recognizer.recognize_google()</code>, to recognize speech in the <code>AudioData</code>.</li>
 </ul>
-<div class="sourceCode" id="cb1187"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1187-1"><a href="transcribing.html#cb1187-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> speech_recognition <span class="im">as</span> sr</span>
-<span id="cb1187-2"><a href="transcribing.html#cb1187-2" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> sr.Recognizer()</span>
-<span id="cb1187-3"><a href="transcribing.html#cb1187-3" aria-hidden="true" tabindex="-1"></a>mic <span class="op">=</span> sr.Microphone()</span>
-<span id="cb1187-4"><a href="transcribing.html#cb1187-4" aria-hidden="true" tabindex="-1"></a>sr.Microphone.list_microphone_names()</span>
-<span id="cb1187-5"><a href="transcribing.html#cb1187-5" aria-hidden="true" tabindex="-1"></a>mic <span class="op">=</span> sr.Microphone(device_index<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb1187-6"><a href="transcribing.html#cb1187-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1187-7"><a href="transcribing.html#cb1187-7" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> mic <span class="im">as</span> source:</span>
-<span id="cb1187-8"><a href="transcribing.html#cb1187-8" aria-hidden="true" tabindex="-1"></a>  audio <span class="op">=</span> r.listen(source)</span>
-<span id="cb1187-9"><a href="transcribing.html#cb1187-9" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1187-10"><a href="transcribing.html#cb1187-10" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(audio)</span>
-<span id="cb1187-11"><a href="transcribing.html#cb1187-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1187-12"><a href="transcribing.html#cb1187-12" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb1187-13"><a href="transcribing.html#cb1187-13" aria-hidden="true" tabindex="-1"></a>  r.recognize_google(audio, language<span class="op">=</span><span class="st">&#39;zh&#39;</span>)</span>
-<span id="cb1187-14"><a href="transcribing.html#cb1187-14" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> sr.UnknownValueError:</span>
-<span id="cb1187-15"><a href="transcribing.html#cb1187-15" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&#39;Unable to recognize the speech.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1188"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1188-1"><a href="transcribing.html#cb1188-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> speech_recognition <span class="im">as</span> sr</span>
+<span id="cb1188-2"><a href="transcribing.html#cb1188-2" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> sr.Recognizer()</span>
+<span id="cb1188-3"><a href="transcribing.html#cb1188-3" aria-hidden="true" tabindex="-1"></a>mic <span class="op">=</span> sr.Microphone()</span>
+<span id="cb1188-4"><a href="transcribing.html#cb1188-4" aria-hidden="true" tabindex="-1"></a>sr.Microphone.list_microphone_names()</span>
+<span id="cb1188-5"><a href="transcribing.html#cb1188-5" aria-hidden="true" tabindex="-1"></a>mic <span class="op">=</span> sr.Microphone(device_index<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb1188-6"><a href="transcribing.html#cb1188-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1188-7"><a href="transcribing.html#cb1188-7" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> mic <span class="im">as</span> source:</span>
+<span id="cb1188-8"><a href="transcribing.html#cb1188-8" aria-hidden="true" tabindex="-1"></a>  audio <span class="op">=</span> r.listen(source)</span>
+<span id="cb1188-9"><a href="transcribing.html#cb1188-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1188-10"><a href="transcribing.html#cb1188-10" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(audio)</span>
+<span id="cb1188-11"><a href="transcribing.html#cb1188-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1188-12"><a href="transcribing.html#cb1188-12" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb1188-13"><a href="transcribing.html#cb1188-13" aria-hidden="true" tabindex="-1"></a>  r.recognize_google(audio, language<span class="op">=</span><span class="st">&#39;zh&#39;</span>)</span>
+<span id="cb1188-14"><a href="transcribing.html#cb1188-14" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> sr.UnknownValueError:</span>
+<span id="cb1188-15"><a href="transcribing.html#cb1188-15" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&#39;Unable to recognize the speech.&#39;</span>)</span></code></pre></div>
 </div>
 <div id="references-2" class="section level2 hasAnchor" number="21.3">
 <h2><span class="header-section-number">21.3</span> References<a href="transcribing.html#references-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
