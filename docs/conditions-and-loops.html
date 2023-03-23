@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2023-03-18" />
+<meta name="date" content="2023-03-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -95,7 +95,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
+code span.bu { } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -108,7 +108,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.im { } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -657,7 +657,7 @@ document.writeln ("This page was last updated: " + LastUpdated);
 </tr>
 <tr class="odd">
 <td><code>X %in% Y</code></td>
-<td>X Is an member of Y</td>
+<td>X Is a member of Y</td>
 </tr>
 </tbody>
 </table>
@@ -734,7 +734,7 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <span id="cb33-4"><a href="conditions-and-loops.html#cb33-4" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">xor</span>(x <span class="sc">%in%</span> y, y <span class="sc">%in%</span> x)</span>
 <span id="cb33-5"><a href="conditions-and-loops.html#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(z)</span>
 <span id="cb33-6"><a href="conditions-and-loops.html#cb33-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-7"><a href="conditions-and-loops.html#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Inexclusive OR</span></span>
+<span id="cb33-7"><a href="conditions-and-loops.html#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Inclusive OR</span></span>
 <span id="cb33-8"><a href="conditions-and-loops.html#cb33-8" aria-hidden="true" tabindex="-1"></a>z2 <span class="ot">&lt;-</span> x <span class="sc">%in%</span> y <span class="sc">|</span> y <span class="sc">%in%</span> x</span>
 <span id="cb33-9"><a href="conditions-and-loops.html#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(z2)</span></code></pre></div>
 <hr />
@@ -1106,54 +1106,27 @@ Now the system is adjusting your `guess` to  90 </code></pre>
 <span id="cb62-33"><a href="conditions-and-loops.html#cb62-33" aria-hidden="true" tabindex="-1"></a>    } <span class="do">## endif</span></span>
 <span id="cb62-34"><a href="conditions-and-loops.html#cb62-34" aria-hidden="true" tabindex="-1"></a>  } <span class="do">## endwhile</span></span>
 <span id="cb62-35"><a href="conditions-and-loops.html#cb62-35" aria-hidden="true" tabindex="-1"></a>} <span class="do">## endfunc</span></span></code></pre></div>
+<div class="alert">
+<p>Please note that in the above function definition, we have included a line of code to initialize the <code>guess</code> to -1 before the while loop:</p>
+<pre><code>## Initialize the variable `guess`
+  guess &lt;- -1</code></pre>
+<p>This step is crucial because the variable <code>guess</code> is not defined before it is used in the while loop condition. The code tries to compare <code>guess</code> with <code>ans</code> but <code>guess</code> has not been defined yet. This results in an error message such as <code>Error in while (guess != ans) : missing value where TRUE/FALSE needed</code>.</p>
+<p>To fix the issue, the <code>guess</code> variable needs to be initialized to some value before the while loop. For example, a default value could be set for the initial <code>guess.</code></p>
+<hr />
+<p>And <code>guess</code> is initialized to -1 instead of any other number because the range of possible answers is 1 to 100, and -1 is not a valid guess within this range.</p>
+<p>Initializing <code>guess</code> to -1 guarantees that <strong>the loop will run at least once</strong>, as the default first guess (-1) will always be different from the value of <code>ans</code>, which is randomly selected from the range of valid guesses.</p>
+<p>Once the user enters a valid <code>guess</code>, <code>guess</code> is updated to that value, and the loop continues until the user’s <code>guess</code> matches the value of <code>ans.</code></p>
+</div>
 <p>After you load the above code chunk and create the <code>guessMyNumber()</code> function in your current R environment, you can play the game by running the function <code>guessMyNumber()</code>:</p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb63-1"><a href="conditions-and-loops.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">guessMyNumber</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb64-1"><a href="conditions-and-loops.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">guessMyNumber</span>()</span></code></pre></div>
 <div class="try">
 <p>The above code demonstrates how to create a guessing game in R using a function called <code>guessMyNumber()</code>. Initially, the function does not accept any parameters. However, one can create a function with a <strong>parameter</strong> (e.g., <code>guess</code>), which allows the user to specify initial values for the game. For example:</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb64-1"><a href="conditions-and-loops.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="do">## --------------------------------------------  ##</span></span>
-<span id="cb64-2"><a href="conditions-and-loops.html#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Please run the entire code chunk all at once! ##</span></span>
-<span id="cb64-3"><a href="conditions-and-loops.html#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="do">## --------------------------------------------  ##</span></span>
-<span id="cb64-4"><a href="conditions-and-loops.html#cb64-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb64-5"><a href="conditions-and-loops.html#cb64-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Create a function object</span></span>
-<span id="cb64-6"><a href="conditions-and-loops.html#cb64-6" aria-hidden="true" tabindex="-1"></a>guessMyNumber_1 <span class="ot">&lt;-</span> <span class="cf">function</span>(guess) {</span>
-<span id="cb64-7"><a href="conditions-and-loops.html#cb64-7" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Randomly select an integer from 1 to 100</span></span>
-<span id="cb64-8"><a href="conditions-and-loops.html#cb64-8" aria-hidden="true" tabindex="-1"></a>  ans <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="at">size =</span> <span class="dv">1</span>)</span>
-<span id="cb64-9"><a href="conditions-and-loops.html#cb64-9" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb64-10"><a href="conditions-and-loops.html#cb64-10" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Instructions for user</span></span>
-<span id="cb64-11"><a href="conditions-and-loops.html#cb64-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(<span class="st">&quot;Now I am thinking of a number between 1 and 100.&quot;</span>)</span>
-<span id="cb64-12"><a href="conditions-and-loops.html#cb64-12" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb64-13"><a href="conditions-and-loops.html#cb64-13" aria-hidden="true" tabindex="-1"></a>  <span class="do">## As long as user&#39;s guess is not the answer</span></span>
-<span id="cb64-14"><a href="conditions-and-loops.html#cb64-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> (guess <span class="sc">!=</span> ans) {</span>
-<span id="cb64-15"><a href="conditions-and-loops.html#cb64-15" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Read the prompt input from user</span></span>
-<span id="cb64-16"><a href="conditions-and-loops.html#cb64-16" aria-hidden="true" tabindex="-1"></a>    guess <span class="ot">&lt;-</span> <span class="fu">readline</span>(<span class="at">prompt =</span> <span class="st">&quot;Please guess my number(1~100):&quot;</span>)</span>
-<span id="cb64-17"><a href="conditions-and-loops.html#cb64-17" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb64-18"><a href="conditions-and-loops.html#cb64-18" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Convert input string into integer</span></span>
-<span id="cb64-19"><a href="conditions-and-loops.html#cb64-19" aria-hidden="true" tabindex="-1"></a>    guess <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(guess)</span>
-<span id="cb64-20"><a href="conditions-and-loops.html#cb64-20" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb64-21"><a href="conditions-and-loops.html#cb64-21" aria-hidden="true" tabindex="-1"></a>    <span class="do">## if user&#39;s guess is smaller than the answer</span></span>
-<span id="cb64-22"><a href="conditions-and-loops.html#cb64-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (guess <span class="sc">&lt;</span> ans) {</span>
-<span id="cb64-23"><a href="conditions-and-loops.html#cb64-23" aria-hidden="true" tabindex="-1"></a>      <span class="fu">writeLines</span>(<span class="st">&quot;The answer is HIGHER.&quot;</span>)</span>
-<span id="cb64-24"><a href="conditions-and-loops.html#cb64-24" aria-hidden="true" tabindex="-1"></a>    <span class="do">## if user&#39;s guess is larger than the answer</span></span>
-<span id="cb64-25"><a href="conditions-and-loops.html#cb64-25" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (guess <span class="sc">&gt;</span> ans) {</span>
-<span id="cb64-26"><a href="conditions-and-loops.html#cb64-26" aria-hidden="true" tabindex="-1"></a>      <span class="fu">writeLines</span>(<span class="st">&quot;The answer is LOWER&quot;</span>)</span>
-<span id="cb64-27"><a href="conditions-and-loops.html#cb64-27" aria-hidden="true" tabindex="-1"></a>    <span class="do">## correct guess</span></span>
-<span id="cb64-28"><a href="conditions-and-loops.html#cb64-28" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span>{</span>
-<span id="cb64-29"><a href="conditions-and-loops.html#cb64-29" aria-hidden="true" tabindex="-1"></a>      <span class="fu">writeLines</span>(<span class="fu">paste0</span>(<span class="st">&quot;Good Job! You had the correct answer! My number is &quot;</span>, guess))</span>
-<span id="cb64-30"><a href="conditions-and-loops.html#cb64-30" aria-hidden="true" tabindex="-1"></a>    } <span class="do">## endif</span></span>
-<span id="cb64-31"><a href="conditions-and-loops.html#cb64-31" aria-hidden="true" tabindex="-1"></a>  } <span class="do">## endwhile</span></span>
-<span id="cb64-32"><a href="conditions-and-loops.html#cb64-32" aria-hidden="true" tabindex="-1"></a>} <span class="do">## endfunc</span></span></code></pre></div>
-<p>The revised function <code>guessMyNumber_1()</code> now accepts a parameter <code>guess</code> that enables the user to specify the initial guess value when they start playing the game. The user can start the game by running the function and specifying the initial guess value, like this: <code>guessMyNumber_1(guess = 15)</code>. However, the revised function has two potential issues:</p>
-<ul>
-<li>It is not very intuitive to ask the user to provide a guess value when they have not even started the game yet. (They probably do not even know the purpose of the grame.)</li>
-<li>If the user specifies a guess value that happens to be the computer’s selection, the game will not even start.</li>
-</ul>
-<p>To address these issues, we may also try the following revision (<code>guessMyNumber_2()</code>):</p>
 <div class="sourceCode" id="cb65"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb65-1"><a href="conditions-and-loops.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="do">## --------------------------------------------  ##</span></span>
 <span id="cb65-2"><a href="conditions-and-loops.html#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Please run the entire code chunk all at once! ##</span></span>
 <span id="cb65-3"><a href="conditions-and-loops.html#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="do">## --------------------------------------------  ##</span></span>
 <span id="cb65-4"><a href="conditions-and-loops.html#cb65-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb65-5"><a href="conditions-and-loops.html#cb65-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Create a function object</span></span>
-<span id="cb65-6"><a href="conditions-and-loops.html#cb65-6" aria-hidden="true" tabindex="-1"></a>guessMyNumber_2 <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">guess =</span> <span class="sc">-</span><span class="dv">1</span>) {</span>
+<span id="cb65-6"><a href="conditions-and-loops.html#cb65-6" aria-hidden="true" tabindex="-1"></a>guessMyNumber_1 <span class="ot">&lt;-</span> <span class="cf">function</span>(guess) {</span>
 <span id="cb65-7"><a href="conditions-and-loops.html#cb65-7" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Randomly select an integer from 1 to 100</span></span>
 <span id="cb65-8"><a href="conditions-and-loops.html#cb65-8" aria-hidden="true" tabindex="-1"></a>  ans <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="at">size =</span> <span class="dv">1</span>)</span>
 <span id="cb65-9"><a href="conditions-and-loops.html#cb65-9" aria-hidden="true" tabindex="-1"></a>  </span>
@@ -1180,6 +1153,44 @@ Now the system is adjusting your `guess` to  90 </code></pre>
 <span id="cb65-30"><a href="conditions-and-loops.html#cb65-30" aria-hidden="true" tabindex="-1"></a>    } <span class="do">## endif</span></span>
 <span id="cb65-31"><a href="conditions-and-loops.html#cb65-31" aria-hidden="true" tabindex="-1"></a>  } <span class="do">## endwhile</span></span>
 <span id="cb65-32"><a href="conditions-and-loops.html#cb65-32" aria-hidden="true" tabindex="-1"></a>} <span class="do">## endfunc</span></span></code></pre></div>
+<p>The revised function <code>guessMyNumber_1()</code> now accepts a parameter <code>guess</code> that enables the user to specify the initial guess value when they start playing the game. The user can start the game by running the function and specifying the initial guess value, like this: <code>guessMyNumber_1(guess = 15)</code>. However, the revised function has two potential issues:</p>
+<ul>
+<li>It is not very intuitive to ask the user to provide a guess value when they have not even started the game yet. (They probably do not even know the objective of the game.)</li>
+<li>If the user specifies a guess value that happens to be the computer’s selection, the game will not even start.</li>
+</ul>
+<p>To address these issues, we may also try the following revision (<code>guessMyNumber_2()</code>):</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb66-1"><a href="conditions-and-loops.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="do">## --------------------------------------------  ##</span></span>
+<span id="cb66-2"><a href="conditions-and-loops.html#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Please run the entire code chunk all at once! ##</span></span>
+<span id="cb66-3"><a href="conditions-and-loops.html#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="do">## --------------------------------------------  ##</span></span>
+<span id="cb66-4"><a href="conditions-and-loops.html#cb66-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-5"><a href="conditions-and-loops.html#cb66-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Create a function object</span></span>
+<span id="cb66-6"><a href="conditions-and-loops.html#cb66-6" aria-hidden="true" tabindex="-1"></a>guessMyNumber_2 <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">guess =</span> <span class="sc">-</span><span class="dv">1</span>) {</span>
+<span id="cb66-7"><a href="conditions-and-loops.html#cb66-7" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Randomly select an integer from 1 to 100</span></span>
+<span id="cb66-8"><a href="conditions-and-loops.html#cb66-8" aria-hidden="true" tabindex="-1"></a>  ans <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="at">size =</span> <span class="dv">1</span>)</span>
+<span id="cb66-9"><a href="conditions-and-loops.html#cb66-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb66-10"><a href="conditions-and-loops.html#cb66-10" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Instructions for user</span></span>
+<span id="cb66-11"><a href="conditions-and-loops.html#cb66-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(<span class="st">&quot;Now I am thinking of a number between 1 and 100.&quot;</span>)</span>
+<span id="cb66-12"><a href="conditions-and-loops.html#cb66-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb66-13"><a href="conditions-and-loops.html#cb66-13" aria-hidden="true" tabindex="-1"></a>  <span class="do">## As long as user&#39;s guess is not the answer</span></span>
+<span id="cb66-14"><a href="conditions-and-loops.html#cb66-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> (guess <span class="sc">!=</span> ans) {</span>
+<span id="cb66-15"><a href="conditions-and-loops.html#cb66-15" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Read the prompt input from user</span></span>
+<span id="cb66-16"><a href="conditions-and-loops.html#cb66-16" aria-hidden="true" tabindex="-1"></a>    guess <span class="ot">&lt;-</span> <span class="fu">readline</span>(<span class="at">prompt =</span> <span class="st">&quot;Please guess my number(1~100):&quot;</span>)</span>
+<span id="cb66-17"><a href="conditions-and-loops.html#cb66-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb66-18"><a href="conditions-and-loops.html#cb66-18" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Convert input string into integer</span></span>
+<span id="cb66-19"><a href="conditions-and-loops.html#cb66-19" aria-hidden="true" tabindex="-1"></a>    guess <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(guess)</span>
+<span id="cb66-20"><a href="conditions-and-loops.html#cb66-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb66-21"><a href="conditions-and-loops.html#cb66-21" aria-hidden="true" tabindex="-1"></a>    <span class="do">## if user&#39;s guess is smaller than the answer</span></span>
+<span id="cb66-22"><a href="conditions-and-loops.html#cb66-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (guess <span class="sc">&lt;</span> ans) {</span>
+<span id="cb66-23"><a href="conditions-and-loops.html#cb66-23" aria-hidden="true" tabindex="-1"></a>      <span class="fu">writeLines</span>(<span class="st">&quot;The answer is HIGHER.&quot;</span>)</span>
+<span id="cb66-24"><a href="conditions-and-loops.html#cb66-24" aria-hidden="true" tabindex="-1"></a>    <span class="do">## if user&#39;s guess is larger than the answer</span></span>
+<span id="cb66-25"><a href="conditions-and-loops.html#cb66-25" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (guess <span class="sc">&gt;</span> ans) {</span>
+<span id="cb66-26"><a href="conditions-and-loops.html#cb66-26" aria-hidden="true" tabindex="-1"></a>      <span class="fu">writeLines</span>(<span class="st">&quot;The answer is LOWER&quot;</span>)</span>
+<span id="cb66-27"><a href="conditions-and-loops.html#cb66-27" aria-hidden="true" tabindex="-1"></a>    <span class="do">## correct guess</span></span>
+<span id="cb66-28"><a href="conditions-and-loops.html#cb66-28" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span>{</span>
+<span id="cb66-29"><a href="conditions-and-loops.html#cb66-29" aria-hidden="true" tabindex="-1"></a>      <span class="fu">writeLines</span>(<span class="fu">paste0</span>(<span class="st">&quot;Good Job! You had the correct answer! My number is &quot;</span>, guess))</span>
+<span id="cb66-30"><a href="conditions-and-loops.html#cb66-30" aria-hidden="true" tabindex="-1"></a>    } <span class="do">## endif</span></span>
+<span id="cb66-31"><a href="conditions-and-loops.html#cb66-31" aria-hidden="true" tabindex="-1"></a>  } <span class="do">## endwhile</span></span>
+<span id="cb66-32"><a href="conditions-and-loops.html#cb66-32" aria-hidden="true" tabindex="-1"></a>} <span class="do">## endfunc</span></span></code></pre></div>
 <p>The revised <code>guessMyNumber_2()</code> provides two possibilities for the user to start the game. The user can either start the game with a random guess (by specifying the value for the parameter <strong>guess</strong>), e.g., <code>guessMyNumber_2(guess = 15)</code>, or start the game by accepting the default setting of the parameter <strong>guess</strong> (e.g., <code>-1</code>), e.g., <code>guessMyNumber_2()</code>.</p>
 <p>The decision of whether or not to include parameters in a program or function ultimately depends on the developer’s design goals and the intended use of the program by its users. Parameters allow for greater flexibility and customization, as users can provide input values to the function to modify its behavior.</p>
 <p>However, sometimes the program may be designed to have a fixed set of inputs and outputs, in which case parameters may not be necessary. The design choice should prioritize the usability and user experience of the program, taking into consideration the user’s level of expertise, potential use cases, and any potential issues that may arise from the inclusion or exclusion of parameters.</p>
