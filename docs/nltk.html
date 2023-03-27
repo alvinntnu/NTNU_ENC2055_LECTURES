@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2023-03-16" />
+<meta name="date" content="2023-03-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -379,7 +379,7 @@ div.csl-indent {
 <li class="chapter" data-level="10.6" data-path="data-import.html"><a href="data-import.html#r-base-functions"><i class="fa fa-check"></i><b>10.6</b> R Base Functions</a>
 <ul>
 <li class="chapter" data-level="10.6.1" data-path="data-import.html"><a href="data-import.html#readlines"><i class="fa fa-check"></i><b>10.6.1</b> <code>readLines()</code></a></li>
-<li class="chapter" data-level="10.6.2" data-path="data-import.html"><a href="data-import.html#writelines"><i class="fa fa-check"></i><b>10.6.2</b> <code>writeLines()</code></a></li>
+<li class="chapter" data-level="10.6.2" data-path="data-import.html"><a href="data-import.html#writelines-1"><i class="fa fa-check"></i><b>10.6.2</b> <code>writeLines()</code></a></li>
 </ul></li>
 <li class="chapter" data-level="10.7" data-path="data-import.html"><a href="data-import.html#readr-functions"><i class="fa fa-check"></i><b>10.7</b> <code>readr</code> Functions</a>
 <ul>
@@ -630,8 +630,8 @@ document.writeln ("This page was last updated: " + LastUpdated);
 </ul>
 <pre><code>import nltk
 nltk.download(&#39;all&#39;, halt_on_error=False)</code></pre>
-<div class="sourceCode" id="cb1059"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1059-1"><a href="nltk.html#cb1059-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nltk</span>
-<span id="cb1059-2"><a href="nltk.html#cb1059-2" aria-hidden="true" tabindex="-1"></a><span class="co"># nltk.download()</span></span></code></pre></div>
+<div class="sourceCode" id="cb1102"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1102-1"><a href="nltk.html#cb1102-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nltk</span>
+<span id="cb1102-2"><a href="nltk.html#cb1102-2" aria-hidden="true" tabindex="-1"></a><span class="co"># nltk.download()</span></span></code></pre></div>
 <div class="warning">
 <p>The complete collection of the <code>nltk.corpus</code> is huge. You probably don’t need all of the corpora data.
 You can use <code>nltk.download()</code> to initialize a User Window for installation of specific datasets.</p>
@@ -649,60 +649,60 @@ You can use <code>nltk.download()</code> to initialize a User Window for install
 <li>WordNet</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb1060"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1060-1"><a href="nltk.html#cb1060-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> gutenberg, brown, reuters</span>
-<span id="cb1060-2"><a href="nltk.html#cb1060-2" aria-hidden="true" tabindex="-1"></a><span class="co"># brown corpus</span></span>
-<span id="cb1060-3"><a href="nltk.html#cb1060-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Categories (topics?)</span></span>
-<span id="cb1060-4"><a href="nltk.html#cb1060-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Brown Corpus Total Categories: &#39;</span>, <span class="bu">len</span>(brown.categories()))</span></code></pre></div>
+<div class="sourceCode" id="cb1103"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1103-1"><a href="nltk.html#cb1103-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> gutenberg, brown, reuters</span>
+<span id="cb1103-2"><a href="nltk.html#cb1103-2" aria-hidden="true" tabindex="-1"></a><span class="co"># brown corpus</span></span>
+<span id="cb1103-3"><a href="nltk.html#cb1103-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Categories (topics?)</span></span>
+<span id="cb1103-4"><a href="nltk.html#cb1103-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Brown Corpus Total Categories: &#39;</span>, <span class="bu">len</span>(brown.categories()))</span></code></pre></div>
 <pre class="Rout"><code>Brown Corpus Total Categories:  15</code></pre>
-<div class="sourceCode" id="cb1062"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1062-1"><a href="nltk.html#cb1062-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Categories List: &#39;</span>, brown.categories())</span></code></pre></div>
+<div class="sourceCode" id="cb1105"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1105-1"><a href="nltk.html#cb1105-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Categories List: &#39;</span>, brown.categories())</span></code></pre></div>
 <pre class="Rout"><code>Categories List:  [&#39;adventure&#39;, &#39;belles_lettres&#39;, &#39;editorial&#39;, &#39;fiction&#39;, &#39;government&#39;, &#39;hobbies&#39;, &#39;humor&#39;, &#39;learned&#39;, &#39;lore&#39;, &#39;mystery&#39;, &#39;news&#39;, &#39;religion&#39;, &#39;reviews&#39;, &#39;romance&#39;, &#39;science_fiction&#39;]</code></pre>
-<div class="sourceCode" id="cb1064"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1064-1"><a href="nltk.html#cb1064-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sentences</span></span>
-<span id="cb1064-2"><a href="nltk.html#cb1064-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(brown.sents()[<span class="dv">0</span>]) <span class="co">## first sentence</span></span></code></pre></div>
+<div class="sourceCode" id="cb1107"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1107-1"><a href="nltk.html#cb1107-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sentences</span></span>
+<span id="cb1107-2"><a href="nltk.html#cb1107-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(brown.sents()[<span class="dv">0</span>]) <span class="co">## first sentence</span></span></code></pre></div>
 <pre class="Rout"><code>[&#39;The&#39;, &#39;Fulton&#39;, &#39;County&#39;, &#39;Grand&#39;, &#39;Jury&#39;, &#39;said&#39;, &#39;Friday&#39;, &#39;an&#39;, &#39;investigation&#39;, &#39;of&#39;, &quot;Atlanta&#39;s&quot;, &#39;recent&#39;, &#39;primary&#39;, &#39;election&#39;, &#39;produced&#39;, &#39;``&#39;, &#39;no&#39;, &#39;evidence&#39;, &quot;&#39;&#39;&quot;, &#39;that&#39;, &#39;any&#39;, &#39;irregularities&#39;, &#39;took&#39;, &#39;place&#39;, &#39;.&#39;]</code></pre>
-<div class="sourceCode" id="cb1066"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1066-1"><a href="nltk.html#cb1066-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(brown.sents(categories<span class="op">=</span><span class="st">&#39;fiction&#39;</span>)) <span class="co">## first sentence for fiction texts</span></span></code></pre></div>
+<div class="sourceCode" id="cb1109"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1109-1"><a href="nltk.html#cb1109-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(brown.sents(categories<span class="op">=</span><span class="st">&#39;fiction&#39;</span>)) <span class="co">## first sentence for fiction texts</span></span></code></pre></div>
 <pre class="Rout"><code>[[&#39;Thirty-three&#39;], [&#39;Scotty&#39;, &#39;did&#39;, &#39;not&#39;, &#39;go&#39;, &#39;back&#39;, &#39;to&#39;, &#39;school&#39;, &#39;.&#39;], ...]</code></pre>
-<div class="sourceCode" id="cb1068"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1068-1"><a href="nltk.html#cb1068-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Tagged Sentences</span></span>
-<span id="cb1068-2"><a href="nltk.html#cb1068-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(brown.tagged_sents()[<span class="dv">0</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb1111"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1111-1"><a href="nltk.html#cb1111-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Tagged Sentences</span></span>
+<span id="cb1111-2"><a href="nltk.html#cb1111-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(brown.tagged_sents()[<span class="dv">0</span>])</span></code></pre></div>
 <pre class="Rout"><code>[(&#39;The&#39;, &#39;AT&#39;), (&#39;Fulton&#39;, &#39;NP-TL&#39;), (&#39;County&#39;, &#39;NN-TL&#39;), (&#39;Grand&#39;, &#39;JJ-TL&#39;), (&#39;Jury&#39;, &#39;NN-TL&#39;), (&#39;said&#39;, &#39;VBD&#39;), (&#39;Friday&#39;, &#39;NR&#39;), (&#39;an&#39;, &#39;AT&#39;), (&#39;investigation&#39;, &#39;NN&#39;), (&#39;of&#39;, &#39;IN&#39;), (&quot;Atlanta&#39;s&quot;, &#39;NP$&#39;), (&#39;recent&#39;, &#39;JJ&#39;), (&#39;primary&#39;, &#39;NN&#39;), (&#39;election&#39;, &#39;NN&#39;), (&#39;produced&#39;, &#39;VBD&#39;), (&#39;``&#39;, &#39;``&#39;), (&#39;no&#39;, &#39;AT&#39;), (&#39;evidence&#39;, &#39;NN&#39;), (&quot;&#39;&#39;&quot;, &quot;&#39;&#39;&quot;), (&#39;that&#39;, &#39;CS&#39;), (&#39;any&#39;, &#39;DTI&#39;), (&#39;irregularities&#39;, &#39;NNS&#39;), (&#39;took&#39;, &#39;VBD&#39;), (&#39;place&#39;, &#39;NN&#39;), (&#39;.&#39;, &#39;.&#39;)]</code></pre>
-<div class="sourceCode" id="cb1070"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1070-1"><a href="nltk.html#cb1070-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Sentence in natural forms</span></span>
-<span id="cb1070-2"><a href="nltk.html#cb1070-2" aria-hidden="true" tabindex="-1"></a>sents <span class="op">=</span> brown.sents(categories<span class="op">=</span><span class="st">&#39;fiction&#39;</span>)</span>
-<span id="cb1070-3"><a href="nltk.html#cb1070-3" aria-hidden="true" tabindex="-1"></a>[<span class="st">&#39; &#39;</span>.join(sent) <span class="cf">for</span> sent <span class="kw">in</span> sents[<span class="dv">1</span>:<span class="dv">5</span>]]</span></code></pre></div>
+<div class="sourceCode" id="cb1113"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1113-1"><a href="nltk.html#cb1113-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Sentence in natural forms</span></span>
+<span id="cb1113-2"><a href="nltk.html#cb1113-2" aria-hidden="true" tabindex="-1"></a>sents <span class="op">=</span> brown.sents(categories<span class="op">=</span><span class="st">&#39;fiction&#39;</span>)</span>
+<span id="cb1113-3"><a href="nltk.html#cb1113-3" aria-hidden="true" tabindex="-1"></a>[<span class="st">&#39; &#39;</span>.join(sent) <span class="cf">for</span> sent <span class="kw">in</span> sents[<span class="dv">1</span>:<span class="dv">5</span>]]</span></code></pre></div>
 <pre class="Rout"><code>[&#39;Scotty did not go back to school .&#39;, &#39;His parents talked seriously and lengthily to their own doctor and to a specialist at the University Hospital -- Mr. McKinley was entitled to a discount for members of his family -- and it was decided it would be best for him to take the remainder of the term off , spend a lot of time in bed and , for the rest , do pretty much as he chose -- provided , of course , he chose to do nothing too exciting or too debilitating .&#39;, &#39;His teacher and his school principal were conferred with and everyone agreed that , if he kept up with a certain amount of work at home , there was little danger of his losing a term .&#39;, &#39;Scotty accepted the decision with indifference and did not enter the arguments .&#39;]</code></pre>
-<div class="sourceCode" id="cb1072"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1072-1"><a href="nltk.html#cb1072-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Get tagged words</span></span>
-<span id="cb1072-2"><a href="nltk.html#cb1072-2" aria-hidden="true" tabindex="-1"></a>tagged_words <span class="op">=</span> brown.tagged_words(categories<span class="op">=</span><span class="st">&#39;fiction&#39;</span>)</span>
-<span id="cb1072-3"><a href="nltk.html#cb1072-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1072-4"><a href="nltk.html#cb1072-4" aria-hidden="true" tabindex="-1"></a><span class="co">#print(tagged_words[1]) ## a tuple</span></span>
-<span id="cb1072-5"><a href="nltk.html#cb1072-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1072-6"><a href="nltk.html#cb1072-6" aria-hidden="true" tabindex="-1"></a><span class="co">## Get all nouns </span></span>
-<span id="cb1072-7"><a href="nltk.html#cb1072-7" aria-hidden="true" tabindex="-1"></a>nouns <span class="op">=</span> [(word, tag) <span class="cf">for</span> word, tag <span class="kw">in</span> tagged_words </span>
-<span id="cb1072-8"><a href="nltk.html#cb1072-8" aria-hidden="true" tabindex="-1"></a>                      <span class="cf">if</span> <span class="bu">any</span> (noun_tag <span class="kw">in</span> tag <span class="cf">for</span> noun_tag <span class="kw">in</span> [<span class="st">&#39;NP&#39;</span>,<span class="st">&#39;NN&#39;</span>])]</span>
-<span id="cb1072-9"><a href="nltk.html#cb1072-9" aria-hidden="true" tabindex="-1"></a><span class="co">## Check first ten nouns</span></span>
-<span id="cb1072-10"><a href="nltk.html#cb1072-10" aria-hidden="true" tabindex="-1"></a>nouns[:<span class="dv">10</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb1115"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1115-1"><a href="nltk.html#cb1115-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Get tagged words</span></span>
+<span id="cb1115-2"><a href="nltk.html#cb1115-2" aria-hidden="true" tabindex="-1"></a>tagged_words <span class="op">=</span> brown.tagged_words(categories<span class="op">=</span><span class="st">&#39;fiction&#39;</span>)</span>
+<span id="cb1115-3"><a href="nltk.html#cb1115-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1115-4"><a href="nltk.html#cb1115-4" aria-hidden="true" tabindex="-1"></a><span class="co">#print(tagged_words[1]) ## a tuple</span></span>
+<span id="cb1115-5"><a href="nltk.html#cb1115-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1115-6"><a href="nltk.html#cb1115-6" aria-hidden="true" tabindex="-1"></a><span class="co">## Get all nouns </span></span>
+<span id="cb1115-7"><a href="nltk.html#cb1115-7" aria-hidden="true" tabindex="-1"></a>nouns <span class="op">=</span> [(word, tag) <span class="cf">for</span> word, tag <span class="kw">in</span> tagged_words </span>
+<span id="cb1115-8"><a href="nltk.html#cb1115-8" aria-hidden="true" tabindex="-1"></a>                      <span class="cf">if</span> <span class="bu">any</span> (noun_tag <span class="kw">in</span> tag <span class="cf">for</span> noun_tag <span class="kw">in</span> [<span class="st">&#39;NP&#39;</span>,<span class="st">&#39;NN&#39;</span>])]</span>
+<span id="cb1115-9"><a href="nltk.html#cb1115-9" aria-hidden="true" tabindex="-1"></a><span class="co">## Check first ten nouns</span></span>
+<span id="cb1115-10"><a href="nltk.html#cb1115-10" aria-hidden="true" tabindex="-1"></a>nouns[:<span class="dv">10</span>]</span></code></pre></div>
 <pre class="Rout"><code>[(&#39;Scotty&#39;, &#39;NP&#39;), (&#39;school&#39;, &#39;NN&#39;), (&#39;parents&#39;, &#39;NNS&#39;), (&#39;doctor&#39;, &#39;NN&#39;), (&#39;specialist&#39;, &#39;NN&#39;), (&#39;University&#39;, &#39;NN-TL&#39;), (&#39;Hospital&#39;, &#39;NN-TL&#39;), (&#39;Mr.&#39;, &#39;NP&#39;), (&#39;McKinley&#39;, &#39;NP&#39;), (&#39;discount&#39;, &#39;NN&#39;)]</code></pre>
-<div class="sourceCode" id="cb1074"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1074-1"><a href="nltk.html#cb1074-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Creating Freq list</span></span>
-<span id="cb1074-2"><a href="nltk.html#cb1074-2" aria-hidden="true" tabindex="-1"></a>nouns_freq <span class="op">=</span> nltk.FreqDist([w <span class="cf">for</span> w, t <span class="kw">in</span> nouns])</span>
-<span id="cb1074-3"><a href="nltk.html#cb1074-3" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span>(nouns_freq.items(),key<span class="op">=</span><span class="kw">lambda</span> x:x[<span class="dv">1</span>], reverse<span class="op">=</span><span class="va">True</span>)[:<span class="dv">20</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb1117"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1117-1"><a href="nltk.html#cb1117-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Creating Freq list</span></span>
+<span id="cb1117-2"><a href="nltk.html#cb1117-2" aria-hidden="true" tabindex="-1"></a>nouns_freq <span class="op">=</span> nltk.FreqDist([w <span class="cf">for</span> w, t <span class="kw">in</span> nouns])</span>
+<span id="cb1117-3"><a href="nltk.html#cb1117-3" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span>(nouns_freq.items(),key<span class="op">=</span><span class="kw">lambda</span> x:x[<span class="dv">1</span>], reverse<span class="op">=</span><span class="va">True</span>)[:<span class="dv">20</span>]</span></code></pre></div>
 <pre class="Rout"><code>[(&#39;man&#39;, 111), (&#39;time&#39;, 99), (&#39;men&#39;, 72), (&#39;room&#39;, 63), (&#39;way&#39;, 62), (&#39;eyes&#39;, 60), (&#39;face&#39;, 55), (&#39;house&#39;, 54), (&#39;head&#39;, 54), (&#39;night&#39;, 53), (&#39;day&#39;, 52), (&#39;hand&#39;, 50), (&#39;door&#39;, 47), (&#39;life&#39;, 44), (&#39;years&#39;, 44), (&#39;Mrs.&#39;, 41), (&#39;God&#39;, 41), (&#39;Kate&#39;, 40), (&#39;Mr.&#39;, 39), (&#39;people&#39;, 39)]</code></pre>
-<div class="sourceCode" id="cb1076"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1076-1"><a href="nltk.html#cb1076-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span>(nouns_freq.items(),key<span class="op">=</span><span class="kw">lambda</span> x:x[<span class="dv">0</span>], reverse<span class="op">=</span><span class="va">True</span>)[:<span class="dv">20</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb1119"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1119-1"><a href="nltk.html#cb1119-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span>(nouns_freq.items(),key<span class="op">=</span><span class="kw">lambda</span> x:x[<span class="dv">0</span>], reverse<span class="op">=</span><span class="va">True</span>)[:<span class="dv">20</span>]</span></code></pre></div>
 <pre class="Rout"><code>[(&#39;zoo&#39;, 2), (&#39;zlotys&#39;, 1), (&#39;zenith&#39;, 1), (&#39;youth&#39;, 5), (&#39;yelling&#39;, 1), (&#39;years&#39;, 44), (&#39;yearning&#39;, 1), (&quot;year&#39;s&quot;, 1), (&#39;year&#39;, 9), (&#39;yards&#39;, 4), (&#39;yard&#39;, 7), (&#39;yachts&#39;, 1), (&#39;writing&#39;, 2), (&#39;writers&#39;, 1), (&#39;writer&#39;, 4), (&#39;wrists&#39;, 1), (&#39;wrist&#39;, 2), (&#39;wrinkles&#39;, 1), (&#39;wrinkle&#39;, 1), (&#39;wretch&#39;, 1)]</code></pre>
-<div class="sourceCode" id="cb1078"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1078-1"><a href="nltk.html#cb1078-1" aria-hidden="true" tabindex="-1"></a>nouns_freq.most_common(<span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1121"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1121-1"><a href="nltk.html#cb1121-1" aria-hidden="true" tabindex="-1"></a>nouns_freq.most_common(<span class="dv">10</span>)</span></code></pre></div>
 <pre class="Rout"><code>[(&#39;man&#39;, 111), (&#39;time&#39;, 99), (&#39;men&#39;, 72), (&#39;room&#39;, 63), (&#39;way&#39;, 62), (&#39;eyes&#39;, 60), (&#39;face&#39;, 55), (&#39;house&#39;, 54), (&#39;head&#39;, 54), (&#39;night&#39;, 53)]</code></pre>
-<div class="sourceCode" id="cb1080"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1080-1"><a href="nltk.html#cb1080-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Accsess data via fileid</span></span>
-<span id="cb1080-2"><a href="nltk.html#cb1080-2" aria-hidden="true" tabindex="-1"></a>brown.fileids(categories<span class="op">=</span><span class="st">&#39;fiction&#39;</span>)[<span class="dv">0</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb1123"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1123-1"><a href="nltk.html#cb1123-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Accsess data via fileid</span></span>
+<span id="cb1123-2"><a href="nltk.html#cb1123-2" aria-hidden="true" tabindex="-1"></a>brown.fileids(categories<span class="op">=</span><span class="st">&#39;fiction&#39;</span>)[<span class="dv">0</span>]</span></code></pre></div>
 <pre class="Rout"><code>&#39;ck01&#39;</code></pre>
-<div class="sourceCode" id="cb1082"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1082-1"><a href="nltk.html#cb1082-1" aria-hidden="true" tabindex="-1"></a>brown.sents(fileids<span class="op">=</span><span class="st">&#39;ck01&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1125"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1125-1"><a href="nltk.html#cb1125-1" aria-hidden="true" tabindex="-1"></a>brown.sents(fileids<span class="op">=</span><span class="st">&#39;ck01&#39;</span>)</span></code></pre></div>
 <pre class="Rout"><code>[[&#39;Thirty-three&#39;], [&#39;Scotty&#39;, &#39;did&#39;, &#39;not&#39;, &#39;go&#39;, &#39;back&#39;, &#39;to&#39;, &#39;school&#39;, &#39;.&#39;], ...]</code></pre>
 </div>
 <div id="wordnet" class="section level2 hasAnchor" number="19.3">
 <h2><span class="header-section-number">19.3</span> WordNet<a href="nltk.html#wordnet" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="a-dictionary-resource" class="section level3 hasAnchor" number="19.3.1">
 <h3><span class="header-section-number">19.3.1</span> A Dictionary Resource<a href="nltk.html#a-dictionary-resource" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb1084"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1084-1"><a href="nltk.html#cb1084-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> wordnet <span class="im">as</span> wn</span>
-<span id="cb1084-2"><a href="nltk.html#cb1084-2" aria-hidden="true" tabindex="-1"></a>word <span class="op">=</span> <span class="st">&#39;walk&#39;</span></span>
-<span id="cb1084-3"><a href="nltk.html#cb1084-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1084-4"><a href="nltk.html#cb1084-4" aria-hidden="true" tabindex="-1"></a><span class="co"># get synsets</span></span>
-<span id="cb1084-5"><a href="nltk.html#cb1084-5" aria-hidden="true" tabindex="-1"></a>word_synsets <span class="op">=</span> wn.synsets(word, pos<span class="op">=</span><span class="st">&#39;v&#39;</span>)</span>
-<span id="cb1084-6"><a href="nltk.html#cb1084-6" aria-hidden="true" tabindex="-1"></a>word_synsets</span></code></pre></div>
+<div class="sourceCode" id="cb1127"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1127-1"><a href="nltk.html#cb1127-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> wordnet <span class="im">as</span> wn</span>
+<span id="cb1127-2"><a href="nltk.html#cb1127-2" aria-hidden="true" tabindex="-1"></a>word <span class="op">=</span> <span class="st">&#39;walk&#39;</span></span>
+<span id="cb1127-3"><a href="nltk.html#cb1127-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1127-4"><a href="nltk.html#cb1127-4" aria-hidden="true" tabindex="-1"></a><span class="co"># get synsets</span></span>
+<span id="cb1127-5"><a href="nltk.html#cb1127-5" aria-hidden="true" tabindex="-1"></a>word_synsets <span class="op">=</span> wn.synsets(word, pos<span class="op">=</span><span class="st">&#39;v&#39;</span>)</span>
+<span id="cb1127-6"><a href="nltk.html#cb1127-6" aria-hidden="true" tabindex="-1"></a>word_synsets</span></code></pre></div>
 <pre class="Rout"><code>[Synset(&#39;walk.v.01&#39;), Synset(&#39;walk.v.02&#39;), Synset(&#39;walk.v.03&#39;), Synset(&#39;walk.v.04&#39;), Synset(&#39;walk.v.05&#39;), Synset(&#39;walk.v.06&#39;), Synset(&#39;walk.v.07&#39;), Synset(&#39;walk.v.08&#39;), Synset(&#39;walk.v.09&#39;), Synset(&#39;walk.v.10&#39;)]</code></pre>
 <div class="alert">
 <p>Word sense is closely connected to its parts-of-speech. Therefore, in WordNet it is crucial to specify the POS tag of the word to obtain the correct synset of the word. There are four common part-of-speech tags in WordNet, as shown below:</p>
@@ -736,22 +736,22 @@ You can use <code>nltk.download()</code> to initialize a User Window for install
 <ul>
 <li>Check the definition of a synset (i.e., a specific sense of the word):</li>
 </ul>
-<div class="sourceCode" id="cb1086"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1086-1"><a href="nltk.html#cb1086-1" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].definition()</span></code></pre></div>
+<div class="sourceCode" id="cb1129"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1129-1"><a href="nltk.html#cb1129-1" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].definition()</span></code></pre></div>
 <pre class="Rout"><code>&quot;use one&#39;s feet to advance; advance by steps&quot;</code></pre>
 <ul>
 <li>Check the examples of a synset:</li>
 </ul>
-<div class="sourceCode" id="cb1088"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1088-1"><a href="nltk.html#cb1088-1" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].examples()</span></code></pre></div>
+<div class="sourceCode" id="cb1131"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1131-1"><a href="nltk.html#cb1131-1" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].examples()</span></code></pre></div>
 <pre class="Rout"><code>[&quot;Walk, don&#39;t run!&quot;, &#39;We walked instead of driving&#39;, &#39;She walks with a slight limp&#39;, &#39;The patient cannot walk yet&#39;, &#39;Walk over to the cabinet&#39;]</code></pre>
-<div class="sourceCode" id="cb1090"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1090-1"><a href="nltk.html#cb1090-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Get details of each synset</span></span>
-<span id="cb1090-2"><a href="nltk.html#cb1090-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> s <span class="kw">in</span> word_synsets:</span>
-<span id="cb1090-3"><a href="nltk.html#cb1090-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">str</span>(s.name()).startswith(<span class="st">&#39;walk.v&#39;</span>):</span>
-<span id="cb1090-4"><a href="nltk.html#cb1090-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(</span>
-<span id="cb1090-5"><a href="nltk.html#cb1090-5" aria-hidden="true" tabindex="-1"></a>            <span class="st">&#39;Syset ID: </span><span class="sc">%s</span><span class="st"> </span><span class="ch">\n</span><span class="st">&#39;</span></span>
-<span id="cb1090-6"><a href="nltk.html#cb1090-6" aria-hidden="true" tabindex="-1"></a>            <span class="st">&#39;POS Tag: </span><span class="sc">%s</span><span class="st"> </span><span class="ch">\n</span><span class="st">&#39;</span></span>
-<span id="cb1090-7"><a href="nltk.html#cb1090-7" aria-hidden="true" tabindex="-1"></a>            <span class="st">&#39;Definition: </span><span class="sc">%s</span><span class="st"> </span><span class="ch">\n</span><span class="st">&#39;</span></span>
-<span id="cb1090-8"><a href="nltk.html#cb1090-8" aria-hidden="true" tabindex="-1"></a>            <span class="st">&#39;Examples: </span><span class="sc">%s</span><span class="st"> </span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">%</span> (s.name(), s.pos(), s.definition(),s.examples())</span>
-<span id="cb1090-9"><a href="nltk.html#cb1090-9" aria-hidden="true" tabindex="-1"></a>        )</span></code></pre></div>
+<div class="sourceCode" id="cb1133"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1133-1"><a href="nltk.html#cb1133-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Get details of each synset</span></span>
+<span id="cb1133-2"><a href="nltk.html#cb1133-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> s <span class="kw">in</span> word_synsets:</span>
+<span id="cb1133-3"><a href="nltk.html#cb1133-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">str</span>(s.name()).startswith(<span class="st">&#39;walk.v&#39;</span>):</span>
+<span id="cb1133-4"><a href="nltk.html#cb1133-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(</span>
+<span id="cb1133-5"><a href="nltk.html#cb1133-5" aria-hidden="true" tabindex="-1"></a>            <span class="st">&#39;Syset ID: </span><span class="sc">%s</span><span class="st"> </span><span class="ch">\n</span><span class="st">&#39;</span></span>
+<span id="cb1133-6"><a href="nltk.html#cb1133-6" aria-hidden="true" tabindex="-1"></a>            <span class="st">&#39;POS Tag: </span><span class="sc">%s</span><span class="st"> </span><span class="ch">\n</span><span class="st">&#39;</span></span>
+<span id="cb1133-7"><a href="nltk.html#cb1133-7" aria-hidden="true" tabindex="-1"></a>            <span class="st">&#39;Definition: </span><span class="sc">%s</span><span class="st"> </span><span class="ch">\n</span><span class="st">&#39;</span></span>
+<span id="cb1133-8"><a href="nltk.html#cb1133-8" aria-hidden="true" tabindex="-1"></a>            <span class="st">&#39;Examples: </span><span class="sc">%s</span><span class="st"> </span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">%</span> (s.name(), s.pos(), s.definition(),s.examples())</span>
+<span id="cb1133-9"><a href="nltk.html#cb1133-9" aria-hidden="true" tabindex="-1"></a>        )</span></code></pre></div>
 <pre class="Rout"><code>Syset ID: walk.v.01 
 POS Tag: v 
 Definition: use one&#39;s feet to advance; advance by steps 
@@ -807,36 +807,36 @@ Examples: [&#39;The lovers held hands while walking&#39;, &#39;We like to walk e
 <ul>
 <li>Extract words that maintain some lexical relations with the synset:</li>
 </ul>
-<div class="sourceCode" id="cb1092"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1092-1"><a href="nltk.html#cb1092-1" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].hypernyms() <span class="co"># hypernym</span></span></code></pre></div>
+<div class="sourceCode" id="cb1135"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1135-1"><a href="nltk.html#cb1135-1" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].hypernyms() <span class="co"># hypernym</span></span></code></pre></div>
 <pre class="Rout"><code>[Synset(&#39;travel.v.01&#39;)]</code></pre>
-<div class="sourceCode" id="cb1094"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1094-1"><a href="nltk.html#cb1094-1" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].hypernyms()[<span class="dv">0</span>].hyponyms() <span class="co"># similar words</span></span></code></pre></div>
+<div class="sourceCode" id="cb1137"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1137-1"><a href="nltk.html#cb1137-1" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].hypernyms()[<span class="dv">0</span>].hyponyms() <span class="co"># similar words</span></span></code></pre></div>
 <pre class="Rout"><code>[Synset(&#39;accompany.v.02&#39;), Synset(&#39;advance.v.01&#39;), Synset(&#39;angle.v.01&#39;), Synset(&#39;ascend.v.01&#39;), Synset(&#39;automobile.v.01&#39;), Synset(&#39;back.v.02&#39;), Synset(&#39;bang.v.04&#39;), Synset(&#39;beetle.v.02&#39;), Synset(&#39;betake_oneself.v.01&#39;), Synset(&#39;billow.v.02&#39;), Synset(&#39;bounce.v.03&#39;), Synset(&#39;breeze.v.02&#39;), Synset(&#39;caravan.v.01&#39;), Synset(&#39;career.v.01&#39;), Synset(&#39;carry.v.36&#39;), Synset(&#39;circle.v.01&#39;), Synset(&#39;circle.v.02&#39;), Synset(&#39;circuit.v.01&#39;), Synset(&#39;circulate.v.07&#39;), Synset(&#39;come.v.01&#39;), Synset(&#39;come.v.11&#39;), Synset(&#39;crawl.v.01&#39;), Synset(&#39;cruise.v.02&#39;), Synset(&#39;derail.v.02&#39;), Synset(&#39;descend.v.01&#39;), Synset(&#39;do.v.13&#39;), Synset(&#39;drag.v.04&#39;), Synset(&#39;draw.v.12&#39;), Synset(&#39;drive.v.02&#39;), Synset(&#39;drive.v.14&#39;), Synset(&#39;ease.v.01&#39;), Synset(&#39;fall.v.01&#39;), Synset(&#39;fall.v.15&#39;), Synset(&#39;ferry.v.03&#39;), Synset(&#39;float.v.01&#39;), Synset(&#39;float.v.02&#39;), Synset(&#39;float.v.05&#39;), Synset(&#39;flock.v.01&#39;), Synset(&#39;fly.v.01&#39;), Synset(&#39;fly.v.06&#39;), Synset(&#39;follow.v.01&#39;), Synset(&#39;follow.v.04&#39;), Synset(&#39;forge.v.05&#39;), Synset(&#39;get_around.v.04&#39;), Synset(&#39;ghost.v.01&#39;), Synset(&#39;glide.v.01&#39;), Synset(&#39;go_around.v.02&#39;), Synset(&#39;hiss.v.02&#39;), Synset(&#39;hurtle.v.01&#39;), Synset(&#39;island_hop.v.01&#39;), Synset(&#39;lance.v.01&#39;), Synset(&#39;lurch.v.03&#39;), Synset(&#39;outflank.v.01&#39;), Synset(&#39;pace.v.02&#39;), Synset(&#39;pan.v.01&#39;), Synset(&#39;pass.v.01&#39;), Synset(&#39;pass_over.v.04&#39;), Synset(&#39;play.v.09&#39;), Synset(&#39;plow.v.03&#39;), Synset(&#39;prance.v.02&#39;), Synset(&#39;precede.v.04&#39;), Synset(&#39;precess.v.01&#39;), Synset(&#39;proceed.v.02&#39;), Synset(&#39;propagate.v.02&#39;), Synset(&#39;pursue.v.02&#39;), Synset(&#39;push.v.09&#39;), Synset(&#39;raft.v.02&#39;), Synset(&#39;repair.v.03&#39;), Synset(&#39;retreat.v.02&#39;), Synset(&#39;retrograde.v.02&#39;), Synset(&#39;return.v.01&#39;), Synset(&#39;ride.v.01&#39;), Synset(&#39;ride.v.04&#39;), Synset(&#39;ride.v.10&#39;), Synset(&#39;rise.v.01&#39;), Synset(&#39;roll.v.12&#39;), Synset(&#39;round.v.01&#39;), Synset(&#39;run.v.11&#39;), Synset(&#39;run.v.34&#39;), Synset(&#39;rush.v.01&#39;), Synset(&#39;scramble.v.01&#39;), Synset(&#39;seek.v.04&#39;), Synset(&#39;shuttle.v.01&#39;), Synset(&#39;sift.v.01&#39;), Synset(&#39;ski.v.01&#39;), Synset(&#39;slice_into.v.01&#39;), Synset(&#39;slither.v.01&#39;), Synset(&#39;snowshoe.v.01&#39;), Synset(&#39;speed.v.04&#39;), Synset(&#39;steamer.v.01&#39;), Synset(&#39;step.v.01&#39;), Synset(&#39;step.v.02&#39;), Synset(&#39;step.v.06&#39;), Synset(&#39;stray.v.02&#39;), Synset(&#39;swap.v.02&#39;), Synset(&#39;swash.v.01&#39;), Synset(&#39;swim.v.01&#39;), Synset(&#39;swim.v.05&#39;), Synset(&#39;swing.v.03&#39;), Synset(&#39;taxi.v.01&#39;), Synset(&#39;trail.v.03&#39;), Synset(&#39;tram.v.01&#39;), Synset(&#39;transfer.v.06&#39;), Synset(&#39;travel.v.04&#39;), Synset(&#39;travel.v.05&#39;), Synset(&#39;travel.v.06&#39;), Synset(&#39;travel_by.v.01&#39;), Synset(&#39;travel_purposefully.v.01&#39;), Synset(&#39;travel_rapidly.v.01&#39;), Synset(&#39;trundle.v.01&#39;), Synset(&#39;turn.v.06&#39;), Synset(&#39;walk.v.01&#39;), Synset(&#39;walk.v.10&#39;), Synset(&#39;weave.v.04&#39;), Synset(&#39;wend.v.01&#39;), Synset(&#39;wheel.v.03&#39;), Synset(&#39;whine.v.01&#39;), Synset(&#39;whish.v.02&#39;), Synset(&#39;whisk.v.02&#39;), Synset(&#39;whistle.v.02&#39;), Synset(&#39;withdraw.v.01&#39;), Synset(&#39;zigzag.v.01&#39;), Synset(&#39;zoom.v.02&#39;)]</code></pre>
-<div class="sourceCode" id="cb1096"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1096-1"><a href="nltk.html#cb1096-1" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].root_hypernyms() <span class="co"># root </span></span></code></pre></div>
+<div class="sourceCode" id="cb1139"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1139-1"><a href="nltk.html#cb1139-1" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].root_hypernyms() <span class="co"># root </span></span></code></pre></div>
 <pre class="Rout"><code>[Synset(&#39;travel.v.01&#39;)]</code></pre>
-<div class="sourceCode" id="cb1098"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1098-1"><a href="nltk.html#cb1098-1" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].hypernym_paths() <span class="co"># from root to this synset in WordNet</span></span></code></pre></div>
+<div class="sourceCode" id="cb1141"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1141-1"><a href="nltk.html#cb1141-1" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].hypernym_paths() <span class="co"># from root to this synset in WordNet</span></span></code></pre></div>
 <pre class="Rout"><code>[[Synset(&#39;travel.v.01&#39;), Synset(&#39;walk.v.01&#39;)]]</code></pre>
 <ul>
 <li>Synonyms</li>
 </ul>
-<div class="sourceCode" id="cb1100"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1100-1"><a href="nltk.html#cb1100-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Collect synonyms of all synsets</span></span>
-<span id="cb1100-2"><a href="nltk.html#cb1100-2" aria-hidden="true" tabindex="-1"></a>synonyms <span class="op">=</span> []</span>
-<span id="cb1100-3"><a href="nltk.html#cb1100-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> syn <span class="kw">in</span> wn.synsets(<span class="st">&#39;book&#39;</span>, pos<span class="op">=</span><span class="st">&#39;v&#39;</span>):</span>
-<span id="cb1100-4"><a href="nltk.html#cb1100-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> lemma <span class="kw">in</span> syn.lemmas():</span>
-<span id="cb1100-5"><a href="nltk.html#cb1100-5" aria-hidden="true" tabindex="-1"></a>        synonyms.append(lemma.name())</span>
-<span id="cb1100-6"><a href="nltk.html#cb1100-6" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(synonyms)</span></code></pre></div>
+<div class="sourceCode" id="cb1143"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1143-1"><a href="nltk.html#cb1143-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Collect synonyms of all synsets</span></span>
+<span id="cb1143-2"><a href="nltk.html#cb1143-2" aria-hidden="true" tabindex="-1"></a>synonyms <span class="op">=</span> []</span>
+<span id="cb1143-3"><a href="nltk.html#cb1143-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> syn <span class="kw">in</span> wn.synsets(<span class="st">&#39;book&#39;</span>, pos<span class="op">=</span><span class="st">&#39;v&#39;</span>):</span>
+<span id="cb1143-4"><a href="nltk.html#cb1143-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> lemma <span class="kw">in</span> syn.lemmas():</span>
+<span id="cb1143-5"><a href="nltk.html#cb1143-5" aria-hidden="true" tabindex="-1"></a>        synonyms.append(lemma.name())</span>
+<span id="cb1143-6"><a href="nltk.html#cb1143-6" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(synonyms)</span></code></pre></div>
 <pre class="Rout"><code>6</code></pre>
-<div class="sourceCode" id="cb1102"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1102-1"><a href="nltk.html#cb1102-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(<span class="bu">set</span>(synonyms))</span></code></pre></div>
+<div class="sourceCode" id="cb1145"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1145-1"><a href="nltk.html#cb1145-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(<span class="bu">set</span>(synonyms))</span></code></pre></div>
 <pre class="Rout"><code>3</code></pre>
-<div class="sourceCode" id="cb1104"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1104-1"><a href="nltk.html#cb1104-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">set</span>(synonyms))</span></code></pre></div>
-<pre class="Rout"><code>{&#39;reserve&#39;, &#39;hold&#39;, &#39;book&#39;}</code></pre>
+<div class="sourceCode" id="cb1147"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1147-1"><a href="nltk.html#cb1147-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">set</span>(synonyms))</span></code></pre></div>
+<pre class="Rout"><code>{&#39;book&#39;, &#39;hold&#39;, &#39;reserve&#39;}</code></pre>
 <ul>
 <li>Antonyms</li>
 </ul>
-<div class="sourceCode" id="cb1106"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1106-1"><a href="nltk.html#cb1106-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First Synset Lemma String</span></span>
-<span id="cb1106-2"><a href="nltk.html#cb1106-2" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].lemmas()[<span class="dv">0</span>].name() </span>
-<span id="cb1106-3"><a href="nltk.html#cb1106-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Antonyms of the First Synset</span></span></code></pre></div>
+<div class="sourceCode" id="cb1149"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1149-1"><a href="nltk.html#cb1149-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First Synset Lemma String</span></span>
+<span id="cb1149-2"><a href="nltk.html#cb1149-2" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].lemmas()[<span class="dv">0</span>].name() </span>
+<span id="cb1149-3"><a href="nltk.html#cb1149-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Antonyms of the First Synset</span></span></code></pre></div>
 <pre class="Rout"><code>&#39;walk&#39;</code></pre>
-<div class="sourceCode" id="cb1108"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1108-1"><a href="nltk.html#cb1108-1" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].lemmas()[<span class="dv">0</span>].antonyms()[<span class="dv">0</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb1151"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1151-1"><a href="nltk.html#cb1151-1" aria-hidden="true" tabindex="-1"></a>word_synsets[<span class="dv">0</span>].lemmas()[<span class="dv">0</span>].antonyms()[<span class="dv">0</span>]</span></code></pre></div>
 <pre class="Rout"><code>Lemma(&#39;ride.v.02.ride&#39;)</code></pre>
 <div class="info">
 <p>While previous taxonomic relations (e.g., hypernymy and hyponymy) are in-between synsets, the synonymy and antonymy relations are in-between lemmas. We need to be very clear about the use of the three variants in WordNet:</p>
@@ -850,35 +850,35 @@ Examples: [&#39;The lovers held hands while walking&#39;, &#39;We like to walk e
 <div id="semantic-similarity-computation" class="section level3 hasAnchor" number="19.3.3">
 <h3><span class="header-section-number">19.3.3</span> Semantic Similarity Computation<a href="nltk.html#semantic-similarity-computation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Synsets are organized in a <strong>hypernym tree</strong>, which can be used for reasoning about the semantic similarity of two Synsets. The closer the two Synsets are in the tree, the more similar they are.</p>
-<div class="sourceCode" id="cb1110"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1110-1"><a href="nltk.html#cb1110-1" aria-hidden="true" tabindex="-1"></a><span class="co"># syn1 = wn.synsets(&#39;walk&#39;, pos=&#39;v&#39;)[0]</span></span>
-<span id="cb1110-2"><a href="nltk.html#cb1110-2" aria-hidden="true" tabindex="-1"></a>syn1 <span class="op">=</span> wn.synset(<span class="st">&#39;walk.v.01&#39;</span>)</span>
-<span id="cb1110-3"><a href="nltk.html#cb1110-3" aria-hidden="true" tabindex="-1"></a>syn2 <span class="op">=</span> wn.synset(<span class="st">&#39;toddle.v.01&#39;</span>)</span>
-<span id="cb1110-4"><a href="nltk.html#cb1110-4" aria-hidden="true" tabindex="-1"></a>syn3 <span class="op">=</span> wn.synset(<span class="st">&#39;think.v.01&#39;</span>)</span>
-<span id="cb1110-5"><a href="nltk.html#cb1110-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1110-6"><a href="nltk.html#cb1110-6" aria-hidden="true" tabindex="-1"></a>syn1.wup_similarity(syn2)</span></code></pre></div>
+<div class="sourceCode" id="cb1153"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1153-1"><a href="nltk.html#cb1153-1" aria-hidden="true" tabindex="-1"></a><span class="co"># syn1 = wn.synsets(&#39;walk&#39;, pos=&#39;v&#39;)[0]</span></span>
+<span id="cb1153-2"><a href="nltk.html#cb1153-2" aria-hidden="true" tabindex="-1"></a>syn1 <span class="op">=</span> wn.synset(<span class="st">&#39;walk.v.01&#39;</span>)</span>
+<span id="cb1153-3"><a href="nltk.html#cb1153-3" aria-hidden="true" tabindex="-1"></a>syn2 <span class="op">=</span> wn.synset(<span class="st">&#39;toddle.v.01&#39;</span>)</span>
+<span id="cb1153-4"><a href="nltk.html#cb1153-4" aria-hidden="true" tabindex="-1"></a>syn3 <span class="op">=</span> wn.synset(<span class="st">&#39;think.v.01&#39;</span>)</span>
+<span id="cb1153-5"><a href="nltk.html#cb1153-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1153-6"><a href="nltk.html#cb1153-6" aria-hidden="true" tabindex="-1"></a>syn1.wup_similarity(syn2)</span></code></pre></div>
 <pre class="Rout"><code>0.8</code></pre>
-<div class="sourceCode" id="cb1112"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1112-1"><a href="nltk.html#cb1112-1" aria-hidden="true" tabindex="-1"></a>syn1.wup_similarity(syn3)</span></code></pre></div>
+<div class="sourceCode" id="cb1155"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1155-1"><a href="nltk.html#cb1155-1" aria-hidden="true" tabindex="-1"></a>syn1.wup_similarity(syn3)</span></code></pre></div>
 <pre class="Rout"><code>0.2857142857142857</code></pre>
-<div class="sourceCode" id="cb1114"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1114-1"><a href="nltk.html#cb1114-1" aria-hidden="true" tabindex="-1"></a>syn1.path_similarity(syn2)</span></code></pre></div>
+<div class="sourceCode" id="cb1157"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1157-1"><a href="nltk.html#cb1157-1" aria-hidden="true" tabindex="-1"></a>syn1.path_similarity(syn2)</span></code></pre></div>
 <pre class="Rout"><code>0.5</code></pre>
-<div class="sourceCode" id="cb1116"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1116-1"><a href="nltk.html#cb1116-1" aria-hidden="true" tabindex="-1"></a>syn1.path_similarity(syn3)</span></code></pre></div>
+<div class="sourceCode" id="cb1159"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1159-1"><a href="nltk.html#cb1159-1" aria-hidden="true" tabindex="-1"></a>syn1.path_similarity(syn3)</span></code></pre></div>
 <pre class="Rout"><code>0.16666666666666666</code></pre>
-<div class="sourceCode" id="cb1118"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1118-1"><a href="nltk.html#cb1118-1" aria-hidden="true" tabindex="-1"></a>ref <span class="op">=</span> syn1.hypernyms()[<span class="dv">0</span>]</span>
-<span id="cb1118-2"><a href="nltk.html#cb1118-2" aria-hidden="true" tabindex="-1"></a>syn1.shortest_path_distance(ref)</span></code></pre></div>
+<div class="sourceCode" id="cb1161"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1161-1"><a href="nltk.html#cb1161-1" aria-hidden="true" tabindex="-1"></a>ref <span class="op">=</span> syn1.hypernyms()[<span class="dv">0</span>]</span>
+<span id="cb1161-2"><a href="nltk.html#cb1161-2" aria-hidden="true" tabindex="-1"></a>syn1.shortest_path_distance(ref)</span></code></pre></div>
 <pre class="Rout"><code>1</code></pre>
-<div class="sourceCode" id="cb1120"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1120-1"><a href="nltk.html#cb1120-1" aria-hidden="true" tabindex="-1"></a>syn2.shortest_path_distance(ref)</span></code></pre></div>
+<div class="sourceCode" id="cb1163"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1163-1"><a href="nltk.html#cb1163-1" aria-hidden="true" tabindex="-1"></a>syn2.shortest_path_distance(ref)</span></code></pre></div>
 <pre class="Rout"><code>2</code></pre>
-<div class="sourceCode" id="cb1122"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1122-1"><a href="nltk.html#cb1122-1" aria-hidden="true" tabindex="-1"></a>syn1.shortest_path_distance(syn2)</span></code></pre></div>
+<div class="sourceCode" id="cb1165"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1165-1"><a href="nltk.html#cb1165-1" aria-hidden="true" tabindex="-1"></a>syn1.shortest_path_distance(syn2)</span></code></pre></div>
 <pre class="Rout"><code>1</code></pre>
-<div class="sourceCode" id="cb1124"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1124-1"><a href="nltk.html#cb1124-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ref.definition())</span></code></pre></div>
+<div class="sourceCode" id="cb1167"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1167-1"><a href="nltk.html#cb1167-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ref.definition())</span></code></pre></div>
 <pre class="Rout"><code>change location; move, travel, or proceed, also metaphorically</code></pre>
-<div class="sourceCode" id="cb1126"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1126-1"><a href="nltk.html#cb1126-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>([l.name() <span class="cf">for</span> l <span class="kw">in</span> ref.lemmas()])</span></code></pre></div>
+<div class="sourceCode" id="cb1169"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1169-1"><a href="nltk.html#cb1169-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>([l.name() <span class="cf">for</span> l <span class="kw">in</span> ref.lemmas()])</span></code></pre></div>
 <pre class="Rout"><code>[&#39;travel&#39;, &#39;go&#39;, &#39;move&#39;, &#39;locomote&#39;]</code></pre>
-<div class="sourceCode" id="cb1128"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1128-1"><a href="nltk.html#cb1128-1" aria-hidden="true" tabindex="-1"></a>syn1.hypernym_paths()</span></code></pre></div>
+<div class="sourceCode" id="cb1171"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1171-1"><a href="nltk.html#cb1171-1" aria-hidden="true" tabindex="-1"></a>syn1.hypernym_paths()</span></code></pre></div>
 <pre class="Rout"><code>[[Synset(&#39;travel.v.01&#39;), Synset(&#39;walk.v.01&#39;)]]</code></pre>
-<div class="sourceCode" id="cb1130"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1130-1"><a href="nltk.html#cb1130-1" aria-hidden="true" tabindex="-1"></a>syn2.hypernym_paths()</span></code></pre></div>
+<div class="sourceCode" id="cb1173"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1173-1"><a href="nltk.html#cb1173-1" aria-hidden="true" tabindex="-1"></a>syn2.hypernym_paths()</span></code></pre></div>
 <pre class="Rout"><code>[[Synset(&#39;travel.v.01&#39;), Synset(&#39;walk.v.01&#39;), Synset(&#39;toddle.v.01&#39;)]]</code></pre>
-<div class="sourceCode" id="cb1132"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1132-1"><a href="nltk.html#cb1132-1" aria-hidden="true" tabindex="-1"></a>syn3.hypernym_paths()</span></code></pre></div>
+<div class="sourceCode" id="cb1175"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1175-1"><a href="nltk.html#cb1175-1" aria-hidden="true" tabindex="-1"></a>syn3.hypernym_paths()</span></code></pre></div>
 <pre class="Rout"><code>[[Synset(&#39;think.v.03&#39;), Synset(&#39;evaluate.v.02&#39;), Synset(&#39;think.v.01&#39;)]]</code></pre>
 <div class="info">
 <p>The <code>wup_similarity</code> method is short for <strong>Wu-Pamler Similarity</strong>. It is a scoring method for how similar the word senses are based on where the Synsets occur relative to each other in the hypernym tree. For more information or other scoring methods, please check <a href="https://www.nltk.org/howto/wordnet.html">NLTK WordNet documentation</a>.</p>
@@ -887,56 +887,56 @@ Examples: [&#39;The lovers held hands while walking&#39;, &#39;We like to walk e
 </div>
 <div id="discovering-word-collocations" class="section level2 hasAnchor" number="19.4">
 <h2><span class="header-section-number">19.4</span> Discovering Word Collocations<a href="nltk.html#discovering-word-collocations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb1134"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1134-1"><a href="nltk.html#cb1134-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> brown</span>
-<span id="cb1134-2"><a href="nltk.html#cb1134-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.collocations <span class="im">import</span> BigramCollocationFinder</span>
-<span id="cb1134-3"><a href="nltk.html#cb1134-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1134-4"><a href="nltk.html#cb1134-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.metrics <span class="im">import</span> BigramAssocMeasures</span>
-<span id="cb1134-5"><a href="nltk.html#cb1134-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1134-6"><a href="nltk.html#cb1134-6" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [w.lower() <span class="cf">for</span> w <span class="kw">in</span> brown.words()]</span>
-<span id="cb1134-7"><a href="nltk.html#cb1134-7" aria-hidden="true" tabindex="-1"></a>bcf <span class="op">=</span> BigramCollocationFinder.from_words(words)</span>
-<span id="cb1134-8"><a href="nltk.html#cb1134-8" aria-hidden="true" tabindex="-1"></a>bcf.nbest(BigramAssocMeasures.likelihood_ratio, <span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1177"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1177-1"><a href="nltk.html#cb1177-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> brown</span>
+<span id="cb1177-2"><a href="nltk.html#cb1177-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.collocations <span class="im">import</span> BigramCollocationFinder</span>
+<span id="cb1177-3"><a href="nltk.html#cb1177-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1177-4"><a href="nltk.html#cb1177-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.metrics <span class="im">import</span> BigramAssocMeasures</span>
+<span id="cb1177-5"><a href="nltk.html#cb1177-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1177-6"><a href="nltk.html#cb1177-6" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [w.lower() <span class="cf">for</span> w <span class="kw">in</span> brown.words()]</span>
+<span id="cb1177-7"><a href="nltk.html#cb1177-7" aria-hidden="true" tabindex="-1"></a>bcf <span class="op">=</span> BigramCollocationFinder.from_words(words)</span>
+<span id="cb1177-8"><a href="nltk.html#cb1177-8" aria-hidden="true" tabindex="-1"></a>bcf.nbest(BigramAssocMeasures.likelihood_ratio, <span class="dv">4</span>)</span></code></pre></div>
 <pre class="Rout"><code>[(&#39;;&#39;, &#39;;&#39;), (&#39;?&#39;, &#39;?&#39;), (&#39;of&#39;, &#39;the&#39;), (&#39;.&#39;, &#39;``&#39;)]</code></pre>
-<div class="sourceCode" id="cb1136"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1136-1"><a href="nltk.html#cb1136-1" aria-hidden="true" tabindex="-1"></a><span class="co"># deal with stopwords</span></span>
-<span id="cb1136-2"><a href="nltk.html#cb1136-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> stopwords</span>
-<span id="cb1136-3"><a href="nltk.html#cb1136-3" aria-hidden="true" tabindex="-1"></a>stopset <span class="op">=</span> <span class="bu">set</span>(stopwords.words(<span class="st">&#39;english&#39;</span>))</span>
-<span id="cb1136-4"><a href="nltk.html#cb1136-4" aria-hidden="true" tabindex="-1"></a><span class="co">## Fitler critera:</span></span>
-<span id="cb1136-5"><a href="nltk.html#cb1136-5" aria-hidden="true" tabindex="-1"></a><span class="co">## remove words whose length &lt; 3 or which are on the stop word list</span></span>
-<span id="cb1136-6"><a href="nltk.html#cb1136-6" aria-hidden="true" tabindex="-1"></a>filter_stops <span class="op">=</span> <span class="kw">lambda</span> w: <span class="bu">len</span>(w) <span class="op">&lt;</span> <span class="dv">3</span> <span class="kw">or</span> w <span class="kw">in</span> stopset</span>
-<span id="cb1136-7"><a href="nltk.html#cb1136-7" aria-hidden="true" tabindex="-1"></a>bcf.apply_word_filter(filter_stops)</span>
-<span id="cb1136-8"><a href="nltk.html#cb1136-8" aria-hidden="true" tabindex="-1"></a>bcf.nbest(BigramAssocMeasures.likelihood_ratio, <span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1179"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1179-1"><a href="nltk.html#cb1179-1" aria-hidden="true" tabindex="-1"></a><span class="co"># deal with stopwords</span></span>
+<span id="cb1179-2"><a href="nltk.html#cb1179-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> stopwords</span>
+<span id="cb1179-3"><a href="nltk.html#cb1179-3" aria-hidden="true" tabindex="-1"></a>stopset <span class="op">=</span> <span class="bu">set</span>(stopwords.words(<span class="st">&#39;english&#39;</span>))</span>
+<span id="cb1179-4"><a href="nltk.html#cb1179-4" aria-hidden="true" tabindex="-1"></a><span class="co">## Fitler critera:</span></span>
+<span id="cb1179-5"><a href="nltk.html#cb1179-5" aria-hidden="true" tabindex="-1"></a><span class="co">## remove words whose length &lt; 3 or which are on the stop word list</span></span>
+<span id="cb1179-6"><a href="nltk.html#cb1179-6" aria-hidden="true" tabindex="-1"></a>filter_stops <span class="op">=</span> <span class="kw">lambda</span> w: <span class="bu">len</span>(w) <span class="op">&lt;</span> <span class="dv">3</span> <span class="kw">or</span> w <span class="kw">in</span> stopset</span>
+<span id="cb1179-7"><a href="nltk.html#cb1179-7" aria-hidden="true" tabindex="-1"></a>bcf.apply_word_filter(filter_stops)</span>
+<span id="cb1179-8"><a href="nltk.html#cb1179-8" aria-hidden="true" tabindex="-1"></a>bcf.nbest(BigramAssocMeasures.likelihood_ratio, <span class="dv">10</span>)</span></code></pre></div>
 <pre class="Rout"><code>[(&#39;united&#39;, &#39;states&#39;), (&#39;new&#39;, &#39;york&#39;), (&#39;per&#39;, &#39;cent&#39;), (&#39;years&#39;, &#39;ago&#39;), (&#39;rhode&#39;, &#39;island&#39;), (&#39;los&#39;, &#39;angeles&#39;), (&#39;peace&#39;, &#39;corps&#39;), (&#39;san&#39;, &#39;francisco&#39;), (&#39;high&#39;, &#39;school&#39;), (&#39;fiscal&#39;, &#39;year&#39;)]</code></pre>
-<div class="sourceCode" id="cb1138"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1138-1"><a href="nltk.html#cb1138-1" aria-hidden="true" tabindex="-1"></a><span class="co">## apply freq-based filter</span></span>
-<span id="cb1138-2"><a href="nltk.html#cb1138-2" aria-hidden="true" tabindex="-1"></a>bcf.apply_freq_filter(<span class="dv">3</span>)</span>
-<span id="cb1138-3"><a href="nltk.html#cb1138-3" aria-hidden="true" tabindex="-1"></a>bcf.nbest(BigramAssocMeasures.likelihood_ratio, <span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1181"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1181-1"><a href="nltk.html#cb1181-1" aria-hidden="true" tabindex="-1"></a><span class="co">## apply freq-based filter</span></span>
+<span id="cb1181-2"><a href="nltk.html#cb1181-2" aria-hidden="true" tabindex="-1"></a>bcf.apply_freq_filter(<span class="dv">3</span>)</span>
+<span id="cb1181-3"><a href="nltk.html#cb1181-3" aria-hidden="true" tabindex="-1"></a>bcf.nbest(BigramAssocMeasures.likelihood_ratio, <span class="dv">10</span>)</span></code></pre></div>
 <pre class="Rout"><code>[(&#39;united&#39;, &#39;states&#39;), (&#39;new&#39;, &#39;york&#39;), (&#39;per&#39;, &#39;cent&#39;), (&#39;years&#39;, &#39;ago&#39;), (&#39;rhode&#39;, &#39;island&#39;), (&#39;los&#39;, &#39;angeles&#39;), (&#39;peace&#39;, &#39;corps&#39;), (&#39;san&#39;, &#39;francisco&#39;), (&#39;high&#39;, &#39;school&#39;), (&#39;fiscal&#39;, &#39;year&#39;)]</code></pre>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-43" class="exercise"><strong>Exercise 19.1  </strong></span>Try to identify bigram collocations in the corpus, Alice in the Wonderland. The texts are available in <code>nltk.corpus.gutenburg</code>.</p>
+<p><span id="exr:unlabeled-div-51" class="exercise"><strong>Exercise 19.1  </strong></span>Try to identify bigram collocations in the corpus, Alice in the Wonderland. The texts are available in <code>nltk.corpus.gutenburg</code>.</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-44" class="exercise"><strong>Exercise 19.2  </strong></span>Following the same strategy of bigram collocation extraction, please try to extract <strong>trigrams</strong> from the <code>brown</code> corpus. Remove stop words and short words as we did in the lecture. Include only trigrams whose frequency &gt; 5.</p>
+<p><span id="exr:unlabeled-div-52" class="exercise"><strong>Exercise 19.2  </strong></span>Following the same strategy of bigram collocation extraction, please try to extract <strong>trigrams</strong> from the <code>brown</code> corpus. Remove stop words and short words as we did in the lecture. Include only trigrams whose frequency &gt; 5.</p>
 </div>
 </div>
 <div id="tokenization-1" class="section level2 hasAnchor" number="19.5">
 <h2><span class="header-section-number">19.5</span> Tokenization<a href="nltk.html#tokenization-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb1140"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1140-1"><a href="nltk.html#cb1140-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nltk</span>
-<span id="cb1140-2"><a href="nltk.html#cb1140-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> word_tokenize, sent_tokenize</span>
-<span id="cb1140-3"><a href="nltk.html#cb1140-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1140-4"><a href="nltk.html#cb1140-4" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;&quot;&quot;Three blind mice! See how they run!</span></span>
-<span id="cb1140-5"><a href="nltk.html#cb1140-5" aria-hidden="true" tabindex="-1"></a><span class="st">They all ran after the farmer&#39;s wife,</span></span>
-<span id="cb1140-6"><a href="nltk.html#cb1140-6" aria-hidden="true" tabindex="-1"></a><span class="st">Who cut off their tails with a carving knife.</span></span>
-<span id="cb1140-7"><a href="nltk.html#cb1140-7" aria-hidden="true" tabindex="-1"></a><span class="st">Did you ever see such a thing in your life</span></span>
-<span id="cb1140-8"><a href="nltk.html#cb1140-8" aria-hidden="true" tabindex="-1"></a><span class="st">As three blind mice?</span></span>
-<span id="cb1140-9"><a href="nltk.html#cb1140-9" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span></span>
-<span id="cb1140-10"><a href="nltk.html#cb1140-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1140-11"><a href="nltk.html#cb1140-11" aria-hidden="true" tabindex="-1"></a>text_sent <span class="op">=</span> sent_tokenize(text)</span>
-<span id="cb1140-12"><a href="nltk.html#cb1140-12" aria-hidden="true" tabindex="-1"></a>text_word <span class="op">=</span> word_tokenize(text)</span>
-<span id="cb1140-13"><a href="nltk.html#cb1140-13" aria-hidden="true" tabindex="-1"></a>text_pos <span class="op">=</span> nltk.pos_tag(text_word)</span></code></pre></div>
+<div class="sourceCode" id="cb1183"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1183-1"><a href="nltk.html#cb1183-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nltk</span>
+<span id="cb1183-2"><a href="nltk.html#cb1183-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> word_tokenize, sent_tokenize</span>
+<span id="cb1183-3"><a href="nltk.html#cb1183-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1183-4"><a href="nltk.html#cb1183-4" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;&quot;&quot;Three blind mice! See how they run!</span></span>
+<span id="cb1183-5"><a href="nltk.html#cb1183-5" aria-hidden="true" tabindex="-1"></a><span class="st">They all ran after the farmer&#39;s wife,</span></span>
+<span id="cb1183-6"><a href="nltk.html#cb1183-6" aria-hidden="true" tabindex="-1"></a><span class="st">Who cut off their tails with a carving knife.</span></span>
+<span id="cb1183-7"><a href="nltk.html#cb1183-7" aria-hidden="true" tabindex="-1"></a><span class="st">Did you ever see such a thing in your life</span></span>
+<span id="cb1183-8"><a href="nltk.html#cb1183-8" aria-hidden="true" tabindex="-1"></a><span class="st">As three blind mice?</span></span>
+<span id="cb1183-9"><a href="nltk.html#cb1183-9" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb1183-10"><a href="nltk.html#cb1183-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1183-11"><a href="nltk.html#cb1183-11" aria-hidden="true" tabindex="-1"></a>text_sent <span class="op">=</span> sent_tokenize(text)</span>
+<span id="cb1183-12"><a href="nltk.html#cb1183-12" aria-hidden="true" tabindex="-1"></a>text_word <span class="op">=</span> word_tokenize(text)</span>
+<span id="cb1183-13"><a href="nltk.html#cb1183-13" aria-hidden="true" tabindex="-1"></a>text_pos <span class="op">=</span> nltk.pos_tag(text_word)</span></code></pre></div>
 <ul>
 <li>With words, we can create a frequency list:</li>
 </ul>
-<div class="sourceCode" id="cb1141"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1141-1"><a href="nltk.html#cb1141-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pprint <span class="im">as</span> pp</span>
-<span id="cb1141-2"><a href="nltk.html#cb1141-2" aria-hidden="true" tabindex="-1"></a>text_fd<span class="op">=</span> nltk.FreqDist([w.lower() <span class="cf">for</span> w <span class="kw">in</span> text_word])</span>
-<span id="cb1141-3"><a href="nltk.html#cb1141-3" aria-hidden="true" tabindex="-1"></a>pp.pprint(text_fd.most_common(<span class="dv">10</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb1184"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1184-1"><a href="nltk.html#cb1184-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pprint <span class="im">as</span> pp</span>
+<span id="cb1184-2"><a href="nltk.html#cb1184-2" aria-hidden="true" tabindex="-1"></a>text_fd<span class="op">=</span> nltk.FreqDist([w.lower() <span class="cf">for</span> w <span class="kw">in</span> text_word])</span>
+<span id="cb1184-3"><a href="nltk.html#cb1184-3" aria-hidden="true" tabindex="-1"></a>pp.pprint(text_fd.most_common(<span class="dv">10</span>))</span></code></pre></div>
 <pre class="Rout"><code>[(&#39;three&#39;, 2),
  (&#39;blind&#39;, 2),
  (&#39;mice&#39;, 2),
@@ -948,9 +948,9 @@ Examples: [&#39;The lovers held hands while walking&#39;, &#39;We like to walk e
  (&#39;run&#39;, 1),
  (&#39;all&#39;, 1)]</code></pre>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-45" class="exercise"><strong>Exercise 19.3  </strong></span>Provide the word frequency list of the top 30 nouns in Alice in the Wonderland. The raw texts of the novel is available in NTLK (see below).</p>
+<p><span id="exr:unlabeled-div-53" class="exercise"><strong>Exercise 19.3  </strong></span>Provide the word frequency list of the top 30 nouns in Alice in the Wonderland. The raw texts of the novel is available in NTLK (see below).</p>
 </div>
-<div class="sourceCode" id="cb1143"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1143-1"><a href="nltk.html#cb1143-1" aria-hidden="true" tabindex="-1"></a>alice <span class="op">=</span> nltk.corpus.gutenberg.raw(fileids<span class="op">=</span><span class="st">&#39;carroll-alice.txt&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1186"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1186-1"><a href="nltk.html#cb1186-1" aria-hidden="true" tabindex="-1"></a>alice <span class="op">=</span> nltk.corpus.gutenberg.raw(fileids<span class="op">=</span><span class="st">&#39;carroll-alice.txt&#39;</span>)</span></code></pre></div>
 <pre class="Rout"><code>[(&#39;Alice&#39;, 392),
  (&#39;Queen&#39;, 71),
  (&#39;time&#39;, 65),
@@ -984,17 +984,17 @@ Examples: [&#39;The lovers held hands while walking&#39;, &#39;We like to walk e
 </div>
 <div id="chinese-word-segmentation" class="section level2 hasAnchor" number="19.6">
 <h2><span class="header-section-number">19.6</span> Chinese Word Segmentation<a href="nltk.html#chinese-word-segmentation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb1145"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1145-1"><a href="nltk.html#cb1145-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> jieba</span>
-<span id="cb1145-2"><a href="nltk.html#cb1145-2" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span></span>
-<span id="cb1145-3"><a href="nltk.html#cb1145-3" aria-hidden="true" tabindex="-1"></a><span class="st">高速公路局說，目前在國道3號北向水上系統至中埔路段車多壅塞，已回堵約3公里。另外，國道1號北向仁德至永康路段路段，已回堵約有7公里。建議駕駛人提前避開壅塞路段改道行駛，行經車多路段請保持行車安全距離，小心行駛。</span></span>
-<span id="cb1145-4"><a href="nltk.html#cb1145-4" aria-hidden="true" tabindex="-1"></a><span class="st">國道車多壅塞路段還有國1內湖-五堵北向路段、楊梅-新竹南向路段；國3三鶯-關西服務區南向路段、快官-霧峰南向路段、水上系統-中埔北向路段；國6霧峰系統-東草屯東向路段、國10燕巢-燕巢系統東向路段。</span></span>
-<span id="cb1145-5"><a href="nltk.html#cb1145-5" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span></span>
-<span id="cb1145-6"><a href="nltk.html#cb1145-6" aria-hidden="true" tabindex="-1"></a>text_jb <span class="op">=</span> jieba.lcut(text)</span></code></pre></div>
+<div class="sourceCode" id="cb1188"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1188-1"><a href="nltk.html#cb1188-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> jieba</span>
+<span id="cb1188-2"><a href="nltk.html#cb1188-2" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb1188-3"><a href="nltk.html#cb1188-3" aria-hidden="true" tabindex="-1"></a><span class="st">高速公路局說，目前在國道3號北向水上系統至中埔路段車多壅塞，已回堵約3公里。另外，國道1號北向仁德至永康路段路段，已回堵約有7公里。建議駕駛人提前避開壅塞路段改道行駛，行經車多路段請保持行車安全距離，小心行駛。</span></span>
+<span id="cb1188-4"><a href="nltk.html#cb1188-4" aria-hidden="true" tabindex="-1"></a><span class="st">國道車多壅塞路段還有國1內湖-五堵北向路段、楊梅-新竹南向路段；國3三鶯-關西服務區南向路段、快官-霧峰南向路段、水上系統-中埔北向路段；國6霧峰系統-東草屯東向路段、國10燕巢-燕巢系統東向路段。</span></span>
+<span id="cb1188-5"><a href="nltk.html#cb1188-5" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb1188-6"><a href="nltk.html#cb1188-6" aria-hidden="true" tabindex="-1"></a>text_jb <span class="op">=</span> jieba.lcut(text)</span></code></pre></div>
 <pre class="Rout"><code>Building prefix dict from the default dictionary ...
-Loading model from cache /var/folders/0v/47nxlfjn26536t51wxj9j6q40000gn/T/jieba.cache
-Loading model cost 0.552 seconds.
+Dumping model to file cache /var/folders/0v/47nxlfjn26536t51wxj9j6q40000gn/T/jieba.cache
+Loading model cost 0.661 seconds.
 Prefix dict has been built successfully.</code></pre>
-<div class="sourceCode" id="cb1147"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1147-1"><a href="nltk.html#cb1147-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39; | &#39;</span>.join(text_jb))</span></code></pre></div>
+<div class="sourceCode" id="cb1190"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1190-1"><a href="nltk.html#cb1190-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39; | &#39;</span>.join(text_jb))</span></code></pre></div>
 <pre class="Rout"><code>
  | 高速公路 | 局說 | ， | 目前 | 在 | 國道 | 3 | 號 | 北向 | 水上 | 系統 | 至 | 中埔 | 路段 | 車多 | 壅塞 | ， | 已回 | 堵約 | 3 | 公里 | 。 | 另外 | ， | 國道 | 1 | 號 | 北向 | 仁德 | 至 | 永康 | 路段 | 路段 | ， | 已回 | 堵 | 約 | 有 | 7 | 公里 | 。 | 建議 | 駕駛人 | 提前 | 避開 | 壅塞 | 路段 | 改道 | 行駛 | ， | 行經車 | 多 | 路段 | 請 | 保持 | 行車 | 安全 | 距離 | ， | 小心 | 行駛 | 。 | 
  | 國道 | 車多 | 壅塞 | 路段 | 還有國 | 1 | 內湖 | - | 五堵 | 北向 | 路段 | 、 | 楊梅 | - | 新竹 | 南向 | 路段 | ； | 國 | 3 | 三鶯 | - | 關 | 西服 | 務區 | 南向 | 路段 | 、 | 快官 | - | 霧峰 | 南向 | 路段 | 、 | 水上 | 系統 | - | 中埔 | 北向 | 路段 | ； | 國 | 6 | 霧峰 | 系統 | - | 東 | 草屯 | 東向 | 路段 | 、 | 國 | 10 | 燕巢 | - | 燕巢 | 系統 | 東向 | 路段 | 。 | </code></pre>
