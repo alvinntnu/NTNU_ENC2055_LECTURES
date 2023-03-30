@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2023-03-27" />
+<meta name="date" content="2023-03-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -625,7 +625,6 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <div id="datasaurus-dozen-dataset" class="section level3 unnumbered hasAnchor">
 <h3>Datasaurus Dozen Dataset<a href="data-visualization.html#datasaurus-dozen-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>First, let us take a look at an interesting dataset—Datasaurus, which is available in <code>demo_data/data-datasaurus.csv</code> (source: <a href="https://cran.r-project.org/web/packages/datasauRus/vignettes/Datasaurus.html">Datasaurus data package</a>. This data set was first created by <a href="http://www.thefunctionalart.com/2016/08/download-datasaurus-never-trust-summary.html">Alberto Cairo</a>).</p>
-<hr />
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:300px; overflow-x: scroll; width:100%; ">
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
@@ -934,11 +933,9 @@ wide_lines
 </tbody>
 </table>
 </div>
-<hr />
 <p>This data set includes 1846 rows (items), with three columns describing the properties of the items: <code>group</code>, <code>x</code> and <code>y</code>.</p>
 <p>As we have a grouping factor <code>group</code>, we can break the data set into several subsets by <code>group</code> and for each subset we compute their respective mean scores and standard deviations of <code>x</code> and <code>y</code>.</p>
 <p>According to the summary statistics of each sub-group (cf. Table <a href="data-visualization.html#tab:datasaurus2">7.2</a>), they all look quite similar in terms of each group’s mean and standard deviation of <code>x</code> and <code>y</code>:</p>
-<hr />
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:300px; overflow-x: scroll; width:100%; ">
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
@@ -1188,8 +1185,6 @@ x_shape
 </tbody>
 </table>
 </div>
-<hr />
-<hr />
 <p>So it may be tempting for us to naively conclude that all groups show similar behaviors in <code>x</code> and <code>y</code> measures.</p>
 <p>But what if we plot all items according to their <code>x</code> and <code>y</code> values by <code>group</code> ?</p>
 <p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-204-1.png" width="672" /></p>
@@ -1313,9 +1308,11 @@ x_shape
 <div class="sourceCode" id="cb390"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb390-1"><a href="data-visualization.html#cb390-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(hwy)) <span class="sc">+</span></span>
 <span id="cb390-2"><a href="data-visualization.html#cb390-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">kernel=</span><span class="st">&quot;gaussian&quot;</span>)</span></code></pre></div>
 <p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-214-2.png" width="672" /></p>
+<div class="try">
 <p>We can also combine the histogram and density plots into one:</p>
 <p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-215-1.png" width="672" /></p>
 <p>Any thoughts about how to do that?</p>
+</div>
 <div class="info">
 <p>The way we examine the distribution of the continuous variable (i.e., numbers) is to divide the entire range of values into a series of intervals, i.e., <strong>bins</strong>, and then count how many values in the data set fall into each interval.</p>
 <p>In other words, the shape of your histogram may vary depending on two parameters:</p>
@@ -1510,6 +1507,10 @@ x_shape
 <span id="cb412-3"><a href="data-visualization.html#cb412-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">size =</span> <span class="fl">0.2</span>,</span>
 <span id="cb412-4"><a href="data-visualization.html#cb412-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">notch =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-234-2.png" width="672" /></p>
+<div class="info">
+<p>In ggplot2, both <strong>color</strong> and <strong>fill</strong> are two aesthetic mappings that can be used to distinguish between groups in a plot.</p>
+<p><strong>color</strong> changes the <em>outline</em> color of a graphical element, while <strong>fill</strong> changes the <em>interior</em> fill color or <em>pattern</em> of a graphical element.</p>
+</div>
 </div>
 <div id="shape" class="section level3 hasAnchor" number="7.6.5">
 <h3><span class="header-section-number">7.6.5</span> <code>shape</code><a href="data-visualization.html#shape" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1546,16 +1547,16 @@ x_shape
 <span id="cb416-2"><a href="data-visualization.html#cb416-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
 <span id="cb416-3"><a href="data-visualization.html#cb416-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)</span></code></pre></div>
 <p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-239-1.png" width="672" /></p>
-<div class="info">
+<div class="try">
 <p>Could you predict what kind of graph you would get with the following code?</p>
-</div>
 <div class="sourceCode" id="cb417"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb417-1"><a href="data-visualization.html#cb417-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy, <span class="at">color =</span> drv)) <span class="sc">+</span></span>
 <span id="cb417-2"><a href="data-visualization.html#cb417-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb417-3"><a href="data-visualization.html#cb417-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)</span></code></pre></div>
 </div>
+</div>
 <div id="labels-and-annotations" class="section level3 hasAnchor" number="7.7.2">
 <h3><span class="header-section-number">7.7.2</span> Labels and Annotations<a href="data-visualization.html#labels-and-annotations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>We can add self-defined labels of the <code>x</code> and <code>y</code> axes and main titles to the graphs using <code>labs()</code>.</p>
+<p>We can add self-defined labels of the <code>x</code> and <code>y</code> axes and main/sub titles to the graphs using <code>labs()</code>. (By default, ggplot2 will utilize the original variable names [i.e., column names] for x and y labels.)</p>
 <div class="sourceCode" id="cb418"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb418-1"><a href="data-visualization.html#cb418-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy)) <span class="sc">+</span></span>
 <span id="cb418-2"><a href="data-visualization.html#cb418-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb418-3"><a href="data-visualization.html#cb418-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&#39;lm&#39;</span>) <span class="sc">+</span></span>
@@ -1567,7 +1568,8 @@ x_shape
 <span id="cb419-2"><a href="data-visualization.html#cb419-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb419-3"><a href="data-visualization.html#cb419-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Engine Displacement (litres)&quot;</span>,</span>
 <span id="cb419-4"><a href="data-visualization.html#cb419-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Highway Miles per Gallon&quot;</span>,</span>
-<span id="cb419-5"><a href="data-visualization.html#cb419-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Scatter Plot -- DISPL by HWY&quot;</span>)</span></code></pre></div>
+<span id="cb419-5"><a href="data-visualization.html#cb419-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Scatter Plot -- DISPL by HWY&quot;</span>,</span>
+<span id="cb419-6"><a href="data-visualization.html#cb419-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;Drive Train Type&quot;</span>)</span></code></pre></div>
 <p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-242-1.png" width="672" /></p>
 </div>
 <div id="facets" class="section level3 hasAnchor" number="7.7.3">
@@ -1587,13 +1589,16 @@ x_shape
 <p>We can easily change the aesthetic themes of the ggplot by adding one layer of <code>theme_*()</code>.</p>
 <div class="sourceCode" id="cb421"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb421-1"><a href="data-visualization.html#cb421-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Save the ggplot2 object</span></span>
 <span id="cb421-2"><a href="data-visualization.html#cb421-2" aria-hidden="true" tabindex="-1"></a>graph1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy, <span class="at">color =</span> drv)) <span class="sc">+</span></span>
-<span id="cb421-3"><a href="data-visualization.html#cb421-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb421-4"><a href="data-visualization.html#cb421-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Engine Displacement (litres)&quot;</span>,</span>
-<span id="cb421-5"><a href="data-visualization.html#cb421-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Highway Miles per Gallon&quot;</span>,</span>
-<span id="cb421-6"><a href="data-visualization.html#cb421-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Scatter Plot -- DISPL by HWY&quot;</span>)</span>
-<span id="cb421-7"><a href="data-visualization.html#cb421-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb421-8"><a href="data-visualization.html#cb421-8" aria-hidden="true" tabindex="-1"></a><span class="do">## autoprint the graph</span></span>
-<span id="cb421-9"><a href="data-visualization.html#cb421-9" aria-hidden="true" tabindex="-1"></a>graph1</span></code></pre></div>
+<span id="cb421-3"><a href="data-visualization.html#cb421-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> .<span class="dv">8</span>) <span class="sc">+</span></span>
+<span id="cb421-4"><a href="data-visualization.html#cb421-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb421-5"><a href="data-visualization.html#cb421-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Engine Displacement (litres)&quot;</span>,</span>
+<span id="cb421-6"><a href="data-visualization.html#cb421-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Highway Miles per Gallon&quot;</span>,</span>
+<span id="cb421-7"><a href="data-visualization.html#cb421-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Scatter Plot -- DISPL by HWY&quot;</span>,</span>
+<span id="cb421-8"><a href="data-visualization.html#cb421-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;Drive Train Type&quot;</span></span>
+<span id="cb421-9"><a href="data-visualization.html#cb421-9" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb421-10"><a href="data-visualization.html#cb421-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb421-11"><a href="data-visualization.html#cb421-11" aria-hidden="true" tabindex="-1"></a><span class="do">## autoprint the graph</span></span>
+<span id="cb421-12"><a href="data-visualization.html#cb421-12" aria-hidden="true" tabindex="-1"></a>graph1</span></code></pre></div>
 <p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-244-1.png" width="672" /></p>
 <div class="sourceCode" id="cb422"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb422-1"><a href="data-visualization.html#cb422-1" aria-hidden="true" tabindex="-1"></a><span class="do">## add theme layers</span></span>
 <span id="cb422-2"><a href="data-visualization.html#cb422-2" aria-hidden="true" tabindex="-1"></a>graph1 <span class="sc">+</span> <span class="fu">theme_bw</span>(<span class="at">base_family =</span> <span class="st">&quot;Times New Roman&quot;</span>)</span></code></pre></div>

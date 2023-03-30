@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2023-03-27" />
+<meta name="date" content="2023-03-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -676,56 +676,56 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <li>Use the pattern for search (<code>re.search()</code>) by passing the string you want to search into the <code>Regex</code> object’s search method. This returns a <code>Match</code> object.</li>
 <li>Call the <code>Match</code> object’s <code>group()</code> method to return a string of the actual matched text.</li>
 </ul>
-<div class="sourceCode" id="cb922"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb922-1"><a href="regular-expression.html#cb922-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
-<span id="cb922-2"><a href="regular-expression.html#cb922-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb922-3"><a href="regular-expression.html#cb922-3" aria-hidden="true" tabindex="-1"></a>text_to_search <span class="op">=</span> <span class="st">&#39;&#39;&#39;</span></span>
-<span id="cb922-4"><a href="regular-expression.html#cb922-4" aria-hidden="true" tabindex="-1"></a><span class="st">abcdefghijklmnopqurtuvwxyz</span></span>
-<span id="cb922-5"><a href="regular-expression.html#cb922-5" aria-hidden="true" tabindex="-1"></a><span class="st">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span></span>
-<span id="cb922-6"><a href="regular-expression.html#cb922-6" aria-hidden="true" tabindex="-1"></a><span class="st">1234567890</span></span>
-<span id="cb922-7"><a href="regular-expression.html#cb922-7" aria-hidden="true" tabindex="-1"></a><span class="st">Ha HaHa</span></span>
-<span id="cb922-8"><a href="regular-expression.html#cb922-8" aria-hidden="true" tabindex="-1"></a><span class="st">MetaCharacters (Need to be escaped):</span></span>
-<span id="cb922-9"><a href="regular-expression.html#cb922-9" aria-hidden="true" tabindex="-1"></a><span class="st">. ^ $ * + ? { } [ ] \ | ( )</span></span>
-<span id="cb922-10"><a href="regular-expression.html#cb922-10" aria-hidden="true" tabindex="-1"></a><span class="st">coreyms.com</span></span>
-<span id="cb922-11"><a href="regular-expression.html#cb922-11" aria-hidden="true" tabindex="-1"></a><span class="st">321-555-4321</span></span>
-<span id="cb922-12"><a href="regular-expression.html#cb922-12" aria-hidden="true" tabindex="-1"></a><span class="st">123.555.1234</span></span>
-<span id="cb922-13"><a href="regular-expression.html#cb922-13" aria-hidden="true" tabindex="-1"></a><span class="st">123*555*1234</span></span>
-<span id="cb922-14"><a href="regular-expression.html#cb922-14" aria-hidden="true" tabindex="-1"></a><span class="st">800-555-1234</span></span>
-<span id="cb922-15"><a href="regular-expression.html#cb922-15" aria-hidden="true" tabindex="-1"></a><span class="st">900-555-1234</span></span>
-<span id="cb922-16"><a href="regular-expression.html#cb922-16" aria-hidden="true" tabindex="-1"></a><span class="st">Mr. Schafer</span></span>
-<span id="cb922-17"><a href="regular-expression.html#cb922-17" aria-hidden="true" tabindex="-1"></a><span class="st">Mr Smith</span></span>
-<span id="cb922-18"><a href="regular-expression.html#cb922-18" aria-hidden="true" tabindex="-1"></a><span class="st">Ms Davis</span></span>
-<span id="cb922-19"><a href="regular-expression.html#cb922-19" aria-hidden="true" tabindex="-1"></a><span class="st">Mrs. Robinson</span></span>
-<span id="cb922-20"><a href="regular-expression.html#cb922-20" aria-hidden="true" tabindex="-1"></a><span class="st">Mr. T</span></span>
-<span id="cb922-21"><a href="regular-expression.html#cb922-21" aria-hidden="true" tabindex="-1"></a><span class="st">&#39;&#39;&#39;</span></span>
-<span id="cb922-22"><a href="regular-expression.html#cb922-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb922-23"><a href="regular-expression.html#cb922-23" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> <span class="st">&#39;Start a sentence and then bring it to an end&#39;</span></span>
-<span id="cb922-24"><a href="regular-expression.html#cb922-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb922-25"><a href="regular-expression.html#cb922-25" aria-hidden="true" tabindex="-1"></a>pattern <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r&#39;\d</span><span class="sc">{3}</span><span class="vs">-\d</span><span class="sc">{3}</span><span class="vs">-\d</span><span class="sc">{4}</span><span class="vs">&#39;</span>, re.I)</span></code></pre></div>
+<div class="sourceCode" id="cb942"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb942-1"><a href="regular-expression.html#cb942-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb942-2"><a href="regular-expression.html#cb942-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb942-3"><a href="regular-expression.html#cb942-3" aria-hidden="true" tabindex="-1"></a>text_to_search <span class="op">=</span> <span class="st">&#39;&#39;&#39;</span></span>
+<span id="cb942-4"><a href="regular-expression.html#cb942-4" aria-hidden="true" tabindex="-1"></a><span class="st">abcdefghijklmnopqurtuvwxyz</span></span>
+<span id="cb942-5"><a href="regular-expression.html#cb942-5" aria-hidden="true" tabindex="-1"></a><span class="st">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span></span>
+<span id="cb942-6"><a href="regular-expression.html#cb942-6" aria-hidden="true" tabindex="-1"></a><span class="st">1234567890</span></span>
+<span id="cb942-7"><a href="regular-expression.html#cb942-7" aria-hidden="true" tabindex="-1"></a><span class="st">Ha HaHa</span></span>
+<span id="cb942-8"><a href="regular-expression.html#cb942-8" aria-hidden="true" tabindex="-1"></a><span class="st">MetaCharacters (Need to be escaped):</span></span>
+<span id="cb942-9"><a href="regular-expression.html#cb942-9" aria-hidden="true" tabindex="-1"></a><span class="st">. ^ $ * + ? { } [ ] \ | ( )</span></span>
+<span id="cb942-10"><a href="regular-expression.html#cb942-10" aria-hidden="true" tabindex="-1"></a><span class="st">coreyms.com</span></span>
+<span id="cb942-11"><a href="regular-expression.html#cb942-11" aria-hidden="true" tabindex="-1"></a><span class="st">321-555-4321</span></span>
+<span id="cb942-12"><a href="regular-expression.html#cb942-12" aria-hidden="true" tabindex="-1"></a><span class="st">123.555.1234</span></span>
+<span id="cb942-13"><a href="regular-expression.html#cb942-13" aria-hidden="true" tabindex="-1"></a><span class="st">123*555*1234</span></span>
+<span id="cb942-14"><a href="regular-expression.html#cb942-14" aria-hidden="true" tabindex="-1"></a><span class="st">800-555-1234</span></span>
+<span id="cb942-15"><a href="regular-expression.html#cb942-15" aria-hidden="true" tabindex="-1"></a><span class="st">900-555-1234</span></span>
+<span id="cb942-16"><a href="regular-expression.html#cb942-16" aria-hidden="true" tabindex="-1"></a><span class="st">Mr. Schafer</span></span>
+<span id="cb942-17"><a href="regular-expression.html#cb942-17" aria-hidden="true" tabindex="-1"></a><span class="st">Mr Smith</span></span>
+<span id="cb942-18"><a href="regular-expression.html#cb942-18" aria-hidden="true" tabindex="-1"></a><span class="st">Ms Davis</span></span>
+<span id="cb942-19"><a href="regular-expression.html#cb942-19" aria-hidden="true" tabindex="-1"></a><span class="st">Mrs. Robinson</span></span>
+<span id="cb942-20"><a href="regular-expression.html#cb942-20" aria-hidden="true" tabindex="-1"></a><span class="st">Mr. T</span></span>
+<span id="cb942-21"><a href="regular-expression.html#cb942-21" aria-hidden="true" tabindex="-1"></a><span class="st">&#39;&#39;&#39;</span></span>
+<span id="cb942-22"><a href="regular-expression.html#cb942-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb942-23"><a href="regular-expression.html#cb942-23" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> <span class="st">&#39;Start a sentence and then bring it to an end&#39;</span></span>
+<span id="cb942-24"><a href="regular-expression.html#cb942-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb942-25"><a href="regular-expression.html#cb942-25" aria-hidden="true" tabindex="-1"></a>pattern <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r&#39;\d</span><span class="sc">{3}</span><span class="vs">-\d</span><span class="sc">{3}</span><span class="vs">-\d</span><span class="sc">{4}</span><span class="vs">&#39;</span>, re.I)</span></code></pre></div>
 </div>
 <div id="re.findall" class="section level3 hasAnchor" number="17.2.2">
 <h3><span class="header-section-number">17.2.2</span> <code>re.findall()</code><a href="regular-expression.html#re.findall" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>While <code>search()</code> will return a <code>Match</code> object of the <em>first</em> matched text in the searched string, the <code>findall()</code> method will return the strings of every match in the searched string. (<code>re.findall()</code> will not return a <code>Match</code> object but a list of strings–*as long as there are no groups in the regular expression.)</li>
 </ul>
-<div class="sourceCode" id="cb923"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb923-1"><a href="regular-expression.html#cb923-1" aria-hidden="true" tabindex="-1"></a><span class="co">## perform a search</span></span>
-<span id="cb923-2"><a href="regular-expression.html#cb923-2" aria-hidden="true" tabindex="-1"></a>matches<span class="op">=</span> pattern.findall(text_to_search)</span>
-<span id="cb923-3"><a href="regular-expression.html#cb923-3" aria-hidden="true" tabindex="-1"></a>matches</span></code></pre></div>
+<div class="sourceCode" id="cb943"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb943-1"><a href="regular-expression.html#cb943-1" aria-hidden="true" tabindex="-1"></a><span class="co">## perform a search</span></span>
+<span id="cb943-2"><a href="regular-expression.html#cb943-2" aria-hidden="true" tabindex="-1"></a>matches<span class="op">=</span> pattern.findall(text_to_search)</span>
+<span id="cb943-3"><a href="regular-expression.html#cb943-3" aria-hidden="true" tabindex="-1"></a>matches</span></code></pre></div>
 <pre class="Rout"><code>[&#39;321-555-4321&#39;, &#39;800-555-1234&#39;, &#39;900-555-1234&#39;]</code></pre>
 <ul>
 <li>If there are groups in the regular expressions, then <code>re.findall()</code> will return a list of tuples.</li>
 </ul>
-<div class="sourceCode" id="cb925"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb925-1"><a href="regular-expression.html#cb925-1" aria-hidden="true" tabindex="-1"></a>pattern2 <span class="op">=</span>  re.<span class="bu">compile</span>(<span class="vs">r&#39;(\d</span><span class="sc">{3}</span><span class="vs">)-(\d</span><span class="sc">{3}</span><span class="vs">)-(\d</span><span class="sc">{4}</span><span class="vs">)&#39;</span>, re.I)</span>
-<span id="cb925-2"><a href="regular-expression.html#cb925-2" aria-hidden="true" tabindex="-1"></a>pattern2.findall(text_to_search)</span></code></pre></div>
+<div class="sourceCode" id="cb945"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb945-1"><a href="regular-expression.html#cb945-1" aria-hidden="true" tabindex="-1"></a>pattern2 <span class="op">=</span>  re.<span class="bu">compile</span>(<span class="vs">r&#39;(\d</span><span class="sc">{3}</span><span class="vs">)-(\d</span><span class="sc">{3}</span><span class="vs">)-(\d</span><span class="sc">{4}</span><span class="vs">)&#39;</span>, re.I)</span>
+<span id="cb945-2"><a href="regular-expression.html#cb945-2" aria-hidden="true" tabindex="-1"></a>pattern2.findall(text_to_search)</span></code></pre></div>
 <pre class="Rout"><code>[(&#39;321&#39;, &#39;555&#39;, &#39;4321&#39;), (&#39;800&#39;, &#39;555&#39;, &#39;1234&#39;), (&#39;900&#39;, &#39;555&#39;, &#39;1234&#39;)]</code></pre>
 </div>
 <div id="re.finditer" class="section level3 hasAnchor" number="17.2.3">
 <h3><span class="header-section-number">17.2.3</span> <code>re.finditer()</code><a href="regular-expression.html#re.finditer" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb927"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb927-1"><a href="regular-expression.html#cb927-1" aria-hidden="true" tabindex="-1"></a><span class="co">## find all matches</span></span>
-<span id="cb927-2"><a href="regular-expression.html#cb927-2" aria-hidden="true" tabindex="-1"></a>matches <span class="op">=</span> pattern.finditer(text_to_search)</span>
-<span id="cb927-3"><a href="regular-expression.html#cb927-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> matches:</span>
-<span id="cb927-4"><a href="regular-expression.html#cb927-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> m <span class="kw">in</span> matches:</span>
-<span id="cb927-5"><a href="regular-expression.html#cb927-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;</span><span class="sc">%02d</span><span class="st">-</span><span class="sc">%02d</span><span class="st">: </span><span class="sc">%s</span><span class="st">&quot;</span> <span class="op">%</span> (m.start(), m.end(), m.group()))</span>
-<span id="cb927-6"><a href="regular-expression.html#cb927-6" aria-hidden="true" tabindex="-1"></a>        </span></code></pre></div>
+<div class="sourceCode" id="cb947"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb947-1"><a href="regular-expression.html#cb947-1" aria-hidden="true" tabindex="-1"></a><span class="co">## find all matches</span></span>
+<span id="cb947-2"><a href="regular-expression.html#cb947-2" aria-hidden="true" tabindex="-1"></a>matches <span class="op">=</span> pattern.finditer(text_to_search)</span>
+<span id="cb947-3"><a href="regular-expression.html#cb947-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> matches:</span>
+<span id="cb947-4"><a href="regular-expression.html#cb947-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> m <span class="kw">in</span> matches:</span>
+<span id="cb947-5"><a href="regular-expression.html#cb947-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;</span><span class="sc">%02d</span><span class="st">-</span><span class="sc">%02d</span><span class="st">: </span><span class="sc">%s</span><span class="st">&quot;</span> <span class="op">%</span> (m.start(), m.end(), m.group()))</span>
+<span id="cb947-6"><a href="regular-expression.html#cb947-6" aria-hidden="true" tabindex="-1"></a>        </span></code></pre></div>
 <pre class="Rout"><code>151-163: 321-555-4321
 190-202: 800-555-1234
 203-215: 900-555-1234</code></pre>
@@ -738,15 +738,15 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <li><code>re.DOTALL</code>: to allow the wildcard <code>*</code> to match linebreaks</li>
 <li><code>re.VERBOSE</code>: to create complex regular expressions with multilines and comments (#)</li>
 </ul>
-<div class="sourceCode" id="cb929"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb929-1"><a href="regular-expression.html#cb929-1" aria-hidden="true" tabindex="-1"></a>pattern3 <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r&#39;&#39;&#39;</span></span>
-<span id="cb929-2"><a href="regular-expression.html#cb929-2" aria-hidden="true" tabindex="-1"></a><span class="vs">  (\d</span><span class="sc">{3}</span><span class="vs">)       # area code</span></span>
-<span id="cb929-3"><a href="regular-expression.html#cb929-3" aria-hidden="true" tabindex="-1"></a><span class="vs">  -             # delimiter</span></span>
-<span id="cb929-4"><a href="regular-expression.html#cb929-4" aria-hidden="true" tabindex="-1"></a><span class="vs">  (\d</span><span class="sc">{3}</span><span class="vs">)       # first 3 digits</span></span>
-<span id="cb929-5"><a href="regular-expression.html#cb929-5" aria-hidden="true" tabindex="-1"></a><span class="vs">  -             # delimiter</span></span>
-<span id="cb929-6"><a href="regular-expression.html#cb929-6" aria-hidden="true" tabindex="-1"></a><span class="vs">  (\d</span><span class="sc">{4}</span><span class="vs">)       # last 4 digits</span></span>
-<span id="cb929-7"><a href="regular-expression.html#cb929-7" aria-hidden="true" tabindex="-1"></a><span class="vs">&#39;&#39;&#39;</span>, re.VERBOSE)</span>
-<span id="cb929-8"><a href="regular-expression.html#cb929-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb929-9"><a href="regular-expression.html#cb929-9" aria-hidden="true" tabindex="-1"></a>pattern3.findall(text_to_search)</span></code></pre></div>
+<div class="sourceCode" id="cb949"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb949-1"><a href="regular-expression.html#cb949-1" aria-hidden="true" tabindex="-1"></a>pattern3 <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r&#39;&#39;&#39;</span></span>
+<span id="cb949-2"><a href="regular-expression.html#cb949-2" aria-hidden="true" tabindex="-1"></a><span class="vs">  (\d</span><span class="sc">{3}</span><span class="vs">)       # area code</span></span>
+<span id="cb949-3"><a href="regular-expression.html#cb949-3" aria-hidden="true" tabindex="-1"></a><span class="vs">  -             # delimiter</span></span>
+<span id="cb949-4"><a href="regular-expression.html#cb949-4" aria-hidden="true" tabindex="-1"></a><span class="vs">  (\d</span><span class="sc">{3}</span><span class="vs">)       # first 3 digits</span></span>
+<span id="cb949-5"><a href="regular-expression.html#cb949-5" aria-hidden="true" tabindex="-1"></a><span class="vs">  -             # delimiter</span></span>
+<span id="cb949-6"><a href="regular-expression.html#cb949-6" aria-hidden="true" tabindex="-1"></a><span class="vs">  (\d</span><span class="sc">{4}</span><span class="vs">)       # last 4 digits</span></span>
+<span id="cb949-7"><a href="regular-expression.html#cb949-7" aria-hidden="true" tabindex="-1"></a><span class="vs">&#39;&#39;&#39;</span>, re.VERBOSE)</span>
+<span id="cb949-8"><a href="regular-expression.html#cb949-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb949-9"><a href="regular-expression.html#cb949-9" aria-hidden="true" tabindex="-1"></a>pattern3.findall(text_to_search)</span></code></pre></div>
 <pre class="Rout"><code>[(&#39;321&#39;, &#39;555&#39;, &#39;4321&#39;), (&#39;800&#39;, &#39;555&#39;, &#39;1234&#39;), (&#39;900&#39;, &#39;555&#39;, &#39;1234&#39;)]</code></pre>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-49" class="exercise"><strong>Exercise 17.1  </strong></span>With the <code>text_to_search</code>, how to create a more complete regular expression to extract all the phone numbers, including those numbers that have other delimiters (e.g., <code>*</code>)</p>
@@ -772,25 +772,25 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <li><code>group()</code>: by default, returns the whole match of the pattern</li>
 <li><code>groups()</code>: by default, returns all capturing groups</li>
 </ul>
-<div class="sourceCode" id="cb932"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb932-1"><a href="regular-expression.html#cb932-1" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> re.match(<span class="st">&quot;a(.)(.)&quot;</span>,<span class="st">&quot;abcedf&quot;</span>)</span>
-<span id="cb932-2"><a href="regular-expression.html#cb932-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb932-3"><a href="regular-expression.html#cb932-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(m.group(<span class="dv">0</span>)) <span class="co"># return the whole match</span></span></code></pre></div>
+<div class="sourceCode" id="cb952"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb952-1"><a href="regular-expression.html#cb952-1" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> re.match(<span class="st">&quot;a(.)(.)&quot;</span>,<span class="st">&quot;abcedf&quot;</span>)</span>
+<span id="cb952-2"><a href="regular-expression.html#cb952-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb952-3"><a href="regular-expression.html#cb952-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(m.group(<span class="dv">0</span>)) <span class="co"># return the whole match</span></span></code></pre></div>
 <pre class="Rout"><code>abc</code></pre>
-<div class="sourceCode" id="cb934"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb934-1"><a href="regular-expression.html#cb934-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(m.group()) <span class="co"># return the whole match, same as above</span></span></code></pre></div>
+<div class="sourceCode" id="cb954"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb954-1"><a href="regular-expression.html#cb954-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(m.group()) <span class="co"># return the whole match, same as above</span></span></code></pre></div>
 <pre class="Rout"><code>abc</code></pre>
-<div class="sourceCode" id="cb936"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb936-1"><a href="regular-expression.html#cb936-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(m.groups()) <span class="co"># return each capturing group match</span></span></code></pre></div>
+<div class="sourceCode" id="cb956"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb956-1"><a href="regular-expression.html#cb956-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(m.groups()) <span class="co"># return each capturing group match</span></span></code></pre></div>
 <pre class="Rout"><code>(&#39;b&#39;, &#39;c&#39;)</code></pre>
-<div class="sourceCode" id="cb938"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb938-1"><a href="regular-expression.html#cb938-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(m.group(<span class="dv">1</span>)) <span class="co"># return first capturing gorup match</span></span></code></pre></div>
+<div class="sourceCode" id="cb958"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb958-1"><a href="regular-expression.html#cb958-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(m.group(<span class="dv">1</span>)) <span class="co"># return first capturing gorup match</span></span></code></pre></div>
 <pre class="Rout"><code>b</code></pre>
 </div>
 <div id="string-format-validation" class="section level3 hasAnchor" number="17.4.4">
 <h3><span class="header-section-number">17.4.4</span> string format validation<a href="regular-expression.html#string-format-validation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb940"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb940-1"><a href="regular-expression.html#cb940-1" aria-hidden="true" tabindex="-1"></a>valid <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r&quot;^[a-z]+@[a-z]+\.[a-z]</span><span class="sc">{3}</span><span class="vs">$&quot;</span>)</span>
-<span id="cb940-2"><a href="regular-expression.html#cb940-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(valid.match(<span class="st">&#39;alvin@ntnu.edu&#39;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb960"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb960-1"><a href="regular-expression.html#cb960-1" aria-hidden="true" tabindex="-1"></a>valid <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r&quot;^[a-z]+@[a-z]+\.[a-z]</span><span class="sc">{3}</span><span class="vs">$&quot;</span>)</span>
+<span id="cb960-2"><a href="regular-expression.html#cb960-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(valid.match(<span class="st">&#39;alvin@ntnu.edu&#39;</span>))</span></code></pre></div>
 <pre class="Rout"><code>&lt;re.Match object; span=(0, 14), match=&#39;alvin@ntnu.edu&#39;&gt;</code></pre>
-<div class="sourceCode" id="cb942"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb942-1"><a href="regular-expression.html#cb942-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(valid.match(<span class="st">&#39;alvin123@ntnu.edu&#39;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb962"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb962-1"><a href="regular-expression.html#cb962-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(valid.match(<span class="st">&#39;alvin123@ntnu.edu&#39;</span>))</span></code></pre></div>
 <pre class="Rout"><code>None</code></pre>
-<div class="sourceCode" id="cb944"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb944-1"><a href="regular-expression.html#cb944-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(valid.match(<span class="st">&#39;alvin@ntnu.homeschool&#39;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb964"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb964-1"><a href="regular-expression.html#cb964-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(valid.match(<span class="st">&#39;alvin@ntnu.homeschool&#39;</span>))</span></code></pre></div>
 <pre class="Rout"><code>None</code></pre>
 </div>
 <div id="re.match-vs.-re.search" class="section level3 hasAnchor" number="17.4.5">
@@ -800,11 +800,11 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <li><code>re.match()</code> checks for a match <strong>only at the beginning</strong> of the string</li>
 <li><code>re.search()</code> checks for a match anywhere in the string (this is what Perl does by default).</li>
 </ul>
-<div class="sourceCode" id="cb946"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb946-1"><a href="regular-expression.html#cb946-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.match(<span class="st">&quot;c&quot;</span>, <span class="st">&quot;abcdef&quot;</span>))    <span class="co"># No match</span></span></code></pre></div>
+<div class="sourceCode" id="cb966"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb966-1"><a href="regular-expression.html#cb966-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.match(<span class="st">&quot;c&quot;</span>, <span class="st">&quot;abcdef&quot;</span>))    <span class="co"># No match</span></span></code></pre></div>
 <pre class="Rout"><code>None</code></pre>
-<div class="sourceCode" id="cb948"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb948-1"><a href="regular-expression.html#cb948-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.search(<span class="st">&quot;^c&quot;</span>, <span class="st">&quot;abcdef&quot;</span>))  <span class="co"># No match, same as above</span></span></code></pre></div>
+<div class="sourceCode" id="cb968"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb968-1"><a href="regular-expression.html#cb968-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.search(<span class="st">&quot;^c&quot;</span>, <span class="st">&quot;abcdef&quot;</span>))  <span class="co"># No match, same as above</span></span></code></pre></div>
 <pre class="Rout"><code>None</code></pre>
-<div class="sourceCode" id="cb950"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb950-1"><a href="regular-expression.html#cb950-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.search(<span class="st">&quot;c&quot;</span>, <span class="st">&quot;abcdef&quot;</span>))   <span class="co"># Match</span></span></code></pre></div>
+<div class="sourceCode" id="cb970"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb970-1"><a href="regular-expression.html#cb970-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.search(<span class="st">&quot;c&quot;</span>, <span class="st">&quot;abcdef&quot;</span>))   <span class="co"># Match</span></span></code></pre></div>
 <pre class="Rout"><code>&lt;re.Match object; span=(2, 3), match=&#39;c&#39;&gt;</code></pre>
 <div class="try">
 <ul>
@@ -812,31 +812,31 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <li><code>re.search</code> however, when in MULTILINE mode, is able to search at the beginning of every line if used in combination with <code>^</code>.</li>
 </ul>
 </div>
-<div class="sourceCode" id="cb952"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb952-1"><a href="regular-expression.html#cb952-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.match(<span class="st">&#39;X&#39;</span>, <span class="st">&#39;A</span><span class="ch">\n</span><span class="st">B</span><span class="ch">\n</span><span class="st">X&#39;</span>, re.MULTILINE))  <span class="co"># No match</span></span></code></pre></div>
+<div class="sourceCode" id="cb972"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb972-1"><a href="regular-expression.html#cb972-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.match(<span class="st">&#39;X&#39;</span>, <span class="st">&#39;A</span><span class="ch">\n</span><span class="st">B</span><span class="ch">\n</span><span class="st">X&#39;</span>, re.MULTILINE))  <span class="co"># No match</span></span></code></pre></div>
 <pre class="Rout"><code>None</code></pre>
-<div class="sourceCode" id="cb954"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb954-1"><a href="regular-expression.html#cb954-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.search(<span class="st">&#39;^X&#39;</span>, <span class="st">&#39;A</span><span class="ch">\n</span><span class="st">B</span><span class="ch">\n</span><span class="st">X&#39;</span>, re.MULTILINE))  <span class="co"># Match</span></span></code></pre></div>
+<div class="sourceCode" id="cb974"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb974-1"><a href="regular-expression.html#cb974-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.search(<span class="st">&#39;^X&#39;</span>, <span class="st">&#39;A</span><span class="ch">\n</span><span class="st">B</span><span class="ch">\n</span><span class="st">X&#39;</span>, re.MULTILINE))  <span class="co"># Match</span></span></code></pre></div>
 <pre class="Rout"><code>&lt;re.Match object; span=(4, 5), match=&#39;X&#39;&gt;</code></pre>
-<div class="sourceCode" id="cb956"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb956-1"><a href="regular-expression.html#cb956-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.search(<span class="st">&#39;^X&#39;</span>, <span class="st">&#39;A</span><span class="ch">\n</span><span class="st">B</span><span class="ch">\n</span><span class="st">X&#39;</span>)) <span class="co"># No match</span></span></code></pre></div>
+<div class="sourceCode" id="cb976"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb976-1"><a href="regular-expression.html#cb976-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.search(<span class="st">&#39;^X&#39;</span>, <span class="st">&#39;A</span><span class="ch">\n</span><span class="st">B</span><span class="ch">\n</span><span class="st">X&#39;</span>)) <span class="co"># No match</span></span></code></pre></div>
 <pre class="Rout"><code>None</code></pre>
 </div>
 <div id="re.split" class="section level3 hasAnchor" number="17.4.6">
 <h3><span class="header-section-number">17.4.6</span> <code>re.split()</code><a href="regular-expression.html#re.split" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb958"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb958-1"><a href="regular-expression.html#cb958-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;&quot;&quot;Ross McFluff: 834.345.1254 155 Elm Street</span></span>
-<span id="cb958-2"><a href="regular-expression.html#cb958-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb958-3"><a href="regular-expression.html#cb958-3" aria-hidden="true" tabindex="-1"></a><span class="st">Ronald Heathmore: 892.345.3428 436 Finley Avenue</span></span>
-<span id="cb958-4"><a href="regular-expression.html#cb958-4" aria-hidden="true" tabindex="-1"></a><span class="st">Frank Burger: 925.541.7625 662 South Dogwood Way</span></span>
-<span id="cb958-5"><a href="regular-expression.html#cb958-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb958-6"><a href="regular-expression.html#cb958-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb958-7"><a href="regular-expression.html#cb958-7" aria-hidden="true" tabindex="-1"></a><span class="st">Heather Albrecht: 548.326.4584 919 Park Place&quot;&quot;&quot;</span></span></code></pre></div>
-<div class="sourceCode" id="cb959"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb959-1"><a href="regular-expression.html#cb959-1" aria-hidden="true" tabindex="-1"></a><span class="co"># split text into lines</span></span>
-<span id="cb959-2"><a href="regular-expression.html#cb959-2" aria-hidden="true" tabindex="-1"></a>re.split(<span class="vs">r&#39;\n&#39;</span>,text)</span></code></pre></div>
+<div class="sourceCode" id="cb978"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb978-1"><a href="regular-expression.html#cb978-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;&quot;&quot;Ross McFluff: 834.345.1254 155 Elm Street</span></span>
+<span id="cb978-2"><a href="regular-expression.html#cb978-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb978-3"><a href="regular-expression.html#cb978-3" aria-hidden="true" tabindex="-1"></a><span class="st">Ronald Heathmore: 892.345.3428 436 Finley Avenue</span></span>
+<span id="cb978-4"><a href="regular-expression.html#cb978-4" aria-hidden="true" tabindex="-1"></a><span class="st">Frank Burger: 925.541.7625 662 South Dogwood Way</span></span>
+<span id="cb978-5"><a href="regular-expression.html#cb978-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb978-6"><a href="regular-expression.html#cb978-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb978-7"><a href="regular-expression.html#cb978-7" aria-hidden="true" tabindex="-1"></a><span class="st">Heather Albrecht: 548.326.4584 919 Park Place&quot;&quot;&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb979"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb979-1"><a href="regular-expression.html#cb979-1" aria-hidden="true" tabindex="-1"></a><span class="co"># split text into lines</span></span>
+<span id="cb979-2"><a href="regular-expression.html#cb979-2" aria-hidden="true" tabindex="-1"></a>re.split(<span class="vs">r&#39;\n&#39;</span>,text)</span></code></pre></div>
 <pre class="Rout"><code>[&#39;Ross McFluff: 834.345.1254 155 Elm Street&#39;, &#39;&#39;, &#39;Ronald Heathmore: 892.345.3428 436 Finley Avenue&#39;, &#39;Frank Burger: 925.541.7625 662 South Dogwood Way&#39;, &#39;&#39;, &#39;&#39;, &#39;Heather Albrecht: 548.326.4584 919 Park Place&#39;]</code></pre>
-<div class="sourceCode" id="cb961"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb961-1"><a href="regular-expression.html#cb961-1" aria-hidden="true" tabindex="-1"></a>re.split(<span class="vs">r&#39;\n+&#39;</span>, text)</span></code></pre></div>
+<div class="sourceCode" id="cb981"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb981-1"><a href="regular-expression.html#cb981-1" aria-hidden="true" tabindex="-1"></a>re.split(<span class="vs">r&#39;\n+&#39;</span>, text)</span></code></pre></div>
 <pre class="Rout"><code>[&#39;Ross McFluff: 834.345.1254 155 Elm Street&#39;, &#39;Ronald Heathmore: 892.345.3428 436 Finley Avenue&#39;, &#39;Frank Burger: 925.541.7625 662 South Dogwood Way&#39;, &#39;Heather Albrecht: 548.326.4584 919 Park Place&#39;]</code></pre>
-<div class="sourceCode" id="cb963"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb963-1"><a href="regular-expression.html#cb963-1" aria-hidden="true" tabindex="-1"></a>entries <span class="op">=</span> re.split(<span class="vs">r&#39;\n+&#39;</span>, text)</span></code></pre></div>
-<div class="sourceCode" id="cb964"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb964-1"><a href="regular-expression.html#cb964-1" aria-hidden="true" tabindex="-1"></a>[re.split(<span class="vs">r&#39;\s&#39;</span>, entry) <span class="cf">for</span> entry <span class="kw">in</span> entries]</span></code></pre></div>
+<div class="sourceCode" id="cb983"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb983-1"><a href="regular-expression.html#cb983-1" aria-hidden="true" tabindex="-1"></a>entries <span class="op">=</span> re.split(<span class="vs">r&#39;\n+&#39;</span>, text)</span></code></pre></div>
+<div class="sourceCode" id="cb984"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb984-1"><a href="regular-expression.html#cb984-1" aria-hidden="true" tabindex="-1"></a>[re.split(<span class="vs">r&#39;\s&#39;</span>, entry) <span class="cf">for</span> entry <span class="kw">in</span> entries]</span></code></pre></div>
 <pre class="Rout"><code>[[&#39;Ross&#39;, &#39;McFluff:&#39;, &#39;834.345.1254&#39;, &#39;155&#39;, &#39;Elm&#39;, &#39;Street&#39;], [&#39;Ronald&#39;, &#39;Heathmore:&#39;, &#39;892.345.3428&#39;, &#39;436&#39;, &#39;Finley&#39;, &#39;Avenue&#39;], [&#39;Frank&#39;, &#39;Burger:&#39;, &#39;925.541.7625&#39;, &#39;662&#39;, &#39;South&#39;, &#39;Dogwood&#39;, &#39;Way&#39;], [&#39;Heather&#39;, &#39;Albrecht:&#39;, &#39;548.326.4584&#39;, &#39;919&#39;, &#39;Park&#39;, &#39;Place&#39;]]</code></pre>
-<div class="sourceCode" id="cb966"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb966-1"><a href="regular-expression.html#cb966-1" aria-hidden="true" tabindex="-1"></a>[re.split(<span class="vs">r&#39;:?\s&#39;</span>, entry, maxsplit<span class="op">=</span><span class="dv">3</span>) <span class="cf">for</span> entry <span class="kw">in</span> entries]</span></code></pre></div>
+<div class="sourceCode" id="cb986"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb986-1"><a href="regular-expression.html#cb986-1" aria-hidden="true" tabindex="-1"></a>[re.split(<span class="vs">r&#39;:?\s&#39;</span>, entry, maxsplit<span class="op">=</span><span class="dv">3</span>) <span class="cf">for</span> entry <span class="kw">in</span> entries]</span></code></pre></div>
 <pre class="Rout"><code>[[&#39;Ross&#39;, &#39;McFluff&#39;, &#39;834.345.1254&#39;, &#39;155 Elm Street&#39;], [&#39;Ronald&#39;, &#39;Heathmore&#39;, &#39;892.345.3428&#39;, &#39;436 Finley Avenue&#39;], [&#39;Frank&#39;, &#39;Burger&#39;, &#39;925.541.7625&#39;, &#39;662 South Dogwood Way&#39;], [&#39;Heather&#39;, &#39;Albrecht&#39;, &#39;548.326.4584&#39;, &#39;919 Park Place&#39;]]</code></pre>
 </div>
 </div>
@@ -845,41 +845,41 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <ul>
 <li><code>re.sub()</code></li>
 </ul>
-<div class="sourceCode" id="cb968"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb968-1"><a href="regular-expression.html#cb968-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&#39;&#39;&#39;Peter Piper picked a peck of pickled peppers</span></span>
-<span id="cb968-2"><a href="regular-expression.html#cb968-2" aria-hidden="true" tabindex="-1"></a><span class="st">A peck of pickled peppers Peter Piper picked</span></span>
-<span id="cb968-3"><a href="regular-expression.html#cb968-3" aria-hidden="true" tabindex="-1"></a><span class="st">If Peter Piper picked a peck of pickled peppers</span></span>
-<span id="cb968-4"><a href="regular-expression.html#cb968-4" aria-hidden="true" tabindex="-1"></a><span class="st">Where’s the peck of pickled peppers Peter Piper picked?&#39;&#39;&#39;</span></span></code></pre></div>
-<div class="sourceCode" id="cb969"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb969-1"><a href="regular-expression.html#cb969-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.sub(<span class="vs">r&#39;[aeiou]&#39;</span>,<span class="st">&#39;_&#39;</span>, text))</span></code></pre></div>
+<div class="sourceCode" id="cb988"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb988-1"><a href="regular-expression.html#cb988-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&#39;&#39;&#39;Peter Piper picked a peck of pickled peppers</span></span>
+<span id="cb988-2"><a href="regular-expression.html#cb988-2" aria-hidden="true" tabindex="-1"></a><span class="st">A peck of pickled peppers Peter Piper picked</span></span>
+<span id="cb988-3"><a href="regular-expression.html#cb988-3" aria-hidden="true" tabindex="-1"></a><span class="st">If Peter Piper picked a peck of pickled peppers</span></span>
+<span id="cb988-4"><a href="regular-expression.html#cb988-4" aria-hidden="true" tabindex="-1"></a><span class="st">Where’s the peck of pickled peppers Peter Piper picked?&#39;&#39;&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb989"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb989-1"><a href="regular-expression.html#cb989-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.sub(<span class="vs">r&#39;[aeiou]&#39;</span>,<span class="st">&#39;_&#39;</span>, text))</span></code></pre></div>
 <pre class="Rout"><code>P_t_r P_p_r p_ck_d _ p_ck _f p_ckl_d p_pp_rs
 A p_ck _f p_ckl_d p_pp_rs P_t_r P_p_r p_ck_d
 If P_t_r P_p_r p_ck_d _ p_ck _f p_ckl_d p_pp_rs
 Wh_r_’s th_ p_ck _f p_ckl_d p_pp_rs P_t_r P_p_r p_ck_d?</code></pre>
-<div class="sourceCode" id="cb971"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb971-1"><a href="regular-expression.html#cb971-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.sub(<span class="vs">r&#39;([aeiou])&#39;</span>,<span class="vs">r&#39;[\1]&#39;</span>, text))</span></code></pre></div>
+<div class="sourceCode" id="cb991"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb991-1"><a href="regular-expression.html#cb991-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.sub(<span class="vs">r&#39;([aeiou])&#39;</span>,<span class="vs">r&#39;[\1]&#39;</span>, text))</span></code></pre></div>
 <pre class="Rout"><code>P[e]t[e]r P[i]p[e]r p[i]ck[e]d [a] p[e]ck [o]f p[i]ckl[e]d p[e]pp[e]rs
 A p[e]ck [o]f p[i]ckl[e]d p[e]pp[e]rs P[e]t[e]r P[i]p[e]r p[i]ck[e]d
 If P[e]t[e]r P[i]p[e]r p[i]ck[e]d [a] p[e]ck [o]f p[i]ckl[e]d p[e]pp[e]rs
 Wh[e]r[e]’s th[e] p[e]ck [o]f p[i]ckl[e]d p[e]pp[e]rs P[e]t[e]r P[i]p[e]r p[i]ck[e]d?</code></pre>
-<div class="sourceCode" id="cb973"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb973-1"><a href="regular-expression.html#cb973-1" aria-hidden="true" tabindex="-1"></a>American_dates <span class="op">=</span> [<span class="st">&quot;7/31/1976&quot;</span>, <span class="st">&quot;02.15.1970&quot;</span>, <span class="st">&quot;11-31-1986&quot;</span>, <span class="st">&quot;04/01.2020&quot;</span>]</span></code></pre></div>
-<div class="sourceCode" id="cb974"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb974-1"><a href="regular-expression.html#cb974-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(American_dates)</span></code></pre></div>
+<div class="sourceCode" id="cb993"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb993-1"><a href="regular-expression.html#cb993-1" aria-hidden="true" tabindex="-1"></a>American_dates <span class="op">=</span> [<span class="st">&quot;7/31/1976&quot;</span>, <span class="st">&quot;02.15.1970&quot;</span>, <span class="st">&quot;11-31-1986&quot;</span>, <span class="st">&quot;04/01.2020&quot;</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb994"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb994-1"><a href="regular-expression.html#cb994-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(American_dates)</span></code></pre></div>
 <pre class="Rout"><code>[&#39;7/31/1976&#39;, &#39;02.15.1970&#39;, &#39;11-31-1986&#39;, &#39;04/01.2020&#39;]</code></pre>
-<div class="sourceCode" id="cb976"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb976-1"><a href="regular-expression.html#cb976-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>([re.sub(<span class="vs">r&#39;(\d+)(\D)(\d+)(\D)(\d+)&#39;</span>, <span class="vs">r&#39;\3\2\1\4\5&#39;</span>, date) <span class="cf">for</span> date <span class="kw">in</span> American_dates])</span></code></pre></div>
+<div class="sourceCode" id="cb996"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb996-1"><a href="regular-expression.html#cb996-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>([re.sub(<span class="vs">r&#39;(\d+)(\D)(\d+)(\D)(\d+)&#39;</span>, <span class="vs">r&#39;\3\2\1\4\5&#39;</span>, date) <span class="cf">for</span> date <span class="kw">in</span> American_dates])</span></code></pre></div>
 <pre class="Rout"><code>[&#39;31/7/1976&#39;, &#39;15.02.1970&#39;, &#39;31-11-1986&#39;, &#39;01/04.2020&#39;]</code></pre>
 <ul>
 <li>In <code>re.sub(repl, string)</code>, the <code>repl</code> argument can be a function. If <code>repl</code> is a function, it is called for every non-overlapping occurrence of pattern. The function takes a single match object argument, and returns the replacement string.</li>
 </ul>
-<div class="sourceCode" id="cb978"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb978-1"><a href="regular-expression.html#cb978-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">&quot;This is a simple sentence.&quot;</span></span>
-<span id="cb978-2"><a href="regular-expression.html#cb978-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb978-3"><a href="regular-expression.html#cb978-3" aria-hidden="true" tabindex="-1"></a>pat_vowels <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r&#39;[aeiou]&#39;</span>)</span>
-<span id="cb978-4"><a href="regular-expression.html#cb978-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb978-5"><a href="regular-expression.html#cb978-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> replaceVowels(m):</span>
-<span id="cb978-6"><a href="regular-expression.html#cb978-6" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> m.group(<span class="dv">0</span>)</span>
-<span id="cb978-7"><a href="regular-expression.html#cb978-7" aria-hidden="true" tabindex="-1"></a>    c2 <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
-<span id="cb978-8"><a href="regular-expression.html#cb978-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> c <span class="kw">in</span> <span class="st">&quot;ie&quot;</span>:</span>
-<span id="cb978-9"><a href="regular-expression.html#cb978-9" aria-hidden="true" tabindex="-1"></a>        c2 <span class="op">=</span> <span class="st">&quot;F&quot;</span></span>
-<span id="cb978-10"><a href="regular-expression.html#cb978-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb978-11"><a href="regular-expression.html#cb978-11" aria-hidden="true" tabindex="-1"></a>        c2 <span class="op">=</span> <span class="st">&quot;B&quot;</span></span>
-<span id="cb978-12"><a href="regular-expression.html#cb978-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> c2</span>
-<span id="cb978-13"><a href="regular-expression.html#cb978-13" aria-hidden="true" tabindex="-1"></a>pat_vowels.sub(replaceVowels, s)</span></code></pre></div>
+<div class="sourceCode" id="cb998"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb998-1"><a href="regular-expression.html#cb998-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">&quot;This is a simple sentence.&quot;</span></span>
+<span id="cb998-2"><a href="regular-expression.html#cb998-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb998-3"><a href="regular-expression.html#cb998-3" aria-hidden="true" tabindex="-1"></a>pat_vowels <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r&#39;[aeiou]&#39;</span>)</span>
+<span id="cb998-4"><a href="regular-expression.html#cb998-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb998-5"><a href="regular-expression.html#cb998-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> replaceVowels(m):</span>
+<span id="cb998-6"><a href="regular-expression.html#cb998-6" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> m.group(<span class="dv">0</span>)</span>
+<span id="cb998-7"><a href="regular-expression.html#cb998-7" aria-hidden="true" tabindex="-1"></a>    c2 <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb998-8"><a href="regular-expression.html#cb998-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> c <span class="kw">in</span> <span class="st">&quot;ie&quot;</span>:</span>
+<span id="cb998-9"><a href="regular-expression.html#cb998-9" aria-hidden="true" tabindex="-1"></a>        c2 <span class="op">=</span> <span class="st">&quot;F&quot;</span></span>
+<span id="cb998-10"><a href="regular-expression.html#cb998-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb998-11"><a href="regular-expression.html#cb998-11" aria-hidden="true" tabindex="-1"></a>        c2 <span class="op">=</span> <span class="st">&quot;B&quot;</span></span>
+<span id="cb998-12"><a href="regular-expression.html#cb998-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> c2</span>
+<span id="cb998-13"><a href="regular-expression.html#cb998-13" aria-hidden="true" tabindex="-1"></a>pat_vowels.sub(replaceVowels, s)</span></code></pre></div>
 <pre class="Rout"><code>&#39;ThFs Fs B sFmplF sFntFncF.&#39;</code></pre>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-50" class="exercise"><strong>Exercise 17.2  </strong></span>Create a small program to extract both emails and phone numbers from the texts on this faculty page: <a href="https://www.eng.ntnu.edu.tw/index.php/full-time-faculty/">Department o English, NTNU</a>.</p>
