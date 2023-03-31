@@ -672,7 +672,7 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <p>In R, there are many built-in functions that return values:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb15-1"><a href="functions.html#cb15-1" aria-hidden="true" tabindex="-1"></a>num <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">3</span>)</span>
 <span id="cb15-2"><a href="functions.html#cb15-2" aria-hidden="true" tabindex="-1"></a>num</span></code></pre></div>
-<pre class="Rout"><code>[1] 1 6 9</code></pre>
+<pre class="Rout"><code>[1] 1 8 5</code></pre>
 <p>When a function returns nothing, by default the return value of the function is <code>NULL</code>, which is a unique data type in R referring to <code>NoneType</code>.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb17-1"><a href="functions.html#cb17-1" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">cat</span>(<span class="st">&quot;This is a sentence&quot;</span>)  <span class="co"># `cat()` has no return</span></span></code></pre></div>
 <pre class="Rout"><code>This is a sentence</code></pre>
@@ -976,7 +976,7 @@ Levels: a b c d e f g h i j</code></pre>
 <p><span id="exr:unlabeled-div-3" class="exercise"><strong>Exercise 6.3  </strong></span>Create a function that produces a simple animation, i.e., the zigzag outputs as shown below. The function will <strong>slowly</strong> create a back-and-forth zigzag pattern with the laps and the indent size (i.e., the maximum number of spaces that the zigzag pattern can go) as the parameters of the function.</p>
 <p>The animation should be generated slowly, so that the pattern can be clearly seen as it is being created. Additionally, the user should be able to stop the animation at any time by pressing CTRL+C.</p>
 </div>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb102-1"><a href="functions.html#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="fu">zigzag</span>(<span class="at">lap =</span> <span class="dv">5</span>, <span class="at">indent_max =</span> <span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb102-1"><a href="functions.html#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="fu">zigzag</span>(<span class="at">lap =</span> <span class="dv">10</span>, <span class="at">indent_max =</span> <span class="dv">20</span>)</span></code></pre></div>
 <ul>
 <li>Please note that the user can interrupt the program/function by pressing CTRL+C and your function should stop properly (using <code>tryCatch</code>).</li>
 </ul>
