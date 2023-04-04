@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2023-03-31" />
+<meta name="date" content="2023-04-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -54,6 +54,12 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.9/grViz.js"></script>
 <script src="https://hypothes.is/embed.js" async></script>
 
 
@@ -122,6 +128,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style-new.css" type="text/css" />
 </head>
@@ -254,24 +282,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.5.2" data-path="data-visualization.html"><a href="data-visualization.html#categorical-x-continuous-y"><i class="fa fa-check"></i><b>7.5.2</b> Categorical X, Continuous Y</a></li>
 <li class="chapter" data-level="7.5.3" data-path="data-visualization.html"><a href="data-visualization.html#categorical-x-categorical-y"><i class="fa fa-check"></i><b>7.5.3</b> Categorical X, Categorical Y</a></li>
 </ul></li>
-<li class="chapter" data-level="7.6" data-path="data-visualization.html"><a href="data-visualization.html#more-aesthetic-features"><i class="fa fa-check"></i><b>7.6</b> More Aesthetic Features</a>
+<li class="chapter" data-level="7.6" data-path="data-visualization.html"><a href="data-visualization.html#stat-function"><i class="fa fa-check"></i><b>7.6</b> <strong>stat</strong> function</a></li>
+<li class="chapter" data-level="7.7" data-path="data-visualization.html"><a href="data-visualization.html#more-aesthetic-features"><i class="fa fa-check"></i><b>7.7</b> More Aesthetic Features</a>
 <ul>
-<li class="chapter" data-level="7.6.1" data-path="data-visualization.html"><a href="data-visualization.html#color"><i class="fa fa-check"></i><b>7.6.1</b> <code>color</code></a></li>
-<li class="chapter" data-level="7.6.2" data-path="data-visualization.html"><a href="data-visualization.html#alpha"><i class="fa fa-check"></i><b>7.6.2</b> <code>alpha</code></a></li>
-<li class="chapter" data-level="7.6.3" data-path="data-visualization.html"><a href="data-visualization.html#size"><i class="fa fa-check"></i><b>7.6.3</b> <code>size</code></a></li>
-<li class="chapter" data-level="7.6.4" data-path="data-visualization.html"><a href="data-visualization.html#fill"><i class="fa fa-check"></i><b>7.6.4</b> <code>fill</code></a></li>
-<li class="chapter" data-level="7.6.5" data-path="data-visualization.html"><a href="data-visualization.html#shape"><i class="fa fa-check"></i><b>7.6.5</b> <code>shape</code></a></li>
+<li class="chapter" data-level="7.7.1" data-path="data-visualization.html"><a href="data-visualization.html#color"><i class="fa fa-check"></i><b>7.7.1</b> <code>color</code></a></li>
+<li class="chapter" data-level="7.7.2" data-path="data-visualization.html"><a href="data-visualization.html#alpha"><i class="fa fa-check"></i><b>7.7.2</b> <code>alpha</code></a></li>
+<li class="chapter" data-level="7.7.3" data-path="data-visualization.html"><a href="data-visualization.html#size"><i class="fa fa-check"></i><b>7.7.3</b> <code>size</code></a></li>
+<li class="chapter" data-level="7.7.4" data-path="data-visualization.html"><a href="data-visualization.html#fill"><i class="fa fa-check"></i><b>7.7.4</b> <code>fill</code></a></li>
+<li class="chapter" data-level="7.7.5" data-path="data-visualization.html"><a href="data-visualization.html#shape"><i class="fa fa-check"></i><b>7.7.5</b> <code>shape</code></a></li>
 </ul></li>
-<li class="chapter" data-level="7.7" data-path="data-visualization.html"><a href="data-visualization.html#more-layers"><i class="fa fa-check"></i><b>7.7</b> More Layers</a>
+<li class="chapter" data-level="7.8" data-path="data-visualization.html"><a href="data-visualization.html#more-layers"><i class="fa fa-check"></i><b>7.8</b> More Layers</a>
 <ul>
-<li class="chapter" data-level="7.7.1" data-path="data-visualization.html"><a href="data-visualization.html#geom_...-layers"><i class="fa fa-check"></i><b>7.7.1</b> <code>geom_...</code> Layers</a></li>
-<li class="chapter" data-level="7.7.2" data-path="data-visualization.html"><a href="data-visualization.html#labels-and-annotations"><i class="fa fa-check"></i><b>7.7.2</b> Labels and Annotations</a></li>
-<li class="chapter" data-level="7.7.3" data-path="data-visualization.html"><a href="data-visualization.html#facets"><i class="fa fa-check"></i><b>7.7.3</b> Facets</a></li>
-<li class="chapter" data-level="7.7.4" data-path="data-visualization.html"><a href="data-visualization.html#themes"><i class="fa fa-check"></i><b>7.7.4</b> Themes</a></li>
+<li class="chapter" data-level="7.8.1" data-path="data-visualization.html"><a href="data-visualization.html#geom_...-layers"><i class="fa fa-check"></i><b>7.8.1</b> <code>geom_...</code> Layers</a></li>
+<li class="chapter" data-level="7.8.2" data-path="data-visualization.html"><a href="data-visualization.html#labels-and-annotations"><i class="fa fa-check"></i><b>7.8.2</b> Labels and Annotations</a></li>
+<li class="chapter" data-level="7.8.3" data-path="data-visualization.html"><a href="data-visualization.html#facets"><i class="fa fa-check"></i><b>7.8.3</b> Facets</a></li>
+<li class="chapter" data-level="7.8.4" data-path="data-visualization.html"><a href="data-visualization.html#themes"><i class="fa fa-check"></i><b>7.8.4</b> Themes</a></li>
 </ul></li>
-<li class="chapter" data-level="7.8" data-path="data-visualization.html"><a href="data-visualization.html#saving-plots"><i class="fa fa-check"></i><b>7.8</b> Saving Plots</a></li>
-<li class="chapter" data-level="7.9" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-iris"><i class="fa fa-check"></i><b>7.9</b> Exercises on <code>iris</code></a></li>
-<li class="chapter" data-level="7.10" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-covid-19"><i class="fa fa-check"></i><b>7.10</b> Exercises on COVID-19</a></li>
+<li class="chapter" data-level="7.9" data-path="data-visualization.html"><a href="data-visualization.html#saving-plots"><i class="fa fa-check"></i><b>7.9</b> Saving Plots</a></li>
+<li class="chapter" data-level="7.10" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-iris"><i class="fa fa-check"></i><b>7.10</b> Exercises on <code>iris</code></a></li>
+<li class="chapter" data-level="7.11" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-covid-19"><i class="fa fa-check"></i><b>7.11</b> Exercises on COVID-19</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="data-manipulation.html"><a href="data-manipulation.html"><i class="fa fa-check"></i><b>8</b> Data Manipulation</a>
 <ul>
@@ -295,37 +324,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="9.1" data-path="string-manipulation.html"><a href="string-manipulation.html#what-is-regular-expression"><i class="fa fa-check"></i><b>9.1</b> What is Regular Expression?</a></li>
 <li class="chapter" data-level="9.2" data-path="string-manipulation.html"><a href="string-manipulation.html#string-basics"><i class="fa fa-check"></i><b>9.2</b> String Basics</a></li>
-<li class="chapter" data-level="9.3" data-path="string-manipulation.html"><a href="string-manipulation.html#a-good-tool-regexplain"><i class="fa fa-check"></i><b>9.3</b> A Good Tool: <code>RegExplain</code></a></li>
-<li class="chapter" data-level="9.4" data-path="string-manipulation.html"><a href="string-manipulation.html#regular-expression-grammar"><i class="fa fa-check"></i><b>9.4</b> Regular Expression Grammar</a>
+<li class="chapter" data-level="9.3" data-path="string-manipulation.html"><a href="string-manipulation.html#regular-expression-grammar"><i class="fa fa-check"></i><b>9.3</b> Regular Expression Grammar</a>
 <ul>
-<li class="chapter" data-level="9.4.1" data-path="string-manipulation.html"><a href="string-manipulation.html#metacharacters"><i class="fa fa-check"></i><b>9.4.1</b> Metacharacters</a></li>
-<li class="chapter" data-level="9.4.2" data-path="string-manipulation.html"><a href="string-manipulation.html#anchors"><i class="fa fa-check"></i><b>9.4.2</b> Anchors</a></li>
-<li class="chapter" data-level="9.4.3" data-path="string-manipulation.html"><a href="string-manipulation.html#character-set"><i class="fa fa-check"></i><b>9.4.3</b> Character Set</a></li>
-<li class="chapter" data-level="9.4.4" data-path="string-manipulation.html"><a href="string-manipulation.html#alternatives"><i class="fa fa-check"></i><b>9.4.4</b> Alternatives</a></li>
-<li class="chapter" data-level="9.4.5" data-path="string-manipulation.html"><a href="string-manipulation.html#quantifiers"><i class="fa fa-check"></i><b>9.4.5</b> Quantifiers</a></li>
-<li class="chapter" data-level="9.4.6" data-path="string-manipulation.html"><a href="string-manipulation.html#greedy-vs.-non-greedy-match"><i class="fa fa-check"></i><b>9.4.6</b> Greedy vs. Non-greedy match</a></li>
-<li class="chapter" data-level="9.4.7" data-path="string-manipulation.html"><a href="string-manipulation.html#group-and-back-reference"><i class="fa fa-check"></i><b>9.4.7</b> Group and Back-reference</a></li>
+<li class="chapter" data-level="9.3.1" data-path="string-manipulation.html"><a href="string-manipulation.html#metacharacters"><i class="fa fa-check"></i><b>9.3.1</b> Metacharacters</a></li>
+<li class="chapter" data-level="9.3.2" data-path="string-manipulation.html"><a href="string-manipulation.html#anchors"><i class="fa fa-check"></i><b>9.3.2</b> Anchors</a></li>
+<li class="chapter" data-level="9.3.3" data-path="string-manipulation.html"><a href="string-manipulation.html#character-set"><i class="fa fa-check"></i><b>9.3.3</b> Character Set</a></li>
+<li class="chapter" data-level="9.3.4" data-path="string-manipulation.html"><a href="string-manipulation.html#alternatives"><i class="fa fa-check"></i><b>9.3.4</b> Alternatives</a></li>
+<li class="chapter" data-level="9.3.5" data-path="string-manipulation.html"><a href="string-manipulation.html#quantifiers"><i class="fa fa-check"></i><b>9.3.5</b> Quantifiers</a></li>
+<li class="chapter" data-level="9.3.6" data-path="string-manipulation.html"><a href="string-manipulation.html#greedy-vs.-non-greedy-match"><i class="fa fa-check"></i><b>9.3.6</b> Greedy vs. Non-greedy match</a></li>
+<li class="chapter" data-level="9.3.7" data-path="string-manipulation.html"><a href="string-manipulation.html#group-and-back-reference"><i class="fa fa-check"></i><b>9.3.7</b> Group and Back-reference</a></li>
 </ul></li>
-<li class="chapter" data-level="9.5" data-path="string-manipulation.html"><a href="string-manipulation.html#pattern-matching"><i class="fa fa-check"></i><b>9.5</b> Pattern Matching</a>
+<li class="chapter" data-level="9.4" data-path="string-manipulation.html"><a href="string-manipulation.html#pattern-matching"><i class="fa fa-check"></i><b>9.4</b> Pattern Matching</a>
 <ul>
-<li class="chapter" data-level="9.5.1" data-path="string-manipulation.html"><a href="string-manipulation.html#str_detect"><i class="fa fa-check"></i><b>9.5.1</b> <code>str_detect()</code></a></li>
-<li class="chapter" data-level="9.5.2" data-path="string-manipulation.html"><a href="string-manipulation.html#str_subset"><i class="fa fa-check"></i><b>9.5.2</b> <code>str_subset()</code></a></li>
-<li class="chapter" data-level="9.5.3" data-path="string-manipulation.html"><a href="string-manipulation.html#str_extract"><i class="fa fa-check"></i><b>9.5.3</b> <code>str_extract()</code></a></li>
-<li class="chapter" data-level="9.5.4" data-path="string-manipulation.html"><a href="string-manipulation.html#str_match"><i class="fa fa-check"></i><b>9.5.4</b> <code>str_match()</code></a></li>
-<li class="chapter" data-level="9.5.5" data-path="string-manipulation.html"><a href="string-manipulation.html#str_replace"><i class="fa fa-check"></i><b>9.5.5</b> <code>str_replace()</code></a></li>
-<li class="chapter" data-level="9.5.6" data-path="string-manipulation.html"><a href="string-manipulation.html#str_split"><i class="fa fa-check"></i><b>9.5.6</b> <code>str_split()</code></a></li>
+<li class="chapter" data-level="9.4.1" data-path="string-manipulation.html"><a href="string-manipulation.html#str_detect"><i class="fa fa-check"></i><b>9.4.1</b> <code>str_detect()</code></a></li>
+<li class="chapter" data-level="9.4.2" data-path="string-manipulation.html"><a href="string-manipulation.html#str_subset"><i class="fa fa-check"></i><b>9.4.2</b> <code>str_subset()</code></a></li>
+<li class="chapter" data-level="9.4.3" data-path="string-manipulation.html"><a href="string-manipulation.html#str_extract"><i class="fa fa-check"></i><b>9.4.3</b> <code>str_extract()</code></a></li>
+<li class="chapter" data-level="9.4.4" data-path="string-manipulation.html"><a href="string-manipulation.html#str_match"><i class="fa fa-check"></i><b>9.4.4</b> <code>str_match()</code></a></li>
+<li class="chapter" data-level="9.4.5" data-path="string-manipulation.html"><a href="string-manipulation.html#str_replace"><i class="fa fa-check"></i><b>9.4.5</b> <code>str_replace()</code></a></li>
+<li class="chapter" data-level="9.4.6" data-path="string-manipulation.html"><a href="string-manipulation.html#str_split"><i class="fa fa-check"></i><b>9.4.6</b> <code>str_split()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="9.6" data-path="string-manipulation.html"><a href="string-manipulation.html#advanced-pattern-matching-look-ahead-and-behind"><i class="fa fa-check"></i><b>9.6</b> Advanced Pattern Matching: Look Ahead and Behind</a></li>
-<li class="chapter" data-level="9.7" data-path="string-manipulation.html"><a href="string-manipulation.html#more-practices"><i class="fa fa-check"></i><b>9.7</b> More Practices</a>
+<li class="chapter" data-level="9.5" data-path="string-manipulation.html"><a href="string-manipulation.html#advanced-pattern-matching-look-ahead-and-behind"><i class="fa fa-check"></i><b>9.5</b> Advanced Pattern Matching: Look Ahead and Behind</a></li>
+<li class="chapter" data-level="9.6" data-path="string-manipulation.html"><a href="string-manipulation.html#more-practices"><i class="fa fa-check"></i><b>9.6</b> More Practices</a>
 <ul>
-<li class="chapter" data-level="9.7.1" data-path="string-manipulation.html"><a href="string-manipulation.html#case-1"><i class="fa fa-check"></i><b>9.7.1</b> Case 1</a></li>
-<li class="chapter" data-level="9.7.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-2"><i class="fa fa-check"></i><b>9.7.2</b> Case 2</a></li>
-<li class="chapter" data-level="9.7.3" data-path="string-manipulation.html"><a href="string-manipulation.html#case-3"><i class="fa fa-check"></i><b>9.7.3</b> Case 3</a></li>
+<li class="chapter" data-level="9.6.1" data-path="string-manipulation.html"><a href="string-manipulation.html#case-1"><i class="fa fa-check"></i><b>9.6.1</b> Case 1</a></li>
+<li class="chapter" data-level="9.6.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-2"><i class="fa fa-check"></i><b>9.6.2</b> Case 2</a></li>
+<li class="chapter" data-level="9.6.3" data-path="string-manipulation.html"><a href="string-manipulation.html#case-3"><i class="fa fa-check"></i><b>9.6.3</b> Case 3</a></li>
 </ul></li>
-<li class="chapter" data-level="9.8" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-chinese-four-character-idioms"><i class="fa fa-check"></i><b>9.8</b> Case Study: Chinese Four-Character Idioms</a>
+<li class="chapter" data-level="9.7" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-chinese-four-character-idioms"><i class="fa fa-check"></i><b>9.7</b> Case Study: Chinese Four-Character Idioms</a>
 <ul>
-<li class="chapter" data-level="9.8.1" data-path="string-manipulation.html"><a href="string-manipulation.html#dictionary-entries"><i class="fa fa-check"></i><b>9.8.1</b> Dictionary Entries</a></li>
-<li class="chapter" data-level="9.8.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-x來y去"><i class="fa fa-check"></i><b>9.8.2</b> Case Study: <code>X來Y去</code></a></li>
+<li class="chapter" data-level="9.7.1" data-path="string-manipulation.html"><a href="string-manipulation.html#dictionary-entries"><i class="fa fa-check"></i><b>9.7.1</b> Dictionary Entries</a></li>
+<li class="chapter" data-level="9.7.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-x來y去"><i class="fa fa-check"></i><b>9.7.2</b> Case Study: <code>X來Y去</code></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="data-import.html"><a href="data-import.html"><i class="fa fa-check"></i><b>10</b> Data Import</a>
@@ -642,6 +670,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
