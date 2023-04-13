@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2023-04-05" />
+<meta name="date" content="2023-04-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -57,6 +57,8 @@
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
+<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
+<script src="libs/str_view-binding-1.5.0/str_view.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.9/grViz.js"></script>
@@ -343,17 +345,22 @@ div.csl-indent {
 <li class="chapter" data-level="9.4.5" data-path="string-manipulation.html"><a href="string-manipulation.html#str_replace"><i class="fa fa-check"></i><b>9.4.5</b> <code>str_replace()</code></a></li>
 <li class="chapter" data-level="9.4.6" data-path="string-manipulation.html"><a href="string-manipulation.html#str_split"><i class="fa fa-check"></i><b>9.4.6</b> <code>str_split()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="9.5" data-path="string-manipulation.html"><a href="string-manipulation.html#advanced-pattern-matching-look-ahead-and-behind"><i class="fa fa-check"></i><b>9.5</b> Advanced Pattern Matching: Look Ahead and Behind</a></li>
-<li class="chapter" data-level="9.6" data-path="string-manipulation.html"><a href="string-manipulation.html#more-practices"><i class="fa fa-check"></i><b>9.6</b> More Practices</a>
+<li class="chapter" data-level="9.5" data-path="string-manipulation.html"><a href="string-manipulation.html#advanced-pattern-matching"><i class="fa fa-check"></i><b>9.5</b> Advanced Pattern Matching</a>
 <ul>
-<li class="chapter" data-level="9.6.1" data-path="string-manipulation.html"><a href="string-manipulation.html#case-1"><i class="fa fa-check"></i><b>9.6.1</b> Case 1</a></li>
-<li class="chapter" data-level="9.6.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-2"><i class="fa fa-check"></i><b>9.6.2</b> Case 2</a></li>
-<li class="chapter" data-level="9.6.3" data-path="string-manipulation.html"><a href="string-manipulation.html#case-3"><i class="fa fa-check"></i><b>9.6.3</b> Case 3</a></li>
+<li class="chapter" data-level="" data-path="string-manipulation.html"><a href="string-manipulation.html#lookahead-assertion"><i class="fa fa-check"></i>Lookahead Assertion</a></li>
+<li class="chapter" data-level="" data-path="string-manipulation.html"><a href="string-manipulation.html#look-behind-assertion"><i class="fa fa-check"></i>Look-behind Assertion</a></li>
 </ul></li>
-<li class="chapter" data-level="9.7" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-chinese-four-character-idioms"><i class="fa fa-check"></i><b>9.7</b> Case Study: Chinese Four-Character Idioms</a>
+<li class="chapter" data-level="9.6" data-path="string-manipulation.html"><a href="string-manipulation.html#recap"><i class="fa fa-check"></i><b>9.6</b> Recap</a></li>
+<li class="chapter" data-level="9.7" data-path="string-manipulation.html"><a href="string-manipulation.html#more-practices"><i class="fa fa-check"></i><b>9.7</b> More Practices</a>
 <ul>
-<li class="chapter" data-level="9.7.1" data-path="string-manipulation.html"><a href="string-manipulation.html#dictionary-entries"><i class="fa fa-check"></i><b>9.7.1</b> Dictionary Entries</a></li>
-<li class="chapter" data-level="9.7.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-x來y去"><i class="fa fa-check"></i><b>9.7.2</b> Case Study: <code>X來Y去</code></a></li>
+<li class="chapter" data-level="9.7.1" data-path="string-manipulation.html"><a href="string-manipulation.html#case-1"><i class="fa fa-check"></i><b>9.7.1</b> Case 1</a></li>
+<li class="chapter" data-level="9.7.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-2"><i class="fa fa-check"></i><b>9.7.2</b> Case 2</a></li>
+<li class="chapter" data-level="9.7.3" data-path="string-manipulation.html"><a href="string-manipulation.html#case-3"><i class="fa fa-check"></i><b>9.7.3</b> Case 3</a></li>
+</ul></li>
+<li class="chapter" data-level="9.8" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-chinese-four-character-idioms"><i class="fa fa-check"></i><b>9.8</b> Case Study: Chinese Four-Character Idioms</a>
+<ul>
+<li class="chapter" data-level="9.8.1" data-path="string-manipulation.html"><a href="string-manipulation.html#dictionary-entries"><i class="fa fa-check"></i><b>9.8.1</b> Dictionary Entries</a></li>
+<li class="chapter" data-level="9.8.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-x來y去"><i class="fa fa-check"></i><b>9.8.2</b> Case Study: <code>X來Y去</code></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="data-import.html"><a href="data-import.html"><i class="fa fa-check"></i><b>10</b> Data Import</a>
@@ -628,43 +635,43 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <ul>
 <li>Create a python script with the following codes, named <code>py-checkword.py</code></li>
 </ul>
-<div class="sourceCode" id="cb1225"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1225-1"><a href="web-scraping.html#cb1225-1" aria-hidden="true" tabindex="-1"></a><span class="co">#! python3</span></span>
-<span id="cb1225-2"><a href="web-scraping.html#cb1225-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> webbrowser, sys, pyperclip</span>
-<span id="cb1225-3"><a href="web-scraping.html#cb1225-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1225-4"><a href="web-scraping.html#cb1225-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">len</span>(sys.argv) <span class="op">&gt;</span> <span class="dv">1</span>:</span>
-<span id="cb1225-5"><a href="web-scraping.html#cb1225-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Get input from the command line</span></span>
-<span id="cb1225-6"><a href="web-scraping.html#cb1225-6" aria-hidden="true" tabindex="-1"></a>  target <span class="op">=</span> <span class="st">&#39; &#39;</span>.join(sys.argv[<span class="dv">1</span>:])</span>
-<span id="cb1225-7"><a href="web-scraping.html#cb1225-7" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb1225-8"><a href="web-scraping.html#cb1225-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Get input from the clipboard</span></span>
-<span id="cb1225-9"><a href="web-scraping.html#cb1225-9" aria-hidden="true" tabindex="-1"></a>  target <span class="op">=</span> pyperclip.paste()</span>
-<span id="cb1225-10"><a href="web-scraping.html#cb1225-10" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1225-11"><a href="web-scraping.html#cb1225-11" aria-hidden="true" tabindex="-1"></a>webbrowser.<span class="bu">open</span>(<span class="st">&#39;https://www.dictionary.com/browse/&#39;</span><span class="op">+</span> target)</span></code></pre></div>
+<div class="sourceCode" id="cb1245"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1245-1"><a href="web-scraping.html#cb1245-1" aria-hidden="true" tabindex="-1"></a><span class="co">#! python3</span></span>
+<span id="cb1245-2"><a href="web-scraping.html#cb1245-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> webbrowser, sys, pyperclip</span>
+<span id="cb1245-3"><a href="web-scraping.html#cb1245-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1245-4"><a href="web-scraping.html#cb1245-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">len</span>(sys.argv) <span class="op">&gt;</span> <span class="dv">1</span>:</span>
+<span id="cb1245-5"><a href="web-scraping.html#cb1245-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Get input from the command line</span></span>
+<span id="cb1245-6"><a href="web-scraping.html#cb1245-6" aria-hidden="true" tabindex="-1"></a>  target <span class="op">=</span> <span class="st">&#39; &#39;</span>.join(sys.argv[<span class="dv">1</span>:])</span>
+<span id="cb1245-7"><a href="web-scraping.html#cb1245-7" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb1245-8"><a href="web-scraping.html#cb1245-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Get input from the clipboard</span></span>
+<span id="cb1245-9"><a href="web-scraping.html#cb1245-9" aria-hidden="true" tabindex="-1"></a>  target <span class="op">=</span> pyperclip.paste()</span>
+<span id="cb1245-10"><a href="web-scraping.html#cb1245-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1245-11"><a href="web-scraping.html#cb1245-11" aria-hidden="true" tabindex="-1"></a>webbrowser.<span class="bu">open</span>(<span class="st">&#39;https://www.dictionary.com/browse/&#39;</span><span class="op">+</span> target)</span></code></pre></div>
 <ul>
 <li>Run the python script in the terminal</li>
 </ul>
-<div class="sourceCode" id="cb1226"><pre class="sourceCode bash Rchunk"><code class="sourceCode bash"><span id="cb1226-1"><a href="web-scraping.html#cb1226-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> py-checkword.py beauty</span></code></pre></div>
+<div class="sourceCode" id="cb1246"><pre class="sourceCode bash Rchunk"><code class="sourceCode bash"><span id="cb1246-1"><a href="web-scraping.html#cb1246-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> py-checkword.py beauty</span></code></pre></div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-54" class="exercise"><strong>Exercise 20.1  </strong></span>How to modify the <code>py-checkword.py</code> so that the user can attach a list of words separated by spaces for checking? For example, the modified script will be able to open three web browsers for <code>beauty</code>, <code>internet</code>, and <code>national</code>.</p>
+<p><span id="exr:unlabeled-div-64" class="exercise"><strong>Exercise 20.1  </strong></span>How to modify the <code>py-checkword.py</code> so that the user can attach a list of words separated by spaces for checking? For example, the modified script will be able to open three web browsers for <code>beauty</code>, <code>internet</code>, and <code>national</code>.</p>
 </div>
-<div class="sourceCode" id="cb1227"><pre class="sourceCode bash Rchunk"><code class="sourceCode bash"><span id="cb1227-1"><a href="web-scraping.html#cb1227-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> py-checkword2.py beauty internet national</span></code></pre></div>
+<div class="sourceCode" id="cb1247"><pre class="sourceCode bash Rchunk"><code class="sourceCode bash"><span id="cb1247-1"><a href="web-scraping.html#cb1247-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> py-checkword2.py beauty internet national</span></code></pre></div>
 </div>
 <div id="requests-module" class="section level2 hasAnchor" number="20.2">
 <h2><span class="header-section-number">20.2</span> <code>requests</code> Module<a href="web-scraping.html#requests-module" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>The <code>requests</code> modules allow us to easily download files from the web without having to worry about complicated issues such as network errors, connection problems, and data compression.</li>
 </ul>
-<div class="sourceCode" id="cb1228"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1228-1"><a href="web-scraping.html#cb1228-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
-<span id="cb1228-2"><a href="web-scraping.html#cb1228-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1228-3"><a href="web-scraping.html#cb1228-3" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> requests.get(<span class="st">&#39;https://www.gutenberg.org/files/2591/2591-0.txt&#39;</span>)</span>
-<span id="cb1228-4"><a href="web-scraping.html#cb1228-4" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(res)</span>
-<span id="cb1228-5"><a href="web-scraping.html#cb1228-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1228-6"><a href="web-scraping.html#cb1228-6" aria-hidden="true" tabindex="-1"></a><span class="co">## Check status code to see if the download is successful</span></span></code></pre></div>
+<div class="sourceCode" id="cb1248"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1248-1"><a href="web-scraping.html#cb1248-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb1248-2"><a href="web-scraping.html#cb1248-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1248-3"><a href="web-scraping.html#cb1248-3" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> requests.get(<span class="st">&#39;https://www.gutenberg.org/files/2591/2591-0.txt&#39;</span>)</span>
+<span id="cb1248-4"><a href="web-scraping.html#cb1248-4" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(res)</span>
+<span id="cb1248-5"><a href="web-scraping.html#cb1248-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1248-6"><a href="web-scraping.html#cb1248-6" aria-hidden="true" tabindex="-1"></a><span class="co">## Check status code to see if the download is successful</span></span></code></pre></div>
 <pre class="Rout"><code>&lt;class &#39;requests.models.Response&#39;&gt;</code></pre>
-<div class="sourceCode" id="cb1230"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1230-1"><a href="web-scraping.html#cb1230-1" aria-hidden="true" tabindex="-1"></a>res.status_code <span class="op">==</span> requests.codes.ok  <span class="co">## `requests.codes.ok` == 200</span></span></code></pre></div>
+<div class="sourceCode" id="cb1250"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1250-1"><a href="web-scraping.html#cb1250-1" aria-hidden="true" tabindex="-1"></a>res.status_code <span class="op">==</span> requests.codes.ok  <span class="co">## `requests.codes.ok` == 200</span></span></code></pre></div>
 <pre class="Rout"><code>True</code></pre>
-<div class="sourceCode" id="cb1232"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1232-1"><a href="web-scraping.html#cb1232-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(res.text)</span></code></pre></div>
+<div class="sourceCode" id="cb1252"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1252-1"><a href="web-scraping.html#cb1252-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(res.text)</span></code></pre></div>
 <pre class="Rout"><code>560045</code></pre>
-<div class="sourceCode" id="cb1234"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1234-1"><a href="web-scraping.html#cb1234-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(res.text[:<span class="dv">250</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb1254"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1254-1"><a href="web-scraping.html#cb1254-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(res.text[:<span class="dv">250</span>])</span></code></pre></div>
 <pre class="Rout"><code>ï»¿The Project Gutenberg eBook of Grimmsâ Fairy Tales, by Jacob Grimm and Wilhelm Grimm
 
 This eBook is for the use of anyone anywhere in the United States and
@@ -673,16 +680,16 @@ whatsoever. </code></pre>
 <ul>
 <li>Prepare potential errors during the file download</li>
 </ul>
-<div class="sourceCode" id="cb1236"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1236-1"><a href="web-scraping.html#cb1236-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
-<span id="cb1236-2"><a href="web-scraping.html#cb1236-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1236-3"><a href="web-scraping.html#cb1236-3" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> requests.get(<span class="st">&#39;https://www.gutenberg.org/file-that-does-not-exist.txt&#39;</span>)</span>
-<span id="cb1236-4"><a href="web-scraping.html#cb1236-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1236-5"><a href="web-scraping.html#cb1236-5" aria-hidden="true" tabindex="-1"></a><span class="co">## Check status code to see if the download is successful</span></span>
-<span id="cb1236-6"><a href="web-scraping.html#cb1236-6" aria-hidden="true" tabindex="-1"></a>res.status_code <span class="op">==</span> requests.codes.ok  <span class="co">## `requests.codes.ok` == 200</span></span></code></pre></div>
+<div class="sourceCode" id="cb1256"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1256-1"><a href="web-scraping.html#cb1256-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb1256-2"><a href="web-scraping.html#cb1256-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1256-3"><a href="web-scraping.html#cb1256-3" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> requests.get(<span class="st">&#39;https://www.gutenberg.org/file-that-does-not-exist.txt&#39;</span>)</span>
+<span id="cb1256-4"><a href="web-scraping.html#cb1256-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1256-5"><a href="web-scraping.html#cb1256-5" aria-hidden="true" tabindex="-1"></a><span class="co">## Check status code to see if the download is successful</span></span>
+<span id="cb1256-6"><a href="web-scraping.html#cb1256-6" aria-hidden="true" tabindex="-1"></a>res.status_code <span class="op">==</span> requests.codes.ok  <span class="co">## `requests.codes.ok` == 200</span></span></code></pre></div>
 <pre class="Rout"><code>False</code></pre>
-<div class="sourceCode" id="cb1238"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1238-1"><a href="web-scraping.html#cb1238-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(res.text)</span></code></pre></div>
+<div class="sourceCode" id="cb1258"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1258-1"><a href="web-scraping.html#cb1258-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(res.text)</span></code></pre></div>
 <pre class="Rout"><code>6396</code></pre>
-<div class="sourceCode" id="cb1240"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1240-1"><a href="web-scraping.html#cb1240-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(res.text[:<span class="dv">250</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb1260"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1260-1"><a href="web-scraping.html#cb1260-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(res.text[:<span class="dv">250</span>])</span></code></pre></div>
 <pre class="Rout"><code>&lt;!DOCTYPE html&gt;
 &lt;html class=&quot;client-nojs&quot; lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;
 &lt;head&gt;
@@ -691,34 +698,34 @@ whatsoever. </code></pre>
 &lt;title&gt;404 | Project Gutenberg&lt;/title&gt;
  &lt;link rel=&quot;stylesheet&quot; href=&quot;/gutenberg/style.css?v=1.1&quot;&gt;
  &lt;link rel=&quot;stylesheet&quot; href=&quot;/gutenberg/collapsible.css</code></pre>
-<div class="sourceCode" id="cb1242"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1242-1"><a href="web-scraping.html#cb1242-1" aria-hidden="true" tabindex="-1"></a>res.raise_for_status()</span></code></pre></div>
+<div class="sourceCode" id="cb1262"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1262-1"><a href="web-scraping.html#cb1262-1" aria-hidden="true" tabindex="-1"></a>res.raise_for_status()</span></code></pre></div>
 <pre><code>Error: requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://www.gutenberg.org/file-that-does-not-exist.txt</code></pre>
 <ul>
 <li>A better way to modify the codes is to make sure that the program stops as soon as some unexpected error happens.</li>
 <li>Always call <code>raise_for_status()</code> after calling <code>requests.get()</code> because we need to make sure the file has been successfully downloaded before the program continues.</li>
 </ul>
-<div class="sourceCode" id="cb1244"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1244-1"><a href="web-scraping.html#cb1244-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
-<span id="cb1244-2"><a href="web-scraping.html#cb1244-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1244-3"><a href="web-scraping.html#cb1244-3" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> requests.get(<span class="st">&#39;https://www.gutenberg.org/file-that-does-not-exist.txt&#39;</span>)</span>
-<span id="cb1244-4"><a href="web-scraping.html#cb1244-4" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb1244-5"><a href="web-scraping.html#cb1244-5" aria-hidden="true" tabindex="-1"></a>  res.raise_for_status()</span>
-<span id="cb1244-6"><a href="web-scraping.html#cb1244-6" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> exc:</span>
-<span id="cb1244-7"><a href="web-scraping.html#cb1244-7" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&#39;There was a problem with the link: </span><span class="sc">%s</span><span class="st">&#39;</span> <span class="op">%</span> (exc))</span></code></pre></div>
+<div class="sourceCode" id="cb1264"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1264-1"><a href="web-scraping.html#cb1264-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb1264-2"><a href="web-scraping.html#cb1264-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1264-3"><a href="web-scraping.html#cb1264-3" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> requests.get(<span class="st">&#39;https://www.gutenberg.org/file-that-does-not-exist.txt&#39;</span>)</span>
+<span id="cb1264-4"><a href="web-scraping.html#cb1264-4" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb1264-5"><a href="web-scraping.html#cb1264-5" aria-hidden="true" tabindex="-1"></a>  res.raise_for_status()</span>
+<span id="cb1264-6"><a href="web-scraping.html#cb1264-6" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> exc:</span>
+<span id="cb1264-7"><a href="web-scraping.html#cb1264-7" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&#39;There was a problem with the link: </span><span class="sc">%s</span><span class="st">&#39;</span> <span class="op">%</span> (exc))</span></code></pre></div>
 <pre class="Rout"><code>There was a problem with the link: 404 Client Error: Not Found for url: https://www.gutenberg.org/file-that-does-not-exist.txt</code></pre>
 <ul>
 <li>Usually we may want to scrape the texts from the web and save them on the Hard Drive.</li>
 </ul>
-<div class="sourceCode" id="cb1246"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1246-1"><a href="web-scraping.html#cb1246-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
-<span id="cb1246-2"><a href="web-scraping.html#cb1246-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1246-3"><a href="web-scraping.html#cb1246-3" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> requests.get(<span class="st">&#39;https://www.gutenberg.org/files/2591/2591-0.txt&#39;</span>)</span>
-<span id="cb1246-4"><a href="web-scraping.html#cb1246-4" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb1246-5"><a href="web-scraping.html#cb1246-5" aria-hidden="true" tabindex="-1"></a>  res.raise_for_status()</span>
-<span id="cb1246-6"><a href="web-scraping.html#cb1246-6" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> exc:</span>
-<span id="cb1246-7"><a href="web-scraping.html#cb1246-7" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&#39;There was a problem with the link: </span><span class="sc">%s</span><span class="st">&#39;</span> <span class="op">%</span> (exc))</span>
-<span id="cb1246-8"><a href="web-scraping.html#cb1246-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1246-9"><a href="web-scraping.html#cb1246-9" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;grimms.txt&#39;</span>, <span class="st">&#39;w&#39;</span>) <span class="im">as</span> f:</span>
-<span id="cb1246-10"><a href="web-scraping.html#cb1246-10" aria-hidden="true" tabindex="-1"></a>  f.write(res.text)</span>
-<span id="cb1246-11"><a href="web-scraping.html#cb1246-11" aria-hidden="true" tabindex="-1"></a>  </span></code></pre></div>
+<div class="sourceCode" id="cb1266"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1266-1"><a href="web-scraping.html#cb1266-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb1266-2"><a href="web-scraping.html#cb1266-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1266-3"><a href="web-scraping.html#cb1266-3" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> requests.get(<span class="st">&#39;https://www.gutenberg.org/files/2591/2591-0.txt&#39;</span>)</span>
+<span id="cb1266-4"><a href="web-scraping.html#cb1266-4" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb1266-5"><a href="web-scraping.html#cb1266-5" aria-hidden="true" tabindex="-1"></a>  res.raise_for_status()</span>
+<span id="cb1266-6"><a href="web-scraping.html#cb1266-6" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> exc:</span>
+<span id="cb1266-7"><a href="web-scraping.html#cb1266-7" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&#39;There was a problem with the link: </span><span class="sc">%s</span><span class="st">&#39;</span> <span class="op">%</span> (exc))</span>
+<span id="cb1266-8"><a href="web-scraping.html#cb1266-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1266-9"><a href="web-scraping.html#cb1266-9" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;grimms.txt&#39;</span>, <span class="st">&#39;w&#39;</span>) <span class="im">as</span> f:</span>
+<span id="cb1266-10"><a href="web-scraping.html#cb1266-10" aria-hidden="true" tabindex="-1"></a>  f.write(res.text)</span>
+<span id="cb1266-11"><a href="web-scraping.html#cb1266-11" aria-hidden="true" tabindex="-1"></a>  </span></code></pre></div>
 <pre class="Rout"><code>560045</code></pre>
 </div>
 <div id="bs4-module-beautiful-soup" class="section level2 hasAnchor" number="20.3">
@@ -732,70 +739,70 @@ whatsoever. </code></pre>
 <li>“parts-of-speech”: A list of senses {“definition”: ’‘, “example”:’’}</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb1248"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1248-1"><a href="web-scraping.html#cb1248-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests, bs4</span>
-<span id="cb1248-2"><a href="web-scraping.html#cb1248-2" aria-hidden="true" tabindex="-1"></a>target<span class="op">=</span><span class="st">&#39;individual&#39;</span></span>
-<span id="cb1248-3"><a href="web-scraping.html#cb1248-3" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> requests.get(<span class="st">&#39;https://www.dictionary.com/browse/&#39;</span> <span class="op">+</span> target)</span>
-<span id="cb1248-4"><a href="web-scraping.html#cb1248-4" aria-hidden="true" tabindex="-1"></a>res.raise_for_status()</span>
-<span id="cb1248-5"><a href="web-scraping.html#cb1248-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1248-6"><a href="web-scraping.html#cb1248-6" aria-hidden="true" tabindex="-1"></a>soup <span class="op">=</span> bs4.BeautifulSoup(res.text, <span class="st">&#39;lxml&#39;</span>)</span>
-<span id="cb1248-7"><a href="web-scraping.html#cb1248-7" aria-hidden="true" tabindex="-1"></a>entries <span class="op">=</span> soup.select(<span class="st">&#39;.css-1avshm7&#39;</span>) <span class="co"># entries</span></span>
-<span id="cb1248-8"><a href="web-scraping.html#cb1248-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1248-9"><a href="web-scraping.html#cb1248-9" aria-hidden="true" tabindex="-1"></a><span class="co">## Define the word structure (dict)</span></span>
-<span id="cb1248-10"><a href="web-scraping.html#cb1248-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1248-11"><a href="web-scraping.html#cb1248-11" aria-hidden="true" tabindex="-1"></a>cur_word <span class="op">=</span> {}</span>
-<span id="cb1248-12"><a href="web-scraping.html#cb1248-12" aria-hidden="true" tabindex="-1"></a><span class="co"># for each entry</span></span>
-<span id="cb1248-13"><a href="web-scraping.html#cb1248-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, entry <span class="kw">in</span> <span class="bu">enumerate</span>(entries):</span>
-<span id="cb1248-14"><a href="web-scraping.html#cb1248-14" aria-hidden="true" tabindex="-1"></a>  <span class="co">## Include only the main entry of the page</span></span>
-<span id="cb1248-15"><a href="web-scraping.html#cb1248-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="bu">len</span>(entry.select(<span class="st">&#39;h1&#39;</span>)) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb1248-16"><a href="web-scraping.html#cb1248-16" aria-hidden="true" tabindex="-1"></a>      <span class="co">#print(&#39;Entry Number: &#39;, i)</span></span>
-<span id="cb1248-17"><a href="web-scraping.html#cb1248-17" aria-hidden="true" tabindex="-1"></a>      <span class="co">##  headword and pronunciations</span></span>
-<span id="cb1248-18"><a href="web-scraping.html#cb1248-18" aria-hidden="true" tabindex="-1"></a>      cur_headword <span class="op">=</span> entry.select(<span class="st">&#39;h1&#39;</span>)[<span class="dv">0</span>].getText()</span>
-<span id="cb1248-19"><a href="web-scraping.html#cb1248-19" aria-hidden="true" tabindex="-1"></a>      cur_spell <span class="op">=</span> entry.select(<span class="st">&#39;.pron-spell-content&#39;</span>)[<span class="dv">0</span>].getText()</span>
-<span id="cb1248-20"><a href="web-scraping.html#cb1248-20" aria-hidden="true" tabindex="-1"></a>      cur_ipa <span class="op">=</span> entry.select(<span class="st">&#39;.pron-ipa-content&#39;</span>)[<span class="dv">0</span>].getText().encode(<span class="st">&#39;utf-8&#39;</span>).decode(<span class="st">&#39;utf-8&#39;</span>)</span>
-<span id="cb1248-21"><a href="web-scraping.html#cb1248-21" aria-hidden="true" tabindex="-1"></a>      <span class="co">#print(&#39;Headword: &#39;, cur_headword)</span></span>
-<span id="cb1248-22"><a href="web-scraping.html#cb1248-22" aria-hidden="true" tabindex="-1"></a>      <span class="co">#print(&#39;Pronunciation: &#39;, cur_ipa)</span></span>
-<span id="cb1248-23"><a href="web-scraping.html#cb1248-23" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb1248-24"><a href="web-scraping.html#cb1248-24" aria-hidden="true" tabindex="-1"></a>      cur_word[<span class="st">&#39;headword&#39;</span>] <span class="op">=</span> cur_headword</span>
-<span id="cb1248-25"><a href="web-scraping.html#cb1248-25" aria-hidden="true" tabindex="-1"></a>      cur_word[<span class="st">&#39;pronunciation&#39;</span>] <span class="op">=</span> cur_ipa</span>
-<span id="cb1248-26"><a href="web-scraping.html#cb1248-26" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb1248-27"><a href="web-scraping.html#cb1248-27" aria-hidden="true" tabindex="-1"></a>      <span class="co"># for each POS type in the current entry</span></span>
-<span id="cb1248-28"><a href="web-scraping.html#cb1248-28" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> pos <span class="kw">in</span> entry.select(<span class="st">&#39;.css-pnw38j&#39;</span>): </span>
-<span id="cb1248-29"><a href="web-scraping.html#cb1248-29" aria-hidden="true" tabindex="-1"></a>          cur_pos <span class="op">=</span> pos.select(<span class="st">&#39;.luna-pos&#39;</span>)[<span class="dv">0</span>].getText()</span>
-<span id="cb1248-30"><a href="web-scraping.html#cb1248-30" aria-hidden="true" tabindex="-1"></a>          <span class="co">#print(&#39;=&#39;*10)</span></span>
-<span id="cb1248-31"><a href="web-scraping.html#cb1248-31" aria-hidden="true" tabindex="-1"></a>          <span class="co">#print(&#39;POS: &#39;, cur_pos.upper())</span></span>
-<span id="cb1248-32"><a href="web-scraping.html#cb1248-32" aria-hidden="true" tabindex="-1"></a>          cur_definitions <span class="op">=</span> pos.select(<span class="st">&#39;div[value]&#39;</span>)</span>
-<span id="cb1248-33"><a href="web-scraping.html#cb1248-33" aria-hidden="true" tabindex="-1"></a>          cur_sense_list <span class="op">=</span>[]</span>
-<span id="cb1248-34"><a href="web-scraping.html#cb1248-34" aria-hidden="true" tabindex="-1"></a>          <span class="co"># for each definition in the current POS</span></span>
-<span id="cb1248-35"><a href="web-scraping.html#cb1248-35" aria-hidden="true" tabindex="-1"></a>          <span class="cf">for</span> sense <span class="kw">in</span> cur_definitions:</span>
-<span id="cb1248-36"><a href="web-scraping.html#cb1248-36" aria-hidden="true" tabindex="-1"></a>            <span class="co">#print(&#39;DEF: &#39; + sense.find(text=True, recursive=True))</span></span>
-<span id="cb1248-37"><a href="web-scraping.html#cb1248-37" aria-hidden="true" tabindex="-1"></a>            <span class="co">## check if there&#39;s any example</span></span>
-<span id="cb1248-38"><a href="web-scraping.html#cb1248-38" aria-hidden="true" tabindex="-1"></a>            ex <span class="op">=</span> sense.find(attrs<span class="op">=</span>{<span class="st">&#39;class&#39;</span>:<span class="st">&#39;luna-example&#39;</span>})</span>
-<span id="cb1248-39"><a href="web-scraping.html#cb1248-39" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> ex <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
-<span id="cb1248-40"><a href="web-scraping.html#cb1248-40" aria-hidden="true" tabindex="-1"></a>              cur_ex <span class="op">=</span> ex.getText()</span>
-<span id="cb1248-41"><a href="web-scraping.html#cb1248-41" aria-hidden="true" tabindex="-1"></a>              _ <span class="op">=</span> ex.extract()</span>
-<span id="cb1248-42"><a href="web-scraping.html#cb1248-42" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
-<span id="cb1248-43"><a href="web-scraping.html#cb1248-43" aria-hidden="true" tabindex="-1"></a>              cur_ex <span class="op">=</span> <span class="st">&#39;&#39;</span></span>
-<span id="cb1248-44"><a href="web-scraping.html#cb1248-44" aria-hidden="true" tabindex="-1"></a>            cur_def <span class="op">=</span> sense.getText()</span>
-<span id="cb1248-45"><a href="web-scraping.html#cb1248-45" aria-hidden="true" tabindex="-1"></a>            <span class="co">#print(&#39;-&#39;*10)</span></span>
-<span id="cb1248-46"><a href="web-scraping.html#cb1248-46" aria-hidden="true" tabindex="-1"></a>            <span class="co">#print(&#39;Definition: &#39; + cur_def)</span></span>
-<span id="cb1248-47"><a href="web-scraping.html#cb1248-47" aria-hidden="true" tabindex="-1"></a>            <span class="co">#print(&#39;Example: &#39;+ cur_ex)</span></span>
-<span id="cb1248-48"><a href="web-scraping.html#cb1248-48" aria-hidden="true" tabindex="-1"></a>            cur_sense <span class="op">=</span> {<span class="st">&#39;definition&#39;</span>: cur_def, <span class="st">&#39;example&#39;</span>: cur_ex}</span>
-<span id="cb1248-49"><a href="web-scraping.html#cb1248-49" aria-hidden="true" tabindex="-1"></a>            cur_sense_list.append(cur_sense)</span>
-<span id="cb1248-50"><a href="web-scraping.html#cb1248-50" aria-hidden="true" tabindex="-1"></a>          cur_word[cur_pos] <span class="op">=</span> cur_sense_list</span>
-<span id="cb1248-51"><a href="web-scraping.html#cb1248-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1248-52"><a href="web-scraping.html#cb1248-52" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
-<span id="cb1248-53"><a href="web-scraping.html#cb1248-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1248-54"><a href="web-scraping.html#cb1248-54" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(target<span class="op">+</span><span class="st">&#39;.json&#39;</span>, <span class="st">&#39;w&#39;</span>, encoding<span class="op">=</span><span class="st">&#39;utf-8&#39;</span>) <span class="im">as</span> f:</span>
-<span id="cb1248-55"><a href="web-scraping.html#cb1248-55" aria-hidden="true" tabindex="-1"></a>  json.dump(cur_word, f, ensure_ascii<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb1248-56"><a href="web-scraping.html#cb1248-56" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1248-57"><a href="web-scraping.html#cb1248-57" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(json.dumps(cur_word, sort_keys<span class="op">=</span><span class="va">False</span>, indent<span class="op">=</span><span class="dv">4</span>, ensure_ascii<span class="op">=</span><span class="va">False</span>))</span></code></pre></div>
-<div class="sourceCode" id="cb1249"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1249-1"><a href="web-scraping.html#cb1249-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
-<span id="cb1249-2"><a href="web-scraping.html#cb1249-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1249-3"><a href="web-scraping.html#cb1249-3" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;produce.json&#39;</span>,<span class="st">&#39;r&#39;</span>, encoding<span class="op">=</span><span class="st">&#39;utf-8&#39;</span>) <span class="im">as</span> f:</span>
-<span id="cb1249-4"><a href="web-scraping.html#cb1249-4" aria-hidden="true" tabindex="-1"></a>  cur_word <span class="op">=</span> json.load(f)</span>
-<span id="cb1249-5"><a href="web-scraping.html#cb1249-5" aria-hidden="true" tabindex="-1"></a>cur_word.keys()</span></code></pre></div>
+<div class="sourceCode" id="cb1268"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1268-1"><a href="web-scraping.html#cb1268-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests, bs4</span>
+<span id="cb1268-2"><a href="web-scraping.html#cb1268-2" aria-hidden="true" tabindex="-1"></a>target<span class="op">=</span><span class="st">&#39;individual&#39;</span></span>
+<span id="cb1268-3"><a href="web-scraping.html#cb1268-3" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> requests.get(<span class="st">&#39;https://www.dictionary.com/browse/&#39;</span> <span class="op">+</span> target)</span>
+<span id="cb1268-4"><a href="web-scraping.html#cb1268-4" aria-hidden="true" tabindex="-1"></a>res.raise_for_status()</span>
+<span id="cb1268-5"><a href="web-scraping.html#cb1268-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1268-6"><a href="web-scraping.html#cb1268-6" aria-hidden="true" tabindex="-1"></a>soup <span class="op">=</span> bs4.BeautifulSoup(res.text, <span class="st">&#39;lxml&#39;</span>)</span>
+<span id="cb1268-7"><a href="web-scraping.html#cb1268-7" aria-hidden="true" tabindex="-1"></a>entries <span class="op">=</span> soup.select(<span class="st">&#39;.css-1avshm7&#39;</span>) <span class="co"># entries</span></span>
+<span id="cb1268-8"><a href="web-scraping.html#cb1268-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1268-9"><a href="web-scraping.html#cb1268-9" aria-hidden="true" tabindex="-1"></a><span class="co">## Define the word structure (dict)</span></span>
+<span id="cb1268-10"><a href="web-scraping.html#cb1268-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1268-11"><a href="web-scraping.html#cb1268-11" aria-hidden="true" tabindex="-1"></a>cur_word <span class="op">=</span> {}</span>
+<span id="cb1268-12"><a href="web-scraping.html#cb1268-12" aria-hidden="true" tabindex="-1"></a><span class="co"># for each entry</span></span>
+<span id="cb1268-13"><a href="web-scraping.html#cb1268-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, entry <span class="kw">in</span> <span class="bu">enumerate</span>(entries):</span>
+<span id="cb1268-14"><a href="web-scraping.html#cb1268-14" aria-hidden="true" tabindex="-1"></a>  <span class="co">## Include only the main entry of the page</span></span>
+<span id="cb1268-15"><a href="web-scraping.html#cb1268-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="bu">len</span>(entry.select(<span class="st">&#39;h1&#39;</span>)) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb1268-16"><a href="web-scraping.html#cb1268-16" aria-hidden="true" tabindex="-1"></a>      <span class="co">#print(&#39;Entry Number: &#39;, i)</span></span>
+<span id="cb1268-17"><a href="web-scraping.html#cb1268-17" aria-hidden="true" tabindex="-1"></a>      <span class="co">##  headword and pronunciations</span></span>
+<span id="cb1268-18"><a href="web-scraping.html#cb1268-18" aria-hidden="true" tabindex="-1"></a>      cur_headword <span class="op">=</span> entry.select(<span class="st">&#39;h1&#39;</span>)[<span class="dv">0</span>].getText()</span>
+<span id="cb1268-19"><a href="web-scraping.html#cb1268-19" aria-hidden="true" tabindex="-1"></a>      cur_spell <span class="op">=</span> entry.select(<span class="st">&#39;.pron-spell-content&#39;</span>)[<span class="dv">0</span>].getText()</span>
+<span id="cb1268-20"><a href="web-scraping.html#cb1268-20" aria-hidden="true" tabindex="-1"></a>      cur_ipa <span class="op">=</span> entry.select(<span class="st">&#39;.pron-ipa-content&#39;</span>)[<span class="dv">0</span>].getText().encode(<span class="st">&#39;utf-8&#39;</span>).decode(<span class="st">&#39;utf-8&#39;</span>)</span>
+<span id="cb1268-21"><a href="web-scraping.html#cb1268-21" aria-hidden="true" tabindex="-1"></a>      <span class="co">#print(&#39;Headword: &#39;, cur_headword)</span></span>
+<span id="cb1268-22"><a href="web-scraping.html#cb1268-22" aria-hidden="true" tabindex="-1"></a>      <span class="co">#print(&#39;Pronunciation: &#39;, cur_ipa)</span></span>
+<span id="cb1268-23"><a href="web-scraping.html#cb1268-23" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb1268-24"><a href="web-scraping.html#cb1268-24" aria-hidden="true" tabindex="-1"></a>      cur_word[<span class="st">&#39;headword&#39;</span>] <span class="op">=</span> cur_headword</span>
+<span id="cb1268-25"><a href="web-scraping.html#cb1268-25" aria-hidden="true" tabindex="-1"></a>      cur_word[<span class="st">&#39;pronunciation&#39;</span>] <span class="op">=</span> cur_ipa</span>
+<span id="cb1268-26"><a href="web-scraping.html#cb1268-26" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb1268-27"><a href="web-scraping.html#cb1268-27" aria-hidden="true" tabindex="-1"></a>      <span class="co"># for each POS type in the current entry</span></span>
+<span id="cb1268-28"><a href="web-scraping.html#cb1268-28" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> pos <span class="kw">in</span> entry.select(<span class="st">&#39;.css-pnw38j&#39;</span>): </span>
+<span id="cb1268-29"><a href="web-scraping.html#cb1268-29" aria-hidden="true" tabindex="-1"></a>          cur_pos <span class="op">=</span> pos.select(<span class="st">&#39;.luna-pos&#39;</span>)[<span class="dv">0</span>].getText()</span>
+<span id="cb1268-30"><a href="web-scraping.html#cb1268-30" aria-hidden="true" tabindex="-1"></a>          <span class="co">#print(&#39;=&#39;*10)</span></span>
+<span id="cb1268-31"><a href="web-scraping.html#cb1268-31" aria-hidden="true" tabindex="-1"></a>          <span class="co">#print(&#39;POS: &#39;, cur_pos.upper())</span></span>
+<span id="cb1268-32"><a href="web-scraping.html#cb1268-32" aria-hidden="true" tabindex="-1"></a>          cur_definitions <span class="op">=</span> pos.select(<span class="st">&#39;div[value]&#39;</span>)</span>
+<span id="cb1268-33"><a href="web-scraping.html#cb1268-33" aria-hidden="true" tabindex="-1"></a>          cur_sense_list <span class="op">=</span>[]</span>
+<span id="cb1268-34"><a href="web-scraping.html#cb1268-34" aria-hidden="true" tabindex="-1"></a>          <span class="co"># for each definition in the current POS</span></span>
+<span id="cb1268-35"><a href="web-scraping.html#cb1268-35" aria-hidden="true" tabindex="-1"></a>          <span class="cf">for</span> sense <span class="kw">in</span> cur_definitions:</span>
+<span id="cb1268-36"><a href="web-scraping.html#cb1268-36" aria-hidden="true" tabindex="-1"></a>            <span class="co">#print(&#39;DEF: &#39; + sense.find(text=True, recursive=True))</span></span>
+<span id="cb1268-37"><a href="web-scraping.html#cb1268-37" aria-hidden="true" tabindex="-1"></a>            <span class="co">## check if there&#39;s any example</span></span>
+<span id="cb1268-38"><a href="web-scraping.html#cb1268-38" aria-hidden="true" tabindex="-1"></a>            ex <span class="op">=</span> sense.find(attrs<span class="op">=</span>{<span class="st">&#39;class&#39;</span>:<span class="st">&#39;luna-example&#39;</span>})</span>
+<span id="cb1268-39"><a href="web-scraping.html#cb1268-39" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> ex <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb1268-40"><a href="web-scraping.html#cb1268-40" aria-hidden="true" tabindex="-1"></a>              cur_ex <span class="op">=</span> ex.getText()</span>
+<span id="cb1268-41"><a href="web-scraping.html#cb1268-41" aria-hidden="true" tabindex="-1"></a>              _ <span class="op">=</span> ex.extract()</span>
+<span id="cb1268-42"><a href="web-scraping.html#cb1268-42" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb1268-43"><a href="web-scraping.html#cb1268-43" aria-hidden="true" tabindex="-1"></a>              cur_ex <span class="op">=</span> <span class="st">&#39;&#39;</span></span>
+<span id="cb1268-44"><a href="web-scraping.html#cb1268-44" aria-hidden="true" tabindex="-1"></a>            cur_def <span class="op">=</span> sense.getText()</span>
+<span id="cb1268-45"><a href="web-scraping.html#cb1268-45" aria-hidden="true" tabindex="-1"></a>            <span class="co">#print(&#39;-&#39;*10)</span></span>
+<span id="cb1268-46"><a href="web-scraping.html#cb1268-46" aria-hidden="true" tabindex="-1"></a>            <span class="co">#print(&#39;Definition: &#39; + cur_def)</span></span>
+<span id="cb1268-47"><a href="web-scraping.html#cb1268-47" aria-hidden="true" tabindex="-1"></a>            <span class="co">#print(&#39;Example: &#39;+ cur_ex)</span></span>
+<span id="cb1268-48"><a href="web-scraping.html#cb1268-48" aria-hidden="true" tabindex="-1"></a>            cur_sense <span class="op">=</span> {<span class="st">&#39;definition&#39;</span>: cur_def, <span class="st">&#39;example&#39;</span>: cur_ex}</span>
+<span id="cb1268-49"><a href="web-scraping.html#cb1268-49" aria-hidden="true" tabindex="-1"></a>            cur_sense_list.append(cur_sense)</span>
+<span id="cb1268-50"><a href="web-scraping.html#cb1268-50" aria-hidden="true" tabindex="-1"></a>          cur_word[cur_pos] <span class="op">=</span> cur_sense_list</span>
+<span id="cb1268-51"><a href="web-scraping.html#cb1268-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1268-52"><a href="web-scraping.html#cb1268-52" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb1268-53"><a href="web-scraping.html#cb1268-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1268-54"><a href="web-scraping.html#cb1268-54" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(target<span class="op">+</span><span class="st">&#39;.json&#39;</span>, <span class="st">&#39;w&#39;</span>, encoding<span class="op">=</span><span class="st">&#39;utf-8&#39;</span>) <span class="im">as</span> f:</span>
+<span id="cb1268-55"><a href="web-scraping.html#cb1268-55" aria-hidden="true" tabindex="-1"></a>  json.dump(cur_word, f, ensure_ascii<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb1268-56"><a href="web-scraping.html#cb1268-56" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1268-57"><a href="web-scraping.html#cb1268-57" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(json.dumps(cur_word, sort_keys<span class="op">=</span><span class="va">False</span>, indent<span class="op">=</span><span class="dv">4</span>, ensure_ascii<span class="op">=</span><span class="va">False</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb1269"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1269-1"><a href="web-scraping.html#cb1269-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb1269-2"><a href="web-scraping.html#cb1269-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1269-3"><a href="web-scraping.html#cb1269-3" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;produce.json&#39;</span>,<span class="st">&#39;r&#39;</span>, encoding<span class="op">=</span><span class="st">&#39;utf-8&#39;</span>) <span class="im">as</span> f:</span>
+<span id="cb1269-4"><a href="web-scraping.html#cb1269-4" aria-hidden="true" tabindex="-1"></a>  cur_word <span class="op">=</span> json.load(f)</span>
+<span id="cb1269-5"><a href="web-scraping.html#cb1269-5" aria-hidden="true" tabindex="-1"></a>cur_word.keys()</span></code></pre></div>
 <pre class="Rout"><code>dict_keys([&#39;headword&#39;, &#39;pronunciation&#39;, &#39;verb (used with object),&#39;, &#39;verb (used without object),&#39;, &#39;noun&#39;])</code></pre>
-<div class="sourceCode" id="cb1251"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1251-1"><a href="web-scraping.html#cb1251-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(json.dumps(cur_word, sort_keys<span class="op">=</span><span class="va">False</span>, indent<span class="op">=</span><span class="dv">4</span>, ensure_ascii<span class="op">=</span><span class="va">False</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb1271"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1271-1"><a href="web-scraping.html#cb1271-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(json.dumps(cur_word, sort_keys<span class="op">=</span><span class="va">False</span>, indent<span class="op">=</span><span class="dv">4</span>, ensure_ascii<span class="op">=</span><span class="va">False</span>))</span></code></pre></div>
 <pre class="Rout"><code>{
     &quot;headword&quot;: &quot;produce&quot;,
     &quot;pronunciation&quot;: &quot;/ verb prəˈdus, -ˈdyus; noun ˈprɒd us, -yus, ˈproʊ dus, -dyus  /&quot;,
@@ -871,14 +878,14 @@ whatsoever. </code></pre>
     ]
 }</code></pre>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-55" class="exercise"><strong>Exercise 20.2  </strong></span>Now how to extend this short script to allow the users to perform searches of multiple words all at once, scrape all definitions and examples from the website of Dictionary.com, and save them to the Hard Drive as json files in a specific directory?</p>
+<p><span id="exr:unlabeled-div-65" class="exercise"><strong>Exercise 20.2  </strong></span>Now how to extend this short script to allow the users to perform searches of multiple words all at once, scrape all definitions and examples from the website of Dictionary.com, and save them to the Hard Drive as json files in a specific directory?</p>
 </div>
-<div class="sourceCode" id="cb1253"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1253-1"><a href="web-scraping.html#cb1253-1" aria-hidden="true" tabindex="-1"></a>checkwords(targets<span class="op">=</span>[<span class="st">&quot;individual&quot;</span>, <span class="st">&quot;wonderful&quot;</span>], outdir <span class="op">=</span> <span class="st">&#39;dictionary_results/&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb1254"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1254-1"><a href="web-scraping.html#cb1254-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
-<span id="cb1254-2"><a href="web-scraping.html#cb1254-2" aria-hidden="true" tabindex="-1"></a>outdir <span class="op">=</span> <span class="st">&#39;dictionary_results/&#39;</span></span>
-<span id="cb1254-3"><a href="web-scraping.html#cb1254-3" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(outdir<span class="op">+</span><span class="st">&#39;individual.json&#39;</span>,<span class="st">&#39;r&#39;</span>) <span class="im">as</span> f:</span>
-<span id="cb1254-4"><a href="web-scraping.html#cb1254-4" aria-hidden="true" tabindex="-1"></a>  cur_word <span class="op">=</span> json.load(f)</span>
-<span id="cb1254-5"><a href="web-scraping.html#cb1254-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(json.dumps(cur_word, sort_keys<span class="op">=</span><span class="va">False</span>, indent<span class="op">=</span><span class="dv">4</span>, ensure_ascii<span class="op">=</span><span class="va">False</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb1273"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1273-1"><a href="web-scraping.html#cb1273-1" aria-hidden="true" tabindex="-1"></a>checkwords(targets<span class="op">=</span>[<span class="st">&quot;individual&quot;</span>, <span class="st">&quot;wonderful&quot;</span>], outdir <span class="op">=</span> <span class="st">&#39;dictionary_results/&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1274"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1274-1"><a href="web-scraping.html#cb1274-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb1274-2"><a href="web-scraping.html#cb1274-2" aria-hidden="true" tabindex="-1"></a>outdir <span class="op">=</span> <span class="st">&#39;dictionary_results/&#39;</span></span>
+<span id="cb1274-3"><a href="web-scraping.html#cb1274-3" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(outdir<span class="op">+</span><span class="st">&#39;individual.json&#39;</span>,<span class="st">&#39;r&#39;</span>) <span class="im">as</span> f:</span>
+<span id="cb1274-4"><a href="web-scraping.html#cb1274-4" aria-hidden="true" tabindex="-1"></a>  cur_word <span class="op">=</span> json.load(f)</span>
+<span id="cb1274-5"><a href="web-scraping.html#cb1274-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(json.dumps(cur_word, sort_keys<span class="op">=</span><span class="va">False</span>, indent<span class="op">=</span><span class="dv">4</span>, ensure_ascii<span class="op">=</span><span class="va">False</span>))</span></code></pre></div>
 <pre class="Rout"><code>{
     &quot;headword&quot;: &quot;individual&quot;,
     &quot;pronunciation&quot;: &quot;/ ˌɪn dəˈvɪdʒ u əl  /&quot;,

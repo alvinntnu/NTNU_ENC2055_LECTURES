@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2023-04-05" />
+<meta name="date" content="2023-04-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -57,6 +57,8 @@
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
+<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
+<script src="libs/str_view-binding-1.5.0/str_view.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.9/grViz.js"></script>
@@ -343,17 +345,22 @@ div.csl-indent {
 <li class="chapter" data-level="9.4.5" data-path="string-manipulation.html"><a href="string-manipulation.html#str_replace"><i class="fa fa-check"></i><b>9.4.5</b> <code>str_replace()</code></a></li>
 <li class="chapter" data-level="9.4.6" data-path="string-manipulation.html"><a href="string-manipulation.html#str_split"><i class="fa fa-check"></i><b>9.4.6</b> <code>str_split()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="9.5" data-path="string-manipulation.html"><a href="string-manipulation.html#advanced-pattern-matching-look-ahead-and-behind"><i class="fa fa-check"></i><b>9.5</b> Advanced Pattern Matching: Look Ahead and Behind</a></li>
-<li class="chapter" data-level="9.6" data-path="string-manipulation.html"><a href="string-manipulation.html#more-practices"><i class="fa fa-check"></i><b>9.6</b> More Practices</a>
+<li class="chapter" data-level="9.5" data-path="string-manipulation.html"><a href="string-manipulation.html#advanced-pattern-matching"><i class="fa fa-check"></i><b>9.5</b> Advanced Pattern Matching</a>
 <ul>
-<li class="chapter" data-level="9.6.1" data-path="string-manipulation.html"><a href="string-manipulation.html#case-1"><i class="fa fa-check"></i><b>9.6.1</b> Case 1</a></li>
-<li class="chapter" data-level="9.6.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-2"><i class="fa fa-check"></i><b>9.6.2</b> Case 2</a></li>
-<li class="chapter" data-level="9.6.3" data-path="string-manipulation.html"><a href="string-manipulation.html#case-3"><i class="fa fa-check"></i><b>9.6.3</b> Case 3</a></li>
+<li class="chapter" data-level="" data-path="string-manipulation.html"><a href="string-manipulation.html#lookahead-assertion"><i class="fa fa-check"></i>Lookahead Assertion</a></li>
+<li class="chapter" data-level="" data-path="string-manipulation.html"><a href="string-manipulation.html#look-behind-assertion"><i class="fa fa-check"></i>Look-behind Assertion</a></li>
 </ul></li>
-<li class="chapter" data-level="9.7" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-chinese-four-character-idioms"><i class="fa fa-check"></i><b>9.7</b> Case Study: Chinese Four-Character Idioms</a>
+<li class="chapter" data-level="9.6" data-path="string-manipulation.html"><a href="string-manipulation.html#recap"><i class="fa fa-check"></i><b>9.6</b> Recap</a></li>
+<li class="chapter" data-level="9.7" data-path="string-manipulation.html"><a href="string-manipulation.html#more-practices"><i class="fa fa-check"></i><b>9.7</b> More Practices</a>
 <ul>
-<li class="chapter" data-level="9.7.1" data-path="string-manipulation.html"><a href="string-manipulation.html#dictionary-entries"><i class="fa fa-check"></i><b>9.7.1</b> Dictionary Entries</a></li>
-<li class="chapter" data-level="9.7.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-x來y去"><i class="fa fa-check"></i><b>9.7.2</b> Case Study: <code>X來Y去</code></a></li>
+<li class="chapter" data-level="9.7.1" data-path="string-manipulation.html"><a href="string-manipulation.html#case-1"><i class="fa fa-check"></i><b>9.7.1</b> Case 1</a></li>
+<li class="chapter" data-level="9.7.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-2"><i class="fa fa-check"></i><b>9.7.2</b> Case 2</a></li>
+<li class="chapter" data-level="9.7.3" data-path="string-manipulation.html"><a href="string-manipulation.html#case-3"><i class="fa fa-check"></i><b>9.7.3</b> Case 3</a></li>
+</ul></li>
+<li class="chapter" data-level="9.8" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-chinese-four-character-idioms"><i class="fa fa-check"></i><b>9.8</b> Case Study: Chinese Four-Character Idioms</a>
+<ul>
+<li class="chapter" data-level="9.8.1" data-path="string-manipulation.html"><a href="string-manipulation.html#dictionary-entries"><i class="fa fa-check"></i><b>9.8.1</b> Dictionary Entries</a></li>
+<li class="chapter" data-level="9.8.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-x來y去"><i class="fa fa-check"></i><b>9.8.2</b> Case Study: <code>X來Y去</code></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="data-import.html"><a href="data-import.html"><i class="fa fa-check"></i><b>10</b> Data Import</a>
@@ -657,12 +664,12 @@ document.writeln ("This page was last updated: " + LastUpdated);
 </div>
 <div id="installing-r-markdown" class="section level2 hasAnchor" number="23.3">
 <h2><span class="header-section-number">B.3</span> Installing R Markdown<a href="reproducible-report.html#installing-r-markdown" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb1266"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1266-1"><a href="reproducible-report.html#cb1266-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install from CRAN</span></span>
-<span id="cb1266-2"><a href="reproducible-report.html#cb1266-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;rmarkdown&#39;</span>, <span class="at">dep =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1286"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1286-1"><a href="reproducible-report.html#cb1286-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install from CRAN</span></span>
+<span id="cb1286-2"><a href="reproducible-report.html#cb1286-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;rmarkdown&#39;</span>, <span class="at">dep =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p>If you need to generate PDF output from R markdown, you will need to install LaTeX. If you don’t have LaTeX yet, it is recommended that you install TinyTeX.</p>
-<div class="sourceCode" id="cb1267"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1267-1"><a href="reproducible-report.html#cb1267-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Optional (Only needed for PDF format)</span></span>
-<span id="cb1267-2"><a href="reproducible-report.html#cb1267-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;tinytex&#39;</span>)</span>
-<span id="cb1267-3"><a href="reproducible-report.html#cb1267-3" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()  <span class="co"># install TinyTeX</span></span></code></pre></div>
+<div class="sourceCode" id="cb1287"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1287-1"><a href="reproducible-report.html#cb1287-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Optional (Only needed for PDF format)</span></span>
+<span id="cb1287-2"><a href="reproducible-report.html#cb1287-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;tinytex&#39;</span>)</span>
+<span id="cb1287-3"><a href="reproducible-report.html#cb1287-3" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()  <span class="co"># install TinyTeX</span></span></code></pre></div>
 </div>
 <div id="r-markdown-components" class="section level2 hasAnchor" number="23.4">
 <h2><span class="header-section-number">B.4</span> R Markdown Components<a href="reproducible-report.html#r-markdown-components" class="anchor-section" aria-label="Anchor link to header"></a></h2>

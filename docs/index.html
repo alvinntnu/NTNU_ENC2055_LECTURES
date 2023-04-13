@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2023-04-05" />
+<meta name="date" content="2023-04-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -57,6 +57,8 @@
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
+<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
+<script src="libs/str_view-binding-1.5.0/str_view.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.9/grViz.js"></script>
@@ -343,17 +345,22 @@ div.csl-indent {
 <li class="chapter" data-level="9.4.5" data-path="string-manipulation.html"><a href="string-manipulation.html#str_replace"><i class="fa fa-check"></i><b>9.4.5</b> <code>str_replace()</code></a></li>
 <li class="chapter" data-level="9.4.6" data-path="string-manipulation.html"><a href="string-manipulation.html#str_split"><i class="fa fa-check"></i><b>9.4.6</b> <code>str_split()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="9.5" data-path="string-manipulation.html"><a href="string-manipulation.html#advanced-pattern-matching-look-ahead-and-behind"><i class="fa fa-check"></i><b>9.5</b> Advanced Pattern Matching: Look Ahead and Behind</a></li>
-<li class="chapter" data-level="9.6" data-path="string-manipulation.html"><a href="string-manipulation.html#more-practices"><i class="fa fa-check"></i><b>9.6</b> More Practices</a>
+<li class="chapter" data-level="9.5" data-path="string-manipulation.html"><a href="string-manipulation.html#advanced-pattern-matching"><i class="fa fa-check"></i><b>9.5</b> Advanced Pattern Matching</a>
 <ul>
-<li class="chapter" data-level="9.6.1" data-path="string-manipulation.html"><a href="string-manipulation.html#case-1"><i class="fa fa-check"></i><b>9.6.1</b> Case 1</a></li>
-<li class="chapter" data-level="9.6.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-2"><i class="fa fa-check"></i><b>9.6.2</b> Case 2</a></li>
-<li class="chapter" data-level="9.6.3" data-path="string-manipulation.html"><a href="string-manipulation.html#case-3"><i class="fa fa-check"></i><b>9.6.3</b> Case 3</a></li>
+<li class="chapter" data-level="" data-path="string-manipulation.html"><a href="string-manipulation.html#lookahead-assertion"><i class="fa fa-check"></i>Lookahead Assertion</a></li>
+<li class="chapter" data-level="" data-path="string-manipulation.html"><a href="string-manipulation.html#look-behind-assertion"><i class="fa fa-check"></i>Look-behind Assertion</a></li>
 </ul></li>
-<li class="chapter" data-level="9.7" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-chinese-four-character-idioms"><i class="fa fa-check"></i><b>9.7</b> Case Study: Chinese Four-Character Idioms</a>
+<li class="chapter" data-level="9.6" data-path="string-manipulation.html"><a href="string-manipulation.html#recap"><i class="fa fa-check"></i><b>9.6</b> Recap</a></li>
+<li class="chapter" data-level="9.7" data-path="string-manipulation.html"><a href="string-manipulation.html#more-practices"><i class="fa fa-check"></i><b>9.7</b> More Practices</a>
 <ul>
-<li class="chapter" data-level="9.7.1" data-path="string-manipulation.html"><a href="string-manipulation.html#dictionary-entries"><i class="fa fa-check"></i><b>9.7.1</b> Dictionary Entries</a></li>
-<li class="chapter" data-level="9.7.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-x來y去"><i class="fa fa-check"></i><b>9.7.2</b> Case Study: <code>X來Y去</code></a></li>
+<li class="chapter" data-level="9.7.1" data-path="string-manipulation.html"><a href="string-manipulation.html#case-1"><i class="fa fa-check"></i><b>9.7.1</b> Case 1</a></li>
+<li class="chapter" data-level="9.7.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-2"><i class="fa fa-check"></i><b>9.7.2</b> Case 2</a></li>
+<li class="chapter" data-level="9.7.3" data-path="string-manipulation.html"><a href="string-manipulation.html#case-3"><i class="fa fa-check"></i><b>9.7.3</b> Case 3</a></li>
+</ul></li>
+<li class="chapter" data-level="9.8" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-chinese-four-character-idioms"><i class="fa fa-check"></i><b>9.8</b> Case Study: Chinese Four-Character Idioms</a>
+<ul>
+<li class="chapter" data-level="9.8.1" data-path="string-manipulation.html"><a href="string-manipulation.html#dictionary-entries"><i class="fa fa-check"></i><b>9.8.1</b> Dictionary Entries</a></li>
+<li class="chapter" data-level="9.8.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-x來y去"><i class="fa fa-check"></i><b>9.8.2</b> Case Study: <code>X來Y去</code></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="data-import.html"><a href="data-import.html"><i class="fa fa-check"></i><b>10</b> Data Import</a>
@@ -617,7 +624,7 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <div id="header">
 <h1 class="title">ENC2055: Introduction to Programming Languages for Linguistic Analysis</h1>
 <p class="author"><em>Alvin Chen (陳正賢）</em></p>
-<p class="date"><em>2023-04-05</em></p>
+<p class="date"><em>2023-04-13</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered hasAnchor">
 <h1>Preface<a href="index.html#preface" class="anchor-section" aria-label="Anchor link to header"></a></h1>

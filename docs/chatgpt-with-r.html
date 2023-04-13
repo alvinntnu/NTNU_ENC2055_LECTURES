@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2023-04-05" />
+<meta name="date" content="2023-04-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -57,6 +57,8 @@
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
+<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
+<script src="libs/str_view-binding-1.5.0/str_view.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.9/grViz.js"></script>
@@ -343,17 +345,22 @@ div.csl-indent {
 <li class="chapter" data-level="9.4.5" data-path="string-manipulation.html"><a href="string-manipulation.html#str_replace"><i class="fa fa-check"></i><b>9.4.5</b> <code>str_replace()</code></a></li>
 <li class="chapter" data-level="9.4.6" data-path="string-manipulation.html"><a href="string-manipulation.html#str_split"><i class="fa fa-check"></i><b>9.4.6</b> <code>str_split()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="9.5" data-path="string-manipulation.html"><a href="string-manipulation.html#advanced-pattern-matching-look-ahead-and-behind"><i class="fa fa-check"></i><b>9.5</b> Advanced Pattern Matching: Look Ahead and Behind</a></li>
-<li class="chapter" data-level="9.6" data-path="string-manipulation.html"><a href="string-manipulation.html#more-practices"><i class="fa fa-check"></i><b>9.6</b> More Practices</a>
+<li class="chapter" data-level="9.5" data-path="string-manipulation.html"><a href="string-manipulation.html#advanced-pattern-matching"><i class="fa fa-check"></i><b>9.5</b> Advanced Pattern Matching</a>
 <ul>
-<li class="chapter" data-level="9.6.1" data-path="string-manipulation.html"><a href="string-manipulation.html#case-1"><i class="fa fa-check"></i><b>9.6.1</b> Case 1</a></li>
-<li class="chapter" data-level="9.6.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-2"><i class="fa fa-check"></i><b>9.6.2</b> Case 2</a></li>
-<li class="chapter" data-level="9.6.3" data-path="string-manipulation.html"><a href="string-manipulation.html#case-3"><i class="fa fa-check"></i><b>9.6.3</b> Case 3</a></li>
+<li class="chapter" data-level="" data-path="string-manipulation.html"><a href="string-manipulation.html#lookahead-assertion"><i class="fa fa-check"></i>Lookahead Assertion</a></li>
+<li class="chapter" data-level="" data-path="string-manipulation.html"><a href="string-manipulation.html#look-behind-assertion"><i class="fa fa-check"></i>Look-behind Assertion</a></li>
 </ul></li>
-<li class="chapter" data-level="9.7" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-chinese-four-character-idioms"><i class="fa fa-check"></i><b>9.7</b> Case Study: Chinese Four-Character Idioms</a>
+<li class="chapter" data-level="9.6" data-path="string-manipulation.html"><a href="string-manipulation.html#recap"><i class="fa fa-check"></i><b>9.6</b> Recap</a></li>
+<li class="chapter" data-level="9.7" data-path="string-manipulation.html"><a href="string-manipulation.html#more-practices"><i class="fa fa-check"></i><b>9.7</b> More Practices</a>
 <ul>
-<li class="chapter" data-level="9.7.1" data-path="string-manipulation.html"><a href="string-manipulation.html#dictionary-entries"><i class="fa fa-check"></i><b>9.7.1</b> Dictionary Entries</a></li>
-<li class="chapter" data-level="9.7.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-x來y去"><i class="fa fa-check"></i><b>9.7.2</b> Case Study: <code>X來Y去</code></a></li>
+<li class="chapter" data-level="9.7.1" data-path="string-manipulation.html"><a href="string-manipulation.html#case-1"><i class="fa fa-check"></i><b>9.7.1</b> Case 1</a></li>
+<li class="chapter" data-level="9.7.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-2"><i class="fa fa-check"></i><b>9.7.2</b> Case 2</a></li>
+<li class="chapter" data-level="9.7.3" data-path="string-manipulation.html"><a href="string-manipulation.html#case-3"><i class="fa fa-check"></i><b>9.7.3</b> Case 3</a></li>
+</ul></li>
+<li class="chapter" data-level="9.8" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-chinese-four-character-idioms"><i class="fa fa-check"></i><b>9.8</b> Case Study: Chinese Four-Character Idioms</a>
+<ul>
+<li class="chapter" data-level="9.8.1" data-path="string-manipulation.html"><a href="string-manipulation.html#dictionary-entries"><i class="fa fa-check"></i><b>9.8.1</b> Dictionary Entries</a></li>
+<li class="chapter" data-level="9.8.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-x來y去"><i class="fa fa-check"></i><b>9.8.2</b> Case Study: <code>X來Y去</code></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="data-import.html"><a href="data-import.html"><i class="fa fa-check"></i><b>10</b> Data Import</a>
@@ -620,8 +627,8 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <div id="installation-1" class="section level2 hasAnchor" number="24.1">
 <h2><span class="header-section-number">C.1</span> Installation<a href="chatgpt-with-r.html#installation-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>You can install the package from CRAN using the following command:</p>
-<div class="sourceCode" id="cb1271"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1271-1"><a href="chatgpt-with-r.html#cb1271-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&quot;remotes&quot;)</span></span>
-<span id="cb1271-2"><a href="chatgpt-with-r.html#cb1271-2" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;jcrodriguez1989/chatgpt&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1291"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1291-1"><a href="chatgpt-with-r.html#cb1291-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&quot;remotes&quot;)</span></span>
+<span id="cb1291-2"><a href="chatgpt-with-r.html#cb1291-2" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;jcrodriguez1989/chatgpt&quot;</span>)</span></code></pre></div>
 <p>Please check the <a href="https://github.com/jcrodriguez1989/chatgpt"><code>chatgpt</code> package documentation</a> for more information about installation, setup, and usage.</p>
 </div>
 <div id="chatgpt-api" class="section level2 hasAnchor" number="24.2">
@@ -632,7 +639,7 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <p>After you obtain an OpenAI API, please copy-paste it in a safe document in private space. Please note that the API will no longer be available for copy-and-paste as soon as you closes the pop-up window.</p>
 </div>
 <p>Once you have an API key, you can store it in your R environment as an environment variable using the <code>Sys.setenv()</code> function:</p>
-<div class="sourceCode" id="cb1272"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1272-1"><a href="chatgpt-with-r.html#cb1272-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">OPENAI_API_KEY =</span> <span class="st">&quot;your_api_key_here&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1292"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1292-1"><a href="chatgpt-with-r.html#cb1292-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">OPENAI_API_KEY =</span> <span class="st">&quot;your_api_key_here&quot;</span>)</span></code></pre></div>
 <p>Make sure to replace <code>your_api_key_here</code> with your actual API key.</p>
 <div class="info">
 <p><strong>R Environment Variables Setup</strong></p>
@@ -640,31 +647,31 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <li><p>You can save the environment variable OPENAI_API_KEY in <code>~/.Renvion</code> and every time when you starts your R session, the variable will be accessible. (For more information on R settings, please see <a href="https://support.posit.co/hc/en-us/articles/360047157094-Managing-R-with-Rprofile-Renviron-Rprofile-site-Renviron-site-rsession-conf-and-repos-conf">this artcle</a>.)</p></li>
 <li><p>Run the following code and Rstudio will open the <code>~/.Renviron</code> file for you:</p></li>
 </ul>
-<div class="sourceCode" id="cb1273"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1273-1"><a href="chatgpt-with-r.html#cb1273-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">edit_r_environ</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb1293"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1293-1"><a href="chatgpt-with-r.html#cb1293-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">edit_r_environ</span>()</span></code></pre></div>
 <ul>
 <li>Go to the Rstudio Editing Frame and find the active file tab <code>~/.Renviron</code>. In the <code>~/.Renviron</code>, please add the following line to the file:</li>
 </ul>
-<div class="sourceCode" id="cb1274"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1274-1"><a href="chatgpt-with-r.html#cb1274-1" aria-hidden="true" tabindex="-1"></a>OPENAI_API_KEY<span class="ot">=</span><span class="st">&#39;your_api_key_here&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb1294"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1294-1"><a href="chatgpt-with-r.html#cb1294-1" aria-hidden="true" tabindex="-1"></a>OPENAI_API_KEY<span class="ot">=</span><span class="st">&#39;your_api_key_here&#39;</span></span></code></pre></div>
 <ul>
 <li>Re-start the RStudio, and run the following code to see if the API key is accessible now.</li>
 </ul>
-<div class="sourceCode" id="cb1275"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1275-1"><a href="chatgpt-with-r.html#cb1275-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Get the environment variables from the system default</span></span>
-<span id="cb1275-2"><a href="chatgpt-with-r.html#cb1275-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.getenv</span>(<span class="st">&quot;OPENAI_API_KEY&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1295"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1295-1"><a href="chatgpt-with-r.html#cb1295-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Get the environment variables from the system default</span></span>
+<span id="cb1295-2"><a href="chatgpt-with-r.html#cb1295-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.getenv</span>(<span class="st">&quot;OPENAI_API_KEY&quot;</span>)</span></code></pre></div>
 <p>Or alternatively, you can save the environment variables at the OS level. Mac and Windows systems have different methods. Please see <a href="https://chlee.co/how-to-setup-environment-variables-for-windows-mac-and-linux/">this article</a> for more information.</p>
 </div>
 </div>
 <div id="using-chatgpt" class="section level2 hasAnchor" number="24.3">
 <h2><span class="header-section-number">C.3</span> Using <code>chatgpt</code><a href="chatgpt-with-r.html#using-chatgpt" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Once you have installed the chatgpt package and set up your API key, you can load the package and specify your OPENAI API KEY (if it is not in your system/R environment variables):</p>
-<div class="sourceCode" id="cb1276"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1276-1"><a href="chatgpt-with-r.html#cb1276-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(chatgpt)</span>
-<span id="cb1276-2"><a href="chatgpt-with-r.html#cb1276-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1276-3"><a href="chatgpt-with-r.html#cb1276-3" aria-hidden="true" tabindex="-1"></a><span class="do">## If you have set up environment variable in `~/.Renviron`</span></span>
-<span id="cb1276-4"><a href="chatgpt-with-r.html#cb1276-4" aria-hidden="true" tabindex="-1"></a><span class="do">## You don&#39;t have to do anything</span></span>
-<span id="cb1276-5"><a href="chatgpt-with-r.html#cb1276-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Sys.getenv(&quot;OPENAI_API_KEY&quot;) ## double check if the environment variable is working</span></span>
-<span id="cb1276-6"><a href="chatgpt-with-r.html#cb1276-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1276-7"><a href="chatgpt-with-r.html#cb1276-7" aria-hidden="true" tabindex="-1"></a><span class="do">## If you have not set up the environment variable,</span></span>
-<span id="cb1276-8"><a href="chatgpt-with-r.html#cb1276-8" aria-hidden="true" tabindex="-1"></a><span class="do">## please specify your OPENAI_API key here</span></span>
-<span id="cb1276-9"><a href="chatgpt-with-r.html#cb1276-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Sys.setenv(OPENAI_API_KEY = &quot;your_api_key_here&quot;) ## uncomment to specify API</span></span></code></pre></div>
+<div class="sourceCode" id="cb1296"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1296-1"><a href="chatgpt-with-r.html#cb1296-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(chatgpt)</span>
+<span id="cb1296-2"><a href="chatgpt-with-r.html#cb1296-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1296-3"><a href="chatgpt-with-r.html#cb1296-3" aria-hidden="true" tabindex="-1"></a><span class="do">## If you have set up environment variable in `~/.Renviron`</span></span>
+<span id="cb1296-4"><a href="chatgpt-with-r.html#cb1296-4" aria-hidden="true" tabindex="-1"></a><span class="do">## You don&#39;t have to do anything</span></span>
+<span id="cb1296-5"><a href="chatgpt-with-r.html#cb1296-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Sys.getenv(&quot;OPENAI_API_KEY&quot;) ## double check if the environment variable is working</span></span>
+<span id="cb1296-6"><a href="chatgpt-with-r.html#cb1296-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1296-7"><a href="chatgpt-with-r.html#cb1296-7" aria-hidden="true" tabindex="-1"></a><span class="do">## If you have not set up the environment variable,</span></span>
+<span id="cb1296-8"><a href="chatgpt-with-r.html#cb1296-8" aria-hidden="true" tabindex="-1"></a><span class="do">## please specify your OPENAI_API key here</span></span>
+<span id="cb1296-9"><a href="chatgpt-with-r.html#cb1296-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Sys.setenv(OPENAI_API_KEY = &quot;your_api_key_here&quot;) ## uncomment to specify API</span></span></code></pre></div>
 <div id="parameters" class="section level3 unnumbered hasAnchor">
 <h3>Parameters<a href="chatgpt-with-r.html#parameters" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>ChatGPT model parameters can be tweaked by using more environment variables.</p>
@@ -678,36 +685,191 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <li><code>OPENAI_FREQUENCY_PENALTY</code>; defaults to 0</li>
 <li><code>OPENAI_PRESENCE_PENALTY</code>; defaults to 0</li>
 </ul>
-<div class="sourceCode" id="cb1277"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1277-1"><a href="chatgpt-with-r.html#cb1277-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">OPENAI_MAX_TOKENS =</span> <span class="dv">2048</span>) <span class="do">## max for `gpt-3.5-turbo`;  8092 tokens for `gpt-4` !!!</span></span>
-<span id="cb1277-2"><a href="chatgpt-with-r.html#cb1277-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">OPENAI_VERBOSE =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1297"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1297-1"><a href="chatgpt-with-r.html#cb1297-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">OPENAI_MAX_TOKENS =</span> <span class="dv">2048</span>) <span class="do">## max for `gpt-3.5-turbo`;  8092 tokens for `gpt-4` !!!</span></span>
+<span id="cb1297-2"><a href="chatgpt-with-r.html#cb1297-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">OPENAI_VERBOSE =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 </div>
 <div id="ask-questions" class="section level3 unnumbered hasAnchor">
 <h3>Ask Questions<a href="chatgpt-with-r.html#ask-questions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb1278"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1278-1"><a href="chatgpt-with-r.html#cb1278-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(</span>
-<span id="cb1278-2"><a href="chatgpt-with-r.html#cb1278-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ask_chatgpt</span>(</span>
-<span id="cb1278-3"><a href="chatgpt-with-r.html#cb1278-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;You are a professional R instructor. Can you give me a few specific suggestions on how to start learning the R programming language?&quot;</span></span>
-<span id="cb1278-4"><a href="chatgpt-with-r.html#cb1278-4" aria-hidden="true" tabindex="-1"></a>  ) <span class="do">## endask</span></span>
-<span id="cb1278-5"><a href="chatgpt-with-r.html#cb1278-5" aria-hidden="true" tabindex="-1"></a>) <span class="do">## endwrite</span></span></code></pre></div>
-<div class="sourceCode" id="cb1279"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1279-1"><a href="chatgpt-with-r.html#cb1279-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(</span>
-<span id="cb1279-2"><a href="chatgpt-with-r.html#cb1279-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ask_chatgpt</span>(</span>
-<span id="cb1279-3"><a href="chatgpt-with-r.html#cb1279-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Could you explain what technical skills a data scientist needs for their career?&quot;</span></span>
-<span id="cb1279-4"><a href="chatgpt-with-r.html#cb1279-4" aria-hidden="true" tabindex="-1"></a>    ) <span class="do">## endask</span></span>
-<span id="cb1279-5"><a href="chatgpt-with-r.html#cb1279-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="do">## endwrite</span></span></code></pre></div>
-<div class="sourceCode" id="cb1280"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1280-1"><a href="chatgpt-with-r.html#cb1280-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(</span>
-<span id="cb1280-2"><a href="chatgpt-with-r.html#cb1280-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ask_chatgpt</span>(</span>
-<span id="cb1280-3"><a href="chatgpt-with-r.html#cb1280-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Can you tell us which programming language is better, Python or R?&quot;</span></span>
-<span id="cb1280-4"><a href="chatgpt-with-r.html#cb1280-4" aria-hidden="true" tabindex="-1"></a>    ) <span class="do">## endask</span></span>
-<span id="cb1280-5"><a href="chatgpt-with-r.html#cb1280-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="do">## endwrite</span></span></code></pre></div>
-<div class="sourceCode" id="cb1281"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1281-1"><a href="chatgpt-with-r.html#cb1281-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(</span>
-<span id="cb1281-2"><a href="chatgpt-with-r.html#cb1281-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ask_chatgpt</span>(</span>
-<span id="cb1281-3"><a href="chatgpt-with-r.html#cb1281-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;As a humanities student, I&#39;m more comfortable with Shakespeare than with Python. Can you explain why I need to learn programming, besides the fact that it pays better than reciting sonnets on the street corner?&quot;</span></span>
-<span id="cb1281-4"><a href="chatgpt-with-r.html#cb1281-4" aria-hidden="true" tabindex="-1"></a>    ) <span class="do">## endask</span></span>
-<span id="cb1281-5"><a href="chatgpt-with-r.html#cb1281-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="do">## endwrite</span></span></code></pre></div>
-<div class="sourceCode" id="cb1282"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1282-1"><a href="chatgpt-with-r.html#cb1282-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(</span>
-<span id="cb1282-2"><a href="chatgpt-with-r.html#cb1282-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ask_chatgpt</span>(</span>
-<span id="cb1282-3"><a href="chatgpt-with-r.html#cb1282-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;How do you convince humanities students who would rather run a marathon in stilettos than sit through a statistics class that the subject is actually important and could make a significant impact on their career trajectory?&quot;</span></span>
-<span id="cb1282-4"><a href="chatgpt-with-r.html#cb1282-4" aria-hidden="true" tabindex="-1"></a>    ) <span class="do">## endask</span></span>
-<span id="cb1282-5"><a href="chatgpt-with-r.html#cb1282-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="do">## endwrite</span></span></code></pre></div>
+<div class="sourceCode" id="cb1298"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1298-1"><a href="chatgpt-with-r.html#cb1298-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(</span>
+<span id="cb1298-2"><a href="chatgpt-with-r.html#cb1298-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ask_chatgpt</span>(</span>
+<span id="cb1298-3"><a href="chatgpt-with-r.html#cb1298-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;You are a professional R instructor. Can you give me a few specific suggestions on how to start learning the R programming language?&quot;</span></span>
+<span id="cb1298-4"><a href="chatgpt-with-r.html#cb1298-4" aria-hidden="true" tabindex="-1"></a>  ) <span class="do">## endask</span></span>
+<span id="cb1298-5"><a href="chatgpt-with-r.html#cb1298-5" aria-hidden="true" tabindex="-1"></a>) <span class="do">## endwrite</span></span></code></pre></div>
+<pre class="Rout"><code>Sure! Here are a few specific suggestions for you to start learning R
+programming:
+
+1. Install R and RStudio: Firstly, download and install the latest
+versions of R and RStudio. R is a programming language, and RStudio
+is an Integrated Development Environment (IDE) for R. Both are freely
+available for Windows, MacOS, and Linux.
+
+2. Learn the basics of R syntax: Before diving into more advanced
+topics, it&#39;s essential to become familiar with R syntax. Learn about
+data types, variables, operators, functions, and control structures
+such as loops and conditionals.
+
+3. Practice with tidyverse packages: The tidyverse is a set of
+packages in R that provide a consistent grammar for manipulating
+data. Learn about packages like dplyr, tidyr, ggplot2, and readr.
+These packages provide functions that simplify data manipulation and
+visualization.
+
+4. Work on data problems: Once you&#39;ve mastered the basics of R syntax
+and tidyverse packages, start working on data problems. Challenge
+yourself to solve real-world data problems, such as cleaning and
+analyzing data, building visualizations, or creating predictive
+models.
+
+5. Join the R community: There is a strong community of R users and
+developers, and joining this community can be incredibly helpful.
+Join online forums, subscribe to mailing lists, attend meetups, and
+connect with other R users.
+
+Finally, keep practicing, and don&#39;t be afraid to make mistakes. The
+more you practice, the more comfortable you&#39;ll become with R
+programming, and the better you&#39;ll get over time.</code></pre>
+<div class="sourceCode" id="cb1300"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1300-1"><a href="chatgpt-with-r.html#cb1300-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(</span>
+<span id="cb1300-2"><a href="chatgpt-with-r.html#cb1300-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ask_chatgpt</span>(</span>
+<span id="cb1300-3"><a href="chatgpt-with-r.html#cb1300-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Could you explain what technical skills a data scientist needs for their career?&quot;</span></span>
+<span id="cb1300-4"><a href="chatgpt-with-r.html#cb1300-4" aria-hidden="true" tabindex="-1"></a>    ) <span class="do">## endask</span></span>
+<span id="cb1300-5"><a href="chatgpt-with-r.html#cb1300-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="do">## endwrite</span></span></code></pre></div>
+<pre class="Rout"><code>Sure, data scientists typically require a combination of technical
+skills to succeed in their careers. Here are some of the most
+important technical skills a data scientist needs:
+
+1. Programming skills: A data scientist needs to be proficient in
+programming languages such as Python, R, and SQL to prepare,
+manipulate, and analyze data.
+
+2. Data analysis and visualization: A data scientist should be able
+to apply statistical techniques such as regression, clustering, and
+machine learning to extract meaningful insights from data.
+Additionally, data visualization skills are crucial to communicate
+insights to stakeholders effectively.
+
+3. Data wrangling: A data scientist should be able to collect, clean,
+and preprocess large, complex data sets.
+
+4. Database management: A data scientist should be familiar with
+database management systems such as MySQL, MongoDB, and Hadoop.
+
+5. Big data technologies: A data scientist should be able to work
+with big data tools such as Apache Spark and Apache Hadoop.
+
+6. Cloud computing: Data scientists should be familiar with cloud
+computing platforms such as Amazon Web Services and Microsoft Azure.
+
+7. Collaborative coding: Data scientists should be able to work
+collaboratively on coding projects using Git and GitHub.
+
+8. Business acumen: Last but not least, data scientists should also
+be familiar with business processes and industry-specific challenges
+to provide meaningful insights to stakeholders.</code></pre>
+<div class="sourceCode" id="cb1302"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1302-1"><a href="chatgpt-with-r.html#cb1302-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(</span>
+<span id="cb1302-2"><a href="chatgpt-with-r.html#cb1302-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ask_chatgpt</span>(</span>
+<span id="cb1302-3"><a href="chatgpt-with-r.html#cb1302-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Can you tell us which programming language is better, Python or R?&quot;</span></span>
+<span id="cb1302-4"><a href="chatgpt-with-r.html#cb1302-4" aria-hidden="true" tabindex="-1"></a>    ) <span class="do">## endask</span></span>
+<span id="cb1302-5"><a href="chatgpt-with-r.html#cb1302-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="do">## endwrite</span></span></code></pre></div>
+<pre class="Rout"><code>It&#39;s not really fair to say that one programming language is
+inherently &quot;better&quot; than another. Both Python and R have their own
+strengths and weaknesses, and the choice of which one to use will
+depend on the specific problem you are trying to solve and your
+personal preferences.
+
+That being said, Python is generally considered to be a more
+general-purpose programming language, while R is specifically geared
+towards statistical computing and data analysis. Python has a wider
+range of applications outside of data science, such as web
+development, machine learning, and artificial intelligence, while R
+has a more specialized focus on statistical analysis and data
+visualization.
+
+Ultimately, the choice between Python and R will come down to your
+personal preference and the requirements of your specific project.
+Both languages are widely used and have extensive communities and
+libraries supporting them.</code></pre>
+<div class="sourceCode" id="cb1304"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1304-1"><a href="chatgpt-with-r.html#cb1304-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(</span>
+<span id="cb1304-2"><a href="chatgpt-with-r.html#cb1304-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ask_chatgpt</span>(</span>
+<span id="cb1304-3"><a href="chatgpt-with-r.html#cb1304-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;As a humanities student, I&#39;m more comfortable with Shakespeare than with Python. Can you explain why I need to learn programming, besides the fact that it pays better than reciting sonnets on the street corner?&quot;</span></span>
+<span id="cb1304-4"><a href="chatgpt-with-r.html#cb1304-4" aria-hidden="true" tabindex="-1"></a>    ) <span class="do">## endask</span></span>
+<span id="cb1304-5"><a href="chatgpt-with-r.html#cb1304-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="do">## endwrite</span></span></code></pre></div>
+<pre class="Rout"><code>Of course! Learning programming can offer a diverse range of benefits
+that may not be immediately obvious. Here are a few reasons why
+learning programming can be helpful for you as a humanities student:
+
+1. Automation: With programming skills, you can automate repetitive
+tasks such as data analysis or formatting documents, saving you time
+and effort.
+
+2. Digital Humanities: With the rise of digital media, the field of
+digital humanities is expanding, and you may find programming skills
+helpful in analyzing and exploring literary texts, historical data,
+and other humanities resources.
+
+3. Interdisciplinary Collaboration: Programming skills can make
+interdisciplinary collaboration easier, as you can help bridge the
+gap between the technical and the humanities-focused members of your
+team.
+
+4. Transferable Skills: Learning programming involves developing a
+set of critical thinking, problem-solving, and logical reasoning
+skills that can be helpful in a variety of fields, not just computer
+science.
+
+5. Job Opportunities: There are many job opportunities in fields such
+as data analysis, web development, and software engineering that
+require programming skills.
+
+In short, learning programming can offer a wide range of benefits
+beyond the immediate applications in computer science or engineering,
+and it can complement your interests in humanities as well.</code></pre>
+<div class="sourceCode" id="cb1306"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1306-1"><a href="chatgpt-with-r.html#cb1306-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(</span>
+<span id="cb1306-2"><a href="chatgpt-with-r.html#cb1306-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ask_chatgpt</span>(</span>
+<span id="cb1306-3"><a href="chatgpt-with-r.html#cb1306-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;How do you convince humanities students who would rather run a marathon in stilettos than sit through a statistics class that the subject is actually important and could make a significant impact on their career trajectory?&quot;</span></span>
+<span id="cb1306-4"><a href="chatgpt-with-r.html#cb1306-4" aria-hidden="true" tabindex="-1"></a>    ) <span class="do">## endask</span></span>
+<span id="cb1306-5"><a href="chatgpt-with-r.html#cb1306-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="do">## endwrite</span></span></code></pre></div>
+<pre class="Rout"><code>As a helpful assistant, I understand that it can be challenging to
+convince students who have no prior experience or interest in
+statistics to appreciate its importance. However, statistics is an
+essential tool that can be applied to various fields and industries,
+including humanities. Here are a few points that you can highlight to
+help them understand the significance of statistics and its
+importance in their career:
+
+1. Data-driven decision making: In today&#39;s digital age, data is
+everywhere, and businesses are increasingly relying on data-driven
+decision making to stay competitive. Whether you&#39;re in marketing,
+finance, or any other profession, you need to be able to analyze data
+to make informed decisions.
+
+2. Critical thinking: Statistics is not just about numbers; it&#39;s also
+about critical thinking. By studying statistics, students learn how
+to identify patterns and trends in data, make inferences, and draw
+conclusions. These critical thinking skills are essential in any
+career path.
+
+3. Career opportunities: Many companies and industries are actively
+seeking employees with statistical knowledge and expertise. By
+learning statistics, students can open up new career opportunities,
+enhance their resume, and differentiate themselves from other
+candidates.
+
+4. Cross-disciplinary applications: Statistics is not limited to one
+field or industry. It has cross-disciplinary applications, and
+therefore, students from different fields can learn from each other&#39;s
+experiences and develop a shared understanding of statistical
+concepts that can be applied in their respective disciplines.
+
+5. Real-world examples: Using real-world examples and case studies
+can help students see the relevance of statistics in their everyday
+lives. Show them how statistics can be used to understand social
+issues, analyze public policy, or even evaluate medical studies.
+
+In conclusion, it&#39;s important to highlight to students the practical
+uses of statistics in their careers, the critical thinking skills
+developed, and the cross-disciplinary nature of the subject. With
+these points in mind, students will be more likely to see the
+importance of studying and mastering the subject.</code></pre>
 </div>
 </div>
 <div id="r-assistance" class="section level2 hasAnchor" number="24.4">
@@ -716,127 +878,272 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <div id="comment-code" class="section level3 unnumbered hasAnchor">
 <h3>Comment Code<a href="chatgpt-with-r.html#comment-code" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Providing feedback on coding style: ChatGPT can provide feedback on coding style, including suggestions for formatting, naming conventions, and best practices. This can help you improve the readability and maintainability of your code.</p>
-<div class="sourceCode" id="cb1283"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1283-1"><a href="chatgpt-with-r.html#cb1283-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(</span>
-<span id="cb1283-2"><a href="chatgpt-with-r.html#cb1283-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">comment_code</span>(</span>
-<span id="cb1283-3"><a href="chatgpt-with-r.html#cb1283-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;for (i in 1:10) {</span><span class="sc">\n</span><span class="st">  print(i ** 2)</span><span class="sc">\n</span><span class="st">}&quot;</span></span>
-<span id="cb1283-4"><a href="chatgpt-with-r.html#cb1283-4" aria-hidden="true" tabindex="-1"></a>    ) <span class="do">## endcomment</span></span>
-<span id="cb1283-5"><a href="chatgpt-with-r.html#cb1283-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="do">## endwrite</span></span></code></pre></div>
+<div class="sourceCode" id="cb1308"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1308-1"><a href="chatgpt-with-r.html#cb1308-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(</span>
+<span id="cb1308-2"><a href="chatgpt-with-r.html#cb1308-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">comment_code</span>(</span>
+<span id="cb1308-3"><a href="chatgpt-with-r.html#cb1308-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;for (i in 1:10) {</span><span class="sc">\n</span><span class="st">  print(i ** 2)</span><span class="sc">\n</span><span class="st">}&quot;</span></span>
+<span id="cb1308-4"><a href="chatgpt-with-r.html#cb1308-4" aria-hidden="true" tabindex="-1"></a>    ) <span class="do">## endcomment</span></span>
+<span id="cb1308-5"><a href="chatgpt-with-r.html#cb1308-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="do">## endwrite</span></span></code></pre></div>
+<pre class="Rout"><code># We start a for loop where we iterate through i values from 1 to 10
+for (i in 1:10) {
+  # We print out the square of each i value 
+  print(i ** 2)
+}</code></pre>
 </div>
 <div id="explain-code" class="section level3 unnumbered hasAnchor">
 <h3>Explain Code<a href="chatgpt-with-r.html#explain-code" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Providing code explanations: If you have a section of code that you don’t understand, you can ask ChatGPT to explain it to you. For example, you can ask “What does this line of code do?” and ChatGPT can provide an explanation of the code.</p>
-<div class="sourceCode" id="cb1284"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1284-1"><a href="chatgpt-with-r.html#cb1284-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(</span>
-<span id="cb1284-2"><a href="chatgpt-with-r.html#cb1284-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">explain_code</span>(</span>
-<span id="cb1284-3"><a href="chatgpt-with-r.html#cb1284-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;for (i in 1:10) {</span><span class="sc">\n</span><span class="st">  print(i ** 2)</span><span class="sc">\n</span><span class="st">}&quot;</span></span>
-<span id="cb1284-4"><a href="chatgpt-with-r.html#cb1284-4" aria-hidden="true" tabindex="-1"></a>    ) <span class="do">## endexplain</span></span>
-<span id="cb1284-5"><a href="chatgpt-with-r.html#cb1284-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="do">## endwrite</span></span></code></pre></div>
-<div class="sourceCode" id="cb1285"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1285-1"><a href="chatgpt-with-r.html#cb1285-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(</span>
-<span id="cb1285-2"><a href="chatgpt-with-r.html#cb1285-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">explain_code</span>(</span>
-<span id="cb1285-3"><a href="chatgpt-with-r.html#cb1285-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;corp %&gt;%</span></span>
-<span id="cb1285-4"><a href="chatgpt-with-r.html#cb1285-4" aria-hidden="true" tabindex="-1"></a><span class="st">    mutate(NumOfChars = nchar(texts),</span></span>
-<span id="cb1285-5"><a href="chatgpt-with-r.html#cb1285-5" aria-hidden="true" tabindex="-1"></a><span class="st">           VowelPer = str_count(texts,&#39;[aeiou]&#39;)/NumOfChars,</span></span>
-<span id="cb1285-6"><a href="chatgpt-with-r.html#cb1285-6" aria-hidden="true" tabindex="-1"></a><span class="st">           ConPer = str_count(texts,&#39;[^aeiou]&#39;)/NumOfChars) %&gt;%</span></span>
-<span id="cb1285-7"><a href="chatgpt-with-r.html#cb1285-7" aria-hidden="true" tabindex="-1"></a><span class="st">    pivot_longer(c(&#39;VowelPer&#39;, &#39;ConPer&#39;), names_to = &#39;Segment&#39;,values_to = &#39;Percent&#39;) %&gt;%</span></span>
-<span id="cb1285-8"><a href="chatgpt-with-r.html#cb1285-8" aria-hidden="true" tabindex="-1"></a><span class="st">    ggplot(aes(Segment, Percent, fill=Segment)) + geom_boxplot(notch=TRUE)&quot;</span></span>
-<span id="cb1285-9"><a href="chatgpt-with-r.html#cb1285-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="do">## endexplain</span></span>
-<span id="cb1285-10"><a href="chatgpt-with-r.html#cb1285-10" aria-hidden="true" tabindex="-1"></a>) <span class="do">## endwrite</span></span></code></pre></div>
+<div class="sourceCode" id="cb1310"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1310-1"><a href="chatgpt-with-r.html#cb1310-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(</span>
+<span id="cb1310-2"><a href="chatgpt-with-r.html#cb1310-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">explain_code</span>(</span>
+<span id="cb1310-3"><a href="chatgpt-with-r.html#cb1310-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;for (i in 1:10) {</span><span class="sc">\n</span><span class="st">  print(i ** 2)</span><span class="sc">\n</span><span class="st">}&quot;</span></span>
+<span id="cb1310-4"><a href="chatgpt-with-r.html#cb1310-4" aria-hidden="true" tabindex="-1"></a>    ) <span class="do">## endexplain</span></span>
+<span id="cb1310-5"><a href="chatgpt-with-r.html#cb1310-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="do">## endwrite</span></span></code></pre></div>
+<pre class="Rout"><code>This is a for loop in R that will iterate through the values of i,
+which goes from 1 to 10. For each value of i, it will calculate i to
+the power of 2 using the ** operator and print the result using the
+print() function. So, the output will be a sequence of numbers from 1
+to 100, each raised to the power of 2.</code></pre>
+<div class="sourceCode" id="cb1312"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1312-1"><a href="chatgpt-with-r.html#cb1312-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(</span>
+<span id="cb1312-2"><a href="chatgpt-with-r.html#cb1312-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">explain_code</span>(</span>
+<span id="cb1312-3"><a href="chatgpt-with-r.html#cb1312-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;corp %&gt;%</span></span>
+<span id="cb1312-4"><a href="chatgpt-with-r.html#cb1312-4" aria-hidden="true" tabindex="-1"></a><span class="st">    mutate(NumOfChars = nchar(texts),</span></span>
+<span id="cb1312-5"><a href="chatgpt-with-r.html#cb1312-5" aria-hidden="true" tabindex="-1"></a><span class="st">           VowelPer = str_count(texts,&#39;[aeiou]&#39;)/NumOfChars,</span></span>
+<span id="cb1312-6"><a href="chatgpt-with-r.html#cb1312-6" aria-hidden="true" tabindex="-1"></a><span class="st">           ConPer = str_count(texts,&#39;[^aeiou]&#39;)/NumOfChars) %&gt;%</span></span>
+<span id="cb1312-7"><a href="chatgpt-with-r.html#cb1312-7" aria-hidden="true" tabindex="-1"></a><span class="st">    pivot_longer(c(&#39;VowelPer&#39;, &#39;ConPer&#39;), names_to = &#39;Segment&#39;,values_to = &#39;Percent&#39;) %&gt;%</span></span>
+<span id="cb1312-8"><a href="chatgpt-with-r.html#cb1312-8" aria-hidden="true" tabindex="-1"></a><span class="st">    ggplot(aes(Segment, Percent, fill=Segment)) + geom_boxplot(notch=TRUE)&quot;</span></span>
+<span id="cb1312-9"><a href="chatgpt-with-r.html#cb1312-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="do">## endexplain</span></span>
+<span id="cb1312-10"><a href="chatgpt-with-r.html#cb1312-10" aria-hidden="true" tabindex="-1"></a>) <span class="do">## endwrite</span></span></code></pre></div>
+<pre class="Rout"><code>This R code performs data manipulation and visualization tasks.
+
+- `corp %&gt;%` signifies the use of a pipe operator to chain multiple
+tasks together.
+
+- `mutate()` creates new variables by computing new values from
+existing variables in the data frame. Specifically, it creates three
+new variables: `NumOfChars`, `VowelPer`, `ConPer`.
+
+- `nchar(texts)` calculates the number of characters in the `texts`
+column of the `corp` data frame.
+
+- `str_count(texts,&#39;[aeiou]&#39;)/NumOfChars` calculates the proportion
+of vowels in the `texts` column.
+
+- `str_count(texts,&#39;[^aeiou]&#39;)/NumOfChars` calculates the proportion
+of consonants in the `texts` column.
+
+- `pivot_longer()` reshapes the data frame by transforming it from
+wide to long format. Specifically, it re-arranges the `VowelPer` and
+`ConPer` columns into a single column named `Percent` and creates a
+new categorical variable named `Segment` to hold the original column
+names.
+
+- `ggplot()` creates the plot object and `aes()` sets the plot
+aesthetics.
+
+- `geom_boxplot(notch=TRUE)` creates a box plot with notches, where
+the x-axis shows the `Segment` variable and the y-axis shows the
+`Percent` variable. The plot is filled with different colors denoting
+the different segments.</code></pre>
 </div>
 <div id="document-code" class="section level3 unnumbered hasAnchor">
 <h3>Document Code<a href="chatgpt-with-r.html#document-code" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb1286"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1286-1"><a href="chatgpt-with-r.html#cb1286-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(</span>
-<span id="cb1286-2"><a href="chatgpt-with-r.html#cb1286-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">document_code</span>(</span>
-<span id="cb1286-3"><a href="chatgpt-with-r.html#cb1286-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;squarenum &lt;- function(x){x^2}&quot;</span></span>
-<span id="cb1286-4"><a href="chatgpt-with-r.html#cb1286-4" aria-hidden="true" tabindex="-1"></a>    ) <span class="do">## enddoc</span></span>
-<span id="cb1286-5"><a href="chatgpt-with-r.html#cb1286-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="do">## endwrite</span></span></code></pre></div>
-<div class="sourceCode" id="cb1287"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1287-1"><a href="chatgpt-with-r.html#cb1287-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Squares a Number</span></span>
-<span id="cb1287-2"><a href="chatgpt-with-r.html#cb1287-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; </span></span>
-<span id="cb1287-3"><a href="chatgpt-with-r.html#cb1287-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; This function takes a number as an argument and returns the square of that number.</span></span>
-<span id="cb1287-4"><a href="chatgpt-with-r.html#cb1287-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; </span></span>
-<span id="cb1287-5"><a href="chatgpt-with-r.html#cb1287-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param x A number.</span></span>
-<span id="cb1287-6"><a href="chatgpt-with-r.html#cb1287-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; </span></span>
-<span id="cb1287-7"><a href="chatgpt-with-r.html#cb1287-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @return The square of the number `x`.</span></span>
-<span id="cb1287-8"><a href="chatgpt-with-r.html#cb1287-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; </span></span>
-<span id="cb1287-9"><a href="chatgpt-with-r.html#cb1287-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @examples</span></span>
-<span id="cb1287-10"><a href="chatgpt-with-r.html#cb1287-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; squarenum(4)</span></span>
-<span id="cb1287-11"><a href="chatgpt-with-r.html#cb1287-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; </span></span>
-<span id="cb1287-12"><a href="chatgpt-with-r.html#cb1287-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @export</span></span>
-<span id="cb1287-13"><a href="chatgpt-with-r.html#cb1287-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
-<span id="cb1287-14"><a href="chatgpt-with-r.html#cb1287-14" aria-hidden="true" tabindex="-1"></a>squarenum <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
-<span id="cb1287-15"><a href="chatgpt-with-r.html#cb1287-15" aria-hidden="true" tabindex="-1"></a>  x<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb1287-16"><a href="chatgpt-with-r.html#cb1287-16" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb1314"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1314-1"><a href="chatgpt-with-r.html#cb1314-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(</span>
+<span id="cb1314-2"><a href="chatgpt-with-r.html#cb1314-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">document_code</span>(</span>
+<span id="cb1314-3"><a href="chatgpt-with-r.html#cb1314-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;squarenum &lt;- function(x){x^2}&quot;</span></span>
+<span id="cb1314-4"><a href="chatgpt-with-r.html#cb1314-4" aria-hidden="true" tabindex="-1"></a>    ) <span class="do">## enddoc</span></span>
+<span id="cb1314-5"><a href="chatgpt-with-r.html#cb1314-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="do">## endwrite</span></span></code></pre></div>
+<pre class="Rout"><code>```
+#&#39; Square a Number
+#&#39;
+#&#39; This function takes an input number and returns its square.
+#&#39;
+#&#39; @param x A numeric value to be squared
+#&#39; @return The square of the input value
+#&#39;
+#&#39; @examples
+#&#39; squarenum(2)
+#&#39; squarenum(3.5)
+#&#39;
+#&#39; @export
+squarenum &lt;- function(x){
+  x^2
+}
+```</code></pre>
+<div class="sourceCode" id="cb1316"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1316-1"><a href="chatgpt-with-r.html#cb1316-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Squares a Number</span></span>
+<span id="cb1316-2"><a href="chatgpt-with-r.html#cb1316-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; </span></span>
+<span id="cb1316-3"><a href="chatgpt-with-r.html#cb1316-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; This function takes a number as an argument and returns the square of that number.</span></span>
+<span id="cb1316-4"><a href="chatgpt-with-r.html#cb1316-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; </span></span>
+<span id="cb1316-5"><a href="chatgpt-with-r.html#cb1316-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param x A number.</span></span>
+<span id="cb1316-6"><a href="chatgpt-with-r.html#cb1316-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; </span></span>
+<span id="cb1316-7"><a href="chatgpt-with-r.html#cb1316-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @return The square of the number `x`.</span></span>
+<span id="cb1316-8"><a href="chatgpt-with-r.html#cb1316-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; </span></span>
+<span id="cb1316-9"><a href="chatgpt-with-r.html#cb1316-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @examples</span></span>
+<span id="cb1316-10"><a href="chatgpt-with-r.html#cb1316-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; squarenum(4)</span></span>
+<span id="cb1316-11"><a href="chatgpt-with-r.html#cb1316-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; </span></span>
+<span id="cb1316-12"><a href="chatgpt-with-r.html#cb1316-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @export</span></span>
+<span id="cb1316-13"><a href="chatgpt-with-r.html#cb1316-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb1316-14"><a href="chatgpt-with-r.html#cb1316-14" aria-hidden="true" tabindex="-1"></a>squarenum <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb1316-15"><a href="chatgpt-with-r.html#cb1316-15" aria-hidden="true" tabindex="-1"></a>  x<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb1316-16"><a href="chatgpt-with-r.html#cb1316-16" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 <div id="find-issues-in-code" class="section level3 unnumbered hasAnchor">
 <h3>Find Issues in Code<a href="chatgpt-with-r.html#find-issues-in-code" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Debugging assistance: If you are having trouble debugging your code, you can ask ChatGPT to help you find the error. ChatGPT can analyze your code and provide suggestions on where the error might be occurring.</p>
-<div class="sourceCode" id="cb1288"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1288-1"><a href="chatgpt-with-r.html#cb1288-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(</span>
-<span id="cb1288-2"><a href="chatgpt-with-r.html#cb1288-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">find_issues_in_code</span>(</span>
-<span id="cb1288-3"><a href="chatgpt-with-r.html#cb1288-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;x &lt;- data.frame(index = c(1:4), text = letters[1:4])</span></span>
-<span id="cb1288-4"><a href="chatgpt-with-r.html#cb1288-4" aria-hidden="true" tabindex="-1"></a><span class="st">writeLines(x[1])&quot;</span></span>
-<span id="cb1288-5"><a href="chatgpt-with-r.html#cb1288-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="do">## endfind</span></span>
-<span id="cb1288-6"><a href="chatgpt-with-r.html#cb1288-6" aria-hidden="true" tabindex="-1"></a>) <span class="do">## endwrite</span></span></code></pre></div>
+<div class="sourceCode" id="cb1317"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1317-1"><a href="chatgpt-with-r.html#cb1317-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(</span>
+<span id="cb1317-2"><a href="chatgpt-with-r.html#cb1317-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">find_issues_in_code</span>(</span>
+<span id="cb1317-3"><a href="chatgpt-with-r.html#cb1317-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;x &lt;- data.frame(index = c(1:4), text = letters[1:4])</span></span>
+<span id="cb1317-4"><a href="chatgpt-with-r.html#cb1317-4" aria-hidden="true" tabindex="-1"></a><span class="st">writeLines(x[1])&quot;</span></span>
+<span id="cb1317-5"><a href="chatgpt-with-r.html#cb1317-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="do">## endfind</span></span>
+<span id="cb1317-6"><a href="chatgpt-with-r.html#cb1317-6" aria-hidden="true" tabindex="-1"></a>) <span class="do">## endwrite</span></span></code></pre></div>
+<pre class="Rout"><code>The code is attempting to use the `writeLines()` function to print
+the contents of a data frame `x` on the console screen. However,
+there is an issue with the way indexing is used.
+
+Specifically, when indexing a data frame, the square brackets (`[ ]`)
+should be used with two arguments: the first argument specifies the
+rows to return, and the second argument specifies the columns to
+return (if any).
+
+So the corrected code would be something like:
+
+```
+x &lt;- data.frame(index = c(1:4), text = letters[1:4])
+writeLines(as.character(x[1, ]))
+```
+
+Here, we are using the `as.character()` function to convert the
+selected row from data frame format to character format, which is
+required by the `writeLines()` function. Note that `x[1, ]` specifies
+that we want to select the first row of the data frame and all its
+columns.</code></pre>
 </div>
 <div id="optimize-code" class="section level3 unnumbered hasAnchor">
 <h3>Optimize Code<a href="chatgpt-with-r.html#optimize-code" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Suggesting improvements: If you have a section of code that is not working as expected, you can ask ChatGPT to suggest improvements. ChatGPT can analyze your code and suggest changes that may help fix the problem.</p>
 <p>Offering alternative solutions: If you are looking for alternative solutions to a coding problem, you can ask ChatGPT for suggestions. ChatGPT can offer different approaches to solving the problem and help you choose the best one for your needs.</p>
-<div class="sourceCode" id="cb1289"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1289-1"><a href="chatgpt-with-r.html#cb1289-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(<span class="fu">optimize_code</span>(</span>
-<span id="cb1289-2"><a href="chatgpt-with-r.html#cb1289-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;x &lt;- data.frame(index = c(1:4), text = letters[1:4])</span></span>
-<span id="cb1289-3"><a href="chatgpt-with-r.html#cb1289-3" aria-hidden="true" tabindex="-1"></a><span class="st">  writeLines(x[1])&quot;</span></span>
-<span id="cb1289-4"><a href="chatgpt-with-r.html#cb1289-4" aria-hidden="true" tabindex="-1"></a>))</span>
-<span id="cb1289-5"><a href="chatgpt-with-r.html#cb1289-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1289-6"><a href="chatgpt-with-r.html#cb1289-6" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(<span class="fu">refactor_code</span>(</span>
-<span id="cb1289-7"><a href="chatgpt-with-r.html#cb1289-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;x &lt;- data.frame(index = c(1:4), text = letters[1:4])</span></span>
-<span id="cb1289-8"><a href="chatgpt-with-r.html#cb1289-8" aria-hidden="true" tabindex="-1"></a><span class="st">writeLines(x[1])&quot;</span></span>
-<span id="cb1289-9"><a href="chatgpt-with-r.html#cb1289-9" aria-hidden="true" tabindex="-1"></a>))</span></code></pre></div>
+<div class="sourceCode" id="cb1319"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1319-1"><a href="chatgpt-with-r.html#cb1319-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(<span class="fu">optimize_code</span>(</span>
+<span id="cb1319-2"><a href="chatgpt-with-r.html#cb1319-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;x &lt;- data.frame(index = c(1:4), text = letters[1:4])</span></span>
+<span id="cb1319-3"><a href="chatgpt-with-r.html#cb1319-3" aria-hidden="true" tabindex="-1"></a><span class="st">  writeLines(x[1])&quot;</span></span>
+<span id="cb1319-4"><a href="chatgpt-with-r.html#cb1319-4" aria-hidden="true" tabindex="-1"></a>))</span></code></pre></div>
+<pre class="Rout"><code>The given code is trying to print the first row of the data frame
+&quot;x&quot;. However, the &quot;writeLines&quot; function is not necessary here, and
+since there is only one row to print, using the &quot;cat&quot; function is
+more efficient. Here&#39;s the optimized code:
+
+```
+x &lt;- data.frame(index = 1:4, text = letters[1:4])
+cat(paste(x[1,], collapse = &quot; &quot;))
+```
+
+This code creates the same data frame &quot;x&quot; but uses the &quot;cat&quot; function
+to print the first row as a string with a space between the two
+columns. The &quot;paste&quot; function is used to concatenate the two entries
+in the first row, and the &quot;collapse&quot; argument is set to a space to
+join them.</code></pre>
+<div class="sourceCode" id="cb1321"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1321-1"><a href="chatgpt-with-r.html#cb1321-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(<span class="fu">refactor_code</span>(</span>
+<span id="cb1321-2"><a href="chatgpt-with-r.html#cb1321-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;x &lt;- data.frame(index = c(1:4), text = letters[1:4])</span></span>
+<span id="cb1321-3"><a href="chatgpt-with-r.html#cb1321-3" aria-hidden="true" tabindex="-1"></a><span class="st">writeLines(x[1])&quot;</span></span>
+<span id="cb1321-4"><a href="chatgpt-with-r.html#cb1321-4" aria-hidden="true" tabindex="-1"></a>))</span></code></pre></div>
+<pre class="Rout"><code>The provided code throws an error, because `x[1]` returns a data
+frame of one row and two columns. `writeLines()` prints strings, so
+it cannot handle this data structure. Here&#39;s an updated version that
+returns the first row of the `text` column as a character:
+
+```
+x &lt;- data.frame(index = c(1:4), text = letters[1:4])
+writeLines(as.character(x$text[1]))
+```
+
+This selects the first element of the `text` column with `[1]` and
+coerces it to a character with `as.character()`. Then, the result is
+printed with `writeLines()`.</code></pre>
 </div>
 </div>
 <div id="basic-natural-language-processing" class="section level2 hasAnchor" number="24.5">
 <h2><span class="header-section-number">C.5</span> Basic Natural Language Processing<a href="chatgpt-with-r.html#basic-natural-language-processing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Overall, ChatGPT can be a powerful tool for performing basic NLP tasks. However, it’s important to keep in mind that it may not always be perfect or tailored to your specific needs. Additionally, more advanced tasks may require the use of other NLP tools or techniques.</p>
 <p>Here let’s look at a few examples of Chinese word segmentation, NP chunking, translation, and text summarization.</p>
-<div class="sourceCode" id="cb1290"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1290-1"><a href="chatgpt-with-r.html#cb1290-1" aria-hidden="true" tabindex="-1"></a>text_zh <span class="ot">&lt;-</span> <span class="st">&quot;記者蘇志畬／台中即時報導</span></span>
-<span id="cb1290-2"><a href="chatgpt-with-r.html#cb1290-2" aria-hidden="true" tabindex="-1"></a><span class="st">2023年3月8日 週三 下午12:52世界棒球經典賽今晚7點上演中華隊對上巴拿馬隊，開幕戰票房2萬人完售，滿場應援是助力也是壓力，前職棒球星曹竣崵指出，中華隊投打守正常發揮的話，有機會贏球，「關鍵在心理，要扛住想贏、必須贏的壓力」。</span></span>
-<span id="cb1290-3"><a href="chatgpt-with-r.html#cb1290-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1290-4"><a href="chatgpt-with-r.html#cb1290-4" aria-hidden="true" tabindex="-1"></a><span class="st">「不只現場2萬人，全台2300萬人透過電視收看的人可能更多。」球評、現任台北城市科技大學棒球隊總教練的曹竣崵表示：「在有壓力的情況下打球，要能夠頂得住。」&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb1323"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1323-1"><a href="chatgpt-with-r.html#cb1323-1" aria-hidden="true" tabindex="-1"></a>text_zh <span class="ot">&lt;-</span> <span class="st">&quot;記者蘇志畬／台中即時報導</span></span>
+<span id="cb1323-2"><a href="chatgpt-with-r.html#cb1323-2" aria-hidden="true" tabindex="-1"></a><span class="st">2023年3月8日 週三 下午12:52世界棒球經典賽今晚7點上演中華隊對上巴拿馬隊，開幕戰票房2萬人完售，滿場應援是助力也是壓力，前職棒球星曹竣崵指出，中華隊投打守正常發揮的話，有機會贏球，「關鍵在心理，要扛住想贏、必須贏的壓力」。</span></span>
+<span id="cb1323-3"><a href="chatgpt-with-r.html#cb1323-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1323-4"><a href="chatgpt-with-r.html#cb1323-4" aria-hidden="true" tabindex="-1"></a><span class="st">「不只現場2萬人，全台2300萬人透過電視收看的人可能更多。」球評、現任台北城市科技大學棒球隊總教練的曹竣崵表示：「在有壓力的情況下打球，要能夠頂得住。」&quot;</span></span></code></pre></div>
 <div id="np-chunking" class="section level3 unnumbered hasAnchor">
 <h3>NP Chunking<a href="chatgpt-with-r.html#np-chunking" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb1291"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1291-1"><a href="chatgpt-with-r.html#cb1291-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(<span class="fu">ask_chatgpt</span>(</span>
-<span id="cb1291-2"><a href="chatgpt-with-r.html#cb1291-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste0</span>(</span>
-<span id="cb1291-3"><a href="chatgpt-with-r.html#cb1291-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Can you identify all noun phrases from the following Chinese text:</span><span class="sc">\&quot;</span><span class="st">&quot;</span>,</span>
-<span id="cb1291-4"><a href="chatgpt-with-r.html#cb1291-4" aria-hidden="true" tabindex="-1"></a>    text_zh,</span>
-<span id="cb1291-5"><a href="chatgpt-with-r.html#cb1291-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">&quot;</span></span>
-<span id="cb1291-6"><a href="chatgpt-with-r.html#cb1291-6" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1291-7"><a href="chatgpt-with-r.html#cb1291-7" aria-hidden="true" tabindex="-1"></a>))</span></code></pre></div>
+<div class="sourceCode" id="cb1324"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1324-1"><a href="chatgpt-with-r.html#cb1324-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(<span class="fu">ask_chatgpt</span>(</span>
+<span id="cb1324-2"><a href="chatgpt-with-r.html#cb1324-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste0</span>(</span>
+<span id="cb1324-3"><a href="chatgpt-with-r.html#cb1324-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Can you identify all noun phrases from the following Chinese text:</span><span class="sc">\&quot;</span><span class="st">&quot;</span>,</span>
+<span id="cb1324-4"><a href="chatgpt-with-r.html#cb1324-4" aria-hidden="true" tabindex="-1"></a>    text_zh,</span>
+<span id="cb1324-5"><a href="chatgpt-with-r.html#cb1324-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">&quot;</span></span>
+<span id="cb1324-6"><a href="chatgpt-with-r.html#cb1324-6" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1324-7"><a href="chatgpt-with-r.html#cb1324-7" aria-hidden="true" tabindex="-1"></a>))</span></code></pre></div>
+<pre class="Rout"><code>記者蘇志畬, 台中即時報導, 2023年3月8日, 週三, 下午12:52,
+世界棒球經典賽, 今晚7點, 中華隊, 巴拿馬隊, 開幕戰, 票房2萬人,
+滿場應援, 助力, 壓力, 前職棒球星曹竣崵, 中華隊投打守, 正常發揮, 機會,
+贏球, 關鍵, 心理, 想贏, 必須贏, 現場2萬人, 全台2300萬人,
+電視收看的人, 球評, 現任台北城市科技大學棒球隊總教練, 有壓力的情況,
+頂得住.</code></pre>
 </div>
 <div id="word-segmentation" class="section level3 unnumbered hasAnchor">
 <h3>Word Segmentation<a href="chatgpt-with-r.html#word-segmentation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb1292"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1292-1"><a href="chatgpt-with-r.html#cb1292-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(<span class="fu">ask_chatgpt</span>(</span>
-<span id="cb1292-2"><a href="chatgpt-with-r.html#cb1292-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste0</span>(</span>
-<span id="cb1292-3"><a href="chatgpt-with-r.html#cb1292-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Can you perform Chinese word segmentation on the following Chinese text (using whitespaces as the word delimiters):</span><span class="sc">\&quot;</span><span class="st">&quot;</span>,</span>
-<span id="cb1292-4"><a href="chatgpt-with-r.html#cb1292-4" aria-hidden="true" tabindex="-1"></a>    text_zh,</span>
-<span id="cb1292-5"><a href="chatgpt-with-r.html#cb1292-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">&quot;</span></span>
-<span id="cb1292-6"><a href="chatgpt-with-r.html#cb1292-6" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1292-7"><a href="chatgpt-with-r.html#cb1292-7" aria-hidden="true" tabindex="-1"></a>))</span></code></pre></div>
+<div class="sourceCode" id="cb1326"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1326-1"><a href="chatgpt-with-r.html#cb1326-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(<span class="fu">ask_chatgpt</span>(</span>
+<span id="cb1326-2"><a href="chatgpt-with-r.html#cb1326-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste0</span>(</span>
+<span id="cb1326-3"><a href="chatgpt-with-r.html#cb1326-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Can you perform Chinese word segmentation on the following Chinese text (using whitespaces as the word delimiters):</span><span class="sc">\&quot;</span><span class="st">&quot;</span>,</span>
+<span id="cb1326-4"><a href="chatgpt-with-r.html#cb1326-4" aria-hidden="true" tabindex="-1"></a>    text_zh,</span>
+<span id="cb1326-5"><a href="chatgpt-with-r.html#cb1326-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">&quot;</span></span>
+<span id="cb1326-6"><a href="chatgpt-with-r.html#cb1326-6" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1326-7"><a href="chatgpt-with-r.html#cb1326-7" aria-hidden="true" tabindex="-1"></a>))</span></code></pre></div>
+<pre class="Rout"><code>Sure, I can perform Chinese word segmentation on the given text. Here
+is the segmented text:
+
+&quot;記者 蘇志畬 ／ 台中 即時 報導
+2023 年 3 月 8 日 週三 下午 12:52 世界棒球經典賽 今晚 7 點 上演
+中華隊 對上 巴拿馬隊，開幕戰 票房 2 萬 人 完售，滿場 應援 是 助力
+也是 壓力，前 職棒 球星 曹竣崵 指出，中華隊 投 打 守 正常 發揮
+的話，有 機會 贏球，「關鍵 在心理，要 扛住 想 贏、必 須贏 的 壓力」。
+
+「不只 現場 2 萬 人，全 台 2300 萬 人 透過 電視 收看 的 人 可能
+更多。」球評、現任 台北 城市 科技 大學 棒球 隊 總教練 的 曹竣崵
+表示：「在 有 壓力 的情況下 打球，要 能夠 頂得住。」&quot;</code></pre>
 </div>
 <div id="text-translation" class="section level3 unnumbered hasAnchor">
 <h3>Text Translation<a href="chatgpt-with-r.html#text-translation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb1293"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1293-1"><a href="chatgpt-with-r.html#cb1293-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(<span class="fu">ask_chatgpt</span>(</span>
-<span id="cb1293-2"><a href="chatgpt-with-r.html#cb1293-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste0</span>(</span>
-<span id="cb1293-3"><a href="chatgpt-with-r.html#cb1293-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Can you translate the following Chinese text into English:</span><span class="sc">\&quot;</span><span class="st">&quot;</span>,</span>
-<span id="cb1293-4"><a href="chatgpt-with-r.html#cb1293-4" aria-hidden="true" tabindex="-1"></a>    text_zh,</span>
-<span id="cb1293-5"><a href="chatgpt-with-r.html#cb1293-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">&quot;</span></span>
-<span id="cb1293-6"><a href="chatgpt-with-r.html#cb1293-6" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1293-7"><a href="chatgpt-with-r.html#cb1293-7" aria-hidden="true" tabindex="-1"></a>))</span></code></pre></div>
+<div class="sourceCode" id="cb1328"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1328-1"><a href="chatgpt-with-r.html#cb1328-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(<span class="fu">ask_chatgpt</span>(</span>
+<span id="cb1328-2"><a href="chatgpt-with-r.html#cb1328-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste0</span>(</span>
+<span id="cb1328-3"><a href="chatgpt-with-r.html#cb1328-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Can you translate the following Chinese text into English:</span><span class="sc">\&quot;</span><span class="st">&quot;</span>,</span>
+<span id="cb1328-4"><a href="chatgpt-with-r.html#cb1328-4" aria-hidden="true" tabindex="-1"></a>    text_zh,</span>
+<span id="cb1328-5"><a href="chatgpt-with-r.html#cb1328-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">&quot;</span></span>
+<span id="cb1328-6"><a href="chatgpt-with-r.html#cb1328-6" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1328-7"><a href="chatgpt-with-r.html#cb1328-7" aria-hidden="true" tabindex="-1"></a>))</span></code></pre></div>
+<pre class="Rout"><code>Reporter Su Zhiyu/Taichung real-time report
+March 8, 2023, Wednesday, 12:52 PM
+The World Baseball Classic will kick off tonight at 7 pm with the
+Chinese Taipei team facing off against the Panama team. The opening
+game sold out with 20,000 spectators in attendance, and the crowded
+support serves as both a driving force and a pressure. Former
+professional baseball player Cao Junxiang pointed out that if the
+Chinese Taipei team can perform normally in pitching, hitting, and
+fielding, they have a chance to win, &quot;the key is the mentality, to
+withstand the pressure of wanting to win and needing to win.&quot;
+
+&quot;Not only the 20,000 people at the scene, but also the millions of
+people watching on TV throughout Taiwan.&quot; Commentator and current
+head coach of the baseball team at Taipei City University of Science
+and Technology, Cao Junxiang, said: &quot;Playing under pressure requires
+the ability to endure it.&quot;</code></pre>
 </div>
 <div id="text-summarization" class="section level3 unnumbered hasAnchor">
 <h3>Text Summarization<a href="chatgpt-with-r.html#text-summarization" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb1294"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1294-1"><a href="chatgpt-with-r.html#cb1294-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(<span class="fu">ask_chatgpt</span>(</span>
-<span id="cb1294-2"><a href="chatgpt-with-r.html#cb1294-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste0</span>(</span>
-<span id="cb1294-3"><a href="chatgpt-with-r.html#cb1294-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Can you summarize the following Chinese text in one sentence:</span><span class="sc">\&quot;</span><span class="st">&quot;</span>,</span>
-<span id="cb1294-4"><a href="chatgpt-with-r.html#cb1294-4" aria-hidden="true" tabindex="-1"></a>    text_zh,</span>
-<span id="cb1294-5"><a href="chatgpt-with-r.html#cb1294-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">&quot;</span></span>
-<span id="cb1294-6"><a href="chatgpt-with-r.html#cb1294-6" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1294-7"><a href="chatgpt-with-r.html#cb1294-7" aria-hidden="true" tabindex="-1"></a>))</span></code></pre></div>
+<div class="sourceCode" id="cb1330"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1330-1"><a href="chatgpt-with-r.html#cb1330-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(<span class="fu">ask_chatgpt</span>(</span>
+<span id="cb1330-2"><a href="chatgpt-with-r.html#cb1330-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste0</span>(</span>
+<span id="cb1330-3"><a href="chatgpt-with-r.html#cb1330-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Can you summarize the following Chinese text in one sentence:</span><span class="sc">\&quot;</span><span class="st">&quot;</span>,</span>
+<span id="cb1330-4"><a href="chatgpt-with-r.html#cb1330-4" aria-hidden="true" tabindex="-1"></a>    text_zh,</span>
+<span id="cb1330-5"><a href="chatgpt-with-r.html#cb1330-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">&quot;</span></span>
+<span id="cb1330-6"><a href="chatgpt-with-r.html#cb1330-6" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1330-7"><a href="chatgpt-with-r.html#cb1330-7" aria-hidden="true" tabindex="-1"></a>))</span></code></pre></div>
+<pre class="Rout"><code>Former baseball star Cao Junxuan said that if the Chinese team
+performs normally in pitching, hitting and fielding, they have a
+chance to win against Panama in the opening match of the World
+Baseball Classic tonight, and it is important to withstand the
+pressure both at the stadium and from the audience watching on TV.</code></pre>
 </div>
 </div>
 <div id="resources-for-chatgpt-prompts" class="section level2 hasAnchor" number="24.6">

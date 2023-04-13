@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2023-04-08" />
+<meta name="date" content="2023-04-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -322,17 +322,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.4.5" data-path="string-manipulation.html"><a href="string-manipulation.html#str_replace"><i class="fa fa-check"></i><b>9.4.5</b> <code>str_replace()</code></a></li>
 <li class="chapter" data-level="9.4.6" data-path="string-manipulation.html"><a href="string-manipulation.html#str_split"><i class="fa fa-check"></i><b>9.4.6</b> <code>str_split()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="9.5" data-path="string-manipulation.html"><a href="string-manipulation.html#advanced-pattern-matching-look-ahead-and-behind"><i class="fa fa-check"></i><b>9.5</b> Advanced Pattern Matching: Look Ahead and Behind</a></li>
-<li class="chapter" data-level="9.6" data-path="string-manipulation.html"><a href="string-manipulation.html#more-practices"><i class="fa fa-check"></i><b>9.6</b> More Practices</a>
+<li class="chapter" data-level="9.5" data-path="string-manipulation.html"><a href="string-manipulation.html#advanced-pattern-matching"><i class="fa fa-check"></i><b>9.5</b> Advanced Pattern Matching</a>
 <ul>
-<li class="chapter" data-level="9.6.1" data-path="string-manipulation.html"><a href="string-manipulation.html#case-1"><i class="fa fa-check"></i><b>9.6.1</b> Case 1</a></li>
-<li class="chapter" data-level="9.6.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-2"><i class="fa fa-check"></i><b>9.6.2</b> Case 2</a></li>
-<li class="chapter" data-level="9.6.3" data-path="string-manipulation.html"><a href="string-manipulation.html#case-3"><i class="fa fa-check"></i><b>9.6.3</b> Case 3</a></li>
+<li class="chapter" data-level="" data-path="string-manipulation.html"><a href="string-manipulation.html#lookahead-assertion"><i class="fa fa-check"></i>Lookahead Assertion</a></li>
+<li class="chapter" data-level="" data-path="string-manipulation.html"><a href="string-manipulation.html#look-behind-assertion"><i class="fa fa-check"></i>Look-behind Assertion</a></li>
 </ul></li>
-<li class="chapter" data-level="9.7" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-chinese-four-character-idioms"><i class="fa fa-check"></i><b>9.7</b> Case Study: Chinese Four-Character Idioms</a>
+<li class="chapter" data-level="9.6" data-path="string-manipulation.html"><a href="string-manipulation.html#recap"><i class="fa fa-check"></i><b>9.6</b> Recap</a></li>
+<li class="chapter" data-level="9.7" data-path="string-manipulation.html"><a href="string-manipulation.html#more-practices"><i class="fa fa-check"></i><b>9.7</b> More Practices</a>
 <ul>
-<li class="chapter" data-level="9.7.1" data-path="string-manipulation.html"><a href="string-manipulation.html#dictionary-entries"><i class="fa fa-check"></i><b>9.7.1</b> Dictionary Entries</a></li>
-<li class="chapter" data-level="9.7.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-x來y去"><i class="fa fa-check"></i><b>9.7.2</b> Case Study: <code>X來Y去</code></a></li>
+<li class="chapter" data-level="9.7.1" data-path="string-manipulation.html"><a href="string-manipulation.html#case-1"><i class="fa fa-check"></i><b>9.7.1</b> Case 1</a></li>
+<li class="chapter" data-level="9.7.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-2"><i class="fa fa-check"></i><b>9.7.2</b> Case 2</a></li>
+<li class="chapter" data-level="9.7.3" data-path="string-manipulation.html"><a href="string-manipulation.html#case-3"><i class="fa fa-check"></i><b>9.7.3</b> Case 3</a></li>
+</ul></li>
+<li class="chapter" data-level="9.8" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-chinese-four-character-idioms"><i class="fa fa-check"></i><b>9.8</b> Case Study: Chinese Four-Character Idioms</a>
+<ul>
+<li class="chapter" data-level="9.8.1" data-path="string-manipulation.html"><a href="string-manipulation.html#dictionary-entries"><i class="fa fa-check"></i><b>9.8.1</b> Dictionary Entries</a></li>
+<li class="chapter" data-level="9.8.2" data-path="string-manipulation.html"><a href="string-manipulation.html#case-study-x來y去"><i class="fa fa-check"></i><b>9.8.2</b> Case Study: <code>X來Y去</code></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="data-import.html"><a href="data-import.html"><i class="fa fa-check"></i><b>10</b> Data Import</a>
@@ -1525,7 +1530,7 @@ x_shape
 <p><span id="exr:unlabeled-div-3" class="exercise"><strong>Exercise 7.3  </strong></span>When creating a graph, the aesthetic feature <code>color</code> can also be specified within the <code>geom_*()</code> as well.</p>
 <p>Please compare the following two ways of <strong>color specification</strong> and describe their respective functional differences.</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb33-1"><a href="data-visualization.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Method 1</span></span>
-<span id="cb33-2"><a href="data-visualization.html#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy, <span class="at">color =</span> drv)) <span class="sc">+</span> </span>
+<span id="cb33-2"><a href="data-visualization.html#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy, <span class="at">color =</span> drv)) <span class="sc">+</span></span>
 <span id="cb33-3"><a href="data-visualization.html#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
 <p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb34-1"><a href="data-visualization.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Method 2</span></span>
@@ -1778,7 +1783,7 @@ x_shape
 </div>
 <p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-61-1.png" width="672" /></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-12" class="exercise"><strong>Exercise 7.12  (BONUS) </strong></span>Create a world map showing the current outbreak of covid19.</p>
+<p><span id="exr:unlabeled-div-12" class="exercise"><strong>Exercise 7.12  (BONUS(Optional!!)) </strong></span>Create a world map showing the current outbreak of covid19.</p>
 <p>Hint: Please check <code>ggplot2::geom_polygon()</code> and the package <code>library(maps)</code>. This exercise is made to see if you know how to find resources online for more complex tasks like this. Please note that the country names may not match.</p>
 </div>
 <p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-62-1.png" width="100%" height="100%" /></p>
