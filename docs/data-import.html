@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2023-04-25" />
+<meta name="date" content="2023-05-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -354,11 +354,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.4" data-path="data-import.html"><a href="data-import.html#character-encoding-self-study"><i class="fa fa-check"></i><b>10.4</b> Character Encoding (Self-study)</a>
 <ul>
 <li class="chapter" data-level="10.4.1" data-path="data-import.html"><a href="data-import.html#problems-with-ascii"><i class="fa fa-check"></i><b>10.4.1</b> Problems with ASCII</a></li>
-<li class="chapter" data-level="10.4.2" data-path="data-import.html"><a href="data-import.html#problems-with-single-byte-encoding"><i class="fa fa-check"></i><b>10.4.2</b> Problems with Single-Byte Encoding</a></li>
-<li class="chapter" data-level="10.4.3" data-path="data-import.html"><a href="data-import.html#problems-with-multi-byte-encoding"><i class="fa fa-check"></i><b>10.4.3</b> Problems with Multi-byte Encoding</a></li>
-<li class="chapter" data-level="10.4.4" data-path="data-import.html"><a href="data-import.html#unicode-and-utf-8"><i class="fa fa-check"></i><b>10.4.4</b> Unicode and UTF-8</a></li>
-<li class="chapter" data-level="10.4.5" data-path="data-import.html"><a href="data-import.html#suggestions"><i class="fa fa-check"></i><b>10.4.5</b> Suggestions</a></li>
-<li class="chapter" data-level="10.4.6" data-path="data-import.html"><a href="data-import.html#recap-character-code-point-and-hexadecimal-mode"><i class="fa fa-check"></i><b>10.4.6</b> Recap: Character, Code Point, and Hexadecimal Mode</a></li>
+<li class="chapter" data-level="10.4.2" data-path="data-import.html"><a href="data-import.html#from-7-bit-to-single-byte-encoding"><i class="fa fa-check"></i><b>10.4.2</b> From 7-bit to Single-Byte Encoding</a></li>
+<li class="chapter" data-level="10.4.3" data-path="data-import.html"><a href="data-import.html#problems-with-single-byte-encoding"><i class="fa fa-check"></i><b>10.4.3</b> Problems with Single-Byte Encoding</a></li>
+<li class="chapter" data-level="10.4.4" data-path="data-import.html"><a href="data-import.html#from-single-byte-to-multi-byte-encoding"><i class="fa fa-check"></i><b>10.4.4</b> From Single-Byte to Multi-Byte Encoding</a></li>
+<li class="chapter" data-level="10.4.5" data-path="data-import.html"><a href="data-import.html#problems-with-multi-byte-encoding"><i class="fa fa-check"></i><b>10.4.5</b> Problems with Multi-byte Encoding</a></li>
+<li class="chapter" data-level="10.4.6" data-path="data-import.html"><a href="data-import.html#unicode-and-utf-8"><i class="fa fa-check"></i><b>10.4.6</b> Unicode and UTF-8</a></li>
+<li class="chapter" data-level="10.4.7" data-path="data-import.html"><a href="data-import.html#suggestions"><i class="fa fa-check"></i><b>10.4.7</b> Suggestions</a></li>
+<li class="chapter" data-level="10.4.8" data-path="data-import.html"><a href="data-import.html#recap-character-code-point-and-hexadecimal-mode"><i class="fa fa-check"></i><b>10.4.8</b> Recap: Character, Code Point, and Hexadecimal Mode</a></li>
 </ul></li>
 <li class="chapter" data-level="10.5" data-path="data-import.html"><a href="data-import.html#native-r-functions-for-io"><i class="fa fa-check"></i><b>10.5</b> Native R Functions for I/O</a>
 <ul>
@@ -381,7 +383,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11" data-path="iteration.html"><a href="iteration.html"><i class="fa fa-check"></i><b>11</b> Iteration</a>
 <ul>
 <li class="chapter" data-level="11.1" data-path="iteration.html"><a href="iteration.html#code-duplication"><i class="fa fa-check"></i><b>11.1</b> Code Duplication</a></li>
-<li class="chapter" data-level="11.2" data-path="iteration.html"><a href="iteration.html#vector-vs.-list-in-r"><i class="fa fa-check"></i><b>11.2</b> <code>vector</code> vs. <code>list</code> in <code>R</code></a></li>
+<li class="chapter" data-level="11.2" data-path="iteration.html"><a href="iteration.html#vectorizaed-functions-vector-vs.-list"><i class="fa fa-check"></i><b>11.2</b> Vectorizaed Functions: Vector vs. List</a></li>
 <li class="chapter" data-level="11.3" data-path="iteration.html"><a href="iteration.html#iteration-1"><i class="fa fa-check"></i><b>11.3</b> Iteration</a></li>
 <li class="chapter" data-level="11.4" data-path="iteration.html"><a href="iteration.html#purr"><i class="fa fa-check"></i><b>11.4</b> <code>purr</code></a></li>
 <li class="chapter" data-level="11.5" data-path="iteration.html"><a href="iteration.html#purr-dplyr"><i class="fa fa-check"></i><b>11.5</b> <code>purr</code> + <code>dplyr</code></a></li>
@@ -615,8 +617,8 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <div id="importing-data" class="section level2 hasAnchor" number="10.2">
 <h2><span class="header-section-number">10.2</span> Importing Data<a href="data-import.html#importing-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="figure"><span style="display:block;" id="fig:dataio"></span>
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-92625f2dcff5496ecdad" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-92625f2dcff5496ecdad">{"x":{"diagram":"digraph {\n  \ngraph[layout = dot]\n\nnode[style=filled, color = grey90, penwidth = 0.3, fontcolor = grey30]\nedge[color= grey40, alpha = 0.2, penwidth= 0.4, arrowsize=0.8, arrowhead = normal]\n\na [label = \"External Data Files\", shape = folder, fillcolor= \"#B0E2FC\"]\nb [label = \"TXT\", shape = folder, fillcolor= \"#B0E2FC\"]\nc [label = \"CSV\", shape = folder, fillcolor= \"#B0E2FC\"]\n\nb1 [label = \"readLines()\", shape=document, fillcolor= \"#96F597\"]\nc1 [label = \"readr::read_csv()\", shape=document, fillcolor= \"#96F597\"]\nd [label = \"vector\", shape = folder, fillcolor= \"#B0E2FC\"]\nd1 [label = \"writeLines()\", shape=document, fillcolor= \"#96F597\"]\ne [label = \"data.frame\", shape = folder, fillcolor= \"#B0E2FC\"]\ne1 [label = \"readr::write_csv()\", shape=document, fillcolor= \"#96F597\"]\nf [label = \"TXT\", shape = folder, fillcolor= \"#B0E2FC\"]\ng [label = \"CSV\", shape = folder, fillcolor= \"#B0E2FC\"]\n\na->b\na->c\n\nb->b1->d->d1->f\nc->c1->e->e1->g\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-dda116c423449e5869ab" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-dda116c423449e5869ab">{"x":{"diagram":"digraph {\n  \ngraph[layout = dot]\n\nnode[style=filled, color = grey90, penwidth = 0.3, fontcolor = grey30]\nedge[color= grey40, alpha = 0.2, penwidth= 0.4, arrowsize=0.8, arrowhead = normal]\n\na [label = \"External Data Files\", shape = folder, fillcolor= \"#B0E2FC\"]\nb [label = \"TXT\", shape = folder, fillcolor= \"#B0E2FC\"]\nc [label = \"CSV\", shape = folder, fillcolor= \"#B0E2FC\"]\n\nb1 [label = \"readLines()\", shape=document, fillcolor= \"#96F597\"]\nc1 [label = \"readr::read_csv()\", shape=document, fillcolor= \"#96F597\"]\nd [label = \"vector\", shape = folder, fillcolor= \"#B0E2FC\"]\nd1 [label = \"writeLines()\", shape=document, fillcolor= \"#96F597\"]\ne [label = \"data.frame\", shape = folder, fillcolor= \"#B0E2FC\"]\ne1 [label = \"readr::write_csv()\", shape=document, fillcolor= \"#96F597\"]\nf [label = \"TXT\", shape = folder, fillcolor= \"#B0E2FC\"]\ng [label = \"CSV\", shape = folder, fillcolor= \"#B0E2FC\"]\n\na->b\na->c\n\nb->b1->d->d1->f\nc->c1->e->e1->g\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figure 10.1: Data I/O
 </p>
@@ -699,6 +701,11 @@ Mike Jones,mike@example.com,098-765-4321,321 Fake Avenue</code></pre>
 <li>ASCII equivalents were defined for foreign characters that have not been included in the original character set</li>
 <li>Indo-European languages developed extended versions of ASCII to address this issue</li>
 </ul></li>
+</ul>
+</div>
+<div id="from-7-bit-to-single-byte-encoding" class="section level3 hasAnchor" number="10.4.2">
+<h3><span class="header-section-number">10.4.2</span> From 7-bit to Single-Byte Encoding<a href="data-import.html#from-7-bit-to-single-byte-encoding" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
 <li>To address the limitations of the 7-bit encoding, <strong>single-byte</strong> (8-bit) encoding was introduced.
 <ul>
 <li>This allows for the first 128 characters to be reserved for ASCII characters, while the remaining 128 can be used for extended characters.</li>
@@ -715,17 +722,24 @@ Mike Jones,mike@example.com,098-765-4321,321 Fake Avenue</code></pre>
 <p><img src="images/ISO8859-1.jpg" width="100%" /></p>
 <hr />
 </div>
-<div id="problems-with-single-byte-encoding" class="section level3 hasAnchor" number="10.4.2">
-<h3><span class="header-section-number">10.4.2</span> Problems with Single-Byte Encoding<a href="data-import.html#problems-with-single-byte-encoding" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Single-byte (8-bit) encoding, while an improvement over ASCII, still has its own set of problems.
-- Inconsistency
-- There are a large number of overlapping character sets used for encoding characters in different (European) languages.
-- There can be cases where more than one symbol maps to the same code point or number, leading to ambiguity.</p>
+<div id="problems-with-single-byte-encoding" class="section level3 hasAnchor" number="10.4.3">
+<h3><span class="header-section-number">10.4.3</span> Problems with Single-Byte Encoding<a href="data-import.html#problems-with-single-byte-encoding" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Single-byte (8-bit) encoding, while an improvement over ASCII, still has its own set of problems.</p>
 <ul>
+<li>Inconsistency
+<ul>
+<li>There are a large number of overlapping character sets used for encoding characters in different (European) languages.</li>
+<li>There can be cases where more than one symbol maps to the same code point or number, leading to ambiguity.</li>
+</ul></li>
 <li>Compatibility
 <ul>
 <li>While it is an improvement over ASCII, it still cannot deal with writing systems with large character sets, such as the CJK (Chinese, Japanese, Korean) languages.</li>
 </ul></li>
+</ul>
+</div>
+<div id="from-single-byte-to-multi-byte-encoding" class="section level3 hasAnchor" number="10.4.4">
+<h3><span class="header-section-number">10.4.4</span> From Single-Byte to Multi-Byte Encoding<a href="data-import.html#from-single-byte-to-multi-byte-encoding" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
 <li>Two-byte character sets
 <ul>
 <li>To address these limitations, two-byte character sets were introduced.</li>
@@ -738,24 +752,23 @@ Mike Jones,mike@example.com,098-765-4321,321 Fake Avenue</code></pre>
 </ul></li>
 </ul>
 </div>
-<div id="problems-with-multi-byte-encoding" class="section level3 hasAnchor" number="10.4.3">
-<h3><span class="header-section-number">10.4.3</span> Problems with Multi-byte Encoding<a href="data-import.html#problems-with-multi-byte-encoding" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="problems-with-multi-byte-encoding" class="section level3 hasAnchor" number="10.4.5">
+<h3><span class="header-section-number">10.4.5</span> Problems with Multi-byte Encoding<a href="data-import.html#problems-with-multi-byte-encoding" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Different languages still use different encodings, and some are single-byte, while some are multiple-byte. However, digital texts usually have many writing systems at the same time, including single-byte texts, letters, spaces, punctuations, Arabic numerals, interspersed with 2-byte Chinese characters.</p>
 <ul>
-<li>Ambiguity: The <strong>inconsistency</strong> in the byte-encoding number creates a problem as different languages may use different numbers of bytes to encode the same character, making it challenging to convert between them accurately. This inconsistency creates confusion and ambiguity in the way that text is displayed across different languages.</li>
-<li>Efficiency: Multiple-byte encoding requires a fixed number of bytes for each character, which can result in wasted space when representing characters that require fewer bytes (e.g., ASCII characters).</li>
-<li>Compatibility: Multiple byte encoding methods are not always compatible with different systems and applications. This incompatibility can cause data loss or corruption when data is transferred between different systems.</li>
-<li>Limited character set: Multiple byte encodings often have a limited character set, which means they cannot represent all characters. This limitation makes it difficult to handle text in different languages that use non-ASCII characters.</li>
+<li>Ambiguity: The inconsistency in the byte-encoding number creates a problem as different languages may use different numbers of bytes to encode the same character, making it challenging to convert between them accurately. This inconsistency creates confusion and ambiguity in the way that text is displayed across different languages.</li>
+<li>Efficiency: Multiple-byte encoding requires a fixed number of bytes for each character, which can result in wasted space when representing characters that require fewer bytes (e.g., ASCII characters). The fixed-length encoding scheme of multiple byte encodings reduces efficiency in terms of storage and transmission.</li>
+<li>Limited character set: Multiple byte encodings often have a limited character set, which means they cannot represent all characters. This limitation makes it difficult to handle text in different languages that utilize non-ASCII characters. It restricts the ability to support a diverse range of languages and writing systems.</li>
 </ul>
 </div>
-<div id="unicode-and-utf-8" class="section level3 hasAnchor" number="10.4.4">
-<h3><span class="header-section-number">10.4.4</span> Unicode and UTF-8<a href="data-import.html#unicode-and-utf-8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="unicode-and-utf-8" class="section level3 hasAnchor" number="10.4.6">
+<h3><span class="header-section-number">10.4.6</span> Unicode and UTF-8<a href="data-import.html#unicode-and-utf-8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The objective of modern character encoding is to eliminate the ambiguity of different character sets by specifying a <strong>Universal Character Set</strong> that includes over 100,000 distinct coded characters, used in all common writing systems today. One of the most widely used character encoding systems is <strong>UTF-8</strong>.</p>
 <p>UTF-8 uses a <strong>variable-length</strong> encoding system, where each character is coded using <strong>one</strong> to <strong>four</strong> bytes. <strong>ASCII</strong> characters require only one byte in UTF-8 (0-127), <strong>ISO-8859</strong> characters require two bytes (128-2,047), <strong>CKJ characters</strong> require three bytes (2,048-65,535), and <strong>rare characters</strong> require four bytes (65,536-1,112,064).</p>
 <p>UTF-8 has many strengths, including the ability to encode text in <strong>any language</strong>, the ability to encode characters in a <strong>variable-length</strong> character encoding, and the ability to encode characters with <strong>no overlap or confusion</strong> between conflicting byte ranges. UTF-8 is now the standard encoding used for web pages, XML, and JSON data transmission.</p>
 </div>
-<div id="suggestions" class="section level3 hasAnchor" number="10.4.5">
-<h3><span class="header-section-number">10.4.5</span> Suggestions<a href="data-import.html#suggestions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="suggestions" class="section level3 hasAnchor" number="10.4.7">
+<h3><span class="header-section-number">10.4.7</span> Suggestions<a href="data-import.html#suggestions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
 <li>It is always recommended to use the UTF-8 encoding when creating a new dataset.</li>
 <li>It is important to check the encoding of the dataset to avoid ambiguity in character sets.</li>
@@ -773,16 +786,16 @@ Mike Jones,mike@example.com,098-765-4321,321 Fake Avenue</code></pre>
 <pre class="Rout"><code>[1] &quot;BIG5&quot;</code></pre>
 </div>
 </div>
-<div id="recap-character-code-point-and-hexadecimal-mode" class="section level3 hasAnchor" number="10.4.6">
-<h3><span class="header-section-number">10.4.6</span> Recap: Character, Code Point, and Hexadecimal Mode<a href="data-import.html#recap-character-code-point-and-hexadecimal-mode" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="recap-character-code-point-and-hexadecimal-mode" class="section level3 hasAnchor" number="10.4.8">
+<h3><span class="header-section-number">10.4.8</span> Recap: Character, Code Point, and Hexadecimal Mode<a href="data-import.html#recap-character-code-point-and-hexadecimal-mode" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><em>Character</em>: A <em>minimal unit</em> of text that has semantic value in the language (cf. morpheme vs. grapheme), such as <code>a</code>, <code>我</code>, <code>é</code>.</li>
 <li><em>Code Point</em>: Any legal <em>numeric value</em> in the character encoding set</li>
 <li><em>Hexadecimal</em>: A positional system that represents numbers using a base of 16.</li>
 </ul>
 <hr />
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-51891062b8f08eb133d1" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-51891062b8f08eb133d1">{"x":{"diagram":"digraph {\n  \ngraph[layout = dot]\n\nnode[style=filled, color = grey90, penwidth = 0.3, fontcolor = grey30]\nedge[color= grey40, alpha = 0.2, penwidth= 0.4, arrowsize=0.8, arrowhead = normal]\n\na [label = \"Character\", shape = folder, fillcolor= \"#B0E2FC\"]\na1 [label = \"utf8ToInt()\", shape=document, fillcolor= \"#96F597\"]\nb [label = \"Code Point (Decimals)\", shape = folder, fillcolor= \"#B0E2FC\"]\n\na->a1->b\n\nb1 [label = \"as.hexamode()\", shape=document, fillcolor= \"#96F597\"]\nb2 [label = \"intToUtf8()\", shape=document, fillcolor= \"#96F597\"]\n\nb->b1\nb->b2\n\nc[label = \"UTF-8 Code Point (Hexadecimals)\", shape = folder, fillcolor= \"#B0E2FC\"]\n\nb1->c\n\nd[label = \"Unicode Character\", shape = folder, fillcolor= \"#B0E2FC\"]\n\nb2->d\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-7d5fa8cacf38bc72416d" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-7d5fa8cacf38bc72416d">{"x":{"diagram":"digraph {\n  \ngraph[layout = dot]\n\nnode[style=filled, color = grey90, penwidth = 0.3, fontcolor = grey30]\nedge[color= grey40, alpha = 0.2, penwidth= 0.4, arrowsize=0.8, arrowhead = normal]\n\na [label = \"Character\", shape = folder, fillcolor= \"#B0E2FC\"]\na1 [label = \"utf8ToInt()\", shape=document, fillcolor= \"#96F597\"]\nb [label = \"Code Point (Decimals)\", shape = folder, fillcolor= \"#B0E2FC\"]\n\na->a1->b\n\nb1 [label = \"as.hexamode()\", shape=document, fillcolor= \"#96F597\"]\nb2 [label = \"intToUtf8()\", shape=document, fillcolor= \"#96F597\"]\n\nb->b1\nb->b2\n\nc[label = \"UTF-8 Code Point (Hexadecimals)\", shape = folder, fillcolor= \"#B0E2FC\"]\n\nb1->c\n\nd[label = \"Unicode Character\", shape = folder, fillcolor= \"#B0E2FC\"]\n\nb2->d\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <hr />
 <p>In R, there are a few base functions that work with these concepts:</p>
 <ul>
@@ -927,7 +940,7 @@ Which character is larger in terms of the code points?</p>
 </div>
 <div id="writelines-1" class="section level3 hasAnchor" number="10.5.2">
 <h3><span class="header-section-number">10.5.2</span> <code>writeLines()</code><a href="data-import.html#writelines-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>After processing the data in R, we often need to save our data in an external file for future reference. For text data, we can use the base function <code>writeLines()</code> to save a character vector. By default, each element will be delimited by a line break after it is exported to the file.</p>
+<p>After processing the data in R, we often need to save our data in an external file for future reference. For text data, we can use the base function <code>writeLines()</code> to save a character vector. By default, each element will be delimited by a <strong>line break</strong> after it is exported to the file.</p>
 <div class="sourceCode" id="cb55"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb55-1"><a href="data-import.html#cb55-1" aria-hidden="true" tabindex="-1"></a>output <span class="ot">&lt;-</span> <span class="fu">sample</span>(alice[<span class="fu">nzchar</span>(alice)],<span class="dv">10</span>)</span>
 <span id="cb55-2"><a href="data-import.html#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(output, <span class="at">con =</span> <span class="st">&quot;corp-alice-2.txt&quot;</span>)</span></code></pre></div>
 <div class="info">
