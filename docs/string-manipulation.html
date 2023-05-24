@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2023-05-05" />
+<meta name="date" content="2023-05-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -353,11 +353,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.4" data-path="data-import.html"><a href="data-import.html#character-encoding-self-study"><i class="fa fa-check"></i><b>10.4</b> Character Encoding (Self-study)</a>
 <ul>
 <li class="chapter" data-level="10.4.1" data-path="data-import.html"><a href="data-import.html#problems-with-ascii"><i class="fa fa-check"></i><b>10.4.1</b> Problems with ASCII</a></li>
-<li class="chapter" data-level="10.4.2" data-path="data-import.html"><a href="data-import.html#problems-with-single-byte-encoding"><i class="fa fa-check"></i><b>10.4.2</b> Problems with Single-Byte Encoding</a></li>
-<li class="chapter" data-level="10.4.3" data-path="data-import.html"><a href="data-import.html#problems-with-multi-byte-encoding"><i class="fa fa-check"></i><b>10.4.3</b> Problems with Multi-byte Encoding</a></li>
-<li class="chapter" data-level="10.4.4" data-path="data-import.html"><a href="data-import.html#unicode-and-utf-8"><i class="fa fa-check"></i><b>10.4.4</b> Unicode and UTF-8</a></li>
-<li class="chapter" data-level="10.4.5" data-path="data-import.html"><a href="data-import.html#suggestions"><i class="fa fa-check"></i><b>10.4.5</b> Suggestions</a></li>
-<li class="chapter" data-level="10.4.6" data-path="data-import.html"><a href="data-import.html#recap-character-code-point-and-hexadecimal-mode"><i class="fa fa-check"></i><b>10.4.6</b> Recap: Character, Code Point, and Hexadecimal Mode</a></li>
+<li class="chapter" data-level="10.4.2" data-path="data-import.html"><a href="data-import.html#from-7-bit-to-single-byte-encoding"><i class="fa fa-check"></i><b>10.4.2</b> From 7-bit to Single-Byte Encoding</a></li>
+<li class="chapter" data-level="10.4.3" data-path="data-import.html"><a href="data-import.html#problems-with-single-byte-encoding"><i class="fa fa-check"></i><b>10.4.3</b> Problems with Single-Byte Encoding</a></li>
+<li class="chapter" data-level="10.4.4" data-path="data-import.html"><a href="data-import.html#from-single-byte-to-multi-byte-encoding"><i class="fa fa-check"></i><b>10.4.4</b> From Single-Byte to Multi-Byte Encoding</a></li>
+<li class="chapter" data-level="10.4.5" data-path="data-import.html"><a href="data-import.html#problems-with-multi-byte-encoding"><i class="fa fa-check"></i><b>10.4.5</b> Problems with Multi-byte Encoding</a></li>
+<li class="chapter" data-level="10.4.6" data-path="data-import.html"><a href="data-import.html#unicode-and-utf-8"><i class="fa fa-check"></i><b>10.4.6</b> Unicode and UTF-8</a></li>
+<li class="chapter" data-level="10.4.7" data-path="data-import.html"><a href="data-import.html#suggestions"><i class="fa fa-check"></i><b>10.4.7</b> Suggestions</a></li>
+<li class="chapter" data-level="10.4.8" data-path="data-import.html"><a href="data-import.html#recap-character-code-point-and-hexadecimal-mode"><i class="fa fa-check"></i><b>10.4.8</b> Recap: Character, Code Point, and Hexadecimal Mode</a></li>
 </ul></li>
 <li class="chapter" data-level="10.5" data-path="data-import.html"><a href="data-import.html#native-r-functions-for-io"><i class="fa fa-check"></i><b>10.5</b> Native R Functions for I/O</a>
 <ul>
@@ -380,7 +382,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11" data-path="iteration.html"><a href="iteration.html"><i class="fa fa-check"></i><b>11</b> Iteration</a>
 <ul>
 <li class="chapter" data-level="11.1" data-path="iteration.html"><a href="iteration.html#code-duplication"><i class="fa fa-check"></i><b>11.1</b> Code Duplication</a></li>
-<li class="chapter" data-level="11.2" data-path="iteration.html"><a href="iteration.html#vector-vs.-list-in-r"><i class="fa fa-check"></i><b>11.2</b> <code>vector</code> vs. <code>list</code> in <code>R</code></a></li>
+<li class="chapter" data-level="11.2" data-path="iteration.html"><a href="iteration.html#vectorizaed-functions-vector-vs.-list"><i class="fa fa-check"></i><b>11.2</b> Vectorizaed Functions: Vector vs. List</a></li>
 <li class="chapter" data-level="11.3" data-path="iteration.html"><a href="iteration.html#iteration-1"><i class="fa fa-check"></i><b>11.3</b> Iteration</a></li>
 <li class="chapter" data-level="11.4" data-path="iteration.html"><a href="iteration.html#purr"><i class="fa fa-check"></i><b>11.4</b> <code>purr</code></a></li>
 <li class="chapter" data-level="11.5" data-path="iteration.html"><a href="iteration.html#purr-dplyr"><i class="fa fa-check"></i><b>11.5</b> <code>purr</code> + <code>dplyr</code></a></li>
@@ -1403,41 +1405,43 @@ apple peel</code></pre>
 <div class="sourceCode" id="cb162"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb162-1"><a href="string-manipulation.html#cb162-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(sentences)</span></code></pre></div>
 <pre class="Rout"><code>[1] 720</code></pre>
 <pre class="Rout"><code> [1] &quot;is often&quot;      &quot;were fed&quot;      &quot;is used&quot;       &quot;was cooked&quot;   
- [5] &quot;was seized&quot;    &quot;is used&quot;       &quot;was spattered&quot; &quot;is red&quot;       
- [9] &quot;was fired&quot;     &quot;is ten&quot;        &quot;is used&quot;       &quot;are pushed&quot;   
-[13] &quot;are men&quot;       &quot;are used&quot;      &quot;were hired&quot;    &quot;was covered&quot;  
-[17] &quot;were lined&quot;    &quot;was ten&quot;       &quot;is used&quot;       &quot;are paved&quot;    
-[21] &quot;is carved&quot;     &quot;were led&quot;      &quot;is needed&quot;     &quot;were painted&quot; 
-[25] &quot;were mailed&quot;   &quot;was pressed&quot;   &quot;is seen&quot;       &quot;was packed&quot;   
-[29] &quot;was barred&quot;    &quot;was crowded&quot;   &quot;was carved&quot;    &quot;was drilled&quot;  
-[33] &quot;was hidden&quot;    &quot;was seen&quot;      &quot;were pierced&quot;  &quot;are jangled&quot;  
-[37] &quot;is tinged&quot;     &quot;were stamped&quot;  &quot;was jammed&quot;    &quot;was robbed&quot;   </code></pre>
+ [5] &quot;was seized&quot;    &quot;is used&quot;       &quot;be seen&quot;       &quot;was spattered&quot;
+ [9] &quot;been used&quot;     &quot;is red&quot;        &quot;was fired&quot;     &quot;is ten&quot;       
+[13] &quot;be used&quot;       &quot;is used&quot;       &quot;are pushed&quot;    &quot;are men&quot;      
+[17] &quot;are used&quot;      &quot;were hired&quot;    &quot;was covered&quot;   &quot;be turned&quot;    
+[21] &quot;were lined&quot;    &quot;was ten&quot;       &quot;is used&quot;       &quot;are paved&quot;    
+[25] &quot;is carved&quot;     &quot;were led&quot;      &quot;is needed&quot;     &quot;be needed&quot;    
+[29] &quot;were painted&quot;  &quot;were mailed&quot;   &quot;was pressed&quot;   &quot;is seen&quot;      
+[33] &quot;was packed&quot;    &quot;be shipped&quot;    &quot;was barred&quot;    &quot;was crowded&quot;  
+[37] &quot;was carved&quot;    &quot;was drilled&quot;   &quot;was hidden&quot;    &quot;was seen&quot;     
+[41] &quot;were pierced&quot;  &quot;are jangled&quot;   &quot;is tinged&quot;     &quot;be tilted&quot;    
+[45] &quot;be shortened&quot;  &quot;were stamped&quot;  &quot;was jammed&quot;    &quot;was robbed&quot;   </code></pre>
 <pre class="Rout"><code> [1] │ Rice &lt;is often&gt; served in round bowls.
  [2] │ The hogs &lt;were fed&gt; chopped corn and garbage.
  [3] │ A rod &lt;is used&gt; to catch pink salmon.
  [4] │ The meal &lt;was cooked&gt; before the bell rang.
  [5] │ The walled town &lt;was seized&gt; without a fight.
  [6] │ A Tusk &lt;is used&gt; to make costly gifts.
- [7] │ Mud &lt;was spattered&gt; on the front of his white shirt.
- [8] │ The sofa cushion &lt;is red&gt; and of light weight.
- [9] │ The new girl &lt;was fired&gt; today at noon.
-[10] │ There the flood mark &lt;is ten&gt; inches.
-[11] │ The lure &lt;is used&gt; to catch trout and flounder.
-[12] │ They &lt;are pushed&gt; back each time they attack.
-[13] │ They &lt;are men&gt; who walk the middle of the road.
-[14] │ Fruit flavors &lt;are used&gt; in fizz drinks.
-[15] │ Nine men &lt;were hired&gt; to dig the ruins.
-[16] │ The old pan &lt;was covered&gt; with hard fudge.
-[17] │ The store walls &lt;were lined&gt; with colored frocks.
-[18] │ The purple tie &lt;was ten&gt; years old.
-[19] │ Code &lt;is used&gt; when secrets are sent.
-[20] │ Roads &lt;are paved&gt; with sticky tar.
-... and 20 more</code></pre>
+ [7] │ The wharf could &lt;be seen&gt; at the farther shore.
+ [8] │ Mud &lt;was spattered&gt; on the front of his white shirt.
+ [9] │ The pencils have all &lt;been used&gt;.
+[10] │ The sofa cushion &lt;is red&gt; and of light weight.
+[11] │ The new girl &lt;was fired&gt; today at noon.
+[12] │ There the flood mark &lt;is ten&gt; inches.
+[13] │ Corn cobs can &lt;be used&gt; to kindle a fire.
+[14] │ The lure &lt;is used&gt; to catch trout and flounder.
+[15] │ They &lt;are pushed&gt; back each time they attack.
+[16] │ They &lt;are men&gt; who walk the middle of the road.
+[17] │ Fruit flavors &lt;are used&gt; in fizz drinks.
+[18] │ Nine men &lt;were hired&gt; to dig the ruins.
+[19] │ The old pan &lt;was covered&gt; with hard fudge.
+[20] │ The last switch cannot &lt;be turned&gt; off.
+... and 27 more</code></pre>
 <p>Note: Please ignore the false positives for the moment.</p>
 </div>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-8" class="exercise"><strong>Exercise 9.8  </strong></span>Please create a regular expression to extract all word tokens of the sentences from the vector <code>x</code>, which is defined as follows.</p>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb166-1"><a href="string-manipulation.html#cb166-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;It&#39;s a three-legged char.&quot;</span>, <span class="st">&quot;The book (you read) was quite boring!&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb166-1"><a href="string-manipulation.html#cb166-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;It&#39;s a three-legged chair.&quot;</span>, <span class="st">&quot;The book (you read) was quite boring!&quot;</span>)</span></code></pre></div>
 <p>The returned object is a <code>list</code>, including the word vectors of each text in <code>x</code>.</p>
 <pre class="Rout"><code>[[1]]
 [1] &quot;It&#39;s&quot;         &quot;a&quot;            &quot;three-legged&quot; &quot;char&quot;        
@@ -1661,7 +1665,7 @@ apple peel</code></pre>
 <p>In this section, we will explore more examples of the practical applications of regular expressions. Specifically, we will focus on how regular expressions can be used to manipulate datasets, taking advantage of their powerful capabilities and potential for text processing.</p>
 <div class="info">
 <p>In Chapter <a href="data-manipulation.html#data-manipulation">8</a>, we have talked about important ways in which we can manipulate our data as a <code>data.frame</code>. Please refer to the Chapter <a href="data-manipulation.html#data-manipulation">8</a> for a review of the important <em>verbs</em> in <code>dplyr</code>.</p>
-<p>In the library <code>tidyr</code>, there are two very useful functions for data manipulation: <code>separate()</code>, <code>extract()</code> and <code>unnest()</code>. Please read the documentations of these two functions and run the examples provided in the documentation to make sure that you understand how they work.</p>
+<p>In the library <code>tidyr</code>, there are three very useful functions for data manipulation: <code>separate()</code>, <code>extract()</code> and <code>unnest()</code>. Please read the documentations of these three functions and run the examples provided in the documentation to make sure that you understand how they work.</p>
 <ul>
 <li><code>separate()</code>: This function separates a single column into multiple columns based on a specified separator (which can be specified by regluar expression).</li>
 <li><code>extract()</code>: This function extracts values from a single column based on a specified regular expression pattern and creates new columns with those extracted values.</li>
