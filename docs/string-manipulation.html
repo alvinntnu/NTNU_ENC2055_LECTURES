@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2023-05-24" />
+<meta name="date" content="2023-05-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -1437,7 +1437,12 @@ apple peel</code></pre>
 [19] │ The old pan &lt;was covered&gt; with hard fudge.
 [20] │ The last switch cannot &lt;be turned&gt; off.
 ... and 27 more</code></pre>
-<p>Note: Please ignore the false positives for the moment.</p>
+<p>Note: Because now we do not have the information of part-of-speech tags, please ignore the false positives (e.g., “Rice &lt;is often&gt; served in round bowls”, “They &lt;are men&gt; who walk the middle of the road”) for the moment. But all your matches should still be <strong>legitimate words</strong> in English. If your regular expressions inaccurately identify the following tokens as matches, you must fix your regular expression to remove these inaccurate tokens:</p>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["sentences"],"name":[1],"type":["chr"],"align":["left"]},{"label":["id"],"name":[2],"type":["int"],"align":["right"]},{"label":["wrong_matches"],"name":[3],"type":["chr"],"align":["left"]}],"data":[{"1":"Steam hissed from the broken valve.","2":"171","3":"am hissed"},{"1":"A cloud of dust stung his tender eyes.","2":"284","3":"is ten"},{"1":"Tin cans are absent from store shelves.","2":"300","3":"are absen"},{"1":"The beam dropped down on the workman's head.","2":"303","3":"am dropped"},{"1":"The point of the steel pen was bent and twisted.","2":"419","3":"was ben"},{"1":"A gray mare walked before the colt.","2":"443","3":"are walked"},{"1":"A sip of tea revives his tired friend.","2":"494","3":"is tired"},{"1":"Take shelter in this tent, but keep still.","2":"509","3":"is ten"},{"1":"Shake hands with this friendly child.","2":"526","3":"is frien"},{"1":"The brass tube circled the high wall.","2":"577","3":"be circled"},{"1":"The ram scared the school children off.","2":"611","3":"am scared"},{"1":"Ship maps are different from those for planes.","2":"641","3":"are differen"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 </div>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-8" class="exercise"><strong>Exercise 9.8  </strong></span>Please create a regular expression to extract all word tokens of the sentences from the vector <code>x</code>, which is defined as follows.</p>
@@ -1910,7 +1915,7 @@ apple peel</code></pre>
 <span id="cb217-2"><a href="string-manipulation.html#cb217-2" aria-hidden="true" tabindex="-1"></a>idiom_laiqu_count <span class="sc">%&gt;%</span></span>
 <span id="cb217-3"><a href="string-manipulation.html#cb217-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(STRUCTURE, n, <span class="at">fill =</span> STRUCTURE)) <span class="sc">+</span> </span>
 <span id="cb217-4"><a href="string-manipulation.html#cb217-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-118-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-119-1.png" width="672" /></p>
 <div class="sourceCode" id="cb218"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb218-1"><a href="string-manipulation.html#cb218-1" aria-hidden="true" tabindex="-1"></a><span class="do">##########################</span></span>
 <span id="cb218-2"><a href="string-manipulation.html#cb218-2" aria-hidden="true" tabindex="-1"></a><span class="do">### Another alterantive###</span></span>
 <span id="cb218-3"><a href="string-manipulation.html#cb218-3" aria-hidden="true" tabindex="-1"></a><span class="do">##########################</span></span>
@@ -1947,7 +1952,7 @@ apple peel</code></pre>
 <ul>
 <li>Type Distribution</li>
 </ul>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-123-1.png" width="672" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-124-1.png" width="672" /></p>
 </div>
 <div class="exercise">
 <p><span id="exr:exidiom3" class="exercise"><strong>Exercise 9.20  </strong></span>Following Exercise <a href="string-manipulation.html#exr:exidiom2">9.19</a>, for each type of the idioms (i.e., “A_A_” or “_A_A”), please provide their respective proportions of W<sub>1</sub> = W<sub>2</sub> vs. W<sub>1</sub> != W<sub>2</sub>, where W<sub>1</sub> and W<sub>2</sub> refer to the words filled in the variable slots (“_”) of the idiomatic templates.</p>
