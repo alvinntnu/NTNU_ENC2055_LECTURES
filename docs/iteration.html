@@ -695,24 +695,24 @@ In short, there are generally two major ways to reduce duplication in coding:</p
 <span id="cb9-7"><a href="iteration.html#cb9-7" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb9-8"><a href="iteration.html#cb9-8" aria-hidden="true" tabindex="-1"></a>exams.list</span></code></pre></div>
 <pre class="Rout"><code>$class1
- [1] 98  1  4 36 50 13 60 70 75 81 63 64 89 76 48 70 76 57 93 52 74 54  4 51 80
-[26] 85 10 67 13  4
+ [1] 39 47 87 86 85 27 61 76 42 43 23 98 97 73 21  1 47 81  9 34 51 47 56  5 71
+[26] 23 27 47 44 16
 
 $class2
- [1]  96   0  31  29  59  22   4  71 100  70  74  33  16  21  29  57  74   2  49
-[20]   6  61  81  42   4  84  66  11  76   0  60
+ [1] 39 18 45 76  0  6 46  0 64 82 57 93 57 65 23 11 73 64 59 57 95 93 74 23 56
+[26] 42 30 40 99 51
 
 $class3
- [1]  39  46  52  87  26  57  84  98  69  11  60  28  26  37  28   2  14 100  92
-[20]  20  22  41  48  12  31  31  12  97  84  73
+ [1]  7 39 68 17 90 83 74 56  9 93 79 10  9 76 26 81 95 93 28 94  8 57 55 75 38
+[26] 66  9 45 27 38
 
 $class4
- [1] 20 22  3 18 90 45  6 46 74 54 48 41 90 29 77 12 79 38 26 29 14 20 54 76 41
-[26] 92 58  6 34 34
+ [1] 38 82 27 11 32  4 32 74 11 39 34  4 29 93  5 24 17 96 14 18 38 85  1 75 78
+[26] 52 73 91 32 60
 
 $class5
- [1]  3 64 12 97 15 94 29 80 20  2 62 89 38 18 11 35 17 14 60 19 70 48 89 97 50
-[26] 30 87 87 36 68</code></pre>
+ [1] 85 14 93 23 58 74 22 12 69 71 29 94 61 26 93 82  8 32 44 92 32  1 13 30 95
+[26] 88 36 78 55 84</code></pre>
 <p>If we want to compute the mean scores of each cluster, you probably want to use <code>mean()</code>:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb11-1"><a href="iteration.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(exams.list)</span></code></pre></div>
 <pre class="Rout"><code>[1] NA</code></pre>
@@ -731,19 +731,19 @@ $class5
 <span id="cb13-9"><a href="iteration.html#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-10"><a href="iteration.html#cb13-10" aria-hidden="true" tabindex="-1"></a>exams.list.means</span></code></pre></div>
 <pre class="Rout"><code>$class1mean
-[1] 53.93333
+[1] 48.8
 
 $class2mean
-[1] 44.26667
+[1] 51.26667
 
 $class3mean
-[1] 47.56667
+[1] 51.5
 
 $class4mean
-[1] 42.53333
+[1] 42.3
 
 $class5mean
-[1] 48.03333</code></pre>
+[1] 53.13333</code></pre>
 <p>The disadvantage is obvious: (a) what if you have 10 classes? 100 classes? (b) what if now you decide to compute standard deviation?</p>
 <div class="alert">
 <p>The rule-of-thumb is that the more you find <strong>code duplication</strong> in your script, the more likely you need to restructure your codes with iterations.</p>
@@ -755,19 +755,19 @@ $class5mean
 <p>Now let’s take a look at how iteration structures can help us with repeated procedures.</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb16-1"><a href="iteration.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(exams.list, mean)</span></code></pre></div>
 <pre class="Rout"><code>$class1
-[1] 53.93333
+[1] 48.8
 
 $class2
-[1] 44.26667
+[1] 51.26667
 
 $class3
-[1] 47.56667
+[1] 51.5
 
 $class4
-[1] 42.53333
+[1] 42.3
 
 $class5
-[1] 48.03333</code></pre>
+[1] 53.13333</code></pre>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb18-1"><a href="iteration.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Or, alternatively:</span></span>
 <span id="cb18-2"><a href="iteration.html#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># exams.list %&gt;% map(mean)</span></span></code></pre></div>
 <p>With only one-line code, you can apply a function to each element of a data structure and obtain the results as a new data structure of the same type. It simplifies the process of applying a function <strong>iteratively</strong> and collecting the output at the same time.</p>
@@ -789,14 +789,14 @@ $class5
 <span id="cb19-3"><a href="iteration.html#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">map_df</span>(exams.list, mean)</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["class1"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["class2"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["class3"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["class4"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["class5"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"53.93333","2":"44.26667","3":"47.56667","4":"42.53333","5":"48.03333"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["class1"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["class2"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["class3"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["class4"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["class5"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"48.8","2":"51.26667","3":"51.5","4":"42.3","5":"53.13333"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb20-1"><a href="iteration.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="do">## apply `mean()` to all elements of `exam.list`</span></span>
 <span id="cb20-2"><a href="iteration.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="do">## and return the output as a double/numeric vector</span></span>
 <span id="cb20-3"><a href="iteration.html#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(exams.list, mean)</span></code></pre></div>
 <pre class="Rout"><code>  class1   class2   class3   class4   class5 
-53.93333 44.26667 47.56667 42.53333 48.03333 </code></pre>
+48.80000 51.26667 51.50000 42.30000 53.13333 </code></pre>
 <div class="info">
 <p>In R, the <code>apply()</code> function, along with its variants like <code>lapply()</code> and <code>sapply()</code>, is a native R function used for applying a function to a specific data structure. These native R functions are very similar to <code>map()</code> in purrr library.</p>
 <p>Here’s a brief comparison between <code>apply()</code> and <code>map()</code> from the purrr library:</p>
@@ -815,19 +815,19 @@ $class5
 <li>Median</li>
 </ul>
 <pre><code>class1 class2 class3 class4 class5 
-  61.5   45.5   40.0   39.5   43.0 </code></pre>
+  47.0   56.5   55.5   33.0   56.5 </code></pre>
 <ul>
 <li>Standard Deviation</li>
 </ul>
 <pre><code>  class1   class2   class3   class4   class5 
-29.80388 31.29056 30.08572 26.88383 31.87528 </code></pre>
+27.73446 28.42283 31.08248 30.58414 31.31237 </code></pre>
 </div>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-2" class="exercise"><strong>Exercise 11.2  </strong></span>Similar to the previous exercise, how can you use the same dataset, <code>exam.list</code>, to compute the <code>median</code> and <code>standard deviation</code> values for each class, and have both of these values returned as a <code>data.frame</code> (The first row refers to the median values and the second row refers to the standard deviation values.)</p>
 <p>Please use <code>map_df()</code> to produce the following expected result.</p>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["class1"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["class2"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["class3"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["class4"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["class5"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"61.50000","2":"45.50000","3":"40.00000","4":"39.50000","5":"43.00000"},{"1":"29.80388","2":"31.29056","3":"30.08572","4":"26.88383","5":"31.87528"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["class1"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["class2"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["class3"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["class4"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["class5"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"47.00000","2":"56.50000","3":"55.50000","4":"33.00000","5":"56.50000"},{"1":"27.73446","2":"28.42283","3":"31.08248","4":"30.58414","5":"31.31237"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -948,21 +948,69 @@ $class5
 </ul>
 <hr />
 <p>Let’s consider a simple example.</p>
-<p>First we create a self-defined function <code>my_center()</code>:</p>
+<p>First we define a custom function called <code>my_center()</code>:</p>
 <ul>
-<li>This function takes a vector object <code>x</code></li>
-<li>Subtract each element of <code>x</code> by the mean score of <code>x</code></li>
-<li>return the resulting vector as the output of the function</li>
+<li>This function takes a vector object <code>x</code> as its input argument;</li>
+<li>It subtracts each element of <code>x</code> by the mean score of <code>x</code>, and divides the difference by the standard deviation of <code>x</code>;</li>
+<li>The resulting vector is returned as the output of the function.</li>
 </ul>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb34-1"><a href="iteration.html#cb34-1" aria-hidden="true" tabindex="-1"></a>my_center <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb34-2"><a href="iteration.html#cb34-2" aria-hidden="true" tabindex="-1"></a>  x <span class="sc">-</span> <span class="fu">mean</span>(x)</span>
-<span id="cb34-3"><a href="iteration.html#cb34-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<p>Now we can apply our <code>my_center</code> function to each class in <code>exams.list</code>:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb35-1"><a href="iteration.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_df</span>(exams.list, my_center)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb34-1"><a href="iteration.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="do">## define function</span></span>
+<span id="cb34-2"><a href="iteration.html#cb34-2" aria-hidden="true" tabindex="-1"></a>my_center <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb34-3"><a href="iteration.html#cb34-3" aria-hidden="true" tabindex="-1"></a>  (x <span class="sc">-</span> <span class="fu">mean</span>(x))<span class="sc">/</span><span class="fu">sd</span>(x)</span>
+<span id="cb34-4"><a href="iteration.html#cb34-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Now we can apply our <code>my_center</code> function to each element (e.g., the scores of each class) in <code>exams.list</code>:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb35-1"><a href="iteration.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="do">## apply function via map()</span></span>
+<span id="cb35-2"><a href="iteration.html#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(exams.list, my_center)</span></code></pre></div>
+<pre class="Rout"><code>$class1
+ [1] -0.35335109 -0.06490122  1.37734813  1.34129190  1.30523567 -0.78602590
+ [7]  0.43988605  0.98072956 -0.24518239 -0.20912616 -0.93025083  1.77396671
+[13]  1.73791047  0.87256086 -1.00236330 -1.72348798 -0.06490122  1.16101073
+[19] -1.43503811 -0.53363226  0.07932371 -0.06490122  0.25960488 -1.57926304
+[25]  0.80044839 -0.93025083 -0.78602590 -0.06490122 -0.17306992 -1.18264447
+
+$class2
+ [1] -0.431577894 -1.170420483 -0.220480011  0.870192383 -1.803714132
+ [6] -1.592616249 -0.185297030 -1.803714132  0.447996618  1.081290266
+[11]  0.201715755  1.468303051  0.201715755  0.483179598 -0.994505581
+[16] -1.416701346  0.764643442  0.447996618  0.272081716  0.201715755
+[21]  1.538669012  1.468303051  0.799826422 -0.994505581  0.166532774
+[26] -0.326028952 -0.748224718 -0.396394913  1.679400934 -0.009382128
+
+$class3
+ [1] -1.4316746 -0.4021558  0.5308456 -1.1099500  1.2386398  1.0134326
+ [7]  0.7238804  0.1447761 -1.3673297  1.3351572  0.8847427 -1.3351572
+[13] -1.3673297  0.7882253 -0.8203978  0.9490877  1.3995021  1.3351572
+[19] -0.7560529  1.3673297 -1.3995021  0.1769485  0.1126036  0.7560529
+[25] -0.4343282  0.4665007 -1.3673297 -0.2091210 -0.7882253 -0.4343282
+
+$class4
+ [1] -0.1405957  1.2980584 -0.5002593 -1.0234062 -0.3367759 -1.2522830
+ [7] -0.3367759  1.0364849 -1.0234062 -0.1078991 -0.2713825 -1.2522830
+[13] -0.4348659  1.6577219 -1.2195863 -0.5983493 -0.8272261  1.7558120
+[19] -0.9253162 -0.7945294 -0.1405957  1.3961484 -1.3503731  1.0691816
+[25]  1.1672716  0.3171578  1.0037882  1.5923285 -0.3367759  0.5787313
+
+$class5
+ [1]  1.01770224 -1.24977241  1.27319234 -0.96234605  0.15542315  0.66640335
+ [7] -0.99428231 -1.31364494  0.50672204  0.57059456 -0.77072847  1.30512860
+[13]  0.25123193 -0.86653726  1.27319234  0.92189345 -1.44138999 -0.67491969
+[19] -0.29168453  1.24125608 -0.67491969 -1.66494383 -1.28170868 -0.73879221
+[25]  1.33706487  1.11351103 -0.54717463  0.79414840  0.05961436  0.98576598</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb37-1"><a href="iteration.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="do">## try different return structures</span></span>
+<span id="cb37-2"><a href="iteration.html#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">map_df</span>(exams.list, my_center)</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["class1"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["class2"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["class3"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["class4"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["class5"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"44.06666667","2":"51.733333","3":"-8.5666667","4":"-22.533333","5":"-45.03333333"},{"1":"-52.93333333","2":"-44.266667","3":"-1.5666667","4":"-20.533333","5":"15.96666667"},{"1":"-49.93333333","2":"-13.266667","3":"4.4333333","4":"-39.533333","5":"-36.03333333"},{"1":"-17.93333333","2":"-15.266667","3":"39.4333333","4":"-24.533333","5":"48.96666667"},{"1":"-3.93333333","2":"14.733333","3":"-21.5666667","4":"47.466667","5":"-33.03333333"},{"1":"-40.93333333","2":"-22.266667","3":"9.4333333","4":"2.466667","5":"45.96666667"},{"1":"6.06666667","2":"-40.266667","3":"36.4333333","4":"-36.533333","5":"-19.03333333"},{"1":"16.06666667","2":"26.733333","3":"50.4333333","4":"3.466667","5":"31.96666667"},{"1":"21.06666667","2":"55.733333","3":"21.4333333","4":"31.466667","5":"-28.03333333"},{"1":"27.06666667","2":"25.733333","3":"-36.5666667","4":"11.466667","5":"-46.03333333"},{"1":"9.06666667","2":"29.733333","3":"12.4333333","4":"5.466667","5":"13.96666667"},{"1":"10.06666667","2":"-11.266667","3":"-19.5666667","4":"-1.533333","5":"40.96666667"},{"1":"35.06666667","2":"-28.266667","3":"-21.5666667","4":"47.466667","5":"-10.03333333"},{"1":"22.06666667","2":"-23.266667","3":"-10.5666667","4":"-13.533333","5":"-30.03333333"},{"1":"-5.93333333","2":"-15.266667","3":"-19.5666667","4":"34.466667","5":"-37.03333333"},{"1":"16.06666667","2":"12.733333","3":"-45.5666667","4":"-30.533333","5":"-13.03333333"},{"1":"22.06666667","2":"29.733333","3":"-33.5666667","4":"36.466667","5":"-31.03333333"},{"1":"3.06666667","2":"-42.266667","3":"52.4333333","4":"-4.533333","5":"-34.03333333"},{"1":"39.06666667","2":"4.733333","3":"44.4333333","4":"-16.533333","5":"11.96666667"},{"1":"-1.93333333","2":"-38.266667","3":"-27.5666667","4":"-13.533333","5":"-29.03333333"},{"1":"20.06666667","2":"16.733333","3":"-25.5666667","4":"-28.533333","5":"21.96666667"},{"1":"0.06666667","2":"36.733333","3":"-6.5666667","4":"-22.533333","5":"-0.03333333"},{"1":"-49.93333333","2":"-2.266667","3":"0.4333333","4":"11.466667","5":"40.96666667"},{"1":"-2.93333333","2":"-40.266667","3":"-35.5666667","4":"33.466667","5":"48.96666667"},{"1":"26.06666667","2":"39.733333","3":"-16.5666667","4":"-1.533333","5":"1.96666667"},{"1":"31.06666667","2":"21.733333","3":"-16.5666667","4":"49.466667","5":"-18.03333333"},{"1":"-43.93333333","2":"-33.266667","3":"-35.5666667","4":"15.466667","5":"38.96666667"},{"1":"13.06666667","2":"31.733333","3":"49.4333333","4":"-36.533333","5":"38.96666667"},{"1":"-40.93333333","2":"-44.266667","3":"36.4333333","4":"-8.533333","5":"-12.03333333"},{"1":"-49.93333333","2":"15.733333","3":"25.4333333","4":"-8.533333","5":"19.96666667"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["class1"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["class2"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["class3"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["class4"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["class5"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"-0.35335109","2":"-0.431577894","3":"-1.4316746","4":"-0.1405957","5":"1.01770224"},{"1":"-0.06490122","2":"-1.170420483","3":"-0.4021558","4":"1.2980584","5":"-1.24977241"},{"1":"1.37734813","2":"-0.220480011","3":"0.5308456","4":"-0.5002593","5":"1.27319234"},{"1":"1.34129190","2":"0.870192383","3":"-1.1099500","4":"-1.0234062","5":"-0.96234605"},{"1":"1.30523567","2":"-1.803714132","3":"1.2386398","4":"-0.3367759","5":"0.15542315"},{"1":"-0.78602590","2":"-1.592616249","3":"1.0134326","4":"-1.2522830","5":"0.66640335"},{"1":"0.43988605","2":"-0.185297030","3":"0.7238804","4":"-0.3367759","5":"-0.99428231"},{"1":"0.98072956","2":"-1.803714132","3":"0.1447761","4":"1.0364849","5":"-1.31364494"},{"1":"-0.24518239","2":"0.447996618","3":"-1.3673297","4":"-1.0234062","5":"0.50672204"},{"1":"-0.20912616","2":"1.081290266","3":"1.3351572","4":"-0.1078991","5":"0.57059456"},{"1":"-0.93025083","2":"0.201715755","3":"0.8847427","4":"-0.2713825","5":"-0.77072847"},{"1":"1.77396671","2":"1.468303051","3":"-1.3351572","4":"-1.2522830","5":"1.30512860"},{"1":"1.73791047","2":"0.201715755","3":"-1.3673297","4":"-0.4348659","5":"0.25123193"},{"1":"0.87256086","2":"0.483179598","3":"0.7882253","4":"1.6577219","5":"-0.86653726"},{"1":"-1.00236330","2":"-0.994505581","3":"-0.8203978","4":"-1.2195863","5":"1.27319234"},{"1":"-1.72348798","2":"-1.416701346","3":"0.9490877","4":"-0.5983493","5":"0.92189345"},{"1":"-0.06490122","2":"0.764643442","3":"1.3995021","4":"-0.8272261","5":"-1.44138999"},{"1":"1.16101073","2":"0.447996618","3":"1.3351572","4":"1.7558120","5":"-0.67491969"},{"1":"-1.43503811","2":"0.272081716","3":"-0.7560529","4":"-0.9253162","5":"-0.29168453"},{"1":"-0.53363226","2":"0.201715755","3":"1.3673297","4":"-0.7945294","5":"1.24125608"},{"1":"0.07932371","2":"1.538669012","3":"-1.3995021","4":"-0.1405957","5":"-0.67491969"},{"1":"-0.06490122","2":"1.468303051","3":"0.1769485","4":"1.3961484","5":"-1.66494383"},{"1":"0.25960488","2":"0.799826422","3":"0.1126036","4":"-1.3503731","5":"-1.28170868"},{"1":"-1.57926304","2":"-0.994505581","3":"0.7560529","4":"1.0691816","5":"-0.73879221"},{"1":"0.80044839","2":"0.166532774","3":"-0.4343282","4":"1.1672716","5":"1.33706487"},{"1":"-0.93025083","2":"-0.326028952","3":"0.4665007","4":"0.3171578","5":"1.11351103"},{"1":"-0.78602590","2":"-0.748224718","3":"-1.3673297","4":"1.0037882","5":"-0.54717463"},{"1":"-0.06490122","2":"-0.396394913","3":"-0.2091210","4":"1.5923285","5":"0.79414840"},{"1":"-0.17306992","2":"1.679400934","3":"-0.7882253","4":"-0.3367759","5":"0.05961436"},{"1":"-1.18264447","2":"-0.009382128","3":"-0.4343282","4":"0.5787313","5":"0.98576598"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
+</div>
+<div class="try">
+<p>After centering, we can quickly identify subjects whose scores are one standard deviation above their class average.</p>
+<p>Based on the skills you’ve learned, any idea how to do this?</p>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["id"],"name":[1],"type":["chr"],"align":["left"]},{"label":["value"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"class1_12","2":"1.773967"},{"1":"class1_13","2":"1.737910"},{"1":"class1_18","2":"1.161011"},{"1":"class1_3","2":"1.377348"},{"1":"class1_4","2":"1.341292"},{"1":"class1_5","2":"1.305236"},{"1":"class2_10","2":"1.081290"},{"1":"class2_12","2":"1.468303"},{"1":"class2_21","2":"1.538669"},{"1":"class2_22","2":"1.468303"},{"1":"class2_29","2":"1.679401"},{"1":"class3_10","2":"1.335157"},{"1":"class3_17","2":"1.399502"},{"1":"class3_18","2":"1.335157"},{"1":"class3_20","2":"1.367330"},{"1":"class3_5","2":"1.238640"},{"1":"class3_6","2":"1.013433"},{"1":"class4_14","2":"1.657722"},{"1":"class4_18","2":"1.755812"},{"1":"class4_2","2":"1.298058"},{"1":"class4_22","2":"1.396148"},{"1":"class4_24","2":"1.069182"},{"1":"class4_25","2":"1.167272"},{"1":"class4_27","2":"1.003788"},{"1":"class4_28","2":"1.592329"},{"1":"class4_8","2":"1.036485"},{"1":"class5_1","2":"1.017702"},{"1":"class5_12","2":"1.305129"},{"1":"class5_15","2":"1.273192"},{"1":"class5_20","2":"1.241256"},{"1":"class5_25","2":"1.337065"},{"1":"class5_26","2":"1.113511"},{"1":"class5_3","2":"1.273192"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 </div>
 <hr />
 <div class="exercise">
@@ -981,8 +1029,8 @@ $class5
 </div>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-7" class="exercise"><strong>Exercise 11.7  </strong></span>Create a self-defined function to convert each number of a numeric vector to a “z” score.</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb36-1"><a href="iteration.html#cb36-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">10</span>, <span class="dv">20</span>)</span>
-<span id="cb36-2"><a href="iteration.html#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">my_z</span>(y)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb38-1"><a href="iteration.html#cb38-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">10</span>, <span class="dv">20</span>)</span>
+<span id="cb38-2"><a href="iteration.html#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">my_z</span>(y)</span></code></pre></div>
 <pre class="Rout"><code>[1] -0.9779865 -0.5704921 -0.2988292  0.2444966  1.6028112</code></pre>
 </div>
 <div class="exercise">
@@ -990,7 +1038,7 @@ $class5
 <p>Please present the result as a data frame.</p>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["class1"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["class2"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["class3"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["class4"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["class5"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"1.478554693","2":"1.65332104","3":"-0.28474195","4":"-0.83817427","5":"-1.412798146"},{"1":"-1.776055107","2":"-1.41469738","3":"-0.05207343","4":"-0.76378011","5":"0.500910667"},{"1":"-1.675397072","2":"-0.42398310","3":"0.14735673","4":"-1.47052469","5":"-1.130447665"},{"1":"-0.601711365","2":"-0.48790015","3":"1.31069932","4":"-0.91256844","5":"1.536195763"},{"1":"-0.131973868","2":"0.47085560","3":"-0.71684063","4":"1.76562155","5":"-1.036330838"},{"1":"-1.373422967","2":"-0.71160983","3":"0.31354853","4":"0.09175281","5":"1.442078936"},{"1":"0.203552915","2":"-1.28686328","3":"1.21098424","4":"-1.35893344","5":"-0.597118979"},{"1":"0.539079699","2":"0.85435791","3":"1.67632128","4":"0.12894989","5":"1.002867077"},{"1":"0.706843091","2":"1.78115514","3":"0.71240884","4":"1.17046822","5":"-0.879469460"},{"1":"0.908159161","2":"0.82239938","3":"-1.21541602","4":"0.42652655","5":"-1.444170421"},{"1":"0.304210950","2":"0.95023348","3":"0.41326361","4":"0.20334405","5":"0.438166116"},{"1":"0.337763629","2":"-0.36006605","3":"-0.65036391","4":"-0.05703553","5":"1.285217558"},{"1":"1.176580588","2":"-0.90336098","3":"-0.71684063","4":"1.76562155","5":"-0.314768499"},{"1":"0.740395769","2":"-0.74356835","3":"-0.35121867","4":"-0.50340052","5":"-0.942214011"},{"1":"-0.199079225","2":"-0.48790015","3":"-0.65036391","4":"1.28205947","5":"-1.161819941"},{"1":"0.539079699","2":"0.40693855","3":"-1.51456126","4":"-1.13575094","5":"-0.408885326"},{"1":"0.740395769","2":"0.95023348","3":"-1.11570094","4":"1.35645363","5":"-0.973586287"},{"1":"0.102894880","2":"-1.35078033","3":"1.74279800","4":"-0.16862678","5":"-1.067703114"},{"1":"1.310791301","2":"0.15127035","3":"1.47689112","4":"-0.61499177","5":"0.375421565"},{"1":"-0.064868511","2":"-1.22294623","3":"-0.91627078","4":"-0.50340052","5":"-0.910841736"},{"1":"0.673290412","2":"0.53477266","3":"-0.84979406","4":"-1.06135677","5":"0.689144321"},{"1":"0.002236845","2":"1.17394316","3":"-0.21826523","4":"-0.83817427","5":"-0.001045743"},{"1":"-1.675397072","2":"-0.07243932","3":"0.01440329","4":"0.42652655","5":"1.285217558"},{"1":"-0.098421190","2":"-1.28686328","3":"-1.18217766","4":"1.24486238","5":"1.536195763"},{"1":"0.874606482","2":"1.26981873","3":"-0.55064883","4":"-0.05703553","5":"0.061698809"},{"1":"1.042369874","2":"0.69456528","3":"-0.55064883","4":"1.84001571","5":"-0.565746704"},{"1":"-1.474081002","2":"-1.06315361","3":"-1.18217766","4":"0.57531489","5":"1.222473007"},{"1":"0.438421664","2":"1.01415053","3":"1.64308292","4":"-1.35893344","5":"1.222473007"},{"1":"-1.373422967","2":"-1.41469738","3":"1.21098424","4":"-0.31741511","5":"-0.377513050"},{"1":"-1.675397072","2":"0.50281413","3":"0.84536228","4":"-0.31741511","5":"0.626399770"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["class1"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["class2"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["class3"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["class4"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["class5"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"-0.35335109","2":"-0.431577894","3":"-1.4316746","4":"-0.1405957","5":"1.01770224"},{"1":"-0.06490122","2":"-1.170420483","3":"-0.4021558","4":"1.2980584","5":"-1.24977241"},{"1":"1.37734813","2":"-0.220480011","3":"0.5308456","4":"-0.5002593","5":"1.27319234"},{"1":"1.34129190","2":"0.870192383","3":"-1.1099500","4":"-1.0234062","5":"-0.96234605"},{"1":"1.30523567","2":"-1.803714132","3":"1.2386398","4":"-0.3367759","5":"0.15542315"},{"1":"-0.78602590","2":"-1.592616249","3":"1.0134326","4":"-1.2522830","5":"0.66640335"},{"1":"0.43988605","2":"-0.185297030","3":"0.7238804","4":"-0.3367759","5":"-0.99428231"},{"1":"0.98072956","2":"-1.803714132","3":"0.1447761","4":"1.0364849","5":"-1.31364494"},{"1":"-0.24518239","2":"0.447996618","3":"-1.3673297","4":"-1.0234062","5":"0.50672204"},{"1":"-0.20912616","2":"1.081290266","3":"1.3351572","4":"-0.1078991","5":"0.57059456"},{"1":"-0.93025083","2":"0.201715755","3":"0.8847427","4":"-0.2713825","5":"-0.77072847"},{"1":"1.77396671","2":"1.468303051","3":"-1.3351572","4":"-1.2522830","5":"1.30512860"},{"1":"1.73791047","2":"0.201715755","3":"-1.3673297","4":"-0.4348659","5":"0.25123193"},{"1":"0.87256086","2":"0.483179598","3":"0.7882253","4":"1.6577219","5":"-0.86653726"},{"1":"-1.00236330","2":"-0.994505581","3":"-0.8203978","4":"-1.2195863","5":"1.27319234"},{"1":"-1.72348798","2":"-1.416701346","3":"0.9490877","4":"-0.5983493","5":"0.92189345"},{"1":"-0.06490122","2":"0.764643442","3":"1.3995021","4":"-0.8272261","5":"-1.44138999"},{"1":"1.16101073","2":"0.447996618","3":"1.3351572","4":"1.7558120","5":"-0.67491969"},{"1":"-1.43503811","2":"0.272081716","3":"-0.7560529","4":"-0.9253162","5":"-0.29168453"},{"1":"-0.53363226","2":"0.201715755","3":"1.3673297","4":"-0.7945294","5":"1.24125608"},{"1":"0.07932371","2":"1.538669012","3":"-1.3995021","4":"-0.1405957","5":"-0.67491969"},{"1":"-0.06490122","2":"1.468303051","3":"0.1769485","4":"1.3961484","5":"-1.66494383"},{"1":"0.25960488","2":"0.799826422","3":"0.1126036","4":"-1.3503731","5":"-1.28170868"},{"1":"-1.57926304","2":"-0.994505581","3":"0.7560529","4":"1.0691816","5":"-0.73879221"},{"1":"0.80044839","2":"0.166532774","3":"-0.4343282","4":"1.1672716","5":"1.33706487"},{"1":"-0.93025083","2":"-0.326028952","3":"0.4665007","4":"0.3171578","5":"1.11351103"},{"1":"-0.78602590","2":"-0.748224718","3":"-1.3673297","4":"1.0037882","5":"-0.54717463"},{"1":"-0.06490122","2":"-0.396394913","3":"-0.2091210","4":"1.5923285","5":"0.79414840"},{"1":"-0.17306992","2":"1.679400934","3":"-0.7882253","4":"-0.3367759","5":"0.05961436"},{"1":"-1.18264447","2":"-0.009382128","3":"-0.4343282","4":"0.5787313","5":"0.98576598"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
