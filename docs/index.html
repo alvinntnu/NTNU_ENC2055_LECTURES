@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>ENC2055: Introduction to Programming Languages for Linguistic Analysis</title>
   <meta name="description" content="ENC2055 Course material second edition" />
-  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
   <meta property="og:title" content="ENC2055: Introduction to Programming Languages for Linguistic Analysis" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2023-06-02" />
+<meta name="date" content="2024-09-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,18 +56,18 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
 <link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
 <script src="libs/str_view-binding-1.5.0/str_view.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="libs/grViz-binding-1.0.9/grViz.js"></script>
+<script src="libs/grViz-binding-1.0.10/grViz.js"></script>
 <script src="https://hypothes.is/embed.js" async></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -131,10 +131,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 <style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -171,7 +176,7 @@ div.csl-indent {
 <li><a href="./index.html"> <img src="images/alerts/book-solid.svg" height="20" width ="20" style="display:inline"> ENC2055 Homepage</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Course Syllabus</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-objective"><i class="fa fa-check"></i>Course Objective</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#textbook"><i class="fa fa-check"></i>Textbook</a></li>
@@ -569,32 +574,6 @@ div.csl-indent {
 <li class="chapter" data-level="B.5" data-path="reproducible-report.html"><a href="reproducible-report.html#tips"><i class="fa fa-check"></i><b>B.5</b> Tips</a></li>
 <li class="chapter" data-level="B.6" data-path="reproducible-report.html"><a href="reproducible-report.html#references-4"><i class="fa fa-check"></i><b>B.6</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="C" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html"><i class="fa fa-check"></i><b>C</b> ChatGPT with R</a>
-<ul>
-<li class="chapter" data-level="C.1" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#installation-1"><i class="fa fa-check"></i><b>C.1</b> Installation</a></li>
-<li class="chapter" data-level="C.2" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#chatgpt-api"><i class="fa fa-check"></i><b>C.2</b> ChatGPT API</a></li>
-<li class="chapter" data-level="C.3" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#using-chatgpt"><i class="fa fa-check"></i><b>C.3</b> Using <code>chatgpt</code></a>
-<ul>
-<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#parameters"><i class="fa fa-check"></i>Parameters</a></li>
-<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#ask-questions"><i class="fa fa-check"></i>Ask Questions</a></li>
-</ul></li>
-<li class="chapter" data-level="C.4" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#r-assistance"><i class="fa fa-check"></i><b>C.4</b> R Assistance</a>
-<ul>
-<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#comment-code"><i class="fa fa-check"></i>Comment Code</a></li>
-<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#explain-code"><i class="fa fa-check"></i>Explain Code</a></li>
-<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#document-code"><i class="fa fa-check"></i>Document Code</a></li>
-<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#find-issues-in-code"><i class="fa fa-check"></i>Find Issues in Code</a></li>
-<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#optimize-code"><i class="fa fa-check"></i>Optimize Code</a></li>
-</ul></li>
-<li class="chapter" data-level="C.5" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#basic-natural-language-processing"><i class="fa fa-check"></i><b>C.5</b> Basic Natural Language Processing</a>
-<ul>
-<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#np-chunking"><i class="fa fa-check"></i>NP Chunking</a></li>
-<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#word-segmentation"><i class="fa fa-check"></i>Word Segmentation</a></li>
-<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#text-translation"><i class="fa fa-check"></i>Text Translation</a></li>
-<li class="chapter" data-level="" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#text-summarization"><i class="fa fa-check"></i>Text Summarization</a></li>
-</ul></li>
-<li class="chapter" data-level="C.6" data-path="chatgpt-with-r.html"><a href="chatgpt-with-r.html#resources-for-chatgpt-prompts"><i class="fa fa-check"></i><b>C.6</b> Resources for ChatGPT Prompts</a></li>
-</ul></li>
 <li class="chapter" data-level="" data-path="references-5.html"><a href="references-5.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://web.ntnu.edu.tw/~alvinchen" target ="blank">Alvin Chen </a></li>
@@ -626,10 +605,10 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <div id="header">
 <h1 class="title">ENC2055: Introduction to Programming Languages for Linguistic Analysis</h1>
 <p class="author"><em>Alvin Chen (陳正賢）</em></p>
-<p class="date"><em>2023-06-02</em></p>
+<p class="date"><em>2024-09-03</em></p>
 </div>
-<div id="preface" class="section level1 unnumbered hasAnchor">
-<h1>Preface<a href="index.html#preface" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="course-syllabus" class="section level1 unnumbered hasAnchor">
+<h1>Course Syllabus<a href="index.html#course-syllabus" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Welcome to ENC2055 Introduction to Programming Languages for Linguistic Analysis. This is a graduate-level course tailored to those who are interested in computational text analytics and data science in general. Have you decided to embark upon a digital journey to your future career, there are a series of courses provided in the <a href="https://www.eng.ntnu.edu.tw/index.php/en/main/">Department of English, NTNU, Taiwan</a>, offering necessary skills and knowledge in important disciplines. This introductory course in basic computational coding would be a prerequisite course for many other advance-level courses. In particular, our faculty in the <a href="https://sites.google.com/ntnueng.tw/linguistics-ntnu-eng">Linguistics track</a> is dedicated to research on both theoretical and applied linguistics. Along with <a href="https://sites.google.com/ntnueng.tw/linguistics-ntnu-eng/research/computational-linguistics">courses offered by other faculty members</a>, this course provides a necessary foundation for the burgeoning discipline of computational text analytics.</p>
 <div class="info">
 <p>Please note that while this course has no prerequisite from the students, it will turn out to be a prerequisite for a lot of advanced courses, such as <em>Corpus Linguistics</em> and <em>Computational Linguistics</em>. If you plan to step into this computational way of language processing, you need to take this course (or at least you need to learn how to code.)</p>
@@ -647,35 +626,35 @@ f(x)=\frac{1}{\sqrt{2 \pi}} e^{-\frac{1}{2} x^{2}}
 P(A) = \sum P(\{ (e_1,\dotsc,e_N) \})  =  \binom{N}{k} \cdot p^kq^{N-k}
 \]</span></p>
 <p>We will not be dealing with linguistic theories as well. No <em>transformations</em>. No <em>movements</em>. No <em>bindings</em>. This course is all about (text) data processing and computational coding.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="index.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;USArrests&quot;</span>)</span>
-<span id="cb1-3"><a href="index.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ?USArrests ## check description of the dataset</span></span>
-<span id="cb1-4"><a href="index.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(USArrests)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="index.html#cb1-2" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;USArrests&quot;</span>)</span>
+<span id="cb1-3"><a href="index.html#cb1-3" tabindex="-1"></a><span class="co"># ?USArrests ## check description of the dataset</span></span>
+<span id="cb1-4"><a href="index.html#cb1-4" tabindex="-1"></a><span class="fu">head</span>(USArrests)</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Murder"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Assault"],"name":[2],"type":["int"],"align":["right"]},{"label":["UrbanPop"],"name":[3],"type":["int"],"align":["right"]},{"label":["Rape"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"13.2","2":"236","3":"58","4":"21.2","_rn_":"Alabama"},{"1":"10.0","2":"263","3":"48","4":"44.5","_rn_":"Alaska"},{"1":"8.1","2":"294","3":"80","4":"31.0","_rn_":"Arizona"},{"1":"8.8","2":"190","3":"50","4":"19.5","_rn_":"Arkansas"},{"1":"9.0","2":"276","3":"91","4":"40.6","_rn_":"California"},{"1":"7.9","2":"204","3":"78","4":"38.7","_rn_":"Colorado"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1" aria-hidden="true" tabindex="-1"></a>USArrests <span class="sc">%&gt;%</span></span>
-<span id="cb2-2"><a href="index.html#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">&quot;Murder&quot;</span>, <span class="st">&quot;Assault&quot;</span>, <span class="st">&quot;UrbanPop&quot;</span>, <span class="st">&quot;Rape&quot;</span>), <span class="at">names_to =</span> <span class="st">&quot;ArrestTypes&quot;</span>,</span>
-<span id="cb2-3"><a href="index.html#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">values_to =</span> <span class="st">&quot;Rates&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb2-4"><a href="index.html#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(ArrestTypes, Rates, <span class="at">fill =</span> ArrestTypes)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1" tabindex="-1"></a>USArrests <span class="sc">%&gt;%</span></span>
+<span id="cb2-2"><a href="index.html#cb2-2" tabindex="-1"></a>    <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">&quot;Murder&quot;</span>, <span class="st">&quot;Assault&quot;</span>, <span class="st">&quot;UrbanPop&quot;</span>, <span class="st">&quot;Rape&quot;</span>), <span class="at">names_to =</span> <span class="st">&quot;ArrestTypes&quot;</span>,</span>
+<span id="cb2-3"><a href="index.html#cb2-3" tabindex="-1"></a>        <span class="at">values_to =</span> <span class="st">&quot;Rates&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-4"><a href="index.html#cb2-4" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(ArrestTypes, Rates, <span class="at">fill =</span> ArrestTypes)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code></pre></div>
 <p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## data() ## check more built-in datasets</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1" tabindex="-1"></a><span class="do">## data() ## check more built-in datasets</span></span></code></pre></div>
 <div class="try">
 <p>In the lecture notes, the text boxes in light blue refer to codes that you need to run in either terminal or your R/Python console. The text boxes in black background show the outputs of the code processing.</p>
 <p>We will follow this presentation convention throughout the entire lecture notes.</p>
 </div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb4-1"><a href="index.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Hello! R!&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb4-1"><a href="index.html#cb4-1" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Hello! R!&quot;</span>)</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;Hello! R!&quot;</code></pre>
 </div>
 <div id="textbook" class="section level2 unnumbered hasAnchor">
 <h2>Textbook<a href="index.html#textbook" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Throughout the semester, we will follow the materials provided on our course website (see below). We will not use a particular textbook for the course. However, I do like to recommend <a href="https://r4ds.hadley.nz/"><span class="citation">Wickham &amp; Grolemund (<a href="#ref-hadley2017" role="doc-biblioref">2017</a>)</span></a> for its simplicity.</p>
+<p>Throughout the semester, we will follow the materials provided on our course website (see below). We will not use a particular textbook for the course. However, I do like to recommend <a href="https://r4ds.hadley.nz/"><span class="citation">Wickham &amp; Grolemund (<span>2017</span>)</span></a> for its simplicity.</p>
 <p><img src="images/r4dbook.png" width="35%" /></p>
-<p>Also, another great book for R lovers, by <span class="citation">Davies (<a href="#ref-davies2016" role="doc-biblioref">2016</a>)</span>:</p>
+<p>Also, another great book for R lovers, by <span class="citation">Davies (<a href="#ref-davies2016">2016</a>)</span>:</p>
 <p><img src="images/book-R-cover.png" width="35%" /></p>
-<p>And two more comprehensive books for Python basics: <span class="citation">Gerrard (<a href="#ref-gerrard2016" role="doc-biblioref">2016</a>)</span> and <span class="citation">Sweigart (<a href="#ref-sweigart2020" role="doc-biblioref">2020</a>)</span>:</p>
+<p>And two more comprehensive books for Python basics: <span class="citation">Gerrard (<a href="#ref-gerrard2016">2016</a>)</span> and <span class="citation">Sweigart (<a href="#ref-sweigart2020">2020</a>)</span>:</p>
 <p><img src="images/book-lean-python.jpeg" width="35%" /><img src="images/book-automate-boring-python.jpg" width="35%" /></p>
 </div>
 <div id="course-website" class="section level2 unnumbered hasAnchor">
@@ -747,7 +726,7 @@ library(tidyverse)</code></pre>
 
 
 <h3>References<a href="references-5.html#references-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0" line-spacing="2">
 <div id="ref-davies2016" class="csl-entry">
 Davies, T. M. (2016). <em>The book of <span>R</span>: A first course in programming and statistics</em> (1st ed.). No Starch Press, Inc.
 </div>
@@ -756,9 +735,6 @@ Gerrard, P. (2016). <em>Lean python: Learn just enough python to build useful to
 </div>
 <div id="ref-sweigart2020" class="csl-entry">
 Sweigart, A. (2020). <em>Automate the boring stuff with python: Practical programming for total beginners. 2nd edition.</em> No Starch Press.
-</div>
-<div id="ref-hadley2017" class="csl-entry">
-Wickham, H., &amp; Grolemund, G. (2017). <em>R for data science: Import, tidy, transform, visualize, and model data</em> (1st ed.). O’Reilly Media, Inc.
 </div>
 </div>
             </section>

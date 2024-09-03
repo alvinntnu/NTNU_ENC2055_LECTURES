@@ -390,10 +390,3 @@ installing-r-markdown
 r-markdown-components
 tips
 references-4
-chatgpt-with-r
-installation-1
-chatgpt-api
-using-chatgpt
-r-assistance
-basic-natural-language-processing
-resources-for-chatgpt-prompts
