@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2024-09-03" />
+<meta name="date" content="2024-09-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -816,7 +816,7 @@ Examples: [&#39;The lovers held hands while walking&#39;, &#39;We like to walk e
 <div class="sourceCode" id="cb1263"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1263-1"><a href="nltk.html#cb1263-1" tabindex="-1"></a><span class="bu">len</span>(<span class="bu">set</span>(synonyms))</span></code></pre></div>
 <pre class="Rout"><code>3</code></pre>
 <div class="sourceCode" id="cb1265"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1265-1"><a href="nltk.html#cb1265-1" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">set</span>(synonyms))</span></code></pre></div>
-<pre class="Rout"><code>{&#39;reserve&#39;, &#39;hold&#39;, &#39;book&#39;}</code></pre>
+<pre class="Rout"><code>{&#39;book&#39;, &#39;hold&#39;, &#39;reserve&#39;}</code></pre>
 <ul>
 <li>Antonyms</li>
 </ul>
@@ -980,7 +980,7 @@ Examples: [&#39;The lovers held hands while walking&#39;, &#39;We like to walk e
 <span id="cb1306-6"><a href="nltk.html#cb1306-6" tabindex="-1"></a>text_jb <span class="op">=</span> jieba.lcut(text)</span></code></pre></div>
 <pre class="Rout"><code>Building prefix dict from the default dictionary ...
 Loading model from cache /var/folders/70/qfdgs0k52qj24jtjcz7d0dkm0000gn/T/jieba.cache
-Loading model cost 0.239 seconds.
+Loading model cost 0.229 seconds.
 Prefix dict has been built successfully.</code></pre>
 <div class="sourceCode" id="cb1308"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1308-1"><a href="nltk.html#cb1308-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39; | &#39;</span>.join(text_jb))</span></code></pre></div>
 <pre class="Rout"><code>
