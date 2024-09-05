@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2024-09-04" />
+<meta name="date" content="2024-09-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -182,6 +182,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#textbook"><i class="fa fa-check"></i>Textbook</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-website"><i class="fa fa-check"></i>Course Website</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#assignments"><i class="fa fa-check"></i>Assignments</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#ai-tools"><i class="fa fa-check"></i>AI Tools</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributing-to-the-lecture-notes"><i class="fa fa-check"></i>Contributing to the Lecture Notes</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-demo-data"><i class="fa fa-check"></i>Course Demo Data</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#questions"><i class="fa fa-check"></i>Questions?</a></li>
@@ -611,10 +612,10 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <li>In OO design, systems consist of collaborating sets of well-defined objects. One object sends a message to another object to achieve some goal.</li>
 <li>The message is implemented as a function call, often referred to as a <strong>method</strong>. Therefore, methods are associated with specific objects and depend on the nature of the object as well.</li>
 </ul>
-<div class="sourceCode" id="cb1006"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1006-1"><a href="object-orientation.html#cb1006-1" tabindex="-1"></a><span class="co">## Examples of String object&#39;s methods</span></span>
-<span id="cb1006-2"><a href="object-orientation.html#cb1006-2" tabindex="-1"></a>newstring <span class="op">=</span> text.upper()</span>
-<span id="cb1006-3"><a href="object-orientation.html#cb1006-3" tabindex="-1"></a>newstring <span class="op">=</span> text.lower()</span>
-<span id="cb1006-4"><a href="object-orientation.html#cb1006-4" tabindex="-1"></a>newstring <span class="op">=</span> text.split()</span></code></pre></div>
+<div class="sourceCode" id="cb1007"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1007-1"><a href="object-orientation.html#cb1007-1" tabindex="-1"></a><span class="co">## Examples of String object&#39;s methods</span></span>
+<span id="cb1007-2"><a href="object-orientation.html#cb1007-2" tabindex="-1"></a>newstring <span class="op">=</span> text.upper()</span>
+<span id="cb1007-3"><a href="object-orientation.html#cb1007-3" tabindex="-1"></a>newstring <span class="op">=</span> text.lower()</span>
+<span id="cb1007-4"><a href="object-orientation.html#cb1007-4" tabindex="-1"></a>newstring <span class="op">=</span> text.split()</span></code></pre></div>
 <ul>
 <li>An object’s blueprint determines its structure. This blueprint is referred to as the <strong>class</strong> definition. When we create a new object from the object’s class definition, the object is an <strong>instance</strong> of the class and the process is called <strong>instantiation</strong>.</li>
 <li>In addition to <strong>methods</strong>, an object can also have <strong>attributes or properties</strong> that we can get and set. We can also determine whether to hide these attributes and make them available only through the methods (<strong>private</strong> attributes) or expose them to the outside world (<strong>public</strong> attributes).</li>
@@ -631,24 +632,24 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <li>the methods that can be used to set and get attributes or change the state ob the object (<strong>class methods</strong>).</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb1007"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1007-1"><a href="object-orientation.html#cb1007-1" tabindex="-1"></a><span class="co"># Define a class</span></span>
-<span id="cb1007-2"><a href="object-orientation.html#cb1007-2" tabindex="-1"></a><span class="kw">class</span> Employee(<span class="bu">object</span>):</span>
-<span id="cb1007-3"><a href="object-orientation.html#cb1007-3" tabindex="-1"></a>    <span class="co">&quot;Employee Class&quot;</span></span>
-<span id="cb1007-4"><a href="object-orientation.html#cb1007-4" tabindex="-1"></a>    <span class="co"># Constructor method</span></span>
-<span id="cb1007-5"><a href="object-orientation.html#cb1007-5" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, first, last, pay):</span>
-<span id="cb1007-6"><a href="object-orientation.html#cb1007-6" tabindex="-1"></a>        <span class="va">self</span>.first <span class="op">=</span> first</span>
-<span id="cb1007-7"><a href="object-orientation.html#cb1007-7" tabindex="-1"></a>        <span class="va">self</span>.last <span class="op">=</span> last</span>
-<span id="cb1007-8"><a href="object-orientation.html#cb1007-8" tabindex="-1"></a>        <span class="va">self</span>.email <span class="op">=</span> first <span class="op">+</span> <span class="st">&#39;.&#39;</span> <span class="op">+</span> last <span class="op">+</span> <span class="st">&#39;@email.com&#39;</span></span>
-<span id="cb1007-9"><a href="object-orientation.html#cb1007-9" tabindex="-1"></a>        <span class="va">self</span>.pay <span class="op">=</span> pay</span>
-<span id="cb1007-10"><a href="object-orientation.html#cb1007-10" tabindex="-1"></a>    <span class="co"># instance method</span></span>
-<span id="cb1007-11"><a href="object-orientation.html#cb1007-11" tabindex="-1"></a>    <span class="kw">def</span> fullname(<span class="va">self</span>):</span>
-<span id="cb1007-12"><a href="object-orientation.html#cb1007-12" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&#39;</span><span class="sc">{}</span><span class="st"> </span><span class="sc">{}</span><span class="st">&#39;</span>.<span class="bu">format</span>(<span class="va">self</span>.first, <span class="va">self</span>.last)</span></code></pre></div>
-<div class="sourceCode" id="cb1008"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1008-1"><a href="object-orientation.html#cb1008-1" tabindex="-1"></a>emp_1 <span class="op">=</span> Employee(<span class="st">&#39;Alvin&#39;</span>, <span class="st">&#39;Chen&#39;</span>, <span class="dv">50000</span>)</span>
-<span id="cb1008-2"><a href="object-orientation.html#cb1008-2" tabindex="-1"></a>emp_2 <span class="op">=</span> Employee(<span class="st">&#39;John&#39;</span>, <span class="st">&#39;Doe&#39;</span>, <span class="dv">60000</span>)</span>
-<span id="cb1008-3"><a href="object-orientation.html#cb1008-3" tabindex="-1"></a></span>
-<span id="cb1008-4"><a href="object-orientation.html#cb1008-4" tabindex="-1"></a>emp_1.fullname()</span></code></pre></div>
+<div class="sourceCode" id="cb1008"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1008-1"><a href="object-orientation.html#cb1008-1" tabindex="-1"></a><span class="co"># Define a class</span></span>
+<span id="cb1008-2"><a href="object-orientation.html#cb1008-2" tabindex="-1"></a><span class="kw">class</span> Employee(<span class="bu">object</span>):</span>
+<span id="cb1008-3"><a href="object-orientation.html#cb1008-3" tabindex="-1"></a>    <span class="co">&quot;Employee Class&quot;</span></span>
+<span id="cb1008-4"><a href="object-orientation.html#cb1008-4" tabindex="-1"></a>    <span class="co"># Constructor method</span></span>
+<span id="cb1008-5"><a href="object-orientation.html#cb1008-5" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, first, last, pay):</span>
+<span id="cb1008-6"><a href="object-orientation.html#cb1008-6" tabindex="-1"></a>        <span class="va">self</span>.first <span class="op">=</span> first</span>
+<span id="cb1008-7"><a href="object-orientation.html#cb1008-7" tabindex="-1"></a>        <span class="va">self</span>.last <span class="op">=</span> last</span>
+<span id="cb1008-8"><a href="object-orientation.html#cb1008-8" tabindex="-1"></a>        <span class="va">self</span>.email <span class="op">=</span> first <span class="op">+</span> <span class="st">&#39;.&#39;</span> <span class="op">+</span> last <span class="op">+</span> <span class="st">&#39;@email.com&#39;</span></span>
+<span id="cb1008-9"><a href="object-orientation.html#cb1008-9" tabindex="-1"></a>        <span class="va">self</span>.pay <span class="op">=</span> pay</span>
+<span id="cb1008-10"><a href="object-orientation.html#cb1008-10" tabindex="-1"></a>    <span class="co"># instance method</span></span>
+<span id="cb1008-11"><a href="object-orientation.html#cb1008-11" tabindex="-1"></a>    <span class="kw">def</span> fullname(<span class="va">self</span>):</span>
+<span id="cb1008-12"><a href="object-orientation.html#cb1008-12" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&#39;</span><span class="sc">{}</span><span class="st"> </span><span class="sc">{}</span><span class="st">&#39;</span>.<span class="bu">format</span>(<span class="va">self</span>.first, <span class="va">self</span>.last)</span></code></pre></div>
+<div class="sourceCode" id="cb1009"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1009-1"><a href="object-orientation.html#cb1009-1" tabindex="-1"></a>emp_1 <span class="op">=</span> Employee(<span class="st">&#39;Alvin&#39;</span>, <span class="st">&#39;Chen&#39;</span>, <span class="dv">50000</span>)</span>
+<span id="cb1009-2"><a href="object-orientation.html#cb1009-2" tabindex="-1"></a>emp_2 <span class="op">=</span> Employee(<span class="st">&#39;John&#39;</span>, <span class="st">&#39;Doe&#39;</span>, <span class="dv">60000</span>)</span>
+<span id="cb1009-3"><a href="object-orientation.html#cb1009-3" tabindex="-1"></a></span>
+<span id="cb1009-4"><a href="object-orientation.html#cb1009-4" tabindex="-1"></a>emp_1.fullname()</span></code></pre></div>
 <pre class="Rout"><code>&#39;Alvin Chen&#39;</code></pre>
-<div class="sourceCode" id="cb1010"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1010-1"><a href="object-orientation.html#cb1010-1" tabindex="-1"></a>emp_2.fullname()</span></code></pre></div>
+<div class="sourceCode" id="cb1011"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1011-1"><a href="object-orientation.html#cb1011-1" tabindex="-1"></a>emp_2.fullname()</span></code></pre></div>
 <pre class="Rout"><code>&#39;John Doe&#39;</code></pre>
 </div>
 <div id="types-of-methods" class="section level2 hasAnchor" number="16.3">
@@ -658,66 +659,66 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <li><strong>Static</strong> Method: a self-contained method bound to the class</li>
 <li><strong>Instance</strong> Method: a method bound to the object instance of the class with <code>self</code> as the first default argument</li>
 </ul>
-<div class="sourceCode" id="cb1012"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1012-1"><a href="object-orientation.html#cb1012-1" tabindex="-1"></a><span class="kw">class</span> Employee(<span class="bu">object</span>):</span>
-<span id="cb1012-2"><a href="object-orientation.html#cb1012-2" tabindex="-1"></a></span>
-<span id="cb1012-3"><a href="object-orientation.html#cb1012-3" tabindex="-1"></a>    num_of_emps <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb1012-4"><a href="object-orientation.html#cb1012-4" tabindex="-1"></a>    raise_amt <span class="op">=</span> <span class="fl">1.04</span></span>
-<span id="cb1012-5"><a href="object-orientation.html#cb1012-5" tabindex="-1"></a></span>
-<span id="cb1012-6"><a href="object-orientation.html#cb1012-6" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, first, last, pay):</span>
-<span id="cb1012-7"><a href="object-orientation.html#cb1012-7" tabindex="-1"></a>        <span class="va">self</span>.first <span class="op">=</span> first</span>
-<span id="cb1012-8"><a href="object-orientation.html#cb1012-8" tabindex="-1"></a>        <span class="va">self</span>.last <span class="op">=</span> last</span>
-<span id="cb1012-9"><a href="object-orientation.html#cb1012-9" tabindex="-1"></a>        <span class="va">self</span>.email <span class="op">=</span> first <span class="op">+</span> <span class="st">&#39;.&#39;</span> <span class="op">+</span> last <span class="op">+</span> <span class="st">&#39;@email.com&#39;</span></span>
-<span id="cb1012-10"><a href="object-orientation.html#cb1012-10" tabindex="-1"></a>        <span class="va">self</span>.pay <span class="op">=</span> pay</span>
-<span id="cb1012-11"><a href="object-orientation.html#cb1012-11" tabindex="-1"></a>        Employee.num_of_emps <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb1012-12"><a href="object-orientation.html#cb1012-12" tabindex="-1"></a></span>
-<span id="cb1012-13"><a href="object-orientation.html#cb1012-13" tabindex="-1"></a>    <span class="kw">def</span> fullname(<span class="va">self</span>):</span>
-<span id="cb1012-14"><a href="object-orientation.html#cb1012-14" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&#39;</span><span class="sc">{}</span><span class="st"> </span><span class="sc">{}</span><span class="st">&#39;</span>.<span class="bu">format</span>(<span class="va">self</span>.first, <span class="va">self</span>.last)</span>
-<span id="cb1012-15"><a href="object-orientation.html#cb1012-15" tabindex="-1"></a></span>
-<span id="cb1012-16"><a href="object-orientation.html#cb1012-16" tabindex="-1"></a>    <span class="kw">def</span> apply_raise(<span class="va">self</span>):</span>
-<span id="cb1012-17"><a href="object-orientation.html#cb1012-17" tabindex="-1"></a>        <span class="va">self</span>.pay <span class="op">=</span> <span class="bu">int</span>(<span class="va">self</span>.pay <span class="op">*</span> <span class="va">self</span>.raise_amt)</span>
-<span id="cb1012-18"><a href="object-orientation.html#cb1012-18" tabindex="-1"></a></span>
-<span id="cb1012-19"><a href="object-orientation.html#cb1012-19" tabindex="-1"></a>    <span class="at">@classmethod</span></span>
-<span id="cb1012-20"><a href="object-orientation.html#cb1012-20" tabindex="-1"></a>    <span class="kw">def</span> set_raise_amt(cls, amount):</span>
-<span id="cb1012-21"><a href="object-orientation.html#cb1012-21" tabindex="-1"></a>        cls.raise_amt <span class="op">=</span> amount</span>
-<span id="cb1012-22"><a href="object-orientation.html#cb1012-22" tabindex="-1"></a></span>
-<span id="cb1012-23"><a href="object-orientation.html#cb1012-23" tabindex="-1"></a>    <span class="at">@classmethod</span></span>
-<span id="cb1012-24"><a href="object-orientation.html#cb1012-24" tabindex="-1"></a>    <span class="kw">def</span> from_string(cls, emp_str):</span>
-<span id="cb1012-25"><a href="object-orientation.html#cb1012-25" tabindex="-1"></a>        first, last, pay <span class="op">=</span> emp_str.split(<span class="st">&#39;-&#39;</span>)</span>
-<span id="cb1012-26"><a href="object-orientation.html#cb1012-26" tabindex="-1"></a>        <span class="cf">return</span> cls(first, last, pay)</span>
-<span id="cb1012-27"><a href="object-orientation.html#cb1012-27" tabindex="-1"></a></span>
-<span id="cb1012-28"><a href="object-orientation.html#cb1012-28" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
-<span id="cb1012-29"><a href="object-orientation.html#cb1012-29" tabindex="-1"></a>    <span class="kw">def</span> is_workday(day):</span>
-<span id="cb1012-30"><a href="object-orientation.html#cb1012-30" tabindex="-1"></a>        <span class="cf">if</span> day.weekday() <span class="op">==</span> <span class="dv">5</span> <span class="kw">or</span> day.weekday() <span class="op">==</span> <span class="dv">6</span>:</span>
-<span id="cb1012-31"><a href="object-orientation.html#cb1012-31" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">False</span></span>
-<span id="cb1012-32"><a href="object-orientation.html#cb1012-32" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span></code></pre></div>
-<div class="sourceCode" id="cb1013"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1013-1"><a href="object-orientation.html#cb1013-1" tabindex="-1"></a>emp_1 <span class="op">=</span> Employee(<span class="st">&#39;Corey&#39;</span>, <span class="st">&#39;Schafer&#39;</span>, <span class="dv">50000</span>)</span>
-<span id="cb1013-2"><a href="object-orientation.html#cb1013-2" tabindex="-1"></a>emp_2 <span class="op">=</span> Employee(<span class="st">&#39;Test&#39;</span>, <span class="st">&#39;Employee&#39;</span>, <span class="dv">60000</span>)</span>
-<span id="cb1013-3"><a href="object-orientation.html#cb1013-3" tabindex="-1"></a></span>
-<span id="cb1013-4"><a href="object-orientation.html#cb1013-4" tabindex="-1"></a>Employee.set_raise_amt(<span class="fl">1.05</span>)</span>
+<div class="sourceCode" id="cb1013"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1013-1"><a href="object-orientation.html#cb1013-1" tabindex="-1"></a><span class="kw">class</span> Employee(<span class="bu">object</span>):</span>
+<span id="cb1013-2"><a href="object-orientation.html#cb1013-2" tabindex="-1"></a></span>
+<span id="cb1013-3"><a href="object-orientation.html#cb1013-3" tabindex="-1"></a>    num_of_emps <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1013-4"><a href="object-orientation.html#cb1013-4" tabindex="-1"></a>    raise_amt <span class="op">=</span> <span class="fl">1.04</span></span>
 <span id="cb1013-5"><a href="object-orientation.html#cb1013-5" tabindex="-1"></a></span>
-<span id="cb1013-6"><a href="object-orientation.html#cb1013-6" tabindex="-1"></a><span class="bu">print</span>(Employee.raise_amt)</span></code></pre></div>
+<span id="cb1013-6"><a href="object-orientation.html#cb1013-6" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, first, last, pay):</span>
+<span id="cb1013-7"><a href="object-orientation.html#cb1013-7" tabindex="-1"></a>        <span class="va">self</span>.first <span class="op">=</span> first</span>
+<span id="cb1013-8"><a href="object-orientation.html#cb1013-8" tabindex="-1"></a>        <span class="va">self</span>.last <span class="op">=</span> last</span>
+<span id="cb1013-9"><a href="object-orientation.html#cb1013-9" tabindex="-1"></a>        <span class="va">self</span>.email <span class="op">=</span> first <span class="op">+</span> <span class="st">&#39;.&#39;</span> <span class="op">+</span> last <span class="op">+</span> <span class="st">&#39;@email.com&#39;</span></span>
+<span id="cb1013-10"><a href="object-orientation.html#cb1013-10" tabindex="-1"></a>        <span class="va">self</span>.pay <span class="op">=</span> pay</span>
+<span id="cb1013-11"><a href="object-orientation.html#cb1013-11" tabindex="-1"></a>        Employee.num_of_emps <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1013-12"><a href="object-orientation.html#cb1013-12" tabindex="-1"></a></span>
+<span id="cb1013-13"><a href="object-orientation.html#cb1013-13" tabindex="-1"></a>    <span class="kw">def</span> fullname(<span class="va">self</span>):</span>
+<span id="cb1013-14"><a href="object-orientation.html#cb1013-14" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&#39;</span><span class="sc">{}</span><span class="st"> </span><span class="sc">{}</span><span class="st">&#39;</span>.<span class="bu">format</span>(<span class="va">self</span>.first, <span class="va">self</span>.last)</span>
+<span id="cb1013-15"><a href="object-orientation.html#cb1013-15" tabindex="-1"></a></span>
+<span id="cb1013-16"><a href="object-orientation.html#cb1013-16" tabindex="-1"></a>    <span class="kw">def</span> apply_raise(<span class="va">self</span>):</span>
+<span id="cb1013-17"><a href="object-orientation.html#cb1013-17" tabindex="-1"></a>        <span class="va">self</span>.pay <span class="op">=</span> <span class="bu">int</span>(<span class="va">self</span>.pay <span class="op">*</span> <span class="va">self</span>.raise_amt)</span>
+<span id="cb1013-18"><a href="object-orientation.html#cb1013-18" tabindex="-1"></a></span>
+<span id="cb1013-19"><a href="object-orientation.html#cb1013-19" tabindex="-1"></a>    <span class="at">@classmethod</span></span>
+<span id="cb1013-20"><a href="object-orientation.html#cb1013-20" tabindex="-1"></a>    <span class="kw">def</span> set_raise_amt(cls, amount):</span>
+<span id="cb1013-21"><a href="object-orientation.html#cb1013-21" tabindex="-1"></a>        cls.raise_amt <span class="op">=</span> amount</span>
+<span id="cb1013-22"><a href="object-orientation.html#cb1013-22" tabindex="-1"></a></span>
+<span id="cb1013-23"><a href="object-orientation.html#cb1013-23" tabindex="-1"></a>    <span class="at">@classmethod</span></span>
+<span id="cb1013-24"><a href="object-orientation.html#cb1013-24" tabindex="-1"></a>    <span class="kw">def</span> from_string(cls, emp_str):</span>
+<span id="cb1013-25"><a href="object-orientation.html#cb1013-25" tabindex="-1"></a>        first, last, pay <span class="op">=</span> emp_str.split(<span class="st">&#39;-&#39;</span>)</span>
+<span id="cb1013-26"><a href="object-orientation.html#cb1013-26" tabindex="-1"></a>        <span class="cf">return</span> cls(first, last, pay)</span>
+<span id="cb1013-27"><a href="object-orientation.html#cb1013-27" tabindex="-1"></a></span>
+<span id="cb1013-28"><a href="object-orientation.html#cb1013-28" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
+<span id="cb1013-29"><a href="object-orientation.html#cb1013-29" tabindex="-1"></a>    <span class="kw">def</span> is_workday(day):</span>
+<span id="cb1013-30"><a href="object-orientation.html#cb1013-30" tabindex="-1"></a>        <span class="cf">if</span> day.weekday() <span class="op">==</span> <span class="dv">5</span> <span class="kw">or</span> day.weekday() <span class="op">==</span> <span class="dv">6</span>:</span>
+<span id="cb1013-31"><a href="object-orientation.html#cb1013-31" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb1013-32"><a href="object-orientation.html#cb1013-32" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span></code></pre></div>
+<div class="sourceCode" id="cb1014"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1014-1"><a href="object-orientation.html#cb1014-1" tabindex="-1"></a>emp_1 <span class="op">=</span> Employee(<span class="st">&#39;Corey&#39;</span>, <span class="st">&#39;Schafer&#39;</span>, <span class="dv">50000</span>)</span>
+<span id="cb1014-2"><a href="object-orientation.html#cb1014-2" tabindex="-1"></a>emp_2 <span class="op">=</span> Employee(<span class="st">&#39;Test&#39;</span>, <span class="st">&#39;Employee&#39;</span>, <span class="dv">60000</span>)</span>
+<span id="cb1014-3"><a href="object-orientation.html#cb1014-3" tabindex="-1"></a></span>
+<span id="cb1014-4"><a href="object-orientation.html#cb1014-4" tabindex="-1"></a>Employee.set_raise_amt(<span class="fl">1.05</span>)</span>
+<span id="cb1014-5"><a href="object-orientation.html#cb1014-5" tabindex="-1"></a></span>
+<span id="cb1014-6"><a href="object-orientation.html#cb1014-6" tabindex="-1"></a><span class="bu">print</span>(Employee.raise_amt)</span></code></pre></div>
 <pre class="Rout"><code>1.05</code></pre>
-<div class="sourceCode" id="cb1015"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1015-1"><a href="object-orientation.html#cb1015-1" tabindex="-1"></a><span class="bu">print</span>(emp_1.raise_amt)</span></code></pre></div>
+<div class="sourceCode" id="cb1016"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1016-1"><a href="object-orientation.html#cb1016-1" tabindex="-1"></a><span class="bu">print</span>(emp_1.raise_amt)</span></code></pre></div>
 <pre class="Rout"><code>1.05</code></pre>
-<div class="sourceCode" id="cb1017"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1017-1"><a href="object-orientation.html#cb1017-1" tabindex="-1"></a><span class="bu">print</span>(emp_2.raise_amt)</span></code></pre></div>
+<div class="sourceCode" id="cb1018"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1018-1"><a href="object-orientation.html#cb1018-1" tabindex="-1"></a><span class="bu">print</span>(emp_2.raise_amt)</span></code></pre></div>
 <pre class="Rout"><code>1.05</code></pre>
-<div class="sourceCode" id="cb1019"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1019-1"><a href="object-orientation.html#cb1019-1" tabindex="-1"></a>emp_str_1 <span class="op">=</span> <span class="st">&#39;John-Doe-70000&#39;</span></span>
-<span id="cb1019-2"><a href="object-orientation.html#cb1019-2" tabindex="-1"></a>emp_str_2 <span class="op">=</span> <span class="st">&#39;Steve-Smith-30000&#39;</span></span>
-<span id="cb1019-3"><a href="object-orientation.html#cb1019-3" tabindex="-1"></a>emp_str_3 <span class="op">=</span> <span class="st">&#39;Jane-Doe-90000&#39;</span></span>
-<span id="cb1019-4"><a href="object-orientation.html#cb1019-4" tabindex="-1"></a></span>
-<span id="cb1019-5"><a href="object-orientation.html#cb1019-5" tabindex="-1"></a>first, last, pay <span class="op">=</span> emp_str_1.split(<span class="st">&#39;-&#39;</span>)</span>
-<span id="cb1019-6"><a href="object-orientation.html#cb1019-6" tabindex="-1"></a></span>
-<span id="cb1019-7"><a href="object-orientation.html#cb1019-7" tabindex="-1"></a><span class="co">#new_emp_1 = Employee(first, last, pay)</span></span>
-<span id="cb1019-8"><a href="object-orientation.html#cb1019-8" tabindex="-1"></a>new_emp_1 <span class="op">=</span> Employee.from_string(emp_str_1)</span>
-<span id="cb1019-9"><a href="object-orientation.html#cb1019-9" tabindex="-1"></a></span>
-<span id="cb1019-10"><a href="object-orientation.html#cb1019-10" tabindex="-1"></a><span class="bu">print</span>(new_emp_1.email)</span></code></pre></div>
+<div class="sourceCode" id="cb1020"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1020-1"><a href="object-orientation.html#cb1020-1" tabindex="-1"></a>emp_str_1 <span class="op">=</span> <span class="st">&#39;John-Doe-70000&#39;</span></span>
+<span id="cb1020-2"><a href="object-orientation.html#cb1020-2" tabindex="-1"></a>emp_str_2 <span class="op">=</span> <span class="st">&#39;Steve-Smith-30000&#39;</span></span>
+<span id="cb1020-3"><a href="object-orientation.html#cb1020-3" tabindex="-1"></a>emp_str_3 <span class="op">=</span> <span class="st">&#39;Jane-Doe-90000&#39;</span></span>
+<span id="cb1020-4"><a href="object-orientation.html#cb1020-4" tabindex="-1"></a></span>
+<span id="cb1020-5"><a href="object-orientation.html#cb1020-5" tabindex="-1"></a>first, last, pay <span class="op">=</span> emp_str_1.split(<span class="st">&#39;-&#39;</span>)</span>
+<span id="cb1020-6"><a href="object-orientation.html#cb1020-6" tabindex="-1"></a></span>
+<span id="cb1020-7"><a href="object-orientation.html#cb1020-7" tabindex="-1"></a><span class="co">#new_emp_1 = Employee(first, last, pay)</span></span>
+<span id="cb1020-8"><a href="object-orientation.html#cb1020-8" tabindex="-1"></a>new_emp_1 <span class="op">=</span> Employee.from_string(emp_str_1)</span>
+<span id="cb1020-9"><a href="object-orientation.html#cb1020-9" tabindex="-1"></a></span>
+<span id="cb1020-10"><a href="object-orientation.html#cb1020-10" tabindex="-1"></a><span class="bu">print</span>(new_emp_1.email)</span></code></pre></div>
 <pre class="Rout"><code>John.Doe@email.com</code></pre>
-<div class="sourceCode" id="cb1021"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1021-1"><a href="object-orientation.html#cb1021-1" tabindex="-1"></a><span class="bu">print</span>(new_emp_1.pay)</span></code></pre></div>
+<div class="sourceCode" id="cb1022"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1022-1"><a href="object-orientation.html#cb1022-1" tabindex="-1"></a><span class="bu">print</span>(new_emp_1.pay)</span></code></pre></div>
 <pre class="Rout"><code>70000</code></pre>
-<div class="sourceCode" id="cb1023"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1023-1"><a href="object-orientation.html#cb1023-1" tabindex="-1"></a><span class="im">import</span> datetime</span>
-<span id="cb1023-2"><a href="object-orientation.html#cb1023-2" tabindex="-1"></a>my_date <span class="op">=</span> datetime.date(<span class="dv">2016</span>, <span class="dv">7</span>, <span class="dv">11</span>)</span>
-<span id="cb1023-3"><a href="object-orientation.html#cb1023-3" tabindex="-1"></a></span>
-<span id="cb1023-4"><a href="object-orientation.html#cb1023-4" tabindex="-1"></a><span class="bu">print</span>(Employee.is_workday(my_date))</span></code></pre></div>
+<div class="sourceCode" id="cb1024"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1024-1"><a href="object-orientation.html#cb1024-1" tabindex="-1"></a><span class="im">import</span> datetime</span>
+<span id="cb1024-2"><a href="object-orientation.html#cb1024-2" tabindex="-1"></a>my_date <span class="op">=</span> datetime.date(<span class="dv">2016</span>, <span class="dv">7</span>, <span class="dv">11</span>)</span>
+<span id="cb1024-3"><a href="object-orientation.html#cb1024-3" tabindex="-1"></a></span>
+<span id="cb1024-4"><a href="object-orientation.html#cb1024-4" tabindex="-1"></a><span class="bu">print</span>(Employee.is_workday(my_date))</span></code></pre></div>
 <pre class="Rout"><code>True</code></pre>
 </div>
 <div id="class-inheritance" class="section level2 hasAnchor" number="16.4">
@@ -727,64 +728,64 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <li>Moreover, with the class definition, we can create <strong>suborindate</strong> or <strong>superordinate</strong> classess based on the original class. These sub-classess have taxonomic relationships with the original super class.</li>
 <li>Extend the original class constructor methods using <code>super()</code></li>
 </ul>
-<div class="sourceCode" id="cb1025"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1025-1"><a href="object-orientation.html#cb1025-1" tabindex="-1"></a><span class="kw">class</span> Employee:</span>
-<span id="cb1025-2"><a href="object-orientation.html#cb1025-2" tabindex="-1"></a></span>
-<span id="cb1025-3"><a href="object-orientation.html#cb1025-3" tabindex="-1"></a>    raise_amt <span class="op">=</span> <span class="fl">1.04</span></span>
-<span id="cb1025-4"><a href="object-orientation.html#cb1025-4" tabindex="-1"></a></span>
-<span id="cb1025-5"><a href="object-orientation.html#cb1025-5" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, first, last, pay):</span>
-<span id="cb1025-6"><a href="object-orientation.html#cb1025-6" tabindex="-1"></a>        <span class="va">self</span>.first <span class="op">=</span> first</span>
-<span id="cb1025-7"><a href="object-orientation.html#cb1025-7" tabindex="-1"></a>        <span class="va">self</span>.last <span class="op">=</span> last</span>
-<span id="cb1025-8"><a href="object-orientation.html#cb1025-8" tabindex="-1"></a>        <span class="va">self</span>.email <span class="op">=</span> first <span class="op">+</span> <span class="st">&#39;.&#39;</span> <span class="op">+</span> last <span class="op">+</span> <span class="st">&#39;@email.com&#39;</span></span>
-<span id="cb1025-9"><a href="object-orientation.html#cb1025-9" tabindex="-1"></a>        <span class="va">self</span>.pay <span class="op">=</span> pay</span>
-<span id="cb1025-10"><a href="object-orientation.html#cb1025-10" tabindex="-1"></a></span>
-<span id="cb1025-11"><a href="object-orientation.html#cb1025-11" tabindex="-1"></a>    <span class="kw">def</span> fullname(<span class="va">self</span>):</span>
-<span id="cb1025-12"><a href="object-orientation.html#cb1025-12" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&#39;</span><span class="sc">{}</span><span class="st"> </span><span class="sc">{}</span><span class="st">&#39;</span>.<span class="bu">format</span>(<span class="va">self</span>.first, <span class="va">self</span>.last)</span>
-<span id="cb1025-13"><a href="object-orientation.html#cb1025-13" tabindex="-1"></a></span>
-<span id="cb1025-14"><a href="object-orientation.html#cb1025-14" tabindex="-1"></a>    <span class="kw">def</span> apply_raise(<span class="va">self</span>):</span>
-<span id="cb1025-15"><a href="object-orientation.html#cb1025-15" tabindex="-1"></a>        <span class="va">self</span>.pay <span class="op">=</span> <span class="bu">int</span>(<span class="va">self</span>.pay <span class="op">*</span> <span class="va">self</span>.raise_amt)</span>
-<span id="cb1025-16"><a href="object-orientation.html#cb1025-16" tabindex="-1"></a></span>
-<span id="cb1025-17"><a href="object-orientation.html#cb1025-17" tabindex="-1"></a></span>
-<span id="cb1025-18"><a href="object-orientation.html#cb1025-18" tabindex="-1"></a><span class="kw">class</span> Developer(Employee):</span>
-<span id="cb1025-19"><a href="object-orientation.html#cb1025-19" tabindex="-1"></a>    raise_amt <span class="op">=</span> <span class="fl">1.10</span></span>
-<span id="cb1025-20"><a href="object-orientation.html#cb1025-20" tabindex="-1"></a></span>
-<span id="cb1025-21"><a href="object-orientation.html#cb1025-21" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, first, last, pay, prog_lang):</span>
-<span id="cb1025-22"><a href="object-orientation.html#cb1025-22" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(first, last, pay)</span>
-<span id="cb1025-23"><a href="object-orientation.html#cb1025-23" tabindex="-1"></a>        <span class="va">self</span>.prog_lang <span class="op">=</span> prog_lang</span>
-<span id="cb1025-24"><a href="object-orientation.html#cb1025-24" tabindex="-1"></a></span>
-<span id="cb1025-25"><a href="object-orientation.html#cb1025-25" tabindex="-1"></a></span>
-<span id="cb1025-26"><a href="object-orientation.html#cb1025-26" tabindex="-1"></a><span class="kw">class</span> Manager(Employee):</span>
-<span id="cb1025-27"><a href="object-orientation.html#cb1025-27" tabindex="-1"></a></span>
-<span id="cb1025-28"><a href="object-orientation.html#cb1025-28" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, first, last, pay, employees<span class="op">=</span><span class="va">None</span>):</span>
-<span id="cb1025-29"><a href="object-orientation.html#cb1025-29" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(first, last, pay)</span>
-<span id="cb1025-30"><a href="object-orientation.html#cb1025-30" tabindex="-1"></a>        <span class="cf">if</span> employees <span class="kw">is</span> <span class="va">None</span>:</span>
-<span id="cb1025-31"><a href="object-orientation.html#cb1025-31" tabindex="-1"></a>            <span class="va">self</span>.employees <span class="op">=</span> []</span>
-<span id="cb1025-32"><a href="object-orientation.html#cb1025-32" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb1025-33"><a href="object-orientation.html#cb1025-33" tabindex="-1"></a>            <span class="va">self</span>.employees <span class="op">=</span> employees</span>
-<span id="cb1025-34"><a href="object-orientation.html#cb1025-34" tabindex="-1"></a></span>
-<span id="cb1025-35"><a href="object-orientation.html#cb1025-35" tabindex="-1"></a>    <span class="kw">def</span> add_emp(<span class="va">self</span>, emp):</span>
-<span id="cb1025-36"><a href="object-orientation.html#cb1025-36" tabindex="-1"></a>        <span class="cf">if</span> emp <span class="kw">not</span> <span class="kw">in</span> <span class="va">self</span>.employees:</span>
-<span id="cb1025-37"><a href="object-orientation.html#cb1025-37" tabindex="-1"></a>            <span class="va">self</span>.employees.append(emp)</span>
-<span id="cb1025-38"><a href="object-orientation.html#cb1025-38" tabindex="-1"></a></span>
-<span id="cb1025-39"><a href="object-orientation.html#cb1025-39" tabindex="-1"></a>    <span class="kw">def</span> remove_emp(<span class="va">self</span>, emp):</span>
-<span id="cb1025-40"><a href="object-orientation.html#cb1025-40" tabindex="-1"></a>        <span class="cf">if</span> emp <span class="kw">in</span> <span class="va">self</span>.employees:</span>
-<span id="cb1025-41"><a href="object-orientation.html#cb1025-41" tabindex="-1"></a>            <span class="va">self</span>.employees.remove(emp)</span>
-<span id="cb1025-42"><a href="object-orientation.html#cb1025-42" tabindex="-1"></a></span>
-<span id="cb1025-43"><a href="object-orientation.html#cb1025-43" tabindex="-1"></a>    <span class="kw">def</span> print_emps(<span class="va">self</span>):</span>
-<span id="cb1025-44"><a href="object-orientation.html#cb1025-44" tabindex="-1"></a>        <span class="cf">for</span> emp <span class="kw">in</span> <span class="va">self</span>.employees:</span>
-<span id="cb1025-45"><a href="object-orientation.html#cb1025-45" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">&#39;--&gt;&#39;</span>, emp.fullname())</span>
-<span id="cb1025-46"><a href="object-orientation.html#cb1025-46" tabindex="-1"></a></span>
-<span id="cb1025-47"><a href="object-orientation.html#cb1025-47" tabindex="-1"></a></span>
-<span id="cb1025-48"><a href="object-orientation.html#cb1025-48" tabindex="-1"></a>dev_1 <span class="op">=</span> Developer(<span class="st">&#39;Alvin&#39;</span>, <span class="st">&#39;Chen&#39;</span>, <span class="dv">50000</span>, <span class="st">&#39;Python&#39;</span>)</span>
-<span id="cb1025-49"><a href="object-orientation.html#cb1025-49" tabindex="-1"></a>dev_2 <span class="op">=</span> Developer(<span class="st">&#39;John&#39;</span>, <span class="st">&#39;Doe&#39;</span>, <span class="dv">60000</span>, <span class="st">&#39;R&#39;</span>)</span>
-<span id="cb1025-50"><a href="object-orientation.html#cb1025-50" tabindex="-1"></a></span>
-<span id="cb1025-51"><a href="object-orientation.html#cb1025-51" tabindex="-1"></a>mgr_1 <span class="op">=</span> Manager(<span class="st">&#39;Anne&#39;</span>, <span class="st">&#39;Mary&#39;</span>, <span class="dv">90000</span>, [dev_1])</span>
-<span id="cb1025-52"><a href="object-orientation.html#cb1025-52" tabindex="-1"></a></span>
-<span id="cb1025-53"><a href="object-orientation.html#cb1025-53" tabindex="-1"></a><span class="bu">print</span>(mgr_1.email)</span></code></pre></div>
+<div class="sourceCode" id="cb1026"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1026-1"><a href="object-orientation.html#cb1026-1" tabindex="-1"></a><span class="kw">class</span> Employee:</span>
+<span id="cb1026-2"><a href="object-orientation.html#cb1026-2" tabindex="-1"></a></span>
+<span id="cb1026-3"><a href="object-orientation.html#cb1026-3" tabindex="-1"></a>    raise_amt <span class="op">=</span> <span class="fl">1.04</span></span>
+<span id="cb1026-4"><a href="object-orientation.html#cb1026-4" tabindex="-1"></a></span>
+<span id="cb1026-5"><a href="object-orientation.html#cb1026-5" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, first, last, pay):</span>
+<span id="cb1026-6"><a href="object-orientation.html#cb1026-6" tabindex="-1"></a>        <span class="va">self</span>.first <span class="op">=</span> first</span>
+<span id="cb1026-7"><a href="object-orientation.html#cb1026-7" tabindex="-1"></a>        <span class="va">self</span>.last <span class="op">=</span> last</span>
+<span id="cb1026-8"><a href="object-orientation.html#cb1026-8" tabindex="-1"></a>        <span class="va">self</span>.email <span class="op">=</span> first <span class="op">+</span> <span class="st">&#39;.&#39;</span> <span class="op">+</span> last <span class="op">+</span> <span class="st">&#39;@email.com&#39;</span></span>
+<span id="cb1026-9"><a href="object-orientation.html#cb1026-9" tabindex="-1"></a>        <span class="va">self</span>.pay <span class="op">=</span> pay</span>
+<span id="cb1026-10"><a href="object-orientation.html#cb1026-10" tabindex="-1"></a></span>
+<span id="cb1026-11"><a href="object-orientation.html#cb1026-11" tabindex="-1"></a>    <span class="kw">def</span> fullname(<span class="va">self</span>):</span>
+<span id="cb1026-12"><a href="object-orientation.html#cb1026-12" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&#39;</span><span class="sc">{}</span><span class="st"> </span><span class="sc">{}</span><span class="st">&#39;</span>.<span class="bu">format</span>(<span class="va">self</span>.first, <span class="va">self</span>.last)</span>
+<span id="cb1026-13"><a href="object-orientation.html#cb1026-13" tabindex="-1"></a></span>
+<span id="cb1026-14"><a href="object-orientation.html#cb1026-14" tabindex="-1"></a>    <span class="kw">def</span> apply_raise(<span class="va">self</span>):</span>
+<span id="cb1026-15"><a href="object-orientation.html#cb1026-15" tabindex="-1"></a>        <span class="va">self</span>.pay <span class="op">=</span> <span class="bu">int</span>(<span class="va">self</span>.pay <span class="op">*</span> <span class="va">self</span>.raise_amt)</span>
+<span id="cb1026-16"><a href="object-orientation.html#cb1026-16" tabindex="-1"></a></span>
+<span id="cb1026-17"><a href="object-orientation.html#cb1026-17" tabindex="-1"></a></span>
+<span id="cb1026-18"><a href="object-orientation.html#cb1026-18" tabindex="-1"></a><span class="kw">class</span> Developer(Employee):</span>
+<span id="cb1026-19"><a href="object-orientation.html#cb1026-19" tabindex="-1"></a>    raise_amt <span class="op">=</span> <span class="fl">1.10</span></span>
+<span id="cb1026-20"><a href="object-orientation.html#cb1026-20" tabindex="-1"></a></span>
+<span id="cb1026-21"><a href="object-orientation.html#cb1026-21" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, first, last, pay, prog_lang):</span>
+<span id="cb1026-22"><a href="object-orientation.html#cb1026-22" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(first, last, pay)</span>
+<span id="cb1026-23"><a href="object-orientation.html#cb1026-23" tabindex="-1"></a>        <span class="va">self</span>.prog_lang <span class="op">=</span> prog_lang</span>
+<span id="cb1026-24"><a href="object-orientation.html#cb1026-24" tabindex="-1"></a></span>
+<span id="cb1026-25"><a href="object-orientation.html#cb1026-25" tabindex="-1"></a></span>
+<span id="cb1026-26"><a href="object-orientation.html#cb1026-26" tabindex="-1"></a><span class="kw">class</span> Manager(Employee):</span>
+<span id="cb1026-27"><a href="object-orientation.html#cb1026-27" tabindex="-1"></a></span>
+<span id="cb1026-28"><a href="object-orientation.html#cb1026-28" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, first, last, pay, employees<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb1026-29"><a href="object-orientation.html#cb1026-29" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(first, last, pay)</span>
+<span id="cb1026-30"><a href="object-orientation.html#cb1026-30" tabindex="-1"></a>        <span class="cf">if</span> employees <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb1026-31"><a href="object-orientation.html#cb1026-31" tabindex="-1"></a>            <span class="va">self</span>.employees <span class="op">=</span> []</span>
+<span id="cb1026-32"><a href="object-orientation.html#cb1026-32" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb1026-33"><a href="object-orientation.html#cb1026-33" tabindex="-1"></a>            <span class="va">self</span>.employees <span class="op">=</span> employees</span>
+<span id="cb1026-34"><a href="object-orientation.html#cb1026-34" tabindex="-1"></a></span>
+<span id="cb1026-35"><a href="object-orientation.html#cb1026-35" tabindex="-1"></a>    <span class="kw">def</span> add_emp(<span class="va">self</span>, emp):</span>
+<span id="cb1026-36"><a href="object-orientation.html#cb1026-36" tabindex="-1"></a>        <span class="cf">if</span> emp <span class="kw">not</span> <span class="kw">in</span> <span class="va">self</span>.employees:</span>
+<span id="cb1026-37"><a href="object-orientation.html#cb1026-37" tabindex="-1"></a>            <span class="va">self</span>.employees.append(emp)</span>
+<span id="cb1026-38"><a href="object-orientation.html#cb1026-38" tabindex="-1"></a></span>
+<span id="cb1026-39"><a href="object-orientation.html#cb1026-39" tabindex="-1"></a>    <span class="kw">def</span> remove_emp(<span class="va">self</span>, emp):</span>
+<span id="cb1026-40"><a href="object-orientation.html#cb1026-40" tabindex="-1"></a>        <span class="cf">if</span> emp <span class="kw">in</span> <span class="va">self</span>.employees:</span>
+<span id="cb1026-41"><a href="object-orientation.html#cb1026-41" tabindex="-1"></a>            <span class="va">self</span>.employees.remove(emp)</span>
+<span id="cb1026-42"><a href="object-orientation.html#cb1026-42" tabindex="-1"></a></span>
+<span id="cb1026-43"><a href="object-orientation.html#cb1026-43" tabindex="-1"></a>    <span class="kw">def</span> print_emps(<span class="va">self</span>):</span>
+<span id="cb1026-44"><a href="object-orientation.html#cb1026-44" tabindex="-1"></a>        <span class="cf">for</span> emp <span class="kw">in</span> <span class="va">self</span>.employees:</span>
+<span id="cb1026-45"><a href="object-orientation.html#cb1026-45" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">&#39;--&gt;&#39;</span>, emp.fullname())</span>
+<span id="cb1026-46"><a href="object-orientation.html#cb1026-46" tabindex="-1"></a></span>
+<span id="cb1026-47"><a href="object-orientation.html#cb1026-47" tabindex="-1"></a></span>
+<span id="cb1026-48"><a href="object-orientation.html#cb1026-48" tabindex="-1"></a>dev_1 <span class="op">=</span> Developer(<span class="st">&#39;Alvin&#39;</span>, <span class="st">&#39;Chen&#39;</span>, <span class="dv">50000</span>, <span class="st">&#39;Python&#39;</span>)</span>
+<span id="cb1026-49"><a href="object-orientation.html#cb1026-49" tabindex="-1"></a>dev_2 <span class="op">=</span> Developer(<span class="st">&#39;John&#39;</span>, <span class="st">&#39;Doe&#39;</span>, <span class="dv">60000</span>, <span class="st">&#39;R&#39;</span>)</span>
+<span id="cb1026-50"><a href="object-orientation.html#cb1026-50" tabindex="-1"></a></span>
+<span id="cb1026-51"><a href="object-orientation.html#cb1026-51" tabindex="-1"></a>mgr_1 <span class="op">=</span> Manager(<span class="st">&#39;Anne&#39;</span>, <span class="st">&#39;Mary&#39;</span>, <span class="dv">90000</span>, [dev_1])</span>
+<span id="cb1026-52"><a href="object-orientation.html#cb1026-52" tabindex="-1"></a></span>
+<span id="cb1026-53"><a href="object-orientation.html#cb1026-53" tabindex="-1"></a><span class="bu">print</span>(mgr_1.email)</span></code></pre></div>
 <pre class="Rout"><code>Anne.Mary@email.com</code></pre>
-<div class="sourceCode" id="cb1027"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1027-1"><a href="object-orientation.html#cb1027-1" tabindex="-1"></a>mgr_1.add_emp(dev_2)</span>
-<span id="cb1027-2"><a href="object-orientation.html#cb1027-2" tabindex="-1"></a>mgr_1.remove_emp(dev_2)</span>
-<span id="cb1027-3"><a href="object-orientation.html#cb1027-3" tabindex="-1"></a></span>
-<span id="cb1027-4"><a href="object-orientation.html#cb1027-4" tabindex="-1"></a>mgr_1.print_emps()</span></code></pre></div>
+<div class="sourceCode" id="cb1028"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1028-1"><a href="object-orientation.html#cb1028-1" tabindex="-1"></a>mgr_1.add_emp(dev_2)</span>
+<span id="cb1028-2"><a href="object-orientation.html#cb1028-2" tabindex="-1"></a>mgr_1.remove_emp(dev_2)</span>
+<span id="cb1028-3"><a href="object-orientation.html#cb1028-3" tabindex="-1"></a></span>
+<span id="cb1028-4"><a href="object-orientation.html#cb1028-4" tabindex="-1"></a>mgr_1.print_emps()</span></code></pre></div>
 <pre class="Rout"><code>--&gt; Alvin Chen</code></pre>
 </div>
 <div id="special-methods" class="section level2 hasAnchor" number="16.5">
@@ -793,41 +794,41 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <li>Dunder methods (double-underscore)</li>
 <li>To avoid overloading the expressions in coding</li>
 </ul>
-<div class="sourceCode" id="cb1029"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1029-1"><a href="object-orientation.html#cb1029-1" tabindex="-1"></a><span class="kw">class</span> Employee:</span>
-<span id="cb1029-2"><a href="object-orientation.html#cb1029-2" tabindex="-1"></a></span>
-<span id="cb1029-3"><a href="object-orientation.html#cb1029-3" tabindex="-1"></a>    raise_amt <span class="op">=</span> <span class="fl">1.04</span></span>
-<span id="cb1029-4"><a href="object-orientation.html#cb1029-4" tabindex="-1"></a></span>
-<span id="cb1029-5"><a href="object-orientation.html#cb1029-5" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, first, last, pay):</span>
-<span id="cb1029-6"><a href="object-orientation.html#cb1029-6" tabindex="-1"></a>        <span class="va">self</span>.first <span class="op">=</span> first</span>
-<span id="cb1029-7"><a href="object-orientation.html#cb1029-7" tabindex="-1"></a>        <span class="va">self</span>.last <span class="op">=</span> last</span>
-<span id="cb1029-8"><a href="object-orientation.html#cb1029-8" tabindex="-1"></a>        <span class="va">self</span>.email <span class="op">=</span> first <span class="op">+</span> <span class="st">&#39;.&#39;</span> <span class="op">+</span> last <span class="op">+</span> <span class="st">&#39;@email.com&#39;</span></span>
-<span id="cb1029-9"><a href="object-orientation.html#cb1029-9" tabindex="-1"></a>        <span class="va">self</span>.pay <span class="op">=</span> pay</span>
-<span id="cb1029-10"><a href="object-orientation.html#cb1029-10" tabindex="-1"></a></span>
-<span id="cb1029-11"><a href="object-orientation.html#cb1029-11" tabindex="-1"></a>    <span class="kw">def</span> fullname(<span class="va">self</span>):</span>
-<span id="cb1029-12"><a href="object-orientation.html#cb1029-12" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&#39;</span><span class="sc">{}</span><span class="st"> </span><span class="sc">{}</span><span class="st">&#39;</span>.<span class="bu">format</span>(<span class="va">self</span>.first, <span class="va">self</span>.last)</span>
-<span id="cb1029-13"><a href="object-orientation.html#cb1029-13" tabindex="-1"></a></span>
-<span id="cb1029-14"><a href="object-orientation.html#cb1029-14" tabindex="-1"></a>    <span class="kw">def</span> apply_raise(<span class="va">self</span>):</span>
-<span id="cb1029-15"><a href="object-orientation.html#cb1029-15" tabindex="-1"></a>        <span class="va">self</span>.pay <span class="op">=</span> <span class="bu">int</span>(<span class="va">self</span>.pay <span class="op">*</span> <span class="va">self</span>.raise_amt)</span>
-<span id="cb1029-16"><a href="object-orientation.html#cb1029-16" tabindex="-1"></a></span>
-<span id="cb1029-17"><a href="object-orientation.html#cb1029-17" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__repr__</span>(<span class="va">self</span>):</span>
-<span id="cb1029-18"><a href="object-orientation.html#cb1029-18" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;Employee(&#39;</span><span class="sc">{}</span><span class="st">&#39;, &#39;</span><span class="sc">{}</span><span class="st">&#39;, </span><span class="sc">{}</span><span class="st">)&quot;</span>.<span class="bu">format</span>(<span class="va">self</span>.first, <span class="va">self</span>.last, <span class="va">self</span>.pay)</span>
-<span id="cb1029-19"><a href="object-orientation.html#cb1029-19" tabindex="-1"></a></span>
-<span id="cb1029-20"><a href="object-orientation.html#cb1029-20" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
-<span id="cb1029-21"><a href="object-orientation.html#cb1029-21" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&#39;</span><span class="sc">{}</span><span class="st"> - </span><span class="sc">{}</span><span class="st">&#39;</span>.<span class="bu">format</span>(<span class="va">self</span>.fullname(), <span class="va">self</span>.email)</span>
-<span id="cb1029-22"><a href="object-orientation.html#cb1029-22" tabindex="-1"></a></span>
-<span id="cb1029-23"><a href="object-orientation.html#cb1029-23" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__add__</span>(<span class="va">self</span>, other):</span>
-<span id="cb1029-24"><a href="object-orientation.html#cb1029-24" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.pay <span class="op">+</span> other.pay</span>
-<span id="cb1029-25"><a href="object-orientation.html#cb1029-25" tabindex="-1"></a></span>
-<span id="cb1029-26"><a href="object-orientation.html#cb1029-26" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__len__</span>(<span class="va">self</span>):</span>
-<span id="cb1029-27"><a href="object-orientation.html#cb1029-27" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">len</span>(<span class="va">self</span>.fullname())</span>
-<span id="cb1029-28"><a href="object-orientation.html#cb1029-28" tabindex="-1"></a></span>
-<span id="cb1029-29"><a href="object-orientation.html#cb1029-29" tabindex="-1"></a></span>
-<span id="cb1029-30"><a href="object-orientation.html#cb1029-30" tabindex="-1"></a>emp_1 <span class="op">=</span> Employee(<span class="st">&#39;Corey&#39;</span>, <span class="st">&#39;Schafer&#39;</span>, <span class="dv">50000</span>)</span>
-<span id="cb1029-31"><a href="object-orientation.html#cb1029-31" tabindex="-1"></a>emp_2 <span class="op">=</span> Employee(<span class="st">&#39;Test&#39;</span>, <span class="st">&#39;Employee&#39;</span>, <span class="dv">60000</span>)</span>
-<span id="cb1029-32"><a href="object-orientation.html#cb1029-32" tabindex="-1"></a></span>
-<span id="cb1029-33"><a href="object-orientation.html#cb1029-33" tabindex="-1"></a><span class="co"># print(emp_1 + emp_2)</span></span>
-<span id="cb1029-34"><a href="object-orientation.html#cb1029-34" tabindex="-1"></a></span>
-<span id="cb1029-35"><a href="object-orientation.html#cb1029-35" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(emp_1))</span></code></pre></div>
+<div class="sourceCode" id="cb1030"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1030-1"><a href="object-orientation.html#cb1030-1" tabindex="-1"></a><span class="kw">class</span> Employee:</span>
+<span id="cb1030-2"><a href="object-orientation.html#cb1030-2" tabindex="-1"></a></span>
+<span id="cb1030-3"><a href="object-orientation.html#cb1030-3" tabindex="-1"></a>    raise_amt <span class="op">=</span> <span class="fl">1.04</span></span>
+<span id="cb1030-4"><a href="object-orientation.html#cb1030-4" tabindex="-1"></a></span>
+<span id="cb1030-5"><a href="object-orientation.html#cb1030-5" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, first, last, pay):</span>
+<span id="cb1030-6"><a href="object-orientation.html#cb1030-6" tabindex="-1"></a>        <span class="va">self</span>.first <span class="op">=</span> first</span>
+<span id="cb1030-7"><a href="object-orientation.html#cb1030-7" tabindex="-1"></a>        <span class="va">self</span>.last <span class="op">=</span> last</span>
+<span id="cb1030-8"><a href="object-orientation.html#cb1030-8" tabindex="-1"></a>        <span class="va">self</span>.email <span class="op">=</span> first <span class="op">+</span> <span class="st">&#39;.&#39;</span> <span class="op">+</span> last <span class="op">+</span> <span class="st">&#39;@email.com&#39;</span></span>
+<span id="cb1030-9"><a href="object-orientation.html#cb1030-9" tabindex="-1"></a>        <span class="va">self</span>.pay <span class="op">=</span> pay</span>
+<span id="cb1030-10"><a href="object-orientation.html#cb1030-10" tabindex="-1"></a></span>
+<span id="cb1030-11"><a href="object-orientation.html#cb1030-11" tabindex="-1"></a>    <span class="kw">def</span> fullname(<span class="va">self</span>):</span>
+<span id="cb1030-12"><a href="object-orientation.html#cb1030-12" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&#39;</span><span class="sc">{}</span><span class="st"> </span><span class="sc">{}</span><span class="st">&#39;</span>.<span class="bu">format</span>(<span class="va">self</span>.first, <span class="va">self</span>.last)</span>
+<span id="cb1030-13"><a href="object-orientation.html#cb1030-13" tabindex="-1"></a></span>
+<span id="cb1030-14"><a href="object-orientation.html#cb1030-14" tabindex="-1"></a>    <span class="kw">def</span> apply_raise(<span class="va">self</span>):</span>
+<span id="cb1030-15"><a href="object-orientation.html#cb1030-15" tabindex="-1"></a>        <span class="va">self</span>.pay <span class="op">=</span> <span class="bu">int</span>(<span class="va">self</span>.pay <span class="op">*</span> <span class="va">self</span>.raise_amt)</span>
+<span id="cb1030-16"><a href="object-orientation.html#cb1030-16" tabindex="-1"></a></span>
+<span id="cb1030-17"><a href="object-orientation.html#cb1030-17" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__repr__</span>(<span class="va">self</span>):</span>
+<span id="cb1030-18"><a href="object-orientation.html#cb1030-18" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;Employee(&#39;</span><span class="sc">{}</span><span class="st">&#39;, &#39;</span><span class="sc">{}</span><span class="st">&#39;, </span><span class="sc">{}</span><span class="st">)&quot;</span>.<span class="bu">format</span>(<span class="va">self</span>.first, <span class="va">self</span>.last, <span class="va">self</span>.pay)</span>
+<span id="cb1030-19"><a href="object-orientation.html#cb1030-19" tabindex="-1"></a></span>
+<span id="cb1030-20"><a href="object-orientation.html#cb1030-20" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb1030-21"><a href="object-orientation.html#cb1030-21" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&#39;</span><span class="sc">{}</span><span class="st"> - </span><span class="sc">{}</span><span class="st">&#39;</span>.<span class="bu">format</span>(<span class="va">self</span>.fullname(), <span class="va">self</span>.email)</span>
+<span id="cb1030-22"><a href="object-orientation.html#cb1030-22" tabindex="-1"></a></span>
+<span id="cb1030-23"><a href="object-orientation.html#cb1030-23" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__add__</span>(<span class="va">self</span>, other):</span>
+<span id="cb1030-24"><a href="object-orientation.html#cb1030-24" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.pay <span class="op">+</span> other.pay</span>
+<span id="cb1030-25"><a href="object-orientation.html#cb1030-25" tabindex="-1"></a></span>
+<span id="cb1030-26"><a href="object-orientation.html#cb1030-26" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__len__</span>(<span class="va">self</span>):</span>
+<span id="cb1030-27"><a href="object-orientation.html#cb1030-27" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">len</span>(<span class="va">self</span>.fullname())</span>
+<span id="cb1030-28"><a href="object-orientation.html#cb1030-28" tabindex="-1"></a></span>
+<span id="cb1030-29"><a href="object-orientation.html#cb1030-29" tabindex="-1"></a></span>
+<span id="cb1030-30"><a href="object-orientation.html#cb1030-30" tabindex="-1"></a>emp_1 <span class="op">=</span> Employee(<span class="st">&#39;Corey&#39;</span>, <span class="st">&#39;Schafer&#39;</span>, <span class="dv">50000</span>)</span>
+<span id="cb1030-31"><a href="object-orientation.html#cb1030-31" tabindex="-1"></a>emp_2 <span class="op">=</span> Employee(<span class="st">&#39;Test&#39;</span>, <span class="st">&#39;Employee&#39;</span>, <span class="dv">60000</span>)</span>
+<span id="cb1030-32"><a href="object-orientation.html#cb1030-32" tabindex="-1"></a></span>
+<span id="cb1030-33"><a href="object-orientation.html#cb1030-33" tabindex="-1"></a><span class="co"># print(emp_1 + emp_2)</span></span>
+<span id="cb1030-34"><a href="object-orientation.html#cb1030-34" tabindex="-1"></a></span>
+<span id="cb1030-35"><a href="object-orientation.html#cb1030-35" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(emp_1))</span></code></pre></div>
 <pre class="Rout"><code>13</code></pre>
 </div>
 <div id="property-decorator" class="section level2 hasAnchor" number="16.6">
@@ -837,43 +838,43 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <li><code>@NAME.setter</code>: make a method function like class-attribute assigning</li>
 <li><code>@NAME.deleter</code>: make a method function like class-attribute deleting</li>
 </ul>
-<div class="sourceCode" id="cb1031"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1031-1"><a href="object-orientation.html#cb1031-1" tabindex="-1"></a><span class="kw">class</span> Employee:</span>
-<span id="cb1031-2"><a href="object-orientation.html#cb1031-2" tabindex="-1"></a></span>
-<span id="cb1031-3"><a href="object-orientation.html#cb1031-3" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, first, last):</span>
-<span id="cb1031-4"><a href="object-orientation.html#cb1031-4" tabindex="-1"></a>        <span class="va">self</span>.first <span class="op">=</span> first</span>
-<span id="cb1031-5"><a href="object-orientation.html#cb1031-5" tabindex="-1"></a>        <span class="va">self</span>.last <span class="op">=</span> last</span>
-<span id="cb1031-6"><a href="object-orientation.html#cb1031-6" tabindex="-1"></a></span>
-<span id="cb1031-7"><a href="object-orientation.html#cb1031-7" tabindex="-1"></a>    <span class="at">@property</span></span>
-<span id="cb1031-8"><a href="object-orientation.html#cb1031-8" tabindex="-1"></a>    <span class="kw">def</span> email(<span class="va">self</span>):</span>
-<span id="cb1031-9"><a href="object-orientation.html#cb1031-9" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&#39;</span><span class="sc">{}</span><span class="st">.</span><span class="sc">{}</span><span class="st">@email.com&#39;</span>.<span class="bu">format</span>(<span class="va">self</span>.first, <span class="va">self</span>.last)</span>
-<span id="cb1031-10"><a href="object-orientation.html#cb1031-10" tabindex="-1"></a></span>
-<span id="cb1031-11"><a href="object-orientation.html#cb1031-11" tabindex="-1"></a>    <span class="at">@property</span></span>
-<span id="cb1031-12"><a href="object-orientation.html#cb1031-12" tabindex="-1"></a>    <span class="kw">def</span> fullname(<span class="va">self</span>):</span>
-<span id="cb1031-13"><a href="object-orientation.html#cb1031-13" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&#39;</span><span class="sc">{}</span><span class="st"> </span><span class="sc">{}</span><span class="st">&#39;</span>.<span class="bu">format</span>(<span class="va">self</span>.first, <span class="va">self</span>.last)</span>
-<span id="cb1031-14"><a href="object-orientation.html#cb1031-14" tabindex="-1"></a>    </span>
-<span id="cb1031-15"><a href="object-orientation.html#cb1031-15" tabindex="-1"></a>    <span class="at">@fullname.setter</span></span>
-<span id="cb1031-16"><a href="object-orientation.html#cb1031-16" tabindex="-1"></a>    <span class="kw">def</span> fullname(<span class="va">self</span>, name):</span>
-<span id="cb1031-17"><a href="object-orientation.html#cb1031-17" tabindex="-1"></a>        first, last <span class="op">=</span> name.split(<span class="st">&#39; &#39;</span>)</span>
-<span id="cb1031-18"><a href="object-orientation.html#cb1031-18" tabindex="-1"></a>        <span class="va">self</span>.first <span class="op">=</span> first</span>
-<span id="cb1031-19"><a href="object-orientation.html#cb1031-19" tabindex="-1"></a>        <span class="va">self</span>.last <span class="op">=</span> last</span>
-<span id="cb1031-20"><a href="object-orientation.html#cb1031-20" tabindex="-1"></a>    </span>
-<span id="cb1031-21"><a href="object-orientation.html#cb1031-21" tabindex="-1"></a>    <span class="at">@fullname.deleter</span></span>
-<span id="cb1031-22"><a href="object-orientation.html#cb1031-22" tabindex="-1"></a>    <span class="kw">def</span> fullname(<span class="va">self</span>):</span>
-<span id="cb1031-23"><a href="object-orientation.html#cb1031-23" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&#39;Delete Name!&#39;</span>)</span>
-<span id="cb1031-24"><a href="object-orientation.html#cb1031-24" tabindex="-1"></a>        <span class="va">self</span>.first <span class="op">=</span> <span class="va">None</span></span>
-<span id="cb1031-25"><a href="object-orientation.html#cb1031-25" tabindex="-1"></a>        <span class="va">self</span>.last <span class="op">=</span> <span class="va">None</span></span>
-<span id="cb1031-26"><a href="object-orientation.html#cb1031-26" tabindex="-1"></a></span>
-<span id="cb1031-27"><a href="object-orientation.html#cb1031-27" tabindex="-1"></a></span>
-<span id="cb1031-28"><a href="object-orientation.html#cb1031-28" tabindex="-1"></a>emp_1 <span class="op">=</span> Employee(<span class="st">&#39;John&#39;</span>, <span class="st">&#39;Smith&#39;</span>)</span>
-<span id="cb1031-29"><a href="object-orientation.html#cb1031-29" tabindex="-1"></a>emp_1.fullname <span class="op">=</span> <span class="st">&quot;Corey Schafer&quot;</span></span>
-<span id="cb1031-30"><a href="object-orientation.html#cb1031-30" tabindex="-1"></a></span>
-<span id="cb1031-31"><a href="object-orientation.html#cb1031-31" tabindex="-1"></a><span class="bu">print</span>(emp_1.first)</span></code></pre></div>
+<div class="sourceCode" id="cb1032"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1032-1"><a href="object-orientation.html#cb1032-1" tabindex="-1"></a><span class="kw">class</span> Employee:</span>
+<span id="cb1032-2"><a href="object-orientation.html#cb1032-2" tabindex="-1"></a></span>
+<span id="cb1032-3"><a href="object-orientation.html#cb1032-3" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, first, last):</span>
+<span id="cb1032-4"><a href="object-orientation.html#cb1032-4" tabindex="-1"></a>        <span class="va">self</span>.first <span class="op">=</span> first</span>
+<span id="cb1032-5"><a href="object-orientation.html#cb1032-5" tabindex="-1"></a>        <span class="va">self</span>.last <span class="op">=</span> last</span>
+<span id="cb1032-6"><a href="object-orientation.html#cb1032-6" tabindex="-1"></a></span>
+<span id="cb1032-7"><a href="object-orientation.html#cb1032-7" tabindex="-1"></a>    <span class="at">@property</span></span>
+<span id="cb1032-8"><a href="object-orientation.html#cb1032-8" tabindex="-1"></a>    <span class="kw">def</span> email(<span class="va">self</span>):</span>
+<span id="cb1032-9"><a href="object-orientation.html#cb1032-9" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&#39;</span><span class="sc">{}</span><span class="st">.</span><span class="sc">{}</span><span class="st">@email.com&#39;</span>.<span class="bu">format</span>(<span class="va">self</span>.first, <span class="va">self</span>.last)</span>
+<span id="cb1032-10"><a href="object-orientation.html#cb1032-10" tabindex="-1"></a></span>
+<span id="cb1032-11"><a href="object-orientation.html#cb1032-11" tabindex="-1"></a>    <span class="at">@property</span></span>
+<span id="cb1032-12"><a href="object-orientation.html#cb1032-12" tabindex="-1"></a>    <span class="kw">def</span> fullname(<span class="va">self</span>):</span>
+<span id="cb1032-13"><a href="object-orientation.html#cb1032-13" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&#39;</span><span class="sc">{}</span><span class="st"> </span><span class="sc">{}</span><span class="st">&#39;</span>.<span class="bu">format</span>(<span class="va">self</span>.first, <span class="va">self</span>.last)</span>
+<span id="cb1032-14"><a href="object-orientation.html#cb1032-14" tabindex="-1"></a>    </span>
+<span id="cb1032-15"><a href="object-orientation.html#cb1032-15" tabindex="-1"></a>    <span class="at">@fullname.setter</span></span>
+<span id="cb1032-16"><a href="object-orientation.html#cb1032-16" tabindex="-1"></a>    <span class="kw">def</span> fullname(<span class="va">self</span>, name):</span>
+<span id="cb1032-17"><a href="object-orientation.html#cb1032-17" tabindex="-1"></a>        first, last <span class="op">=</span> name.split(<span class="st">&#39; &#39;</span>)</span>
+<span id="cb1032-18"><a href="object-orientation.html#cb1032-18" tabindex="-1"></a>        <span class="va">self</span>.first <span class="op">=</span> first</span>
+<span id="cb1032-19"><a href="object-orientation.html#cb1032-19" tabindex="-1"></a>        <span class="va">self</span>.last <span class="op">=</span> last</span>
+<span id="cb1032-20"><a href="object-orientation.html#cb1032-20" tabindex="-1"></a>    </span>
+<span id="cb1032-21"><a href="object-orientation.html#cb1032-21" tabindex="-1"></a>    <span class="at">@fullname.deleter</span></span>
+<span id="cb1032-22"><a href="object-orientation.html#cb1032-22" tabindex="-1"></a>    <span class="kw">def</span> fullname(<span class="va">self</span>):</span>
+<span id="cb1032-23"><a href="object-orientation.html#cb1032-23" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&#39;Delete Name!&#39;</span>)</span>
+<span id="cb1032-24"><a href="object-orientation.html#cb1032-24" tabindex="-1"></a>        <span class="va">self</span>.first <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb1032-25"><a href="object-orientation.html#cb1032-25" tabindex="-1"></a>        <span class="va">self</span>.last <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb1032-26"><a href="object-orientation.html#cb1032-26" tabindex="-1"></a></span>
+<span id="cb1032-27"><a href="object-orientation.html#cb1032-27" tabindex="-1"></a></span>
+<span id="cb1032-28"><a href="object-orientation.html#cb1032-28" tabindex="-1"></a>emp_1 <span class="op">=</span> Employee(<span class="st">&#39;John&#39;</span>, <span class="st">&#39;Smith&#39;</span>)</span>
+<span id="cb1032-29"><a href="object-orientation.html#cb1032-29" tabindex="-1"></a>emp_1.fullname <span class="op">=</span> <span class="st">&quot;Corey Schafer&quot;</span></span>
+<span id="cb1032-30"><a href="object-orientation.html#cb1032-30" tabindex="-1"></a></span>
+<span id="cb1032-31"><a href="object-orientation.html#cb1032-31" tabindex="-1"></a><span class="bu">print</span>(emp_1.first)</span></code></pre></div>
 <pre class="Rout"><code>Corey</code></pre>
-<div class="sourceCode" id="cb1033"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1033-1"><a href="object-orientation.html#cb1033-1" tabindex="-1"></a><span class="bu">print</span>(emp_1.email)</span></code></pre></div>
+<div class="sourceCode" id="cb1034"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1034-1"><a href="object-orientation.html#cb1034-1" tabindex="-1"></a><span class="bu">print</span>(emp_1.email)</span></code></pre></div>
 <pre class="Rout"><code>Corey.Schafer@email.com</code></pre>
-<div class="sourceCode" id="cb1035"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1035-1"><a href="object-orientation.html#cb1035-1" tabindex="-1"></a><span class="bu">print</span>(emp_1.fullname)</span></code></pre></div>
+<div class="sourceCode" id="cb1036"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1036-1"><a href="object-orientation.html#cb1036-1" tabindex="-1"></a><span class="bu">print</span>(emp_1.fullname)</span></code></pre></div>
 <pre class="Rout"><code>Corey Schafer</code></pre>
-<div class="sourceCode" id="cb1037"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1037-1"><a href="object-orientation.html#cb1037-1" tabindex="-1"></a><span class="kw">del</span> emp_1.fullname</span></code></pre></div>
+<div class="sourceCode" id="cb1038"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1038-1"><a href="object-orientation.html#cb1038-1" tabindex="-1"></a><span class="kw">del</span> emp_1.fullname</span></code></pre></div>
 <pre class="Rout"><code>Delete Name!</code></pre>
 </div>
 <div id="checking-functions" class="section level2 hasAnchor" number="16.7">

@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2024-09-04" />
+<meta name="date" content="2024-09-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -54,6 +54,14 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
+<script src="libs/str_view-binding-1.5.0/str_view.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.10/grViz.js"></script>
 <script src="https://hypothes.is/embed.js" async></script>
 
 
@@ -260,12 +268,7 @@ div.csl-indent {
 <li class="chapter" data-level="6.6" data-path="functions.html"><a href="functions.html#parameters-order"><i class="fa fa-check"></i><b>6.6</b> Parameters Order</a></li>
 <li class="chapter" data-level="6.7" data-path="functions.html"><a href="functions.html#stacking-functions"><i class="fa fa-check"></i><b>6.7</b> Stacking Functions</a></li>
 <li class="chapter" data-level="6.8" data-path="functions.html"><a href="functions.html#local-and-global-scope"><i class="fa fa-check"></i><b>6.8</b> Local and Global Scope</a></li>
-<li class="chapter" data-level="6.9" data-path="functions.html"><a href="functions.html#exception-handling"><i class="fa fa-check"></i><b>6.9</b> Exception Handling</a>
-<ul>
-<li class="chapter" data-level="" data-path="functions.html"><a href="functions.html#cat"><i class="fa fa-check"></i>cat()</a></li>
-<li class="chapter" data-level="" data-path="functions.html"><a href="functions.html#writelines"><i class="fa fa-check"></i>writeLines()</a></li>
-<li class="chapter" data-level="" data-path="functions.html"><a href="functions.html#print"><i class="fa fa-check"></i>print()</a></li>
-</ul></li>
+<li class="chapter" data-level="6.9" data-path="functions.html"><a href="functions.html#exception-handling"><i class="fa fa-check"></i><b>6.9</b> Exception Handling</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>7</b> Data Visualization</a>
 <ul>
@@ -603,7 +606,7 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <div id="header">
 <h1 class="title">ENC2055: Introduction to Programming Languages for Linguistic Analysis</h1>
 <p class="author"><em>Alvin Chen (陳正賢）</em></p>
-<p class="date"><em>2024-09-04</em></p>
+<p class="date"><em>2024-09-06</em></p>
 </div>
 <div id="course-syllabus" class="section level1 unnumbered hasAnchor">
 <h1>Course Syllabus<a href="index.html#course-syllabus" class="anchor-section" aria-label="Anchor link to header"></a></h1>
@@ -634,16 +637,25 @@ P(A) = \sum P(\{ (e_1,\dotsc,e_N) \})  =  \binom{N}{k} \cdot p^kq^{N-k}
   </script>
 </div>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1" tabindex="-1"></a>USArrests <span class="sc">%&gt;%</span></span>
-<span id="cb2-2"><a href="index.html#cb2-2" tabindex="-1"></a>    <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">&quot;Murder&quot;</span>, <span class="st">&quot;Assault&quot;</span>, <span class="st">&quot;UrbanPop&quot;</span>, <span class="st">&quot;Rape&quot;</span>), <span class="at">names_to =</span> <span class="st">&quot;ArrestTypes&quot;</span>,</span>
-<span id="cb2-3"><a href="index.html#cb2-3" tabindex="-1"></a>        <span class="at">values_to =</span> <span class="st">&quot;Rates&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb2-4"><a href="index.html#cb2-4" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(ArrestTypes, Rates, <span class="at">fill =</span> ArrestTypes)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<span id="cb2-2"><a href="index.html#cb2-2" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">States =</span> <span class="fu">row.names</span>(.)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-3"><a href="index.html#cb2-3" tabindex="-1"></a>    <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">&quot;Murder&quot;</span>, <span class="st">&quot;Assault&quot;</span>, <span class="st">&quot;UrbanPop&quot;</span>, <span class="st">&quot;Rape&quot;</span>), <span class="at">names_to =</span> <span class="st">&quot;ArrestTypes&quot;</span>,</span>
+<span id="cb2-4"><a href="index.html#cb2-4" tabindex="-1"></a>        <span class="at">values_to =</span> <span class="st">&quot;Rates&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-5"><a href="index.html#cb2-5" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(ArrestTypes, Rates, <span class="at">fill =</span> ArrestTypes)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code></pre></div>
 <p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1" tabindex="-1"></a><span class="do">## data() ## check more built-in datasets</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1" tabindex="-1"></a>USArrests <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="index.html#cb3-2" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">States =</span> <span class="fu">row.names</span>(.)) <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="index.html#cb3-3" tabindex="-1"></a>    <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">&quot;Murder&quot;</span>, <span class="st">&quot;Assault&quot;</span>, <span class="st">&quot;UrbanPop&quot;</span>, <span class="st">&quot;Rape&quot;</span>), <span class="at">names_to =</span> <span class="st">&quot;ArrestTypes&quot;</span>,</span>
+<span id="cb3-4"><a href="index.html#cb3-4" tabindex="-1"></a>        <span class="at">values_to =</span> <span class="st">&quot;Rates&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-5"><a href="index.html#cb3-5" tabindex="-1"></a>    <span class="fu">filter</span>(States <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;California&quot;</span>, <span class="st">&quot;Massachusetts&quot;</span>, <span class="st">&quot;New York&quot;</span>, <span class="st">&quot;Washington&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb3-6"><a href="index.html#cb3-6" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(States, Rates, <span class="at">fill =</span> ArrestTypes, <span class="at">group =</span> ArrestTypes)) <span class="sc">+</span> <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
+<span id="cb3-7"><a href="index.html#cb3-7" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Arrest Types (Rates) by Selective States&quot;</span>)</span></code></pre></div>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb4-1"><a href="index.html#cb4-1" tabindex="-1"></a><span class="do">## data() ## check more built-in datasets</span></span></code></pre></div>
 <div class="try">
 <p>In the lecture notes, the text boxes in light blue refer to codes that you need to run in either terminal or your R/Python console. The text boxes in black background show the outputs of the code processing.</p>
 <p>We will follow this presentation convention throughout the entire lecture notes.</p>
 </div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb4-1"><a href="index.html#cb4-1" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Hello! R!&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb5-1"><a href="index.html#cb5-1" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Hello! R!&quot;</span>)</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;Hello! R!&quot;</code></pre>
 </div>
 <div id="textbook" class="section level2 unnumbered hasAnchor">
@@ -694,7 +706,9 @@ P(A) = \sum P(\{ (e_1,\dotsc,e_N) \})  =  \binom{N}{k} \cdot p^kq^{N-k}
 <div id="questions" class="section level2 unnumbered hasAnchor">
 <h2>Questions?<a href="index.html#questions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>For more information related to this course, please see the <a href="https://alvinntnu.github.io/NTNU_ENC2055/FAQ.html">FAQ</a> on our course website or post your questions on the Moodle Discussion Forum.</p>
+<div class="warning">
 <p>Please avoid sending coding questions via private email. Instead, post your questions on the Moodle Discussion Forum so that classmates with similar queries can benefit from the discussions and feedback.</p>
+</div>
 </div>
 <div id="necessary-packages" class="section level2 unnumbered hasAnchor">
 <h2>Necessary Packages<a href="index.html#necessary-packages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -722,6 +736,7 @@ library(tidyverse)</code></pre>
 </div>
 <div id="interative-live-environment" class="section level2 unnumbered hasAnchor">
 <h2>Interative Live Environment<a href="index.html#interative-live-environment" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><em>This is not working right now. I am fixing this.</em></p>
 <p><a href="https://mybinder.org/v2/gh/alvinntnu/NTNU_ENC2055_BINDER/HEAD?urlpath=rstudio"><img src="https://mybinder.org/badge_logo.svg" alt="Binder" /></a></p>
 <p>Binder is an open-source tool that allows us to create an interactive environment to run our codes and scripts on the cloud. Through the link, we can launch an interactive RStudio environment in the web browser and run the R codes and scripts from the lecture notes. The cloud-based environment is pre-configured with essential tools required for the course, such as the R kernel, RStudio, and R libraries.</p>
 <p>The Binder platform offers a solution to compatibility issues arising from the use of different operating systems, such as Windows, Mac OS, and Linux. The use of Binder in the classroom enables us to work with a consistent and reliable platform for the R programming needs.</p>

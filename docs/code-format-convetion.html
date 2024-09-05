@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2024-09-04" />
+<meta name="date" content="2024-09-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -182,6 +182,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#textbook"><i class="fa fa-check"></i>Textbook</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-website"><i class="fa fa-check"></i>Course Website</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#assignments"><i class="fa fa-check"></i>Assignments</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#ai-tools"><i class="fa fa-check"></i>AI Tools</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributing-to-the-lecture-notes"><i class="fa fa-check"></i>Contributing to the Lecture Notes</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-demo-data"><i class="fa fa-check"></i>Course Demo Data</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#questions"><i class="fa fa-check"></i>Questions?</a></li>
@@ -609,25 +610,25 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <div id="assignment--" class="section level2 hasAnchor" number="3.1">
 <h2><span class="header-section-number">3.1</span> Assignment <code>&lt;-</code><a href="code-format-convetion.html#assignment--" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In R, people normally use <code>&lt;-</code> to assign values to object names. In other languages such as Python, people often use <code>=</code>. Although R still understands the value-assignment when you use <code>=</code>, I would still suggest using <code>&lt;-</code> to avoid the chance of confusing your R kernel.</p>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb76-1"><a href="code-format-convetion.html#cb76-1" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="st">&quot;This is a sentence.&quot;</span> <span class="do">## recommended</span></span>
-<span id="cb76-2"><a href="code-format-convetion.html#cb76-2" tabindex="-1"></a>x2 <span class="ot">=</span> <span class="st">&quot;This is a sentence.&quot;</span> <span class="do">## not recommended</span></span>
-<span id="cb76-3"><a href="code-format-convetion.html#cb76-3" tabindex="-1"></a>x1</span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb77-1"><a href="code-format-convetion.html#cb77-1" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="st">&quot;This is a sentence.&quot;</span> <span class="do">## recommended</span></span>
+<span id="cb77-2"><a href="code-format-convetion.html#cb77-2" tabindex="-1"></a>x2 <span class="ot">=</span> <span class="st">&quot;This is a sentence.&quot;</span> <span class="do">## not recommended</span></span>
+<span id="cb77-3"><a href="code-format-convetion.html#cb77-3" tabindex="-1"></a>x1</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;This is a sentence.&quot;</code></pre>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb78-1"><a href="code-format-convetion.html#cb78-1" tabindex="-1"></a>x2</span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb79-1"><a href="code-format-convetion.html#cb79-1" tabindex="-1"></a>x2</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;This is a sentence.&quot;</code></pre>
 </div>
 <div id="comment" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> Comment <code>#</code><a href="code-format-convetion.html#comment" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>When you write codes, you would need to commit your code extensively. This is very important because we often forget why and how we write it this way. Each line of your R script can include comments by placing any strings after the <code>#</code> character. These comments are ignored by R and are not processed. To improve the readability of your code, you can use additional symbol characters (e.g., <code>-</code> and <code>=</code>) after the <code>#</code> to separate different code chunks.</p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb80-1"><a href="code-format-convetion.html#cb80-1" tabindex="-1"></a><span class="co"># ====================</span></span>
-<span id="cb80-2"><a href="code-format-convetion.html#cb80-2" tabindex="-1"></a><span class="co"># Variable Assignment</span></span>
-<span id="cb80-3"><a href="code-format-convetion.html#cb80-3" tabindex="-1"></a><span class="co"># ====================</span></span>
-<span id="cb80-4"><a href="code-format-convetion.html#cb80-4" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="st">&quot;This is a sentence&quot;</span></span>
-<span id="cb80-5"><a href="code-format-convetion.html#cb80-5" tabindex="-1"></a></span>
-<span id="cb80-6"><a href="code-format-convetion.html#cb80-6" tabindex="-1"></a><span class="co"># ====================</span></span>
-<span id="cb80-7"><a href="code-format-convetion.html#cb80-7" tabindex="-1"></a><span class="co"># Variable Printing</span></span>
-<span id="cb80-8"><a href="code-format-convetion.html#cb80-8" tabindex="-1"></a><span class="co"># ====================</span></span>
-<span id="cb80-9"><a href="code-format-convetion.html#cb80-9" tabindex="-1"></a>x</span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb81-1"><a href="code-format-convetion.html#cb81-1" tabindex="-1"></a><span class="co"># ====================</span></span>
+<span id="cb81-2"><a href="code-format-convetion.html#cb81-2" tabindex="-1"></a><span class="co"># Variable Assignment</span></span>
+<span id="cb81-3"><a href="code-format-convetion.html#cb81-3" tabindex="-1"></a><span class="co"># ====================</span></span>
+<span id="cb81-4"><a href="code-format-convetion.html#cb81-4" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="st">&quot;This is a sentence&quot;</span></span>
+<span id="cb81-5"><a href="code-format-convetion.html#cb81-5" tabindex="-1"></a></span>
+<span id="cb81-6"><a href="code-format-convetion.html#cb81-6" tabindex="-1"></a><span class="co"># ====================</span></span>
+<span id="cb81-7"><a href="code-format-convetion.html#cb81-7" tabindex="-1"></a><span class="co"># Variable Printing</span></span>
+<span id="cb81-8"><a href="code-format-convetion.html#cb81-8" tabindex="-1"></a><span class="co"># ====================</span></span>
+<span id="cb81-9"><a href="code-format-convetion.html#cb81-9" tabindex="-1"></a>x</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;This is a sentence&quot;</code></pre>
 </div>
 <div id="script-naming" class="section level2 hasAnchor" number="3.3">
@@ -662,24 +663,24 @@ grade_average &lt;- mean(midterm * 0.5 + final * 0.5)
 ## NOT Recommended
 grade_average&lt;-mean(midterm*0.5+final*0.5)</code></pre>
 <p>For <code>:</code> and <code>::</code>, usually we do not put whitespaces around them:</p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb84-1"><a href="code-format-convetion.html#cb84-1" tabindex="-1"></a><span class="co"># Recommended</span></span>
-<span id="cb84-2"><a href="code-format-convetion.html#cb84-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
-<span id="cb84-3"><a href="code-format-convetion.html#cb84-3" tabindex="-1"></a>tidyr<span class="sc">::</span><span class="fu">separate</span>()</span>
-<span id="cb84-4"><a href="code-format-convetion.html#cb84-4" tabindex="-1"></a></span>
-<span id="cb84-5"><a href="code-format-convetion.html#cb84-5" tabindex="-1"></a></span>
-<span id="cb84-6"><a href="code-format-convetion.html#cb84-6" tabindex="-1"></a><span class="co"># NOT Recommended</span></span>
-<span id="cb84-7"><a href="code-format-convetion.html#cb84-7" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span> <span class="sc">:</span> <span class="dv">10</span>)</span>
-<span id="cb84-8"><a href="code-format-convetion.html#cb84-8" tabindex="-1"></a>tidyr <span class="sc">::</span> <span class="fu">separate</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb85-1"><a href="code-format-convetion.html#cb85-1" tabindex="-1"></a><span class="co"># Recommended</span></span>
+<span id="cb85-2"><a href="code-format-convetion.html#cb85-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
+<span id="cb85-3"><a href="code-format-convetion.html#cb85-3" tabindex="-1"></a>tidyr<span class="sc">::</span><span class="fu">separate</span>()</span>
+<span id="cb85-4"><a href="code-format-convetion.html#cb85-4" tabindex="-1"></a></span>
+<span id="cb85-5"><a href="code-format-convetion.html#cb85-5" tabindex="-1"></a></span>
+<span id="cb85-6"><a href="code-format-convetion.html#cb85-6" tabindex="-1"></a><span class="co"># NOT Recommended</span></span>
+<span id="cb85-7"><a href="code-format-convetion.html#cb85-7" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span> <span class="sc">:</span> <span class="dv">10</span>)</span>
+<span id="cb85-8"><a href="code-format-convetion.html#cb85-8" tabindex="-1"></a>tidyr <span class="sc">::</span> <span class="fu">separate</span>()</span></code></pre></div>
 <div class="info">
 <p><code>:</code> is an expression in R to create a sequence of numbers. For example, <code>c(1:10)</code> is the same as <code>c(1,2,3,4,5,6,7,8,9,10)</code>.</p>
 <p><code>::</code> is an expression to access a particular object/function from a library without having the entire library loaded in your current R environment. For example, <code>tidyr::separate()</code> calls the function <code>separate()</code> from the library <code>tidyr</code> but the other objects in <code>tidyr</code> are still NOT included. You cannot use the other objects defined in <code>tidyr</code>.</p>
 <p>When there are two functions with the same name from different libraries in your current R session, it is necessary to explicitly specify the package name in your function call to avoid confusion and ensure the intended function is called.</p>
 </div>
 <p>For parentheses <code>(</code>, if it is in the <strong>control structure</strong>, we usually put a whitespace before the initial <code>(</code>:</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb85-1"><a href="code-format-convetion.html#cb85-1" tabindex="-1"></a><span class="co"># for-loop</span></span>
-<span id="cb85-2"><a href="code-format-convetion.html#cb85-2" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
-<span id="cb85-3"><a href="code-format-convetion.html#cb85-3" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
-<span id="cb85-4"><a href="code-format-convetion.html#cb85-4" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb86-1"><a href="code-format-convetion.html#cb86-1" tabindex="-1"></a><span class="co"># for-loop</span></span>
+<span id="cb86-2"><a href="code-format-convetion.html#cb86-2" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
+<span id="cb86-3"><a href="code-format-convetion.html#cb86-3" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb86-4"><a href="code-format-convetion.html#cb86-4" tabindex="-1"></a>}</span></code></pre></div>
 <pre class="Rout"><code>[1] 1
 [1] 2
 [1] 3
@@ -690,26 +691,26 @@ grade_average&lt;-mean(midterm*0.5+final*0.5)</code></pre>
 [1] 8
 [1] 9
 [1] 10</code></pre>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb87-1"><a href="code-format-convetion.html#cb87-1" tabindex="-1"></a><span class="co"># if-conditional</span></span>
-<span id="cb87-2"><a href="code-format-convetion.html#cb87-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb87-3"><a href="code-format-convetion.html#cb87-3" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">==</span> <span class="dv">1</span>) {</span>
-<span id="cb87-4"><a href="code-format-convetion.html#cb87-4" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;The answer is 1!&quot;</span>)</span>
-<span id="cb87-5"><a href="code-format-convetion.html#cb87-5" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb87-6"><a href="code-format-convetion.html#cb87-6" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;The answer is greater than 1!&quot;</span>)</span>
-<span id="cb87-7"><a href="code-format-convetion.html#cb87-7" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb88-1"><a href="code-format-convetion.html#cb88-1" tabindex="-1"></a><span class="co"># if-conditional</span></span>
+<span id="cb88-2"><a href="code-format-convetion.html#cb88-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb88-3"><a href="code-format-convetion.html#cb88-3" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">==</span> <span class="dv">1</span>) {</span>
+<span id="cb88-4"><a href="code-format-convetion.html#cb88-4" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;The answer is 1!&quot;</span>)</span>
+<span id="cb88-5"><a href="code-format-convetion.html#cb88-5" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb88-6"><a href="code-format-convetion.html#cb88-6" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;The answer is greater than 1!&quot;</span>)</span>
+<span id="cb88-7"><a href="code-format-convetion.html#cb88-7" tabindex="-1"></a>}</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;The answer is greater than 1!&quot;</code></pre>
 <p>But if the parenthesis is in the function call (i.e., where we specify the arguments of the parameters), we don’t put a whitespace before the initial <code>(</code>:</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb89-1"><a href="code-format-convetion.html#cb89-1" tabindex="-1"></a><span class="fu">mean</span>(x)</span>
-<span id="cb89-2"><a href="code-format-convetion.html#cb89-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> money, <span class="at">y =</span> achievement))</span></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb90-1"><a href="code-format-convetion.html#cb90-1" tabindex="-1"></a><span class="fu">mean</span>(x)</span>
+<span id="cb90-2"><a href="code-format-convetion.html#cb90-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> money, <span class="at">y =</span> achievement))</span></code></pre></div>
 <p>For curly brackets, we usually put a line break after the initial <code>{</code> and the ending <code>}</code> should be one single line. Also, as sometimes you would embed many different control structures at the same time, leading to many ending <code>}</code> lines, it is always good to commit properly which ending <code>}</code> goes with which control structure.</p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb90-1"><a href="code-format-convetion.html#cb90-1" tabindex="-1"></a><span class="do">## Embeded Control Structures</span></span>
-<span id="cb90-2"><a href="code-format-convetion.html#cb90-2" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
-<span id="cb90-3"><a href="code-format-convetion.html#cb90-3" tabindex="-1"></a>  <span class="cf">if</span> (i <span class="sc">&lt;</span> <span class="dv">5</span>) {</span>
-<span id="cb90-4"><a href="code-format-convetion.html#cb90-4" tabindex="-1"></a>    <span class="fu">print</span>(i)</span>
-<span id="cb90-5"><a href="code-format-convetion.html#cb90-5" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb90-6"><a href="code-format-convetion.html#cb90-6" tabindex="-1"></a>    <span class="fu">print</span>(i <span class="sc">+</span> <span class="dv">10</span>)</span>
-<span id="cb90-7"><a href="code-format-convetion.html#cb90-7" tabindex="-1"></a>  } <span class="co">#endif</span></span>
-<span id="cb90-8"><a href="code-format-convetion.html#cb90-8" tabindex="-1"></a>} <span class="co">#endfor</span></span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb91-1"><a href="code-format-convetion.html#cb91-1" tabindex="-1"></a><span class="do">## Embeded Control Structures</span></span>
+<span id="cb91-2"><a href="code-format-convetion.html#cb91-2" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
+<span id="cb91-3"><a href="code-format-convetion.html#cb91-3" tabindex="-1"></a>  <span class="cf">if</span> (i <span class="sc">&lt;</span> <span class="dv">5</span>) {</span>
+<span id="cb91-4"><a href="code-format-convetion.html#cb91-4" tabindex="-1"></a>    <span class="fu">print</span>(i)</span>
+<span id="cb91-5"><a href="code-format-convetion.html#cb91-5" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb91-6"><a href="code-format-convetion.html#cb91-6" tabindex="-1"></a>    <span class="fu">print</span>(i <span class="sc">+</span> <span class="dv">10</span>)</span>
+<span id="cb91-7"><a href="code-format-convetion.html#cb91-7" tabindex="-1"></a>  } <span class="co">#endif</span></span>
+<span id="cb91-8"><a href="code-format-convetion.html#cb91-8" tabindex="-1"></a>} <span class="co">#endfor</span></span></code></pre></div>
 <pre class="Rout"><code>[1] 1
 [1] 2
 [1] 3
@@ -731,16 +732,16 @@ grade_average&lt;-mean(midterm*0.5+final*0.5)</code></pre>
 <div id="indention-and-linebreaks" class="section level2 hasAnchor" number="3.6">
 <h2><span class="header-section-number">3.6</span> Indention and Linebreaks<a href="code-format-convetion.html#indention-and-linebreaks" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>R does not care about line breaks, white spaces, or tabs in your R script. But these formatting characters are important because you need all these characters to help you quickly keep track of the script’s structure. Make good use of the indention to increase the readability of your script.</p>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb92-1"><a href="code-format-convetion.html#cb92-1" tabindex="-1"></a>long_function_name <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">a =</span> <span class="st">&quot;a long argument&quot;</span>,</span>
-<span id="cb92-2"><a href="code-format-convetion.html#cb92-2" tabindex="-1"></a>                               <span class="at">b =</span> <span class="st">&quot;another argument&quot;</span>,</span>
-<span id="cb92-3"><a href="code-format-convetion.html#cb92-3" tabindex="-1"></a>                               <span class="at">c =</span> <span class="st">&quot;another long argument&quot;</span>) {</span>
-<span id="cb92-4"><a href="code-format-convetion.html#cb92-4" tabindex="-1"></a>  <span class="co"># As usual code is indented by two spaces.</span></span>
-<span id="cb92-5"><a href="code-format-convetion.html#cb92-5" tabindex="-1"></a>}</span>
-<span id="cb92-6"><a href="code-format-convetion.html#cb92-6" tabindex="-1"></a></span>
-<span id="cb92-7"><a href="code-format-convetion.html#cb92-7" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">8</span>), <span class="co"># data source</span></span>
-<span id="cb92-8"><a href="code-format-convetion.html#cb92-8" tabindex="-1"></a>            <span class="at">nrow =</span> <span class="dv">2</span>, <span class="co"># two rows</span></span>
-<span id="cb92-9"><a href="code-format-convetion.html#cb92-9" tabindex="-1"></a>            <span class="at">byrow =</span> <span class="cn">TRUE</span>) <span class="co"># filling values by row</span></span>
-<span id="cb92-10"><a href="code-format-convetion.html#cb92-10" tabindex="-1"></a>y</span></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb93-1"><a href="code-format-convetion.html#cb93-1" tabindex="-1"></a>long_function_name <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">a =</span> <span class="st">&quot;a long argument&quot;</span>,</span>
+<span id="cb93-2"><a href="code-format-convetion.html#cb93-2" tabindex="-1"></a>                               <span class="at">b =</span> <span class="st">&quot;another argument&quot;</span>,</span>
+<span id="cb93-3"><a href="code-format-convetion.html#cb93-3" tabindex="-1"></a>                               <span class="at">c =</span> <span class="st">&quot;another long argument&quot;</span>) {</span>
+<span id="cb93-4"><a href="code-format-convetion.html#cb93-4" tabindex="-1"></a>  <span class="co"># As usual code is indented by two spaces.</span></span>
+<span id="cb93-5"><a href="code-format-convetion.html#cb93-5" tabindex="-1"></a>}</span>
+<span id="cb93-6"><a href="code-format-convetion.html#cb93-6" tabindex="-1"></a></span>
+<span id="cb93-7"><a href="code-format-convetion.html#cb93-7" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">8</span>), <span class="co"># data source</span></span>
+<span id="cb93-8"><a href="code-format-convetion.html#cb93-8" tabindex="-1"></a>            <span class="at">nrow =</span> <span class="dv">2</span>, <span class="co"># two rows</span></span>
+<span id="cb93-9"><a href="code-format-convetion.html#cb93-9" tabindex="-1"></a>            <span class="at">byrow =</span> <span class="cn">TRUE</span>) <span class="co"># filling values by row</span></span>
+<span id="cb93-10"><a href="code-format-convetion.html#cb93-10" tabindex="-1"></a>y</span></code></pre></div>
 <pre class="Rout"><code>     [,1] [,2]
 [1,]    2    5
 [2,]    7    8</code></pre>
