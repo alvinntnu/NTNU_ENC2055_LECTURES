@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2024-10-03" />
+<meta name="date" content="2024-10-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="conditions-and-loops.html"/>
-<link rel="next" href="data-manipulation.html"/>
+<link rel="next" href="data-visualization.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -54,6 +54,14 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
+<script src="libs/str_view-binding-1.5.0/str_view.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.10/grViz.js"></script>
 <script src="https://hypothes.is/embed.js" async></script>
 
 
@@ -69,7 +77,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -125,6 +133,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <style type="text/css">
   
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="style-new.css" type="text/css" />
@@ -242,63 +273,63 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.2" data-path="functions.html"><a href="functions.html#local-and-global-scope"><i class="fa fa-check"></i><b>6.2</b> Local and Global Scope</a></li>
 <li class="chapter" data-level="6.3" data-path="functions.html"><a href="functions.html#exception-handling"><i class="fa fa-check"></i><b>6.3</b> Exception Handling</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="data-manipulation.html"><a href="data-manipulation.html"><i class="fa fa-check"></i><b>7</b> Data Manipulation</a>
+<li class="chapter" data-level="7" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>7</b> Data Visualization</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="data-manipulation.html"><a href="data-manipulation.html#dataset"><i class="fa fa-check"></i><b>7.1</b> Dataset</a></li>
-<li class="chapter" data-level="7.2" data-path="data-manipulation.html"><a href="data-manipulation.html#rename"><i class="fa fa-check"></i><b>7.2</b> <code>rename()</code></a></li>
-<li class="chapter" data-level="7.3" data-path="data-manipulation.html"><a href="data-manipulation.html#pipe"><i class="fa fa-check"></i><b>7.3</b> Pipe <code>%&gt;%</code></a></li>
-<li class="chapter" data-level="7.4" data-path="data-manipulation.html"><a href="data-manipulation.html#mutate"><i class="fa fa-check"></i><b>7.4</b> <code>mutate()</code></a></li>
-<li class="chapter" data-level="7.5" data-path="data-manipulation.html"><a href="data-manipulation.html#select"><i class="fa fa-check"></i><b>7.5</b> <code>select()</code></a></li>
-<li class="chapter" data-level="7.6" data-path="data-manipulation.html"><a href="data-manipulation.html#filter"><i class="fa fa-check"></i><b>7.6</b> <code>filter()</code></a></li>
-<li class="chapter" data-level="7.7" data-path="data-manipulation.html"><a href="data-manipulation.html#arrange"><i class="fa fa-check"></i><b>7.7</b> <code>arrange()</code></a></li>
-<li class="chapter" data-level="7.8" data-path="data-manipulation.html"><a href="data-manipulation.html#group_by-and-summarize"><i class="fa fa-check"></i><b>7.8</b> <code>group_by()</code> and <code>summarize()</code></a></li>
-<li class="chapter" data-level="7.9" data-path="data-manipulation.html"><a href="data-manipulation.html#count"><i class="fa fa-check"></i><b>7.9</b> <code>count()</code></a></li>
-<li class="chapter" data-level="7.10" data-path="data-manipulation.html"><a href="data-manipulation.html#tidy-data"><i class="fa fa-check"></i><b>7.10</b> Tidy Data</a>
-<ul>
-<li class="chapter" data-level="7.10.1" data-path="data-manipulation.html"><a href="data-manipulation.html#a-long-to-wide-example"><i class="fa fa-check"></i><b>7.10.1</b> A Long-to-Wide Example</a></li>
-<li class="chapter" data-level="7.10.2" data-path="data-manipulation.html"><a href="data-manipulation.html#a-wide-to-long-example"><i class="fa fa-check"></i><b>7.10.2</b> A Wide-to-Long Example</a></li>
-</ul></li>
-<li class="chapter" data-level="7.11" data-path="data-manipulation.html"><a href="data-manipulation.html#exercises"><i class="fa fa-check"></i><b>7.11</b> Exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>8</b> Data Visualization</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="data-visualization.html"><a href="data-visualization.html#why-visualization"><i class="fa fa-check"></i><b>8.1</b> Why Visualization?</a>
+<li class="chapter" data-level="7.1" data-path="data-visualization.html"><a href="data-visualization.html#why-visualization"><i class="fa fa-check"></i><b>7.1</b> Why Visualization?</a>
 <ul>
 <li class="chapter" data-level="" data-path="data-visualization.html"><a href="data-visualization.html#datasaurus-dozen-dataset"><i class="fa fa-check"></i>Datasaurus Dozen Dataset</a></li>
 <li class="chapter" data-level="" data-path="data-visualization.html"><a href="data-visualization.html#simpsons-paradox"><i class="fa fa-check"></i>Simpson’s Paradox</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="data-visualization.html"><a href="data-visualization.html#ggplot2"><i class="fa fa-check"></i><b>8.2</b> <code>ggplot2</code></a></li>
-<li class="chapter" data-level="8.3" data-path="data-visualization.html"><a href="data-visualization.html#variables-and-data-type"><i class="fa fa-check"></i><b>8.3</b> Variables and Data Type</a></li>
-<li class="chapter" data-level="8.4" data-path="data-visualization.html"><a href="data-visualization.html#one-variable-graph"><i class="fa fa-check"></i><b>8.4</b> One-variable Graph</a>
+<li class="chapter" data-level="7.2" data-path="data-visualization.html"><a href="data-visualization.html#ggplot2"><i class="fa fa-check"></i><b>7.2</b> <code>ggplot2</code></a></li>
+<li class="chapter" data-level="7.3" data-path="data-visualization.html"><a href="data-visualization.html#variables-and-data-type"><i class="fa fa-check"></i><b>7.3</b> Variables and Data Type</a></li>
+<li class="chapter" data-level="7.4" data-path="data-visualization.html"><a href="data-visualization.html#one-variable-graph"><i class="fa fa-check"></i><b>7.4</b> One-variable Graph</a>
 <ul>
-<li class="chapter" data-level="8.4.1" data-path="data-visualization.html"><a href="data-visualization.html#continuous-variable"><i class="fa fa-check"></i><b>8.4.1</b> Continuous Variable</a></li>
-<li class="chapter" data-level="8.4.2" data-path="data-visualization.html"><a href="data-visualization.html#categorical-variable"><i class="fa fa-check"></i><b>8.4.2</b> Categorical Variable</a></li>
+<li class="chapter" data-level="7.4.1" data-path="data-visualization.html"><a href="data-visualization.html#continuous-variable"><i class="fa fa-check"></i><b>7.4.1</b> Continuous Variable</a></li>
+<li class="chapter" data-level="7.4.2" data-path="data-visualization.html"><a href="data-visualization.html#categorical-variable"><i class="fa fa-check"></i><b>7.4.2</b> Categorical Variable</a></li>
 </ul></li>
-<li class="chapter" data-level="8.5" data-path="data-visualization.html"><a href="data-visualization.html#two-variable-graph"><i class="fa fa-check"></i><b>8.5</b> Two-variable Graph</a>
+<li class="chapter" data-level="7.5" data-path="data-visualization.html"><a href="data-visualization.html#two-variable-graph"><i class="fa fa-check"></i><b>7.5</b> Two-variable Graph</a>
 <ul>
-<li class="chapter" data-level="8.5.1" data-path="data-visualization.html"><a href="data-visualization.html#continuous-x-continuous-y"><i class="fa fa-check"></i><b>8.5.1</b> Continuous X, Continuous Y</a></li>
-<li class="chapter" data-level="8.5.2" data-path="data-visualization.html"><a href="data-visualization.html#categorical-x-continuous-y"><i class="fa fa-check"></i><b>8.5.2</b> Categorical X, Continuous Y</a></li>
-<li class="chapter" data-level="8.5.3" data-path="data-visualization.html"><a href="data-visualization.html#categorical-x-categorical-y"><i class="fa fa-check"></i><b>8.5.3</b> Categorical X, Categorical Y</a></li>
+<li class="chapter" data-level="7.5.1" data-path="data-visualization.html"><a href="data-visualization.html#continuous-x-continuous-y"><i class="fa fa-check"></i><b>7.5.1</b> Continuous X, Continuous Y</a></li>
+<li class="chapter" data-level="7.5.2" data-path="data-visualization.html"><a href="data-visualization.html#categorical-x-continuous-y"><i class="fa fa-check"></i><b>7.5.2</b> Categorical X, Continuous Y</a></li>
+<li class="chapter" data-level="7.5.3" data-path="data-visualization.html"><a href="data-visualization.html#categorical-x-categorical-y"><i class="fa fa-check"></i><b>7.5.3</b> Categorical X, Categorical Y</a></li>
 </ul></li>
-<li class="chapter" data-level="8.6" data-path="data-visualization.html"><a href="data-visualization.html#stat-function"><i class="fa fa-check"></i><b>8.6</b> <strong>stat</strong> function</a></li>
-<li class="chapter" data-level="8.7" data-path="data-visualization.html"><a href="data-visualization.html#more-aesthetic-features"><i class="fa fa-check"></i><b>8.7</b> More Aesthetic Features</a>
+<li class="chapter" data-level="7.6" data-path="data-visualization.html"><a href="data-visualization.html#stat-function"><i class="fa fa-check"></i><b>7.6</b> <strong>stat</strong> function</a></li>
+<li class="chapter" data-level="7.7" data-path="data-visualization.html"><a href="data-visualization.html#more-aesthetic-features"><i class="fa fa-check"></i><b>7.7</b> More Aesthetic Features</a>
 <ul>
-<li class="chapter" data-level="8.7.1" data-path="data-visualization.html"><a href="data-visualization.html#color"><i class="fa fa-check"></i><b>8.7.1</b> <code>color</code></a></li>
-<li class="chapter" data-level="8.7.2" data-path="data-visualization.html"><a href="data-visualization.html#alpha"><i class="fa fa-check"></i><b>8.7.2</b> <code>alpha</code></a></li>
-<li class="chapter" data-level="8.7.3" data-path="data-visualization.html"><a href="data-visualization.html#size"><i class="fa fa-check"></i><b>8.7.3</b> <code>size</code></a></li>
-<li class="chapter" data-level="8.7.4" data-path="data-visualization.html"><a href="data-visualization.html#fill"><i class="fa fa-check"></i><b>8.7.4</b> <code>fill</code></a></li>
-<li class="chapter" data-level="8.7.5" data-path="data-visualization.html"><a href="data-visualization.html#shape"><i class="fa fa-check"></i><b>8.7.5</b> <code>shape</code></a></li>
+<li class="chapter" data-level="7.7.1" data-path="data-visualization.html"><a href="data-visualization.html#color"><i class="fa fa-check"></i><b>7.7.1</b> <code>color</code></a></li>
+<li class="chapter" data-level="7.7.2" data-path="data-visualization.html"><a href="data-visualization.html#alpha"><i class="fa fa-check"></i><b>7.7.2</b> <code>alpha</code></a></li>
+<li class="chapter" data-level="7.7.3" data-path="data-visualization.html"><a href="data-visualization.html#size"><i class="fa fa-check"></i><b>7.7.3</b> <code>size</code></a></li>
+<li class="chapter" data-level="7.7.4" data-path="data-visualization.html"><a href="data-visualization.html#fill"><i class="fa fa-check"></i><b>7.7.4</b> <code>fill</code></a></li>
+<li class="chapter" data-level="7.7.5" data-path="data-visualization.html"><a href="data-visualization.html#shape"><i class="fa fa-check"></i><b>7.7.5</b> <code>shape</code></a></li>
 </ul></li>
-<li class="chapter" data-level="8.8" data-path="data-visualization.html"><a href="data-visualization.html#more-layers"><i class="fa fa-check"></i><b>8.8</b> More Layers</a>
+<li class="chapter" data-level="7.8" data-path="data-visualization.html"><a href="data-visualization.html#more-layers"><i class="fa fa-check"></i><b>7.8</b> More Layers</a>
 <ul>
-<li class="chapter" data-level="8.8.1" data-path="data-visualization.html"><a href="data-visualization.html#geom_...-layers"><i class="fa fa-check"></i><b>8.8.1</b> <code>geom_...</code> Layers</a></li>
-<li class="chapter" data-level="8.8.2" data-path="data-visualization.html"><a href="data-visualization.html#labels-and-annotations"><i class="fa fa-check"></i><b>8.8.2</b> Labels and Annotations</a></li>
-<li class="chapter" data-level="8.8.3" data-path="data-visualization.html"><a href="data-visualization.html#facets"><i class="fa fa-check"></i><b>8.8.3</b> Facets</a></li>
-<li class="chapter" data-level="8.8.4" data-path="data-visualization.html"><a href="data-visualization.html#themes"><i class="fa fa-check"></i><b>8.8.4</b> Themes</a></li>
+<li class="chapter" data-level="7.8.1" data-path="data-visualization.html"><a href="data-visualization.html#geom_...-layers"><i class="fa fa-check"></i><b>7.8.1</b> <code>geom_...</code> Layers</a></li>
+<li class="chapter" data-level="7.8.2" data-path="data-visualization.html"><a href="data-visualization.html#labels-and-annotations"><i class="fa fa-check"></i><b>7.8.2</b> Labels and Annotations</a></li>
+<li class="chapter" data-level="7.8.3" data-path="data-visualization.html"><a href="data-visualization.html#facets"><i class="fa fa-check"></i><b>7.8.3</b> Facets</a></li>
+<li class="chapter" data-level="7.8.4" data-path="data-visualization.html"><a href="data-visualization.html#themes"><i class="fa fa-check"></i><b>7.8.4</b> Themes</a></li>
 </ul></li>
-<li class="chapter" data-level="8.9" data-path="data-visualization.html"><a href="data-visualization.html#saving-plots"><i class="fa fa-check"></i><b>8.9</b> Saving Plots</a></li>
-<li class="chapter" data-level="8.10" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-iris"><i class="fa fa-check"></i><b>8.10</b> Exercises on <code>iris</code></a></li>
-<li class="chapter" data-level="8.11" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-covid-19"><i class="fa fa-check"></i><b>8.11</b> Exercises on COVID-19</a></li>
+<li class="chapter" data-level="7.9" data-path="data-visualization.html"><a href="data-visualization.html#saving-plots"><i class="fa fa-check"></i><b>7.9</b> Saving Plots</a></li>
+<li class="chapter" data-level="7.10" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-iris"><i class="fa fa-check"></i><b>7.10</b> Exercises on <code>iris</code></a></li>
+<li class="chapter" data-level="7.11" data-path="data-visualization.html"><a href="data-visualization.html#exercises-on-covid-19"><i class="fa fa-check"></i><b>7.11</b> Exercises on COVID-19</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="data-manipulation.html"><a href="data-manipulation.html"><i class="fa fa-check"></i><b>8</b> Data Manipulation</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="data-manipulation.html"><a href="data-manipulation.html#dataset"><i class="fa fa-check"></i><b>8.1</b> Dataset</a></li>
+<li class="chapter" data-level="8.2" data-path="data-manipulation.html"><a href="data-manipulation.html#rename"><i class="fa fa-check"></i><b>8.2</b> <code>rename()</code></a></li>
+<li class="chapter" data-level="8.3" data-path="data-manipulation.html"><a href="data-manipulation.html#pipe"><i class="fa fa-check"></i><b>8.3</b> Pipe <code>%&gt;%</code></a></li>
+<li class="chapter" data-level="8.4" data-path="data-manipulation.html"><a href="data-manipulation.html#mutate"><i class="fa fa-check"></i><b>8.4</b> <code>mutate()</code></a></li>
+<li class="chapter" data-level="8.5" data-path="data-manipulation.html"><a href="data-manipulation.html#select"><i class="fa fa-check"></i><b>8.5</b> <code>select()</code></a></li>
+<li class="chapter" data-level="8.6" data-path="data-manipulation.html"><a href="data-manipulation.html#filter"><i class="fa fa-check"></i><b>8.6</b> <code>filter()</code></a></li>
+<li class="chapter" data-level="8.7" data-path="data-manipulation.html"><a href="data-manipulation.html#arrange"><i class="fa fa-check"></i><b>8.7</b> <code>arrange()</code></a></li>
+<li class="chapter" data-level="8.8" data-path="data-manipulation.html"><a href="data-manipulation.html#group_by-and-summarize"><i class="fa fa-check"></i><b>8.8</b> <code>group_by()</code> and <code>summarize()</code></a></li>
+<li class="chapter" data-level="8.9" data-path="data-manipulation.html"><a href="data-manipulation.html#count"><i class="fa fa-check"></i><b>8.9</b> <code>count()</code></a></li>
+<li class="chapter" data-level="8.10" data-path="data-manipulation.html"><a href="data-manipulation.html#tidy-data"><i class="fa fa-check"></i><b>8.10</b> Tidy Data</a>
+<ul>
+<li class="chapter" data-level="8.10.1" data-path="data-manipulation.html"><a href="data-manipulation.html#a-long-to-wide-example"><i class="fa fa-check"></i><b>8.10.1</b> A Long-to-Wide Example</a></li>
+<li class="chapter" data-level="8.10.2" data-path="data-manipulation.html"><a href="data-manipulation.html#a-wide-to-long-example"><i class="fa fa-check"></i><b>8.10.2</b> A Wide-to-Long Example</a></li>
+</ul></li>
+<li class="chapter" data-level="8.11" data-path="data-manipulation.html"><a href="data-manipulation.html#exercises"><i class="fa fa-check"></i><b>8.11</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="string-manipulation.html"><a href="string-manipulation.html"><i class="fa fa-check"></i><b>9</b> String Manipulation</a>
 <ul>
@@ -583,9 +614,9 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <div id="a-quick-start" class="section level3 hasAnchor" number="6.1.1">
 <h3><span class="header-section-number">6.1.1</span> A Quick Start<a href="functions.html#a-quick-start" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To better understand how a function works, let’s create a simple one. The following code chunk creates a <code>function</code> object, named <code>hello()</code>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1-1"><a href="functions.html#cb1-1" tabindex="-1"></a>hello <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb1-2"><a href="functions.html#cb1-2" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">&quot;How are you doing?&quot;</span>)</span>
-<span id="cb1-3"><a href="functions.html#cb1-3" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb281-1"><a href="functions.html#cb281-1" tabindex="-1"></a>hello <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb281-2"><a href="functions.html#cb281-2" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">&quot;How are you doing?&quot;</span>)</span>
+<span id="cb281-3"><a href="functions.html#cb281-3" tabindex="-1"></a>}</span></code></pre></div>
 <p>A function object includes several important elements:</p>
 <ul>
 <li>We use the <code>function()</code> keyword to define a new function object.</li>
@@ -597,9 +628,9 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <p>Once a function is defined using the <code>function()</code> keyword in R, the code within the body of the function will not be executed immediately.</p>
 <p>Rather, the code will <strong>only be executed</strong> when the function is <strong>called</strong>. Whenever the function is called, it will execute the code within its body, carrying out the specific tasks defined in the function’s code block.</p>
 <p>This allows for code reuse and modularity, as the same code can be called multiple times with different inputs, rather than having to rewrite the same code multiple times.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb2-1"><a href="functions.html#cb2-1" tabindex="-1"></a><span class="fu">hello</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb282"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb282-1"><a href="functions.html#cb282-1" tabindex="-1"></a><span class="fu">hello</span>()</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;How are you doing?&quot;</code></pre>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb4-1"><a href="functions.html#cb4-1" tabindex="-1"></a><span class="fu">hello</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb284"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb284-1"><a href="functions.html#cb284-1" tabindex="-1"></a><span class="fu">hello</span>()</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;How are you doing?&quot;</code></pre>
 </div>
 <div id="why-do-we-need-functions" class="section level3 hasAnchor" number="6.1.2">
@@ -613,10 +644,10 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <p>When we use the built-in R functions like <code>cat()</code>, <code>length()</code>, or <code>matrix()</code>, we can pass them values, called <em>arguments</em>, in the parentheses.</p>
 <p>That is, some functions have <strong>parameters</strong> and users can pass values to each parameter as <strong>arguments</strong>.</p>
 <p>In our self-defined functions, we can also define a function which accepts arguments.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb6-1"><a href="functions.html#cb6-1" tabindex="-1"></a>hello <span class="ot">&lt;-</span> <span class="cf">function</span>(name) {</span>
-<span id="cb6-2"><a href="functions.html#cb6-2" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&quot;How are you doing,&quot;</span>, name)</span>
-<span id="cb6-3"><a href="functions.html#cb6-3" tabindex="-1"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb7-1"><a href="functions.html#cb7-1" tabindex="-1"></a><span class="fu">hello</span>(<span class="at">name =</span> <span class="st">&quot;Alvin&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb286"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb286-1"><a href="functions.html#cb286-1" tabindex="-1"></a>hello <span class="ot">&lt;-</span> <span class="cf">function</span>(name) {</span>
+<span id="cb286-2"><a href="functions.html#cb286-2" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&quot;How are you doing,&quot;</span>, name)</span>
+<span id="cb286-3"><a href="functions.html#cb286-3" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb287"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb287-1"><a href="functions.html#cb287-1" tabindex="-1"></a><span class="fu">hello</span>(<span class="at">name =</span> <span class="st">&quot;Alvin&quot;</span>)</span></code></pre></div>
 <pre class="Rout"><code>How are you doing, Alvin</code></pre>
 <p>The new <code>hello()</code> function has a parameter called <code>name</code>. <em>Parameters</em> are variables that expect <strong>arguments</strong> in the function call. When a function is called with an argument (e.g., <code>Alvin</code>), this argument is stored in the parameter (e.g., <code>name</code>).</p>
 <p>More specifically, when the function <code>hello(name = 'Alvin')</code> is called:</p>
@@ -626,20 +657,20 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <li>Within the code block, the parameter <code>name</code> is automatically set to <code>Alvin</code>.</li>
 </ul>
 <p>It is important to note that the value stored in the parameter is forgotten when the function returns. That is, we cannot access the parameter <code>name</code> in the main program:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb9-1"><a href="functions.html#cb9-1" tabindex="-1"></a><span class="fu">cat</span>(name)</span></code></pre></div>
+<div class="sourceCode" id="cb289"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb289-1"><a href="functions.html#cb289-1" tabindex="-1"></a><span class="fu">cat</span>(name)</span></code></pre></div>
 <pre><code>Error in eval(expr, envir, enclos): object &#39;name&#39; not found</code></pre>
 <p>In short, the parameters of a function are destroyed after a function call <code>hello(name = 'Alvin')</code> returns.</p>
 <div class="info">
 <p>In the function definition, we can specify default values to the parameters. For example, if the function <code>hello()</code> is defined as follows, users can decide whether to accept the default argument or assign the parameter <code>name</code> with a new argument:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb11-1"><a href="functions.html#cb11-1" tabindex="-1"></a>hello <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">name =</span> <span class="st">&quot;Alvin&quot;</span>) {</span>
-<span id="cb11-2"><a href="functions.html#cb11-2" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&quot;How are you doing,&quot;</span>, name)</span>
-<span id="cb11-3"><a href="functions.html#cb11-3" tabindex="-1"></a>}</span>
-<span id="cb11-4"><a href="functions.html#cb11-4" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="functions.html#cb11-5" tabindex="-1"></a><span class="do">## call 1</span></span>
-<span id="cb11-6"><a href="functions.html#cb11-6" tabindex="-1"></a><span class="fu">hello</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb291"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb291-1"><a href="functions.html#cb291-1" tabindex="-1"></a>hello <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">name =</span> <span class="st">&quot;Alvin&quot;</span>) {</span>
+<span id="cb291-2"><a href="functions.html#cb291-2" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&quot;How are you doing,&quot;</span>, name)</span>
+<span id="cb291-3"><a href="functions.html#cb291-3" tabindex="-1"></a>}</span>
+<span id="cb291-4"><a href="functions.html#cb291-4" tabindex="-1"></a></span>
+<span id="cb291-5"><a href="functions.html#cb291-5" tabindex="-1"></a><span class="do">## call 1</span></span>
+<span id="cb291-6"><a href="functions.html#cb291-6" tabindex="-1"></a><span class="fu">hello</span>()</span></code></pre></div>
 <pre class="Rout"><code>How are you doing, Alvin</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb13-1"><a href="functions.html#cb13-1" tabindex="-1"></a><span class="do">## call 2</span></span>
-<span id="cb13-2"><a href="functions.html#cb13-2" tabindex="-1"></a><span class="fu">hello</span>(<span class="at">name =</span> <span class="st">&quot;Superman&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb293"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb293-1"><a href="functions.html#cb293-1" tabindex="-1"></a><span class="do">## call 2</span></span>
+<span id="cb293-2"><a href="functions.html#cb293-2" tabindex="-1"></a><span class="fu">hello</span>(<span class="at">name =</span> <span class="st">&quot;Superman&quot;</span>)</span></code></pre></div>
 <pre class="Rout"><code>How are you doing, Superman</code></pre>
 </div>
 </div>
@@ -661,52 +692,52 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <p>When we define a function, we can specify what the return values should be using the <code>return()</code> statement.</p>
 <p>The returned values, i.e., the output object of the function, can then be assigned to a new object name for later use in the program.</p>
 <p>In R, there are many built-in functions that return values:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb15-1"><a href="functions.html#cb15-1" tabindex="-1"></a>num <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">3</span>)</span>
-<span id="cb15-2"><a href="functions.html#cb15-2" tabindex="-1"></a>num</span></code></pre></div>
-<pre class="Rout"><code>[1] 9 5 4</code></pre>
+<div class="sourceCode" id="cb295"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb295-1"><a href="functions.html#cb295-1" tabindex="-1"></a>num <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">3</span>)</span>
+<span id="cb295-2"><a href="functions.html#cb295-2" tabindex="-1"></a>num</span></code></pre></div>
+<pre class="Rout"><code>[1] 3 5 8</code></pre>
 <p>When a function returns nothing, by default the return value of the function is <code>NULL</code>, which is a unique data type in R referring to <code>NoneType</code>.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb17-1"><a href="functions.html#cb17-1" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">cat</span>(<span class="st">&quot;This is a sentence&quot;</span>)  <span class="co"># `cat()` has no return</span></span></code></pre></div>
+<div class="sourceCode" id="cb297"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb297-1"><a href="functions.html#cb297-1" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">cat</span>(<span class="st">&quot;This is a sentence&quot;</span>)  <span class="co"># `cat()` has no return</span></span></code></pre></div>
 <pre class="Rout"><code>This is a sentence</code></pre>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb19-1"><a href="functions.html#cb19-1" tabindex="-1"></a>out</span></code></pre></div>
+<div class="sourceCode" id="cb299"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb299-1"><a href="functions.html#cb299-1" tabindex="-1"></a>out</span></code></pre></div>
 <pre class="Rout"><code>NULL</code></pre>
 <p>Now how about the <code>hello()</code> function we created earlier? We didn’t specify the <code>return()</code> statement in the function definition.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb21-1"><a href="functions.html#cb21-1" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">hello</span>(<span class="at">name =</span> <span class="st">&quot;John&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb301"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb301-1"><a href="functions.html#cb301-1" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">hello</span>(<span class="at">name =</span> <span class="st">&quot;John&quot;</span>)</span></code></pre></div>
 <pre class="Rout"><code>How are you doing, John</code></pre>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb23-1"><a href="functions.html#cb23-1" tabindex="-1"></a>out</span></code></pre></div>
+<div class="sourceCode" id="cb303"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb303-1"><a href="functions.html#cb303-1" tabindex="-1"></a>out</span></code></pre></div>
 <pre class="Rout"><code>NULL</code></pre>
 <div class="warning">
 <p>In the definition of <code>hello()</code>, we did not specify the <code>return()</code> statement; therefore, by default, this function returns <code>NULL</code>. But how come we can still see the outputs of the function?</p>
 <p>In the code block of <code>hello()</code> definition, the <code>cat()</code> displays text on the R console only. Therefore, displaying texts in the R console and returning the values are two different things.</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-1" class="exercise"><strong>Exercise 6.1  </strong></span>The function <code>hello()</code> prints a message to the console. Without any change of the function definition <code>hello()</code>, how can we capture the messages printed in the console by <code>hello()</code> and save them to an object named <code>out</code>?</p>
+<p><span id="exr:unlabeled-div-19" class="exercise"><strong>Exercise 6.1  </strong></span>The function <code>hello()</code> prints a message to the console. Without any change of the function definition <code>hello()</code>, how can we capture the messages printed in the console by <code>hello()</code> and save them to an object named <code>out</code>?</p>
 <p>Your task is to modify the following code chunk so that <code>out</code> can store the messages printed by <code>hello(name="Alvin")</code>. Keep in mind that you cannot modify the definition of <code>hello()</code> itself, so you will need to use a different approach to capture its output.</p>
 <pre><code>out &lt;- hello(name=&quot;Alvin&quot;)
 out</code></pre>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-2" class="exercise"><strong>Exercise 6.2  </strong></span>Can you try to create a revised version of <code>hello()</code>, which returns the strings so that one can assign the outputs of the <code>hello()</code> to another object name? (Please note that in the following example, the return value <code>out</code> is not a <code>NULL</code> anymore.)</p>
+<p><span id="exr:unlabeled-div-20" class="exercise"><strong>Exercise 6.2  </strong></span>Can you try to create a revised version of <code>hello()</code>, which returns the strings so that one can assign the outputs of the <code>hello()</code> to another object name? (Please note that in the following example, the return value <code>out</code> is not a <code>NULL</code> anymore.)</p>
 </div>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb26-1"><a href="functions.html#cb26-1" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">hello2</span>(<span class="at">name =</span> <span class="st">&quot;Alvin&quot;</span>)</span>
-<span id="cb26-2"><a href="functions.html#cb26-2" tabindex="-1"></a>out</span></code></pre></div>
+<div class="sourceCode" id="cb306"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb306-1"><a href="functions.html#cb306-1" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">hello2</span>(<span class="at">name =</span> <span class="st">&quot;Alvin&quot;</span>)</span>
+<span id="cb306-2"><a href="functions.html#cb306-2" tabindex="-1"></a>out</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;How are you doing, Alvin&quot;</code></pre>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb28-1"><a href="functions.html#cb28-1" tabindex="-1"></a><span class="fu">hello2</span>(<span class="at">name =</span> <span class="st">&quot;John&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb308"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb308-1"><a href="functions.html#cb308-1" tabindex="-1"></a><span class="fu">hello2</span>(<span class="at">name =</span> <span class="st">&quot;John&quot;</span>)</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;How are you doing, John&quot;</code></pre>
 </div>
 <div id="parameters-order" class="section level3 hasAnchor" number="6.1.6">
 <h3><span class="header-section-number">6.1.6</span> Parameters Order<a href="functions.html#parameters-order" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We’ve seen functions with parameters. When a function has many parameters, there are two alternatives to assign the arguments to the parameters in the function call.</p>
 <p>First, we can assign the arguments to the parameters specified in the function call:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb30-1"><a href="functions.html#cb30-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb30-2"><a href="functions.html#cb30-2" tabindex="-1"></a><span class="fu">sample</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>), <span class="at">size =</span> <span class="dv">5</span>, <span class="at">replace =</span> <span class="cn">FALSE</span>, <span class="at">prob =</span> <span class="cn">NULL</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb310"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb310-1"><a href="functions.html#cb310-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb310-2"><a href="functions.html#cb310-2" tabindex="-1"></a><span class="fu">sample</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>), <span class="at">size =</span> <span class="dv">5</span>, <span class="at">replace =</span> <span class="cn">FALSE</span>, <span class="at">prob =</span> <span class="cn">NULL</span>)</span></code></pre></div>
 <pre class="Rout"><code>[1]  3 10  2  8  6</code></pre>
 <p>Alternatively, we can assign the arguments to the parameters according to the order of the parameters in the function definition without specifying the parameter names:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb32-1"><a href="functions.html#cb32-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb32-2"><a href="functions.html#cb32-2" tabindex="-1"></a><span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>), <span class="dv">5</span>, <span class="cn">FALSE</span>, <span class="cn">NULL</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb312"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb312-1"><a href="functions.html#cb312-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb312-2"><a href="functions.html#cb312-2" tabindex="-1"></a><span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>), <span class="dv">5</span>, <span class="cn">FALSE</span>, <span class="cn">NULL</span>)</span></code></pre></div>
 <pre class="Rout"><code>[1]  3 10  2  8  6</code></pre>
 <div class="info">
 <p>In the function definition, we can also assign default values to the parameters. For example, in the documentation of <code>sample(x, size, replace = FALSE, prob = NULL)</code>, we can see that the parameters <code>replace=</code> and <code>prob=</code> have default values. That means in the function call we can use these default values as the arguments without specifying them in the call.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb34-1"><a href="functions.html#cb34-1" tabindex="-1"></a><span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>), <span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb314"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb314-1"><a href="functions.html#cb314-1" tabindex="-1"></a><span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>), <span class="dv">5</span>)</span></code></pre></div>
 <pre class="Rout"><code>[1] 5 4 6 8 1</code></pre>
 </div>
 </div>
@@ -714,22 +745,22 @@ out</code></pre>
 <h3><span class="header-section-number">6.1.7</span> Stacking Functions<a href="functions.html#stacking-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A function can also call another function within its code block. When this happens, the execution of the code would move to the called function before returning to the original function call.</p>
 <p>For instance, we can define two functions in R, <code>hello()</code> and <code>email()</code>.</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb36-1"><a href="functions.html#cb36-1" tabindex="-1"></a><span class="do">## Main function</span></span>
-<span id="cb36-2"><a href="functions.html#cb36-2" tabindex="-1"></a>hello <span class="ot">&lt;-</span> <span class="cf">function</span>(name) {</span>
-<span id="cb36-3"><a href="functions.html#cb36-3" tabindex="-1"></a>    user_email <span class="ot">&lt;-</span> <span class="fu">email</span>(<span class="at">user =</span> name)</span>
-<span id="cb36-4"><a href="functions.html#cb36-4" tabindex="-1"></a>    out <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;How are you doing, &quot;</span>, name, <span class="st">&quot;. &quot;</span>, user_email)</span>
-<span id="cb36-5"><a href="functions.html#cb36-5" tabindex="-1"></a></span>
-<span id="cb36-6"><a href="functions.html#cb36-6" tabindex="-1"></a>    <span class="fu">return</span>(out)</span>
-<span id="cb36-7"><a href="functions.html#cb36-7" tabindex="-1"></a>}</span>
-<span id="cb36-8"><a href="functions.html#cb36-8" tabindex="-1"></a></span>
-<span id="cb36-9"><a href="functions.html#cb36-9" tabindex="-1"></a><span class="do">## Embedded function</span></span>
-<span id="cb36-10"><a href="functions.html#cb36-10" tabindex="-1"></a>email <span class="ot">&lt;-</span> <span class="cf">function</span>(user) {</span>
-<span id="cb36-11"><a href="functions.html#cb36-11" tabindex="-1"></a>    out <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;Your email is: &quot;</span>, <span class="fu">tolower</span>(user), <span class="st">&quot;@whatever.org&quot;</span>)</span>
-<span id="cb36-12"><a href="functions.html#cb36-12" tabindex="-1"></a>    <span class="fu">return</span>(out)</span>
-<span id="cb36-13"><a href="functions.html#cb36-13" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb316"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb316-1"><a href="functions.html#cb316-1" tabindex="-1"></a><span class="do">## Main function</span></span>
+<span id="cb316-2"><a href="functions.html#cb316-2" tabindex="-1"></a>hello <span class="ot">&lt;-</span> <span class="cf">function</span>(name) {</span>
+<span id="cb316-3"><a href="functions.html#cb316-3" tabindex="-1"></a>    user_email <span class="ot">&lt;-</span> <span class="fu">email</span>(<span class="at">user =</span> name)</span>
+<span id="cb316-4"><a href="functions.html#cb316-4" tabindex="-1"></a>    out <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;How are you doing, &quot;</span>, name, <span class="st">&quot;. &quot;</span>, user_email)</span>
+<span id="cb316-5"><a href="functions.html#cb316-5" tabindex="-1"></a></span>
+<span id="cb316-6"><a href="functions.html#cb316-6" tabindex="-1"></a>    <span class="fu">return</span>(out)</span>
+<span id="cb316-7"><a href="functions.html#cb316-7" tabindex="-1"></a>}</span>
+<span id="cb316-8"><a href="functions.html#cb316-8" tabindex="-1"></a></span>
+<span id="cb316-9"><a href="functions.html#cb316-9" tabindex="-1"></a><span class="do">## Embedded function</span></span>
+<span id="cb316-10"><a href="functions.html#cb316-10" tabindex="-1"></a>email <span class="ot">&lt;-</span> <span class="cf">function</span>(user) {</span>
+<span id="cb316-11"><a href="functions.html#cb316-11" tabindex="-1"></a>    out <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;Your email is: &quot;</span>, <span class="fu">tolower</span>(user), <span class="st">&quot;@whatever.org&quot;</span>)</span>
+<span id="cb316-12"><a href="functions.html#cb316-12" tabindex="-1"></a>    <span class="fu">return</span>(out)</span>
+<span id="cb316-13"><a href="functions.html#cb316-13" tabindex="-1"></a>}</span></code></pre></div>
 <p>Within the code block of <code>hello()</code>, we can make a function call to <code>email()</code>. This means that <code>email()</code> is <strong>embedded</strong> within <code>hello()</code>, and when <code>hello()</code> is called, it will execute its code block and then move to execute the code block of <code>email()</code>. After the code block of <code>email()</code> is executed, the control will move back to <code>hello()</code> to complete its execution.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb37-1"><a href="functions.html#cb37-1" tabindex="-1"></a><span class="do">## call `hello()`</span></span>
-<span id="cb37-2"><a href="functions.html#cb37-2" tabindex="-1"></a><span class="fu">hello</span>(<span class="st">&quot;Alvin&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb317"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb317-1"><a href="functions.html#cb317-1" tabindex="-1"></a><span class="do">## call `hello()`</span></span>
+<span id="cb317-2"><a href="functions.html#cb317-2" tabindex="-1"></a><span class="fu">hello</span>(<span class="st">&quot;Alvin&quot;</span>)</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;How are you doing, Alvin. Your email is: alvin@whatever.org&quot;</code></pre>
 <p>This ability to call functions within functions is useful in situations where a function needs to perform multiple tasks, and each task can be implemented using a separate function. Rather than writing all the code in a single function, we can call other functions from within it to keep the code organized and easier to understand.</p>
 </div>
@@ -762,72 +793,72 @@ out</code></pre>
 <div class="warning">
 <p>Before running the following code demos, restart your R session to ensure there are no leftover objects from previous exercises.</p>
 <p>You can also clear the environment with this code (use with caution!):</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="functions.html#cb39-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>(<span class="at">all =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="functions.html#cb319-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>(<span class="at">all =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
 </div>
 <ul>
 <li>The following code chunk shows that local variables cannot be accessed in the global scope.</li>
 </ul>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb40-1"><a href="functions.html#cb40-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>(<span class="at">all =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb40-2"><a href="functions.html#cb40-2" tabindex="-1"></a>customer <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb40-3"><a href="functions.html#cb40-3" tabindex="-1"></a>    id <span class="ot">&lt;-</span> <span class="dv">123</span></span>
-<span id="cb40-4"><a href="functions.html#cb40-4" tabindex="-1"></a>    age <span class="ot">&lt;-</span> <span class="dv">25</span></span>
-<span id="cb40-5"><a href="functions.html#cb40-5" tabindex="-1"></a>    nation <span class="ot">&lt;-</span> <span class="st">&quot;TW&quot;</span></span>
-<span id="cb40-6"><a href="functions.html#cb40-6" tabindex="-1"></a>}</span>
-<span id="cb40-7"><a href="functions.html#cb40-7" tabindex="-1"></a><span class="fu">customer</span>()</span>
-<span id="cb40-8"><a href="functions.html#cb40-8" tabindex="-1"></a><span class="fu">cat</span>(id)</span></code></pre></div>
-<pre><code>Error in eval(expr, envir, enclos): object &#39;id&#39; not found</code></pre>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb320-1"><a href="functions.html#cb320-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>(<span class="at">all =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb320-2"><a href="functions.html#cb320-2" tabindex="-1"></a>customer <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb320-3"><a href="functions.html#cb320-3" tabindex="-1"></a>    id <span class="ot">&lt;-</span> <span class="dv">123</span></span>
+<span id="cb320-4"><a href="functions.html#cb320-4" tabindex="-1"></a>    age <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb320-5"><a href="functions.html#cb320-5" tabindex="-1"></a>    nation <span class="ot">&lt;-</span> <span class="st">&quot;TW&quot;</span></span>
+<span id="cb320-6"><a href="functions.html#cb320-6" tabindex="-1"></a>}</span>
+<span id="cb320-7"><a href="functions.html#cb320-7" tabindex="-1"></a><span class="fu">customer</span>()</span>
+<span id="cb320-8"><a href="functions.html#cb320-8" tabindex="-1"></a><span class="fu">cat</span>(id)</span></code></pre></div>
+<pre><code>Error in cat(id): argument 1 (type &#39;closure&#39;) cannot be handled by &#39;cat&#39;</code></pre>
 <ul>
 <li>The following code chunk shows that local scopes cannot use variables in other local scopes.</li>
 </ul>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb42-1"><a href="functions.html#cb42-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>(<span class="at">all =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb42-2"><a href="functions.html#cb42-2" tabindex="-1"></a></span>
-<span id="cb42-3"><a href="functions.html#cb42-3" tabindex="-1"></a>customer <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb42-4"><a href="functions.html#cb42-4" tabindex="-1"></a>    id <span class="ot">&lt;-</span> <span class="dv">123</span></span>
-<span id="cb42-5"><a href="functions.html#cb42-5" tabindex="-1"></a>    age <span class="ot">&lt;-</span> <span class="dv">25</span></span>
-<span id="cb42-6"><a href="functions.html#cb42-6" tabindex="-1"></a>    nation <span class="ot">&lt;-</span> <span class="st">&quot;TW&quot;</span></span>
-<span id="cb42-7"><a href="functions.html#cb42-7" tabindex="-1"></a>    <span class="fu">print</span>(age)</span>
-<span id="cb42-8"><a href="functions.html#cb42-8" tabindex="-1"></a>}</span>
-<span id="cb42-9"><a href="functions.html#cb42-9" tabindex="-1"></a></span>
-<span id="cb42-10"><a href="functions.html#cb42-10" tabindex="-1"></a>client <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb42-11"><a href="functions.html#cb42-11" tabindex="-1"></a>    age <span class="ot">&lt;-</span> <span class="dv">50</span></span>
-<span id="cb42-12"><a href="functions.html#cb42-12" tabindex="-1"></a>}</span>
-<span id="cb42-13"><a href="functions.html#cb42-13" tabindex="-1"></a></span>
-<span id="cb42-14"><a href="functions.html#cb42-14" tabindex="-1"></a></span>
-<span id="cb42-15"><a href="functions.html#cb42-15" tabindex="-1"></a><span class="fu">client</span>()  <span class="do">## initalize a local var `age` in `client()`</span></span>
-<span id="cb42-16"><a href="functions.html#cb42-16" tabindex="-1"></a><span class="fu">customer</span>()  <span class="co"># returning `age` from `customer()` not from `client()`</span></span></code></pre></div>
+<div class="sourceCode" id="cb322"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb322-1"><a href="functions.html#cb322-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>(<span class="at">all =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb322-2"><a href="functions.html#cb322-2" tabindex="-1"></a></span>
+<span id="cb322-3"><a href="functions.html#cb322-3" tabindex="-1"></a>customer <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb322-4"><a href="functions.html#cb322-4" tabindex="-1"></a>    id <span class="ot">&lt;-</span> <span class="dv">123</span></span>
+<span id="cb322-5"><a href="functions.html#cb322-5" tabindex="-1"></a>    age <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb322-6"><a href="functions.html#cb322-6" tabindex="-1"></a>    nation <span class="ot">&lt;-</span> <span class="st">&quot;TW&quot;</span></span>
+<span id="cb322-7"><a href="functions.html#cb322-7" tabindex="-1"></a>    <span class="fu">print</span>(age)</span>
+<span id="cb322-8"><a href="functions.html#cb322-8" tabindex="-1"></a>}</span>
+<span id="cb322-9"><a href="functions.html#cb322-9" tabindex="-1"></a></span>
+<span id="cb322-10"><a href="functions.html#cb322-10" tabindex="-1"></a>client <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb322-11"><a href="functions.html#cb322-11" tabindex="-1"></a>    age <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb322-12"><a href="functions.html#cb322-12" tabindex="-1"></a>}</span>
+<span id="cb322-13"><a href="functions.html#cb322-13" tabindex="-1"></a></span>
+<span id="cb322-14"><a href="functions.html#cb322-14" tabindex="-1"></a></span>
+<span id="cb322-15"><a href="functions.html#cb322-15" tabindex="-1"></a><span class="fu">client</span>()  <span class="do">## initalize a local var `age` in `client()`</span></span>
+<span id="cb322-16"><a href="functions.html#cb322-16" tabindex="-1"></a><span class="fu">customer</span>()  <span class="co"># returning `age` from `customer()` not from `client()`</span></span></code></pre></div>
 <pre class="Rout"><code>[1] 25</code></pre>
 <ul>
 <li>The following code chunk shows a local scope can access global variables.</li>
 </ul>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb44-1"><a href="functions.html#cb44-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>(<span class="at">all =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb44-2"><a href="functions.html#cb44-2" tabindex="-1"></a></span>
-<span id="cb44-3"><a href="functions.html#cb44-3" tabindex="-1"></a>customer <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb44-4"><a href="functions.html#cb44-4" tabindex="-1"></a>    age <span class="ot">&lt;-</span> <span class="dv">25</span></span>
-<span id="cb44-5"><a href="functions.html#cb44-5" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&quot;The customer works at&quot;</span>, company)</span>
-<span id="cb44-6"><a href="functions.html#cb44-6" tabindex="-1"></a>}</span>
-<span id="cb44-7"><a href="functions.html#cb44-7" tabindex="-1"></a></span>
-<span id="cb44-8"><a href="functions.html#cb44-8" tabindex="-1"></a>company <span class="ot">&lt;-</span> <span class="st">&quot;NTNU&quot;</span></span>
-<span id="cb44-9"><a href="functions.html#cb44-9" tabindex="-1"></a><span class="fu">customer</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb324"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb324-1"><a href="functions.html#cb324-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>(<span class="at">all =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb324-2"><a href="functions.html#cb324-2" tabindex="-1"></a></span>
+<span id="cb324-3"><a href="functions.html#cb324-3" tabindex="-1"></a>customer <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb324-4"><a href="functions.html#cb324-4" tabindex="-1"></a>    age <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb324-5"><a href="functions.html#cb324-5" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&quot;The customer works at&quot;</span>, company)</span>
+<span id="cb324-6"><a href="functions.html#cb324-6" tabindex="-1"></a>}</span>
+<span id="cb324-7"><a href="functions.html#cb324-7" tabindex="-1"></a></span>
+<span id="cb324-8"><a href="functions.html#cb324-8" tabindex="-1"></a>company <span class="ot">&lt;-</span> <span class="st">&quot;NTNU&quot;</span></span>
+<span id="cb324-9"><a href="functions.html#cb324-9" tabindex="-1"></a><span class="fu">customer</span>()</span></code></pre></div>
 <pre class="Rout"><code>The customer works at NTNU</code></pre>
 <div class="warning">
 <p>Technically, it is OK to use the same variable name for a global variable and local variable in different scopes. But to make your life easier, please avoid doing this.</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb46-1"><a href="functions.html#cb46-1" tabindex="-1"></a>customer <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb46-2"><a href="functions.html#cb46-2" tabindex="-1"></a>    age <span class="ot">&lt;-</span> <span class="dv">25</span></span>
-<span id="cb46-3"><a href="functions.html#cb46-3" tabindex="-1"></a>    <span class="fu">cat</span>(age)</span>
-<span id="cb46-4"><a href="functions.html#cb46-4" tabindex="-1"></a>}</span>
-<span id="cb46-5"><a href="functions.html#cb46-5" tabindex="-1"></a></span>
-<span id="cb46-6"><a href="functions.html#cb46-6" tabindex="-1"></a>client <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb46-7"><a href="functions.html#cb46-7" tabindex="-1"></a>    age <span class="ot">&lt;-</span> <span class="dv">55</span></span>
-<span id="cb46-8"><a href="functions.html#cb46-8" tabindex="-1"></a>    <span class="fu">cat</span>(age)</span>
-<span id="cb46-9"><a href="functions.html#cb46-9" tabindex="-1"></a>}</span>
-<span id="cb46-10"><a href="functions.html#cb46-10" tabindex="-1"></a></span>
-<span id="cb46-11"><a href="functions.html#cb46-11" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb46-12"><a href="functions.html#cb46-12" tabindex="-1"></a></span>
-<span id="cb46-13"><a href="functions.html#cb46-13" tabindex="-1"></a><span class="fu">customer</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb326"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb326-1"><a href="functions.html#cb326-1" tabindex="-1"></a>customer <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb326-2"><a href="functions.html#cb326-2" tabindex="-1"></a>    age <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb326-3"><a href="functions.html#cb326-3" tabindex="-1"></a>    <span class="fu">cat</span>(age)</span>
+<span id="cb326-4"><a href="functions.html#cb326-4" tabindex="-1"></a>}</span>
+<span id="cb326-5"><a href="functions.html#cb326-5" tabindex="-1"></a></span>
+<span id="cb326-6"><a href="functions.html#cb326-6" tabindex="-1"></a>client <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb326-7"><a href="functions.html#cb326-7" tabindex="-1"></a>    age <span class="ot">&lt;-</span> <span class="dv">55</span></span>
+<span id="cb326-8"><a href="functions.html#cb326-8" tabindex="-1"></a>    <span class="fu">cat</span>(age)</span>
+<span id="cb326-9"><a href="functions.html#cb326-9" tabindex="-1"></a>}</span>
+<span id="cb326-10"><a href="functions.html#cb326-10" tabindex="-1"></a></span>
+<span id="cb326-11"><a href="functions.html#cb326-11" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb326-12"><a href="functions.html#cb326-12" tabindex="-1"></a></span>
+<span id="cb326-13"><a href="functions.html#cb326-13" tabindex="-1"></a><span class="fu">customer</span>()</span></code></pre></div>
 <pre class="Rout"><code>25</code></pre>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb48-1"><a href="functions.html#cb48-1" tabindex="-1"></a><span class="fu">client</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb328"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb328-1"><a href="functions.html#cb328-1" tabindex="-1"></a><span class="fu">client</span>()</span></code></pre></div>
 <pre class="Rout"><code>55</code></pre>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb50-1"><a href="functions.html#cb50-1" tabindex="-1"></a><span class="fu">cat</span>(age)</span></code></pre></div>
+<div class="sourceCode" id="cb330"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb330-1"><a href="functions.html#cb330-1" tabindex="-1"></a><span class="fu">cat</span>(age)</span></code></pre></div>
 <pre class="Rout"><code>100</code></pre>
 </div>
 </div>
@@ -839,45 +870,45 @@ out</code></pre>
 - Ensure the program keeps running without stopping halfway.
 - Clearly inform users about any errors or warnings.</p>
 <p>For example, if we create a function <code>myLog()</code> that calculates the logarithm of a number with a given base, there are cases where the result might be problematic:</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb52-1"><a href="functions.html#cb52-1" tabindex="-1"></a>myLog <span class="ot">&lt;-</span> <span class="cf">function</span>(x, myBase) {</span>
-<span id="cb52-2"><a href="functions.html#cb52-2" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">log</span>(x, myBase))</span>
-<span id="cb52-3"><a href="functions.html#cb52-3" tabindex="-1"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb53-1"><a href="functions.html#cb53-1" tabindex="-1"></a><span class="do">## OK</span></span>
-<span id="cb53-2"><a href="functions.html#cb53-2" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">100</span>, <span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb332"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb332-1"><a href="functions.html#cb332-1" tabindex="-1"></a>myLog <span class="ot">&lt;-</span> <span class="cf">function</span>(x, myBase) {</span>
+<span id="cb332-2"><a href="functions.html#cb332-2" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">log</span>(x, myBase))</span>
+<span id="cb332-3"><a href="functions.html#cb332-3" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb333"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb333-1"><a href="functions.html#cb333-1" tabindex="-1"></a><span class="do">## OK</span></span>
+<span id="cb333-2"><a href="functions.html#cb333-2" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">100</span>, <span class="dv">10</span>)</span></code></pre></div>
 <pre class="Rout"><code>[1] 2</code></pre>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb55-1"><a href="functions.html#cb55-1" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">8</span>, <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb335"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb335-1"><a href="functions.html#cb335-1" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">8</span>, <span class="dv">2</span>)</span></code></pre></div>
 <pre class="Rout"><code>[1] 3</code></pre>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb57-1"><a href="functions.html#cb57-1" tabindex="-1"></a><span class="do">## Not OK (These examples will cause your program to crash)</span></span>
-<span id="cb57-2"><a href="functions.html#cb57-2" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">10</span>, <span class="sc">-</span><span class="dv">1</span>)  <span class="do">## base is negative</span></span></code></pre></div>
+<div class="sourceCode" id="cb337"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb337-1"><a href="functions.html#cb337-1" tabindex="-1"></a><span class="do">## Not OK (These examples will cause your program to crash)</span></span>
+<span id="cb337-2"><a href="functions.html#cb337-2" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">10</span>, <span class="sc">-</span><span class="dv">1</span>)  <span class="do">## base is negative</span></span></code></pre></div>
 <pre><code>Warning in log(x, myBase): NaNs produced</code></pre>
 <pre class="Rout"><code>[1] NaN</code></pre>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb60-1"><a href="functions.html#cb60-1" tabindex="-1"></a><span class="fu">myLog</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">10</span>)  <span class="do">## x is negative</span></span></code></pre></div>
+<div class="sourceCode" id="cb340"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb340-1"><a href="functions.html#cb340-1" tabindex="-1"></a><span class="fu">myLog</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">10</span>)  <span class="do">## x is negative</span></span></code></pre></div>
 <pre><code>Warning in log(x, myBase): NaNs produced</code></pre>
 <pre class="Rout"><code>[1] NaN</code></pre>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb63-1"><a href="functions.html#cb63-1" tabindex="-1"></a><span class="fu">myLog</span>(<span class="st">&quot;100&quot;</span>, <span class="dv">10</span>)  <span class="do">## x is not numeric</span></span></code></pre></div>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb343-1"><a href="functions.html#cb343-1" tabindex="-1"></a><span class="fu">myLog</span>(<span class="st">&quot;100&quot;</span>, <span class="dv">10</span>)  <span class="do">## x is not numeric</span></span></code></pre></div>
 <pre><code>Error in log(x, myBase): non-numeric argument to mathematical function</code></pre>
 <p>To make sure that the function <code>myLog()</code> does not terminate the main program when encountering <strong>errors</strong> or <strong>warnings</strong>, it is often a good idea to include <strong>exception handling</strong> in the function code block.</p>
 <hr />
 <p>In R, exception handling can be achieved using the <code>tryCatch()</code> function. This function allows the programmer to specify what should happen when an error or warning occurs during the execution of a block of code.</p>
 <p>The structure of <code>tryCatch()</code> includes a <strong>try</strong> block where the code is executed, and a <strong>catch</strong> block where the handling of errors and warnings is specified. If an error or warning occurs in the <strong>try</strong> block, the code in the <strong>catch</strong> block is executed instead of terminating the program.</p>
 <p>Its structure is as follows:</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb65-1"><a href="functions.html#cb65-1" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">tryCatch</span>({</span>
-<span id="cb65-2"><a href="functions.html#cb65-2" tabindex="-1"></a>    <span class="do">##----- original_code -----##</span></span>
-<span id="cb65-3"><a href="functions.html#cb65-3" tabindex="-1"></a></span>
-<span id="cb65-4"><a href="functions.html#cb65-4" tabindex="-1"></a></span>
-<span id="cb65-5"><a href="functions.html#cb65-5" tabindex="-1"></a>}, <span class="at">warning =</span> <span class="cf">function</span>(w) {</span>
-<span id="cb65-6"><a href="functions.html#cb65-6" tabindex="-1"></a>    <span class="do">##----- warning_handler_code -----##</span></span>
-<span id="cb65-7"><a href="functions.html#cb65-7" tabindex="-1"></a></span>
-<span id="cb65-8"><a href="functions.html#cb65-8" tabindex="-1"></a></span>
-<span id="cb65-9"><a href="functions.html#cb65-9" tabindex="-1"></a>}, <span class="at">error =</span> <span class="cf">function</span>(e) {</span>
-<span id="cb65-10"><a href="functions.html#cb65-10" tabindex="-1"></a>    <span class="do">##----- error_handler_code -----##</span></span>
-<span id="cb65-11"><a href="functions.html#cb65-11" tabindex="-1"></a></span>
-<span id="cb65-12"><a href="functions.html#cb65-12" tabindex="-1"></a></span>
-<span id="cb65-13"><a href="functions.html#cb65-13" tabindex="-1"></a>}, <span class="at">finally =</span> {</span>
-<span id="cb65-14"><a href="functions.html#cb65-14" tabindex="-1"></a>    <span class="do">##----- cleanup_code -----##</span></span>
-<span id="cb65-15"><a href="functions.html#cb65-15" tabindex="-1"></a></span>
-<span id="cb65-16"><a href="functions.html#cb65-16" tabindex="-1"></a></span>
-<span id="cb65-17"><a href="functions.html#cb65-17" tabindex="-1"></a>})  <span class="do">## endtry</span></span></code></pre></div>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb345-1"><a href="functions.html#cb345-1" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">tryCatch</span>({</span>
+<span id="cb345-2"><a href="functions.html#cb345-2" tabindex="-1"></a>    <span class="do">##----- original_code -----##</span></span>
+<span id="cb345-3"><a href="functions.html#cb345-3" tabindex="-1"></a></span>
+<span id="cb345-4"><a href="functions.html#cb345-4" tabindex="-1"></a></span>
+<span id="cb345-5"><a href="functions.html#cb345-5" tabindex="-1"></a>}, <span class="at">warning =</span> <span class="cf">function</span>(w) {</span>
+<span id="cb345-6"><a href="functions.html#cb345-6" tabindex="-1"></a>    <span class="do">##----- warning_handler_code -----##</span></span>
+<span id="cb345-7"><a href="functions.html#cb345-7" tabindex="-1"></a></span>
+<span id="cb345-8"><a href="functions.html#cb345-8" tabindex="-1"></a></span>
+<span id="cb345-9"><a href="functions.html#cb345-9" tabindex="-1"></a>}, <span class="at">error =</span> <span class="cf">function</span>(e) {</span>
+<span id="cb345-10"><a href="functions.html#cb345-10" tabindex="-1"></a>    <span class="do">##----- error_handler_code -----##</span></span>
+<span id="cb345-11"><a href="functions.html#cb345-11" tabindex="-1"></a></span>
+<span id="cb345-12"><a href="functions.html#cb345-12" tabindex="-1"></a></span>
+<span id="cb345-13"><a href="functions.html#cb345-13" tabindex="-1"></a>}, <span class="at">finally =</span> {</span>
+<span id="cb345-14"><a href="functions.html#cb345-14" tabindex="-1"></a>    <span class="do">##----- cleanup_code -----##</span></span>
+<span id="cb345-15"><a href="functions.html#cb345-15" tabindex="-1"></a></span>
+<span id="cb345-16"><a href="functions.html#cb345-16" tabindex="-1"></a></span>
+<span id="cb345-17"><a href="functions.html#cb345-17" tabindex="-1"></a>})  <span class="do">## endtry</span></span></code></pre></div>
 <p><code>tryCatch()</code> includes the following important elements:</p>
 <ul>
 <li><code>expr</code>: the expression/code to be evaluated.</li>
@@ -885,61 +916,61 @@ out</code></pre>
 <li><code>error</code>: When the <code>expr</code> causes an <strong>error</strong>, the program execution immediately moves to the code in the <code>error</code> code block.</li>
 </ul>
 <p>Now let’s try to include <code>tryCatch()</code> in our code block of the function <code>myLog()</code>:</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb66-1"><a href="functions.html#cb66-1" tabindex="-1"></a>myLog <span class="ot">&lt;-</span> <span class="cf">function</span>(x, myBase) {</span>
-<span id="cb66-2"><a href="functions.html#cb66-2" tabindex="-1"></a>    <span class="fu">tryCatch</span>({</span>
-<span id="cb66-3"><a href="functions.html#cb66-3" tabindex="-1"></a>        <span class="do">##----- original_code -----##</span></span>
-<span id="cb66-4"><a href="functions.html#cb66-4" tabindex="-1"></a>        <span class="fu">return</span>(<span class="fu">log</span>(x, myBase))</span>
-<span id="cb66-5"><a href="functions.html#cb66-5" tabindex="-1"></a></span>
-<span id="cb66-6"><a href="functions.html#cb66-6" tabindex="-1"></a>    }, <span class="at">warning =</span> <span class="cf">function</span>(w) {</span>
-<span id="cb66-7"><a href="functions.html#cb66-7" tabindex="-1"></a>        <span class="do">##----- warning_handler_code -----##</span></span>
-<span id="cb66-8"><a href="functions.html#cb66-8" tabindex="-1"></a>        <span class="cf">if</span> (x <span class="sc">&lt;</span> <span class="dv">0</span>)</span>
-<span id="cb66-9"><a href="functions.html#cb66-9" tabindex="-1"></a>            <span class="fu">print</span>(<span class="st">&quot;WARNING!! `x` must be a positive number&quot;</span>)</span>
-<span id="cb66-10"><a href="functions.html#cb66-10" tabindex="-1"></a>        <span class="cf">if</span> (myBase <span class="sc">&lt;</span> <span class="dv">0</span>)</span>
-<span id="cb66-11"><a href="functions.html#cb66-11" tabindex="-1"></a>            <span class="fu">print</span>(<span class="st">&quot;WARNING!! `myBase` must be a positive number&quot;</span>)</span>
-<span id="cb66-12"><a href="functions.html#cb66-12" tabindex="-1"></a></span>
-<span id="cb66-13"><a href="functions.html#cb66-13" tabindex="-1"></a>    }, <span class="at">error =</span> <span class="cf">function</span>(e) {</span>
-<span id="cb66-14"><a href="functions.html#cb66-14" tabindex="-1"></a>        <span class="do">##----- error_handler_code -----##</span></span>
-<span id="cb66-15"><a href="functions.html#cb66-15" tabindex="-1"></a>        <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.numeric</span>(x) <span class="sc">|</span> <span class="sc">!</span><span class="fu">is.numeric</span>(myBase))</span>
-<span id="cb66-16"><a href="functions.html#cb66-16" tabindex="-1"></a>            <span class="fu">print</span>(<span class="st">&quot;ERROR!! Either `x` or `myBase` must be a positive number not a string&quot;</span>)</span>
-<span id="cb66-17"><a href="functions.html#cb66-17" tabindex="-1"></a></span>
-<span id="cb66-18"><a href="functions.html#cb66-18" tabindex="-1"></a>    }, <span class="at">finally =</span> {</span>
-<span id="cb66-19"><a href="functions.html#cb66-19" tabindex="-1"></a>        <span class="do">##----- cleanup_code (optional) -----##</span></span>
-<span id="cb66-20"><a href="functions.html#cb66-20" tabindex="-1"></a>        <span class="do">## print(&#39;Function completed!!&#39;)</span></span>
-<span id="cb66-21"><a href="functions.html#cb66-21" tabindex="-1"></a></span>
-<span id="cb66-22"><a href="functions.html#cb66-22" tabindex="-1"></a>    })  <span class="do">## endtrycatch</span></span>
-<span id="cb66-23"><a href="functions.html#cb66-23" tabindex="-1"></a>}  <span class="do">## endfunc</span></span></code></pre></div>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb67-1"><a href="functions.html#cb67-1" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">100</span>, <span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb346"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb346-1"><a href="functions.html#cb346-1" tabindex="-1"></a>myLog <span class="ot">&lt;-</span> <span class="cf">function</span>(x, myBase) {</span>
+<span id="cb346-2"><a href="functions.html#cb346-2" tabindex="-1"></a>    <span class="fu">tryCatch</span>({</span>
+<span id="cb346-3"><a href="functions.html#cb346-3" tabindex="-1"></a>        <span class="do">##----- original_code -----##</span></span>
+<span id="cb346-4"><a href="functions.html#cb346-4" tabindex="-1"></a>        <span class="fu">return</span>(<span class="fu">log</span>(x, myBase))</span>
+<span id="cb346-5"><a href="functions.html#cb346-5" tabindex="-1"></a></span>
+<span id="cb346-6"><a href="functions.html#cb346-6" tabindex="-1"></a>    }, <span class="at">warning =</span> <span class="cf">function</span>(w) {</span>
+<span id="cb346-7"><a href="functions.html#cb346-7" tabindex="-1"></a>        <span class="do">##----- warning_handler_code -----##</span></span>
+<span id="cb346-8"><a href="functions.html#cb346-8" tabindex="-1"></a>        <span class="cf">if</span> (x <span class="sc">&lt;</span> <span class="dv">0</span>)</span>
+<span id="cb346-9"><a href="functions.html#cb346-9" tabindex="-1"></a>            <span class="fu">print</span>(<span class="st">&quot;WARNING!! `x` must be a positive number&quot;</span>)</span>
+<span id="cb346-10"><a href="functions.html#cb346-10" tabindex="-1"></a>        <span class="cf">if</span> (myBase <span class="sc">&lt;</span> <span class="dv">0</span>)</span>
+<span id="cb346-11"><a href="functions.html#cb346-11" tabindex="-1"></a>            <span class="fu">print</span>(<span class="st">&quot;WARNING!! `myBase` must be a positive number&quot;</span>)</span>
+<span id="cb346-12"><a href="functions.html#cb346-12" tabindex="-1"></a></span>
+<span id="cb346-13"><a href="functions.html#cb346-13" tabindex="-1"></a>    }, <span class="at">error =</span> <span class="cf">function</span>(e) {</span>
+<span id="cb346-14"><a href="functions.html#cb346-14" tabindex="-1"></a>        <span class="do">##----- error_handler_code -----##</span></span>
+<span id="cb346-15"><a href="functions.html#cb346-15" tabindex="-1"></a>        <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.numeric</span>(x) <span class="sc">|</span> <span class="sc">!</span><span class="fu">is.numeric</span>(myBase))</span>
+<span id="cb346-16"><a href="functions.html#cb346-16" tabindex="-1"></a>            <span class="fu">print</span>(<span class="st">&quot;ERROR!! Either `x` or `myBase` must be a positive number not a string&quot;</span>)</span>
+<span id="cb346-17"><a href="functions.html#cb346-17" tabindex="-1"></a></span>
+<span id="cb346-18"><a href="functions.html#cb346-18" tabindex="-1"></a>    }, <span class="at">finally =</span> {</span>
+<span id="cb346-19"><a href="functions.html#cb346-19" tabindex="-1"></a>        <span class="do">##----- cleanup_code (optional) -----##</span></span>
+<span id="cb346-20"><a href="functions.html#cb346-20" tabindex="-1"></a>        <span class="do">## print(&#39;Function completed!!&#39;)</span></span>
+<span id="cb346-21"><a href="functions.html#cb346-21" tabindex="-1"></a></span>
+<span id="cb346-22"><a href="functions.html#cb346-22" tabindex="-1"></a>    })  <span class="do">## endtrycatch</span></span>
+<span id="cb346-23"><a href="functions.html#cb346-23" tabindex="-1"></a>}  <span class="do">## endfunc</span></span></code></pre></div>
+<div class="sourceCode" id="cb347"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb347-1"><a href="functions.html#cb347-1" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">100</span>, <span class="dv">10</span>)</span></code></pre></div>
 <pre class="Rout"><code>[1] 2</code></pre>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb69-1"><a href="functions.html#cb69-1" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">100</span>, <span class="fu">exp</span>(<span class="dv">1</span>))  <span class="do">## same as `log(100)` with natural E as the base</span></span></code></pre></div>
+<div class="sourceCode" id="cb349"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb349-1"><a href="functions.html#cb349-1" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">100</span>, <span class="fu">exp</span>(<span class="dv">1</span>))  <span class="do">## same as `log(100)` with natural E as the base</span></span></code></pre></div>
 <pre class="Rout"><code>[1] 4.60517</code></pre>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb71-1"><a href="functions.html#cb71-1" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">10</span>, <span class="sc">-</span><span class="dv">1</span>)  <span class="do">## Warning</span></span></code></pre></div>
+<div class="sourceCode" id="cb351"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb351-1"><a href="functions.html#cb351-1" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">10</span>, <span class="sc">-</span><span class="dv">1</span>)  <span class="do">## Warning</span></span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;WARNING!! `myBase` must be a positive number&quot;</code></pre>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb73-1"><a href="functions.html#cb73-1" tabindex="-1"></a><span class="fu">myLog</span>(<span class="st">&quot;w12&quot;</span>, <span class="dv">0</span>)  <span class="do">## Error</span></span></code></pre></div>
+<div class="sourceCode" id="cb353"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb353-1"><a href="functions.html#cb353-1" tabindex="-1"></a><span class="fu">myLog</span>(<span class="st">&quot;w12&quot;</span>, <span class="dv">0</span>)  <span class="do">## Error</span></span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;ERROR!! Either `x` or `myBase` must be a positive number not a string&quot;</code></pre>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb75-1"><a href="functions.html#cb75-1" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">8</span>, <span class="st">&quot;2&quot;</span>)  <span class="do">## Error</span></span></code></pre></div>
+<div class="sourceCode" id="cb355"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb355-1"><a href="functions.html#cb355-1" tabindex="-1"></a><span class="fu">myLog</span>(<span class="dv">8</span>, <span class="st">&quot;2&quot;</span>)  <span class="do">## Error</span></span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;ERROR!! Either `x` or `myBase` must be a positive number not a string&quot;</code></pre>
 <div class="info">
 <p>In R, <code>cat()</code>, <code>writeLines()</code>, and <code>print()</code> are three functions that can be used to print out output to the console (or other output devices). However, they differ in their syntax and output format. Here are the main differences between these functions:</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb77-1"><a href="functions.html#cb77-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)  <span class="do">## num vec</span></span>
-<span id="cb77-2"><a href="functions.html#cb77-2" tabindex="-1"></a>y <span class="ot">&lt;-</span> letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]  <span class="do">## char vec</span></span>
-<span id="cb77-3"><a href="functions.html#cb77-3" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">factor</span>(y)  <span class="do">## factor</span></span></code></pre></div>
+<div class="sourceCode" id="cb357"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb357-1"><a href="functions.html#cb357-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)  <span class="do">## num vec</span></span>
+<span id="cb357-2"><a href="functions.html#cb357-2" tabindex="-1"></a>y <span class="ot">&lt;-</span> letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]  <span class="do">## char vec</span></span>
+<span id="cb357-3"><a href="functions.html#cb357-3" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">factor</span>(y)  <span class="do">## factor</span></span></code></pre></div>
 <div id="cat" class="section level3 unnumbered hasAnchor">
 <h3>cat()<a href="functions.html#cat" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This function is used to <strong>concatenate</strong> and print objects. It can take one or more objects as input and concatenates them with a <strong>separator</strong> (by default, a space). The output is not formatted and is printed as a single string.</p>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb78-1"><a href="functions.html#cb78-1" tabindex="-1"></a><span class="fu">cat</span>(x)  <span class="do">## cat numbers</span></span></code></pre></div>
+<div class="sourceCode" id="cb358"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb358-1"><a href="functions.html#cb358-1" tabindex="-1"></a><span class="fu">cat</span>(x)  <span class="do">## cat numbers</span></span></code></pre></div>
 <pre class="Rout"><code>1 2 3 4 5 6 7 8 9 10</code></pre>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb80-1"><a href="functions.html#cb80-1" tabindex="-1"></a><span class="fu">cat</span>(y)  <span class="do">## cat characters</span></span></code></pre></div>
+<div class="sourceCode" id="cb360"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb360-1"><a href="functions.html#cb360-1" tabindex="-1"></a><span class="fu">cat</span>(y)  <span class="do">## cat characters</span></span></code></pre></div>
 <pre class="Rout"><code>a b c d e f g h i j</code></pre>
 <p>Please pay particular attention to how <code>cat()</code> prints the values of a factor:</p>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb82-1"><a href="functions.html#cb82-1" tabindex="-1"></a><span class="fu">cat</span>(z)  <span class="do">## cat factor </span></span></code></pre></div>
+<div class="sourceCode" id="cb362"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb362-1"><a href="functions.html#cb362-1" tabindex="-1"></a><span class="fu">cat</span>(z)  <span class="do">## cat factor </span></span></code></pre></div>
 <pre class="Rout"><code>1 2 3 4 5 6 7 8 9 10</code></pre>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb84-1"><a href="functions.html#cb84-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Numbers:&quot;</span>, x, <span class="st">&quot;Characters:&quot;</span>, y)  <span class="do">## concatenated strings</span></span></code></pre></div>
+<div class="sourceCode" id="cb364"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb364-1"><a href="functions.html#cb364-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Numbers:&quot;</span>, x, <span class="st">&quot;Characters:&quot;</span>, y)  <span class="do">## concatenated strings</span></span></code></pre></div>
 <pre class="Rout"><code>Numbers: 1 2 3 4 5 6 7 8 9 10 Characters: a b c d e f g h i j</code></pre>
 </div>
 <div id="writelines" class="section level3 unnumbered hasAnchor">
 <h3>writeLines()<a href="functions.html#writelines" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This function writes <strong>character</strong> vectors to a connection, with one element per line. By default, each element is appended with a <strong>line break</strong>.</p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb86-1"><a href="functions.html#cb86-1" tabindex="-1"></a><span class="fu">writeLines</span>(y)  <span class="do">## char vec</span></span></code></pre></div>
+<div class="sourceCode" id="cb366"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb366-1"><a href="functions.html#cb366-1" tabindex="-1"></a><span class="fu">writeLines</span>(y)  <span class="do">## char vec</span></span></code></pre></div>
 <pre class="Rout"><code>a
 b
 c
@@ -951,46 +982,46 @@ h
 i
 j</code></pre>
 <p>Please note that this function only takes <strong>character vectors</strong> as the input and does not do <strong>implicit data conversion</strong> (if the input is a numeric vector)</p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb88-1"><a href="functions.html#cb88-1" tabindex="-1"></a><span class="fu">writeLines</span>(x)  <span class="do">## !!Not working with num vec</span></span></code></pre></div>
+<div class="sourceCode" id="cb368"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb368-1"><a href="functions.html#cb368-1" tabindex="-1"></a><span class="fu">writeLines</span>(x)  <span class="do">## !!Not working with num vec</span></span></code></pre></div>
 <pre><code>Error in writeLines(x): can only write character objects</code></pre>
 <p>This function cannot take a factor either:</p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb90-1"><a href="functions.html#cb90-1" tabindex="-1"></a><span class="fu">writeLines</span>(z)  <span class="do">## !!Not Working with factor</span></span></code></pre></div>
+<div class="sourceCode" id="cb370"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb370-1"><a href="functions.html#cb370-1" tabindex="-1"></a><span class="fu">writeLines</span>(z)  <span class="do">## !!Not Working with factor</span></span></code></pre></div>
 <pre><code>Error in writeLines(z): can only write character objects</code></pre>
 <p>Unlike <code>cat()</code>, it cannot concatenate character strings.</p>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb92-1"><a href="functions.html#cb92-1" tabindex="-1"></a><span class="fu">writeLines</span>(<span class="st">&quot;Characters:&quot;</span>, y)  <span class="do">## !! Not Working..</span></span></code></pre></div>
+<div class="sourceCode" id="cb372"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb372-1"><a href="functions.html#cb372-1" tabindex="-1"></a><span class="fu">writeLines</span>(<span class="st">&quot;Characters:&quot;</span>, y)  <span class="do">## !! Not Working..</span></span></code></pre></div>
 <pre><code>Error in file(con, &quot;w&quot;): invalid &#39;description&#39; argument</code></pre>
 </div>
 <div id="print" class="section level3 unnumbered hasAnchor">
 <h3>print()<a href="functions.html#print" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>print()</code> is a generic function that prints the object to the console or a file. <code>print()</code> is called implicitly whenever an <strong>object name</strong> is typed into the console (i.e., auto-printing) or passed as an argument to a function that expects a printed output. It applies <strong>formatting</strong> to the object being printed, such as <strong>adding quotes</strong> to character strings and displaying factors as <strong>levels</strong> rather than as numeric codes.</p>
 <p>If the input is a numeric vector, <code>print()</code> does <strong>implicit data conversion</strong> and prints the numeric values to the console.</p>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb94-1"><a href="functions.html#cb94-1" tabindex="-1"></a><span class="fu">print</span>(x)  <span class="do">## print num vec</span></span></code></pre></div>
+<div class="sourceCode" id="cb374"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb374-1"><a href="functions.html#cb374-1" tabindex="-1"></a><span class="fu">print</span>(x)  <span class="do">## print num vec</span></span></code></pre></div>
 <pre class="Rout"><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
 <p>If the input is a character vector, <code>print()</code> prints the characters to the console, each of which is embraced with double quotes indicating its character data type.</p>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb96-1"><a href="functions.html#cb96-1" tabindex="-1"></a><span class="fu">print</span>(y)  <span class="do">## print char vec</span></span></code></pre></div>
+<div class="sourceCode" id="cb376"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb376-1"><a href="functions.html#cb376-1" tabindex="-1"></a><span class="fu">print</span>(y)  <span class="do">## print char vec</span></span></code></pre></div>
 <pre class="Rout"><code> [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot;</code></pre>
 <p>This function prints a factor as well:</p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb98-1"><a href="functions.html#cb98-1" tabindex="-1"></a><span class="fu">print</span>(z)  <span class="do">## print factor</span></span></code></pre></div>
+<div class="sourceCode" id="cb378"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb378-1"><a href="functions.html#cb378-1" tabindex="-1"></a><span class="fu">print</span>(z)  <span class="do">## print factor</span></span></code></pre></div>
 <pre class="Rout"><code> [1] a b c d e f g h i j
 Levels: a b c d e f g h i j</code></pre>
 <p>This function does not concatenate character strings either.</p>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb100-1"><a href="functions.html#cb100-1" tabindex="-1"></a><span class="fu">print</span>(x, y)</span></code></pre></div>
+<div class="sourceCode" id="cb380"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb380-1"><a href="functions.html#cb380-1" tabindex="-1"></a><span class="fu">print</span>(x, y)</span></code></pre></div>
 <pre><code>Warning in print.default(x, y): NAs introduced by coercion</code></pre>
 <pre><code>Error in print.default(x, y): invalid printing digits -2147483648</code></pre>
 </div>
 </div>
 <hr />
 <div class="exercise">
-<p><span id="exr:unlabeled-div-3" class="exercise"><strong>Exercise 6.3  </strong></span>Create a function that produces a simple animation, i.e., the zigzag outputs as shown below. The function will <strong>slowly</strong> create a back-and-forth zigzag pattern with the laps and the indent size (i.e., the maximum number of spaces that the zigzag pattern can go) as the parameters of the function.</p>
+<p><span id="exr:unlabeled-div-21" class="exercise"><strong>Exercise 6.3  </strong></span>Create a function that produces a simple animation, i.e., the zigzag outputs as shown below. The function will <strong>slowly</strong> create a back-and-forth zigzag pattern with the laps and the indent size (i.e., the maximum number of spaces that the zigzag pattern can go) as the parameters of the function.</p>
 <p>The animation should be generated slowly, so that the pattern can be clearly seen as it is being created. Additionally, the user should be able to stop the animation at any time by pressing CTRL+C or ESC.</p>
 </div>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb103-1"><a href="functions.html#cb103-1" tabindex="-1"></a><span class="fu">zigzag</span>(<span class="at">lap =</span> <span class="dv">10</span>, <span class="at">indent_max =</span> <span class="dv">20</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb383"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb383-1"><a href="functions.html#cb383-1" tabindex="-1"></a><span class="fu">zigzag</span>(<span class="at">lap =</span> <span class="dv">10</span>, <span class="at">indent_max =</span> <span class="dv">20</span>)</span></code></pre></div>
 <ul>
 <li>Please note that the user can interrupt the program/function by pressing CTRL+C or ESC and your function should stop properly (using <code>tryCatch</code>).</li>
 </ul>
 <p><img src="images/zigzag-demo.gif" /><!-- --></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-4" class="exercise"><strong>Exercise 6.4  </strong></span>Create a function that allows the user to play a game of rock, paper, scissors against the computer. The function should have the following features:</p>
+<p><span id="exr:unlabeled-div-22" class="exercise"><strong>Exercise 6.4  </strong></span>Create a function that allows the user to play a game of rock, paper, scissors against the computer. The function should have the following features:</p>
 <ul>
 <li>The user should be prompted to enter their move as a text input (i.e., rock, paper, or scissors).</li>
 <li>The computer should randomly select a move.</li>
@@ -1011,7 +1042,7 @@ Levels: a b c d e f g h i j</code></pre>
         </div>
       </div>
 <a href="conditions-and-loops.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="data-manipulation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="data-visualization.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -1055,6 +1086,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
