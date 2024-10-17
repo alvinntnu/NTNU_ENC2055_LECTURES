@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2024-10-14" />
+<meta name="date" content="2024-10-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -1417,17 +1417,29 @@ x_shape
 <div id="categorical-x-continuous-y" class="section level3 hasAnchor" number="7.5.2">
 <h3><span class="header-section-number">7.5.2</span> Categorical X, Continuous Y<a href="data-visualization.html#categorical-x-continuous-y" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
-<li>Boxplot</li>
+<li><p>Boxplot: A boxplot provides a visual summary of the distribution of the values (<code>Y</code>) across the levels of the grouping factor (<code>X</code>), showing each sub-group’s <strong>central tendency</strong>, <strong>spread</strong>, <strong>skewness</strong>, and <strong>potential outliers</strong>.</p>
+<ul>
+<li><strong>Median (Line Inside the Box)</strong>: The horizontal line inside the box represents the <strong>median</strong> (50th percentile), showing the dataset’s central value.</li>
+<li><strong>Box (Interquartile Range, IQR)</strong>: The box spans from the <strong>first quartile (Q1, 25th percentile)</strong> to the <strong>third quartile (Q3, 75th percentile)</strong>. The length of the box is the <strong>IQR</strong>, which indicates the spread of the middle 50% of the data.</li>
+<li><strong>Whiskers</strong>: The lines extending from the box (whiskers) indicate variability outside the upper and lower quartiles. Typically, the whiskers extend to the smallest and largest data points within <strong>1.5 times the IQR</strong> from Q1 and Q3.</li>
+<li><strong>Outliers (Points Outside the Whiskers)</strong>: Data points outside the whiskers are considered <strong>outliers</strong> and are plotted as individual points.</li>
+</ul></li>
 </ul>
 <div class="sourceCode" id="cb406"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb406-1"><a href="data-visualization.html#cb406-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
 <span id="cb406-2"><a href="data-visualization.html#cb406-2" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
 <p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-225-1.png" width="672" /></p>
 <div class="info">
-<p>If you would like to know more about boxplots, please check this <a href="https://towardsdatascience.com/understanding-boxplots-5e2df7bcbd51">blog post</a>. The following illustration is taken from the blog post, which shows the meanings of different boxplot parts.</p>
+<p>If you would like to know more about boxplots, please check this <a href="https://medium.com/swlh/understanding-box-and-whisker-plot-275e9163eac0">blog post</a>. The following illustration is based on the blog post, which shows the meanings of different boxplot parts.</p>
 <p><img src="images/boxplot.png" width="700" /></p>
 </div>
 <ul>
-<li>Error Plot</li>
+<li><p>Error Plot: An error plot (often error bars) shows the uncertainty or variability of each sub-group’s mean value. Error plots help assess the <strong>reliability</strong> of the central value and compare variability across groups.</p>
+<ul>
+<li><strong>Central Point/Bar</strong>: Represents the <strong>central value</strong> (e.g., subgroup’s mean).</li>
+<li><strong>Error Bars (Vertical or Horizontal Lines)</strong>: Extend from the central point and indicate the range of uncertainty, typically showing <strong>confidence intervals</strong> or <strong>standard errors</strong>. The length of the bars shows the <strong>extent of variability</strong> around the central value.</li>
+<li><strong>Shorter bars</strong> suggest more precise estimates (less variability).</li>
+<li><strong>Longer bars</strong> suggest higher uncertainty or variability.</li>
+</ul></li>
 </ul>
 <div class="sourceCode" id="cb407"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb407-1"><a href="data-visualization.html#cb407-1" tabindex="-1"></a><span class="do">## pointrange</span></span>
 <span id="cb407-2"><a href="data-visualization.html#cb407-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> hwy)) <span class="sc">+</span></span>
@@ -1461,20 +1473,20 @@ x_shape
 <h3><span class="header-section-number">7.5.3</span> Categorical X, Categorical Y<a href="data-visualization.html#categorical-x-categorical-y" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>Bubble Plot</li>
-<li>Heatmap</li>
 </ul>
 <div class="sourceCode" id="cb410"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb410-1"><a href="data-visualization.html#cb410-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> manufacturer, <span class="at">y =</span> class)) <span class="sc">+</span></span>
 <span id="cb410-2"><a href="data-visualization.html#cb410-2" tabindex="-1"></a>  <span class="fu">geom_count</span>() <span class="sc">+</span> </span>
 <span id="cb410-3"><a href="data-visualization.html#cb410-3" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle=</span><span class="sc">-</span><span class="dv">90</span>))</span></code></pre></div>
 <p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-230-1.png" width="672" /></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-24" class="exercise"><strong>Exercise 7.2  </strong></span>Another option is to create a <strong>Heatmap</strong>, as shown below:</p>
 <div class="sourceCode" id="cb411"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb411-1"><a href="data-visualization.html#cb411-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> manufacturer, <span class="at">y =</span> class)) <span class="sc">+</span></span>
 <span id="cb411-2"><a href="data-visualization.html#cb411-2" tabindex="-1"></a>  <span class="fu">geom_tile</span>() <span class="sc">+</span></span>
 <span id="cb411-3"><a href="data-visualization.html#cb411-3" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle=</span><span class="sc">-</span><span class="dv">90</span>))</span></code></pre></div>
 <p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-231-1.png" width="672" /></p>
-<div class="exercise">
-<p><span id="exr:unlabeled-div-24" class="exercise"><strong>Exercise 7.2  </strong></span>The above heat map is NOT informative enough.Please create a heat map that is more comprehensive as shown below.</p>
-<p>In order to create such a heat map, you may also need the frequency counts of each level combination.</p>
-<p>Also, please include these frequency counts (as labels) in the heat map as well.</p>
+<p>However, the heatmap above is not very informative because each tile is the same color, failing to convey the varying frequency counts for each combination of levels.</p>
+<p>Please create a more comprehensive heatmap as demonstrated below.</p>
+<p>To achieve this, you will need the frequency counts for each combination of levels. In addition, include these frequency counts as labels on the heatmap.</p>
 <p>Hint: <code>geom_tile()</code>; <code>geom_text()</code></p>
 <p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-232-1.png" width="672" /></p>
 </div>

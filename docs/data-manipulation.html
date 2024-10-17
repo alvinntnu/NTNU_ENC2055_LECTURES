@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2024-10-14" />
+<meta name="date" content="2024-10-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -1161,8 +1161,8 @@ my_data %&gt;%
 <h2><span class="header-section-number">8.10</span> Tidy Data<a href="data-manipulation.html#tidy-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The concept of a <strong>tidy dataset</strong> is an important aspect of data science. According to <span class="citation">Wickham &amp; Grolemund (<a href="#ref-hadley2017">2017</a>)</span>, a tidy dataset must adhere to the following three principles:</p>
 <ul>
-<li>Each variable should have its own column.</li>
-<li>Each observation should have its own row.</li>
+<li>Each variable should have its own <strong>column</strong>.</li>
+<li>Each observation should have its own <strong>row</strong>.</li>
 <li>Each value should have its own cell.</li>
 </ul>
 <p><img src="images/tidy-1.png" width="90%" /></p>
@@ -1270,6 +1270,107 @@ my_data %&gt;%
 <div class="try">
 <p>It seems to be more intuitive that we have the pre-treatment boxplot goes before (on the left) the post-treatment boxplot. Any idea on how to do this?</p>
 <p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-323-1.png" width="672" /></p>
+</div>
+<div class="info">
+<p><strong>Notes on Repeated Measures Analysis (Statistics-savvy!!)</strong></p>
+<p>For repeated measures analysis, we convert the data frame from <strong>wide format</strong> to <strong>long format</strong> because long format is the preferred structure for most statistical models and functions in R, including repeated measures techniques like <strong>linear mixed-effects models</strong> (e.g., <code>lme4::lmer()</code>) and <strong>ANOVA</strong> for repeated measures (e.g., <code>aov()</code>). Here’s why:</p>
+<ul>
+<li><p><strong>Data Representation of Repeated Observations</strong></p>
+<ul>
+<li>In <strong>wide format</strong>, each subject’s repeated measures (e.g., measurements taken at different time points or under different conditions) are stored in separate columns. Each row represents a single subject, and each column corresponds to a different time point or condition.
+<ul>
+<li><p>Example wide format:</p>
+<table>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>Time1</th>
+<th>Time2</th>
+<th>Time3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>001</td>
+<td>5.3</td>
+<td>5.9</td>
+<td>6.1</td>
+</tr>
+<tr class="even">
+<td>002</td>
+<td>4.8</td>
+<td>5.1</td>
+<td>5.4</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+<li>In <strong>long format</strong>, each observation (or measurement) gets its own row, with an additional column that indicates the time point or condition. The result is that each row represents one observation for one subject at one time point or condition.
+<ul>
+<li><p>Example long format:</p>
+<table>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>Time</th>
+<th>Measurement</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>001</td>
+<td>1</td>
+<td>5.3</td>
+</tr>
+<tr class="even">
+<td>001</td>
+<td>2</td>
+<td>5.9</td>
+</tr>
+<tr class="odd">
+<td>001</td>
+<td>3</td>
+<td>6.1</td>
+</tr>
+<tr class="even">
+<td>002</td>
+<td>1</td>
+<td>4.8</td>
+</tr>
+<tr class="odd">
+<td>002</td>
+<td>2</td>
+<td>5.1</td>
+</tr>
+<tr class="even">
+<td>002</td>
+<td>3</td>
+<td>5.4</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+</ul></li>
+<li><p><strong>Advantages of Long Format for Repeated Measures</strong></p>
+<ol style="list-style-type: decimal">
+<li><strong>Explicit Identification of Time or Condition</strong>:
+<ul>
+<li>In long format, each observation is associated with a specific time point or condition. This makes it easier to model <strong>within-subject effects</strong> (e.g., changes over time) and <strong>between-subject effects</strong> (e.g., differences between subjects).</li>
+</ul></li>
+<li><strong>Appropriate for Statistical Models</strong>:
+<ul>
+<li>Many statistical models, such as <strong>linear mixed-effects models</strong> or <strong>repeated measures ANOVA</strong>, expect the data to be in long format because they need to identify the repeated measures within each subject. These models can then appropriately estimate random effects or repeated measures variances.</li>
+</ul></li>
+<li><strong>Handling Missing Data</strong>:
+<ul>
+<li>In wide format, missing values in a time point or condition result in empty cells, which may be difficult to manage. In long format, missing values are easier to identify, and functions can properly handle them as missing observations.</li>
+</ul></li>
+<li><strong>Visualization</strong>:
+<ul>
+<li>Data visualization tools like <code>ggplot2</code> work better with long format data, especially when generating <strong>faceted</strong> or <strong>grouped</strong> plots to explore repeated measures.</li>
+</ul></li>
+</ol></li>
+</ul>
 </div>
 <div class="info">
 <p>Please get familiar with <code>tidyr::separate()</code> and <code>tidyr::unite()</code>, which are two important functions to manipulate the columns of the data frame.</p>
