@@ -102,11 +102,11 @@ exr:unlabeled-div-76
 exr:unnamed-chunk-585
 exr:unnamed-chunk-592
 fig:ctpworkflow
-exr:unnamed-chunk-603
-exr:unnamed-chunk-606
-exr:unnamed-chunk-608
+exr:unnamed-chunk-607
 exr:unnamed-chunk-610
 exr:unnamed-chunk-612
+exr:unnamed-chunk-614
+exr:unnamed-chunk-616
 exr:unlabeled-div-77
 exr:unlabeled-div-78
 exr:unlabeled-div-79
@@ -291,6 +291,7 @@ tokenization
 keyword-in-context-kwic
 kwic-with-regular-expressions
 lexical-density-plot
+collocation
 document-feature-matrix
 feature-selection
 top-features

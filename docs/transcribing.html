@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2024-10-24" />
+<meta name="date" content="2024-11-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -447,13 +447,14 @@ div.csl-indent {
 <li class="chapter" data-level="13.4" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyword-in-context-kwic"><i class="fa fa-check"></i><b>13.4</b> Keyword-in-Context (KWIC)</a></li>
 <li class="chapter" data-level="13.5" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#kwic-with-regular-expressions"><i class="fa fa-check"></i><b>13.5</b> KWIC with Regular Expressions</a></li>
 <li class="chapter" data-level="13.6" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#lexical-density-plot"><i class="fa fa-check"></i><b>13.6</b> Lexical Density Plot</a></li>
-<li class="chapter" data-level="13.7" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#document-feature-matrix"><i class="fa fa-check"></i><b>13.7</b> Document-Feature Matrix</a></li>
-<li class="chapter" data-level="13.8" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#feature-selection"><i class="fa fa-check"></i><b>13.8</b> Feature Selection</a></li>
-<li class="chapter" data-level="13.9" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#top-features"><i class="fa fa-check"></i><b>13.9</b> Top Features</a></li>
-<li class="chapter" data-level="13.10" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#wordclouds"><i class="fa fa-check"></i><b>13.10</b> Wordclouds</a></li>
-<li class="chapter" data-level="13.11" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyness-analysis"><i class="fa fa-check"></i><b>13.11</b> Keyness Analysis</a></li>
-<li class="chapter" data-level="13.12" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#flowchart"><i class="fa fa-check"></i><b>13.12</b> Flowchart</a></li>
-<li class="chapter" data-level="13.13" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#exercises-2"><i class="fa fa-check"></i><b>13.13</b> Exercises</a></li>
+<li class="chapter" data-level="13.7" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#collocation"><i class="fa fa-check"></i><b>13.7</b> Collocation</a></li>
+<li class="chapter" data-level="13.8" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#document-feature-matrix"><i class="fa fa-check"></i><b>13.8</b> Document-Feature Matrix</a></li>
+<li class="chapter" data-level="13.9" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#feature-selection"><i class="fa fa-check"></i><b>13.9</b> Feature Selection</a></li>
+<li class="chapter" data-level="13.10" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#top-features"><i class="fa fa-check"></i><b>13.10</b> Top Features</a></li>
+<li class="chapter" data-level="13.11" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#wordclouds"><i class="fa fa-check"></i><b>13.11</b> Wordclouds</a></li>
+<li class="chapter" data-level="13.12" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyness-analysis"><i class="fa fa-check"></i><b>13.12</b> Keyness Analysis</a></li>
+<li class="chapter" data-level="13.13" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#flowchart"><i class="fa fa-check"></i><b>13.13</b> Flowchart</a></li>
+<li class="chapter" data-level="13.14" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#exercises-2"><i class="fa fa-check"></i><b>13.14</b> Exercises</a></li>
 </ul></li>
 <li class="part"><span><b>PART 2: Python Language</b></span></li>
 <li class="chapter" data-level="14" data-path="python-fundamentals.html"><a href="python-fundamentals.html"><i class="fa fa-check"></i><b>14</b> Python Fundamentals</a>
@@ -624,22 +625,22 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <li><code>AudioData</code>: Process the audio file and record the data from the <code>AudioFile</code> into an <code>AudioData</code> object.</li>
 <li>Choose the API for Speech-to-Text conversion: Use the Recognizer’s method, <code>Recognizer.recognize_google()</code>, to recognize speech in the <code>AudioData</code>.</li>
 </ul>
-<div class="sourceCode" id="cb1362"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1362-1"><a href="transcribing.html#cb1362-1" tabindex="-1"></a><span class="im">import</span> speech_recognition <span class="im">as</span> sr</span>
-<span id="cb1362-2"><a href="transcribing.html#cb1362-2" tabindex="-1"></a><span class="bu">print</span>(sr.__version__)</span></code></pre></div>
+<div class="sourceCode" id="cb1371"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1371-1"><a href="transcribing.html#cb1371-1" tabindex="-1"></a><span class="im">import</span> speech_recognition <span class="im">as</span> sr</span>
+<span id="cb1371-2"><a href="transcribing.html#cb1371-2" tabindex="-1"></a><span class="bu">print</span>(sr.__version__)</span></code></pre></div>
 <pre class="Rout"><code>3.10.4</code></pre>
-<div class="sourceCode" id="cb1364"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1364-1"><a href="transcribing.html#cb1364-1" tabindex="-1"></a>r <span class="op">=</span> sr.Recognizer()</span>
-<span id="cb1364-2"><a href="transcribing.html#cb1364-2" tabindex="-1"></a><span class="co">#r.recognize_google()</span></span>
-<span id="cb1364-3"><a href="transcribing.html#cb1364-3" tabindex="-1"></a>havard <span class="op">=</span> sr.AudioFile(<span class="st">&#39;demo_data/audio/語音測試.wav&#39;</span>)</span>
-<span id="cb1364-4"><a href="transcribing.html#cb1364-4" tabindex="-1"></a><span class="cf">with</span> havard <span class="im">as</span> source:</span>
-<span id="cb1364-5"><a href="transcribing.html#cb1364-5" tabindex="-1"></a>  <span class="co">## adjust for noise</span></span>
-<span id="cb1364-6"><a href="transcribing.html#cb1364-6" tabindex="-1"></a>  <span class="co">#r.adjust_for_ambient_noise(source)</span></span>
-<span id="cb1364-7"><a href="transcribing.html#cb1364-7" tabindex="-1"></a>  audio <span class="op">=</span> r.record(source)</span>
-<span id="cb1364-8"><a href="transcribing.html#cb1364-8" tabindex="-1"></a></span>
-<span id="cb1364-9"><a href="transcribing.html#cb1364-9" tabindex="-1"></a><span class="bu">type</span>(havard)</span></code></pre></div>
+<div class="sourceCode" id="cb1373"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1373-1"><a href="transcribing.html#cb1373-1" tabindex="-1"></a>r <span class="op">=</span> sr.Recognizer()</span>
+<span id="cb1373-2"><a href="transcribing.html#cb1373-2" tabindex="-1"></a><span class="co">#r.recognize_google()</span></span>
+<span id="cb1373-3"><a href="transcribing.html#cb1373-3" tabindex="-1"></a>havard <span class="op">=</span> sr.AudioFile(<span class="st">&#39;demo_data/audio/語音測試.wav&#39;</span>)</span>
+<span id="cb1373-4"><a href="transcribing.html#cb1373-4" tabindex="-1"></a><span class="cf">with</span> havard <span class="im">as</span> source:</span>
+<span id="cb1373-5"><a href="transcribing.html#cb1373-5" tabindex="-1"></a>  <span class="co">## adjust for noise</span></span>
+<span id="cb1373-6"><a href="transcribing.html#cb1373-6" tabindex="-1"></a>  <span class="co">#r.adjust_for_ambient_noise(source)</span></span>
+<span id="cb1373-7"><a href="transcribing.html#cb1373-7" tabindex="-1"></a>  audio <span class="op">=</span> r.record(source)</span>
+<span id="cb1373-8"><a href="transcribing.html#cb1373-8" tabindex="-1"></a></span>
+<span id="cb1373-9"><a href="transcribing.html#cb1373-9" tabindex="-1"></a><span class="bu">type</span>(havard)</span></code></pre></div>
 <pre class="Rout"><code>&lt;class &#39;speech_recognition.AudioFile&#39;&gt;</code></pre>
-<div class="sourceCode" id="cb1366"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1366-1"><a href="transcribing.html#cb1366-1" tabindex="-1"></a><span class="bu">type</span>(audio)</span></code></pre></div>
+<div class="sourceCode" id="cb1375"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1375-1"><a href="transcribing.html#cb1375-1" tabindex="-1"></a><span class="bu">type</span>(audio)</span></code></pre></div>
 <pre class="Rout"><code>&lt;class &#39;speech_recognition.audio.AudioData&#39;&gt;</code></pre>
-<div class="sourceCode" id="cb1368"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1368-1"><a href="transcribing.html#cb1368-1" tabindex="-1"></a>r.recognize_google(audio, language<span class="op">=</span><span class="st">&#39;zh-TW&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1377"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1377-1"><a href="transcribing.html#cb1377-1" tabindex="-1"></a>r.recognize_google(audio, language<span class="op">=</span><span class="st">&#39;zh-TW&#39;</span>)</span></code></pre></div>
 <pre class="Rout"><code>&#39;我現在在做基本的語音測試謝謝&#39;</code></pre>
 <div class="info">
 <p>The speech_recognition library uses the FLAC format internally for audio processing. The library relies on an external tool, the FLAC command-line utility, to handle FLAC audio files. If this utility is not installed on your system, the library will raise an OSError. Please install FLAC before using the library.</p>
@@ -653,21 +654,21 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <li><code>AudioData</code>: Record the speech data from the <code>Microphone</code> into an <code>AudioData</code> object.</li>
 <li>Choose the API for Speech-to-Text conversion: Use the Recognizer’s method, <code>Recognizer.recognize_google()</code>, to recognize speech in the <code>AudioData</code>.</li>
 </ul>
-<div class="sourceCode" id="cb1370"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1370-1"><a href="transcribing.html#cb1370-1" tabindex="-1"></a><span class="im">import</span> speech_recognition <span class="im">as</span> sr</span>
-<span id="cb1370-2"><a href="transcribing.html#cb1370-2" tabindex="-1"></a>r <span class="op">=</span> sr.Recognizer()</span>
-<span id="cb1370-3"><a href="transcribing.html#cb1370-3" tabindex="-1"></a>mic <span class="op">=</span> sr.Microphone()</span>
-<span id="cb1370-4"><a href="transcribing.html#cb1370-4" tabindex="-1"></a>sr.Microphone.list_microphone_names()</span>
-<span id="cb1370-5"><a href="transcribing.html#cb1370-5" tabindex="-1"></a>mic <span class="op">=</span> sr.Microphone(device_index<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb1370-6"><a href="transcribing.html#cb1370-6" tabindex="-1"></a></span>
-<span id="cb1370-7"><a href="transcribing.html#cb1370-7" tabindex="-1"></a><span class="cf">with</span> mic <span class="im">as</span> source:</span>
-<span id="cb1370-8"><a href="transcribing.html#cb1370-8" tabindex="-1"></a>  audio <span class="op">=</span> r.listen(source)</span>
-<span id="cb1370-9"><a href="transcribing.html#cb1370-9" tabindex="-1"></a>  </span>
-<span id="cb1370-10"><a href="transcribing.html#cb1370-10" tabindex="-1"></a><span class="bu">type</span>(audio)</span>
-<span id="cb1370-11"><a href="transcribing.html#cb1370-11" tabindex="-1"></a></span>
-<span id="cb1370-12"><a href="transcribing.html#cb1370-12" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb1370-13"><a href="transcribing.html#cb1370-13" tabindex="-1"></a>  r.recognize_google(audio, language<span class="op">=</span><span class="st">&#39;zh&#39;</span>)</span>
-<span id="cb1370-14"><a href="transcribing.html#cb1370-14" tabindex="-1"></a><span class="cf">except</span> sr.UnknownValueError:</span>
-<span id="cb1370-15"><a href="transcribing.html#cb1370-15" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&#39;Unable to recognize the speech.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1379"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1379-1"><a href="transcribing.html#cb1379-1" tabindex="-1"></a><span class="im">import</span> speech_recognition <span class="im">as</span> sr</span>
+<span id="cb1379-2"><a href="transcribing.html#cb1379-2" tabindex="-1"></a>r <span class="op">=</span> sr.Recognizer()</span>
+<span id="cb1379-3"><a href="transcribing.html#cb1379-3" tabindex="-1"></a>mic <span class="op">=</span> sr.Microphone()</span>
+<span id="cb1379-4"><a href="transcribing.html#cb1379-4" tabindex="-1"></a>sr.Microphone.list_microphone_names()</span>
+<span id="cb1379-5"><a href="transcribing.html#cb1379-5" tabindex="-1"></a>mic <span class="op">=</span> sr.Microphone(device_index<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb1379-6"><a href="transcribing.html#cb1379-6" tabindex="-1"></a></span>
+<span id="cb1379-7"><a href="transcribing.html#cb1379-7" tabindex="-1"></a><span class="cf">with</span> mic <span class="im">as</span> source:</span>
+<span id="cb1379-8"><a href="transcribing.html#cb1379-8" tabindex="-1"></a>  audio <span class="op">=</span> r.listen(source)</span>
+<span id="cb1379-9"><a href="transcribing.html#cb1379-9" tabindex="-1"></a>  </span>
+<span id="cb1379-10"><a href="transcribing.html#cb1379-10" tabindex="-1"></a><span class="bu">type</span>(audio)</span>
+<span id="cb1379-11"><a href="transcribing.html#cb1379-11" tabindex="-1"></a></span>
+<span id="cb1379-12"><a href="transcribing.html#cb1379-12" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb1379-13"><a href="transcribing.html#cb1379-13" tabindex="-1"></a>  r.recognize_google(audio, language<span class="op">=</span><span class="st">&#39;zh&#39;</span>)</span>
+<span id="cb1379-14"><a href="transcribing.html#cb1379-14" tabindex="-1"></a><span class="cf">except</span> sr.UnknownValueError:</span>
+<span id="cb1379-15"><a href="transcribing.html#cb1379-15" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&#39;Unable to recognize the speech.&#39;</span>)</span></code></pre></div>
 </div>
 <div id="references-2" class="section level2 hasAnchor" number="21.3">
 <h2><span class="header-section-number">21.3</span> References<a href="transcribing.html#references-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>

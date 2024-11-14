@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2024-10-24" />
+<meta name="date" content="2024-11-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -447,13 +447,14 @@ div.csl-indent {
 <li class="chapter" data-level="13.4" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyword-in-context-kwic"><i class="fa fa-check"></i><b>13.4</b> Keyword-in-Context (KWIC)</a></li>
 <li class="chapter" data-level="13.5" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#kwic-with-regular-expressions"><i class="fa fa-check"></i><b>13.5</b> KWIC with Regular Expressions</a></li>
 <li class="chapter" data-level="13.6" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#lexical-density-plot"><i class="fa fa-check"></i><b>13.6</b> Lexical Density Plot</a></li>
-<li class="chapter" data-level="13.7" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#document-feature-matrix"><i class="fa fa-check"></i><b>13.7</b> Document-Feature Matrix</a></li>
-<li class="chapter" data-level="13.8" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#feature-selection"><i class="fa fa-check"></i><b>13.8</b> Feature Selection</a></li>
-<li class="chapter" data-level="13.9" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#top-features"><i class="fa fa-check"></i><b>13.9</b> Top Features</a></li>
-<li class="chapter" data-level="13.10" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#wordclouds"><i class="fa fa-check"></i><b>13.10</b> Wordclouds</a></li>
-<li class="chapter" data-level="13.11" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyness-analysis"><i class="fa fa-check"></i><b>13.11</b> Keyness Analysis</a></li>
-<li class="chapter" data-level="13.12" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#flowchart"><i class="fa fa-check"></i><b>13.12</b> Flowchart</a></li>
-<li class="chapter" data-level="13.13" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#exercises-2"><i class="fa fa-check"></i><b>13.13</b> Exercises</a></li>
+<li class="chapter" data-level="13.7" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#collocation"><i class="fa fa-check"></i><b>13.7</b> Collocation</a></li>
+<li class="chapter" data-level="13.8" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#document-feature-matrix"><i class="fa fa-check"></i><b>13.8</b> Document-Feature Matrix</a></li>
+<li class="chapter" data-level="13.9" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#feature-selection"><i class="fa fa-check"></i><b>13.9</b> Feature Selection</a></li>
+<li class="chapter" data-level="13.10" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#top-features"><i class="fa fa-check"></i><b>13.10</b> Top Features</a></li>
+<li class="chapter" data-level="13.11" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#wordclouds"><i class="fa fa-check"></i><b>13.11</b> Wordclouds</a></li>
+<li class="chapter" data-level="13.12" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#keyness-analysis"><i class="fa fa-check"></i><b>13.12</b> Keyness Analysis</a></li>
+<li class="chapter" data-level="13.13" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#flowchart"><i class="fa fa-check"></i><b>13.13</b> Flowchart</a></li>
+<li class="chapter" data-level="13.14" data-path="text-analytics-a-start.html"><a href="text-analytics-a-start.html#exercises-2"><i class="fa fa-check"></i><b>13.14</b> Exercises</a></li>
 </ul></li>
 <li class="part"><span><b>PART 2: Python Language</b></span></li>
 <li class="chapter" data-level="14" data-path="python-fundamentals.html"><a href="python-fundamentals.html"><i class="fa fa-check"></i><b>14</b> Python Fundamentals</a>
@@ -800,12 +801,12 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <div class="sourceCode" id="cb538"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb538-1"><a href="string-manipulation.html#cb538-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>)</span>
 <span id="cb538-2"><a href="string-manipulation.html#cb538-2" tabindex="-1"></a><span class="fu">str_detect</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;.a&quot;</span>) <span class="do">## Boolean</span></span></code></pre></div>
 <pre class="Rout"><code>[1] FALSE  TRUE  TRUE</code></pre>
-<div class="sourceCode" id="cb540"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb540-1"><a href="string-manipulation.html#cb540-1" tabindex="-1"></a><span class="fu">str_match</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;(.)a&quot;</span>) <span class="do">## Exact matches (group)</span></span></code></pre></div>
+<div class="sourceCode" id="cb540"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb540-1"><a href="string-manipulation.html#cb540-1" tabindex="-1"></a><span class="fu">str_match</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;(.)a&quot;</span>) <span class="do">## Exact matches ( + group)</span></span></code></pre></div>
 <pre class="Rout"><code>     [,1] [,2]
 [1,] NA   NA  
 [2,] &quot;ba&quot; &quot;b&quot; 
 [3,] &quot;ea&quot; &quot;e&quot; </code></pre>
-<div class="sourceCode" id="cb542"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb542-1"><a href="string-manipulation.html#cb542-1" tabindex="-1"></a><span class="fu">str_match_all</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;(.)a&quot;</span>) <span class="do">## Exact matches all (group)</span></span></code></pre></div>
+<div class="sourceCode" id="cb542"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb542-1"><a href="string-manipulation.html#cb542-1" tabindex="-1"></a><span class="fu">str_match_all</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;(.)a&quot;</span>) <span class="do">## Exact matches all ( + groups)</span></span></code></pre></div>
 <pre class="Rout"><code>[[1]]
      [,1] [,2]
 
@@ -818,9 +819,9 @@ document.writeln ("This page was last updated: " + LastUpdated);
 [[3]]
      [,1] [,2]
 [1,] &quot;ea&quot; &quot;e&quot; </code></pre>
-<div class="sourceCode" id="cb544"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb544-1"><a href="string-manipulation.html#cb544-1" tabindex="-1"></a><span class="fu">str_extract</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;.a&quot;</span>) <span class="do">## Exact matches</span></span></code></pre></div>
+<div class="sourceCode" id="cb544"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb544-1"><a href="string-manipulation.html#cb544-1" tabindex="-1"></a><span class="fu">str_extract</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;(.a)&quot;</span>) <span class="do">## Exact matches</span></span></code></pre></div>
 <pre class="Rout"><code>[1] NA   &quot;ba&quot; &quot;ea&quot;</code></pre>
-<div class="sourceCode" id="cb546"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb546-1"><a href="string-manipulation.html#cb546-1" tabindex="-1"></a><span class="fu">str_extract_all</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;.a&quot;</span>) <span class="do">## Exact matches all</span></span></code></pre></div>
+<div class="sourceCode" id="cb546"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb546-1"><a href="string-manipulation.html#cb546-1" tabindex="-1"></a><span class="fu">str_extract_all</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;(.a)&quot;</span>) <span class="do">## Exact matches all</span></span></code></pre></div>
 <pre class="Rout"><code>[[1]]
 character(0)
 
@@ -937,8 +938,7 @@ apple peel</code></pre>
 [3] │ banana&lt;1&gt;</code></pre>
 <p>In pattern-matching, very often you will have cases where one base unit may have <em>more than one</em> match. In the previous example, we can see that in the second string <code>apple123</code>, there are three matches of the pattern.</p>
 <div class="try">
-<p>、
-Please compare the two metacharacters, <code>\\w</code> and <code>.</code>, and examine their differences in their matches. In particular, which characters are not included in the character set defined by <code>\\w</code>?</p>
+<p>Please compare the two metacharacters, <code>\\w</code> and <code>.</code>, and examine their differences in their matches. In particular, which characters are not included in the character set defined by <code>\\w</code>?</p>
 <div class="sourceCode" id="cb574"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb574-1"><a href="string-manipulation.html#cb574-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;aeiouAEIOU1234_ .</span><span class="sc">\\</span><span class="st">$%-*()你我他&quot;</span>)</span>
 <span id="cb574-2"><a href="string-manipulation.html#cb574-2" tabindex="-1"></a><span class="fu">str_view</span>(<span class="at">string =</span> x, <span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">w&quot;</span>, <span class="at">html =</span> T)</span></code></pre></div>
 <div class="str_view html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-875a517cd178256b69d9" style="width:960px;height:100%;"></div>
@@ -1108,7 +1108,7 @@ Please compare the two metacharacters, <code>\\w</code> and <code>.</code>, and 
 <li><code>(.)</code>: the <strong>parenthesis</strong> creates a group to capture the matched character. Internally, the RegEx engine numbers all <em>groups</em> serially from left to right.</li>
 <li><code>\\1</code>: This is a <strong>back-reference</strong> to the first group. The same logic applies to the second group of the regular expression (i.e., <code>\\2</code>). This back-reference ensures that the second character of the match has to be the same as the previous match (i.e., the same character is repeated).</li>
 </ul>
-<p>Therefore, <code>(.)\\1</code> means that when the RegEx engine matches a character (i.e., <code>.</code> = any character), there must be another occurrence of the same character following it.</p>
+<p>Therefore, <code>(.)\\1</code> means that when the RegEx engine matches a character (i.e., <code>.</code> = any character), there must be another occurrence of the same character following it. (Note: This is a regex for two-character matches!)</p>
 <hr />
 <div class="exercise">
 <p><span id="exr:unlabeled-div-43" class="exercise"><strong>Exercise 9.1  </strong></span>With the same set of fruit names in <code>x</code>, how do we match fruits with a <code>abab</code> pattern, such as “banana”?</p>
@@ -1156,7 +1156,7 @@ Please compare the two metacharacters, <code>\\w</code> and <code>.</code>, and 
 <p>In the above example, the regular expression <code>e$</code> is used to match the character “e” in the text-final position. As a result, two strings from <code>x</code> that have a match include:</p>
 <div class="sourceCode" id="cb620"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb620-1"><a href="string-manipulation.html#cb620-1" tabindex="-1"></a>x[<span class="fu">str_detect</span>(x, <span class="st">&quot;e$&quot;</span>)]</span></code></pre></div>
 <pre class="Rout"><code>[1] &quot;apple&quot;        &quot;blood orange&quot;</code></pre>
-<p>Also, with the output of <code>str_detect()</code>, we can easily compute the total number of strings that have (at least) one match of the pattern:</p>
+<p>Also, with the output of <code>str_detect()</code>, we can easily compute the total number of strings that have (at least) one match of the pattern (Please note that this is NOT necessarily the total number of matches!):</p>
 <div class="sourceCode" id="cb622"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb622-1"><a href="string-manipulation.html#cb622-1" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">str_detect</span>(x, <span class="st">&quot;e$&quot;</span>))</span></code></pre></div>
 <pre class="Rout"><code>[1] 2</code></pre>
 </div>
@@ -1595,12 +1595,12 @@ Please compare the two metacharacters, <code>\\w</code> and <code>.</code>, and 
 <pre class="Rout"><code>[1] &quot;OldSystem2000&quot; &quot;Windows&quot;       &quot;OldSystemNT&quot;   &quot;Windows7&quot;     
 [5] &quot;Windows10&quot;    </code></pre>
 <hr />
-<p>To solve this problem, we can use the <strong>lookahead</strong> asserttion in regular expression.</p>
+<p>To solve this problem, we can use the <strong>lookahead</strong> assertion in regular expression.</p>
 <ul>
-<li><code>PATTERN(?=...)</code>: This <strong>positive</strong> lookahead assertaion is used to match a <code>PATTERN</code> only when it is followed by the specified lookahead pattern <code>(?=...)</code>.</li>
+<li><code>PATTERN(?=...)</code>: This <strong>positive</strong> lookahead assertion is used to match a <code>PATTERN</code> only when it is followed by the specified lookahead pattern <code>(?=...)</code>.</li>
 <li><code>PATTERN(?!...)</code>: This <strong>negative</strong> lookahead assertion is used to match a <code>PATTERN</code> only when it is NOT followed by the specified lookahead pattern <code>(?!...)</code>.</li>
 </ul>
-<p>The key is that the lookahead assertation does not consume characters in the match processing.</p>
+<p>The key is that the lookahead assertion does not consume characters in the match processing.</p>
 <div class="sourceCode" id="cb688"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb688-1"><a href="string-manipulation.html#cb688-1" tabindex="-1"></a><span class="fu">str_view</span>(win, <span class="st">&quot;Windows(?=95|98|NT|2000)&quot;</span>)</span></code></pre></div>
 <pre class="Rout"><code>[1] │ &lt;Windows&gt;2000
 [3] │ &lt;Windows&gt;NT</code></pre>
@@ -1865,8 +1865,8 @@ Please compare the two metacharacters, <code>\\w</code> and <code>.</code>, and 
 </div>
 <p>Hints:</p>
 <ul>
-<li>We need to know how to extract all numbers from the values in <code>x</code>.</li>
-<li>We need to know how to compute the sum of the numbers extracted from each value in <code>x</code>.</li>
+<li>We need to know how to extract all digits in <code>x</code>.</li>
+<li>We need to know how to compute the sum of the digits in <code>x</code>.</li>
 <li>We need to add these sums to the new column.</li>
 <li>You may check the use of <code>unnest()</code>.</li>
 </ul>
