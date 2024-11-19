@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2024-11-18" />
+<meta name="date" content="2024-11-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -1515,27 +1515,25 @@ apple peel</code></pre>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-9" class="exercise"><strong>Exercise 9.9  </strong></span>In <code>stringr::sentences</code>, there are 720 English sentences. Please create a regular expression to subset sentences with at least one word containing a hyphen <code>-</code> or an apostrophe <code>'</code>. There are 19 sentences with at least one match.</p>
 <p>Your regular expression should match the entire word string with the symbol.</p>
-<pre class="Rout"><code> [1] │ The birch canoe slid on the smooth planks.
- [2] │ Glue the sheet to the dark blue background.
- [3] │ &lt;It&#39;s&gt; easy to tell the depth of a well.
- [4] │ These days a chicken leg is a rare dish.
- [5] │ Rice is often served in round bowls.
- [6] │ The juice of lemons makes fine punch.
- [7] │ The box was thrown beside the parked truck.
- [8] │ The hogs were fed chopped corn and garbage.
- [9] │ Four hours of steady work faced us.
-[10] │ A large size in stockings is hard to sell.
-[11] │ The boy was there when the sun rose.
-[12] │ A rod is used to catch pink salmon.
-[13] │ The source of the huge river is the clear spring.
-[14] │ Kick the ball straight and follow through.
-[15] │ Help the woman get back to her feet.
-[16] │ A pot of tea helps to pass the evening.
-[17] │ Smoky fires lack flame and heat.
-[18] │ The soft cushion broke the &lt;man&#39;s&gt; fall.
-[19] │ The salt breeze came across from the sea.
-[20] │ The girl at the booth sold fifty bonds.
-... and 700 more</code></pre>
+<pre class="Rout"><code>  [3] │ &lt;It&#39;s&gt; easy to tell the depth of a well.
+ [18] │ The soft cushion broke the &lt;man&#39;s&gt; fall.
+[104] │ Open the crate but &lt;don&#39;t&gt; break the glass.
+[180] │ Add the &lt;store&#39;s&gt; account to the last cent.
+[270] │ A zestful food is the &lt;hot-cross&gt; bun.
+[303] │ The beam dropped down on the &lt;workman&#39;s&gt; head.
+[308] │ &lt;Let&#39;s&gt; all join as we sing the last chorus.
+[326] │ The copper bowl shone in the &lt;sun&#39;s&gt; rays.
+[348] │ A &lt;child&#39;s&gt; wit saved the day for us.
+[357] │ A ripe plum is fit for a &lt;king&#39;s&gt; palate.
+[393] │ &lt;It&#39;s&gt; a dense crowd in two distinct ways.
+[477] │ We &lt;don&#39;t&gt; get much money but we have fun.
+[513] │ Ripe pears are fit for a &lt;queen&#39;s&gt; table.
+[536] │ Cheap clothes are flashy but &lt;don&#39;t&gt; last.
+[624] │ The facts &lt;don&#39;t&gt; always show who is right.
+[636] │ Pack the kits and &lt;don&#39;t&gt; forget the salt.
+[678] │ We &lt;don&#39;t&gt; like to admit our small faults.
+[680] │ Dig deep in the earth for &lt;pirate&#39;s&gt; gold.
+[713] │ She saw a cat in the &lt;neighbor&#39;s&gt; house.</code></pre>
 <pre class="Rout"><code> [1] &quot;It&#39;s&quot;       &quot;man&#39;s&quot;      &quot;don&#39;t&quot;      &quot;store&#39;s&quot;    &quot;hot-cross&quot; 
  [6] &quot;workman&#39;s&quot;  &quot;Let&#39;s&quot;      &quot;sun&#39;s&quot;      &quot;child&#39;s&quot;    &quot;king&#39;s&quot;    
 [11] &quot;It&#39;s&quot;       &quot;don&#39;t&quot;      &quot;queen&#39;s&quot;    &quot;don&#39;t&quot;      &quot;don&#39;t&quot;     
