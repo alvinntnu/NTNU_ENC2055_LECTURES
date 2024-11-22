@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2024-11-22" />
+<meta name="date" content="2024-11-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -811,7 +811,7 @@ $class5
 29.05249 29.02167 28.04563 28.23392 29.31480 </code></pre>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-2" class="exercise"><strong>Exercise 11.2  </strong></span>Similar to the previous exercise, how can you use the same dataset, <code>exam.list</code>, to compute the <code>median</code> and <code>standard deviation</code> values for each class, and have both of these values returned as a <code>data.frame</code> (The first row refers to the median values and the second row refers to the standard deviation values.)</p>
+<p><span id="exr:unlabeled-div-2" class="exercise"><strong>Exercise 11.2  </strong></span>Similar to the previous exercise, how can you use the same dataset, <code>exams.list</code>, to compute the <code>median</code> and <code>standard deviation</code> values for each class, and have both of these values returned as a <code>data.frame</code> (The first row refers to the median values and the second row refers to the standard deviation values.)</p>
 <p>Please use <code>map_df()</code> to produce the following expected result.</p>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
@@ -1023,9 +1023,9 @@ $class5
 </div>
 </div>
 <div class="exercise">
-<p><span id="exr:selffuncnormalize" class="exercise"><strong>Exercise 11.7  </strong></span>Create a self-defined function to convert each number of a numeric vector to a “z” score.</p>
+<p><span id="exr:selffuncnormalize" class="exercise"><strong>Exercise 11.7  </strong></span>Create a self-defined function <code>normalize()</code> to convert each number of a numeric vector to a “z” score.</p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb35-1"><a href="iteration.html#cb35-1" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">10</span>, <span class="dv">20</span>)</span>
-<span id="cb35-2"><a href="iteration.html#cb35-2" tabindex="-1"></a><span class="fu">standardize</span>(y)</span></code></pre></div>
+<span id="cb35-2"><a href="iteration.html#cb35-2" tabindex="-1"></a><span class="fu">normalize</span>(y)</span></code></pre></div>
 <pre class="Rout"><code>[1] -0.9779865 -0.5704921 -0.2988292  0.2444966  1.6028112</code></pre>
 </div>
 <div class="exercise">
