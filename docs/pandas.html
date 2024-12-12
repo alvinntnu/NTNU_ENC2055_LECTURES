@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2024-12-06" />
+<meta name="date" content="2024-12-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -619,10 +619,10 @@ document.writeln ("This page was last updated: " + LastUpdated);
 </ul>
 <div id="libraries" class="section level2 hasAnchor" number="18.1">
 <h2><span class="header-section-number">18.1</span> Libraries<a href="pandas.html#libraries" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb1130"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1130-1"><a href="pandas.html#cb1130-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1130-2"><a href="pandas.html#cb1130-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1130-3"><a href="pandas.html#cb1130-3" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
-<span id="cb1130-4"><a href="pandas.html#cb1130-4" tabindex="-1"></a><span class="im">import</span> matplotlib</span></code></pre></div>
+<div class="sourceCode" id="cb1132"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1132-1"><a href="pandas.html#cb1132-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1132-2"><a href="pandas.html#cb1132-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1132-3"><a href="pandas.html#cb1132-3" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
+<span id="cb1132-4"><a href="pandas.html#cb1132-4" tabindex="-1"></a><span class="im">import</span> matplotlib</span></code></pre></div>
 </div>
 <div id="importingexporting-data" class="section level2 hasAnchor" number="18.2">
 <h2><span class="header-section-number">18.2</span> Importing/Exporting Data<a href="pandas.html#importingexporting-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -645,17 +645,17 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <li><code>df.to_sql(table_name, connection_object)</code></li>
 <li><code>df.to_json(filename)</code></li>
 </ul>
-<div class="sourceCode" id="cb1131"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1131-1"><a href="pandas.html#cb1131-1" tabindex="-1"></a>DEMO_DATA_DIR <span class="op">=</span> <span class="st">&#39;demo_data/titanic/&#39;</span></span>
-<span id="cb1131-2"><a href="pandas.html#cb1131-2" tabindex="-1"></a>iris <span class="op">=</span> sm.datasets.get_rdataset(<span class="st">&#39;iris&#39;</span>).data</span>
-<span id="cb1131-3"><a href="pandas.html#cb1131-3" tabindex="-1"></a>titanic <span class="op">=</span> pd.read_csv(DEMO_DATA_DIR<span class="op">+</span><span class="st">&#39;train.csv&#39;</span>)</span>
-<span id="cb1131-4"><a href="pandas.html#cb1131-4" tabindex="-1"></a>iris.head()</span></code></pre></div>
+<div class="sourceCode" id="cb1133"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1133-1"><a href="pandas.html#cb1133-1" tabindex="-1"></a>DEMO_DATA_DIR <span class="op">=</span> <span class="st">&#39;demo_data/titanic/&#39;</span></span>
+<span id="cb1133-2"><a href="pandas.html#cb1133-2" tabindex="-1"></a>iris <span class="op">=</span> sm.datasets.get_rdataset(<span class="st">&#39;iris&#39;</span>).data</span>
+<span id="cb1133-3"><a href="pandas.html#cb1133-3" tabindex="-1"></a>titanic <span class="op">=</span> pd.read_csv(DEMO_DATA_DIR<span class="op">+</span><span class="st">&#39;train.csv&#39;</span>)</span>
+<span id="cb1133-4"><a href="pandas.html#cb1133-4" tabindex="-1"></a>iris.head()</span></code></pre></div>
 <pre class="Rout"><code>   Sepal.Length  Sepal.Width  Petal.Length  Petal.Width Species
 0           5.1          3.5           1.4          0.2  setosa
 1           4.9          3.0           1.4          0.2  setosa
 2           4.7          3.2           1.3          0.2  setosa
 3           4.6          3.1           1.5          0.2  setosa
 4           5.0          3.6           1.4          0.2  setosa</code></pre>
-<div class="sourceCode" id="cb1133"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1133-1"><a href="pandas.html#cb1133-1" tabindex="-1"></a>titanic.head()</span></code></pre></div>
+<div class="sourceCode" id="cb1135"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1135-1"><a href="pandas.html#cb1135-1" tabindex="-1"></a>titanic.head()</span></code></pre></div>
 <pre class="Rout"><code>   PassengerId  Survived  Pclass  ...     Fare Cabin  Embarked
 0            1         0       3  ...   7.2500   NaN         S
 1            2         1       1  ...  71.2833   C85         C
@@ -664,18 +664,18 @@ document.writeln ("This page was last updated: " + LastUpdated);
 4            5         0       3  ...   8.0500   NaN         S
 
 [5 rows x 12 columns]</code></pre>
-<div class="sourceCode" id="cb1135"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1135-1"><a href="pandas.html#cb1135-1" tabindex="-1"></a>x<span class="op">=</span> [(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>),</span>
-<span id="cb1135-2"><a href="pandas.html#cb1135-2" tabindex="-1"></a>   (<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>),</span>
-<span id="cb1135-3"><a href="pandas.html#cb1135-3" tabindex="-1"></a>   (<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">12</span>)]</span>
-<span id="cb1135-4"><a href="pandas.html#cb1135-4" tabindex="-1"></a>pd.DataFrame(x,columns<span class="op">=</span>[<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;C&quot;</span>,<span class="st">&quot;D&quot;</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb1137"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1137-1"><a href="pandas.html#cb1137-1" tabindex="-1"></a>x<span class="op">=</span> [(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>),</span>
+<span id="cb1137-2"><a href="pandas.html#cb1137-2" tabindex="-1"></a>   (<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>),</span>
+<span id="cb1137-3"><a href="pandas.html#cb1137-3" tabindex="-1"></a>   (<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">12</span>)]</span>
+<span id="cb1137-4"><a href="pandas.html#cb1137-4" tabindex="-1"></a>pd.DataFrame(x,columns<span class="op">=</span>[<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;C&quot;</span>,<span class="st">&quot;D&quot;</span>])</span></code></pre></div>
 <pre class="Rout"><code>   A   B   C   D
 0  1   2   3   4
 1  5   6   7   8
 2  9  10  11  12</code></pre>
-<div class="sourceCode" id="cb1137"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1137-1"><a href="pandas.html#cb1137-1" tabindex="-1"></a>x <span class="op">=</span> {<span class="st">&quot;A&quot;</span>:[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>],</span>
-<span id="cb1137-2"><a href="pandas.html#cb1137-2" tabindex="-1"></a>    <span class="st">&quot;B&quot;</span>:[<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>],</span>
-<span id="cb1137-3"><a href="pandas.html#cb1137-3" tabindex="-1"></a>    <span class="st">&quot;C&quot;</span>:[<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">12</span>]}</span>
-<span id="cb1137-4"><a href="pandas.html#cb1137-4" tabindex="-1"></a>pd.DataFrame(x)</span></code></pre></div>
+<div class="sourceCode" id="cb1139"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1139-1"><a href="pandas.html#cb1139-1" tabindex="-1"></a>x <span class="op">=</span> {<span class="st">&quot;A&quot;</span>:[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>],</span>
+<span id="cb1139-2"><a href="pandas.html#cb1139-2" tabindex="-1"></a>    <span class="st">&quot;B&quot;</span>:[<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>],</span>
+<span id="cb1139-3"><a href="pandas.html#cb1139-3" tabindex="-1"></a>    <span class="st">&quot;C&quot;</span>:[<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">12</span>]}</span>
+<span id="cb1139-4"><a href="pandas.html#cb1139-4" tabindex="-1"></a>pd.DataFrame(x)</span></code></pre></div>
 <pre class="Rout"><code>   A  B   C
 0  1  5   9
 1  2  6  10
@@ -700,7 +700,7 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <li><code>df.dtypes</code></li>
 <li><code>df.set_index('column_name')</code>: Set a column as the index</li>
 </ul>
-<div class="sourceCode" id="cb1139"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1139-1"><a href="pandas.html#cb1139-1" tabindex="-1"></a>iris.info()</span></code></pre></div>
+<div class="sourceCode" id="cb1141"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1141-1"><a href="pandas.html#cb1141-1" tabindex="-1"></a>iris.info()</span></code></pre></div>
 <pre class="Rout"><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 RangeIndex: 150 entries, 0 to 149
 Data columns (total 5 columns):
@@ -713,7 +713,7 @@ Data columns (total 5 columns):
  4   Species       150 non-null    object 
 dtypes: float64(4), object(1)
 memory usage: 6.0+ KB</code></pre>
-<div class="sourceCode" id="cb1141"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1141-1"><a href="pandas.html#cb1141-1" tabindex="-1"></a>iris.describe()</span></code></pre></div>
+<div class="sourceCode" id="cb1143"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1143-1"><a href="pandas.html#cb1143-1" tabindex="-1"></a>iris.describe()</span></code></pre></div>
 <pre class="Rout"><code>       Sepal.Length  Sepal.Width  Petal.Length  Petal.Width
 count    150.000000   150.000000    150.000000   150.000000
 mean       5.843333     3.057333      3.758000     1.199333
@@ -723,31 +723,31 @@ min        4.300000     2.000000      1.000000     0.100000
 50%        5.800000     3.000000      4.350000     1.300000
 75%        6.400000     3.300000      5.100000     1.800000
 max        7.900000     4.400000      6.900000     2.500000</code></pre>
-<div class="sourceCode" id="cb1143"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1143-1"><a href="pandas.html#cb1143-1" tabindex="-1"></a><span class="bu">print</span>(iris.shape)</span></code></pre></div>
+<div class="sourceCode" id="cb1145"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1145-1"><a href="pandas.html#cb1145-1" tabindex="-1"></a><span class="bu">print</span>(iris.shape)</span></code></pre></div>
 <pre class="Rout"><code>(150, 5)</code></pre>
-<div class="sourceCode" id="cb1145"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1145-1"><a href="pandas.html#cb1145-1" tabindex="-1"></a>iris.head(<span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1147"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1147-1"><a href="pandas.html#cb1147-1" tabindex="-1"></a>iris.head(<span class="dv">3</span>)</span></code></pre></div>
 <pre class="Rout"><code>   Sepal.Length  Sepal.Width  Petal.Length  Petal.Width Species
 0           5.1          3.5           1.4          0.2  setosa
 1           4.9          3.0           1.4          0.2  setosa
 2           4.7          3.2           1.3          0.2  setosa</code></pre>
-<div class="sourceCode" id="cb1147"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1147-1"><a href="pandas.html#cb1147-1" tabindex="-1"></a>iris.tail(<span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1149"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1149-1"><a href="pandas.html#cb1149-1" tabindex="-1"></a>iris.tail(<span class="dv">3</span>)</span></code></pre></div>
 <pre class="Rout"><code>     Sepal.Length  Sepal.Width  Petal.Length  Petal.Width    Species
 147           6.5          3.0           5.2          2.0  virginica
 148           6.2          3.4           5.4          2.3  virginica
 149           5.9          3.0           5.1          1.8  virginica</code></pre>
-<div class="sourceCode" id="cb1149"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1149-1"><a href="pandas.html#cb1149-1" tabindex="-1"></a>iris[<span class="st">&#39;Species&#39;</span>].value_counts()</span></code></pre></div>
+<div class="sourceCode" id="cb1151"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1151-1"><a href="pandas.html#cb1151-1" tabindex="-1"></a>iris[<span class="st">&#39;Species&#39;</span>].value_counts()</span></code></pre></div>
 <pre class="Rout"><code>Species
 setosa        50
 versicolor    50
 virginica     50
 Name: count, dtype: int64</code></pre>
-<div class="sourceCode" id="cb1151"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1151-1"><a href="pandas.html#cb1151-1" tabindex="-1"></a><span class="bu">print</span>(iris.columns)</span></code></pre></div>
+<div class="sourceCode" id="cb1153"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1153-1"><a href="pandas.html#cb1153-1" tabindex="-1"></a><span class="bu">print</span>(iris.columns)</span></code></pre></div>
 <pre class="Rout"><code>Index([&#39;Sepal.Length&#39;, &#39;Sepal.Width&#39;, &#39;Petal.Length&#39;, &#39;Petal.Width&#39;,
        &#39;Species&#39;],
       dtype=&#39;object&#39;)</code></pre>
-<div class="sourceCode" id="cb1153"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1153-1"><a href="pandas.html#cb1153-1" tabindex="-1"></a><span class="bu">print</span>(iris.index)</span></code></pre></div>
+<div class="sourceCode" id="cb1155"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1155-1"><a href="pandas.html#cb1155-1" tabindex="-1"></a><span class="bu">print</span>(iris.index)</span></code></pre></div>
 <pre class="Rout"><code>RangeIndex(start=0, stop=150, step=1)</code></pre>
-<div class="sourceCode" id="cb1155"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1155-1"><a href="pandas.html#cb1155-1" tabindex="-1"></a><span class="bu">print</span>(iris.dtypes)</span></code></pre></div>
+<div class="sourceCode" id="cb1157"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1157-1"><a href="pandas.html#cb1157-1" tabindex="-1"></a><span class="bu">print</span>(iris.dtypes)</span></code></pre></div>
 <pre class="Rout"><code>Sepal.Length    float64
 Sepal.Width     float64
 Petal.Length    float64
@@ -757,16 +757,16 @@ dtype: object</code></pre>
 </div>
 <div id="basic-functions" class="section level2 hasAnchor" number="18.4">
 <h2><span class="header-section-number">18.4</span> Basic Functions<a href="pandas.html#basic-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb1157"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1157-1"><a href="pandas.html#cb1157-1" tabindex="-1"></a><span class="co">## DataFrame attributes</span></span>
-<span id="cb1157-2"><a href="pandas.html#cb1157-2" tabindex="-1"></a>iris.shape</span></code></pre></div>
+<div class="sourceCode" id="cb1159"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1159-1"><a href="pandas.html#cb1159-1" tabindex="-1"></a><span class="co">## DataFrame attributes</span></span>
+<span id="cb1159-2"><a href="pandas.html#cb1159-2" tabindex="-1"></a>iris.shape</span></code></pre></div>
 <pre class="Rout"><code>(150, 5)</code></pre>
-<div class="sourceCode" id="cb1159"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1159-1"><a href="pandas.html#cb1159-1" tabindex="-1"></a>iris.columns</span></code></pre></div>
+<div class="sourceCode" id="cb1161"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1161-1"><a href="pandas.html#cb1161-1" tabindex="-1"></a>iris.columns</span></code></pre></div>
 <pre class="Rout"><code>Index([&#39;Sepal.Length&#39;, &#39;Sepal.Width&#39;, &#39;Petal.Length&#39;, &#39;Petal.Width&#39;,
        &#39;Species&#39;],
       dtype=&#39;object&#39;)</code></pre>
-<div class="sourceCode" id="cb1161"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1161-1"><a href="pandas.html#cb1161-1" tabindex="-1"></a>iris.index</span></code></pre></div>
+<div class="sourceCode" id="cb1163"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1163-1"><a href="pandas.html#cb1163-1" tabindex="-1"></a>iris.index</span></code></pre></div>
 <pre class="Rout"><code>RangeIndex(start=0, stop=150, step=1)</code></pre>
-<div class="sourceCode" id="cb1163"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1163-1"><a href="pandas.html#cb1163-1" tabindex="-1"></a>iris.info()</span></code></pre></div>
+<div class="sourceCode" id="cb1165"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1165-1"><a href="pandas.html#cb1165-1" tabindex="-1"></a>iris.info()</span></code></pre></div>
 <pre class="Rout"><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 RangeIndex: 150 entries, 0 to 149
 Data columns (total 5 columns):
@@ -779,7 +779,7 @@ Data columns (total 5 columns):
  4   Species       150 non-null    object 
 dtypes: float64(4), object(1)
 memory usage: 6.0+ KB</code></pre>
-<div class="sourceCode" id="cb1165"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1165-1"><a href="pandas.html#cb1165-1" tabindex="-1"></a>iris.describe()</span></code></pre></div>
+<div class="sourceCode" id="cb1167"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1167-1"><a href="pandas.html#cb1167-1" tabindex="-1"></a>iris.describe()</span></code></pre></div>
 <pre class="Rout"><code>       Sepal.Length  Sepal.Width  Petal.Length  Petal.Width
 count    150.000000   150.000000    150.000000   150.000000
 mean       5.843333     3.057333      3.758000     1.199333
@@ -789,7 +789,7 @@ min        4.300000     2.000000      1.000000     0.100000
 50%        5.800000     3.000000      4.350000     1.300000
 75%        6.400000     3.300000      5.100000     1.800000
 max        7.900000     4.400000      6.900000     2.500000</code></pre>
-<div class="sourceCode" id="cb1167"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1167-1"><a href="pandas.html#cb1167-1" tabindex="-1"></a>iris.dtypes <span class="co"># check column data types</span></span></code></pre></div>
+<div class="sourceCode" id="cb1169"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1169-1"><a href="pandas.html#cb1169-1" tabindex="-1"></a>iris.dtypes <span class="co"># check column data types</span></span></code></pre></div>
 <pre class="Rout"><code>Sepal.Length    float64
 Sepal.Width     float64
 Petal.Length    float64
@@ -807,7 +807,7 @@ dtype: object</code></pre>
 <li><code>df.iloc[0,:]</code>: First row</li>
 <li><code>df.iloc[0,0]</code>: First element of first column</li>
 </ul>
-<div class="sourceCode" id="cb1169"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1169-1"><a href="pandas.html#cb1169-1" tabindex="-1"></a>iris.loc[:<span class="dv">5</span>, <span class="st">&#39;Species&#39;</span>] <span class="co"># first six rows of &#39;Species&#39; column</span></span></code></pre></div>
+<div class="sourceCode" id="cb1171"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1171-1"><a href="pandas.html#cb1171-1" tabindex="-1"></a>iris.loc[:<span class="dv">5</span>, <span class="st">&#39;Species&#39;</span>] <span class="co"># first six rows of &#39;Species&#39; column</span></span></code></pre></div>
 <pre class="Rout"><code>0    setosa
 1    setosa
 2    setosa
@@ -815,7 +815,7 @@ dtype: object</code></pre>
 4    setosa
 5    setosa
 Name: Species, dtype: object</code></pre>
-<div class="sourceCode" id="cb1171"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1171-1"><a href="pandas.html#cb1171-1" tabindex="-1"></a>iris.iloc[:<span class="dv">5</span>, <span class="dv">4</span>] <span class="co"># same as above</span></span></code></pre></div>
+<div class="sourceCode" id="cb1173"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1173-1"><a href="pandas.html#cb1173-1" tabindex="-1"></a>iris.iloc[:<span class="dv">5</span>, <span class="dv">4</span>] <span class="co"># same as above</span></span></code></pre></div>
 <pre class="Rout"><code>0    setosa
 1    setosa
 2    setosa
@@ -850,7 +850,7 @@ Name: Species, dtype: object</code></pre>
 <li><p><code>s.fillna(s.mean())</code>: Replace the null values of a Series with its mean score</p></li>
 <li><p>Quick check of the null values in each column</p></li>
 </ul>
-<div class="sourceCode" id="cb1173"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1173-1"><a href="pandas.html#cb1173-1" tabindex="-1"></a>titanic.isnull().<span class="bu">sum</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb1175"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1175-1"><a href="pandas.html#cb1175-1" tabindex="-1"></a>titanic.isnull().<span class="bu">sum</span>()</span></code></pre></div>
 <pre class="Rout"><code>PassengerId      0
 Survived         0
 Pclass           0
@@ -864,7 +864,7 @@ Fare             0
 Cabin          687
 Embarked         2
 dtype: int64</code></pre>
-<div class="sourceCode" id="cb1175"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1175-1"><a href="pandas.html#cb1175-1" tabindex="-1"></a>titanic.dropna(axis<span class="op">=</span><span class="dv">1</span>, thresh<span class="op">=</span><span class="dv">600</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1177"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1177-1"><a href="pandas.html#cb1177-1" tabindex="-1"></a>titanic.dropna(axis<span class="op">=</span><span class="dv">1</span>, thresh<span class="op">=</span><span class="dv">600</span>)</span></code></pre></div>
 <pre class="Rout"><code>     PassengerId  Survived  Pclass  ...            Ticket     Fare  Embarked
 0              1         0       3  ...         A/5 21171   7.2500         S
 1              2         1       1  ...          PC 17599  71.2833         C
@@ -879,7 +879,7 @@ dtype: int64</code></pre>
 890          891         0       3  ...            370376   7.7500         Q
 
 [891 rows x 11 columns]</code></pre>
-<div class="sourceCode" id="cb1177"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1177-1"><a href="pandas.html#cb1177-1" tabindex="-1"></a>titanic.notnull().<span class="bu">sum</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb1179"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1179-1"><a href="pandas.html#cb1179-1" tabindex="-1"></a>titanic.notnull().<span class="bu">sum</span>()</span></code></pre></div>
 <pre class="Rout"><code>PassengerId    891
 Survived       891
 Pclass         891
@@ -899,22 +899,22 @@ dtype: int64</code></pre>
 <ul>
 <li><code>s.astype(float)</code>: Convert a Series into a <code>float</code> type</li>
 </ul>
-<div class="sourceCode" id="cb1179"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1179-1"><a href="pandas.html#cb1179-1" tabindex="-1"></a>iris.dtypes</span></code></pre></div>
+<div class="sourceCode" id="cb1181"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1181-1"><a href="pandas.html#cb1181-1" tabindex="-1"></a>iris.dtypes</span></code></pre></div>
 <pre class="Rout"><code>Sepal.Length    float64
 Sepal.Width     float64
 Petal.Length    float64
 Petal.Width     float64
 Species          object
 dtype: object</code></pre>
-<div class="sourceCode" id="cb1181"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1181-1"><a href="pandas.html#cb1181-1" tabindex="-1"></a>iris[<span class="st">&#39;Species&#39;</span>]<span class="op">=</span>iris[<span class="st">&#39;Species&#39;</span>].astype(<span class="st">&#39;category&#39;</span>)</span>
-<span id="cb1181-2"><a href="pandas.html#cb1181-2" tabindex="-1"></a>iris.dtypes</span></code></pre></div>
+<div class="sourceCode" id="cb1183"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1183-1"><a href="pandas.html#cb1183-1" tabindex="-1"></a>iris[<span class="st">&#39;Species&#39;</span>]<span class="op">=</span>iris[<span class="st">&#39;Species&#39;</span>].astype(<span class="st">&#39;category&#39;</span>)</span>
+<span id="cb1183-2"><a href="pandas.html#cb1183-2" tabindex="-1"></a>iris.dtypes</span></code></pre></div>
 <pre class="Rout"><code>Sepal.Length     float64
 Sepal.Width      float64
 Petal.Length     float64
 Petal.Width      float64
 Species         category
 dtype: object</code></pre>
-<div class="sourceCode" id="cb1183"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1183-1"><a href="pandas.html#cb1183-1" tabindex="-1"></a><span class="co">#iris.value_counts(iris[&#39;Species&#39;]).plot.bar()</span></span></code></pre></div>
+<div class="sourceCode" id="cb1185"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1185-1"><a href="pandas.html#cb1185-1" tabindex="-1"></a><span class="co">#iris.value_counts(iris[&#39;Species&#39;]).plot.bar()</span></span></code></pre></div>
 </div>
 <div id="pandas-supported-data-types" class="section level3 hasAnchor" number="18.6.3">
 <h3><span class="header-section-number">18.6.3</span> Pandas-supported Data Types<a href="pandas.html#pandas-supported-data-types" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -929,7 +929,7 @@ dtype: object</code></pre>
 <ul>
 <li><code>s.replace(X, Y)</code></li>
 </ul>
-<div class="sourceCode" id="cb1184"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1184-1"><a href="pandas.html#cb1184-1" tabindex="-1"></a>titanic.head()</span></code></pre></div>
+<div class="sourceCode" id="cb1186"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1186-1"><a href="pandas.html#cb1186-1" tabindex="-1"></a>titanic.head()</span></code></pre></div>
 <pre class="Rout"><code>   PassengerId  Survived  Pclass  ...     Fare Cabin  Embarked
 0            1         0       3  ...   7.2500   NaN         S
 1            2         1       1  ...  71.2833   C85         C
@@ -938,12 +938,12 @@ dtype: object</code></pre>
 4            5         0       3  ...   8.0500   NaN         S
 
 [5 rows x 12 columns]</code></pre>
-<div class="sourceCode" id="cb1186"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1186-1"><a href="pandas.html#cb1186-1" tabindex="-1"></a>titanic.value_counts(titanic[<span class="st">&#39;Survived&#39;</span>]).plot.bar()</span>
-<span id="cb1186-2"><a href="pandas.html#cb1186-2" tabindex="-1"></a>titanic.columns</span></code></pre></div>
+<div class="sourceCode" id="cb1188"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1188-1"><a href="pandas.html#cb1188-1" tabindex="-1"></a>titanic.value_counts(titanic[<span class="st">&#39;Survived&#39;</span>]).plot.bar()</span>
+<span id="cb1188-2"><a href="pandas.html#cb1188-2" tabindex="-1"></a>titanic.columns</span></code></pre></div>
 <pre class="Rout"><code>Index([&#39;PassengerId&#39;, &#39;Survived&#39;, &#39;Pclass&#39;, &#39;Name&#39;, &#39;Sex&#39;, &#39;Age&#39;, &#39;SibSp&#39;,
        &#39;Parch&#39;, &#39;Ticket&#39;, &#39;Fare&#39;, &#39;Cabin&#39;, &#39;Embarked&#39;],
       dtype=&#39;object&#39;)</code></pre>
-<div class="sourceCode" id="cb1188"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1188-1"><a href="pandas.html#cb1188-1" tabindex="-1"></a>titanic.groupby([<span class="st">&#39;Sex&#39;</span>,<span class="st">&#39;Pclass&#39;</span>]).mean(numeric_only<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1190"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1190-1"><a href="pandas.html#cb1190-1" tabindex="-1"></a>titanic.groupby([<span class="st">&#39;Sex&#39;</span>,<span class="st">&#39;Pclass&#39;</span>]).mean(numeric_only<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 <pre class="Rout"><code>               PassengerId  Survived        Age     SibSp     Parch        Fare
 Sex    Pclass                                                                  
 female 1        469.212766  0.968085  34.611765  0.553191  0.457447  106.125798
@@ -952,7 +952,7 @@ female 1        469.212766  0.968085  34.611765  0.553191  0.457447  106.125798
 male   1        455.729508  0.368852  41.281386  0.311475  0.278689   67.226127
        2        447.962963  0.157407  30.740707  0.342593  0.222222   19.741782
        3        455.515850  0.135447  26.507589  0.498559  0.224784   12.661633</code></pre>
-<div class="sourceCode" id="cb1190"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1190-1"><a href="pandas.html#cb1190-1" tabindex="-1"></a>titanic[titanic[<span class="st">&#39;Age&#39;</span>] <span class="op">&lt;</span> <span class="dv">18</span>].groupby([<span class="st">&#39;Sex&#39;</span>,<span class="st">&#39;Pclass&#39;</span>]).mean(numeric_only<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1192"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1192-1"><a href="pandas.html#cb1192-1" tabindex="-1"></a>titanic[titanic[<span class="st">&#39;Age&#39;</span>] <span class="op">&lt;</span> <span class="dv">18</span>].groupby([<span class="st">&#39;Sex&#39;</span>,<span class="st">&#39;Pclass&#39;</span>]).mean(numeric_only<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 <pre class="Rout"><code>               PassengerId  Survived        Age     SibSp     Parch        Fare
 Sex    Pclass                                                                  
 female 1        525.375000  0.875000  14.125000  0.500000  0.875000  104.083337
@@ -961,12 +961,12 @@ female 1        525.375000  0.875000  14.125000  0.500000  0.875000  104.083337
 male   1        526.500000  1.000000   8.230000  0.500000  2.000000  116.072900
        2        527.818182  0.818182   4.757273  0.727273  1.000000   25.659473
        3        437.953488  0.232558   9.963256  2.069767  1.000000   22.752523</code></pre>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-718-1.png" width="614" /></p>
+<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-723-1.png" width="614" /></p>
 </div>
 <div id="filter-1" class="section level3 hasAnchor" number="18.6.5">
 <h3><span class="header-section-number">18.6.5</span> <code>filter()</code><a href="pandas.html#filter-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb1192"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1192-1"><a href="pandas.html#cb1192-1" tabindex="-1"></a><span class="co">## filter</span></span>
-<span id="cb1192-2"><a href="pandas.html#cb1192-2" tabindex="-1"></a>iris[iris[<span class="st">&#39;Sepal.Length&#39;</span>]<span class="op">&gt;</span><span class="dv">5</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb1194"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1194-1"><a href="pandas.html#cb1194-1" tabindex="-1"></a><span class="co">## filter</span></span>
+<span id="cb1194-2"><a href="pandas.html#cb1194-2" tabindex="-1"></a>iris[iris[<span class="st">&#39;Sepal.Length&#39;</span>]<span class="op">&gt;</span><span class="dv">5</span>]</span></code></pre></div>
 <pre class="Rout"><code>     Sepal.Length  Sepal.Width  Petal.Length  Petal.Width    Species
 0             5.1          3.5           1.4          0.2     setosa
 5             5.4          3.9           1.7          0.4     setosa
@@ -982,11 +982,11 @@ male   1        526.500000  1.000000   8.230000  0.500000  2.000000  116.072900
 
 [118 rows x 5 columns]</code></pre>
 <pre class="info"><code>When there are more than one filtering condition, put the conditions in parentheses.</code></pre>
-<div class="sourceCode" id="cb1195"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1195-1"><a href="pandas.html#cb1195-1" tabindex="-1"></a>iris[(iris[<span class="st">&#39;Sepal.Length&#39;</span>]<span class="op">&gt;</span><span class="dv">4</span>) <span class="op">&amp;</span> (iris[<span class="st">&#39;Sepal.Width&#39;</span>]<span class="op">&gt;</span><span class="dv">5</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb1197"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1197-1"><a href="pandas.html#cb1197-1" tabindex="-1"></a>iris[(iris[<span class="st">&#39;Sepal.Length&#39;</span>]<span class="op">&gt;</span><span class="dv">4</span>) <span class="op">&amp;</span> (iris[<span class="st">&#39;Sepal.Width&#39;</span>]<span class="op">&gt;</span><span class="dv">5</span>)]</span></code></pre></div>
 <pre class="Rout"><code>Empty DataFrame
 Columns: [Sepal.Length, Sepal.Width, Petal.Length, Petal.Width, Species]
 Index: []</code></pre>
-<div class="sourceCode" id="cb1197"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1197-1"><a href="pandas.html#cb1197-1" tabindex="-1"></a>iris.query(<span class="st">&#39;`Sepal.Length`&gt;5&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1199"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1199-1"><a href="pandas.html#cb1199-1" tabindex="-1"></a>iris.query(<span class="st">&#39;`Sepal.Length`&gt;5&#39;</span>)</span></code></pre></div>
 <pre class="Rout"><code>     Sepal.Length  Sepal.Width  Petal.Length  Petal.Width    Species
 0             5.1          3.5           1.4          0.2     setosa
 5             5.4          3.9           1.7          0.4     setosa
@@ -1001,7 +1001,7 @@ Index: []</code></pre>
 149           5.9          3.0           5.1          1.8  virginica
 
 [118 rows x 5 columns]</code></pre>
-<div class="sourceCode" id="cb1199"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1199-1"><a href="pandas.html#cb1199-1" tabindex="-1"></a>iris[(iris[<span class="st">&#39;Sepal.Length&#39;</span>]<span class="op">&gt;</span><span class="dv">5</span>) <span class="op">&amp;</span> (iris[<span class="st">&#39;Sepal.Width&#39;</span>]<span class="op">&gt;</span><span class="dv">4</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb1201"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1201-1"><a href="pandas.html#cb1201-1" tabindex="-1"></a>iris[(iris[<span class="st">&#39;Sepal.Length&#39;</span>]<span class="op">&gt;</span><span class="dv">5</span>) <span class="op">&amp;</span> (iris[<span class="st">&#39;Sepal.Width&#39;</span>]<span class="op">&gt;</span><span class="dv">4</span>)]</span></code></pre></div>
 <pre class="Rout"><code>    Sepal.Length  Sepal.Width  Petal.Length  Petal.Width Species
 15           5.7          4.4           1.5          0.4  setosa
 32           5.2          4.1           1.5          0.1  setosa
@@ -1009,7 +1009,7 @@ Index: []</code></pre>
 </div>
 <div id="arrange-1" class="section level3 hasAnchor" number="18.6.6">
 <h3><span class="header-section-number">18.6.6</span> <code>arrange()</code><a href="pandas.html#arrange-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb1201"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1201-1"><a href="pandas.html#cb1201-1" tabindex="-1"></a>iris.sort_values([<span class="st">&#39;Species&#39;</span>,<span class="st">&#39;Sepal.Length&#39;</span>], ascending<span class="op">=</span>[<span class="va">False</span>,<span class="va">True</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb1203"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1203-1"><a href="pandas.html#cb1203-1" tabindex="-1"></a>iris.sort_values([<span class="st">&#39;Species&#39;</span>,<span class="st">&#39;Sepal.Length&#39;</span>], ascending<span class="op">=</span>[<span class="va">False</span>,<span class="va">True</span>])</span></code></pre></div>
 <pre class="Rout"><code>     Sepal.Length  Sepal.Width  Petal.Length  Petal.Width    Species
 106           4.9          2.5           4.5          1.7  virginica
 121           5.6          2.8           4.9          2.0  virginica
@@ -1027,8 +1027,8 @@ Index: []</code></pre>
 </div>
 <div id="select-1" class="section level3 hasAnchor" number="18.6.7">
 <h3><span class="header-section-number">18.6.7</span> <code>select()</code><a href="pandas.html#select-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb1203"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1203-1"><a href="pandas.html#cb1203-1" tabindex="-1"></a><span class="co">## select</span></span>
-<span id="cb1203-2"><a href="pandas.html#cb1203-2" tabindex="-1"></a>iris[[<span class="st">&#39;Sepal.Length&#39;</span>, <span class="st">&#39;Species&#39;</span>]]</span></code></pre></div>
+<div class="sourceCode" id="cb1205"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1205-1"><a href="pandas.html#cb1205-1" tabindex="-1"></a><span class="co">## select</span></span>
+<span id="cb1205-2"><a href="pandas.html#cb1205-2" tabindex="-1"></a>iris[[<span class="st">&#39;Sepal.Length&#39;</span>, <span class="st">&#39;Species&#39;</span>]]</span></code></pre></div>
 <pre class="Rout"><code>     Sepal.Length    Species
 0             5.1     setosa
 1             4.9     setosa
@@ -1043,15 +1043,15 @@ Index: []</code></pre>
 149           5.9  virginica
 
 [150 rows x 2 columns]</code></pre>
-<div class="sourceCode" id="cb1205"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1205-1"><a href="pandas.html#cb1205-1" tabindex="-1"></a><span class="co">## deselect columns</span></span>
-<span id="cb1205-2"><a href="pandas.html#cb1205-2" tabindex="-1"></a>iris.drop([<span class="st">&#39;Sepal.Length&#39;</span>], axis<span class="op">=</span><span class="dv">1</span>).head()</span></code></pre></div>
+<div class="sourceCode" id="cb1207"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1207-1"><a href="pandas.html#cb1207-1" tabindex="-1"></a><span class="co">## deselect columns</span></span>
+<span id="cb1207-2"><a href="pandas.html#cb1207-2" tabindex="-1"></a>iris.drop([<span class="st">&#39;Sepal.Length&#39;</span>], axis<span class="op">=</span><span class="dv">1</span>).head()</span></code></pre></div>
 <pre class="Rout"><code>   Sepal.Width  Petal.Length  Petal.Width Species
 0          3.5           1.4          0.2  setosa
 1          3.0           1.4          0.2  setosa
 2          3.2           1.3          0.2  setosa
 3          3.1           1.5          0.2  setosa
 4          3.6           1.4          0.2  setosa</code></pre>
-<div class="sourceCode" id="cb1207"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1207-1"><a href="pandas.html#cb1207-1" tabindex="-1"></a>iris.<span class="bu">filter</span>([<span class="st">&#39;Species&#39;</span>,<span class="st">&#39;Sepal.Length&#39;</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb1209"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1209-1"><a href="pandas.html#cb1209-1" tabindex="-1"></a>iris.<span class="bu">filter</span>([<span class="st">&#39;Species&#39;</span>,<span class="st">&#39;Sepal.Length&#39;</span>])</span></code></pre></div>
 <pre class="Rout"><code>       Species  Sepal.Length
 0       setosa           5.1
 1       setosa           4.9
@@ -1066,7 +1066,7 @@ Index: []</code></pre>
 149  virginica           5.9
 
 [150 rows x 2 columns]</code></pre>
-<div class="sourceCode" id="cb1209"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1209-1"><a href="pandas.html#cb1209-1" tabindex="-1"></a>iris[[<span class="st">&#39;Species&#39;</span>,<span class="st">&#39;Sepal.Length&#39;</span>]]</span></code></pre></div>
+<div class="sourceCode" id="cb1211"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1211-1"><a href="pandas.html#cb1211-1" tabindex="-1"></a>iris[[<span class="st">&#39;Species&#39;</span>,<span class="st">&#39;Sepal.Length&#39;</span>]]</span></code></pre></div>
 <pre class="Rout"><code>       Species  Sepal.Length
 0       setosa           5.1
 1       setosa           4.9
@@ -1081,17 +1081,17 @@ Index: []</code></pre>
 149  virginica           5.9
 
 [150 rows x 2 columns]</code></pre>
-<div class="sourceCode" id="cb1211"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1211-1"><a href="pandas.html#cb1211-1" tabindex="-1"></a><span class="co">## extract one particular column</span></span>
-<span id="cb1211-2"><a href="pandas.html#cb1211-2" tabindex="-1"></a>sepal_length <span class="op">=</span> iris[<span class="st">&#39;Sepal.Length&#39;</span>]</span>
-<span id="cb1211-3"><a href="pandas.html#cb1211-3" tabindex="-1"></a><span class="bu">type</span>(sepal_length)</span></code></pre></div>
+<div class="sourceCode" id="cb1213"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1213-1"><a href="pandas.html#cb1213-1" tabindex="-1"></a><span class="co">## extract one particular column</span></span>
+<span id="cb1213-2"><a href="pandas.html#cb1213-2" tabindex="-1"></a>sepal_length <span class="op">=</span> iris[<span class="st">&#39;Sepal.Length&#39;</span>]</span>
+<span id="cb1213-3"><a href="pandas.html#cb1213-3" tabindex="-1"></a><span class="bu">type</span>(sepal_length)</span></code></pre></div>
 <pre class="Rout"><code>&lt;class &#39;pandas.core.series.Series&#39;&gt;</code></pre>
 </div>
 <div id="mutate-1" class="section level3 hasAnchor" number="18.6.8">
 <h3><span class="header-section-number">18.6.8</span> <code>mutate()</code><a href="pandas.html#mutate-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb1213"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1213-1"><a href="pandas.html#cb1213-1" tabindex="-1"></a><span class="co">## mutate</span></span>
-<span id="cb1213-2"><a href="pandas.html#cb1213-2" tabindex="-1"></a>iris[<span class="st">&#39;Species_new&#39;</span>] <span class="op">=</span> iris[<span class="st">&#39;Species&#39;</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: <span class="bu">len</span>(x))</span>
-<span id="cb1213-3"><a href="pandas.html#cb1213-3" tabindex="-1"></a>iris[<span class="st">&#39;Species_initial&#39;</span>] <span class="op">=</span> iris[<span class="st">&#39;Species&#39;</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: x[:<span class="dv">2</span>].upper())</span>
-<span id="cb1213-4"><a href="pandas.html#cb1213-4" tabindex="-1"></a>iris</span></code></pre></div>
+<div class="sourceCode" id="cb1215"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1215-1"><a href="pandas.html#cb1215-1" tabindex="-1"></a><span class="co">## mutate</span></span>
+<span id="cb1215-2"><a href="pandas.html#cb1215-2" tabindex="-1"></a>iris[<span class="st">&#39;Species_new&#39;</span>] <span class="op">=</span> iris[<span class="st">&#39;Species&#39;</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: <span class="bu">len</span>(x))</span>
+<span id="cb1215-3"><a href="pandas.html#cb1215-3" tabindex="-1"></a>iris[<span class="st">&#39;Species_initial&#39;</span>] <span class="op">=</span> iris[<span class="st">&#39;Species&#39;</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: x[:<span class="dv">2</span>].upper())</span>
+<span id="cb1215-4"><a href="pandas.html#cb1215-4" tabindex="-1"></a>iris</span></code></pre></div>
 <pre class="Rout"><code>     Sepal.Length  Sepal.Width  ...  Species_new  Species_initial
 0             5.1          3.5  ...            6               SE
 1             4.9          3.0  ...            6               SE
@@ -1106,8 +1106,8 @@ Index: []</code></pre>
 149           5.9          3.0  ...            9               VI
 
 [150 rows x 7 columns]</code></pre>
-<div class="sourceCode" id="cb1215"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1215-1"><a href="pandas.html#cb1215-1" tabindex="-1"></a><span class="co">## mutate alternative 2</span></span>
-<span id="cb1215-2"><a href="pandas.html#cb1215-2" tabindex="-1"></a>iris.assign(Specias_initial2 <span class="op">=</span> iris[<span class="st">&#39;Species&#39;</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: x.upper()))</span></code></pre></div>
+<div class="sourceCode" id="cb1217"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1217-1"><a href="pandas.html#cb1217-1" tabindex="-1"></a><span class="co">## mutate alternative 2</span></span>
+<span id="cb1217-2"><a href="pandas.html#cb1217-2" tabindex="-1"></a>iris.assign(Specias_initial2 <span class="op">=</span> iris[<span class="st">&#39;Species&#39;</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: x.upper()))</span></code></pre></div>
 <pre class="Rout"><code>     Sepal.Length  Sepal.Width  ...  Species_initial  Specias_initial2
 0             5.1          3.5  ...               SE            SETOSA
 1             4.9          3.0  ...               SE            SETOSA
@@ -1132,7 +1132,7 @@ Index: []</code></pre>
 <div class="alert">
 <p>When <code>apply()</code> functions to the data frame, the <code>axis=1</code> refers to row mutation and <code>axis=0</code> refers to column mutation. This is very counter-intuitive for R users.</p>
 </div>
-<div class="sourceCode" id="cb1217"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1217-1"><a href="pandas.html#cb1217-1" tabindex="-1"></a>iris.head(<span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1219"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1219-1"><a href="pandas.html#cb1219-1" tabindex="-1"></a>iris.head(<span class="dv">10</span>)</span></code></pre></div>
 <pre class="Rout"><code>   Sepal.Length  Sepal.Width  Petal.Length  ...  Species Species_new Species_initial
 0           5.1          3.5           1.4  ...   setosa           6              SE
 1           4.9          3.0           1.4  ...   setosa           6              SE
@@ -1146,7 +1146,7 @@ Index: []</code></pre>
 9           4.9          3.1           1.5  ...   setosa           6              SE
 
 [10 rows x 7 columns]</code></pre>
-<div class="sourceCode" id="cb1219"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1219-1"><a href="pandas.html#cb1219-1" tabindex="-1"></a>iris[[<span class="st">&#39;Sepal.Width&#39;</span>,<span class="st">&#39;Petal.Width&#39;</span>]].<span class="bu">apply</span>(np.<span class="bu">sum</span>, axis<span class="op">=</span><span class="dv">1</span>).head(<span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1221"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1221-1"><a href="pandas.html#cb1221-1" tabindex="-1"></a>iris[[<span class="st">&#39;Sepal.Width&#39;</span>,<span class="st">&#39;Petal.Width&#39;</span>]].<span class="bu">apply</span>(np.<span class="bu">sum</span>, axis<span class="op">=</span><span class="dv">1</span>).head(<span class="dv">10</span>)</span></code></pre></div>
 <pre class="Rout"><code>0    3.7
 1    3.2
 2    3.4
@@ -1161,20 +1161,20 @@ dtype: float64</code></pre>
 </div>
 <div id="group_by-and-summarize-1" class="section level3 hasAnchor" number="18.6.10">
 <h3><span class="header-section-number">18.6.10</span> <code>group_by()</code> and <code>summarize()</code><a href="pandas.html#group_by-and-summarize-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb1221"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1221-1"><a href="pandas.html#cb1221-1" tabindex="-1"></a>iris.groupby(by<span class="op">=</span><span class="st">&#39;Species&#39;</span>).mean(numeric_only<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1223"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1223-1"><a href="pandas.html#cb1223-1" tabindex="-1"></a>iris.groupby(by<span class="op">=</span><span class="st">&#39;Species&#39;</span>).mean(numeric_only<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 <pre class="Rout"><code>            Sepal.Length  Sepal.Width  Petal.Length  Petal.Width
 Species                                                         
 setosa             5.006        3.428         1.462        0.246
 versicolor         5.936        2.770         4.260        1.326
 virginica          6.588        2.974         5.552        2.026</code></pre>
-<div class="sourceCode" id="cb1223"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1223-1"><a href="pandas.html#cb1223-1" tabindex="-1"></a>iris.<span class="bu">filter</span>([<span class="st">&#39;Species&#39;</span>,<span class="st">&#39;Sepal.Length&#39;</span>]).groupby(<span class="st">&#39;Species&#39;</span>).agg({<span class="st">&#39;Sepal.Length&#39;</span>:[<span class="st">&#39;mean&#39;</span>,<span class="st">&#39;count&#39;</span>,<span class="st">&#39;std&#39;</span>]})</span></code></pre></div>
+<div class="sourceCode" id="cb1225"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1225-1"><a href="pandas.html#cb1225-1" tabindex="-1"></a>iris.<span class="bu">filter</span>([<span class="st">&#39;Species&#39;</span>,<span class="st">&#39;Sepal.Length&#39;</span>]).groupby(<span class="st">&#39;Species&#39;</span>).agg({<span class="st">&#39;Sepal.Length&#39;</span>:[<span class="st">&#39;mean&#39;</span>,<span class="st">&#39;count&#39;</span>,<span class="st">&#39;std&#39;</span>]})</span></code></pre></div>
 <pre class="Rout"><code>           Sepal.Length                
                    mean count       std
 Species                                
 setosa            5.006    50  0.352490
 versicolor        5.936    50  0.516171
 virginica         6.588    50  0.635880</code></pre>
-<div class="sourceCode" id="cb1225"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1225-1"><a href="pandas.html#cb1225-1" tabindex="-1"></a>titanic.head()</span></code></pre></div>
+<div class="sourceCode" id="cb1227"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1227-1"><a href="pandas.html#cb1227-1" tabindex="-1"></a>titanic.head()</span></code></pre></div>
 <pre class="Rout"><code>   PassengerId  Survived  Pclass  ...     Fare Cabin  Embarked
 0            1         0       3  ...   7.2500   NaN         S
 1            2         1       1  ...  71.2833   C85         C
@@ -1183,7 +1183,7 @@ virginica         6.588    50  0.635880</code></pre>
 4            5         0       3  ...   8.0500   NaN         S
 
 [5 rows x 12 columns]</code></pre>
-<div class="sourceCode" id="cb1227"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1227-1"><a href="pandas.html#cb1227-1" tabindex="-1"></a>titanic.groupby([<span class="st">&#39;Pclass&#39;</span>,<span class="st">&#39;Sex&#39;</span>]).agg(np.<span class="bu">sum</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1229"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1229-1"><a href="pandas.html#cb1229-1" tabindex="-1"></a>titanic.groupby([<span class="st">&#39;Pclass&#39;</span>,<span class="st">&#39;Sex&#39;</span>]).agg(np.<span class="bu">sum</span>)</span></code></pre></div>
 <pre class="Rout"><code>               PassengerId  ...                                           Embarked
 Pclass Sex                  ...                                                   
 1      female        44106  ...  CSSCCSSSSCCCCCSCSCSSSSCSCCCCCCSCCCSCSSCCCCSCQS...
@@ -1194,7 +1194,7 @@ Pclass Sex                  ...
        male         158064  ...  SSQSSSQCSCSCSQCSSCSCSCSSCSSSSSSSSSSSSSSSSSSSSS...
 
 [6 rows x 10 columns]</code></pre>
-<div class="sourceCode" id="cb1229"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1229-1"><a href="pandas.html#cb1229-1" tabindex="-1"></a>titanic.pivot_table(index<span class="op">=</span>[<span class="st">&#39;Pclass&#39;</span>,<span class="st">&#39;Sex&#39;</span>], values<span class="op">=</span>[<span class="st">&#39;Survived&#39;</span>], aggfunc<span class="op">=</span>np.<span class="bu">sum</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1231"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1231-1"><a href="pandas.html#cb1231-1" tabindex="-1"></a>titanic.pivot_table(index<span class="op">=</span>[<span class="st">&#39;Pclass&#39;</span>,<span class="st">&#39;Sex&#39;</span>], values<span class="op">=</span>[<span class="st">&#39;Survived&#39;</span>], aggfunc<span class="op">=</span>np.<span class="bu">sum</span>)</span></code></pre></div>
 <pre class="Rout"><code>               Survived
 Pclass Sex             
 1      female        91
@@ -1206,7 +1206,7 @@ Pclass Sex
 </div>
 <div id="rename-1" class="section level3 hasAnchor" number="18.6.11">
 <h3><span class="header-section-number">18.6.11</span> <code>rename()</code><a href="pandas.html#rename-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb1231"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1231-1"><a href="pandas.html#cb1231-1" tabindex="-1"></a>iris</span></code></pre></div>
+<div class="sourceCode" id="cb1233"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1233-1"><a href="pandas.html#cb1233-1" tabindex="-1"></a>iris</span></code></pre></div>
 <pre class="Rout"><code>     Sepal.Length  Sepal.Width  ...  Species_new  Species_initial
 0             5.1          3.5  ...            6               SE
 1             4.9          3.0  ...            6               SE
@@ -1221,15 +1221,15 @@ Pclass Sex
 149           5.9          3.0  ...            9               VI
 
 [150 rows x 7 columns]</code></pre>
-<div class="sourceCode" id="cb1233"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1233-1"><a href="pandas.html#cb1233-1" tabindex="-1"></a>iris.columns</span></code></pre></div>
+<div class="sourceCode" id="cb1235"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1235-1"><a href="pandas.html#cb1235-1" tabindex="-1"></a>iris.columns</span></code></pre></div>
 <pre class="Rout"><code>Index([&#39;Sepal.Length&#39;, &#39;Sepal.Width&#39;, &#39;Petal.Length&#39;, &#39;Petal.Width&#39;, &#39;Species&#39;,
        &#39;Species_new&#39;, &#39;Species_initial&#39;],
       dtype=&#39;object&#39;)</code></pre>
 <ul>
 <li>Selective renaming column names</li>
 </ul>
-<div class="sourceCode" id="cb1235"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1235-1"><a href="pandas.html#cb1235-1" tabindex="-1"></a>iris <span class="op">=</span> iris.rename(columns<span class="op">=</span>{<span class="st">&#39;Sepal.Length&#39;</span>:<span class="st">&#39;SLen&#39;</span>})</span>
-<span id="cb1235-2"><a href="pandas.html#cb1235-2" tabindex="-1"></a>iris</span></code></pre></div>
+<div class="sourceCode" id="cb1237"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1237-1"><a href="pandas.html#cb1237-1" tabindex="-1"></a>iris <span class="op">=</span> iris.rename(columns<span class="op">=</span>{<span class="st">&#39;Sepal.Length&#39;</span>:<span class="st">&#39;SLen&#39;</span>})</span>
+<span id="cb1237-2"><a href="pandas.html#cb1237-2" tabindex="-1"></a>iris</span></code></pre></div>
 <pre class="Rout"><code>     SLen  Sepal.Width  Petal.Length  ...    Species Species_new Species_initial
 0     5.1          3.5           1.4  ...     setosa           6              SE
 1     4.9          3.0           1.4  ...     setosa           6              SE
@@ -1247,7 +1247,7 @@ Pclass Sex
 <ul>
 <li>Massive renaming column names</li>
 </ul>
-<div class="sourceCode" id="cb1237"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1237-1"><a href="pandas.html#cb1237-1" tabindex="-1"></a>iris.rename(columns<span class="op">=</span><span class="kw">lambda</span> x: <span class="st">&#39;XX&#39;</span><span class="op">+</span>x)</span></code></pre></div>
+<div class="sourceCode" id="cb1239"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1239-1"><a href="pandas.html#cb1239-1" tabindex="-1"></a>iris.rename(columns<span class="op">=</span><span class="kw">lambda</span> x: <span class="st">&#39;XX&#39;</span><span class="op">+</span>x)</span></code></pre></div>
 <pre class="Rout"><code>     XXSLen  XXSepal.Width  ...  XXSpecies_new  XXSpecies_initial
 0       5.1            3.5  ...              6                 SE
 1       4.9            3.0  ...              6                 SE
@@ -1262,7 +1262,7 @@ Pclass Sex
 149     5.9            3.0  ...              9                 VI
 
 [150 rows x 7 columns]</code></pre>
-<div class="sourceCode" id="cb1239"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1239-1"><a href="pandas.html#cb1239-1" tabindex="-1"></a>titanic.head(<span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1241"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1241-1"><a href="pandas.html#cb1241-1" tabindex="-1"></a>titanic.head(<span class="dv">10</span>)</span></code></pre></div>
 <pre class="Rout"><code>   PassengerId  Survived  Pclass  ...     Fare Cabin  Embarked
 0            1         0       3  ...   7.2500   NaN         S
 1            2         1       1  ...  71.2833   C85         C
@@ -1276,7 +1276,7 @@ Pclass Sex
 9           10         1       2  ...  30.0708   NaN         C
 
 [10 rows x 12 columns]</code></pre>
-<div class="sourceCode" id="cb1241"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1241-1"><a href="pandas.html#cb1241-1" tabindex="-1"></a>titanic.set_index(<span class="st">&#39;Name&#39;</span>).rename(index<span class="op">=</span><span class="kw">lambda</span> x:x.replace(<span class="st">&#39; &#39;</span>,<span class="st">&quot;_&quot;</span>).upper())</span></code></pre></div>
+<div class="sourceCode" id="cb1243"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1243-1"><a href="pandas.html#cb1243-1" tabindex="-1"></a>titanic.set_index(<span class="st">&#39;Name&#39;</span>).rename(index<span class="op">=</span><span class="kw">lambda</span> x:x.replace(<span class="st">&#39; &#39;</span>,<span class="st">&quot;_&quot;</span>).upper())</span></code></pre></div>
 <pre class="Rout"><code>                                                    PassengerId  ...  Embarked
 Name                                                             ...          
 BRAUND,_MR._OWEN_HARRIS                                       1  ...         S
@@ -1314,7 +1314,7 @@ DOOLEY,_MR._PATRICK                                         891  ...         Q
 <li><code>df.median()</code>: Returns the median of each column</li>
 <li><code>df.std()</code>: Returns the standard deviation of each column</li>
 </ul>
-<div class="sourceCode" id="cb1243"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1243-1"><a href="pandas.html#cb1243-1" tabindex="-1"></a>titanic.count()</span></code></pre></div>
+<div class="sourceCode" id="cb1245"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1245-1"><a href="pandas.html#cb1245-1" tabindex="-1"></a>titanic.count()</span></code></pre></div>
 <pre class="Rout"><code>PassengerId    891
 Survived       891
 Pclass         891
@@ -1328,7 +1328,7 @@ Fare           891
 Cabin          204
 Embarked       889
 dtype: int64</code></pre>
-<div class="sourceCode" id="cb1245"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1245-1"><a href="pandas.html#cb1245-1" tabindex="-1"></a>titanic.median(numeric_only<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1247"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1247-1"><a href="pandas.html#cb1247-1" tabindex="-1"></a>titanic.median(numeric_only<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 <pre class="Rout"><code>PassengerId    446.0000
 Survived         0.0000
 Pclass           3.0000

@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2024-12-06" />
+<meta name="date" content="2024-12-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -633,25 +633,25 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <div class="info">
 <p>All the <code>shutil</code> file/directory operation functions will return a string of absolute path of the new files/directories locations.</p>
 </div>
-<div class="sourceCode" id="cb1019"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1019-1"><a href="organizing-files.html#cb1019-1" tabindex="-1"></a><span class="im">import</span> shutil</span></code></pre></div>
+<div class="sourceCode" id="cb1021"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1021-1"><a href="organizing-files.html#cb1021-1" tabindex="-1"></a><span class="im">import</span> shutil</span></code></pre></div>
 <p>Ways to get the path root or the current working directory:</p>
-<div class="sourceCode" id="cb1020"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1020-1"><a href="organizing-files.html#cb1020-1" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
-<span id="cb1020-2"><a href="organizing-files.html#cb1020-2" tabindex="-1"></a><span class="bu">print</span>(Path.home())</span></code></pre></div>
+<div class="sourceCode" id="cb1022"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1022-1"><a href="organizing-files.html#cb1022-1" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb1022-2"><a href="organizing-files.html#cb1022-2" tabindex="-1"></a><span class="bu">print</span>(Path.home())</span></code></pre></div>
 <pre class="Rout"><code>/Users/alvinchen</code></pre>
-<div class="sourceCode" id="cb1022"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1022-1"><a href="organizing-files.html#cb1022-1" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb1022-2"><a href="organizing-files.html#cb1022-2" tabindex="-1"></a><span class="bu">print</span>(os.getcwd())</span></code></pre></div>
+<div class="sourceCode" id="cb1024"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1024-1"><a href="organizing-files.html#cb1024-1" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb1024-2"><a href="organizing-files.html#cb1024-2" tabindex="-1"></a><span class="bu">print</span>(os.getcwd())</span></code></pre></div>
 <pre class="Rout"><code>/Users/alvinchen/Library/CloudStorage/Dropbox/NTNU/Programming_Linguistics/Programming_Linguistics_bookdown</code></pre>
-<div class="sourceCode" id="cb1024"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1024-1"><a href="organizing-files.html#cb1024-1" tabindex="-1"></a>t <span class="op">=</span> shutil.copy(<span class="st">&#39;demo_data/corp-alice.txt&#39;</span>, Path.home())</span>
-<span id="cb1024-2"><a href="organizing-files.html#cb1024-2" tabindex="-1"></a>os.unlink(t) <span class="co"># clean up</span></span></code></pre></div>
-<div class="sourceCode" id="cb1025"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1025-1"><a href="organizing-files.html#cb1025-1" tabindex="-1"></a>t <span class="op">=</span> shutil.copytree(<span class="st">&#39;demo_data&#39;</span>, Path.home()<span class="op">/</span><span class="st">&#39;demo_data&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb1026"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1026-1"><a href="organizing-files.html#cb1026-1" tabindex="-1"></a>t</span></code></pre></div>
+<div class="sourceCode" id="cb1026"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1026-1"><a href="organizing-files.html#cb1026-1" tabindex="-1"></a>t <span class="op">=</span> shutil.copy(<span class="st">&#39;demo_data/corp-alice.txt&#39;</span>, Path.home())</span>
+<span id="cb1026-2"><a href="organizing-files.html#cb1026-2" tabindex="-1"></a>os.unlink(t) <span class="co"># clean up</span></span></code></pre></div>
+<div class="sourceCode" id="cb1027"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1027-1"><a href="organizing-files.html#cb1027-1" tabindex="-1"></a>t <span class="op">=</span> shutil.copytree(<span class="st">&#39;demo_data&#39;</span>, Path.home()<span class="op">/</span><span class="st">&#39;demo_data&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1028"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1028-1"><a href="organizing-files.html#cb1028-1" tabindex="-1"></a>t</span></code></pre></div>
 <pre class="Rout"><code>PosixPath(&#39;/Users/alvinchen/demo_data&#39;)</code></pre>
-<div class="sourceCode" id="cb1028"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1028-1"><a href="organizing-files.html#cb1028-1" tabindex="-1"></a>os.rmdir(t)</span></code></pre></div>
+<div class="sourceCode" id="cb1030"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1030-1"><a href="organizing-files.html#cb1030-1" tabindex="-1"></a>os.rmdir(t)</span></code></pre></div>
 <pre><code>[Errno 66] Directory not empty: &#39;/Users/alvinchen/demo_data&#39;</code></pre>
-<div class="sourceCode" id="cb1030"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1030-1"><a href="organizing-files.html#cb1030-1" tabindex="-1"></a><span class="co">#shutil.rmtree(t)</span></span></code></pre></div>
+<div class="sourceCode" id="cb1032"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1032-1"><a href="organizing-files.html#cb1032-1" tabindex="-1"></a><span class="co">#shutil.rmtree(t)</span></span></code></pre></div>
 <p>Be <strong>very careful</strong> when using these “removing” functions. It is often a good idea to run these data-removing functions with these calls commented out and with <code>print()</code> calls added to double check the file/directory names to be deleted.</p>
-<div class="sourceCode" id="cb1031"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1031-1"><a href="organizing-files.html#cb1031-1" tabindex="-1"></a><span class="cf">for</span> f <span class="kw">in</span> Path(Path.home()<span class="op">/</span><span class="st">&#39;demo_data&#39;</span>).glob(<span class="st">&#39;*.txt&#39;</span>):</span>
-<span id="cb1031-2"><a href="organizing-files.html#cb1031-2" tabindex="-1"></a>  <span class="bu">print</span>(f)</span></code></pre></div>
+<div class="sourceCode" id="cb1033"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1033-1"><a href="organizing-files.html#cb1033-1" tabindex="-1"></a><span class="cf">for</span> f <span class="kw">in</span> Path(Path.home()<span class="op">/</span><span class="st">&#39;demo_data&#39;</span>).glob(<span class="st">&#39;*.txt&#39;</span>):</span>
+<span id="cb1033-2"><a href="organizing-files.html#cb1033-2" tabindex="-1"></a>  <span class="bu">print</span>(f)</span></code></pre></div>
 <pre class="Rout"><code>/Users/alvinchen/demo_data/data-chinese-poem-big5.txt
 /Users/alvinchen/demo_data/corp-alice.txt
 /Users/alvinchen/demo_data/chinese_big5.txt
@@ -661,9 +661,9 @@ document.writeln ("This page was last updated: " + LastUpdated);
 /Users/alvinchen/demo_data/data-sentences.txt
 /Users/alvinchen/demo_data/chinese_gb2312.txt
 /Users/alvinchen/demo_data/data-chinese-poem-gb2312.txt</code></pre>
-<div class="sourceCode" id="cb1033"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1033-1"><a href="organizing-files.html#cb1033-1" tabindex="-1"></a>  <span class="co"># os.unlink(f)</span></span></code></pre></div>
-<div class="sourceCode" id="cb1034"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1034-1"><a href="organizing-files.html#cb1034-1" tabindex="-1"></a><span class="co">## clean up the earlier copied folder</span></span>
-<span id="cb1034-2"><a href="organizing-files.html#cb1034-2" tabindex="-1"></a>shutil.rmtree(Path(Path.home()<span class="op">/</span><span class="st">&#39;demo_data&#39;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb1035"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1035-1"><a href="organizing-files.html#cb1035-1" tabindex="-1"></a>  <span class="co"># os.unlink(f)</span></span></code></pre></div>
+<div class="sourceCode" id="cb1036"><pre class="sourceCode python Rchunk"><code class="sourceCode python"><span id="cb1036-1"><a href="organizing-files.html#cb1036-1" tabindex="-1"></a><span class="co">## clean up the earlier copied folder</span></span>
+<span id="cb1036-2"><a href="organizing-files.html#cb1036-2" tabindex="-1"></a>shutil.rmtree(Path(Path.home()<span class="op">/</span><span class="st">&#39;demo_data&#39;</span>))</span></code></pre></div>
 <div class="alert">
 <p>Because the data-removing functions in <code>shutil</code> irreversibly delete files and folders, they can be dangerous to use. Another third-party module, <code>send2trash</code>, can be much safer because it will send files and folders to the computer’s trash or recycle bin instead of permanently deleting them. For beginners, this can be very helpful for life-saving files/folders.</p>
 </div>
