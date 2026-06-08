@@ -113,7 +113,7 @@ h1.title {
 .warning {
   background-image: url("images/alerts/bomb-solid.svg");
   /*background-color: hsla(49, 87%, 70%, .1);*/
-  background-color: #FF8296;
+  background-color: #FF88BA;
   border: 1px solid var(--purple);
 }
 
