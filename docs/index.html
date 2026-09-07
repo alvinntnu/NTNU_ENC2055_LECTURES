@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2026-06-08" />
+<meta name="date" content="2026-09-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -610,7 +610,7 @@ document.writeln ("This page was last updated: " + LastUpdated);
 <div id="header">
 <h1 class="title">ENC2055: Introduction to Programming Languages for Linguistic Analysis</h1>
 <p class="author"><em>Alvin Chen (陳正賢）</em></p>
-<p class="date"><em>2026-06-08</em></p>
+<p class="date"><em>2026-09-07</em></p>
 </div>
 <div id="course-syllabus" class="section level1 unnumbered hasAnchor">
 <h1>Course Syllabus<a href="index.html#course-syllabus" class="anchor-section" aria-label="Anchor link to header"></a></h1>
@@ -645,7 +645,7 @@ P(A) = \sum P(\{ (e_1,\dotsc,e_N) \})  =  \binom{N}{k} \cdot p^kq^{N-k}
 <span id="cb2-3"><a href="index.html#cb2-3" tabindex="-1"></a>    <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">&quot;Murder&quot;</span>, <span class="st">&quot;Assault&quot;</span>, <span class="st">&quot;UrbanPop&quot;</span>, <span class="st">&quot;Rape&quot;</span>), <span class="at">names_to =</span> <span class="st">&quot;ArrestTypes&quot;</span>,</span>
 <span id="cb2-4"><a href="index.html#cb2-4" tabindex="-1"></a>        <span class="at">values_to =</span> <span class="st">&quot;Rates&quot;</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb2-5"><a href="index.html#cb2-5" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(ArrestTypes, Rates, <span class="at">fill =</span> ArrestTypes)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-3-1.png" alt="" width="672" /></p>
+<p><img src="figs/index-unnamed-chunk-3-1.png" alt="" width="672" /></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1" tabindex="-1"></a>USArrests <span class="sc">%&gt;%</span></span>
 <span id="cb3-2"><a href="index.html#cb3-2" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">States =</span> <span class="fu">row.names</span>(.)) <span class="sc">%&gt;%</span></span>
 <span id="cb3-3"><a href="index.html#cb3-3" tabindex="-1"></a>    <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">&quot;Murder&quot;</span>, <span class="st">&quot;Assault&quot;</span>, <span class="st">&quot;UrbanPop&quot;</span>, <span class="st">&quot;Rape&quot;</span>), <span class="at">names_to =</span> <span class="st">&quot;ArrestTypes&quot;</span>,</span>
@@ -653,7 +653,7 @@ P(A) = \sum P(\{ (e_1,\dotsc,e_N) \})  =  \binom{N}{k} \cdot p^kq^{N-k}
 <span id="cb3-5"><a href="index.html#cb3-5" tabindex="-1"></a>    <span class="fu">filter</span>(States <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;California&quot;</span>, <span class="st">&quot;Massachusetts&quot;</span>, <span class="st">&quot;New York&quot;</span>, <span class="st">&quot;Washington&quot;</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb3-6"><a href="index.html#cb3-6" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(States, Rates, <span class="at">fill =</span> ArrestTypes, <span class="at">group =</span> ArrestTypes)) <span class="sc">+</span> <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
 <span id="cb3-7"><a href="index.html#cb3-7" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Arrest Types (Rates) by Selective States&quot;</span>)</span></code></pre></div>
-<p><img src="Programming_Linguistics_bookdown_files/figure-html/unnamed-chunk-4-1.png" alt="" width="672" /></p>
+<p><img src="figs/index-unnamed-chunk-4-1.png" alt="" width="672" /></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb4-1"><a href="index.html#cb4-1" tabindex="-1"></a><span class="do">## data() ## check more built-in datasets</span></span></code></pre></div>
 <div class="try">
 <p>In the lecture notes, the text boxes in light blue refer to codes that you need to run in either terminal or your R/Python console. The text boxes in black background show the outputs of the code processing.</p>
@@ -686,6 +686,8 @@ P(A) = \sum P(\{ (e_1,\dotsc,e_N) \})  =  \binom{N}{k} \cdot p^kq^{N-k}
 <li><a href="https://chatgpt.com/g/g-TgjKDuQwZ-r-wizard">R Wizard</a>: A chatGPT-powered specialist in R programming, skilled in Data Science, Statistics, and Finance, providing accurate and useful guidance.</li>
 <li><a href="https://chatgpt.com/g/g-cKXjWStaE-python">Python</a>: A highly sophisticated GPT tailored for Python</li>
 </ul>
+<p>Students are welcome to use AI tools when completing the unit exercises. However, simply copying and pasting AI-generated code without understanding its underlying structure is strongly discouraged. AI tools often produce code that relies on advanced programming concepts rather than beginner-level logic. Consequently, it is immediately obvious to the instructor when a submission does not reflect a student’s current level of R or Python proficiency. Please use these tools thoughtfully as a learning aid.</p>
+<p>Note that both the midterm and final exams require entirely independent work, meaning AI tools will not be permitted. These assessments will likely follow a traditional paper-and-pencil format.</p>
 </div>
 <div id="contributing-to-the-lecture-notes" class="section level2 unnumbered hasAnchor">
 <h2>Contributing to the Lecture Notes<a href="index.html#contributing-to-the-lecture-notes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -705,7 +707,7 @@ P(A) = \sum P(\{ (e_1,\dotsc,e_N) \})  =  \binom{N}{k} \cdot p^kq^{N-k}
 </div>
 <div id="course-demo-data" class="section level2 unnumbered hasAnchor">
 <h2>Course Demo Data<a href="index.html#course-demo-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><a href="https://www.dropbox.com/sh/vj0301k616mv3l0/AABlwukvM_R7-YV-_shZ4FK6a?dl=0">Dropbox Demo Data Directory</a></p>
+<p><a href="https://www.dropbox.com/scl/fo/5h7xshyydeh7glr434f85/AKbwFoL0VUn23aK-RVZ9TYk?rlkey=a7ga2mrvlqi3petjx3xmrg3ri&amp;st=e84firbb&amp;dl=0">Dropbox Demo Data Directory</a> (Password protected)</p>
 </div>
 <div id="questions" class="section level2 unnumbered hasAnchor">
 <h2>Questions?<a href="index.html#questions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
