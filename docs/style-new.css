@@ -106,7 +106,7 @@ h1.title {
 .alert {
   background-image: url("images/alerts/bell-regular.svg");
   /*background-color: hsl(0,100%,50%, .3);/*hsla(315, 42%, 42%, .10); */
-  background-color: #FFCA27;
+  background-color: #FFF427;
   border: 1px solid var(--orange);
 }
 
