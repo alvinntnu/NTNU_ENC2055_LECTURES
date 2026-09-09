@@ -399,3 +399,8 @@ installing-r-markdown
 r-markdown-components
 tips
 references-4
+fig:unnamed-chunk-11
+quick-overview-of-r
+rstudio-setting
+r-script-file-encoding
+workspace-management
