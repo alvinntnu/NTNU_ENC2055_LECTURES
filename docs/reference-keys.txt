@@ -404,3 +404,11 @@ quick-overview-of-r
 rstudio-setting
 r-script-file-encoding
 workspace-management
+exr:unnamed-chunk-8
+exr:unnamed-chunk-15
+exr:unnamed-chunk-33
+exr:unnamed-chunk-37
+exr:unnamed-chunk-39
+exr:unnamed-chunk-41
+exr:unnamed-chunk-43
+exr:unnamed-chunk-45
