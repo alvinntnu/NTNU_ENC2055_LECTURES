@@ -155,10 +155,10 @@ book.color-theme-1 .book-body .page-wrapper .page-inner section.normal pre, .boo
 
 /* R code output format */
 
-.Rout {
+.rout {
   /*background-color: #d9edf7 !important;*/
   color: white !important;
-  background-color: black !important;
+  background-color: #1e1e1e !important;
   /*border: 1px solid lightgrey !important;*/
   border-radius: 5px !important;
   /*font-weight: bolder;*/
