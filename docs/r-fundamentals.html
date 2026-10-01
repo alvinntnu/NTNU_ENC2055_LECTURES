@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2026-09-18" />
+<meta name="date" content="2026-10-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -789,6 +789,11 @@ Figure 2.1: Rstudio Interface
 <p>When creating a matrix, we specify the values for the <strong>parameters</strong>, <code>byrow =</code> and <code>nrow =</code>. These specifications provide clues for R to create a matrix with <em>N</em> rows and arrange the numbers <em>by rows</em>. The actual values of the parameters that we use, i.e., <code>T</code> and <code>2</code>, are referred to as <strong>arguments</strong>.</p>
 <div class="info">
 <p><strong>Parameter</strong> is a variable in the declaration of function. <strong>Argument</strong> is the actual value of this variable that gets passed to function.</p>
+</div>
+<div class="info">
+<p>When calling functions in R, the order of your arguments depends on whether you explicitly name the parameters. For example, when building a matrix using positional matching without parameter names, <code>matrix(1:4, 2, 2)</code> relies strictly on sequence to set the data, rows, and columns. If you omit parameter names and change the order to <code>matrix(2, 2, 1:4)</code>, R assigns <code>1:4</code> to the number of columns instead, producing an entirely different result.</p>
+<p>However, when you use parameter names, such as <code>matrix(data = 1:4, nrow = 2, ncol = 2)</code>, R uses named matching, so the argument order no longer matters.</p>
+<p>Furthermore, parameters like <code>byrow</code> have default values (in this case, <code>FALSE</code>), which allows you to skip them unless you specifically need to override the default behavior. Check the <code>help</code> (= <code>?matrix</code>) page for the parameter structure and default argument values for existing functions in R.</p>
 </div>
 <hr />
 <p>Most importantly, we can define our own function, which is tailored to perform specific tasks. All self-created functions need to be defined first in the R environment before you can call them.</p>
