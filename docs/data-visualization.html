@@ -23,7 +23,7 @@
 <meta name="author" content="Alvin Chen (陳正賢）" />
 
 
-<meta name="date" content="2026-10-16" />
+<meta name="date" content="2026-10-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -1668,7 +1668,7 @@ x_shape
 </div>
 <div id="facets" class="section level3 hasAnchor" number="7.8.3">
 <h3><span class="header-section-number">7.8.3</span> Facets<a href="data-visualization.html#facets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Sometimes we may want to create plots based on a <strong>conditional factor</strong>. For example, we can check the relationship between city milage (<code>cty</code>) and highway milage (<code>hwy</code>) for cars by different manufacturers (<code>class</code>).</p>
+<p>Sometimes we may want to create plots based on a <strong>conditional factor</strong>. For example, we can check the relationship between city mileage (<code>cty</code>) and highway mileage (<code>hwy</code>) for cars by different manufacturers (<code>class</code>).</p>
 <div class="sourceCode" id="cb48"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb48-1"><a href="data-visualization.html#cb48-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> cty, <span class="at">y =</span> hwy)) <span class="sc">+</span></span>
 <span id="cb48-2"><a href="data-visualization.html#cb48-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb48-3"><a href="data-visualization.html#cb48-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>) <span class="sc">+</span></span>
